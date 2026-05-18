@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="data:,">
-  <title>全球网络背景控制台</title>
+  <title>World Map Globe Background Console</title>
   <style>
     :root {
       color-scheme: light;
@@ -154,7 +154,7 @@
       background: var(--scene-bg);
     }
 
-    #networkSvg {
+    #worldMapGlobeSvg {
       width: 100%;
       height: 100%;
       display: block;
@@ -494,14 +494,14 @@
     <section class="preview" aria-label="素材预览区">
       <div class="preview-bar">
         <div>
-          <h1>全球网络动态背景</h1>
+          <h1>世界地图与地球背景</h1>
           <p class="meta" id="modeMeta">世界地图 · 平面连线视图</p>
         </div>
         <div class="status" id="modeBadge">世界地图</div>
       </div>
       <div class="stage-wrap">
         <div class="stage">
-          <svg id="networkSvg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" role="img" aria-label="全球城市连线动态背景">
+          <svg id="worldMapGlobeSvg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" role="img" aria-label="世界地图与地球城市连线动态背景">
             <defs>
               <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="2.4" result="blur"/>
