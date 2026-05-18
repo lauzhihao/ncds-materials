@@ -5,6 +5,2534 @@
   "entry": "003_world_map_globe.html",
   "style": "003_world_map_globe.css",
   "script": "003_world_map_globe.js",
-  "description": "融合世界地图与地球模型的全球城市连线动态背景，右侧控制台可切换视图并提交自定义配色。",
-  "version": "1.0.0"
+  "description": "融合世界地图与地球模型的全球城市连线动态背景，右侧控制台可切换视图、提交自定义配色，并调整连线城市顺序。",
+  "version": "1.1.0",
+  "dataSource": {
+    "name": "World Bank Country API",
+    "url": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+    "fields": [
+      "name",
+      "capitalCity",
+      "longitude",
+      "latitude",
+      "region"
+    ],
+    "filter": "region.value !== \"Aggregates\" && capitalCity && longitude && latitude",
+    "coordinateOrder": [
+      "longitude",
+      "latitude"
+    ]
+  },
+  "defaultRoute": [
+    "chn_beijing",
+    "jpn_tokyo",
+    "kor_seoul",
+    "sgp_singapore",
+    "are_abu_dhabi",
+    "deu_berlin",
+    "gbr_london",
+    "usa_washington_d_c",
+    "bra_brasilia",
+    "arg_buenos_aires",
+    "zaf_pretoria",
+    "aus_canberra"
+  ],
+  "capitalCities": [
+    {
+      "id": "afg_kabul",
+      "name": "Kabul",
+      "en": "KABUL",
+      "country": "Afghanistan",
+      "iso3": "AFG",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        69.1761,
+        34.5228
+      ]
+    },
+    {
+      "id": "alb_tirane",
+      "name": "Tirane",
+      "en": "TIRANE",
+      "country": "Albania",
+      "iso3": "ALB",
+      "region": "Europe & Central Asia",
+      "coords": [
+        19.8172,
+        41.3317
+      ]
+    },
+    {
+      "id": "dza_algiers",
+      "name": "Algiers",
+      "en": "ALGIERS",
+      "country": "Algeria",
+      "iso3": "DZA",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        3.05097,
+        36.7397
+      ]
+    },
+    {
+      "id": "asm_pago_pago",
+      "name": "Pago Pago",
+      "en": "PAGO PAGO",
+      "country": "American Samoa",
+      "iso3": "ASM",
+      "region": "East Asia & Pacific",
+      "coords": [
+        -170.691,
+        -14.2846
+      ]
+    },
+    {
+      "id": "and_andorra_la_vella",
+      "name": "Andorra la Vella",
+      "en": "ANDORRA LA VELLA",
+      "country": "Andorra",
+      "iso3": "AND",
+      "region": "Europe & Central Asia",
+      "coords": [
+        1.5218,
+        42.5075
+      ]
+    },
+    {
+      "id": "ago_luanda",
+      "name": "Luanda",
+      "en": "LUANDA",
+      "country": "Angola",
+      "iso3": "AGO",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        13.242,
+        -8.81155
+      ]
+    },
+    {
+      "id": "atg_saint_john_s",
+      "name": "Saint John's",
+      "en": "SAINT JOHN'S",
+      "country": "Antigua and Barbuda",
+      "iso3": "ATG",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -61.8456,
+        17.1175
+      ]
+    },
+    {
+      "id": "arg_buenos_aires",
+      "name": "Buenos Aires",
+      "en": "BUENOS AIRES",
+      "country": "Argentina",
+      "iso3": "ARG",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -58.4173,
+        -34.6118
+      ]
+    },
+    {
+      "id": "arm_yerevan",
+      "name": "Yerevan",
+      "en": "YEREVAN",
+      "country": "Armenia",
+      "iso3": "ARM",
+      "region": "Europe & Central Asia",
+      "coords": [
+        44.509,
+        40.1596
+      ]
+    },
+    {
+      "id": "abw_oranjestad",
+      "name": "Oranjestad",
+      "en": "ORANJESTAD",
+      "country": "Aruba",
+      "iso3": "ABW",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -70.0167,
+        12.5167
+      ]
+    },
+    {
+      "id": "aus_canberra",
+      "name": "Canberra",
+      "en": "CANBERRA",
+      "country": "Australia",
+      "iso3": "AUS",
+      "region": "East Asia & Pacific",
+      "coords": [
+        149.129,
+        -35.282
+      ]
+    },
+    {
+      "id": "aut_vienna",
+      "name": "Vienna",
+      "en": "VIENNA",
+      "country": "Austria",
+      "iso3": "AUT",
+      "region": "Europe & Central Asia",
+      "coords": [
+        16.3798,
+        48.2201
+      ]
+    },
+    {
+      "id": "aze_baku",
+      "name": "Baku",
+      "en": "BAKU",
+      "country": "Azerbaijan",
+      "iso3": "AZE",
+      "region": "Europe & Central Asia",
+      "coords": [
+        49.8932,
+        40.3834
+      ]
+    },
+    {
+      "id": "bhs_nassau",
+      "name": "Nassau",
+      "en": "NASSAU",
+      "country": "Bahamas, The",
+      "iso3": "BHS",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -77.339,
+        25.0661
+      ]
+    },
+    {
+      "id": "bhr_manama",
+      "name": "Manama",
+      "en": "MANAMA",
+      "country": "Bahrain",
+      "iso3": "BHR",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        50.5354,
+        26.1921
+      ]
+    },
+    {
+      "id": "bgd_dhaka",
+      "name": "Dhaka",
+      "en": "DHAKA",
+      "country": "Bangladesh",
+      "iso3": "BGD",
+      "region": "South Asia",
+      "coords": [
+        90.4113,
+        23.7055
+      ]
+    },
+    {
+      "id": "brb_bridgetown",
+      "name": "Bridgetown",
+      "en": "BRIDGETOWN",
+      "country": "Barbados",
+      "iso3": "BRB",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -59.6105,
+        13.0935
+      ]
+    },
+    {
+      "id": "blr_minsk",
+      "name": "Minsk",
+      "en": "MINSK",
+      "country": "Belarus",
+      "iso3": "BLR",
+      "region": "Europe & Central Asia",
+      "coords": [
+        27.5766,
+        53.9678
+      ]
+    },
+    {
+      "id": "bel_brussels",
+      "name": "Brussels",
+      "en": "BRUSSELS",
+      "country": "Belgium",
+      "iso3": "BEL",
+      "region": "Europe & Central Asia",
+      "coords": [
+        4.36761,
+        50.8371
+      ]
+    },
+    {
+      "id": "blz_belmopan",
+      "name": "Belmopan",
+      "en": "BELMOPAN",
+      "country": "Belize",
+      "iso3": "BLZ",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -88.7713,
+        17.2534
+      ]
+    },
+    {
+      "id": "ben_porto_novo",
+      "name": "Porto-Novo",
+      "en": "PORTO-NOVO",
+      "country": "Benin",
+      "iso3": "BEN",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        2.6323,
+        6.4779
+      ]
+    },
+    {
+      "id": "bmu_hamilton",
+      "name": "Hamilton",
+      "en": "HAMILTON",
+      "country": "Bermuda",
+      "iso3": "BMU",
+      "region": "North America",
+      "coords": [
+        -64.706,
+        32.3293
+      ]
+    },
+    {
+      "id": "btn_thimphu",
+      "name": "Thimphu",
+      "en": "THIMPHU",
+      "country": "Bhutan",
+      "iso3": "BTN",
+      "region": "South Asia",
+      "coords": [
+        89.6177,
+        27.5768
+      ]
+    },
+    {
+      "id": "bol_la_paz",
+      "name": "La Paz",
+      "en": "LA PAZ",
+      "country": "Bolivia",
+      "iso3": "BOL",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -66.1936,
+        -13.9908
+      ]
+    },
+    {
+      "id": "bih_sarajevo",
+      "name": "Sarajevo",
+      "en": "SARAJEVO",
+      "country": "Bosnia and Herzegovina",
+      "iso3": "BIH",
+      "region": "Europe & Central Asia",
+      "coords": [
+        18.4214,
+        43.8607
+      ]
+    },
+    {
+      "id": "bwa_gaborone",
+      "name": "Gaborone",
+      "en": "GABORONE",
+      "country": "Botswana",
+      "iso3": "BWA",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        25.9201,
+        -24.6544
+      ]
+    },
+    {
+      "id": "bra_brasilia",
+      "name": "Brasilia",
+      "en": "BRASILIA",
+      "country": "Brazil",
+      "iso3": "BRA",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -47.9292,
+        -15.7801
+      ]
+    },
+    {
+      "id": "vgb_road_town",
+      "name": "Road Town",
+      "en": "ROAD TOWN",
+      "country": "British Virgin Islands",
+      "iso3": "VGB",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -64.623056,
+        18.431389
+      ]
+    },
+    {
+      "id": "brn_bandar_seri_begawan",
+      "name": "Bandar Seri Begawan",
+      "en": "BANDAR SERI BEGAWAN",
+      "country": "Brunei Darussalam",
+      "iso3": "BRN",
+      "region": "East Asia & Pacific",
+      "coords": [
+        114.946,
+        4.94199
+      ]
+    },
+    {
+      "id": "bgr_sofia",
+      "name": "Sofia",
+      "en": "SOFIA",
+      "country": "Bulgaria",
+      "iso3": "BGR",
+      "region": "Europe & Central Asia",
+      "coords": [
+        23.3238,
+        42.7105
+      ]
+    },
+    {
+      "id": "bfa_ouagadougou",
+      "name": "Ouagadougou",
+      "en": "OUAGADOUGOU",
+      "country": "Burkina Faso",
+      "iso3": "BFA",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -1.53395,
+        12.3605
+      ]
+    },
+    {
+      "id": "bdi_bujumbura",
+      "name": "Bujumbura",
+      "en": "BUJUMBURA",
+      "country": "Burundi",
+      "iso3": "BDI",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        29.3639,
+        -3.3784
+      ]
+    },
+    {
+      "id": "cpv_praia",
+      "name": "Praia",
+      "en": "PRAIA",
+      "country": "Cabo Verde",
+      "iso3": "CPV",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -23.5087,
+        14.9218
+      ]
+    },
+    {
+      "id": "khm_phnom_penh",
+      "name": "Phnom Penh",
+      "en": "PHNOM PENH",
+      "country": "Cambodia",
+      "iso3": "KHM",
+      "region": "East Asia & Pacific",
+      "coords": [
+        104.874,
+        11.5556
+      ]
+    },
+    {
+      "id": "cmr_yaounde",
+      "name": "Yaounde",
+      "en": "YAOUNDE",
+      "country": "Cameroon",
+      "iso3": "CMR",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        11.5174,
+        3.8721
+      ]
+    },
+    {
+      "id": "can_ottawa",
+      "name": "Ottawa",
+      "en": "OTTAWA",
+      "country": "Canada",
+      "iso3": "CAN",
+      "region": "North America",
+      "coords": [
+        -75.6919,
+        45.4215
+      ]
+    },
+    {
+      "id": "cym_george_town",
+      "name": "George Town",
+      "en": "GEORGE TOWN",
+      "country": "Cayman Islands",
+      "iso3": "CYM",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -81.3857,
+        19.3022
+      ]
+    },
+    {
+      "id": "caf_bangui",
+      "name": "Bangui",
+      "en": "BANGUI",
+      "country": "Central African Republic",
+      "iso3": "CAF",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        21.6407,
+        5.63056
+      ]
+    },
+    {
+      "id": "tcd_n_djamena",
+      "name": "N'Djamena",
+      "en": "N'DJAMENA",
+      "country": "Chad",
+      "iso3": "TCD",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        15.0445,
+        12.1048
+      ]
+    },
+    {
+      "id": "chl_santiago",
+      "name": "Santiago",
+      "en": "SANTIAGO",
+      "country": "Chile",
+      "iso3": "CHL",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -70.6475,
+        -33.475
+      ]
+    },
+    {
+      "id": "chn_beijing",
+      "name": "Beijing",
+      "en": "BEIJING",
+      "country": "China",
+      "iso3": "CHN",
+      "region": "East Asia & Pacific",
+      "coords": [
+        116.286,
+        40.0495
+      ]
+    },
+    {
+      "id": "col_bogota",
+      "name": "Bogota",
+      "en": "BOGOTA",
+      "country": "Colombia",
+      "iso3": "COL",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -74.082,
+        4.60987
+      ]
+    },
+    {
+      "id": "com_moroni",
+      "name": "Moroni",
+      "en": "MORONI",
+      "country": "Comoros",
+      "iso3": "COM",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        43.2418,
+        -11.6986
+      ]
+    },
+    {
+      "id": "cod_kinshasa",
+      "name": "Kinshasa",
+      "en": "KINSHASA",
+      "country": "Congo, Dem. Rep.",
+      "iso3": "COD",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        15.3222,
+        -4.325
+      ]
+    },
+    {
+      "id": "cog_brazzaville",
+      "name": "Brazzaville",
+      "en": "BRAZZAVILLE",
+      "country": "Congo, Rep.",
+      "iso3": "COG",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        15.2662,
+        -4.2767
+      ]
+    },
+    {
+      "id": "cri_san_jose",
+      "name": "San Jose",
+      "en": "SAN JOSE",
+      "country": "Costa Rica",
+      "iso3": "CRI",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -84.0089,
+        9.63701
+      ]
+    },
+    {
+      "id": "civ_yamoussoukro",
+      "name": "Yamoussoukro",
+      "en": "YAMOUSSOUKRO",
+      "country": "Cote d'Ivoire",
+      "iso3": "CIV",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -4.0305,
+        5.332
+      ]
+    },
+    {
+      "id": "hrv_zagreb",
+      "name": "Zagreb",
+      "en": "ZAGREB",
+      "country": "Croatia",
+      "iso3": "HRV",
+      "region": "Europe & Central Asia",
+      "coords": [
+        15.9614,
+        45.8069
+      ]
+    },
+    {
+      "id": "cub_havana",
+      "name": "Havana",
+      "en": "HAVANA",
+      "country": "Cuba",
+      "iso3": "CUB",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -82.3667,
+        23.1333
+      ]
+    },
+    {
+      "id": "cyp_nicosia",
+      "name": "Nicosia",
+      "en": "NICOSIA",
+      "country": "Cyprus",
+      "iso3": "CYP",
+      "region": "Europe & Central Asia",
+      "coords": [
+        33.3736,
+        35.1676
+      ]
+    },
+    {
+      "id": "cze_prague",
+      "name": "Prague",
+      "en": "PRAGUE",
+      "country": "Czechia",
+      "iso3": "CZE",
+      "region": "Europe & Central Asia",
+      "coords": [
+        14.4205,
+        50.0878
+      ]
+    },
+    {
+      "id": "dnk_copenhagen",
+      "name": "Copenhagen",
+      "en": "COPENHAGEN",
+      "country": "Denmark",
+      "iso3": "DNK",
+      "region": "Europe & Central Asia",
+      "coords": [
+        12.5681,
+        55.6763
+      ]
+    },
+    {
+      "id": "dji_djibouti",
+      "name": "Djibouti",
+      "en": "DJIBOUTI",
+      "country": "Djibouti",
+      "iso3": "DJI",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        43.1425,
+        11.5806
+      ]
+    },
+    {
+      "id": "dma_roseau",
+      "name": "Roseau",
+      "en": "ROSEAU",
+      "country": "Dominica",
+      "iso3": "DMA",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -61.39,
+        15.2976
+      ]
+    },
+    {
+      "id": "dom_santo_domingo",
+      "name": "Santo Domingo",
+      "en": "SANTO DOMINGO",
+      "country": "Dominican Republic",
+      "iso3": "DOM",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -69.8908,
+        18.479
+      ]
+    },
+    {
+      "id": "ecu_quito",
+      "name": "Quito",
+      "en": "QUITO",
+      "country": "Ecuador",
+      "iso3": "ECU",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -78.5243,
+        -0.229498
+      ]
+    },
+    {
+      "id": "egy_cairo",
+      "name": "Cairo",
+      "en": "CAIRO",
+      "country": "Egypt, Arab Rep.",
+      "iso3": "EGY",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        31.2461,
+        30.0982
+      ]
+    },
+    {
+      "id": "slv_san_salvador",
+      "name": "San Salvador",
+      "en": "SAN SALVADOR",
+      "country": "El Salvador",
+      "iso3": "SLV",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -89.2073,
+        13.7034
+      ]
+    },
+    {
+      "id": "gnq_malabo",
+      "name": "Malabo",
+      "en": "MALABO",
+      "country": "Equatorial Guinea",
+      "iso3": "GNQ",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        8.7741,
+        3.7523
+      ]
+    },
+    {
+      "id": "eri_asmara",
+      "name": "Asmara",
+      "en": "ASMARA",
+      "country": "Eritrea",
+      "iso3": "ERI",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        38.9183,
+        15.3315
+      ]
+    },
+    {
+      "id": "est_tallinn",
+      "name": "Tallinn",
+      "en": "TALLINN",
+      "country": "Estonia",
+      "iso3": "EST",
+      "region": "Europe & Central Asia",
+      "coords": [
+        24.7586,
+        59.4392
+      ]
+    },
+    {
+      "id": "swz_mbabane",
+      "name": "Mbabane",
+      "en": "MBABANE",
+      "country": "Eswatini",
+      "iso3": "SWZ",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        31.4659,
+        -26.5225
+      ]
+    },
+    {
+      "id": "eth_addis_ababa",
+      "name": "Addis Ababa",
+      "en": "ADDIS ABABA",
+      "country": "Ethiopia",
+      "iso3": "ETH",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        38.7468,
+        9.02274
+      ]
+    },
+    {
+      "id": "fro_torshavn",
+      "name": "Torshavn",
+      "en": "TORSHAVN",
+      "country": "Faroe Islands",
+      "iso3": "FRO",
+      "region": "Europe & Central Asia",
+      "coords": [
+        -6.91181,
+        61.8926
+      ]
+    },
+    {
+      "id": "fji_suva",
+      "name": "Suva",
+      "en": "SUVA",
+      "country": "Fiji",
+      "iso3": "FJI",
+      "region": "East Asia & Pacific",
+      "coords": [
+        178.399,
+        -18.1149
+      ]
+    },
+    {
+      "id": "fin_helsinki",
+      "name": "Helsinki",
+      "en": "HELSINKI",
+      "country": "Finland",
+      "iso3": "FIN",
+      "region": "Europe & Central Asia",
+      "coords": [
+        24.9525,
+        60.1608
+      ]
+    },
+    {
+      "id": "fra_paris",
+      "name": "Paris",
+      "en": "PARIS",
+      "country": "France",
+      "iso3": "FRA",
+      "region": "Europe & Central Asia",
+      "coords": [
+        2.35097,
+        48.8566
+      ]
+    },
+    {
+      "id": "pyf_papeete",
+      "name": "Papeete",
+      "en": "PAPEETE",
+      "country": "French Polynesia",
+      "iso3": "PYF",
+      "region": "East Asia & Pacific",
+      "coords": [
+        -149.57,
+        -17.535
+      ]
+    },
+    {
+      "id": "gab_libreville",
+      "name": "Libreville",
+      "en": "LIBREVILLE",
+      "country": "Gabon",
+      "iso3": "GAB",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        9.45162,
+        0.38832
+      ]
+    },
+    {
+      "id": "gmb_banjul",
+      "name": "Banjul",
+      "en": "BANJUL",
+      "country": "Gambia, The",
+      "iso3": "GMB",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -16.5885,
+        13.4495
+      ]
+    },
+    {
+      "id": "geo_tbilisi",
+      "name": "Tbilisi",
+      "en": "TBILISI",
+      "country": "Georgia",
+      "iso3": "GEO",
+      "region": "Europe & Central Asia",
+      "coords": [
+        44.793,
+        41.71
+      ]
+    },
+    {
+      "id": "deu_berlin",
+      "name": "Berlin",
+      "en": "BERLIN",
+      "country": "Germany",
+      "iso3": "DEU",
+      "region": "Europe & Central Asia",
+      "coords": [
+        13.4115,
+        52.5235
+      ]
+    },
+    {
+      "id": "gha_accra",
+      "name": "Accra",
+      "en": "ACCRA",
+      "country": "Ghana",
+      "iso3": "GHA",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -0.20795,
+        5.57045
+      ]
+    },
+    {
+      "id": "grc_athens",
+      "name": "Athens",
+      "en": "ATHENS",
+      "country": "Greece",
+      "iso3": "GRC",
+      "region": "Europe & Central Asia",
+      "coords": [
+        23.7166,
+        37.9792
+      ]
+    },
+    {
+      "id": "grl_nuuk",
+      "name": "Nuuk",
+      "en": "NUUK",
+      "country": "Greenland",
+      "iso3": "GRL",
+      "region": "Europe & Central Asia",
+      "coords": [
+        -51.7214,
+        64.1836
+      ]
+    },
+    {
+      "id": "grd_saint_george_s",
+      "name": "Saint George's",
+      "en": "SAINT GEORGE'S",
+      "country": "Grenada",
+      "iso3": "GRD",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -61.7449,
+        12.0653
+      ]
+    },
+    {
+      "id": "gum_agana",
+      "name": "Agana",
+      "en": "AGANA",
+      "country": "Guam",
+      "iso3": "GUM",
+      "region": "East Asia & Pacific",
+      "coords": [
+        144.794,
+        13.4443
+      ]
+    },
+    {
+      "id": "gtm_guatemala_city",
+      "name": "Guatemala City",
+      "en": "GUATEMALA CITY",
+      "country": "Guatemala",
+      "iso3": "GTM",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -90.5328,
+        14.6248
+      ]
+    },
+    {
+      "id": "gin_conakry",
+      "name": "Conakry",
+      "en": "CONAKRY",
+      "country": "Guinea",
+      "iso3": "GIN",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -13.7,
+        9.51667
+      ]
+    },
+    {
+      "id": "gnb_bissau",
+      "name": "Bissau",
+      "en": "BISSAU",
+      "country": "Guinea-Bissau",
+      "iso3": "GNB",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -15.1804,
+        11.8037
+      ]
+    },
+    {
+      "id": "guy_georgetown",
+      "name": "Georgetown",
+      "en": "GEORGETOWN",
+      "country": "Guyana",
+      "iso3": "GUY",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -58.1548,
+        6.80461
+      ]
+    },
+    {
+      "id": "hti_port_au_prince",
+      "name": "Port-au-Prince",
+      "en": "PORT-AU-PRINCE",
+      "country": "Haiti",
+      "iso3": "HTI",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -72.3288,
+        18.5392
+      ]
+    },
+    {
+      "id": "hnd_tegucigalpa",
+      "name": "Tegucigalpa",
+      "en": "TEGUCIGALPA",
+      "country": "Honduras",
+      "iso3": "HND",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -87.4667,
+        15.1333
+      ]
+    },
+    {
+      "id": "hun_budapest",
+      "name": "Budapest",
+      "en": "BUDAPEST",
+      "country": "Hungary",
+      "iso3": "HUN",
+      "region": "Europe & Central Asia",
+      "coords": [
+        19.0408,
+        47.4984
+      ]
+    },
+    {
+      "id": "isl_reykjavik",
+      "name": "Reykjavik",
+      "en": "REYKJAVIK",
+      "country": "Iceland",
+      "iso3": "ISL",
+      "region": "Europe & Central Asia",
+      "coords": [
+        -21.8952,
+        64.1353
+      ]
+    },
+    {
+      "id": "ind_new_delhi",
+      "name": "New Delhi",
+      "en": "NEW DELHI",
+      "country": "India",
+      "iso3": "IND",
+      "region": "South Asia",
+      "coords": [
+        77.225,
+        28.6353
+      ]
+    },
+    {
+      "id": "idn_jakarta",
+      "name": "Jakarta",
+      "en": "JAKARTA",
+      "country": "Indonesia",
+      "iso3": "IDN",
+      "region": "East Asia & Pacific",
+      "coords": [
+        106.83,
+        -6.19752
+      ]
+    },
+    {
+      "id": "irn_tehran",
+      "name": "Tehran",
+      "en": "TEHRAN",
+      "country": "Iran, Islamic Rep.",
+      "iso3": "IRN",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        51.4447,
+        35.6878
+      ]
+    },
+    {
+      "id": "irq_baghdad",
+      "name": "Baghdad",
+      "en": "BAGHDAD",
+      "country": "Iraq",
+      "iso3": "IRQ",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        44.394,
+        33.3302
+      ]
+    },
+    {
+      "id": "irl_dublin",
+      "name": "Dublin",
+      "en": "DUBLIN",
+      "country": "Ireland",
+      "iso3": "IRL",
+      "region": "Europe & Central Asia",
+      "coords": [
+        -6.26749,
+        53.3441
+      ]
+    },
+    {
+      "id": "imn_douglas",
+      "name": "Douglas",
+      "en": "DOUGLAS",
+      "country": "Isle of Man",
+      "iso3": "IMN",
+      "region": "Europe & Central Asia",
+      "coords": [
+        -4.47928,
+        54.1509
+      ]
+    },
+    {
+      "id": "ita_rome",
+      "name": "Rome",
+      "en": "ROME",
+      "country": "Italy",
+      "iso3": "ITA",
+      "region": "Europe & Central Asia",
+      "coords": [
+        12.4823,
+        41.8955
+      ]
+    },
+    {
+      "id": "jam_kingston",
+      "name": "Kingston",
+      "en": "KINGSTON",
+      "country": "Jamaica",
+      "iso3": "JAM",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -76.792,
+        17.9927
+      ]
+    },
+    {
+      "id": "jpn_tokyo",
+      "name": "Tokyo",
+      "en": "TOKYO",
+      "country": "Japan",
+      "iso3": "JPN",
+      "region": "East Asia & Pacific",
+      "coords": [
+        139.77,
+        35.67
+      ]
+    },
+    {
+      "id": "jor_amman",
+      "name": "Amman",
+      "en": "AMMAN",
+      "country": "Jordan",
+      "iso3": "JOR",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        35.9263,
+        31.9497
+      ]
+    },
+    {
+      "id": "kaz_astana",
+      "name": "Astana",
+      "en": "ASTANA",
+      "country": "Kazakhstan",
+      "iso3": "KAZ",
+      "region": "Europe & Central Asia",
+      "coords": [
+        71.4382,
+        51.1879
+      ]
+    },
+    {
+      "id": "ken_nairobi",
+      "name": "Nairobi",
+      "en": "NAIROBI",
+      "country": "Kenya",
+      "iso3": "KEN",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        36.8126,
+        -1.27975
+      ]
+    },
+    {
+      "id": "kir_tarawa",
+      "name": "Tarawa",
+      "en": "TARAWA",
+      "country": "Kiribati",
+      "iso3": "KIR",
+      "region": "East Asia & Pacific",
+      "coords": [
+        172.979,
+        1.32905
+      ]
+    },
+    {
+      "id": "prk_pyongyang",
+      "name": "Pyongyang",
+      "en": "PYONGYANG",
+      "country": "Korea, Dem. People's Rep.",
+      "iso3": "PRK",
+      "region": "East Asia & Pacific",
+      "coords": [
+        125.754,
+        39.0319
+      ]
+    },
+    {
+      "id": "kor_seoul",
+      "name": "Seoul",
+      "en": "SEOUL",
+      "country": "Korea, Rep.",
+      "iso3": "KOR",
+      "region": "East Asia & Pacific",
+      "coords": [
+        126.957,
+        37.5323
+      ]
+    },
+    {
+      "id": "xkx_pristina",
+      "name": "Pristina",
+      "en": "PRISTINA",
+      "country": "Kosovo",
+      "iso3": "XKX",
+      "region": "Europe & Central Asia",
+      "coords": [
+        20.926,
+        42.565
+      ]
+    },
+    {
+      "id": "kwt_kuwait_city",
+      "name": "Kuwait City",
+      "en": "KUWAIT CITY",
+      "country": "Kuwait",
+      "iso3": "KWT",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        47.9824,
+        29.3721
+      ]
+    },
+    {
+      "id": "kgz_bishkek",
+      "name": "Bishkek",
+      "en": "BISHKEK",
+      "country": "Kyrgyz Republic",
+      "iso3": "KGZ",
+      "region": "Europe & Central Asia",
+      "coords": [
+        74.6057,
+        42.8851
+      ]
+    },
+    {
+      "id": "lao_vientiane",
+      "name": "Vientiane",
+      "en": "VIENTIANE",
+      "country": "Lao PDR",
+      "iso3": "LAO",
+      "region": "East Asia & Pacific",
+      "coords": [
+        102.177,
+        18.5826
+      ]
+    },
+    {
+      "id": "lva_riga",
+      "name": "Riga",
+      "en": "RIGA",
+      "country": "Latvia",
+      "iso3": "LVA",
+      "region": "Europe & Central Asia",
+      "coords": [
+        24.1048,
+        56.9465
+      ]
+    },
+    {
+      "id": "lbn_beirut",
+      "name": "Beirut",
+      "en": "BEIRUT",
+      "country": "Lebanon",
+      "iso3": "LBN",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        35.5134,
+        33.8872
+      ]
+    },
+    {
+      "id": "lso_maseru",
+      "name": "Maseru",
+      "en": "MASERU",
+      "country": "Lesotho",
+      "iso3": "LSO",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        27.7167,
+        -29.5208
+      ]
+    },
+    {
+      "id": "lbr_monrovia",
+      "name": "Monrovia",
+      "en": "MONROVIA",
+      "country": "Liberia",
+      "iso3": "LBR",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -10.7957,
+        6.30039
+      ]
+    },
+    {
+      "id": "lby_tripoli",
+      "name": "Tripoli",
+      "en": "TRIPOLI",
+      "country": "Libya",
+      "iso3": "LBY",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        13.1072,
+        32.8578
+      ]
+    },
+    {
+      "id": "lie_vaduz",
+      "name": "Vaduz",
+      "en": "VADUZ",
+      "country": "Liechtenstein",
+      "iso3": "LIE",
+      "region": "Europe & Central Asia",
+      "coords": [
+        9.52148,
+        47.1411
+      ]
+    },
+    {
+      "id": "ltu_vilnius",
+      "name": "Vilnius",
+      "en": "VILNIUS",
+      "country": "Lithuania",
+      "iso3": "LTU",
+      "region": "Europe & Central Asia",
+      "coords": [
+        25.2799,
+        54.6896
+      ]
+    },
+    {
+      "id": "lux_luxembourg",
+      "name": "Luxembourg",
+      "en": "LUXEMBOURG",
+      "country": "Luxembourg",
+      "iso3": "LUX",
+      "region": "Europe & Central Asia",
+      "coords": [
+        6.1296,
+        49.61
+      ]
+    },
+    {
+      "id": "mdg_antananarivo",
+      "name": "Antananarivo",
+      "en": "ANTANANARIVO",
+      "country": "Madagascar",
+      "iso3": "MDG",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        45.7167,
+        -20.4667
+      ]
+    },
+    {
+      "id": "mwi_lilongwe",
+      "name": "Lilongwe",
+      "en": "LILONGWE",
+      "country": "Malawi",
+      "iso3": "MWI",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        33.7703,
+        -13.9899
+      ]
+    },
+    {
+      "id": "mys_kuala_lumpur",
+      "name": "Kuala Lumpur",
+      "en": "KUALA LUMPUR",
+      "country": "Malaysia",
+      "iso3": "MYS",
+      "region": "East Asia & Pacific",
+      "coords": [
+        101.684,
+        3.12433
+      ]
+    },
+    {
+      "id": "mdv_male",
+      "name": "Male",
+      "en": "MALE",
+      "country": "Maldives",
+      "iso3": "MDV",
+      "region": "South Asia",
+      "coords": [
+        73.5109,
+        4.1742
+      ]
+    },
+    {
+      "id": "mli_bamako",
+      "name": "Bamako",
+      "en": "BAMAKO",
+      "country": "Mali",
+      "iso3": "MLI",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -7.50034,
+        13.5667
+      ]
+    },
+    {
+      "id": "mlt_valletta",
+      "name": "Valletta",
+      "en": "VALLETTA",
+      "country": "Malta",
+      "iso3": "MLT",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        14.5189,
+        35.9042
+      ]
+    },
+    {
+      "id": "mhl_majuro",
+      "name": "Majuro",
+      "en": "MAJURO",
+      "country": "Marshall Islands",
+      "iso3": "MHL",
+      "region": "East Asia & Pacific",
+      "coords": [
+        171.135,
+        7.11046
+      ]
+    },
+    {
+      "id": "mrt_nouakchott",
+      "name": "Nouakchott",
+      "en": "NOUAKCHOTT",
+      "country": "Mauritania",
+      "iso3": "MRT",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -15.9824,
+        18.2367
+      ]
+    },
+    {
+      "id": "mus_port_louis",
+      "name": "Port Louis",
+      "en": "PORT LOUIS",
+      "country": "Mauritius",
+      "iso3": "MUS",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        57.4977,
+        -20.1605
+      ]
+    },
+    {
+      "id": "mex_mexico_city",
+      "name": "Mexico City",
+      "en": "MEXICO CITY",
+      "country": "Mexico",
+      "iso3": "MEX",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -99.1276,
+        19.427
+      ]
+    },
+    {
+      "id": "fsm_palikir",
+      "name": "Palikir",
+      "en": "PALIKIR",
+      "country": "Micronesia, Fed. Sts.",
+      "iso3": "FSM",
+      "region": "East Asia & Pacific",
+      "coords": [
+        158.185,
+        6.91771
+      ]
+    },
+    {
+      "id": "mda_chisinau",
+      "name": "Chisinau",
+      "en": "CHISINAU",
+      "country": "Moldova",
+      "iso3": "MDA",
+      "region": "Europe & Central Asia",
+      "coords": [
+        28.8497,
+        47.0167
+      ]
+    },
+    {
+      "id": "mco_monaco",
+      "name": "Monaco",
+      "en": "MONACO",
+      "country": "Monaco",
+      "iso3": "MCO",
+      "region": "Europe & Central Asia",
+      "coords": [
+        7.41891,
+        43.7325
+      ]
+    },
+    {
+      "id": "mng_ulaanbaatar",
+      "name": "Ulaanbaatar",
+      "en": "ULAANBAATAR",
+      "country": "Mongolia",
+      "iso3": "MNG",
+      "region": "East Asia & Pacific",
+      "coords": [
+        106.937,
+        47.9129
+      ]
+    },
+    {
+      "id": "mne_podgorica",
+      "name": "Podgorica",
+      "en": "PODGORICA",
+      "country": "Montenegro",
+      "iso3": "MNE",
+      "region": "Europe & Central Asia",
+      "coords": [
+        19.2595,
+        42.4602
+      ]
+    },
+    {
+      "id": "mar_rabat",
+      "name": "Rabat",
+      "en": "RABAT",
+      "country": "Morocco",
+      "iso3": "MAR",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        -6.8704,
+        33.9905
+      ]
+    },
+    {
+      "id": "moz_maputo",
+      "name": "Maputo",
+      "en": "MAPUTO",
+      "country": "Mozambique",
+      "iso3": "MOZ",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        32.5713,
+        -25.9664
+      ]
+    },
+    {
+      "id": "mmr_naypyidaw",
+      "name": "Naypyidaw",
+      "en": "NAYPYIDAW",
+      "country": "Myanmar",
+      "iso3": "MMR",
+      "region": "East Asia & Pacific",
+      "coords": [
+        95.9562,
+        21.914
+      ]
+    },
+    {
+      "id": "nam_windhoek",
+      "name": "Windhoek",
+      "en": "WINDHOEK",
+      "country": "Namibia",
+      "iso3": "NAM",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        17.0931,
+        -22.5648
+      ]
+    },
+    {
+      "id": "nru_yaren_district",
+      "name": "Yaren District",
+      "en": "YAREN DISTRICT",
+      "country": "Nauru",
+      "iso3": "NRU",
+      "region": "East Asia & Pacific",
+      "coords": [
+        166.920867,
+        -0.5477
+      ]
+    },
+    {
+      "id": "npl_kathmandu",
+      "name": "Kathmandu",
+      "en": "KATHMANDU",
+      "country": "Nepal",
+      "iso3": "NPL",
+      "region": "South Asia",
+      "coords": [
+        85.3157,
+        27.6939
+      ]
+    },
+    {
+      "id": "nld_amsterdam",
+      "name": "Amsterdam",
+      "en": "AMSTERDAM",
+      "country": "Netherlands",
+      "iso3": "NLD",
+      "region": "Europe & Central Asia",
+      "coords": [
+        4.89095,
+        52.3738
+      ]
+    },
+    {
+      "id": "ncl_noum_ea",
+      "name": "Noum'ea",
+      "en": "NOUM'EA",
+      "country": "New Caledonia",
+      "iso3": "NCL",
+      "region": "East Asia & Pacific",
+      "coords": [
+        166.464,
+        -22.2677
+      ]
+    },
+    {
+      "id": "nzl_wellington",
+      "name": "Wellington",
+      "en": "WELLINGTON",
+      "country": "New Zealand",
+      "iso3": "NZL",
+      "region": "East Asia & Pacific",
+      "coords": [
+        174.776,
+        -41.2865
+      ]
+    },
+    {
+      "id": "nic_managua",
+      "name": "Managua",
+      "en": "MANAGUA",
+      "country": "Nicaragua",
+      "iso3": "NIC",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -86.2734,
+        12.1475
+      ]
+    },
+    {
+      "id": "ner_niamey",
+      "name": "Niamey",
+      "en": "NIAMEY",
+      "country": "Niger",
+      "iso3": "NER",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        2.1073,
+        13.514
+      ]
+    },
+    {
+      "id": "nga_abuja",
+      "name": "Abuja",
+      "en": "ABUJA",
+      "country": "Nigeria",
+      "iso3": "NGA",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        7.48906,
+        9.05804
+      ]
+    },
+    {
+      "id": "mkd_skopje",
+      "name": "Skopje",
+      "en": "SKOPJE",
+      "country": "North Macedonia",
+      "iso3": "MKD",
+      "region": "Europe & Central Asia",
+      "coords": [
+        21.4361,
+        42.0024
+      ]
+    },
+    {
+      "id": "mnp_saipan",
+      "name": "Saipan",
+      "en": "SAIPAN",
+      "country": "Northern Mariana Islands",
+      "iso3": "MNP",
+      "region": "East Asia & Pacific",
+      "coords": [
+        145.765,
+        15.1935
+      ]
+    },
+    {
+      "id": "nor_oslo",
+      "name": "Oslo",
+      "en": "OSLO",
+      "country": "Norway",
+      "iso3": "NOR",
+      "region": "Europe & Central Asia",
+      "coords": [
+        10.7387,
+        59.9138
+      ]
+    },
+    {
+      "id": "omn_muscat",
+      "name": "Muscat",
+      "en": "MUSCAT",
+      "country": "Oman",
+      "iso3": "OMN",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        58.5874,
+        23.6105
+      ]
+    },
+    {
+      "id": "pak_islamabad",
+      "name": "Islamabad",
+      "en": "ISLAMABAD",
+      "country": "Pakistan",
+      "iso3": "PAK",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        72.8,
+        30.5167
+      ]
+    },
+    {
+      "id": "plw_koror",
+      "name": "Koror",
+      "en": "KOROR",
+      "country": "Palau",
+      "iso3": "PLW",
+      "region": "East Asia & Pacific",
+      "coords": [
+        134.479,
+        7.34194
+      ]
+    },
+    {
+      "id": "pan_panama_city",
+      "name": "Panama City",
+      "en": "PANAMA CITY",
+      "country": "Panama",
+      "iso3": "PAN",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -79.5188,
+        8.99427
+      ]
+    },
+    {
+      "id": "png_port_moresby",
+      "name": "Port Moresby",
+      "en": "PORT MORESBY",
+      "country": "Papua New Guinea",
+      "iso3": "PNG",
+      "region": "East Asia & Pacific",
+      "coords": [
+        147.194,
+        -9.47357
+      ]
+    },
+    {
+      "id": "pry_asuncion",
+      "name": "Asuncion",
+      "en": "ASUNCION",
+      "country": "Paraguay",
+      "iso3": "PRY",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -57.6362,
+        -25.3005
+      ]
+    },
+    {
+      "id": "per_lima",
+      "name": "Lima",
+      "en": "LIMA",
+      "country": "Peru",
+      "iso3": "PER",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -77.0465,
+        -12.0931
+      ]
+    },
+    {
+      "id": "phl_manila",
+      "name": "Manila",
+      "en": "MANILA",
+      "country": "Philippines",
+      "iso3": "PHL",
+      "region": "East Asia & Pacific",
+      "coords": [
+        121.035,
+        14.5515
+      ]
+    },
+    {
+      "id": "pol_warsaw",
+      "name": "Warsaw",
+      "en": "WARSAW",
+      "country": "Poland",
+      "iso3": "POL",
+      "region": "Europe & Central Asia",
+      "coords": [
+        21.02,
+        52.26
+      ]
+    },
+    {
+      "id": "prt_lisbon",
+      "name": "Lisbon",
+      "en": "LISBON",
+      "country": "Portugal",
+      "iso3": "PRT",
+      "region": "Europe & Central Asia",
+      "coords": [
+        -9.13552,
+        38.7072
+      ]
+    },
+    {
+      "id": "pri_san_juan",
+      "name": "San Juan",
+      "en": "SAN JUAN",
+      "country": "Puerto Rico (US)",
+      "iso3": "PRI",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -66,
+        18.23
+      ]
+    },
+    {
+      "id": "qat_doha",
+      "name": "Doha",
+      "en": "DOHA",
+      "country": "Qatar",
+      "iso3": "QAT",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        51.5082,
+        25.2948
+      ]
+    },
+    {
+      "id": "rou_bucharest",
+      "name": "Bucharest",
+      "en": "BUCHAREST",
+      "country": "Romania",
+      "iso3": "ROU",
+      "region": "Europe & Central Asia",
+      "coords": [
+        26.0979,
+        44.4479
+      ]
+    },
+    {
+      "id": "rus_moscow",
+      "name": "Moscow",
+      "en": "MOSCOW",
+      "country": "Russian Federation",
+      "iso3": "RUS",
+      "region": "Europe & Central Asia",
+      "coords": [
+        37.6176,
+        55.7558
+      ]
+    },
+    {
+      "id": "rwa_kigali",
+      "name": "Kigali",
+      "en": "KIGALI",
+      "country": "Rwanda",
+      "iso3": "RWA",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        30.0587,
+        -1.95325
+      ]
+    },
+    {
+      "id": "wsm_apia",
+      "name": "Apia",
+      "en": "APIA",
+      "country": "Samoa",
+      "iso3": "WSM",
+      "region": "East Asia & Pacific",
+      "coords": [
+        -171.752,
+        -13.8314
+      ]
+    },
+    {
+      "id": "smr_san_marino",
+      "name": "San Marino",
+      "en": "SAN MARINO",
+      "country": "San Marino",
+      "iso3": "SMR",
+      "region": "Europe & Central Asia",
+      "coords": [
+        12.4486,
+        43.9322
+      ]
+    },
+    {
+      "id": "stp_sao_tome",
+      "name": "Sao Tome",
+      "en": "SAO TOME",
+      "country": "Sao Tome and Principe",
+      "iso3": "STP",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        6.6071,
+        0.20618
+      ]
+    },
+    {
+      "id": "sau_riyadh",
+      "name": "Riyadh",
+      "en": "RIYADH",
+      "country": "Saudi Arabia",
+      "iso3": "SAU",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        46.6977,
+        24.6748
+      ]
+    },
+    {
+      "id": "sen_dakar",
+      "name": "Dakar",
+      "en": "DAKAR",
+      "country": "Senegal",
+      "iso3": "SEN",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -17.4734,
+        14.7247
+      ]
+    },
+    {
+      "id": "srb_belgrade",
+      "name": "Belgrade",
+      "en": "BELGRADE",
+      "country": "Serbia",
+      "iso3": "SRB",
+      "region": "Europe & Central Asia",
+      "coords": [
+        20.4656,
+        44.8024
+      ]
+    },
+    {
+      "id": "syc_victoria",
+      "name": "Victoria",
+      "en": "VICTORIA",
+      "country": "Seychelles",
+      "iso3": "SYC",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        55.4466,
+        -4.6309
+      ]
+    },
+    {
+      "id": "sle_freetown",
+      "name": "Freetown",
+      "en": "FREETOWN",
+      "country": "Sierra Leone",
+      "iso3": "SLE",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        -13.2134,
+        8.4821
+      ]
+    },
+    {
+      "id": "sgp_singapore",
+      "name": "Singapore",
+      "en": "SINGAPORE",
+      "country": "Singapore",
+      "iso3": "SGP",
+      "region": "East Asia & Pacific",
+      "coords": [
+        103.85,
+        1.28941
+      ]
+    },
+    {
+      "id": "svk_bratislava",
+      "name": "Bratislava",
+      "en": "BRATISLAVA",
+      "country": "Slovak Republic",
+      "iso3": "SVK",
+      "region": "Europe & Central Asia",
+      "coords": [
+        17.1073,
+        48.1484
+      ]
+    },
+    {
+      "id": "svn_ljubljana",
+      "name": "Ljubljana",
+      "en": "LJUBLJANA",
+      "country": "Slovenia",
+      "iso3": "SVN",
+      "region": "Europe & Central Asia",
+      "coords": [
+        14.5044,
+        46.0546
+      ]
+    },
+    {
+      "id": "slb_honiara",
+      "name": "Honiara",
+      "en": "HONIARA",
+      "country": "Solomon Islands",
+      "iso3": "SLB",
+      "region": "East Asia & Pacific",
+      "coords": [
+        159.949,
+        -9.42676
+      ]
+    },
+    {
+      "id": "som_mogadishu",
+      "name": "Mogadishu",
+      "en": "MOGADISHU",
+      "country": "Somalia, Fed. Rep.",
+      "iso3": "SOM",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        45.3254,
+        2.07515
+      ]
+    },
+    {
+      "id": "zaf_pretoria",
+      "name": "Pretoria",
+      "en": "PRETORIA",
+      "country": "South Africa",
+      "iso3": "ZAF",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        28.1871,
+        -25.746
+      ]
+    },
+    {
+      "id": "ssd_juba",
+      "name": "Juba",
+      "en": "JUBA",
+      "country": "South Sudan",
+      "iso3": "SSD",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        31.6,
+        4.85
+      ]
+    },
+    {
+      "id": "esp_madrid",
+      "name": "Madrid",
+      "en": "MADRID",
+      "country": "Spain",
+      "iso3": "ESP",
+      "region": "Europe & Central Asia",
+      "coords": [
+        -3.70327,
+        40.4167
+      ]
+    },
+    {
+      "id": "lka_colombo",
+      "name": "Colombo",
+      "en": "COLOMBO",
+      "country": "Sri Lanka",
+      "iso3": "LKA",
+      "region": "South Asia",
+      "coords": [
+        79.8528,
+        6.92148
+      ]
+    },
+    {
+      "id": "kna_basseterre",
+      "name": "Basseterre",
+      "en": "BASSETERRE",
+      "country": "St. Kitts and Nevis",
+      "iso3": "KNA",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -62.7309,
+        17.3
+      ]
+    },
+    {
+      "id": "lca_castries",
+      "name": "Castries",
+      "en": "CASTRIES",
+      "country": "St. Lucia",
+      "iso3": "LCA",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -60.9832,
+        14
+      ]
+    },
+    {
+      "id": "vct_kingstown",
+      "name": "Kingstown",
+      "en": "KINGSTOWN",
+      "country": "St. Vincent and the Grenadines",
+      "iso3": "VCT",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -61.2653,
+        13.2035
+      ]
+    },
+    {
+      "id": "sdn_khartoum",
+      "name": "Khartoum",
+      "en": "KHARTOUM",
+      "country": "Sudan",
+      "iso3": "SDN",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        32.5363,
+        15.5932
+      ]
+    },
+    {
+      "id": "sur_paramaribo",
+      "name": "Paramaribo",
+      "en": "PARAMARIBO",
+      "country": "Suriname",
+      "iso3": "SUR",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -55.1679,
+        5.8232
+      ]
+    },
+    {
+      "id": "swe_stockholm",
+      "name": "Stockholm",
+      "en": "STOCKHOLM",
+      "country": "Sweden",
+      "iso3": "SWE",
+      "region": "Europe & Central Asia",
+      "coords": [
+        18.0645,
+        59.3327
+      ]
+    },
+    {
+      "id": "che_bern",
+      "name": "Bern",
+      "en": "BERN",
+      "country": "Switzerland",
+      "iso3": "CHE",
+      "region": "Europe & Central Asia",
+      "coords": [
+        7.44821,
+        46.948
+      ]
+    },
+    {
+      "id": "syr_damascus",
+      "name": "Damascus",
+      "en": "DAMASCUS",
+      "country": "Syrian Arab Republic",
+      "iso3": "SYR",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        36.3119,
+        33.5146
+      ]
+    },
+    {
+      "id": "tjk_dushanbe",
+      "name": "Dushanbe",
+      "en": "DUSHANBE",
+      "country": "Tajikistan",
+      "iso3": "TJK",
+      "region": "Europe & Central Asia",
+      "coords": [
+        68.7864,
+        38.5878
+      ]
+    },
+    {
+      "id": "tza_dodoma",
+      "name": "Dodoma",
+      "en": "DODOMA",
+      "country": "Tanzania",
+      "iso3": "TZA",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        35.7382,
+        -6.17486
+      ]
+    },
+    {
+      "id": "tha_bangkok",
+      "name": "Bangkok",
+      "en": "BANGKOK",
+      "country": "Thailand",
+      "iso3": "THA",
+      "region": "East Asia & Pacific",
+      "coords": [
+        100.521,
+        13.7308
+      ]
+    },
+    {
+      "id": "tls_dili",
+      "name": "Dili",
+      "en": "DILI",
+      "country": "Timor-Leste",
+      "iso3": "TLS",
+      "region": "East Asia & Pacific",
+      "coords": [
+        125.567,
+        -8.56667
+      ]
+    },
+    {
+      "id": "tgo_lome",
+      "name": "Lome",
+      "en": "LOME",
+      "country": "Togo",
+      "iso3": "TGO",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        1.2255,
+        6.1228
+      ]
+    },
+    {
+      "id": "ton_nuku_alofa",
+      "name": "Nuku'alofa",
+      "en": "NUKU'ALOFA",
+      "country": "Tonga",
+      "iso3": "TON",
+      "region": "East Asia & Pacific",
+      "coords": [
+        -175.216,
+        -21.136
+      ]
+    },
+    {
+      "id": "tto_port_of_spain",
+      "name": "Port-of-Spain",
+      "en": "PORT-OF-SPAIN",
+      "country": "Trinidad and Tobago",
+      "iso3": "TTO",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -61.4789,
+        10.6596
+      ]
+    },
+    {
+      "id": "tun_tunis",
+      "name": "Tunis",
+      "en": "TUNIS",
+      "country": "Tunisia",
+      "iso3": "TUN",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        10.21,
+        36.7899
+      ]
+    },
+    {
+      "id": "tur_ankara",
+      "name": "Ankara",
+      "en": "ANKARA",
+      "country": "Turkiye",
+      "iso3": "TUR",
+      "region": "Europe & Central Asia",
+      "coords": [
+        32.3606,
+        39.7153
+      ]
+    },
+    {
+      "id": "tkm_ashgabat",
+      "name": "Ashgabat",
+      "en": "ASHGABAT",
+      "country": "Turkmenistan",
+      "iso3": "TKM",
+      "region": "Europe & Central Asia",
+      "coords": [
+        58.3794,
+        37.9509
+      ]
+    },
+    {
+      "id": "tca_grand_turk",
+      "name": "Grand Turk",
+      "en": "GRAND TURK",
+      "country": "Turks and Caicos Islands",
+      "iso3": "TCA",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -71.141389,
+        21.4602778
+      ]
+    },
+    {
+      "id": "tuv_funafuti",
+      "name": "Funafuti",
+      "en": "FUNAFUTI",
+      "country": "Tuvalu",
+      "iso3": "TUV",
+      "region": "East Asia & Pacific",
+      "coords": [
+        179.089567,
+        -8.6314877
+      ]
+    },
+    {
+      "id": "uga_kampala",
+      "name": "Kampala",
+      "en": "KAMPALA",
+      "country": "Uganda",
+      "iso3": "UGA",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        32.5729,
+        0.314269
+      ]
+    },
+    {
+      "id": "ukr_kiev",
+      "name": "Kiev",
+      "en": "KIEV",
+      "country": "Ukraine",
+      "iso3": "UKR",
+      "region": "Europe & Central Asia",
+      "coords": [
+        30.5038,
+        50.4536
+      ]
+    },
+    {
+      "id": "are_abu_dhabi",
+      "name": "Abu Dhabi",
+      "en": "ABU DHABI",
+      "country": "United Arab Emirates",
+      "iso3": "ARE",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        54.3705,
+        24.4764
+      ]
+    },
+    {
+      "id": "gbr_london",
+      "name": "London",
+      "en": "LONDON",
+      "country": "United Kingdom",
+      "iso3": "GBR",
+      "region": "Europe & Central Asia",
+      "coords": [
+        -0.126236,
+        51.5002
+      ]
+    },
+    {
+      "id": "usa_washington_d_c",
+      "name": "Washington D.C.",
+      "en": "WASHINGTON D.C.",
+      "country": "United States",
+      "iso3": "USA",
+      "region": "North America",
+      "coords": [
+        -77.032,
+        38.8895
+      ]
+    },
+    {
+      "id": "ury_montevideo",
+      "name": "Montevideo",
+      "en": "MONTEVIDEO",
+      "country": "Uruguay",
+      "iso3": "URY",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -56.0675,
+        -34.8941
+      ]
+    },
+    {
+      "id": "uzb_tashkent",
+      "name": "Tashkent",
+      "en": "TASHKENT",
+      "country": "Uzbekistan",
+      "iso3": "UZB",
+      "region": "Europe & Central Asia",
+      "coords": [
+        69.269,
+        41.3052
+      ]
+    },
+    {
+      "id": "vut_port_vila",
+      "name": "Port-Vila",
+      "en": "PORT-VILA",
+      "country": "Vanuatu",
+      "iso3": "VUT",
+      "region": "East Asia & Pacific",
+      "coords": [
+        168.321,
+        -17.7404
+      ]
+    },
+    {
+      "id": "ven_caracas",
+      "name": "Caracas",
+      "en": "CARACAS",
+      "country": "Venezuela, RB",
+      "iso3": "VEN",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -69.8371,
+        9.08165
+      ]
+    },
+    {
+      "id": "vnm_hanoi",
+      "name": "Hanoi",
+      "en": "HANOI",
+      "country": "Viet Nam",
+      "iso3": "VNM",
+      "region": "East Asia & Pacific",
+      "coords": [
+        105.825,
+        21.0069
+      ]
+    },
+    {
+      "id": "vir_charlotte_amalie",
+      "name": "Charlotte Amalie",
+      "en": "CHARLOTTE AMALIE",
+      "country": "Virgin Islands (U.S.)",
+      "iso3": "VIR",
+      "region": "Latin America & Caribbean",
+      "coords": [
+        -64.8963,
+        18.3358
+      ]
+    },
+    {
+      "id": "yem_sana_a",
+      "name": "Sana'a",
+      "en": "SANA'A",
+      "country": "Yemen, Rep.",
+      "iso3": "YEM",
+      "region": "Middle East, North Africa, Afghanistan & Pakistan",
+      "coords": [
+        44.2075,
+        15.352
+      ]
+    },
+    {
+      "id": "zmb_lusaka",
+      "name": "Lusaka",
+      "en": "LUSAKA",
+      "country": "Zambia",
+      "iso3": "ZMB",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        28.2937,
+        -15.3982
+      ]
+    },
+    {
+      "id": "zwe_harare",
+      "name": "Harare",
+      "en": "HARARE",
+      "country": "Zimbabwe",
+      "iso3": "ZWE",
+      "region": "Sub-Saharan Africa",
+      "coords": [
+        31.0672,
+        -17.8312
+      ]
+    }
+  ]
 }

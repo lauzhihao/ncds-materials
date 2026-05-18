@@ -47,24 +47,25 @@ const presets = {
   },
 };
 
-const cities = [
-  { name: '北京', en: 'BEIJING', coords: [116.4074, 39.9042], off: [0, -24] },
-  { name: '东京', en: 'TOKYO', coords: [139.6503, 35.6762], off: [0, 26] },
-  { name: '香港', en: 'HONG KONG', coords: [114.1694, 22.3193], off: [-32, 26] },
-  { name: '新加坡', en: 'SINGAPORE', coords: [103.8198, 1.3521], off: [0, 26] },
-  { name: '迪拜', en: 'DUBAI', coords: [55.2708, 25.2048], off: [0, 26] },
-  { name: '法兰克福', en: 'FRANKFURT', coords: [8.6821, 50.1109], off: [0, -24] },
-  { name: '纽约', en: 'NEW YORK', coords: [-74.006, 40.7128], off: [0, -24] },
-  { name: '旧金山', en: 'SAN FRANCISCO', coords: [-122.4194, 37.7749], off: [0, -24] },
-  { name: '布宜诺斯艾利斯', en: 'BUENOS AIRES', coords: [-58.3816, -34.6037], off: [0, 26] },
-  { name: '开普敦', en: 'CAPE TOWN', coords: [18.4241, -33.9249], off: [0, 26] },
-  { name: '悉尼', en: 'SYDNEY', coords: [151.2093, -33.8688], off: [0, 26] },
+const fallbackCapitalCities = [
+  { id: 'chn_beijing', name: 'Beijing', en: 'BEIJING', country: 'China', iso3: 'CHN', coords: [116.286, 40.0495] },
+  { id: 'jpn_tokyo', name: 'Tokyo', en: 'TOKYO', country: 'Japan', iso3: 'JPN', coords: [139.77, 35.67] },
+  { id: 'kor_seoul', name: 'Seoul', en: 'SEOUL', country: 'Korea, Rep.', iso3: 'KOR', coords: [126.957, 37.5323] },
+  { id: 'sgp_singapore', name: 'Singapore', en: 'SINGAPORE', country: 'Singapore', iso3: 'SGP', coords: [103.85, 1.28941] },
+  { id: 'are_abu_dhabi', name: 'Abu Dhabi', en: 'ABU DHABI', country: 'United Arab Emirates', iso3: 'ARE', coords: [54.3705, 24.4764] },
+  { id: 'deu_berlin', name: 'Berlin', en: 'BERLIN', country: 'Germany', iso3: 'DEU', coords: [13.4115, 52.5235] },
+  { id: 'gbr_london', name: 'London', en: 'LONDON', country: 'United Kingdom', iso3: 'GBR', coords: [-0.126236, 51.5002] },
+  { id: 'usa_washington_d_c', name: 'Washington D.C.', en: 'WASHINGTON D.C.', country: 'United States', iso3: 'USA', coords: [-77.032, 38.8895] },
+  { id: 'bra_brasilia', name: 'Brasilia', en: 'BRASILIA', country: 'Brazil', iso3: 'BRA', coords: [-47.9292, -15.7801] },
+  { id: 'arg_buenos_aires', name: 'Buenos Aires', en: 'BUENOS AIRES', country: 'Argentina', iso3: 'ARG', coords: [-58.4173, -34.6118] },
+  { id: 'zaf_pretoria', name: 'Pretoria', en: 'PRETORIA', country: 'South Africa', iso3: 'ZAF', coords: [28.1871, -25.746] },
+  { id: 'aus_canberra', name: 'Canberra', en: 'CANBERRA', country: 'Australia', iso3: 'AUS', coords: [149.129, -35.282] },
 ];
 
-const sequence = [
-  [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6],
-  [6, 7], [7, 8], [8, 9], [9, 10], [10, 1],
-];
+let cityCatalog = fallbackCapitalCities.map(normalizeCity);
+let defaultRouteIds = cityCatalog.map(city => city.id);
+let routeCityIds = [...defaultRouteIds];
+let cities = routeCityIds.map(id => cityCatalog.find(city => city.id === id)).filter(Boolean);
 
 const state = {
   mode: 'map',
@@ -83,6 +84,11 @@ const themeStatus = document.querySelector('#themeStatus');
 const modeBadge = document.querySelector('#modeBadge');
 const modeMeta = document.querySelector('#modeMeta');
 const presetButtons = document.querySelectorAll('.preset');
+const routeCityList = document.querySelector('#routeCityList');
+const routeStatus = document.querySelector('#routeStatus');
+const addRouteCityButton = document.querySelector('#addRouteCity');
+const removeRouteCityButton = document.querySelector('#removeRouteCity');
+const resetRouteCitiesButton = document.querySelector('#resetRouteCities');
 const projectedLayer = d3.select('#projectedLayer');
 const graticuleLayer = d3.select('#graticuleLayer');
 const countryLayer = d3.select('#countryLayer');
@@ -121,6 +127,139 @@ d3.select('#stars')
   .attr('cy', d => d.cy)
   .attr('r', d => d.r)
   .attr('opacity', d => d.opacity);
+
+function labelOffset(coords) {
+  return [0, coords[1] >= 18 ? -24 : 26];
+}
+
+function normalizeCity(city) {
+  const coords = Array.isArray(city.coords)
+    ? city.coords.map(Number)
+    : [Number(city.longitude), Number(city.latitude)];
+  return {
+    id: String(city.id),
+    name: String(city.name || city.capitalCity || ''),
+    en: String(city.en || city.name || city.capitalCity || '').toUpperCase(),
+    country: String(city.country || ''),
+    iso3: String(city.iso3 || ''),
+    region: String(city.region || ''),
+    coords,
+    off: city.off || labelOffset(coords),
+  };
+}
+
+function cityOptionLabel(city) {
+  return `${city.name} · ${city.country}`;
+}
+
+function refreshRouteCities() {
+  const byId = new Map(cityCatalog.map(city => [city.id, city]));
+  routeCityIds = routeCityIds.filter((id, index, ids) => byId.has(id) && ids.indexOf(id) === index);
+  if (routeCityIds.length < 2) {
+    routeCityIds = cityCatalog.slice(0, 2).map(city => city.id);
+  }
+  cities = routeCityIds.map(id => byId.get(id)).filter(Boolean);
+}
+
+function routePairs() {
+  return cities.slice(1).map((city, index) => ({
+    from: index,
+    to: index + 1,
+  }));
+}
+
+function updateRouteStatus() {
+  const routeCount = Math.max(cities.length - 1, 0);
+  routeStatus.textContent = `${cityCatalog.length} 个首都 · ${cities.length} 个城市 · ${routeCount} 条连线`;
+}
+
+function renderRouteControls() {
+  const selectedIds = new Set(routeCityIds);
+  routeCityList.replaceChildren();
+
+  routeCityIds.forEach((cityId, index) => {
+    const row = document.createElement('label');
+    row.className = 'route-city-row';
+
+    const number = document.createElement('span');
+    number.className = 'route-city-index';
+    number.textContent = String(index + 1).padStart(2, '0');
+
+    const select = document.createElement('select');
+    select.className = 'route-city-select';
+    select.dataset.routeIndex = String(index);
+    select.setAttribute('aria-label', `第 ${index + 1} 个连线城市`);
+
+    cityCatalog.forEach(city => {
+      const option = document.createElement('option');
+      option.value = city.id;
+      option.textContent = cityOptionLabel(city);
+      option.disabled = selectedIds.has(city.id) && city.id !== cityId;
+      option.selected = city.id === cityId;
+      select.appendChild(option);
+    });
+
+    row.append(number, select);
+    routeCityList.appendChild(row);
+  });
+
+  removeRouteCityButton.disabled = routeCityIds.length <= 2;
+  addRouteCityButton.disabled = routeCityIds.length >= cityCatalog.length;
+  updateRouteStatus();
+}
+
+function restartCurrentMode() {
+  if (!cities.length) return;
+  setMode(state.mode);
+}
+
+function setRouteCity(index, cityId) {
+  if (routeCityIds.includes(cityId) && routeCityIds[index] !== cityId) {
+    renderRouteControls();
+    return;
+  }
+  routeCityIds[index] = cityId;
+  refreshRouteCities();
+  renderRouteControls();
+  restartCurrentMode();
+}
+
+async function loadMaterialConfig() {
+  try {
+    const response = await fetch('003_world_map_globe.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error(`config ${response.status}`);
+    const config = await response.json();
+    const loadedCities = Array.isArray(config.capitalCities)
+      ? config.capitalCities.map(normalizeCity).filter(city => (
+        city.id && city.name && city.country && Number.isFinite(city.coords[0]) && Number.isFinite(city.coords[1])
+      ))
+      : [];
+    const uniqueNames = new Set();
+    const uniqueCities = loadedCities.filter(city => {
+      const key = city.name.toLowerCase();
+      if (uniqueNames.has(key)) return false;
+      uniqueNames.add(key);
+      return true;
+    });
+    if (uniqueCities.length >= 2) {
+      cityCatalog = uniqueCities;
+    }
+
+    const catalogIds = new Set(cityCatalog.map(city => city.id));
+    const loadedRoute = Array.isArray(config.defaultRoute)
+      ? config.defaultRoute.filter((id, index, ids) => catalogIds.has(id) && ids.indexOf(id) === index)
+      : [];
+    defaultRouteIds = loadedRoute.length >= 2 ? loadedRoute : cityCatalog.slice(0, Math.min(12, cityCatalog.length)).map(city => city.id);
+    routeCityIds = [...defaultRouteIds];
+  } catch (error) {
+    console.warn('material config load failed', error);
+    defaultRouteIds = cityCatalog.map(city => city.id);
+    routeCityIds = [...defaultRouteIds];
+  }
+
+  refreshRouteCities();
+  renderRouteControls();
+}
 
 function setThemeControls(theme) {
   Object.entries(theme).forEach(([key, value]) => {
@@ -364,7 +503,7 @@ function renderMap(runId) {
   cityGroups.select('.city-label-en')
     .attr('y', d => d.off[1] + (d.off[1] > 0 ? 13 : -15));
 
-  const arcData = sequence.map(([from, to]) => ({
+  const arcData = routePairs().map(({ from, to }) => ({
     from,
     to,
     d: mapArcPath(cities[from].coords, cities[to].coords),
@@ -411,13 +550,16 @@ function renderMap(runId) {
   });
 
   const totalDraw = (arcData.length - 1) * step + drawDuration;
-  trackedTimeout(() => {
-    if (isActive(runId)) runMapLoop(highlightRoutes, arcData, runId, 0);
-  }, totalDraw + 500);
+  if (arcData.length > 0) {
+    trackedTimeout(() => {
+      if (isActive(runId)) runMapLoop(highlightRoutes, arcData, runId, 0);
+    }, totalDraw + 500);
+  }
 }
 
 function runMapLoop(routes, arcData, runId, index) {
   if (!isActive(runId) || state.mode !== 'map') return;
+  if (!arcData.length) return;
   if (index === 0) flashCity(arcData[0].from);
 
   const node = routes.nodes()[index];
@@ -636,9 +778,10 @@ async function renderGlobe(runId) {
   if (!(await sleep(700, runId))) return;
 
   while (isActive(runId) && state.mode === 'globe') {
-    for (let i = 0; i < sequence.length; i++) {
+    const pairs = routePairs();
+    for (let i = 0; i < pairs.length; i++) {
       if (!isActive(runId)) return;
-      const [from, to] = sequence[i];
+      const { from, to } = pairs[i];
       const arc = { from, to, progress: 0 };
       state.drawnGlobeArcs.push(arc);
       const active = await animateGlobeArc(arc, 1800, runId);
@@ -697,15 +840,50 @@ document.querySelector('#resetTheme').addEventListener('click', () => {
   applyTheme(defaultTheme, '已恢复默认配色。');
 });
 
-d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
-  .then(world => {
-    state.countries = topojson.feature(world, world.objects.countries);
-    setMode('map');
-  })
-  .catch(error => {
-    console.warn('map load failed', error);
-    setMode('map');
-  });
+routeCityList.addEventListener('change', event => {
+  const select = event.target.closest('.route-city-select');
+  if (!select) return;
+  setRouteCity(Number(select.dataset.routeIndex), select.value);
+});
 
-setThemeControls(defaultTheme);
-applyTheme(defaultTheme, '当前使用默认配色。');
+addRouteCityButton.addEventListener('click', () => {
+  const selectedIds = new Set(routeCityIds);
+  const nextCity = cityCatalog.find(city => !selectedIds.has(city.id));
+  if (!nextCity) return;
+  routeCityIds.push(nextCity.id);
+  refreshRouteCities();
+  renderRouteControls();
+  restartCurrentMode();
+});
+
+removeRouteCityButton.addEventListener('click', () => {
+  if (routeCityIds.length <= 2) return;
+  routeCityIds.pop();
+  refreshRouteCities();
+  renderRouteControls();
+  restartCurrentMode();
+});
+
+resetRouteCitiesButton.addEventListener('click', () => {
+  routeCityIds = [...defaultRouteIds];
+  refreshRouteCities();
+  renderRouteControls();
+  restartCurrentMode();
+});
+
+async function init() {
+  setThemeControls(defaultTheme);
+  applyTheme(defaultTheme, '当前使用默认配色。');
+  await loadMaterialConfig();
+
+  try {
+    const world = await d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
+    state.countries = topojson.feature(world, world.objects.countries);
+  } catch (error) {
+    console.warn('map load failed', error);
+  }
+
+  setMode('map');
+}
+
+init();
