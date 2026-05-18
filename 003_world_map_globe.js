@@ -82,6 +82,7 @@ const themeForm = document.querySelector('#themeForm');
 const themeStatus = document.querySelector('#themeStatus');
 const modeBadge = document.querySelector('#modeBadge');
 const modeMeta = document.querySelector('#modeMeta');
+const presetButtons = document.querySelectorAll('.preset');
 const projectedLayer = d3.select('#projectedLayer');
 const graticuleLayer = d3.select('#graticuleLayer');
 const countryLayer = d3.select('#countryLayer');
@@ -241,6 +242,14 @@ function updateModeLabels(mode) {
   modeMeta.textContent = isMap ? '世界地图 · 平面连线视图' : '地球模型 · 旋转连线视图';
   document.querySelectorAll('.mode-btn').forEach(button => {
     const active = button.dataset.mode === mode;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+}
+
+function setActivePreset(presetName) {
+  presetButtons.forEach(button => {
+    const active = button.dataset.preset === presetName;
     button.classList.toggle('active', active);
     button.setAttribute('aria-pressed', String(active));
   });
@@ -665,12 +674,17 @@ document.querySelectorAll('.mode-btn').forEach(button => {
   button.addEventListener('click', () => setMode(button.dataset.mode));
 });
 
-document.querySelectorAll('.preset').forEach(button => {
+presetButtons.forEach(button => {
   button.addEventListener('click', () => {
     const preset = presets[button.dataset.preset] || defaultTheme;
     setThemeControls(preset);
+    setActivePreset(button.dataset.preset);
     themeStatus.textContent = '预设已载入，点击确定生效。';
   });
+});
+
+themeForm.addEventListener('input', () => {
+  setActivePreset(null);
 });
 
 document.querySelector('#applyTheme').addEventListener('click', () => {
@@ -679,6 +693,7 @@ document.querySelector('#applyTheme').addEventListener('click', () => {
 
 document.querySelector('#resetTheme').addEventListener('click', () => {
   setThemeControls(defaultTheme);
+  setActivePreset('classic');
   applyTheme(defaultTheme, '已恢复默认配色。');
 });
 
