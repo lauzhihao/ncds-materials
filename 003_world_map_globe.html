@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>World Map Globe Background Console</title>
+  <link rel="stylesheet" href="003_world_map_globe.css">
+</head>
+<body data-mode="map">
+  <main class="app">
+    <section class="preview" aria-label="素材预览区">
+      <div class="preview-bar">
+        <div>
+          <h1>世界地图与地球背景</h1>
+          <p class="meta" id="modeMeta">世界地图 · 平面连线视图</p>
+        </div>
+        <div class="status" id="modeBadge">世界地图</div>
+      </div>
+      <div class="stage-wrap">
+        <div class="stage">
+          <svg id="worldMapGlobeSvg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" role="img" aria-label="世界地图与地球城市连线动态背景">
+            <defs>
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="2.4" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="5.6" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <radialGradient id="sceneGlow" cx="50%" cy="50%" r="72%">
+                <stop class="stop-bg-inner" offset="0%" stop-opacity="1"/>
+                <stop class="stop-bg-outer" offset="100%" stop-opacity="1"/>
+              </radialGradient>
+              <radialGradient id="oceanGrad" cx="38%" cy="36%" r="76%">
+                <stop class="stop-ocean-light" offset="0%"/>
+                <stop class="stop-ocean-main" offset="58%"/>
+                <stop class="stop-ocean-dark" offset="100%"/>
+              </radialGradient>
+              <radialGradient id="atmosphereGrad" cx="50%" cy="50%" r="50%">
+                <stop class="stop-atm" offset="88%" stop-opacity="0"/>
+                <stop class="stop-atm" offset="94%" stop-opacity="0.36"/>
+                <stop class="stop-atm" offset="100%" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <rect width="1920" height="1080" fill="url(#sceneGlow)"/>
+            <g id="stars"></g>
+            <g id="globeShell">
+              <ellipse cx="960" cy="540" rx="544" ry="486" fill="url(#atmosphereGrad)"/>
+              <ellipse cx="960" cy="540" rx="515" ry="460" fill="url(#oceanGrad)"/>
+            </g>
+            <g id="projectedLayer">
+              <g id="graticuleLayer"></g>
+              <g id="countryLayer"></g>
+            </g>
+            <g id="routeBaseLayer"></g>
+            <g id="routeActiveLayer"></g>
+            <g id="arcHeadLayer">
+              <circle class="arc-head" r="0" cx="0" cy="0"/>
+            </g>
+            <g id="cityLayer"></g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <aside class="console" aria-label="控制台">
+      <div class="console-head">
+        <h2>控制台</h2>
+        <p class="meta">切换预览视图并提交配色方案。</p>
+      </div>
+
+      <section class="section">
+        <div class="section-title">
+          <h3>网页切换</h3>
+        </div>
+        <div class="mode-switch" aria-label="网页切换">
+          <button class="mode-btn active" type="button" data-mode="map" aria-pressed="true">世界地图</button>
+          <button class="mode-btn" type="button" data-mode="globe" aria-pressed="false">地球模型</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h3>配色</h3>
+        </div>
+        <div class="preset-row" aria-label="配色预设">
+          <button class="preset" type="button" data-preset="classic" aria-label="经典蓝">
+            <span style="--p1:#050a1a;--p2:#0c1c34;--p3:#4dd4ff"></span>
+          </button>
+          <button class="preset" type="button" data-preset="aurora" aria-label="极光绿">
+            <span style="--p1:#07130f;--p2:#153d34;--p3:#4ade80"></span>
+          </button>
+          <button class="preset" type="button" data-preset="ember" aria-label="熔岩橙">
+            <span style="--p1:#160806;--p2:#402015;--p3:#fb923c"></span>
+          </button>
+        </div>
+        <form class="color-grid" id="themeForm">
+          <label class="color-field">
+            <span>背景</span>
+            <input type="color" name="sceneBg" value="#050a1a">
+          </label>
+          <label class="color-field">
+            <span>海洋</span>
+            <input type="color" name="ocean" value="#0d2148">
+          </label>
+          <label class="color-field">
+            <span>陆地</span>
+            <input type="color" name="country" value="#0c1c34">
+          </label>
+          <label class="color-field">
+            <span>边界</span>
+            <input type="color" name="countryStroke" value="#1d3e66">
+          </label>
+          <label class="color-field">
+            <span>经纬线</span>
+            <input type="color" name="gridLine" value="#163766">
+          </label>
+          <label class="color-field">
+            <span>连线</span>
+            <input type="color" name="route" value="#4dd4ff">
+          </label>
+          <label class="color-field">
+            <span>高亮</span>
+            <input type="color" name="routeActive" value="#eaf8ff">
+          </label>
+          <label class="color-field">
+            <span>城市</span>
+            <input type="color" name="city" value="#4dd4ff">
+          </label>
+          <label class="color-field">
+            <span>中文标签</span>
+            <input type="color" name="label" value="#d8ecff">
+          </label>
+          <label class="color-field">
+            <span>英文标签</span>
+            <input type="color" name="labelMuted" value="#7da3cf">
+          </label>
+        </form>
+        <div class="actions">
+          <button class="primary" id="applyTheme" type="button">确定生效</button>
+          <button class="secondary" id="resetTheme" type="button">重置</button>
+        </div>
+        <p class="theme-note" id="themeStatus">当前使用默认配色。</p>
+      </section>
+    </aside>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="003_world_map_globe.js"></script>
+</body>
+</html>
