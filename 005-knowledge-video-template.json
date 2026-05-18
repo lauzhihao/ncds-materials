@@ -16,11 +16,13 @@
     "数字人角落机位与放大机位预留",
     "干净录制模式和快捷键",
     "服务端 Headless Chrome 逐帧截图导出",
-    "ffmpeg 编码 1920x1080 / 60FPS MP4 视频"
+    "ffmpeg 编码 1920x1080 / 60FPS MP4 视频",
+    "支持多 Chrome worker 并行截图与 NVIDIA NVENC 快速编码"
   ],
   "export": {
     "script": "005-knowledge-video-template-assets/export-video.mjs",
     "defaultCommand": "node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/005-knowledge-video-template-1080p60.mp4",
+    "fastNvidiaCommand": "node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --jpeg-quality 94 --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/005-knowledge-video-template-1080p60-fast.mp4",
     "output": "1920x1080 / 60FPS / MP4",
     "requires": [
       "Node.js",

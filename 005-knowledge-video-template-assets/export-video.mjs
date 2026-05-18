@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { createReadStream, existsSync, readFileSync } from "node:fs";
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { createServer } from "node:http";
 import { dirname, extname, join, resolve } from "node:path";
 import { spawn } from "node:child_process";
@@ -29,12 +29,18 @@ function parseArgs(argv) {
     size: "1920x1080",
     start: 0,
     end: null,
+    workers: 1,
     output: "exports/005-knowledge-video-template-1080p60.mp4",
     framesDir: null,
+    frameFormat: "png",
+    jpegQuality: 94,
     keepFrames: false,
+    encoder: "libx264",
     crf: 18,
+    cq: 19,
     preset: "medium",
-    chrome: process.env.CHROME_PATH || null
+    chrome: process.env.CHROME_PATH || null,
+    chromeGpu: false
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -48,6 +54,11 @@ function parseArgs(argv) {
 
     if (arg === "--keep-frames") {
       options.keepFrames = true;
+      continue;
+    }
+
+    if (arg === "--chrome-gpu") {
+      options.chromeGpu = true;
       continue;
     }
 
@@ -73,14 +84,29 @@ function parseArgs(argv) {
       case "--end":
         options.end = Number(next);
         break;
+      case "--workers":
+        options.workers = Number(next);
+        break;
       case "--output":
         options.output = next;
         break;
       case "--frames-dir":
         options.framesDir = next;
         break;
+      case "--frame-format":
+        options.frameFormat = next;
+        break;
+      case "--jpeg-quality":
+        options.jpegQuality = Number(next);
+        break;
+      case "--encoder":
+        options.encoder = next;
+        break;
       case "--crf":
         options.crf = Number(next);
+        break;
+      case "--cq":
+        options.cq = Number(next);
         break;
       case "--preset":
         options.preset = next;
@@ -105,15 +131,24 @@ Options:
   --size <WxH>            Browser viewport and video size. Default: 1920x1080
   --start <seconds>       Start time in seconds. Default: 0
   --end <seconds>         End time in seconds. Default: story meta duration
+  --workers <number>      Parallel Headless Chrome capture workers. Default: 1
   --output <path>         MP4 output path. Default: exports/005-knowledge-video-template-1080p60.mp4
-  --frames-dir <path>     Temporary PNG frame directory.
-  --keep-frames           Keep captured PNG frames after ffmpeg finishes.
+  --frames-dir <path>     Temporary frame directory.
+  --frame-format <format> Intermediate frame format: png or jpeg. Default: png
+  --jpeg-quality <1-100>  JPEG frame quality when --frame-format jpeg is used. Default: 94
+  --keep-frames           Keep captured intermediate frames after ffmpeg finishes.
+  --encoder <name>        ffmpeg video encoder. Examples: libx264, h264_nvenc. Default: libx264
   --crf <number>          libx264 CRF quality. Lower is better. Default: 18
+  --cq <number>           NVENC constant quality. Lower is better. Default: 19
   --preset <name>         ffmpeg x264 preset. Default: medium
   --chrome <path>         Chrome executable. Default: CHROME_PATH or common system paths
+  --chrome-gpu            Try GPU compositing/rasterization in Headless Chrome
 
 Example:
   node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/005-knowledge-video-template-1080p60.mp4
+
+Fast NVIDIA path:
+  node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/005-knowledge-video-template-1080p60.mp4
 `);
 }
 
@@ -127,6 +162,17 @@ function parseSize(value) {
     width: Number(match[1]),
     height: Number(match[2])
   };
+}
+
+function normalizeFrameFormat(value) {
+  const format = String(value || "").toLowerCase();
+  if (format === "jpg") {
+    return "jpeg";
+  }
+  if (format !== "png" && format !== "jpeg") {
+    throw new Error(`Invalid --frame-format value "${value}". Expected png or jpeg.`);
+  }
+  return format;
 }
 
 function readStoryDuration() {
@@ -223,13 +269,11 @@ function waitForDevToolsUrl(process) {
   });
 }
 
-async function launchChrome(chromePath, width, height) {
-  const userDataDir = join(tmpdir(), `005-video-export-${process.pid}-${Date.now()}`);
-  await mkdir(userDataDir, { recursive: true });
+async function launchChrome(chromePath, width, height, useGpu) {
+  const userDataDir = await mkdtemp(join(tmpdir(), `005-video-export-${process.pid}-`));
 
-  const chrome = spawn(chromePath, [
+  const chromeArgs = [
     "--headless=new",
-    "--disable-gpu",
     "--disable-dev-shm-usage",
     "--hide-scrollbars",
     "--mute-audio",
@@ -240,7 +284,15 @@ async function launchChrome(chromePath, width, height) {
     `--user-data-dir=${userDataDir}`,
     `--window-size=${width},${height}`,
     "about:blank"
-  ], {
+  ];
+
+  if (useGpu) {
+    chromeArgs.splice(1, 0, "--enable-gpu", "--enable-gpu-rasterization", "--enable-zero-copy");
+  } else {
+    chromeArgs.splice(1, 0, "--disable-gpu");
+  }
+
+  const chrome = spawn(chromePath, chromeArgs, {
     stdio: ["ignore", "pipe", "pipe"]
   });
 
@@ -384,20 +436,80 @@ async function createPage(client, url, width, height) {
   throw new Error(`Page did not finish booting. Body text: ${body.result?.value || ""}`);
 }
 
+function splitFrameRanges(totalFrames, workers) {
+  const workerCount = Math.max(1, Math.min(workers, totalFrames));
+  const baseCount = Math.floor(totalFrames / workerCount);
+  const remainder = totalFrames % workerCount;
+  const ranges = [];
+  let frameOffset = 0;
+
+  for (let index = 0; index < workerCount; index += 1) {
+    const frameCount = baseCount + (index < remainder ? 1 : 0);
+    ranges.push({
+      index,
+      frameOffset,
+      frameCount
+    });
+    frameOffset += frameCount;
+  }
+
+  return ranges;
+}
+
+async function runCaptureWorker(options) {
+  const {
+    chromePath,
+    width,
+    height,
+    useGpu,
+    url,
+    range
+  } = options;
+
+  let chrome = null;
+  let client = null;
+
+  try {
+    chrome = await launchChrome(chromePath, width, height, useGpu);
+    client = new CdpClient(chrome.wsUrl);
+    await client.connect();
+    const { sessionId } = await createPage(client, url, width, height);
+
+    await captureFrames(client, sessionId, {
+      ...options,
+      frameOffset: range.frameOffset,
+      totalFrames: range.frameCount
+    });
+  } finally {
+    if (client) {
+      client.close();
+    }
+    if (chrome) {
+      await stopChrome(chrome);
+    }
+  }
+}
+
 async function captureFrames(client, sessionId, options) {
   const {
     width,
     height,
     fps,
     start,
+    frameOffset,
     totalFrames,
-    framesDir
+    framesDir,
+    frameFormat,
+    jpegQuality,
+    onFrame
   } = options;
 
   await mkdir(framesDir, { recursive: true });
+  const extension = frameFormat === "jpeg" ? "jpg" : "png";
 
   for (let frame = 0; frame < totalFrames; frame += 1) {
-    const time = start + frame / fps;
+    const globalFrame = frameOffset + frame;
+    const time = start + globalFrame / fps;
     await evaluate(client, sessionId, `
       (() => {
         const api = window.KnowledgeVideoTemplate;
@@ -411,7 +523,8 @@ async function captureFrames(client, sessionId, options) {
     await evaluate(client, sessionId, "new Promise((resolve) => requestAnimationFrame(() => resolve(true)))", true);
 
     const screenshot = await client.send("Page.captureScreenshot", {
-      format: "png",
+      format: frameFormat,
+      quality: frameFormat === "jpeg" ? jpegQuality : undefined,
       fromSurface: true,
       captureBeyondViewport: false,
       clip: {
@@ -423,24 +536,24 @@ async function captureFrames(client, sessionId, options) {
       }
     }, sessionId);
 
-    const framePath = join(framesDir, `frame-${String(frame).padStart(6, "0")}.png`);
+    const framePath = join(framesDir, `frame-${String(globalFrame).padStart(6, "0")}.${extension}`);
     await writeFile(framePath, Buffer.from(screenshot.data, "base64"));
-
-    if (frame === 0 || frame + 1 === totalFrames || (frame + 1) % Math.max(1, fps) === 0) {
-      process.stdout.write(`\rCaptured ${frame + 1}/${totalFrames} frames`);
-    }
+    onFrame?.();
   }
-  process.stdout.write("\n");
 }
 
 function runFfmpeg(options) {
   const {
     fps,
     framesDir,
+    frameFormat,
+    encoder,
     output,
     crf,
+    cq,
     preset
   } = options;
+  const extension = frameFormat === "jpeg" ? "jpg" : "png";
 
   return new Promise((resolveFfmpeg, rejectFfmpeg) => {
     const args = [
@@ -450,13 +563,18 @@ function runFfmpeg(options) {
       "-start_number",
       "0",
       "-i",
-      join(framesDir, "frame-%06d.png"),
+      join(framesDir, `frame-%06d.${extension}`),
       "-c:v",
-      "libx264",
-      "-preset",
-      String(preset),
-      "-crf",
-      String(crf),
+      encoder
+    ];
+
+    if (encoder.includes("nvenc")) {
+      args.push("-preset", String(preset), "-cq", String(cq));
+    } else {
+      args.push("-preset", String(preset), "-crf", String(crf));
+    }
+
+    args.push(
       "-pix_fmt",
       "yuv420p",
       "-r",
@@ -464,7 +582,7 @@ function runFfmpeg(options) {
       "-movflags",
       "+faststart",
       output
-    ];
+    );
 
     const ffmpeg = spawn("ffmpeg", args, {
       stdio: ["ignore", "ignore", "pipe"]
@@ -499,9 +617,15 @@ async function main() {
   const fps = Number(options.fps);
   const start = Number(options.start);
   const totalFrames = Math.round((end - start) * fps);
+  const frameFormat = normalizeFrameFormat(options.frameFormat);
+  const jpegQuality = Number(options.jpegQuality);
+  const workers = Math.max(1, Math.floor(Number(options.workers) || 1));
 
   if (!Number.isFinite(fps) || fps <= 0) {
     throw new Error("--fps must be a positive number.");
+  }
+  if (!Number.isFinite(jpegQuality) || jpegQuality < 1 || jpegQuality > 100) {
+    throw new Error("--jpeg-quality must be a number from 1 to 100.");
   }
   if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) {
     throw new Error("--start and --end must describe a positive time range.");
@@ -519,8 +643,6 @@ async function main() {
   await mkdir(dirname(output), { recursive: true });
 
   let staticServer = null;
-  let chrome = null;
-  let client = null;
 
   try {
     staticServer = await startStaticServer(REPO_ROOT);
@@ -529,39 +651,47 @@ async function main() {
     url.searchParams.set("frame", "0");
     url.searchParams.set("fps", String(fps));
 
-    console.log(`Rendering ${totalFrames} frames at ${width}x${height} / ${fps}fps`);
+    const ranges = splitFrameRanges(totalFrames, workers);
+    let capturedFrames = 0;
+    const reportFrame = () => {
+      capturedFrames += 1;
+      if (capturedFrames === 1 || capturedFrames === totalFrames || capturedFrames % Math.max(1, fps) === 0) {
+        process.stdout.write(`\rCaptured ${capturedFrames}/${totalFrames} frames`);
+      }
+    };
+
+    console.log(`Rendering ${totalFrames} ${frameFormat.toUpperCase()} frames at ${width}x${height} / ${fps}fps with ${ranges.length} worker(s)`);
     console.log(`Serving ${url.toString()}`);
 
-    chrome = await launchChrome(chromePath, width, height);
-    client = new CdpClient(chrome.wsUrl);
-    await client.connect();
-    const { sessionId } = await createPage(client, url.toString(), width, height);
-
-    await captureFrames(client, sessionId, {
+    await Promise.all(ranges.map((range) => runCaptureWorker({
+      chromePath,
       width,
       height,
+      useGpu: options.chromeGpu,
+      url: url.toString(),
+      range,
       fps,
       start,
-      totalFrames,
-      framesDir
-    });
+      framesDir,
+      frameFormat,
+      jpegQuality,
+      onFrame: reportFrame
+    })));
+    process.stdout.write("\n");
 
-    console.log("Encoding MP4 with ffmpeg...");
+    console.log(`Encoding MP4 with ffmpeg (${options.encoder})...`);
     await runFfmpeg({
       fps,
       framesDir,
+      frameFormat,
+      encoder: options.encoder,
       output,
       crf: options.crf,
+      cq: options.cq,
       preset: options.preset
     });
     console.log(`Exported ${output}`);
   } finally {
-    if (client) {
-      client.close();
-    }
-    if (chrome) {
-      await stopChrome(chrome);
-    }
     if (staticServer) {
       staticServer.server.close();
     }

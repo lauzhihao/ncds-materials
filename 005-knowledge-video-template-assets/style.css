@@ -937,6 +937,15 @@ input {
   word-break: break-word;
 }
 
+.fast-command {
+  margin-top: -6px;
+  border-color: rgba(92, 225, 176, 0.18);
+  color: #9ff5d1;
+  background:
+    linear-gradient(135deg, rgba(92, 225, 176, 0.09), rgba(89, 208, 255, 0.05)),
+    rgba(3, 8, 16, 0.72);
+}
+
 .export-actions {
   margin-bottom: 0;
 }

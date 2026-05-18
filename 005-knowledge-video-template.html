@@ -211,10 +211,12 @@
             <strong id="totalFrameCount">10800</strong>
           </div>
         </div>
-        <p class="control-copy">服务端脚本会按 <code>frame / fps</code> 精确定位每一帧，用 Headless Chrome 截取 1080P 画面，再交给 ffmpeg 编码视频。</p>
+        <p class="control-copy">服务端脚本会按 <code>frame / fps</code> 精确定位每一帧，用 Headless Chrome 截取 1080P 画面，再交给 ffmpeg 编码视频。默认命令偏质量；如需更快可改用 <code>--frame-format jpeg --encoder h264_nvenc --chrome-gpu</code>。</p>
         <pre class="export-command" id="exportCommand">node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/005-knowledge-video-template-1080p60.mp4</pre>
+        <pre class="export-command fast-command" id="fastExportCommand">node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --jpeg-quality 94 --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/005-knowledge-video-template-1080p60-fast.mp4</pre>
         <div class="control-actions export-actions">
           <button type="button" class="button primary" id="copyExportCommandButton">复制导出命令</button>
+          <button type="button" class="button" id="copyFastExportCommandButton">复制快速命令</button>
           <button type="button" class="button" id="openFrameButton">查看当前帧</button>
         </div>
       </section>

@@ -137,7 +137,9 @@
     dom.renderSpecTag = document.getElementById("renderSpecTag");
     dom.totalFrameCount = document.getElementById("totalFrameCount");
     dom.exportCommand = document.getElementById("exportCommand");
+    dom.fastExportCommand = document.getElementById("fastExportCommand");
     dom.copyExportCommandButton = document.getElementById("copyExportCommandButton");
+    dom.copyFastExportCommandButton = document.getElementById("copyFastExportCommandButton");
     dom.openFrameButton = document.getElementById("openFrameButton");
     dom.sceneList = document.getElementById("sceneList");
     dom.sceneCounter = document.getElementById("sceneCounter");
@@ -838,17 +840,16 @@
     window.open(url.toString(), "knowledge-video-render", "width=1920,height=1080,noopener");
   }
 
-  async function copyExportCommand() {
-    const command = buildExportCommand();
+  async function copyCommand(command, button, label) {
     try {
       await navigator.clipboard.writeText(command);
-      dom.copyExportCommandButton.textContent = "已复制";
+      button.textContent = "已复制";
     } catch (error) {
-      dom.copyExportCommandButton.textContent = "复制失败";
+      button.textContent = "复制失败";
     }
 
     window.setTimeout(() => {
-      dom.copyExportCommandButton.textContent = "复制导出命令";
+      button.textContent = label;
     }, 1400);
   }
 
@@ -898,6 +899,31 @@
     ].join(" ");
   }
 
+  function buildFastExportCommand() {
+    const spec = getRenderSpec();
+    return [
+      "node",
+      `${ASSET_ROOT}/export-video.mjs`,
+      "--fps",
+      String(spec.fps),
+      "--size",
+      `${spec.width}x${spec.height}`,
+      "--workers",
+      "4",
+      "--frame-format",
+      "jpeg",
+      "--jpeg-quality",
+      "94",
+      "--encoder",
+      "h264_nvenc",
+      "--preset",
+      "p4",
+      "--chrome-gpu",
+      "--output",
+      "exports/005-knowledge-video-template-1080p60-fast.mp4"
+    ].join(" ");
+  }
+
   function applyMeta() {
     dom.controlTitle.textContent = state.story.meta.title;
     dom.controlDescription.textContent = state.story.meta.description;
@@ -910,6 +936,7 @@
     dom.renderSpecTag.textContent = `${spec.width}x${spec.height} / ${spec.fps}FPS`;
     dom.totalFrameCount.textContent = String(spec.totalFrames);
     dom.exportCommand.textContent = buildExportCommand();
+    dom.fastExportCommand.textContent = buildFastExportCommand();
   }
 
   function parseInitialState() {
@@ -970,7 +997,13 @@
       openRenderWindow({ autoplay: true, time: state.currentTime });
     });
 
-    dom.copyExportCommandButton.addEventListener("click", copyExportCommand);
+    dom.copyExportCommandButton.addEventListener("click", () => {
+      copyCommand(buildExportCommand(), dom.copyExportCommandButton, "复制导出命令");
+    });
+
+    dom.copyFastExportCommandButton.addEventListener("click", () => {
+      copyCommand(buildFastExportCommand(), dom.copyFastExportCommandButton, "复制快速命令");
+    });
 
     dom.openFrameButton.addEventListener("click", () => {
       const spec = getRenderSpec();
