@@ -1,0 +1,339 @@
+{
+  "map": {
+    "cities": [
+      {
+        "id": "shanghai",
+        "label": "上海",
+        "en": "SHANGHAI",
+        "coords": [121.4737, 31.2304]
+      },
+      {
+        "id": "shenzhen",
+        "label": "深圳",
+        "en": "SHENZHEN",
+        "coords": [114.0579, 22.5431]
+      },
+      {
+        "id": "singapore",
+        "label": "新加坡",
+        "en": "SINGAPORE",
+        "coords": [103.8198, 1.3521]
+      },
+      {
+        "id": "hochiminh",
+        "label": "胡志明市",
+        "en": "HO CHI MINH",
+        "coords": [106.6297, 10.8231]
+      },
+      {
+        "id": "bangkok",
+        "label": "曼谷",
+        "en": "BANGKOK",
+        "coords": [100.5018, 13.7563]
+      },
+      {
+        "id": "chennai",
+        "label": "金奈",
+        "en": "CHENNAI",
+        "coords": [80.2707, 13.0827]
+      },
+      {
+        "id": "bangalore",
+        "label": "班加罗尔",
+        "en": "BANGALORE",
+        "coords": [77.5946, 12.9716]
+      },
+      {
+        "id": "dubai",
+        "label": "迪拜",
+        "en": "DUBAI",
+        "coords": [55.2708, 25.2048]
+      },
+      {
+        "id": "rotterdam",
+        "label": "鹿特丹",
+        "en": "ROTTERDAM",
+        "coords": [4.4777, 51.9244]
+      },
+      {
+        "id": "hamburg",
+        "label": "汉堡",
+        "en": "HAMBURG",
+        "coords": [9.9937, 53.5511]
+      },
+      {
+        "id": "warsaw",
+        "label": "华沙",
+        "en": "WARSAW",
+        "coords": [21.0122, 52.2297]
+      },
+      {
+        "id": "istanbul",
+        "label": "伊斯坦布尔",
+        "en": "ISTANBUL",
+        "coords": [28.9784, 41.0082]
+      },
+      {
+        "id": "monterrey",
+        "label": "蒙特雷",
+        "en": "MONTERREY",
+        "coords": [-100.3161, 25.6866]
+      },
+      {
+        "id": "houston",
+        "label": "休斯敦",
+        "en": "HOUSTON",
+        "coords": [-95.3698, 29.7604]
+      },
+      {
+        "id": "los-angeles",
+        "label": "洛杉矶",
+        "en": "LOS ANGELES",
+        "coords": [-118.2437, 34.0522]
+      }
+    ],
+    "routes": [
+      {
+        "from": "shanghai",
+        "to": "rotterdam",
+        "group": "legacy-core",
+        "weight": 1
+      },
+      {
+        "from": "shenzhen",
+        "to": "los-angeles",
+        "group": "legacy-core",
+        "weight": 0.92
+      },
+      {
+        "from": "shanghai",
+        "to": "hamburg",
+        "group": "legacy-core",
+        "weight": 0.76
+      },
+      {
+        "from": "singapore",
+        "to": "rotterdam",
+        "group": "legacy-core",
+        "weight": 0.62
+      },
+      {
+        "from": "shenzhen",
+        "to": "hochiminh",
+        "group": "china-plus-one",
+        "weight": 0.72
+      },
+      {
+        "from": "shanghai",
+        "to": "bangkok",
+        "group": "china-plus-one",
+        "weight": 0.55
+      },
+      {
+        "from": "singapore",
+        "to": "hochiminh",
+        "group": "china-plus-one",
+        "weight": 0.64
+      },
+      {
+        "from": "monterrey",
+        "to": "houston",
+        "group": "nearshore-americas",
+        "weight": 0.88
+      },
+      {
+        "from": "monterrey",
+        "to": "los-angeles",
+        "group": "nearshore-americas",
+        "weight": 0.61
+      },
+      {
+        "from": "chennai",
+        "to": "dubai",
+        "group": "india-westasia",
+        "weight": 0.66
+      },
+      {
+        "from": "bangalore",
+        "to": "dubai",
+        "group": "india-westasia",
+        "weight": 0.54
+      },
+      {
+        "from": "dubai",
+        "to": "rotterdam",
+        "group": "india-westasia",
+        "weight": 0.58
+      },
+      {
+        "from": "istanbul",
+        "to": "rotterdam",
+        "group": "europe-rebalance",
+        "weight": 0.52
+      },
+      {
+        "from": "warsaw",
+        "to": "hamburg",
+        "group": "europe-rebalance",
+        "weight": 0.47
+      }
+    ],
+    "groupLabels": {
+      "legacy-core": "传统主干通道",
+      "china-plus-one": "China + 1",
+      "nearshore-americas": "北美近岸",
+      "india-westasia": "印度与西亚",
+      "europe-rebalance": "中东欧补位"
+    }
+  },
+  "charts": {
+    "driver-balance": {
+      "title": "企业重构供应链时最常同时考虑的变量",
+      "kicker": "图表模块 / Drivers",
+      "caption": "示意权重，不代表真实行业平均值；适合替换为咨询报告或企业调研数据。",
+      "unit": "%",
+      "max": 100,
+      "items": [
+        {
+          "label": "交付确定性",
+          "value": 82,
+          "note": "订单兑现"
+        },
+        {
+          "label": "综合成本",
+          "value": 76,
+          "note": "利润压力"
+        },
+        {
+          "label": "政策与关税",
+          "value": 69,
+          "note": "合规变量"
+        },
+        {
+          "label": "供应商冗余",
+          "value": 63,
+          "note": "第二来源"
+        }
+      ]
+    },
+    "regional-beneficiaries": {
+      "title": "承接增量的区域更像不同角色，而不是同一种替代",
+      "kicker": "图表模块 / Regions",
+      "caption": "适合替换为出口增速、FDI、产能利用率或客户交付时效等真实指标。",
+      "unit": "点",
+      "max": 100,
+      "items": [
+        {
+          "label": "越南",
+          "value": 78,
+          "note": "组装增量"
+        },
+        {
+          "label": "墨西哥",
+          "value": 74,
+          "note": "近岸交付"
+        },
+        {
+          "label": "印度",
+          "value": 68,
+          "note": "新项目承接"
+        },
+        {
+          "label": "中东欧",
+          "value": 57,
+          "note": "欧洲补位"
+        },
+        {
+          "label": "阿联酋",
+          "value": 49,
+          "note": "枢纽中转"
+        }
+      ]
+    },
+    "playbook-readiness": {
+      "title": "企业执行清单更像一个四步闭环",
+      "kicker": "图表模块 / Playbook",
+      "caption": "这里可以替换成你的企业案例、季度目标或内部项目里程碑。",
+      "unit": "步",
+      "max": 100,
+      "items": [
+        {
+          "label": "识别暴露",
+          "value": 92,
+          "note": "国家和供应商"
+        },
+        {
+          "label": "切分产品线",
+          "value": 81,
+          "note": "保留还是分流"
+        },
+        {
+          "label": "建立第二节点",
+          "value": 68,
+          "note": "冗余产能"
+        },
+        {
+          "label": "重做库存物流",
+          "value": 59,
+          "note": "兑现交付"
+        }
+      ]
+    }
+  },
+  "timelines": {
+    "shift-eras": {
+      "title": "重构通常由多个阶段叠加，而不是单点事件触发",
+      "kicker": "时间线模块 / Macro Triggers",
+      "caption": "模板示例可替换成你的视频选题节点，例如财报、政策、价格周期或技术突破。",
+      "items": [
+        {
+          "year": "2018",
+          "title": "成本与关税再计算",
+          "text": "企业开始重新测算关税、运费和供应商暴露。"
+        },
+        {
+          "year": "2020",
+          "title": "中断风险显性化",
+          "text": "疫情和停工让单点依赖的代价被重新定价。"
+        },
+        {
+          "year": "2022",
+          "title": "韧性进入董事会议题",
+          "text": "企业不再只追求最低成本，而是追求可持续交付。"
+        },
+        {
+          "year": "2024",
+          "title": "多中心网络成型",
+          "text": "近岸化、友岸化和 China + 1 同时存在。"
+        }
+      ]
+    },
+    "playbook-steps": {
+      "title": "把宏观判断翻译成企业动作，通常会遵循这四步",
+      "kicker": "时间线模块 / Execution",
+      "caption": "适合替换为你的组织流程、咨询项目里程碑或培训课程节奏。",
+      "items": [
+        {
+          "year": "Step 1",
+          "title": "识别单点依赖",
+          "text": "先看供应商层级、国家集中度和关键零部件暴露。"
+        },
+        {
+          "year": "Step 2",
+          "title": "切分产品线",
+          "text": "区分哪些品类必须保留主工厂，哪些可以区域复制。"
+        },
+        {
+          "year": "Step 3",
+          "title": "建立第二节点",
+          "text": "主工厂管效率，第二节点管冗余和区域市场。"
+        },
+        {
+          "year": "Step 4",
+          "title": "重做库存与物流",
+          "text": "同步调整仓储、采购和客户交付承诺。"
+        }
+      ]
+    }
+  }
+}

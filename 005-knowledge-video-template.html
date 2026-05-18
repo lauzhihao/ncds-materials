@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>专业知识视频模板</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="005-knowledge-video-template-assets/style.css">
+  <script defer src="005-knowledge-video-template-assets/vendor/d3.min.js"></script>
+  <script defer src="005-knowledge-video-template-assets/vendor/topojson-client.min.js"></script>
+  <script defer src="005-knowledge-video-template-assets/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <section class="preview-panel" aria-label="视频模板预览区">
+      <header class="preview-header">
+        <div class="preview-title">
+          <p class="eyebrow">Knowledge Video Template</p>
+          <h1>专业知识视频模板</h1>
+          <p class="preview-meta">3 分钟 / 1080P / 60FPS / JSON 驱动 / 预留数字人安全区</p>
+        </div>
+        <div class="preview-badges">
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">JS</span>
+          <span class="badge">JSON</span>
+        </div>
+      </header>
+
+      <div class="preview-body">
+        <div class="video-frame">
+          <div class="video-stage" id="videoStage">
+            <svg id="worldMapSvg" viewBox="0 0 1920 1080" role="img" aria-label="世界地图、航线和数据动画背景">
+              <defs>
+                <linearGradient id="mapOcean" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#071728"></stop>
+                  <stop offset="52%" stop-color="#081b31"></stop>
+                  <stop offset="100%" stop-color="#030712"></stop>
+                </linearGradient>
+                <radialGradient id="mapGlow" cx="50%" cy="40%" r="70%">
+                  <stop offset="0%" stop-color="rgba(57, 208, 255, 0.22)"></stop>
+                  <stop offset="100%" stop-color="rgba(57, 208, 255, 0)"></stop>
+                </radialGradient>
+                <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+                  <feMerge>
+                    <feMergeNode in="blur"></feMergeNode>
+                    <feMergeNode in="SourceGraphic"></feMergeNode>
+                  </feMerge>
+                </filter>
+              </defs>
+              <rect width="1920" height="1080" fill="url(#mapOcean)"></rect>
+              <rect width="1920" height="1080" fill="url(#mapGlow)"></rect>
+              <g id="gridLayer"></g>
+              <g id="countryLayer"></g>
+              <g id="routeBaseLayer"></g>
+              <g id="routeFlowLayer"></g>
+              <g id="cityLayer"></g>
+            </svg>
+
+            <div class="stage-vignette"></div>
+            <div class="scanlines"></div>
+
+            <div class="top-strip">
+              <div class="strip-left">
+                <span class="strip-label" id="chapterTag">章节</span>
+                <span class="strip-divider"></span>
+                <span id="sceneLabel">Scene</span>
+              </div>
+              <div class="strip-right">
+                <span id="outputSpec">1080P / 60FPS</span>
+              </div>
+            </div>
+
+            <section class="lead-block">
+              <p class="stage-kicker" id="stageKicker">专题标签</p>
+              <h2 id="stageTitle">标题</h2>
+              <p class="stage-body" id="stageBody">正文摘要</p>
+            </section>
+
+            <section class="metric-row" id="metricRow" aria-label="关键指标"></section>
+
+            <section class="bullet-panel">
+              <div class="panel-head">
+                <p class="panel-kicker">本段重点</p>
+                <h3>一句话结构化讲清楚</h3>
+              </div>
+              <ul id="bulletList"></ul>
+            </section>
+
+            <section class="insight-panel">
+              <div class="panel-head">
+                <p class="panel-kicker">画面卡片</p>
+                <h3>适合配旁白与字幕的解释卡</h3>
+              </div>
+              <div class="insight-grid" id="insightGrid"></div>
+            </section>
+
+            <section class="chart-panel">
+              <div class="panel-head">
+                <p class="panel-kicker" id="chartKicker">图表模块</p>
+                <h3 id="chartTitle">图表标题</h3>
+              </div>
+              <svg id="chartSvg" viewBox="0 0 640 420" aria-label="图表画布"></svg>
+              <p class="chart-caption" id="chartCaption"></p>
+            </section>
+
+            <section class="timeline-panel">
+              <div class="panel-head">
+                <p class="panel-kicker" id="timelineKicker">时间线模块</p>
+                <h3 id="timelineTitle">时间线标题</h3>
+              </div>
+              <div class="timeline-track" id="timelineTrack"></div>
+              <p class="timeline-caption" id="timelineCaption"></p>
+            </section>
+
+            <section class="scene-note">
+              <span class="note-label">场景注释</span>
+              <p id="sceneSummary">场景摘要</p>
+            </section>
+
+            <section class="data-note">
+              <span class="note-label">数据提醒</span>
+              <p id="dataNotice">图表数值为模板示意，请替换为真实研究数据后再发布。</p>
+            </section>
+
+            <aside class="avatar-dock" id="avatarDock" aria-label="数字人安全区">
+              <div class="avatar-label">AI HOST SAFE AREA</div>
+              <div class="avatar-silhouette">
+                <div class="avatar-ring"></div>
+                <div class="avatar-core"></div>
+                <div class="avatar-wave">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <p>默认让数字人在这里对口型，不遮住地图和图表。</p>
+            </aside>
+
+            <aside class="avatar-spotlight" id="avatarSpotlight" aria-label="数字人放大机位">
+              <div class="spotlight-ring"></div>
+              <div class="spotlight-copy">
+                <span>放大镜头</span>
+                <strong>仅在少量强调段落出现</strong>
+              </div>
+            </aside>
+
+            <div class="safe-guides">
+              <div class="title-safe"></div>
+              <div class="action-safe"></div>
+            </div>
+
+            <footer class="stage-footer">
+              <div class="progress-rail">
+                <span class="progress-fill" id="progressFill"></span>
+              </div>
+              <div class="footer-meta">
+                <span id="currentTimeLabel">00:00</span>
+                <span id="sceneTimeLabel">00:00 - 00:00</span>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="control-panel" aria-label="模板控制台">
+      <section class="control-section">
+        <p class="eyebrow">Sample Topic</p>
+        <h2 id="controlTitle">样例话题</h2>
+        <p class="control-copy" id="controlDescription">加载中</p>
+      </section>
+
+      <section class="control-section">
+        <div class="section-head">
+          <h3>播放控制</h3>
+          <span id="playbackState">暂停</span>
+        </div>
+        <div class="control-actions">
+          <button type="button" class="button primary" id="playPauseButton">播放</button>
+          <button type="button" class="button" id="restartButton">回到开头</button>
+          <button type="button" class="button" id="cleanModeButton">干净录制模式</button>
+        </div>
+        <label class="range-field" for="timelineInput">时间轴</label>
+        <input id="timelineInput" type="range" min="0" max="180" step="0.01" value="0">
+        <p class="shortcut-note">快捷键：`Space` 播放，`←` `→` 微调，`C` 切换录制模式，数字键跳转章节。</p>
+      </section>
+
+      <section class="control-section">
+        <div class="section-head">
+          <h3>场景列表</h3>
+          <span id="sceneCounter">0 / 0</span>
+        </div>
+        <div class="scene-list" id="sceneList"></div>
+      </section>
+
+      <section class="control-section">
+        <div class="section-head">
+          <h3>当前旁白</h3>
+          <span id="voiceoverTag">配音草稿</span>
+        </div>
+        <p class="voiceover-copy" id="voiceoverCopy">加载中</p>
+      </section>
+
+      <section class="control-section">
+        <div class="section-head">
+          <h3>剪映工作流</h3>
+          <span>建议顺序</span>
+        </div>
+        <ol class="workflow-list">
+          <li>先用这个页面输出无字幕、无声音的底片。</li>
+          <li>导入剪映后再配音、自动字幕、节奏微调。</li>
+          <li>数字人大多数时间放右下角，只有强调句才切换放大镜头。</li>
+          <li>最终发布前，把模板示意数据替换成你自己的研究数据。</li>
+        </ol>
+      </section>
+    </aside>
+  </div>
+</body>
+</html>

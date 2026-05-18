@@ -1,0 +1,425 @@
+{
+  "meta": {
+    "title": "为什么全球供应链正在重构，而不是简单迁出中国",
+    "description": "这是一个用于专业知识视频生产的样例脚本。画面结构、动画逻辑和数字人安全区都可复用，实际发布时请替换为你自己的研究数据、案例和旁白。",
+    "duration": 180,
+    "fps": 60,
+    "outputSpec": "1920 x 1080 / 60 FPS",
+    "dataNotice": "图表数值为模板示意，发布前请替换为实际研究报告、财报电话会或政策文件中的数据。"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "label": "01 开场钩子",
+      "chapter": "开场问题",
+      "start": 0,
+      "end": 16,
+      "kicker": "全球产业链 / Strategic Rewiring",
+      "title": "为什么全球供应链正在重构，而不是简单迁出中国",
+      "body": "过去几年，企业讨论的重点已经从最低成本，转向成本、韧性、地缘风险和交付确定性的组合优化。",
+      "summary": "先抛出误区，再给出更专业的判断框架。",
+      "bullets": [
+        "重构不是一次性搬迁，而是多节点分散配置。",
+        "核心工厂、区域组装和第二供应商可以同时存在。",
+        "同一家公司可能在不同产品线上采取完全不同的布局。"
+      ],
+      "metrics": [
+        {
+          "label": "传统目标",
+          "value": "最低成本"
+        },
+        {
+          "label": "新的目标函数",
+          "value": "成本 + 韧性"
+        },
+        {
+          "label": "管理重点",
+          "value": "交付确定性"
+        }
+      ],
+      "cards": [
+        {
+          "title": "误区",
+          "text": "把供应链重构理解成全面撤离，往往会忽略企业仍然需要中国的产能、配套和效率。"
+        },
+        {
+          "title": "真正变化",
+          "text": "企业在重新设计网络，让单点依赖变成多节点协同。"
+        }
+      ],
+      "chartKey": "driver-balance",
+      "timelineKey": "shift-eras",
+      "mapGroups": [
+        "legacy-core",
+        "china-plus-one"
+      ],
+      "focusCities": [
+        "shanghai",
+        "shenzhen",
+        "singapore",
+        "rotterdam",
+        "los-angeles"
+      ],
+      "avatarMode": "dock",
+      "voiceover": "你会看到很多标题说，全球供应链正在迁出中国。但更准确的说法不是迁出，而是重构。企业不再只追求最低成本，而是在成本、韧性和风险之间寻找新的平衡。",
+      "editorNote": "右下角数字人保持常驻，小幅点头即可，不要抢主标题。"
+    },
+    {
+      "id": "framework",
+      "label": "02 判断框架",
+      "chapter": "定义问题",
+      "start": 16,
+      "end": 40,
+      "kicker": "判断框架 / Four Variables",
+      "title": "企业判断一条供应链是否要调整，通常会同时看四类变量",
+      "body": "专业分析里最常见的不是问要不要搬，而是问哪一段流程需要分散、保留还是复制。",
+      "summary": "把抽象议题拆成四个可解释变量。",
+      "bullets": [
+        "成本：原材料、人工、运费和税负是否还能支撑利润。",
+        "韧性：一旦出现中断，库存和替代产能能否顶上。",
+        "政策：关税、审查、补贴和本地化要求是否改变决策。",
+        "市场：客户交付时效和区域市场需求是否逼近本地生产。"
+      ],
+      "metrics": [
+        {
+          "label": "核心提问",
+          "value": "搬迁还是复制"
+        },
+        {
+          "label": "评估方式",
+          "value": "产品线分层"
+        },
+        {
+          "label": "落地逻辑",
+          "value": "网络重构"
+        }
+      ],
+      "cards": [
+        {
+          "title": "核心工厂",
+          "text": "保留高效率、高配套的主生产基地，继续承担关键零部件和大规模产能。"
+        },
+        {
+          "title": "区域组装",
+          "text": "把更接近客户的组装或后段工序放在区域节点，缩短交付时间。"
+        },
+        {
+          "title": "第二供应商",
+          "text": "对高风险零部件建立备份，哪怕平时成本更高，也能换来确定性。"
+        }
+      ],
+      "chartKey": "driver-balance",
+      "timelineKey": "shift-eras",
+      "mapGroups": [
+        "legacy-core"
+      ],
+      "focusCities": [
+        "shanghai",
+        "rotterdam",
+        "dubai",
+        "los-angeles"
+      ],
+      "avatarMode": "dock",
+      "voiceover": "所以更专业的提问应该是，哪些环节必须保留在高效率产区，哪些环节需要贴近市场，哪些零部件必须建立备份。供应链重构，本质上是网络设计题，而不是口号题。",
+      "editorNote": "数字人继续在角上，用口型配合解释卡，不需要放大。"
+    },
+    {
+      "id": "map-shift",
+      "label": "03 路径变化",
+      "chapter": "地图变化",
+      "start": 40,
+      "end": 72,
+      "kicker": "区域分流 / Route Shifts",
+      "title": "地图上的变化不是一条线断掉，而是多条新通道同时长出来",
+      "body": "最典型的画面，是传统主通道仍在运转，但部分中间品、组装和近岸产能开始分散到新节点。",
+      "summary": "让观众直观看到旧通道仍在，新通道同步出现。",
+      "bullets": [
+        "东亚主干通道依旧强，但东南亚节点在承接部分增量。",
+        "北美近岸配置让墨西哥和美国南部联动更紧密。",
+        "印度、中东和中东欧在特定行业里承担新的补位功能。"
+      ],
+      "metrics": [
+        {
+          "label": "旧通道",
+          "value": "继续运转"
+        },
+        {
+          "label": "新节点",
+          "value": "同步长出"
+        },
+        {
+          "label": "结果",
+          "value": "多中心网络"
+        }
+      ],
+      "cards": [
+        {
+          "title": "China + 1",
+          "text": "不是替代中国，而是在东南亚增加冗余和弹性。"
+        },
+        {
+          "title": "Nearshoring",
+          "text": "服务北美市场的环节更倾向压缩运输半径。"
+        },
+        {
+          "title": "Friendshoring",
+          "text": "在政策和合规框架允许的区域寻找可复制节点。"
+        }
+      ],
+      "timelineKey": "shift-eras",
+      "mapGroups": [
+        "legacy-core",
+        "china-plus-one",
+        "nearshore-americas",
+        "india-westasia"
+      ],
+      "focusCities": [
+        "shanghai",
+        "shenzhen",
+        "hochiminh",
+        "monterrey",
+        "dubai",
+        "chennai"
+      ],
+      "avatarMode": "dock",
+      "voiceover": "从地图上看，传统主航线并没有突然消失。真正发生的是，新路线和新节点越来越多。东南亚承接部分增量，北美近岸化加速，印度和中东在某些行业成为新的补位中心。",
+      "editorNote": "这里主要让地图说话，数字人弱存在。"
+    },
+    {
+      "id": "drivers",
+      "label": "04 驱动因素",
+      "chapter": "驱动因素",
+      "start": 72,
+      "end": 108,
+      "kicker": "决策变量 / Decision Drivers",
+      "title": "企业为什么要改网络，通常不是因为一个原因，而是多种因素叠加",
+      "body": "高管在做的不是观点表达，而是把成本、库存、关税和交付风险一起折算到损益表里。",
+      "summary": "用图表把多因素叠加的逻辑具体化。",
+      "bullets": [
+        "运费和库存周期会直接影响现金流。",
+        "关税和补贴会改变单个国家的综合成本。",
+        "地缘风险让企业更愿意为备份产能多付一点钱。"
+      ],
+      "metrics": [
+        {
+          "label": "决策单位",
+          "value": "产品线"
+        },
+        {
+          "label": "典型动作",
+          "value": "分段迁移"
+        },
+        {
+          "label": "财务视角",
+          "value": "综合成本"
+        }
+      ],
+      "cards": [
+        {
+          "title": "管理层语言",
+          "text": "不是要绝对便宜，而是要在风险上升时仍然能交货。"
+        },
+        {
+          "title": "投资逻辑",
+          "text": "第二产线、双供应商和区域仓储会拉高短期成本，但改善长期确定性。"
+        }
+      ],
+      "chartKey": "driver-balance",
+      "mapGroups": [
+        "china-plus-one",
+        "nearshore-americas"
+      ],
+      "focusCities": [
+        "hochiminh",
+        "monterrey",
+        "los-angeles",
+        "houston"
+      ],
+      "avatarMode": "dock",
+      "voiceover": "很多企业不是因为单一事件才调整布局，而是多种变量一起变化。运费、关税、库存、交付风险，这些因素叠加之后，原来的最低成本解就不一定还是最优解。",
+      "editorNote": "这段可以加字幕强调四类变量，数字人维持角落机位。"
+    },
+    {
+      "id": "winners",
+      "label": "05 区域机会",
+      "chapter": "区域机会",
+      "start": 108,
+      "end": 142,
+      "kicker": "增量承接 / Regional Winners",
+      "title": "谁会承接增量，取决于它能否提供配套、效率、政策和物流的组合",
+      "body": "没有哪个国家能一口气复制全部能力，但不同地区可以承接不同类型的增量。",
+      "summary": "讲清楚不同区域承接的是不同角色，而不是同一种能力。",
+      "bullets": [
+        "东南亚更像弹性组装和部分中间品扩容。",
+        "墨西哥更受益于北美市场的近岸交付需求。",
+        "印度、中东和中东欧更适合承接特定行业或新项目。"
+      ],
+      "metrics": [
+        {
+          "label": "东南亚",
+          "value": "弹性扩容"
+        },
+        {
+          "label": "墨西哥",
+          "value": "近岸交付"
+        },
+        {
+          "label": "印度 / 中东",
+          "value": "新项目补位"
+        }
+      ],
+      "cards": [
+        {
+          "title": "越南",
+          "text": "适合承接一部分劳动密集和电子组装增量，但配套深度仍需时间。"
+        },
+        {
+          "title": "墨西哥",
+          "text": "靠近美国终端市场，交付时效和物流半径是最大优势。"
+        },
+        {
+          "title": "印度与中东",
+          "text": "适合承接新投资项目和区域节点，但行业差异非常大。"
+        }
+      ],
+      "chartKey": "regional-beneficiaries",
+      "mapGroups": [
+        "china-plus-one",
+        "nearshore-americas",
+        "europe-rebalance",
+        "india-westasia"
+      ],
+      "focusCities": [
+        "hochiminh",
+        "monterrey",
+        "warsaw",
+        "dubai",
+        "bangalore"
+      ],
+      "avatarMode": "dock",
+      "voiceover": "所以关键不是问谁能完全替代谁，而是问谁能承接哪一部分增量。东南亚、墨西哥、印度和中东欧承接的角色并不一样，真正的竞争点是配套深度、政策确定性和物流效率。",
+      "editorNote": "可在这里让数字人做一两次轻微手势，但仍不建议放大。"
+    },
+    {
+      "id": "playbook",
+      "label": "06 企业动作",
+      "chapter": "企业动作",
+      "start": 142,
+      "end": 166,
+      "kicker": "执行清单 / Playbook",
+      "title": "真正成熟的公司，不会喊口号，而是按步骤重构自己的供应链",
+      "body": "先识别单点依赖，再划分产品线，再建立第二节点，最后把库存和物流策略一起重做。",
+      "summary": "用执行步骤收束，让内容从宏观判断落到企业动作。",
+      "bullets": [
+        "先找出高风险零部件和单一国家暴露。",
+        "再区分哪些品类必须保留主工厂，哪些可以区域分流。",
+        "最后同步改采购、库存、物流和客户交付承诺。"
+      ],
+      "metrics": [
+        {
+          "label": "第一步",
+          "value": "找暴露"
+        },
+        {
+          "label": "第二步",
+          "value": "分产品"
+        },
+        {
+          "label": "第三步",
+          "value": "建第二节点"
+        }
+      ],
+      "cards": [
+        {
+          "title": "风险图谱",
+          "text": "用供应商层级、国家暴露和交付时效把风险画出来。"
+        },
+        {
+          "title": "双节点设计",
+          "text": "主工厂负责效率，第二节点负责冗余和区域服务。"
+        }
+      ],
+      "chartKey": "playbook-readiness",
+      "timelineKey": "playbook-steps",
+      "mapGroups": [
+        "legacy-core",
+        "nearshore-americas"
+      ],
+      "focusCities": [
+        "shanghai",
+        "monterrey",
+        "houston",
+        "rotterdam"
+      ],
+      "avatarMode": "spotlight",
+      "avatarSpotlight": {
+        "start": 154,
+        "end": 160
+      },
+      "voiceover": "真正成熟的企业，通常会按步骤来。先找单点依赖，再按产品线做决策，然后建立第二节点，最后连库存和物流一起重做。这才是供应链重构的执行清单。",
+      "editorNote": "这里可以第一次切到放大版数字人，强化执行建议。"
+    },
+    {
+      "id": "takeaway",
+      "label": "07 结论收束",
+      "chapter": "结论",
+      "start": 166,
+      "end": 180,
+      "kicker": "结论 / Final Takeaway",
+      "title": "结论只有一句：全球供应链不是在消失，而是在变成更复杂的多中心网络",
+      "body": "如果你以后做专业知识视频，可以把这个模板里的主题、地图、图表和旁白全部换掉，但保留这套结构。",
+      "summary": "用三句话总结，再给下一步内容生产建议。",
+      "bullets": [
+        "不要只讲迁移，要讲网络如何被重新配置。",
+        "不要只讲国家，要讲产品线、风险和交付逻辑。",
+        "不要只给观点，要给地图、图表和执行路径。"
+      ],
+      "metrics": [
+        {
+          "label": "核心判断",
+          "value": "多中心网络"
+        },
+        {
+          "label": "内容生产",
+          "value": "先做底片"
+        },
+        {
+          "label": "后期",
+          "value": "剪映补声音"
+        }
+      ],
+      "cards": [
+        {
+          "title": "模板复用",
+          "text": "未来你只需要替换 JSON 文案、图表数据和地图高亮区域。"
+        },
+        {
+          "title": "后期建议",
+          "text": "把字幕、配音、BGM 和数字人合成放到剪映，效率最高。"
+        }
+      ],
+      "chartKey": "playbook-readiness",
+      "mapGroups": [
+        "legacy-core",
+        "china-plus-one",
+        "nearshore-americas",
+        "europe-rebalance",
+        "india-westasia"
+      ],
+      "focusCities": [
+        "shanghai",
+        "hochiminh",
+        "monterrey",
+        "warsaw",
+        "dubai"
+      ],
+      "avatarMode": "spotlight",
+      "avatarSpotlight": {
+        "start": 172,
+        "end": 176
+      },
+      "voiceover": "所以，别把供应链重构讲成简单的迁移故事。真正专业的讲法，是解释网络如何被重新配置，以及企业为什么要为韧性重新定价。你以后也可以直接复用这套模板来做别的财经或知识主题。",
+      "editorNote": "结尾可以再切一次放大版数字人，然后收束到标题和结论。"
+    }
+  ]
+}

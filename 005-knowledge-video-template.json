@@ -1,0 +1,25 @@
+{
+  "id": "005-knowledge-video-template",
+  "name": "Knowledge Video Template",
+  "title": "专业知识视频模板",
+  "entry": "005-knowledge-video-template.html",
+  "style": "005-knowledge-video-template-assets/style.css",
+  "script": "005-knowledge-video-template-assets/app.js",
+  "assets": "005-knowledge-video-template-assets/",
+  "description": "面向专业知识与财经内容的 3 分钟视频模板，内置世界地图、图表、时间线、右下角数字人安全区和放大镜头占位，适合导出底片后再进入剪映补字幕与声音。",
+  "version": "1.0.0",
+  "features": [
+    "16:9 1080P 预览舞台",
+    "3 分钟时间轴驱动的场景切换",
+    "世界地图与跨区域航线动态背景",
+    "图表、解释卡、时间线组合模板",
+    "数字人角落机位与放大机位预留",
+    "干净录制模式和快捷键"
+  ],
+  "queryParams": {
+    "t": "指定起始时间，单位秒",
+    "autoplay": "1 表示自动播放",
+    "clean": "1 表示默认进入干净录制模式",
+    "scene": "按 scene id 直接跳转"
+  }
+}
