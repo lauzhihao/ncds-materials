@@ -35,6 +35,7 @@ function parseArgs(argv) {
     frameFormat: "png",
     jpegQuality: 94,
     keepFrames: false,
+    framesOnly: false,
     encoder: "libx264",
     crf: 18,
     cq: 19,
@@ -54,6 +55,11 @@ function parseArgs(argv) {
 
     if (arg === "--keep-frames") {
       options.keepFrames = true;
+      continue;
+    }
+
+    if (arg === "--frames-only") {
+      options.framesOnly = true;
       continue;
     }
 
@@ -137,6 +143,7 @@ Options:
   --frame-format <format> Intermediate frame format: png or jpeg. Default: png
   --jpeg-quality <1-100>  JPEG frame quality when --frame-format jpeg is used. Default: 94
   --keep-frames           Keep captured intermediate frames after ffmpeg finishes.
+  --frames-only           Export only image sequence frames and skip MP4 encoding.
   --encoder <name>        ffmpeg video encoder. Examples: libx264, h264_nvenc. Default: libx264
   --crf <number>          libx264 CRF quality. Lower is better. Default: 18
   --cq <number>           NVENC constant quality. Lower is better. Default: 19
@@ -149,6 +156,9 @@ Example:
 
 Fast NVIDIA path:
   node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/005-knowledge-video-template-1080p60.mp4
+
+Image sequence only:
+  node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frames-only --frame-format jpeg --jpeg-quality 94 --frames-dir exports/005-knowledge-video-template-frames
 `);
 }
 
@@ -635,12 +645,14 @@ async function main() {
   }
 
   const chromePath = findChrome(options.chrome);
-  const output = resolveFromRoot(options.output);
+  const output = options.framesOnly ? null : resolveFromRoot(options.output);
   const framesDir = options.framesDir
     ? resolveFromRoot(options.framesDir)
-    : join(REPO_ROOT, ".export-frames", `005-${Date.now()}`);
+    : join(REPO_ROOT, options.framesOnly ? "exports" : ".export-frames", `005-frames-${Date.now()}`);
 
-  await mkdir(dirname(output), { recursive: true });
+  if (output) {
+    await mkdir(dirname(output), { recursive: true });
+  }
 
   let staticServer = null;
 
@@ -679,23 +691,27 @@ async function main() {
     })));
     process.stdout.write("\n");
 
-    console.log(`Encoding MP4 with ffmpeg (${options.encoder})...`);
-    await runFfmpeg({
-      fps,
-      framesDir,
-      frameFormat,
-      encoder: options.encoder,
-      output,
-      crf: options.crf,
-      cq: options.cq,
-      preset: options.preset
-    });
-    console.log(`Exported ${output}`);
+    if (options.framesOnly) {
+      console.log(`Exported frames to ${framesDir}`);
+    } else {
+      console.log(`Encoding MP4 with ffmpeg (${options.encoder})...`);
+      await runFfmpeg({
+        fps,
+        framesDir,
+        frameFormat,
+        encoder: options.encoder,
+        output,
+        crf: options.crf,
+        cq: options.cq,
+        preset: options.preset
+      });
+      console.log(`Exported ${output}`);
+    }
   } finally {
     if (staticServer) {
       staticServer.server.close();
     }
-    if (!options.keepFrames) {
+    if (!options.keepFrames && !options.framesOnly) {
       await rm(framesDir, { recursive: true, force: true });
     }
   }

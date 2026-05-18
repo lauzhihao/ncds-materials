@@ -946,6 +946,15 @@ input {
     rgba(3, 8, 16, 0.72);
 }
 
+.frames-command {
+  margin-top: -6px;
+  border-color: rgba(125, 184, 255, 0.2);
+  color: #bcd7ff;
+  background:
+    linear-gradient(135deg, rgba(125, 184, 255, 0.11), rgba(89, 208, 255, 0.04)),
+    rgba(3, 8, 16, 0.72);
+}
+
 .export-actions {
   margin-bottom: 0;
 }

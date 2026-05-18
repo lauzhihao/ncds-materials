@@ -138,8 +138,10 @@
     dom.totalFrameCount = document.getElementById("totalFrameCount");
     dom.exportCommand = document.getElementById("exportCommand");
     dom.fastExportCommand = document.getElementById("fastExportCommand");
+    dom.framesExportCommand = document.getElementById("framesExportCommand");
     dom.copyExportCommandButton = document.getElementById("copyExportCommandButton");
     dom.copyFastExportCommandButton = document.getElementById("copyFastExportCommandButton");
+    dom.copyFramesExportCommandButton = document.getElementById("copyFramesExportCommandButton");
     dom.openFrameButton = document.getElementById("openFrameButton");
     dom.sceneList = document.getElementById("sceneList");
     dom.sceneCounter = document.getElementById("sceneCounter");
@@ -924,6 +926,28 @@
     ].join(" ");
   }
 
+  function buildFramesExportCommand() {
+    const spec = getRenderSpec();
+    return [
+      "node",
+      `${ASSET_ROOT}/export-video.mjs`,
+      "--fps",
+      String(spec.fps),
+      "--size",
+      `${spec.width}x${spec.height}`,
+      "--workers",
+      "4",
+      "--frames-only",
+      "--frame-format",
+      "jpeg",
+      "--jpeg-quality",
+      "94",
+      "--chrome-gpu",
+      "--frames-dir",
+      "exports/005-knowledge-video-template-frames"
+    ].join(" ");
+  }
+
   function applyMeta() {
     dom.controlTitle.textContent = state.story.meta.title;
     dom.controlDescription.textContent = state.story.meta.description;
@@ -937,6 +961,7 @@
     dom.totalFrameCount.textContent = String(spec.totalFrames);
     dom.exportCommand.textContent = buildExportCommand();
     dom.fastExportCommand.textContent = buildFastExportCommand();
+    dom.framesExportCommand.textContent = buildFramesExportCommand();
   }
 
   function parseInitialState() {
@@ -1003,6 +1028,10 @@
 
     dom.copyFastExportCommandButton.addEventListener("click", () => {
       copyCommand(buildFastExportCommand(), dom.copyFastExportCommandButton, "复制快速命令");
+    });
+
+    dom.copyFramesExportCommandButton.addEventListener("click", () => {
+      copyCommand(buildFramesExportCommand(), dom.copyFramesExportCommandButton, "复制序列帧命令");
     });
 
     dom.openFrameButton.addEventListener("click", () => {
