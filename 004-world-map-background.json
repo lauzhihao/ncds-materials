@@ -1,0 +1,60 @@
+{
+  "id": "004-world-map-background",
+  "name": "World Map Background",
+  "title": "世界地图视频素材",
+  "entry": "004-world-map-background.html",
+  "style": "004-world-map-background.css",
+  "script": "004-world-map-background.js",
+  "assets": "004-assets/",
+  "description": "可切换平面地图与地球仪视图的世界地图视频背景素材，支持城市点选、航线连线、国家高亮、主题配色、自动聚焦和干净录制模式。",
+  "version": "1.0.0",
+  "features": [
+    "平面地图与地球仪双模式",
+    "全球首都与主要城市点选",
+    "路线连线与流动动画",
+    "国家轮廓高亮与循环播放",
+    "主题预设和自定义配色",
+    "隐藏 UI 的视频录制模式"
+  ],
+  "dependencies": [
+    {
+      "name": "D3",
+      "url": "https://unpkg.com/d3@7.9.0/dist/d3.min.js"
+    },
+    {
+      "name": "TopoJSON Client",
+      "url": "https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"
+    },
+    {
+      "name": "World Atlas",
+      "url": "https://unpkg.com/world-atlas@2.0.2/countries-110m.json"
+    }
+  ],
+  "defaultRoute": [
+    "Beijing",
+    "Tokyo",
+    "Singapore",
+    "New Delhi",
+    "Moscow",
+    "Berlin",
+    "London",
+    "Washington D.C.",
+    "Mexico City",
+    "Brasília"
+  ],
+  "controls": {
+    "keyboard": [
+      "H toggle panel",
+      "F clean mode",
+      "+ zoom in",
+      "- zoom out",
+      "0 reset view"
+    ],
+    "panelTabs": [
+      "theme",
+      "cities",
+      "order",
+      "view"
+    ]
+  }
+}

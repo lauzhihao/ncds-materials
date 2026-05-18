@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>世界地图 · 视频素材</title>
+
+  <link rel="stylesheet" href="004-world-map-background.css"/>
+
+  <style>
+    /* clean-mode: hide all chrome so the map fills the frame for video capture */
+    body.clean-mode #panel,
+    body.clean-mode #panel-toggle,
+    body.clean-mode .zoom-controls,
+    body.clean-mode .hud { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <!-- map stage -->
+  <div id="stage"></div>
+
+  <!-- zoom controls -->
+  <div class="zoom-controls">
+    <button class="zoom-btn" id="z-in"  title="放大 (+)">+</button>
+    <button class="zoom-btn" id="z-out" title="缩小 (-)">−</button>
+    <button class="zoom-btn small" id="z-reset" title="重置 (0)">⤾</button>
+  </div>
+  <div class="hud">
+    drag · scroll · <span class="swatch"></span> press <b>H</b> to hide UI · <b>F</b> for clean mode
+  </div>
+
+  <!-- floating toggle when panel is collapsed -->
+  <button class="panel-toggle" id="panel-toggle" title="打开控制台 (H)">⚙</button>
+
+  <!-- control panel -->
+  <aside id="panel"></aside>
+
+  <script src="004-world-map-background.js"></script>
+</body>
+</html>
