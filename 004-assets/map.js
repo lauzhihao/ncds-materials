@@ -5,8 +5,21 @@
 
 (function() {
   const WORLD_URL = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+  const CHINA_TERRITORY_IDS = new Set(["156", "158"]);
+  const SOUTH_CHINA_SEA_ISLANDS = [
+    { id: "dongsha", name: "东沙群岛", lng: 116.7, lat: 20.7 },
+    { id: "xisha", name: "西沙群岛", lng: 112.3, lat: 16.5 },
+    { id: "zhongsha", name: "中沙群岛", lng: 114.4, lat: 15.7 },
+    { id: "nansha", name: "南沙群岛", lng: 114.2, lat: 10.0 }
+  ];
+  const CHINA_SEARCH_ALIASES = [
+    "china", "prc", "people's republic of china", "people republic of china",
+    "zhongguo", "中国", "中國", "中华人民共和国", "中華人民共和國",
+    "taiwan", "taiwan china", "中国台湾", "中國台灣", "台湾", "台灣",
+    "south china sea", "南海", "南海诸岛", "南海諸島"
+  ];
 
-  let svg, gRoot, gSphere, gGrat, gLand, gHighlight, gBorder, gConn, gConnFlow, gCity, gLabel, gBadge;
+  let svg, gRoot, gSphere, gGrat, gLand, gHighlight, gSouthSea, gBorder, gConn, gConnFlow, gCity, gLabel, gBadge;
   let projectionFlat, projectionGlobe, projection, pathGen;
   let width = 0, height = 0;
   let zoomBehavior, rotateDrag;
@@ -81,6 +94,7 @@
     gGrat     = gRoot.append("g").attr("class", "graticule-layer");
     gLand     = gRoot.append("g").attr("class", "land-layer");
     gHighlight= gRoot.append("g").attr("class", "highlight-layer");
+    gSouthSea = gRoot.append("g").attr("class", "south-sea-layer");
     gBorder   = gRoot.append("g").attr("class", "border-layer");
     gConn     = gRoot.append("g").attr("class", "conn-layer");
     gConnFlow = gRoot.append("g").attr("class", "conn-flow-layer");
@@ -115,24 +129,25 @@
         .attr("d", pathGen)
         .on("click", function(ev, d) {
           ev.stopPropagation();
-          const id = d.id;
-          if (state.highlighted.has(id)) {
-            state.highlighted.delete(id);
+          const ids = getCountryHighlightIds(d.id);
+          const active = ids.length > 0 && ids.every(id => state.highlighted.has(id));
+          const center = d3.geoCentroid(d);
+          state.lastTarget = { lng: center[0], lat: center[1] };
+          if (active) {
+            ids.forEach(id => state.highlighted.delete(id));
             updateCountryHighlight();
             return;
           }
           // adding highlight
-          const center = d3.geoCentroid(d);
-          state.lastTarget = { lng: center[0], lat: center[1] };
           if (state.autoFocus) {
             focusOn(center[0], center[1]);
             // start trace ~halfway through the focus so it plays as we arrive
             setTimeout(() => {
-              state.highlighted.add(id);
+              ids.forEach(id => state.highlighted.add(id));
               updateCountryHighlight();
             }, Math.max(0, state.focusDuration * 1000 * 0.55));
           } else {
-            state.highlighted.add(id);
+            ids.forEach(id => state.highlighted.add(id));
             updateCountryHighlight();
           }
         });
@@ -359,6 +374,10 @@
     const borderStroke= 0.6 / k;
     const gratStroke  = 0.5 / k;
     const hlStroke    = 2.4 / k;
+    const islandHaloR = 12  / k;
+    const islandDotR  = 4   / k;
+    const islandStroke= 1.4 / k;
+    const islandLabel = 11  / k;
 
     gCity.selectAll("circle.city-dot")
       .attr("r", function() {
@@ -385,6 +404,13 @@
       .style("stroke-width", landStroke + "px");
     gHighlight.selectAll("path.country-highlight")
       .style("stroke-width", hlStroke + "px");
+    gSouthSea.selectAll("circle.south-sea-halo").attr("r", islandHaloR);
+    gSouthSea.selectAll("circle.south-sea-dot")
+      .attr("r", islandDotR)
+      .attr("stroke-width", islandStroke);
+    gSouthSea.selectAll("text.south-sea-label")
+      .style("font-size", islandLabel + "px")
+      .style("stroke-width", (3 / k) + "px");
     gBorder.select("path.border").style("stroke-width", borderStroke + "px");
     gGrat.select("path.graticule").style("stroke-width", gratStroke + "px");
   }
@@ -470,6 +496,129 @@
       .join(" ");
   }
 
+  // ---------- COUNTRY SEARCH + GROUPING ----------
+  function normalizeCountryQuery(value) {
+    return String(value || "")
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9\u4e00-\u9fff]+/g, " ")
+      .trim();
+  }
+
+  function isChinaTerritoryId(id) {
+    return CHINA_TERRITORY_IDS.has(String(id));
+  }
+
+  function getFeatureById(id) {
+    if (!countriesFeatures) return null;
+    return countriesFeatures.find(f => String(f.id) === String(id)) || null;
+  }
+
+  function getResolvedFeatureId(id) {
+    const feature = getFeatureById(id);
+    return feature ? feature.id : id;
+  }
+
+  function getCountryHighlightIds(id) {
+    if (!countriesFeatures) return [id];
+    if (isChinaTerritoryId(id) || id === "china-territory") {
+      return Array.from(CHINA_TERRITORY_IDS)
+        .map(getResolvedFeatureId)
+        .filter(resolvedId => countriesFeatures.some(f => f.id === resolvedId));
+    }
+    return [getResolvedFeatureId(id)];
+  }
+
+  function hasChinaTerritoryHighlight() {
+    return Array.from(state.highlighted).some(id => isChinaTerritoryId(id));
+  }
+
+  function countryRawName(feature) {
+    return feature?.properties?.name || "";
+  }
+
+  function countryDisplayName(feature) {
+    if (!feature) return "";
+    if (String(feature.id) === "156") return "中国";
+    if (String(feature.id) === "158") return "中国台湾";
+    return countryRawName(feature);
+  }
+
+  function chinaSearchMatches(query) {
+    if (!query) return false;
+    return CHINA_SEARCH_ALIASES.some(alias => normalizeCountryQuery(alias).includes(query) || query.includes(normalizeCountryQuery(alias)));
+  }
+
+  function countryMatchesQuery(feature, query) {
+    const raw = normalizeCountryQuery(countryRawName(feature));
+    const display = normalizeCountryQuery(countryDisplayName(feature));
+    const id = String(feature.id || "").toLowerCase();
+    return raw.includes(query) || display.includes(query) || id.includes(query);
+  }
+
+  function countrySearchItems(query, limit) {
+    if (!countriesFeatures) return [];
+    const q = normalizeCountryQuery(query);
+    const max = limit || 12;
+    if (!q) return [];
+
+    const results = [];
+    const seen = new Set();
+    const chinaIds = getCountryHighlightIds("china-territory");
+    const pushChinaGroup = () => {
+      if (seen.has("china-territory")) return;
+      seen.add("china-territory");
+      results.push({
+        id: "china-territory",
+        name: "中国",
+        detail: "包含中国大陆、台湾和南海诸岛标记",
+        highlighted: chinaIds.length > 0 && chinaIds.every(id => state.highlighted.has(id))
+      });
+    };
+
+    if (chinaSearchMatches(q)) pushChinaGroup();
+
+    countriesFeatures
+      .filter(feature => countryMatchesQuery(feature, q))
+      .sort((a, b) => countryDisplayName(a).localeCompare(countryDisplayName(b)))
+      .forEach(feature => {
+        if (isChinaTerritoryId(feature.id)) {
+          pushChinaGroup();
+          return;
+        }
+        const key = String(feature.id);
+        if (seen.has(key)) return;
+        seen.add(key);
+        const ids = getCountryHighlightIds(feature.id);
+        results.push({
+          id: feature.id,
+          name: countryDisplayName(feature),
+          detail: countryRawName(feature),
+          highlighted: ids.length > 0 && ids.every(id => state.highlighted.has(id))
+        });
+      });
+
+    return results.slice(0, max);
+  }
+
+  function toggleCountryHighlightById(id, opts) {
+    opts = opts || {};
+    const ids = getCountryHighlightIds(id);
+    const active = ids.length > 0 && ids.every(featureId => state.highlighted.has(featureId));
+    if (opts.replace) state.highlighted.clear();
+    if (active && !opts.forceOn) ids.forEach(featureId => state.highlighted.delete(featureId));
+    else ids.forEach(featureId => state.highlighted.add(featureId));
+
+    const focusFeature = id === "china-territory" ? getFeatureById("156") : getFeatureById(id);
+    if (focusFeature) {
+      const center = d3.geoCentroid(focusFeature);
+      state.lastTarget = { lng: center[0], lat: center[1] };
+      if (state.autoFocus || opts.focus) focusOn(center[0], center[1]);
+    }
+    updateCountryHighlight();
+  }
+
   // ---------- COUNTRY HIGHLIGHT (animated outline trace, then fill) ----------
   function playTraceAndFill(el, d) {
     const path = d3.select(el);
@@ -528,8 +677,43 @@
       .attr("d", pathGen)
       .each(function(d) { playTraceAndFill(this, d); });
 
+    updateSouthSeaHighlight();
     updateScaleCompensation();
     restartLoopTimerIfEnabled();
+  }
+
+  function updateSouthSeaHighlight() {
+    const data = hasChinaTerritoryHighlight() ? SOUTH_CHINA_SEA_ISLANDS : [];
+    const sel = gSouthSea.selectAll("g.south-sea-highlight").data(data, d => d.id);
+
+    sel.exit()
+      .classed("removing", true)
+      .transition()
+      .duration(220)
+      .style("opacity", 0)
+      .remove();
+
+    const entered = sel.enter().append("g")
+      .attr("class", "south-sea-highlight")
+      .style("opacity", 0);
+    entered.append("circle").attr("class", "south-sea-halo");
+    entered.append("circle").attr("class", "south-sea-dot");
+    entered.append("text")
+      .attr("class", "south-sea-label")
+      .attr("x", 8)
+      .attr("y", -8)
+      .text(d => d.name);
+
+    const merged = entered.merge(sel);
+    merged
+      .attr("transform", d => {
+        const p = projectSafe(d);
+        return p ? `translate(${p[0]},${p[1]})` : "translate(-9999,-9999)";
+      })
+      .style("display", d => isPointVisible(d.lng, d.lat) ? null : "none")
+      .transition()
+      .duration(220)
+      .style("opacity", 1);
   }
 
   // Replay animation on all currently-highlighted countries
@@ -540,6 +724,7 @@
         playTraceAndFill(this, d);
       }
     });
+    updateSouthSeaHighlight();
     restartLoopTimerIfEnabled();
   }
 
@@ -576,6 +761,7 @@
         });
       } catch (e) {}
     });
+    updateSouthSeaHighlight();
   }
 
   // ---------- FOCUS ANIMATION ----------
@@ -804,7 +990,10 @@
       const q = String(name || "").toLowerCase();
       return countriesFeatures.find(f => (f.properties?.name || "").toLowerCase() === q) || null;
     },
-    addHighlightById: (id) => { state.highlighted.add(id); updateCountryHighlight(); },
+    searchCountries: countrySearchItems,
+    toggleCountryHighlightById,
+    highlightCountryById: (id, opts) => toggleCountryHighlightById(id, { ...(opts || {}), forceOn: true }),
+    addHighlightById: (id) => { getCountryHighlightIds(id).forEach(featureId => state.highlighted.add(featureId)); updateCountryHighlight(); },
     zoomIn, zoomOut, resetView, fitToSelection,
     getState: () => ({ ...state, highlighted: [...state.highlighted] })
   };

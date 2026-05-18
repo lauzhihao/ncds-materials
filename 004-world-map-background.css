@@ -57,6 +57,26 @@ html, body {
   fill: transparent !important;
   transition: fill .3s ease !important;
 }
+.south-sea-highlight {
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px var(--c-highlight-stroke));
+}
+.south-sea-halo {
+  fill: var(--c-highlight-fill);
+  opacity: 0.28;
+}
+.south-sea-dot {
+  fill: var(--c-highlight-stroke);
+  stroke: var(--c-highlight-fill);
+}
+.south-sea-label {
+  fill: var(--c-label);
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: var(--c-label-halo);
+  stroke-linejoin: round;
+  user-select: none;
+}
 .border {
   fill: none;
   stroke: var(--c-border);
@@ -529,6 +549,17 @@ html, body {
 .city-list::-webkit-scrollbar { width: 6px; }
 .city-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
 
+.country-list {
+  max-height: 156px;
+  overflow-y: auto;
+  margin: 8px -6px 10px;
+  padding: 0 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+.country-list::-webkit-scrollbar { width: 6px; }
+.country-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+
 .city-item {
   display: flex;
   align-items: center;
@@ -540,6 +571,17 @@ html, body {
 }
 .city-item:hover { background: rgba(255,255,255,0.05); }
 .city-item.selected { background: rgba(110,168,255,0.1); }
+.country-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .1s;
+}
+.country-item:hover { background: rgba(255,255,255,0.05); }
+.country-item.selected { background: rgba(110,168,255,0.1); }
 .city-check {
   width: 16px; height: 16px;
   border-radius: 4px;
@@ -552,8 +594,13 @@ html, body {
   background: #4f86ff;
   border-color: #4f86ff;
 }
+.country-item.selected .city-check {
+  background: #4f86ff;
+  border-color: #4f86ff;
+}
 .city-check svg { width: 10px; height: 10px; color: #fff; opacity: 0; transition: opacity .12s; }
 .city-item.selected .city-check svg { opacity: 1; }
+.country-item.selected .city-check svg { opacity: 1; }
 .city-name {
   flex: 1;
   font-size: 12px;
@@ -563,10 +610,28 @@ html, body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.country-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  color: rgba(255,255,255,0.88);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .city-country {
   font-size: 11px;
   color: rgba(255,255,255,0.4);
   white-space: nowrap;
+}
+.country-detail {
+  font-size: 11px;
+  color: rgba(255,255,255,0.42);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 158px;
 }
 
 .summary {

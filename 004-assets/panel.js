@@ -33,7 +33,8 @@
     activeTab: "theme",
     cityFilter: "",
     regionFilter: "All",
-    cityTypeFilter: "all"
+    cityTypeFilter: "all",
+    countryFilter: ""
   };
 
   // ---------- persistence ----------
@@ -558,8 +559,10 @@
 
       <div class="section-title" style="margin-top:18px">国家高亮</div>
       <div style="font-size:11px;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:8px">
-        点击地图上的任意国家即可高亮其边界。再次点击取消。
+        点击地图上的任意国家即可高亮其边界，或按国家名称搜索后点选。
       </div>
+      <input class="search" id="country-search" placeholder="搜索国家名称，例如：中国 / China" value="${escapeAttr(state.countryFilter)}"/>
+      <div class="country-list" id="country-list"></div>
       <div class="row column">
         <label>动画时长 <span style="color:rgba(255,255,255,0.4)">（描边 + 填充）</span></label>
         <div class="slider-row">
@@ -629,6 +632,10 @@
     `;
     body.appendChild(wrap);
 
+    wrap.querySelector("#country-search").addEventListener("input", (e) => {
+      state.countryFilter = e.target.value;
+      renderCountryList();
+    });
     wrap.querySelector("#t-dots").addEventListener("click", (e) => {
       state.showAllDots = !state.showAllDots;
       e.currentTarget.classList.toggle("on", state.showAllDots);
@@ -663,6 +670,7 @@
     }
     wrap.querySelector("#clear-hl").addEventListener("click", () => {
       window.WorldMap.clearHighlights();
+      renderCountryList();
     });
 
     // highlight animation controls
@@ -738,6 +746,44 @@
         flashBtn(wrap.querySelector("#paste-config"), "失败");
       }
     });
+
+    renderCountryList();
+  }
+
+  function renderCountryList() {
+    const listEl = document.getElementById("country-list");
+    if (!listEl) return;
+
+    const q = state.countryFilter.trim();
+    if (!q) {
+      listEl.innerHTML = `<div class="empty-hint">输入国家名称后显示匹配结果。搜索“中国”会联动台湾和南海诸岛。</div>`;
+      return;
+    }
+
+    const results = window.WorldMap.searchCountries(q, 12);
+    listEl.innerHTML = "";
+    if (!results.length) {
+      listEl.innerHTML = `<div class="empty-hint">没有匹配的国家</div>`;
+      return;
+    }
+
+    results.forEach(item => {
+      const row = document.createElement("div");
+      row.className = "country-item" + (item.highlighted ? " selected" : "");
+      row.innerHTML = `
+        <div class="city-check">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 7 12 13 4"/></svg>
+        </div>
+        <div class="country-name">${escapeHtml(item.name)}</div>
+        <div class="country-detail">${escapeHtml(item.detail || "")}</div>
+      `;
+      row.addEventListener("click", () => {
+        window.WorldMap.toggleCountryHighlightById(item.id);
+        renderCountryList();
+      });
+      listEl.appendChild(row);
+    });
   }
 
   // ---------- helpers ----------
@@ -751,6 +797,15 @@
     return v;
   }
   function escapeAttr(s) { return String(s || "").replace(/"/g, "&quot;"); }
+  function escapeHtml(s) {
+    return String(s || "").replace(/[&<>"']/g, ch => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[ch]));
+  }
   function flashBtn(btn, msg) {
     const orig = btn.textContent;
     btn.textContent = msg;
@@ -764,7 +819,7 @@
     const cs = getComputedStyle(document.documentElement);
     const tokens = ["--c-water","--c-land","--c-land-stroke","--c-border","--c-graticule",
       "--c-city-fill","--c-city-ring","--c-city-halo","--c-label","--c-label-halo",
-      "--c-line","--c-line-glow","--c-pulse"];
+      "--c-line","--c-line-glow","--c-pulse","--c-highlight-fill","--c-highlight-stroke"];
     let styleTxt = `:root{${tokens.map(t => `${t}:${cs.getPropertyValue(t)};`).join("")}}`;
     const styleEl = document.createElement("style");
     styleEl.textContent = styleTxt + "\n" + Array.from(document.styleSheets).map(s => {
