@@ -972,6 +972,305 @@ input[type="range"] {
   transition: opacity 240ms ease, transform 240ms ease, visibility 240ms ease;
 }
 
+/* Stage layout system: scenes now switch between preset grid compositions instead of
+   pinning every panel to a fixed absolute coordinate. */
+.layout-shell {
+  position: absolute;
+  top: 12%;
+  left: 4.4%;
+  right: 4.4%;
+  bottom: 8.8%;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: minmax(150px, auto) minmax(88px, auto) minmax(0, 1.02fr) minmax(0, 0.96fr) minmax(110px, auto);
+  gap: 18px;
+  z-index: 1;
+}
+
+.layout-shell > .stage-block {
+  position: relative !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.stage-block.is-absent {
+  display: none !important;
+}
+
+.stage-block.is-disabled {
+  pointer-events: none;
+}
+
+.lead-block,
+.bullet-panel,
+.insight-panel,
+.chart-panel,
+.timeline-panel,
+.scene-note,
+.data-note {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lead-block {
+  padding: 28px 32px;
+}
+
+.stage-kicker,
+.panel-kicker,
+.note-label {
+  white-space: nowrap;
+}
+
+#stageTitle {
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.stage-body {
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.metric-row {
+  align-self: start;
+}
+
+.metric-card {
+  min-width: 0;
+}
+
+.metric-value {
+  font-size: clamp(16px, 1.02vw, 25px);
+}
+
+.bullet-panel ul {
+  flex: 1;
+  margin: 0;
+}
+
+.insight-panel {
+  padding: 20px 20px 18px;
+}
+
+.insight-grid {
+  flex: 1;
+  align-content: start;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.chart-panel {
+  padding: 20px 20px 18px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 14px;
+}
+
+#chartSvg {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+}
+
+.timeline-panel {
+  padding: 18px 20px 16px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 12px;
+}
+
+.timeline-track {
+  align-content: start;
+}
+
+.scene-note,
+.data-note {
+  padding: 16px 18px;
+  justify-content: flex-start;
+}
+
+.scene-note p,
+.data-note p {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-stage[data-layout="hero-map"] .lead-block {
+  grid-column: 1 / span 7;
+  grid-row: 1 / span 2;
+}
+
+.video-stage[data-layout="hero-map"] .metric-row {
+  grid-column: 1 / span 7;
+  grid-row: 3;
+}
+
+.video-stage[data-layout="hero-map"] .bullet-panel {
+  grid-column: 1 / span 4;
+  grid-row: 4 / span 2;
+}
+
+.video-stage[data-layout="hero-map"] .chart-panel {
+  grid-column: 9 / span 4;
+  grid-row: 1 / span 3;
+}
+
+.video-stage[data-layout="hero-map"] .scene-note {
+  grid-column: 9 / span 4;
+  grid-row: 4 / span 2;
+}
+
+.video-stage[data-layout="analysis-split"] .lead-block {
+  grid-column: 1 / span 7;
+  grid-row: 1 / span 2;
+}
+
+.video-stage[data-layout="analysis-split"] .metric-row {
+  grid-column: 1 / span 7;
+  grid-row: 3;
+}
+
+.video-stage[data-layout="analysis-split"] .bullet-panel {
+  grid-column: 1 / span 6;
+  grid-row: 4 / span 2;
+}
+
+.video-stage[data-layout="analysis-split"] .insight-panel {
+  grid-column: 7 / span 6;
+  grid-row: 2 / span 4;
+}
+
+.video-stage[data-layout="analysis-split"] .scene-note {
+  grid-column: 7 / span 6;
+  grid-row: 1;
+}
+
+.video-stage[data-layout="map-focus"] .lead-block {
+  grid-column: 1 / span 6;
+  grid-row: 1 / span 2;
+}
+
+.video-stage[data-layout="map-focus"] .metric-row {
+  grid-column: 1 / span 6;
+  grid-row: 3;
+}
+
+.video-stage[data-layout="map-focus"] .insight-panel {
+  grid-column: 1 / span 4;
+  grid-row: 4 / span 2;
+}
+
+.video-stage[data-layout="map-focus"] .timeline-panel {
+  grid-column: 5 / span 6;
+  grid-row: 5;
+}
+
+.video-stage[data-layout="map-focus"] .scene-note {
+  grid-column: 9 / span 4;
+  grid-row: 4;
+}
+
+.video-stage[data-layout="chart-focus"] .lead-block {
+  grid-column: 1 / span 7;
+  grid-row: 1 / span 2;
+}
+
+.video-stage[data-layout="chart-focus"] .metric-row {
+  grid-column: 1 / span 7;
+  grid-row: 3;
+}
+
+.video-stage[data-layout="chart-focus"] .bullet-panel,
+.video-stage[data-layout="chart-focus"] .insight-panel {
+  grid-column: 1 / span 5;
+  grid-row: 4 / span 2;
+}
+
+.video-stage[data-layout="chart-focus"] .chart-panel {
+  grid-column: 8 / span 5;
+  grid-row: 1 / span 4;
+}
+
+.video-stage[data-layout="chart-focus"] .scene-note {
+  grid-column: 6 / span 2;
+  grid-row: 5;
+}
+
+.video-stage[data-layout="playbook"] .lead-block {
+  grid-column: 1 / span 7;
+  grid-row: 1 / span 2;
+}
+
+.video-stage[data-layout="playbook"] .chart-panel {
+  grid-column: 8 / span 5;
+  grid-row: 1 / span 2;
+}
+
+.video-stage[data-layout="playbook"] .bullet-panel {
+  grid-column: 1 / span 4;
+  grid-row: 4 / span 2;
+}
+
+.video-stage[data-layout="playbook"] .timeline-panel {
+  grid-column: 5 / span 8;
+  grid-row: 4 / span 2;
+}
+
+.video-stage[data-layout="playbook"] .scene-note {
+  grid-column: 8 / span 5;
+  grid-row: 3;
+}
+
+.video-stage[data-layout="playbook"] .data-note {
+  grid-column: 1 / span 4;
+  grid-row: 3;
+}
+
+.video-stage[data-layout="summary"] .lead-block {
+  grid-column: 1 / span 7;
+  grid-row: 1 / span 2;
+}
+
+.video-stage[data-layout="summary"] .bullet-panel {
+  grid-column: 1 / span 4;
+  grid-row: 4 / span 2;
+}
+
+.video-stage[data-layout="summary"] .insight-panel {
+  grid-column: 5 / span 5;
+  grid-row: 4 / span 2;
+}
+
+.video-stage[data-layout="summary"] .scene-note {
+  grid-column: 10 / span 3;
+  grid-row: 4;
+}
+
+.video-stage[data-layout="summary"] .data-note {
+  grid-column: 10 / span 3;
+  grid-row: 5;
+}
+
 body.static-frame .chart-panel,
 body.static-frame .timeline-panel,
 body.static-frame .scene-note,

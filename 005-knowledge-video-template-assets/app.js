@@ -25,6 +25,7 @@
     metricRefs: [],
     bulletRefs: [],
     cardRefs: [],
+    blockPlans: {},
     map: {
       routes: [],
       cities: new Map(),
@@ -92,14 +93,18 @@
 
   function cacheDom() {
     dom.videoStage = document.getElementById("videoStage");
+    dom.layoutShell = document.getElementById("layoutShell");
     dom.chapterTag = document.getElementById("chapterTag");
     dom.sceneLabel = document.getElementById("sceneLabel");
     dom.outputSpec = document.getElementById("outputSpec");
+    dom.leadBlock = document.querySelector(".lead-block");
     dom.stageKicker = document.getElementById("stageKicker");
     dom.stageTitle = document.getElementById("stageTitle");
     dom.stageBody = document.getElementById("stageBody");
     dom.metricRow = document.getElementById("metricRow");
+    dom.bulletPanel = document.querySelector(".bullet-panel");
     dom.bulletList = document.getElementById("bulletList");
+    dom.insightPanel = document.querySelector(".insight-panel");
     dom.insightGrid = document.getElementById("insightGrid");
     dom.chartPanel = document.querySelector(".chart-panel");
     dom.chartKicker = document.getElementById("chartKicker");
@@ -111,7 +116,9 @@
     dom.timelineTitle = document.getElementById("timelineTitle");
     dom.timelineTrack = document.getElementById("timelineTrack");
     dom.timelineCaption = document.getElementById("timelineCaption");
+    dom.sceneNotePanel = document.querySelector(".scene-note");
     dom.sceneSummary = document.getElementById("sceneSummary");
+    dom.dataNotePanel = document.querySelector(".data-note");
     dom.dataNotice = document.getElementById("dataNotice");
     dom.avatarDock = document.getElementById("avatarDock");
     dom.avatarSpotlight = document.getElementById("avatarSpotlight");
@@ -135,6 +142,16 @@
     dom.routeBaseLayer = document.getElementById("routeBaseLayer");
     dom.routeFlowLayer = document.getElementById("routeFlowLayer");
     dom.cityLayer = document.getElementById("cityLayer");
+    dom.stageBlocks = {
+      lead: dom.leadBlock,
+      metrics: dom.metricRow,
+      bullet: dom.bulletPanel,
+      insight: dom.insightPanel,
+      chart: dom.chartPanel,
+      timeline: dom.timelinePanel,
+      sceneNote: dom.sceneNotePanel,
+      dataNote: dom.dataNotePanel
+    };
   }
 
   async function fetchJson(path) {
@@ -153,6 +170,143 @@
 
   function toggleVisibility(element, visible) {
     element.classList.toggle("is-hidden", !visible);
+  }
+
+  function setStageLayout(layoutName) {
+    dom.videoStage.dataset.layout = layoutName || "hero-map";
+  }
+
+  function normalizeBlockPlan(config) {
+    const source = config === true ? {} : (config || {});
+    return {
+      start: clamp(typeof source.start === "number" ? source.start : 0, 0, 1),
+      end: clamp(typeof source.end === "number" ? source.end : 1, 0, 1),
+      enter: source.enter || "up",
+      exit: source.exit || "fade",
+      duration: typeof source.duration === "number" ? source.duration : 0.18,
+      exitDuration: typeof source.exitDuration === "number" ? source.exitDuration : 0.12,
+      contentDuration: typeof source.contentDuration === "number" ? source.contentDuration : 0.34
+    };
+  }
+
+  function getSceneBlockPlans(scene, chart, timeline) {
+    const sceneBlocks = scene.blocks || {};
+    const availability = {
+      lead: true,
+      metrics: Array.isArray(scene.metrics) && scene.metrics.length > 0,
+      bullet: Array.isArray(scene.bullets) && scene.bullets.length > 0,
+      insight: Array.isArray(scene.cards) && scene.cards.length > 0,
+      chart: Boolean(chart),
+      timeline: Boolean(timeline),
+      sceneNote: Boolean(scene.summary),
+      dataNote: Boolean(state.story?.meta?.dataNotice)
+    };
+
+    const plans = {};
+    Object.entries(sceneBlocks).forEach(([blockName, config]) => {
+      if (availability[blockName]) {
+        const normalized = normalizeBlockPlan(config);
+        normalized.end = Math.max(normalized.start, normalized.end);
+        plans[blockName] = normalized;
+      }
+    });
+
+    if (!plans.lead) {
+      plans.lead = normalizeBlockPlan(true);
+    }
+
+    return plans;
+  }
+
+  function resetBlockElement(element) {
+    element.style.opacity = "";
+    element.style.visibility = "";
+    element.style.transform = "";
+    element.classList.remove("is-disabled");
+  }
+
+  function getMotionTransform(effect, visibility) {
+    const hidden = 1 - visibility;
+    switch (effect) {
+      case "left":
+        return `translate3d(${-34 * hidden}px, 0, 0)`;
+      case "right":
+        return `translate3d(${34 * hidden}px, 0, 0)`;
+      case "scale":
+        return `translate3d(0, ${12 * hidden}px, 0) scale(${0.94 + visibility * 0.06})`;
+      case "fade":
+        return "translate3d(0, 0, 0)";
+      case "up":
+      default:
+        return `translate3d(0, ${28 * hidden}px, 0)`;
+    }
+  }
+
+  function getBlockFrame(sceneProgress, plan) {
+    const totalWindow = Math.max(0.001, plan.end - plan.start);
+    const enterWindow = Math.max(0.001, Math.min(plan.duration, totalWindow));
+    const exitWindow = Math.max(0.001, Math.min(plan.exitDuration, totalWindow));
+    const enterEnd = Math.min(plan.end, plan.start + enterWindow);
+    const exitStart = Math.max(enterEnd, plan.end - exitWindow);
+    const contentWindow = Math.max(enterWindow, Math.min(plan.contentDuration, totalWindow));
+
+    if (sceneProgress < plan.start || sceneProgress > plan.end) {
+      return {
+        visibility: 0,
+        localProgress: sceneProgress > plan.end ? 1 : 0,
+        effect: plan.enter
+      };
+    }
+
+    const localProgress = clamp((sceneProgress - plan.start) / contentWindow, 0, 1);
+
+    if (sceneProgress <= enterEnd) {
+      const progress = clamp((sceneProgress - plan.start) / enterWindow, 0, 1);
+      return {
+        visibility: easeOutCubic(progress),
+        localProgress,
+        effect: plan.enter
+      };
+    }
+
+    if (sceneProgress >= exitStart && plan.end > exitStart) {
+      const progress = clamp(1 - ((sceneProgress - exitStart) / (plan.end - exitStart)), 0, 1);
+      return {
+        visibility: progress,
+        localProgress: 1,
+        effect: plan.exit
+      };
+    }
+
+    return {
+      visibility: 1,
+      localProgress,
+      effect: "none"
+    };
+  }
+
+  function applyBlockFrame(element, frame) {
+    element.style.opacity = String(frame.visibility);
+    element.style.visibility = frame.visibility < 0.03 ? "hidden" : "visible";
+    element.style.transform = frame.effect === "none"
+      ? "translate3d(0, 0, 0)"
+      : getMotionTransform(frame.effect, frame.visibility);
+    element.classList.toggle("is-disabled", frame.visibility < 0.05);
+  }
+
+  function updateStageBlocks(sceneProgress) {
+    const blockProgress = {};
+    Object.entries(dom.stageBlocks).forEach(([blockName, element]) => {
+      const plan = state.blockPlans[blockName];
+      if (!plan) {
+        return;
+      }
+
+      const frame = getBlockFrame(sceneProgress, plan);
+      blockProgress[blockName] = frame.localProgress;
+      applyBlockFrame(element, frame);
+    });
+    return blockProgress;
   }
 
   function renderMetrics(metrics) {
@@ -279,13 +433,13 @@
     });
   }
 
-  function updateChartProgress(sceneProgress) {
+  function updateChartProgress(blockProgress) {
     if (!state.chartRefs.length) {
       return;
     }
 
     state.chartRefs.forEach((ref, index) => {
-      const staggered = clamp((sceneProgress - index * 0.08) / 0.45, 0, 1);
+      const staggered = clamp((blockProgress - index * 0.08) / 0.45, 0, 1);
       const eased = easeOutCubic(staggered);
       ref.fill.attr("width", ref.targetWidth * eased);
       ref.value.text(String(Math.round(ref.targetValue * eased)));
@@ -314,9 +468,9 @@
     });
   }
 
-  function updateTimelineProgress(sceneProgress) {
+  function updateTimelineProgress(blockProgress) {
     state.timelineRefs.forEach((item, index) => {
-      const staggered = clamp((sceneProgress - index * 0.1) / 0.36, 0, 1);
+      const staggered = clamp((blockProgress - index * 0.1) / 0.36, 0, 1);
       const eased = easeOutCubic(staggered);
       item.style.opacity = String(0.22 + eased * 0.78);
       item.style.transform = `translateY(${(1 - eased) * 12}px)`;
@@ -457,10 +611,13 @@
     const scene = state.story.scenes[sceneIndex];
     const chart = scene.chartKey ? state.datasets.charts[scene.chartKey] : null;
     const timeline = scene.timelineKey ? state.datasets.timelines[scene.timelineKey] : null;
+    const blockPlans = getSceneBlockPlans(scene, chart, timeline);
 
     setAccent(sceneIndex);
+    setStageLayout(scene.layout || "hero-map");
     state.activeScene = scene;
     state.currentSceneIndex = sceneIndex;
+    state.blockPlans = blockPlans;
 
     dom.chapterTag.textContent = scene.chapter;
     dom.sceneLabel.textContent = scene.label;
@@ -476,8 +633,7 @@
     renderBullets(scene.bullets || []);
     renderCards(scene.cards || []);
 
-    toggleVisibility(dom.chartPanel, Boolean(chart));
-    if (chart) {
+    if (blockPlans.chart && chart) {
       renderChart(chart);
     } else {
       state.chartRefs = [];
@@ -487,8 +643,7 @@
       dom.chartCaption.textContent = "";
     }
 
-    toggleVisibility(dom.timelinePanel, Boolean(timeline));
-    if (timeline) {
+    if (blockPlans.timeline && timeline) {
       renderTimeline(timeline);
     } else {
       state.timelineRefs = [];
@@ -497,6 +652,12 @@
       dom.timelineCaption.textContent = "";
       dom.timelineTrack.innerHTML = "";
     }
+
+    Object.entries(dom.stageBlocks).forEach(([blockName, element]) => {
+      const active = Boolean(blockPlans[blockName]);
+      element.classList.toggle("is-absent", !active);
+      resetBlockElement(element);
+    });
 
     Array.from(dom.sceneList.children).forEach((button, index) => {
       button.classList.toggle("is-active", index === sceneIndex);
@@ -591,12 +752,13 @@
 
     const sceneDuration = Math.max(0.001, scene.end - scene.start);
     const sceneProgress = clamp((state.currentTime - scene.start) / sceneDuration, 0, 1);
+    const blockProgress = updateStageBlocks(sceneProgress);
 
-    updateReveal(dom.metricRefs, sceneProgress, 0.08);
-    updateReveal(dom.bulletRefs, sceneProgress + 0.04, 0.06);
-    updateReveal(dom.cardRefs, sceneProgress + 0.08, 0.08);
-    updateChartProgress(sceneProgress);
-    updateTimelineProgress(sceneProgress);
+    updateReveal(dom.metricRefs, blockProgress.metrics || 0, 0.08);
+    updateReveal(dom.bulletRefs, blockProgress.bullet || 0, 0.06);
+    updateReveal(dom.cardRefs, blockProgress.insight || 0, 0.08);
+    updateChartProgress(blockProgress.chart || 0);
+    updateTimelineProgress(blockProgress.timeline || 0);
     updateMap(scene, sceneProgress);
     updateAvatar(scene);
     updateUi(scene);

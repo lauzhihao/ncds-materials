@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "为什么全球供应链正在重构，而不是简单迁出中国",
-    "description": "这是一个用于专业知识视频生产的样例脚本。画面结构、动画逻辑和数字人安全区都可复用，实际发布时请替换为你自己的研究数据、案例和旁白。",
+    "description": "这是一个用于专业知识视频生产的样例脚本。每个 scene 都可以预先编排版式、模块出现时间和转场方向，实际发布时请替换为你自己的研究数据、案例和旁白。",
     "duration": 180,
     "fps": 60,
     "outputSpec": "1920 x 1080 / 60 FPS",
@@ -12,12 +12,52 @@
       "id": "hook",
       "label": "01 开场钩子",
       "chapter": "开场问题",
+      "layout": "hero-map",
       "start": 0,
       "end": 16,
       "kicker": "全球产业链 / Strategic Rewiring",
       "title": "为什么全球供应链正在重构，而不是简单迁出中国",
       "body": "过去几年，企业讨论的重点已经从最低成本，转向成本、韧性、地缘风险和交付确定性的组合优化。",
       "summary": "先抛出误区，再给出更专业的判断框架。",
+      "blocks": {
+        "lead": {
+          "start": 0,
+          "end": 1,
+          "enter": "up",
+          "duration": 0.18
+        },
+        "metrics": {
+          "start": 0.12,
+          "end": 0.62,
+          "enter": "up",
+          "duration": 0.14
+        },
+        "chart": {
+          "start": 0.24,
+          "end": 0.88,
+          "enter": "right",
+          "duration": 0.16,
+          "contentDuration": 0.36
+        },
+        "bullet": {
+          "start": 0.48,
+          "end": 1,
+          "enter": "left",
+          "duration": 0.16
+        },
+        "sceneNote": {
+          "start": 0.72,
+          "end": 1,
+          "enter": "fade",
+          "duration": 0.1
+        },
+        "dataNote": {
+          "start": 0.82,
+          "end": 1,
+          "enter": "fade",
+          "duration": 0.08
+        }
+      },
       "bullets": [
         "重构不是一次性搬迁，而是多节点分散配置。",
         "核心工厂、区域组装和第二供应商可以同时存在。",
@@ -68,12 +108,45 @@
       "id": "framework",
       "label": "02 判断框架",
       "chapter": "定义问题",
+      "layout": "analysis-split",
       "start": 16,
       "end": 40,
       "kicker": "判断框架 / Four Variables",
       "title": "企业判断一条供应链是否要调整，通常会同时看四类变量",
       "body": "专业分析里最常见的不是问要不要搬，而是问哪一段流程需要分散、保留还是复制。",
       "summary": "把抽象议题拆成四个可解释变量。",
+      "blocks": {
+        "lead": {
+          "start": 0,
+          "end": 1,
+          "enter": "up",
+          "duration": 0.16
+        },
+        "metrics": {
+          "start": 0.14,
+          "end": 0.56,
+          "enter": "up",
+          "duration": 0.12
+        },
+        "bullet": {
+          "start": 0.34,
+          "end": 1,
+          "enter": "left",
+          "duration": 0.16
+        },
+        "insight": {
+          "start": 0.5,
+          "end": 1,
+          "enter": "right",
+          "duration": 0.18
+        },
+        "sceneNote": {
+          "start": 0.74,
+          "end": 1,
+          "enter": "fade",
+          "duration": 0.1
+        }
+      },
       "bullets": [
         "成本：原材料、人工、运费和税负是否还能支撑利润。",
         "韧性：一旦出现中断，库存和替代产能能否顶上。",
@@ -127,12 +200,46 @@
       "id": "map-shift",
       "label": "03 路径变化",
       "chapter": "地图变化",
+      "layout": "map-focus",
       "start": 40,
       "end": 72,
       "kicker": "区域分流 / Route Shifts",
       "title": "地图上的变化不是一条线断掉，而是多条新通道同时长出来",
       "body": "最典型的画面，是传统主通道仍在运转，但部分中间品、组装和近岸产能开始分散到新节点。",
       "summary": "让观众直观看到旧通道仍在，新通道同步出现。",
+      "blocks": {
+        "lead": {
+          "start": 0,
+          "end": 0.66,
+          "enter": "up",
+          "duration": 0.18
+        },
+        "metrics": {
+          "start": 0.14,
+          "end": 0.5,
+          "enter": "up",
+          "duration": 0.12
+        },
+        "insight": {
+          "start": 0.36,
+          "end": 0.92,
+          "enter": "left",
+          "duration": 0.18
+        },
+        "timeline": {
+          "start": 0.58,
+          "end": 1,
+          "enter": "up",
+          "duration": 0.16,
+          "contentDuration": 0.3
+        },
+        "sceneNote": {
+          "start": 0.78,
+          "end": 1,
+          "enter": "fade",
+          "duration": 0.08
+        }
+      },
       "bullets": [
         "东亚主干通道依旧强，但东南亚节点在承接部分增量。",
         "北美近岸配置让墨西哥和美国南部联动更紧密。",
@@ -189,12 +296,46 @@
       "id": "drivers",
       "label": "04 驱动因素",
       "chapter": "驱动因素",
+      "layout": "chart-focus",
       "start": 72,
       "end": 108,
       "kicker": "决策变量 / Decision Drivers",
       "title": "企业为什么要改网络，通常不是因为一个原因，而是多种因素叠加",
       "body": "高管在做的不是观点表达，而是把成本、库存、关税和交付风险一起折算到损益表里。",
       "summary": "用图表把多因素叠加的逻辑具体化。",
+      "blocks": {
+        "lead": {
+          "start": 0,
+          "end": 0.66,
+          "enter": "up",
+          "duration": 0.16
+        },
+        "metrics": {
+          "start": 0.12,
+          "end": 0.48,
+          "enter": "up",
+          "duration": 0.12
+        },
+        "chart": {
+          "start": 0.24,
+          "end": 1,
+          "enter": "right",
+          "duration": 0.16,
+          "contentDuration": 0.36
+        },
+        "bullet": {
+          "start": 0.46,
+          "end": 0.92,
+          "enter": "left",
+          "duration": 0.16
+        },
+        "sceneNote": {
+          "start": 0.82,
+          "end": 1,
+          "enter": "fade",
+          "duration": 0.08
+        }
+      },
       "bullets": [
         "运费和库存周期会直接影响现金流。",
         "关税和补贴会改变单个国家的综合成本。",
@@ -243,12 +384,46 @@
       "id": "winners",
       "label": "05 区域机会",
       "chapter": "区域机会",
+      "layout": "chart-focus",
       "start": 108,
       "end": 142,
       "kicker": "增量承接 / Regional Winners",
       "title": "谁会承接增量，取决于它能否提供配套、效率、政策和物流的组合",
       "body": "没有哪个国家能一口气复制全部能力，但不同地区可以承接不同类型的增量。",
       "summary": "讲清楚不同区域承接的是不同角色，而不是同一种能力。",
+      "blocks": {
+        "lead": {
+          "start": 0,
+          "end": 0.64,
+          "enter": "up",
+          "duration": 0.16
+        },
+        "metrics": {
+          "start": 0.14,
+          "end": 0.48,
+          "enter": "up",
+          "duration": 0.12
+        },
+        "chart": {
+          "start": 0.24,
+          "end": 1,
+          "enter": "right",
+          "duration": 0.16,
+          "contentDuration": 0.34
+        },
+        "insight": {
+          "start": 0.48,
+          "end": 1,
+          "enter": "left",
+          "duration": 0.18
+        },
+        "sceneNote": {
+          "start": 0.82,
+          "end": 1,
+          "enter": "fade",
+          "duration": 0.08
+        }
+      },
       "bullets": [
         "东南亚更像弹性组装和部分中间品扩容。",
         "墨西哥更受益于北美市场的近岸交付需求。",
@@ -304,12 +479,53 @@
       "id": "playbook",
       "label": "06 企业动作",
       "chapter": "企业动作",
+      "layout": "playbook",
       "start": 142,
       "end": 166,
       "kicker": "执行清单 / Playbook",
       "title": "真正成熟的公司，不会喊口号，而是按步骤重构自己的供应链",
       "body": "先识别单点依赖，再划分产品线，再建立第二节点，最后把库存和物流策略一起重做。",
       "summary": "用执行步骤收束，让内容从宏观判断落到企业动作。",
+      "blocks": {
+        "lead": {
+          "start": 0,
+          "end": 0.54,
+          "enter": "up",
+          "duration": 0.16
+        },
+        "chart": {
+          "start": 0.22,
+          "end": 0.74,
+          "enter": "right",
+          "duration": 0.16,
+          "contentDuration": 0.32
+        },
+        "bullet": {
+          "start": 0.3,
+          "end": 0.76,
+          "enter": "left",
+          "duration": 0.16
+        },
+        "timeline": {
+          "start": 0.56,
+          "end": 1,
+          "enter": "up",
+          "duration": 0.16,
+          "contentDuration": 0.28
+        },
+        "sceneNote": {
+          "start": 0.78,
+          "end": 1,
+          "enter": "fade",
+          "duration": 0.08
+        },
+        "dataNote": {
+          "start": 0.84,
+          "end": 1,
+          "enter": "fade",
+          "duration": 0.08
+        }
+      },
       "bullets": [
         "先找出高风险零部件和单一国家暴露。",
         "再区分哪些品类必须保留主工厂，哪些可以区域分流。",
@@ -363,12 +579,45 @@
       "id": "takeaway",
       "label": "07 结论收束",
       "chapter": "结论",
+      "layout": "summary",
       "start": 166,
       "end": 180,
       "kicker": "结论 / Final Takeaway",
       "title": "结论只有一句：全球供应链不是在消失，而是在变成更复杂的多中心网络",
       "body": "如果你以后做专业知识视频，可以把这个模板里的主题、地图、图表和旁白全部换掉，但保留这套结构。",
       "summary": "用三句话总结，再给下一步内容生产建议。",
+      "blocks": {
+        "lead": {
+          "start": 0,
+          "end": 0.64,
+          "enter": "up",
+          "duration": 0.16
+        },
+        "bullet": {
+          "start": 0.18,
+          "end": 0.8,
+          "enter": "left",
+          "duration": 0.16
+        },
+        "insight": {
+          "start": 0.42,
+          "end": 1,
+          "enter": "right",
+          "duration": 0.18
+        },
+        "sceneNote": {
+          "start": 0.72,
+          "end": 1,
+          "enter": "fade",
+          "duration": 0.08
+        },
+        "dataNote": {
+          "start": 0.82,
+          "end": 1,
+          "enter": "fade",
+          "duration": 0.08
+        }
+      },
       "bullets": [
         "不要只讲迁移，要讲网络如何被重新配置。",
         "不要只讲国家，要讲产品线、风险和交付逻辑。",

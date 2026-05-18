@@ -72,57 +72,59 @@
               </div>
             </div>
 
-            <section class="lead-block">
-              <p class="stage-kicker" id="stageKicker">专题标签</p>
-              <h2 id="stageTitle">标题</h2>
-              <p class="stage-body" id="stageBody">正文摘要</p>
-            </section>
+            <div class="layout-shell" id="layoutShell">
+              <section class="lead-block stage-block" data-block="lead">
+                <p class="stage-kicker" id="stageKicker">专题标签</p>
+                <h2 id="stageTitle">标题</h2>
+                <p class="stage-body" id="stageBody">正文摘要</p>
+              </section>
 
-            <section class="metric-row" id="metricRow" aria-label="关键指标"></section>
+              <section class="metric-row stage-block" id="metricRow" data-block="metrics" aria-label="关键指标"></section>
 
-            <section class="bullet-panel">
-              <div class="panel-head">
-                <p class="panel-kicker">本段重点</p>
-                <h3>一句话结构化讲清楚</h3>
-              </div>
-              <ul id="bulletList"></ul>
-            </section>
+              <section class="bullet-panel stage-block" data-block="bullet">
+                <div class="panel-head">
+                  <p class="panel-kicker">本段重点</p>
+                  <h3>一句话结构化讲清楚</h3>
+                </div>
+                <ul id="bulletList"></ul>
+              </section>
 
-            <section class="insight-panel">
-              <div class="panel-head">
-                <p class="panel-kicker">画面卡片</p>
-                <h3>适合配旁白与字幕的解释卡</h3>
-              </div>
-              <div class="insight-grid" id="insightGrid"></div>
-            </section>
+              <section class="insight-panel stage-block" data-block="insight">
+                <div class="panel-head">
+                  <p class="panel-kicker">画面卡片</p>
+                  <h3>适合配旁白与字幕的解释卡</h3>
+                </div>
+                <div class="insight-grid" id="insightGrid"></div>
+              </section>
 
-            <section class="chart-panel">
-              <div class="panel-head">
-                <p class="panel-kicker" id="chartKicker">图表模块</p>
-                <h3 id="chartTitle">图表标题</h3>
-              </div>
-              <svg id="chartSvg" viewBox="0 0 640 420" aria-label="图表画布"></svg>
-              <p class="chart-caption" id="chartCaption"></p>
-            </section>
+              <section class="chart-panel stage-block" data-block="chart">
+                <div class="panel-head">
+                  <p class="panel-kicker" id="chartKicker">图表模块</p>
+                  <h3 id="chartTitle">图表标题</h3>
+                </div>
+                <svg id="chartSvg" viewBox="0 0 640 420" aria-label="图表画布"></svg>
+                <p class="chart-caption" id="chartCaption"></p>
+              </section>
 
-            <section class="timeline-panel">
-              <div class="panel-head">
-                <p class="panel-kicker" id="timelineKicker">时间线模块</p>
-                <h3 id="timelineTitle">时间线标题</h3>
-              </div>
-              <div class="timeline-track" id="timelineTrack"></div>
-              <p class="timeline-caption" id="timelineCaption"></p>
-            </section>
+              <section class="timeline-panel stage-block" data-block="timeline">
+                <div class="panel-head">
+                  <p class="panel-kicker" id="timelineKicker">时间线模块</p>
+                  <h3 id="timelineTitle">时间线标题</h3>
+                </div>
+                <div class="timeline-track" id="timelineTrack"></div>
+                <p class="timeline-caption" id="timelineCaption"></p>
+              </section>
 
-            <section class="scene-note">
-              <span class="note-label">场景注释</span>
-              <p id="sceneSummary">场景摘要</p>
-            </section>
+              <section class="scene-note stage-block" data-block="sceneNote">
+                <span class="note-label">场景注释</span>
+                <p id="sceneSummary">场景摘要</p>
+              </section>
 
-            <section class="data-note">
-              <span class="note-label">数据提醒</span>
-              <p id="dataNotice">图表数值为模板示意，请替换为真实研究数据后再发布。</p>
-            </section>
+              <section class="data-note stage-block" data-block="dataNote">
+                <span class="note-label">数据提醒</span>
+                <p id="dataNotice">图表数值为模板示意，请替换为真实研究数据后再发布。</p>
+              </section>
+            </div>
 
             <aside class="avatar-dock" id="avatarDock" aria-label="数字人安全区">
               <div class="avatar-label">AI HOST SAFE AREA</div>
