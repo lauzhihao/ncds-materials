@@ -175,6 +175,7 @@ input {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  container-type: size;
   background:
     radial-gradient(circle at 52% 42%, rgba(89, 208, 255, 0.08), transparent 38%),
     linear-gradient(180deg, rgba(7, 19, 31, 0.3), rgba(3, 8, 16, 0.18));
@@ -256,7 +257,7 @@ input {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  font-size: clamp(12px, 0.84vw, 18px);
+  font-size: clamp(12px, 0.84cqw, 18px);
   color: rgba(240, 249, 255, 0.88);
 }
 
@@ -313,14 +314,14 @@ input {
 .stage-kicker {
   margin: 0 0 12px;
   color: #82dbff;
-  font-size: clamp(12px, 0.88vw, 20px);
+  font-size: clamp(12px, 0.88cqw, 20px);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 #stageTitle {
   margin: 0;
-  font-size: clamp(34px, 2.52vw, 62px);
+  font-size: clamp(34px, 2.52cqw, 62px);
   line-height: 1.12;
   font-weight: 780;
   max-width: 92%;
@@ -330,7 +331,7 @@ input {
 .stage-body {
   margin: 18px 0 0;
   max-width: 92%;
-  font-size: clamp(15px, 1.05vw, 24px);
+  font-size: clamp(15px, 1.05cqw, 24px);
   line-height: 1.72;
   color: rgba(234, 245, 255, 0.86);
 }
@@ -358,13 +359,13 @@ input {
 .metric-label {
   margin-bottom: 8px;
   color: #8db8da;
-  font-size: clamp(11px, 0.74vw, 16px);
+  font-size: clamp(11px, 0.74cqw, 16px);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .metric-value {
-  font-size: clamp(18px, 1.16vw, 28px);
+  font-size: clamp(18px, 1.16cqw, 28px);
   line-height: 1.4;
   font-weight: 680;
   color: #f3f9ff;
@@ -378,7 +379,7 @@ input {
 }
 
 .panel-head h3 {
-  font-size: clamp(17px, 1.06vw, 26px);
+  font-size: clamp(17px, 1.06cqw, 26px);
   font-weight: 720;
 }
 
@@ -397,7 +398,7 @@ input {
   display: grid;
   gap: 12px;
   color: rgba(236, 245, 255, 0.88);
-  font-size: clamp(14px, 0.96vw, 22px);
+  font-size: clamp(14px, 0.96cqw, 22px);
   line-height: 1.54;
 }
 
@@ -425,14 +426,14 @@ input {
 
 .insight-card h4 {
   margin: 0 0 8px;
-  font-size: clamp(15px, 0.92vw, 22px);
+  font-size: clamp(15px, 0.92cqw, 22px);
   font-weight: 700;
 }
 
 .insight-card p {
   margin: 0;
   color: rgba(219, 234, 252, 0.78);
-  font-size: clamp(13px, 0.86vw, 20px);
+  font-size: clamp(13px, 0.86cqw, 20px);
   line-height: 1.56;
 }
 
@@ -453,7 +454,7 @@ input {
 
 .chart-caption {
   margin-top: 10px;
-  font-size: clamp(12px, 0.78vw, 17px);
+  font-size: clamp(12px, 0.78cqw, 17px);
 }
 
 .timeline-panel {
@@ -507,7 +508,7 @@ input {
   display: block;
   margin-bottom: 8px;
   color: #7fdcff;
-  font-size: clamp(11px, 0.72vw, 16px);
+  font-size: clamp(11px, 0.72cqw, 16px);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -522,13 +523,13 @@ input {
 .timeline-card strong {
   display: block;
   margin-bottom: 6px;
-  font-size: clamp(14px, 0.88vw, 19px);
+  font-size: clamp(14px, 0.88cqw, 19px);
 }
 
 .timeline-card p {
   margin: 0;
   color: rgba(219, 234, 252, 0.74);
-  font-size: clamp(12px, 0.75vw, 16px);
+  font-size: clamp(12px, 0.75cqw, 16px);
   line-height: 1.45;
 }
 
@@ -544,7 +545,7 @@ input {
 .scene-note p,
 .data-note p,
 .avatar-dock p {
-  font-size: clamp(12px, 0.78vw, 18px);
+  font-size: clamp(12px, 0.78cqw, 18px);
 }
 
 .data-note {
@@ -666,14 +667,14 @@ input {
 }
 
 .spotlight-copy span {
-  font-size: clamp(12px, 0.76vw, 18px);
+  font-size: clamp(12px, 0.76cqw, 18px);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #7bd9ff;
 }
 
 .spotlight-copy strong {
-  font-size: clamp(18px, 1.12vw, 28px);
+  font-size: clamp(18px, 1.12cqw, 28px);
 }
 
 .safe-guides {
@@ -727,7 +728,7 @@ input {
   justify-content: space-between;
   margin-top: 10px;
   color: rgba(236, 245, 255, 0.74);
-  font-size: clamp(12px, 0.78vw, 18px);
+  font-size: clamp(12px, 0.78cqw, 18px);
 }
 
 .country-shape {
@@ -863,6 +864,81 @@ input {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 14px;
+}
+
+.export-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.export-section::before {
+  content: "";
+  position: absolute;
+  inset: 14px -8px auto auto;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(248, 184, 91, 0.18), transparent 68%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.export-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.export-spec-grid div {
+  min-width: 0;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(125, 211, 252, 0.12);
+  background:
+    linear-gradient(180deg, rgba(89, 208, 255, 0.08), transparent),
+    rgba(8, 16, 28, 0.68);
+}
+
+.export-spec-grid span,
+.export-spec-grid strong {
+  display: block;
+}
+
+.export-spec-grid span {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.export-spec-grid strong {
+  color: #f4f9ff;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.export-command {
+  margin: 14px 0;
+  padding: 14px;
+  max-width: 100%;
+  overflow: auto;
+  border: 1px solid rgba(248, 184, 91, 0.18);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(248, 184, 91, 0.1), rgba(89, 208, 255, 0.05)),
+    rgba(3, 8, 16, 0.72);
+  color: #f9d79c;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.export-actions {
+  margin-bottom: 0;
 }
 
 .button {
@@ -1058,7 +1134,7 @@ input[type="range"] {
 }
 
 .metric-value {
-  font-size: clamp(16px, 1.02vw, 25px);
+  font-size: clamp(16px, 1.02cqw, 25px);
 }
 
 .bullet-panel ul {
@@ -1342,6 +1418,10 @@ body.clean-mode .video-frame {
   }
 
   .control-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .export-spec-grid {
     grid-template-columns: 1fr;
   }
 }

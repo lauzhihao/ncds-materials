@@ -6,18 +6,32 @@
   "style": "005-knowledge-video-template-assets/style.css",
   "script": "005-knowledge-video-template-assets/app.js",
   "assets": "005-knowledge-video-template-assets/",
-  "description": "面向专业知识与财经内容的 3 分钟视频模板，内置世界地图、图表、时间线、右下角数字人安全区和放大镜头占位，适合导出底片后再进入剪映补字幕与声音。",
-  "version": "1.0.0",
+  "description": "面向专业知识与财经内容的 3 分钟视频模板，内置世界地图、图表、时间线、右下角数字人安全区和放大镜头占位，支持服务端逐帧导出 1080P60 视频底片后再进入剪映补字幕与声音。",
+  "version": "1.1.0",
   "features": [
     "16:9 1080P 预览舞台",
     "3 分钟时间轴驱动的场景切换",
     "世界地图与跨区域航线动态背景",
     "图表、解释卡、时间线组合模板",
     "数字人角落机位与放大机位预留",
-    "干净录制模式和快捷键"
+    "干净录制模式和快捷键",
+    "服务端 Headless Chrome 逐帧截图导出",
+    "ffmpeg 编码 1920x1080 / 60FPS MP4 视频"
   ],
+  "export": {
+    "script": "005-knowledge-video-template-assets/export-video.mjs",
+    "defaultCommand": "node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/005-knowledge-video-template-1080p60.mp4",
+    "output": "1920x1080 / 60FPS / MP4",
+    "requires": [
+      "Node.js",
+      "Google Chrome or Chromium",
+      "ffmpeg"
+    ]
+  },
   "queryParams": {
     "t": "指定起始时间，单位秒",
+    "frame": "指定起始帧序号，需配合 fps 参数；优先级高于 t",
+    "fps": "frame 参数换算秒数时使用的帧率，默认读取 story.json 的 meta.fps",
     "autoplay": "1 表示自动播放",
     "clean": "1 表示默认进入干净录制模式",
     "scene": "按 scene id 直接跳转"

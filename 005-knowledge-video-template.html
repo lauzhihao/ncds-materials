@@ -185,10 +185,38 @@
           <button type="button" class="button primary" id="playPauseButton">播放</button>
           <button type="button" class="button" id="restartButton">回到开头</button>
           <button type="button" class="button" id="cleanModeButton">干净录制模式</button>
+          <button type="button" class="button" id="openCleanButton">打开 1080P 预览窗</button>
         </div>
         <label class="range-field" for="timelineInput">时间轴</label>
         <input id="timelineInput" type="range" min="0" max="180" step="0.01" value="0">
         <p class="shortcut-note">快捷键：`Space` 播放，`←` `→` 微调，`C` 切换录制模式，数字键跳转章节。</p>
+      </section>
+
+      <section class="control-section export-section">
+        <div class="section-head">
+          <h3>逐帧导出</h3>
+          <span id="renderSpecTag">1920x1080 / 60FPS</span>
+        </div>
+        <div class="export-spec-grid">
+          <div>
+            <span>输出尺寸</span>
+            <strong>1920 × 1080</strong>
+          </div>
+          <div>
+            <span>帧率</span>
+            <strong>60 FPS</strong>
+          </div>
+          <div>
+            <span>总帧数</span>
+            <strong id="totalFrameCount">10800</strong>
+          </div>
+        </div>
+        <p class="control-copy">服务端脚本会按 <code>frame / fps</code> 精确定位每一帧，用 Headless Chrome 截取 1080P 画面，再交给 ffmpeg 编码视频。</p>
+        <pre class="export-command" id="exportCommand">node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/005-knowledge-video-template-1080p60.mp4</pre>
+        <div class="control-actions export-actions">
+          <button type="button" class="button primary" id="copyExportCommandButton">复制导出命令</button>
+          <button type="button" class="button" id="openFrameButton">查看当前帧</button>
+        </div>
       </section>
 
       <section class="control-section">

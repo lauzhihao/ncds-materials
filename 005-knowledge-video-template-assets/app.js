@@ -131,8 +131,14 @@
     dom.playPauseButton = document.getElementById("playPauseButton");
     dom.restartButton = document.getElementById("restartButton");
     dom.cleanModeButton = document.getElementById("cleanModeButton");
+    dom.openCleanButton = document.getElementById("openCleanButton");
     dom.timelineInput = document.getElementById("timelineInput");
     dom.playbackState = document.getElementById("playbackState");
+    dom.renderSpecTag = document.getElementById("renderSpecTag");
+    dom.totalFrameCount = document.getElementById("totalFrameCount");
+    dom.exportCommand = document.getElementById("exportCommand");
+    dom.copyExportCommandButton = document.getElementById("copyExportCommandButton");
+    dom.openFrameButton = document.getElementById("openFrameButton");
     dom.sceneList = document.getElementById("sceneList");
     dom.sceneCounter = document.getElementById("sceneCounter");
     dom.voiceoverCopy = document.getElementById("voiceoverCopy");
@@ -816,6 +822,36 @@
     updateUi(state.activeScene);
   }
 
+  function openRenderWindow(params = {}) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("clean", "1");
+    url.searchParams.set("autoplay", params.autoplay ? "1" : "0");
+    if (typeof params.time === "number") {
+      url.searchParams.set("t", String(params.time));
+      url.searchParams.delete("frame");
+    }
+    if (typeof params.frame === "number") {
+      url.searchParams.set("frame", String(params.frame));
+      url.searchParams.set("fps", String(params.fps || getRenderSpec().fps));
+      url.searchParams.delete("t");
+    }
+    window.open(url.toString(), "knowledge-video-render", "width=1920,height=1080,noopener");
+  }
+
+  async function copyExportCommand() {
+    const command = buildExportCommand();
+    try {
+      await navigator.clipboard.writeText(command);
+      dom.copyExportCommandButton.textContent = "已复制";
+    } catch (error) {
+      dom.copyExportCommandButton.textContent = "复制失败";
+    }
+
+    window.setTimeout(() => {
+      dom.copyExportCommandButton.textContent = "复制导出命令";
+    }, 1400);
+  }
+
   function buildSceneList() {
     dom.sceneList.innerHTML = "";
     state.story.scenes.forEach((scene, index) => {
@@ -834,6 +870,34 @@
     });
   }
 
+  function getRenderSpec() {
+    const fps = Number(state.story?.meta?.fps) || 60;
+    const width = 1920;
+    const height = 1080;
+    const duration = Number(state.story?.meta?.duration) || state.duration;
+    return {
+      width,
+      height,
+      fps,
+      duration,
+      totalFrames: Math.round(duration * fps)
+    };
+  }
+
+  function buildExportCommand() {
+    const spec = getRenderSpec();
+    return [
+      "node",
+      `${ASSET_ROOT}/export-video.mjs`,
+      "--fps",
+      String(spec.fps),
+      "--size",
+      `${spec.width}x${spec.height}`,
+      "--output",
+      "exports/005-knowledge-video-template-1080p60.mp4"
+    ].join(" ");
+  }
+
   function applyMeta() {
     dom.controlTitle.textContent = state.story.meta.title;
     dom.controlDescription.textContent = state.story.meta.description;
@@ -841,6 +905,11 @@
     dom.dataNotice.textContent = state.story.meta.dataNotice;
     dom.timelineInput.max = String(state.story.meta.duration);
     state.duration = state.story.meta.duration;
+
+    const spec = getRenderSpec();
+    dom.renderSpecTag.textContent = `${spec.width}x${spec.height} / ${spec.fps}FPS`;
+    dom.totalFrameCount.textContent = String(spec.totalFrames);
+    dom.exportCommand.textContent = buildExportCommand();
   }
 
   function parseInitialState() {
@@ -848,8 +917,10 @@
     const clean = params.get("clean") === "1";
     const autoplay = params.get("autoplay") === "1";
     const sceneId = params.get("scene");
+    const frame = params.has("frame") ? Number(params.get("frame")) : null;
+    const fps = params.has("fps") ? Number(params.get("fps")) : (Number(state.story?.meta?.fps) || 60);
     const time = params.has("t") ? Number(params.get("t")) : null;
-    document.body.classList.toggle("static-frame", !autoplay && (params.has("t") || Boolean(sceneId)));
+    document.body.classList.toggle("static-frame", !autoplay && (params.has("t") || params.has("frame") || Boolean(sceneId)));
 
     setCleanMode(clean);
 
@@ -862,6 +933,10 @@
 
     if (typeof time === "number" && Number.isFinite(time)) {
       state.currentTime = clamp(time, 0, state.duration);
+    }
+
+    if (typeof frame === "number" && Number.isFinite(frame) && Number.isFinite(fps) && fps > 0) {
+      state.currentTime = clamp(frame / fps, 0, state.duration);
     }
 
     renderCurrentFrame();
@@ -889,6 +964,20 @@
 
     dom.cleanModeButton.addEventListener("click", () => {
       setCleanMode(!document.body.classList.contains("clean-mode"));
+    });
+
+    dom.openCleanButton.addEventListener("click", () => {
+      openRenderWindow({ autoplay: true, time: state.currentTime });
+    });
+
+    dom.copyExportCommandButton.addEventListener("click", copyExportCommand);
+
+    dom.openFrameButton.addEventListener("click", () => {
+      const spec = getRenderSpec();
+      openRenderWindow({
+        frame: Math.round(state.currentTime * spec.fps),
+        fps: spec.fps
+      });
     });
 
     dom.timelineInput.addEventListener("input", () => {
@@ -941,7 +1030,20 @@
       play,
       pause,
       seek,
+      seekFrame(frame, fps = getRenderSpec().fps) {
+        const frameNumber = Number(frame);
+        const frameRate = Number(fps);
+        if (!Number.isFinite(frameNumber) || !Number.isFinite(frameRate) || frameRate <= 0) {
+          return false;
+        }
+
+        pause();
+        document.body.classList.add("static-frame");
+        seek(frameNumber / frameRate);
+        return true;
+      },
       setCleanMode,
+      getRenderSpec,
       getState() {
         return {
           currentTime: state.currentTime,
