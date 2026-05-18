@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图表内容编辑器</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #eef2f6;
+      --surface: #ffffff;
+      --surface-soft: #f7f9fc;
+      --line: #d9e0ea;
+      --line-strong: #b8c3d4;
+      --text: #182230;
+      --muted: #667085;
+      --accent: #0e7490;
+      --accent-2: #f97316;
+      --accent-soft: rgba(14, 116, 144, 0.11);
+      --shadow: 0 22px 70px rgba(24, 34, 48, 0.13);
+      --radius: 8px;
+      --font: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      --anim-duration: 900ms;
+      --anim-repeat: 1;
+      --anim-ease: cubic-bezier(0.22, 0.72, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0) 42%),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 18px;
+      padding: 18px;
+    }
+
+    .preview-panel,
+    .settings-panel {
+      background: var(--surface);
+      border: 1px solid rgba(184, 195, 212, 0.72);
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .preview-panel {
+      border-radius: 14px 8px 8px 14px;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      overflow: hidden;
+    }
+
+    .preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 24px 18px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, var(--surface), var(--surface-soft));
+    }
+
+    .title-group {
+      min-width: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 760;
+      line-height: 1.2;
+    }
+
+    .meta {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .chart-badge {
+      flex: 0 0 auto;
+      min-width: 96px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(14, 116, 144, 0.2);
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .chart-stage {
+      min-height: 440px;
+      padding: 28px;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      gap: 18px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.94)),
+        var(--surface-soft);
+    }
+
+    .chart-frame {
+      position: relative;
+      min-height: 330px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .chart-frame[data-visual-style="three-d"] {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(232, 239, 248, 0.9)),
+        #ffffff;
+    }
+
+    .chart-frame[data-visual-style="three-d"][data-shadow="true"] {
+      box-shadow: inset 12px 12px 28px rgba(255, 255, 255, 0.75), inset -16px -18px 34px rgba(96, 112, 132, 0.12);
+    }
+
+    .chart-frame[data-visual-style="metal"] {
+      background:
+        linear-gradient(135deg, #f8fafc 0%, #d9e0ea 46%, #ffffff 50%, #c9d3df 100%);
+      border-color: #aab4c5;
+    }
+
+    .chart-frame[data-visual-style="metal"][data-shadow="true"] {
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -18px 42px rgba(83, 98, 121, 0.1);
+    }
+
+    .chart-frame[data-visual-style="tech"] {
+      background:
+        radial-gradient(circle at 50% 42%, rgba(45, 212, 191, 0.18), transparent 35%),
+        linear-gradient(135deg, #07111f, #0d1b2e 56%, #061421);
+      border-color: rgba(34, 211, 238, 0.45);
+    }
+
+    .chart-frame[data-visual-style="tech"][data-shadow="true"] {
+      box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.14), inset 0 0 42px rgba(34, 211, 238, 0.13);
+    }
+
+    .chart-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .chart-frame[data-visual-style="tech"]::before {
+      background-image:
+        linear-gradient(rgba(34, 211, 238, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 211, 238, 0.22) 1px, transparent 1px);
+      opacity: 0.65;
+    }
+
+    #chartSvg {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      display: block;
+    }
+
+    .chart-title {
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .settings-panel {
+      border-radius: 8px 14px 14px 8px;
+      padding: 22px;
+      overflow: auto;
+    }
+
+    .settings-header {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 760;
+      line-height: 1.2;
+    }
+
+    .section {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .section h3 {
+      font-size: 14px;
+      font-weight: 760;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .segmented {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface-soft);
+    }
+
+    .segmented input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .segmented label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 8px 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      border-right: 1px solid var(--line);
+      cursor: pointer;
+      user-select: none;
+      transition: color 160ms ease, background-color 160ms ease;
+    }
+
+    .segmented label:last-child {
+      border-right: 0;
+    }
+
+    .segmented input:checked + label {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .segmented + .toggle-row {
+      margin-top: 12px;
+    }
+
+    .field-label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      resize: vertical;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.55;
+      outline: none;
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    body[data-hide-data="true"] textarea {
+      color: transparent;
+      text-shadow: 0 0 9px rgba(24, 34, 48, 0.42);
+      caret-color: var(--accent);
+    }
+
+    .data-actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      min-height: 38px;
+      padding: 8px 13px;
+      color: var(--text);
+      background: #ffffff;
+      cursor: pointer;
+      font-weight: 720;
+      transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+      color: #ffffff;
+    }
+
+    .status {
+      margin-top: 10px;
+      min-height: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .status.error {
+      color: #b42318;
+    }
+
+    .palette-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .palette-option {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px;
+      min-height: 46px;
+      padding: 9px 10px 9px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: #ffffff;
+      color: var(--text);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+    }
+
+    .palette-option:hover,
+    .palette-option.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    .palette-name {
+      min-width: 0;
+      font-size: 13px;
+      font-weight: 740;
+    }
+
+    .swatches {
+      display: flex;
+      gap: 5px;
+    }
+
+    .swatch {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 1px rgba(24, 34, 48, 0.16);
+    }
+
+    .animation-settings {
+      display: grid;
+      gap: 16px;
+    }
+
+    .range-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 64px;
+      align-items: center;
+      gap: 12px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+
+    output {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 760;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 40px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 720;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .toggle-row input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .toggle-mark {
+      position: relative;
+      width: 38px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--line-strong);
+      transition: background-color 160ms ease;
+    }
+
+    .toggle-mark::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 1px 4px rgba(24, 34, 48, 0.22);
+      transition: transform 160ms ease;
+    }
+
+    .toggle-row input:checked + .toggle-mark {
+      background: var(--accent);
+    }
+
+    .toggle-row input:checked + .toggle-mark::after {
+      transform: translateX(16px);
+    }
+
+    .chart-axis {
+      stroke: #aab4c5;
+      stroke-width: 1.2;
+    }
+
+    .chart-grid {
+      stroke: #dce3ec;
+      stroke-width: 1;
+    }
+
+    .chart-label {
+      fill: #667085;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .chart-value {
+      fill: #182230;
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .legend-label {
+      fill: #344054;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    #chartSvg[data-shadow="false"] .visual-shadow {
+      display: none;
+    }
+
+    #chartSvg[data-shadow="true"] .visual-3d-object,
+    #chartSvg[data-shadow="true"][data-visual-style="three-d"] .visual-line,
+    #chartSvg[data-shadow="true"][data-visual-style="three-d"] .visual-arc {
+      filter: url(#softShadow);
+    }
+
+    #chartSvg[data-shadow="true"][data-visual-style="metal"] .visual-shape,
+    #chartSvg[data-shadow="true"][data-visual-style="metal"] .visual-line,
+    #chartSvg[data-shadow="true"][data-visual-style="metal"] .visual-arc {
+      filter: url(#metalShadow);
+    }
+
+    #chartSvg[data-shadow="true"][data-visual-style="tech"] .visual-shape,
+    #chartSvg[data-shadow="true"][data-visual-style="tech"] .visual-line,
+    #chartSvg[data-shadow="true"][data-visual-style="tech"] .visual-arc,
+    #chartSvg[data-shadow="true"][data-visual-style="tech"] .visual-dot {
+      filter: url(#techGlow);
+    }
+
+    #chartSvg[data-visual-style="tech"] .chart-grid {
+      stroke: rgba(34, 211, 238, 0.22);
+    }
+
+    #chartSvg[data-visual-style="tech"] .chart-axis {
+      stroke: rgba(125, 249, 255, 0.52);
+    }
+
+    #chartSvg[data-visual-style="tech"] .chart-label,
+    #chartSvg[data-visual-style="tech"] .legend-label {
+      fill: #b7f7ff;
+    }
+
+    #chartSvg[data-visual-style="tech"] .chart-value {
+      fill: #ecfeff;
+    }
+
+    .visual-bar,
+    .visual-bar-side,
+    .visual-line,
+    .visual-area,
+    .visual-dot,
+    .visual-arc,
+    .visual-slice,
+    .visual-fade {
+      animation-duration: var(--anim-duration);
+      animation-delay: var(--delay, 0ms);
+      animation-fill-mode: both;
+      animation-iteration-count: var(--anim-repeat);
+      animation-timing-function: var(--anim-ease);
+    }
+
+    .visual-bar {
+      animation-name: barGrow;
+      transform-box: fill-box;
+      transform-origin: center bottom;
+    }
+
+    .visual-bar-side {
+      animation-name: fadeRise;
+    }
+
+    .visual-line,
+    .visual-arc {
+      animation-name: lineDraw;
+      stroke-dasharray: var(--path-length, 1200);
+      stroke-dashoffset: var(--path-length, 1200);
+    }
+
+    .visual-area {
+      animation-name: fadeToTarget;
+      opacity: var(--target-opacity, 0.14);
+    }
+
+    .visual-dot,
+    .visual-slice {
+      animation-name: sliceReveal;
+      transform-box: view-box;
+      transform-origin: var(--origin-x, 50%) var(--origin-y, 50%);
+    }
+
+    .visual-fade {
+      animation-name: fadeRise;
+    }
+
+    @keyframes barGrow {
+      from {
+        opacity: 0.35;
+        transform: scaleY(0);
+      }
+      to {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
+
+    @keyframes lineDraw {
+      from {
+        stroke-dashoffset: var(--path-length, 1200);
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes fadeToTarget {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: var(--target-opacity, 0.14);
+      }
+    }
+
+    @keyframes sliceReveal {
+      from {
+        opacity: 0;
+        transform: scale(0.86);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeRise {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-panel,
+      .settings-panel {
+        border-radius: 12px;
+      }
+
+      .settings-panel {
+        overflow: visible;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .app {
+        padding: 10px;
+        gap: 10px;
+      }
+
+      .preview-header,
+      .settings-panel {
+        padding: 16px;
+      }
+
+      .preview-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .chart-stage {
+        padding: 14px;
+        min-height: 360px;
+      }
+
+      .chart-frame,
+      #chartSvg {
+        min-height: 300px;
+      }
+
+      .segmented {
+        grid-template-columns: 1fr;
+      }
+
+      .segmented label {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .segmented label:last-child {
+        border-bottom: 0;
+      }
+
+      .data-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body data-theme="fresh">
+  <main class="app">
+    <section class="preview-panel" aria-labelledby="previewTitle">
+      <header class="preview-header">
+        <div class="title-group">
+          <h1 id="previewTitle">内容预览</h1>
+          <p class="meta" id="summaryText">已加载 6 项数据</p>
+        </div>
+        <div class="chart-badge" id="chartBadge">柱状图</div>
+      </header>
+
+      <div class="chart-stage">
+        <div class="chart-frame">
+          <svg id="chartSvg" viewBox="0 0 760 420" role="img" aria-label="图表预览"></svg>
+        </div>
+        <div class="chart-title">
+          <span id="chartName">季度销售表现</span>
+          <span id="totalValue">总计 560</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="settings-panel" aria-labelledby="settingsTitle">
+      <header class="settings-header">
+        <h2 id="settingsTitle">内容设置</h2>
+        <p class="meta">图表配置</p>
+      </header>
+
+      <section class="section" aria-labelledby="typeTitle">
+        <h3 id="typeTitle">1. 图表类型</h3>
+        <div class="segmented" id="chartTypeGroup">
+          <input type="radio" name="chartType" id="typeBar" value="bar" checked>
+          <label for="typeBar">柱状图</label>
+          <input type="radio" name="chartType" id="typeLine" value="line">
+          <label for="typeLine">折线图</label>
+          <input type="radio" name="chartType" id="typePie" value="pie">
+          <label for="typePie">饼状图</label>
+          <input type="radio" name="chartType" id="typeDonut" value="donut">
+          <label for="typeDonut">环形图</label>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="dataTitle">
+        <h3 id="dataTitle">2. 图表数据输入框</h3>
+        <label class="field-label" for="dataInput">数据</label>
+        <textarea id="dataInput" spellcheck="false">一月,80
+二月,110
+三月,95
+四月,130
+五月,70
+六月,75</textarea>
+        <div class="data-actions">
+          <button class="btn btn-primary" id="applyData" type="button">应用数据</button>
+          <button class="btn" id="resetData" type="button">恢复示例</button>
+        </div>
+        <p class="status" id="dataStatus">每行使用“名称,数值”。</p>
+      </section>
+
+      <section class="section" aria-labelledby="colorTitle">
+        <h3 id="colorTitle">3. 整体配色</h3>
+        <div class="palette-list" id="paletteList" aria-label="整体配色">
+          <button class="palette-option active" type="button" data-palette="fresh">
+            <span class="palette-name">清爽对比</span>
+            <span class="swatches" aria-hidden="true">
+              <span class="swatch" style="background:#0e7490"></span>
+              <span class="swatch" style="background:#f97316"></span>
+              <span class="swatch" style="background:#84cc16"></span>
+              <span class="swatch" style="background:#e11d48"></span>
+            </span>
+          </button>
+          <button class="palette-option" type="button" data-palette="business">
+            <span class="palette-name">稳健商务</span>
+            <span class="swatches" aria-hidden="true">
+              <span class="swatch" style="background:#2563eb"></span>
+              <span class="swatch" style="background:#16a34a"></span>
+              <span class="swatch" style="background:#f59e0b"></span>
+              <span class="swatch" style="background:#dc2626"></span>
+            </span>
+          </button>
+          <button class="palette-option" type="button" data-palette="soft">
+            <span class="palette-name">柔和编辑</span>
+            <span class="swatches" aria-hidden="true">
+              <span class="swatch" style="background:#14b8a6"></span>
+              <span class="swatch" style="background:#ec4899"></span>
+              <span class="swatch" style="background:#f59e0b"></span>
+              <span class="swatch" style="background:#8b5cf6"></span>
+            </span>
+          </button>
+          <button class="palette-option" type="button" data-palette="contrast">
+            <span class="palette-name">高识别度</span>
+            <span class="swatches" aria-hidden="true">
+              <span class="swatch" style="background:#111827"></span>
+              <span class="swatch" style="background:#ef4444"></span>
+              <span class="swatch" style="background:#22c55e"></span>
+              <span class="swatch" style="background:#06b6d4"></span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="styleTitle">
+        <h3 id="styleTitle">4. 可视化样式</h3>
+        <div class="segmented" id="visualStyleGroup">
+          <input type="radio" name="visualStyle" id="style2d" value="flat" checked>
+          <label for="style2d">2D</label>
+          <input type="radio" name="visualStyle" id="style3d" value="three-d">
+          <label for="style3d">3D</label>
+          <input type="radio" name="visualStyle" id="styleMetal" value="metal">
+          <label for="styleMetal">金属</label>
+          <input type="radio" name="visualStyle" id="styleTech" value="tech">
+          <label for="styleTech">科技</label>
+        </div>
+        <label class="toggle-row" for="shadowEnabled">
+          <input id="shadowEnabled" type="checkbox" checked>
+          <span class="toggle-mark" aria-hidden="true"></span>
+          <span>阴影</span>
+        </label>
+      </section>
+
+      <section class="section" aria-labelledby="animationTitle">
+        <h3 id="animationTitle">5. 入场动画</h3>
+        <div class="animation-settings">
+          <div>
+            <label class="field-label" for="animationDuration">动画时长</label>
+            <div class="range-row">
+              <input id="animationDuration" type="range" min="300" max="3000" step="100" value="900">
+              <output id="durationValue" for="animationDuration">0.9 秒</output>
+            </div>
+          </div>
+          <label class="toggle-row" for="animationLoop">
+            <input id="animationLoop" type="checkbox">
+            <span class="toggle-mark" aria-hidden="true"></span>
+            <span>循环播放</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="displayTitle">
+        <h3 id="displayTitle">6. 数据显示</h3>
+        <label class="toggle-row" for="hideData">
+          <input id="hideData" type="checkbox">
+          <span class="toggle-mark" aria-hidden="true"></span>
+          <span>隐藏数据</span>
+        </label>
+      </section>
+    </aside>
+  </main>
+
+  <script>
+    const sampleData = `一月,80
+二月,110
+三月,95
+四月,130
+五月,70
+六月,75`;
+
+    const themes = {
+      fresh: {
+        accent: "#0e7490",
+        accent2: "#f97316",
+        bg: "#eef2f6",
+        soft: "rgba(14, 116, 144, 0.11)",
+        colors: ["#0e7490", "#f97316", "#84cc16", "#e11d48", "#7c3aed", "#0891b2"]
+      },
+      business: {
+        accent: "#2563eb",
+        accent2: "#16a34a",
+        bg: "#edf1f7",
+        soft: "rgba(37, 99, 235, 0.11)",
+        colors: ["#2563eb", "#16a34a", "#f59e0b", "#dc2626", "#475569", "#0f766e"]
+      },
+      soft: {
+        accent: "#14b8a6",
+        accent2: "#ec4899",
+        bg: "#f2f4f5",
+        soft: "rgba(20, 184, 166, 0.12)",
+        colors: ["#14b8a6", "#ec4899", "#f59e0b", "#8b5cf6", "#22c55e", "#fb7185"]
+      },
+      contrast: {
+        accent: "#111827",
+        accent2: "#ef4444",
+        bg: "#f1f3f5",
+        soft: "rgba(17, 24, 39, 0.09)",
+        colors: ["#111827", "#ef4444", "#22c55e", "#06b6d4", "#f97316", "#6366f1"]
+      }
+    };
+
+    const typeNames = {
+      bar: "柱状图",
+      line: "折线图",
+      pie: "饼状图",
+      donut: "环形图"
+    };
+
+    const chartSvg = document.getElementById("chartSvg");
+    const dataInput = document.getElementById("dataInput");
+    const dataStatus = document.getElementById("dataStatus");
+    const chartBadge = document.getElementById("chartBadge");
+    const summaryText = document.getElementById("summaryText");
+    const totalValue = document.getElementById("totalValue");
+    const paletteList = document.getElementById("paletteList");
+    const chartTypeGroup = document.getElementById("chartTypeGroup");
+    const applyData = document.getElementById("applyData");
+    const resetData = document.getElementById("resetData");
+    const animationDurationInput = document.getElementById("animationDuration");
+    const animationLoopInput = document.getElementById("animationLoop");
+    const durationValue = document.getElementById("durationValue");
+    const visualStyleGroup = document.getElementById("visualStyleGroup");
+    const shadowEnabledInput = document.getElementById("shadowEnabled");
+    const hideDataInput = document.getElementById("hideData");
+    const chartFrame = document.querySelector(".chart-frame");
+
+    let activeType = "bar";
+    let activePalette = "fresh";
+    let activeVisualStyle = "flat";
+    let shadowEnabled = shadowEnabledInput.checked;
+    let animationDuration = Number(animationDurationInput.value);
+    let animationLoop = animationLoopInput.checked;
+    let hideData = hideDataInput.checked;
+    let numberAnimationFrames = [];
+    let numberAnimationTimers = [];
+    let numberLoopTimer = null;
+    let chartData = parseData(sampleData);
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function formatNumber(value) {
+      return new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 1 }).format(value);
+    }
+
+    function formatCount(value, decimals = 0, suffix = "") {
+      const formatted = new Intl.NumberFormat("zh-CN", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      }).format(value);
+      return `${formatted}${suffix}`;
+    }
+
+    function shortLabel(label, max = 7) {
+      const text = String(label).trim();
+      return text.length > max ? `${text.slice(0, max)}…` : text;
+    }
+
+    function valueDecimals(value) {
+      return Number.isInteger(value) ? 0 : 1;
+    }
+
+    function animationVars(index, extra = "") {
+      const delay = Math.min(index * 70, 700);
+      return `--delay:${delay}ms;${extra}`;
+    }
+
+    function countDelay(index) {
+      return Math.min(index * 70, 700);
+    }
+
+    function renderNumberText(value, attrs, options = {}) {
+      const className = options.className || "chart-value visual-fade";
+      const suffix = options.suffix || "";
+      const decimals = options.decimals ?? valueDecimals(value);
+      const style = options.style ? ` style="${options.style}"` : "";
+      const fill = options.fill ? ` fill="${options.fill}"` : "";
+
+      if (hideData) {
+        return `<text class="${className} masked-value" ${attrs}${fill}${style}>•••</text>`;
+      }
+
+      return `<text class="${className} count-number" ${attrs}${fill}${style} data-count-to="${value}" data-decimals="${decimals}" data-suffix="${suffix}" data-delay="${countDelay(options.delayIndex || 0)}">0${suffix}</text>`;
+    }
+
+    function setCountElement(element, value, prefix = "", suffix = "", decimals = valueDecimals(value)) {
+      element.classList.add("count-number");
+      element.dataset.countTo = value;
+      element.dataset.decimals = decimals;
+      element.dataset.prefix = prefix;
+      element.dataset.suffix = suffix;
+      element.dataset.delay = 0;
+      element.textContent = `${prefix}0${suffix}`;
+    }
+
+    function setMaskedElement(element, text) {
+      element.classList.remove("count-number");
+      delete element.dataset.countTo;
+      delete element.dataset.decimals;
+      delete element.dataset.prefix;
+      delete element.dataset.suffix;
+      delete element.dataset.delay;
+      element.textContent = text;
+    }
+
+    function clearTransientNumberAnimations() {
+      numberAnimationFrames.forEach((frame) => cancelAnimationFrame(frame));
+      numberAnimationFrames = [];
+      numberAnimationTimers.forEach((timer) => clearTimeout(timer));
+      numberAnimationTimers = [];
+    }
+
+    function clearNumberAnimations() {
+      clearTransientNumberAnimations();
+      if (numberLoopTimer) {
+        clearInterval(numberLoopTimer);
+        numberLoopTimer = null;
+      }
+    }
+
+    function animateSingleNumber(element) {
+      const target = Number(element.dataset.countTo || 0);
+      const decimals = Number(element.dataset.decimals || 0);
+      const prefix = element.dataset.prefix || "";
+      const suffix = element.dataset.suffix || "";
+      const delay = Number(element.dataset.delay || 0);
+
+      element.textContent = `${prefix}${formatCount(0, decimals, suffix)}`;
+      const timer = setTimeout(() => {
+        const start = performance.now();
+
+        function tick(now) {
+          const progress = Math.min((now - start) / animationDuration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          element.textContent = `${prefix}${formatCount(target * eased, decimals, suffix)}`;
+
+          if (progress < 1) {
+            numberAnimationFrames.push(requestAnimationFrame(tick));
+          }
+        }
+
+        numberAnimationFrames.push(requestAnimationFrame(tick));
+      }, delay);
+
+      numberAnimationTimers.push(timer);
+    }
+
+    function animateNumbers() {
+      clearNumberAnimations();
+      if (hideData) return;
+
+      const elements = Array.from(document.querySelectorAll(".count-number[data-count-to]"));
+      const run = () => {
+        clearTransientNumberAnimations();
+        elements.forEach(animateSingleNumber);
+      };
+
+      run();
+      if (animationLoop) {
+        numberLoopTimer = setInterval(run, animationDuration + 1100);
+      }
+    }
+
+    function hexToRgb(hex) {
+      const normalized = hex.replace("#", "");
+      const value = parseInt(normalized.length === 3
+        ? normalized.split("").map((part) => part + part).join("")
+        : normalized, 16);
+      return {
+        r: (value >> 16) & 255,
+        g: (value >> 8) & 255,
+        b: value & 255
+      };
+    }
+
+    function rgbToHex(r, g, b) {
+      return `#${[r, g, b].map((value) => Math.max(0, Math.min(255, Math.round(value))).toString(16).padStart(2, "0")).join("")}`;
+    }
+
+    function shiftColor(hex, amount) {
+      const color = hexToRgb(hex);
+      return rgbToHex(color.r + amount, color.g + amount, color.b + amount);
+    }
+
+    function rgbaFromHex(hex, alpha) {
+      const color = hexToRgb(hex);
+      return `rgba(${color.r}, ${color.g}, ${color.b}, ${alpha})`;
+    }
+
+    function chartPaint(index, color) {
+      return activeVisualStyle === "flat" ? color : `url(#paint-${index})`;
+    }
+
+    function renderStyleDefs(data, colors) {
+      const count = Math.max(data.length, colors.length);
+      const gradients = Array.from({ length: count }, (_, index) => {
+        const color = colors[index % colors.length];
+        const light = shiftColor(color, activeVisualStyle === "metal" ? 76 : 46);
+        const dark = shiftColor(color, activeVisualStyle === "tech" ? -22 : -48);
+
+        if (activeVisualStyle === "metal") {
+          return `
+            <linearGradient id="paint-${index}" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="${light}"></stop>
+              <stop offset="28%" stop-color="#f8fafc"></stop>
+              <stop offset="52%" stop-color="${color}"></stop>
+              <stop offset="74%" stop-color="${dark}"></stop>
+              <stop offset="100%" stop-color="${shiftColor(color, 32)}"></stop>
+            </linearGradient>
+          `;
+        }
+
+        if (activeVisualStyle === "tech") {
+          return `
+            <linearGradient id="paint-${index}" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="${light}"></stop>
+              <stop offset="50%" stop-color="${color}"></stop>
+              <stop offset="100%" stop-color="${dark}"></stop>
+            </linearGradient>
+          `;
+        }
+
+        return `
+          <linearGradient id="paint-${index}" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="${light}"></stop>
+            <stop offset="58%" stop-color="${color}"></stop>
+            <stop offset="100%" stop-color="${dark}"></stop>
+          </linearGradient>
+        `;
+      }).join("");
+
+      return `
+        <defs>
+          <filter id="softShadow" x="-35%" y="-35%" width="180%" height="180%">
+            <feDropShadow dx="8" dy="10" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.2"></feDropShadow>
+          </filter>
+          <filter id="metalShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#475569" flood-opacity="0.22"></feDropShadow>
+            <feSpecularLighting result="spec" surfaceScale="3" specularConstant="0.55" specularExponent="18" lighting-color="#ffffff">
+              <fePointLight x="-120" y="-160" z="180"></fePointLight>
+            </feSpecularLighting>
+            <feComposite in="spec" in2="SourceAlpha" operator="in" result="specOut"></feComposite>
+            <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="0.55" k4="0"></feComposite>
+          </filter>
+          <filter id="techGlow" x="-45%" y="-45%" width="190%" height="190%">
+            <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#22d3ee" flood-opacity="0.62"></feDropShadow>
+            <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#14b8a6" flood-opacity="0.22"></feDropShadow>
+          </filter>
+          ${gradients}
+        </defs>
+      `;
+    }
+
+    function estimatePolylineLength(points) {
+      return points.slice(1).reduce((length, point, index) => {
+        const previous = points[index];
+        return length + Math.hypot(point.x - previous.x, point.y - previous.y);
+      }, 0);
+    }
+
+    function updateAnimationSettings() {
+      const seconds = (animationDuration / 1000).toFixed(1);
+      durationValue.textContent = `${seconds} 秒`;
+      document.documentElement.style.setProperty("--anim-duration", `${animationDuration}ms`);
+      document.documentElement.style.setProperty("--anim-repeat", animationLoop ? "infinite" : "1");
+    }
+
+    function parseData(raw) {
+      const rows = raw
+        .split(/\n+/)
+        .map((line) => line.trim())
+        .filter(Boolean);
+
+      const parsed = rows.map((line) => {
+        const parts = line.split(/[,，\t:：]/).map((part) => part.trim());
+        if (parts.length < 2) return null;
+        const value = Number(parts.slice(1).join(".").replace(/[^\d.-]/g, ""));
+        if (!parts[0] || !Number.isFinite(value) || value < 0) return null;
+        return { label: parts[0], value };
+      }).filter(Boolean);
+
+      if (!parsed.length) {
+        throw new Error("请输入至少一行有效数据。");
+      }
+
+      return parsed.slice(0, 12);
+    }
+
+    function applyTheme(name) {
+      const theme = themes[name];
+      document.body.dataset.theme = name;
+      document.documentElement.style.setProperty("--accent", theme.accent);
+      document.documentElement.style.setProperty("--accent-2", theme.accent2);
+      document.documentElement.style.setProperty("--bg", theme.bg);
+      document.documentElement.style.setProperty("--accent-soft", theme.soft);
+      activePalette = name;
+      render();
+    }
+
+    function applyInputData() {
+      try {
+        chartData = parseData(dataInput.value);
+        dataStatus.textContent = `已应用 ${chartData.length} 项数据。`;
+        dataStatus.classList.remove("error");
+        render();
+      } catch (error) {
+        dataStatus.textContent = error.message;
+        dataStatus.classList.add("error");
+      }
+    }
+
+    function render() {
+      const theme = themes[activePalette];
+      const colors = theme.colors;
+      const total = chartData.reduce((sum, item) => sum + item.value, 0);
+      updateAnimationSettings();
+      document.body.dataset.hideData = String(hideData);
+      chartSvg.dataset.visualStyle = activeVisualStyle;
+      chartSvg.dataset.shadow = String(shadowEnabled);
+      chartFrame.dataset.visualStyle = activeVisualStyle;
+      chartFrame.dataset.shadow = String(shadowEnabled);
+      chartBadge.textContent = typeNames[activeType];
+      if (hideData) {
+        setMaskedElement(summaryText, "数据已隐藏");
+        setMaskedElement(totalValue, "总计 •••");
+      } else {
+        setCountElement(summaryText, chartData.length, "已加载 ", " 项数据", 0);
+        setCountElement(totalValue, total, "总计 ", "", valueDecimals(total));
+      }
+
+      const chartMarkup = activeType === "bar"
+        ? renderBar(chartData, colors)
+        : activeType === "line"
+          ? renderLine(chartData, colors)
+          : activeType === "pie"
+            ? renderPie(chartData, colors)
+            : renderDonut(chartData, colors);
+      chartSvg.innerHTML = `${renderStyleDefs(chartData, colors)}${chartMarkup}`;
+      animateNumbers();
+    }
+
+    function renderGrid(width, height, left, top, steps = 4) {
+      const gap = height / steps;
+      let grid = "";
+      for (let i = 0; i <= steps; i += 1) {
+        const y = top + i * gap;
+        grid += `<line class="chart-grid" x1="${left}" y1="${y}" x2="${left + width}" y2="${y}"></line>`;
+      }
+      return grid;
+    }
+
+    function renderBar(data, colors) {
+      const left = 70;
+      const top = 46;
+      const width = 620;
+      const height = 285;
+      const max = Math.max(...data.map((item) => item.value), 1);
+      const slot = width / data.length;
+      const barWidth = Math.min(58, slot * 0.58);
+      const labelMax = data.length > 8 ? 4 : 7;
+      const bars = data.map((item, index) => {
+        const h = (item.value / max) * (height - 18);
+        const x = left + index * slot + (slot - barWidth) / 2;
+        const y = top + height - h;
+        const color = colors[index % colors.length];
+        const fill = chartPaint(index, color);
+
+        if (activeVisualStyle === "three-d") {
+          const depthX = Math.min(20, barWidth * 0.38);
+          const depthY = 16;
+          const front = fill;
+          const side = shiftColor(color, -46);
+          const topFace = shiftColor(color, 42);
+          const rightX = x + barWidth;
+          const baseY = top + height;
+          const shadowWidth = barWidth + depthX + 14;
+          const shadowX = x + shadowWidth / 2 + depthX / 2;
+
+          return `
+            <g class="visual-3d-object" style="${animationVars(index)}">
+              <ellipse class="visual-shadow visual-fade" cx="${shadowX}" cy="${baseY + 12}" rx="${shadowWidth / 2}" ry="9" fill="rgba(15, 23, 42, 0.2)" style="${animationVars(index)}"></ellipse>
+              <polygon class="visual-bar-side" points="${rightX},${y} ${rightX + depthX},${y - depthY} ${rightX + depthX},${baseY - depthY} ${rightX},${baseY}" fill="${side}" style="${animationVars(index)}"></polygon>
+              <polygon class="visual-bar-side" points="${x},${y} ${x + depthX},${y - depthY} ${rightX + depthX},${y - depthY} ${rightX},${y}" fill="${topFace}" style="${animationVars(index)}"></polygon>
+              <rect class="visual-bar visual-shape" x="${x}" y="${y}" width="${barWidth}" height="${h}" rx="3" fill="${front}" style="${animationVars(index)}"></rect>
+            </g>
+            ${renderNumberText(item.value, `x="${x + barWidth / 2 + depthX / 2}" y="${Math.max(22, y - depthY - 12)}" text-anchor="middle"`, { style: animationVars(index, "--target-opacity:1;"), delayIndex: index })}
+            <text class="chart-label visual-fade" x="${x + barWidth / 2 + depthX / 2}" y="${top + height + 34}" text-anchor="middle" style="${animationVars(index, "--target-opacity:1;")}">${escapeHtml(shortLabel(item.label, labelMax))}</text>
+          `;
+        }
+
+        return `
+          <rect class="visual-bar visual-shape" x="${x}" y="${y}" width="${barWidth}" height="${h}" rx="7" fill="${fill}" style="${animationVars(index)}"></rect>
+          ${renderNumberText(item.value, `x="${x + barWidth / 2}" y="${Math.max(22, y - 10)}" text-anchor="middle"`, { style: animationVars(index, "--target-opacity:1;"), delayIndex: index })}
+          <text class="chart-label visual-fade" x="${x + barWidth / 2}" y="${top + height + 28}" text-anchor="middle" style="${animationVars(index, "--target-opacity:1;")}">${escapeHtml(shortLabel(item.label, labelMax))}</text>
+        `;
+      }).join("");
+
+      return `
+        ${renderGrid(width, height, left, top)}
+        <line class="chart-axis" x1="${left}" y1="${top}" x2="${left}" y2="${top + height}"></line>
+        <line class="chart-axis" x1="${left}" y1="${top + height}" x2="${left + width}" y2="${top + height}"></line>
+        ${bars}
+      `;
+    }
+
+    function renderLine(data, colors) {
+      const left = 70;
+      const top = 48;
+      const width = 620;
+      const height = 280;
+      const max = Math.max(...data.map((item) => item.value), 1);
+      const step = data.length > 1 ? width / (data.length - 1) : width;
+      const labelMax = data.length > 8 ? 4 : 7;
+      const points = data.map((item, index) => {
+        const x = data.length > 1 ? left + index * step : left + width / 2;
+        const y = top + height - (item.value / max) * (height - 20);
+        return { x, y, item };
+      });
+      const linePoints = points.map((point) => `${point.x},${point.y}`).join(" ");
+      const areaPoints = `${left},${top + height} ${linePoints} ${left + width},${top + height}`;
+      const lineLength = Math.max(estimatePolylineLength(points), 1);
+      const labels = points.map((point, index) => `
+        <circle class="visual-dot visual-shape" cx="${point.x}" cy="${point.y}" r="5.5" fill="#ffffff" stroke="${chartPaint(index, colors[index % colors.length])}" stroke-width="4" style="${animationVars(index, `--origin-x:${point.x}px;--origin-y:${point.y}px;`)}"></circle>
+        ${renderNumberText(point.item.value, `x="${point.x}" y="${Math.max(22, point.y - 14)}" text-anchor="middle"`, { style: animationVars(index), delayIndex: index })}
+        <text class="chart-label visual-fade" x="${point.x}" y="${top + height + 28}" text-anchor="middle" style="${animationVars(index)}">${escapeHtml(shortLabel(point.item.label, labelMax))}</text>
+      `).join("");
+
+      if (activeVisualStyle === "three-d") {
+        const depthX = 18;
+        const depthY = 14;
+        const backPoints = points.map((point) => ({ x: point.x + depthX, y: point.y - depthY }));
+        const backLinePoints = backPoints.map((point) => `${point.x},${point.y}`).join(" ");
+        const ribbonPoints = `${linePoints} ${backPoints.slice().reverse().map((point) => `${point.x},${point.y}`).join(" ")}`;
+        const shadowPoints = points.map((point) => `${point.x + depthX * 0.8},${point.y + 18}`).join(" ");
+
+        return `
+          ${renderGrid(width, height, left, top)}
+          <line class="chart-axis" x1="${left}" y1="${top}" x2="${left}" y2="${top + height}"></line>
+          <line class="chart-axis" x1="${left}" y1="${top + height}" x2="${left + width}" y2="${top + height}"></line>
+          <polyline class="visual-shadow visual-fade" points="${shadowPoints}" fill="none" stroke="rgba(15, 23, 42, 0.22)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" style="${animationVars(0)}"></polyline>
+          <g class="visual-3d-object">
+            <polygon class="visual-bar-side" points="${ribbonPoints}" fill="${rgbaFromHex(colors[0], 0.26)}" style="${animationVars(0)}"></polygon>
+            <polyline class="visual-bar-side" points="${backLinePoints}" fill="none" stroke="${shiftColor(colors[0], -50)}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="${animationVars(0)}"></polyline>
+            <polygon class="visual-area visual-shape" points="${areaPoints}" fill="${chartPaint(0, colors[0])}" style="${animationVars(0, "--target-opacity:0.12;")}"></polygon>
+            <polyline class="visual-line visual-shape" points="${linePoints}" fill="none" stroke="${chartPaint(0, colors[0])}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="${animationVars(0, `--path-length:${lineLength};`)}"></polyline>
+          </g>
+          ${labels}
+        `;
+      }
+
+      return `
+        ${renderGrid(width, height, left, top)}
+        <line class="chart-axis" x1="${left}" y1="${top}" x2="${left}" y2="${top + height}"></line>
+        <line class="chart-axis" x1="${left}" y1="${top + height}" x2="${left + width}" y2="${top + height}"></line>
+        <polygon class="visual-area visual-shape" points="${areaPoints}" fill="${chartPaint(0, colors[0])}" style="${animationVars(0, "--target-opacity:0.13;")}"></polygon>
+        <polyline class="visual-line visual-shape" points="${linePoints}" fill="none" stroke="${chartPaint(0, colors[0])}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="${animationVars(0, `--path-length:${lineLength};`)}"></polyline>
+        ${labels}
+      `;
+    }
+
+    function describeArc(cx, cy, radius, startAngle, endAngle) {
+      const start = polarToCartesian(cx, cy, radius, endAngle);
+      const end = polarToCartesian(cx, cy, radius, startAngle);
+      const largeArcFlag = endAngle - startAngle <= 180 ? 0 : 1;
+      return `M ${start.x} ${start.y} A ${radius} ${radius} 0 ${largeArcFlag} 0 ${end.x} ${end.y}`;
+    }
+
+    function describeSlice(cx, cy, radius, startAngle, endAngle) {
+      const start = polarToCartesian(cx, cy, radius, startAngle);
+      const end = polarToCartesian(cx, cy, radius, endAngle);
+      const largeArcFlag = endAngle - startAngle > 180 ? 1 : 0;
+      return `M ${cx} ${cy} L ${start.x} ${start.y} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${end.x} ${end.y} Z`;
+    }
+
+    function polarToCartesian(cx, cy, radius, angleInDegrees) {
+      const angleInRadians = (angleInDegrees - 90) * Math.PI / 180;
+      return {
+        x: cx + radius * Math.cos(angleInRadians),
+        y: cy + radius * Math.sin(angleInRadians)
+      };
+    }
+
+    function polarToEllipse(cx, cy, rx, ry, angleInDegrees) {
+      const angleInRadians = (angleInDegrees - 90) * Math.PI / 180;
+      return {
+        x: cx + rx * Math.cos(angleInRadians),
+        y: cy + ry * Math.sin(angleInRadians)
+      };
+    }
+
+    function describeEllipseSlice(cx, cy, rx, ry, startAngle, endAngle) {
+      const start = polarToEllipse(cx, cy, rx, ry, startAngle);
+      const end = polarToEllipse(cx, cy, rx, ry, endAngle);
+      const largeArcFlag = endAngle - startAngle > 180 ? 1 : 0;
+      return `M ${cx} ${cy} L ${start.x} ${start.y} A ${rx} ${ry} 0 ${largeArcFlag} 1 ${end.x} ${end.y} Z`;
+    }
+
+    function describeEllipseArc(cx, cy, rx, ry, startAngle, endAngle, sweep = 1) {
+      const start = polarToEllipse(cx, cy, rx, ry, startAngle);
+      const end = polarToEllipse(cx, cy, rx, ry, endAngle);
+      const largeArcFlag = endAngle - startAngle > 180 ? 1 : 0;
+      return `M ${start.x} ${start.y} A ${rx} ${ry} 0 ${largeArcFlag} ${sweep} ${end.x} ${end.y}`;
+    }
+
+    function describeEllipseSide(cx, cy, rx, ry, depth, startAngle, endAngle) {
+      const topStart = polarToEllipse(cx, cy, rx, ry, startAngle);
+      const topEnd = polarToEllipse(cx, cy, rx, ry, endAngle);
+      const bottomStart = polarToEllipse(cx, cy + depth, rx, ry, startAngle);
+      const bottomEnd = polarToEllipse(cx, cy + depth, rx, ry, endAngle);
+      const largeArcFlag = endAngle - startAngle > 180 ? 1 : 0;
+      return `M ${topStart.x} ${topStart.y} A ${rx} ${ry} 0 ${largeArcFlag} 1 ${topEnd.x} ${topEnd.y} L ${bottomEnd.x} ${bottomEnd.y} A ${rx} ${ry} 0 ${largeArcFlag} 0 ${bottomStart.x} ${bottomStart.y} Z`;
+    }
+
+    function describeEllipseRingSlice(cx, cy, outerRx, outerRy, innerRx, innerRy, startAngle, endAngle) {
+      const outerStart = polarToEllipse(cx, cy, outerRx, outerRy, startAngle);
+      const outerEnd = polarToEllipse(cx, cy, outerRx, outerRy, endAngle);
+      const innerStart = polarToEllipse(cx, cy, innerRx, innerRy, startAngle);
+      const innerEnd = polarToEllipse(cx, cy, innerRx, innerRy, endAngle);
+      const largeArcFlag = endAngle - startAngle > 180 ? 1 : 0;
+      return `M ${outerStart.x} ${outerStart.y} A ${outerRx} ${outerRy} 0 ${largeArcFlag} 1 ${outerEnd.x} ${outerEnd.y} L ${innerEnd.x} ${innerEnd.y} A ${innerRx} ${innerRy} 0 ${largeArcFlag} 0 ${innerStart.x} ${innerStart.y} Z`;
+    }
+
+    function renderPie3D(data, colors) {
+      const cx = 258;
+      const cy = 176;
+      const rx = 142;
+      const ry = 92;
+      const depth = 38;
+      const total = data.reduce((sum, item) => sum + item.value, 0) || 1;
+      let startAngle = 0;
+
+      const slices = data.map((item, index) => {
+        const angle = item.value / total * 360;
+        const endAngle = startAngle + angle;
+        const color = colors[index % colors.length];
+        const fill = chartPaint(index, color);
+        const sideFill = shiftColor(color, -54);
+        const percent = Math.round(item.value / total * 100);
+        const origin = `--origin-x:${cx}px;--origin-y:${cy}px;`;
+        const delay = animationVars(index, origin);
+
+        if (angle >= 359.99) {
+          startAngle = endAngle;
+          return {
+            side: `<ellipse class="visual-bar-side" cx="${cx}" cy="${cy + depth}" rx="${rx}" ry="${ry}" fill="${sideFill}" style="${delay}"></ellipse>`,
+            top: `<ellipse class="visual-slice visual-shape" cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${fill}" style="${delay}"></ellipse>`,
+            label: renderNumberText(100, `x="${cx}" y="${cy + 6}" text-anchor="middle"`, { fill: "#ffffff", style: `fill:#ffffff;font-size:22px;${animationVars(index)}`, suffix: "%", decimals: 0, delayIndex: index })
+          };
+        }
+
+        const sidePath = describeEllipseSide(cx, cy, rx, ry, depth, startAngle, endAngle);
+        const topPath = describeEllipseSlice(cx, cy, rx, ry, startAngle, endAngle);
+        const midAngle = startAngle + angle / 2;
+        const labelPoint = polarToEllipse(cx, cy, rx * 0.58, ry * 0.58, midAngle);
+        const label = angle >= 18
+          ? renderNumberText(percent, `x="${labelPoint.x}" y="${labelPoint.y + 4}" text-anchor="middle"`, { fill: "#ffffff", style: `fill:#ffffff;${animationVars(index)}`, suffix: "%", decimals: 0, delayIndex: index })
+          : "";
+
+        startAngle = endAngle;
+        return {
+          side: `<path class="visual-bar-side" d="${sidePath}" fill="${sideFill}" style="${delay}"></path>`,
+          top: `<path class="visual-slice visual-shape" d="${topPath}" fill="${fill}" stroke="#ffffff" stroke-width="2" style="${delay}"></path>`,
+          label
+        };
+      });
+
+      const legendStart = data.length > 8 ? 66 : 92;
+      const legendStep = data.length > 8 ? 26 : 35;
+      const labelMax = data.length > 8 ? 6 : 8;
+      const legend = data.map((item, index) => {
+        const y = legendStart + index * legendStep;
+        const percent = Math.round(item.value / total * 100);
+        return `
+          <circle class="visual-fade" cx="520" cy="${y - 4}" r="7" fill="${colors[index % colors.length]}" style="${animationVars(index)}"></circle>
+          <text class="legend-label visual-fade" x="540" y="${y}" style="${animationVars(index)}">${escapeHtml(shortLabel(item.label, labelMax))}</text>
+          ${renderNumberText(percent, `x="675" y="${y}" text-anchor="end"`, { className: "chart-label visual-fade", style: animationVars(index), suffix: "%", decimals: 0, delayIndex: index })}
+        `;
+      }).join("");
+
+      return `
+        <ellipse class="visual-shadow visual-fade" cx="${cx + 10}" cy="${cy + depth + ry + 12}" rx="${rx * 0.9}" ry="18" fill="rgba(15, 23, 42, 0.22)" style="${animationVars(0)}"></ellipse>
+        <g class="visual-3d-object">
+          ${slices.map((slice) => slice.side).join("")}
+          ${slices.map((slice) => slice.top).join("")}
+        </g>
+        ${slices.map((slice) => slice.label).join("")}
+        ${legend}
+      `;
+    }
+
+    function renderPie(data, colors) {
+      if (activeVisualStyle === "three-d") {
+        return renderPie3D(data, colors);
+      }
+
+      const cx = 258;
+      const cy = 210;
+      const radius = 138;
+      const total = data.reduce((sum, item) => sum + item.value, 0) || 1;
+      let startAngle = 0;
+      const slices = data.map((item, index) => {
+        const angle = item.value / total * 360;
+        const endAngle = startAngle + angle;
+        const color = colors[index % colors.length];
+        const fill = chartPaint(index, color);
+        const origin = `--origin-x:${cx}px;--origin-y:${cy}px;`;
+        const delay = animationVars(index, origin);
+
+        if (angle >= 359.99) {
+          startAngle = endAngle;
+          return `
+            <circle class="visual-slice visual-shape" cx="${cx}" cy="${cy}" r="${radius}" fill="${fill}" style="${delay}"></circle>
+            ${renderNumberText(100, `x="${cx}" y="${cy + 5}" text-anchor="middle"`, { fill: "#ffffff", style: `fill:#ffffff;font-size:22px;${animationVars(index)}`, suffix: "%", decimals: 0, delayIndex: index })}
+          `;
+        }
+
+        const path = describeSlice(cx, cy, radius, startAngle, endAngle);
+        const midAngle = startAngle + angle / 2;
+        const labelPoint = polarToCartesian(cx, cy, radius * 0.62, midAngle);
+        const percent = Math.round(item.value / total * 100);
+        const label = angle >= 18
+          ? renderNumberText(percent, `x="${labelPoint.x}" y="${labelPoint.y + 4}" text-anchor="middle"`, { fill: "#ffffff", style: `fill:#ffffff;${animationVars(index)}`, suffix: "%", decimals: 0, delayIndex: index })
+          : "";
+        startAngle = endAngle;
+        return `
+          <path class="visual-slice visual-shape" d="${path}" fill="${fill}" stroke="#ffffff" stroke-width="2" style="${delay}"></path>
+          ${label}
+        `;
+      }).join("");
+
+      const legendStart = data.length > 8 ? 66 : 92;
+      const legendStep = data.length > 8 ? 26 : 35;
+      const labelMax = data.length > 8 ? 6 : 8;
+      const legend = data.map((item, index) => {
+        const y = legendStart + index * legendStep;
+        const percent = Math.round(item.value / total * 100);
+        return `
+          <circle class="visual-fade" cx="520" cy="${y - 4}" r="7" fill="${colors[index % colors.length]}" style="${animationVars(index)}"></circle>
+          <text class="legend-label visual-fade" x="540" y="${y}" style="${animationVars(index)}">${escapeHtml(shortLabel(item.label, labelMax))}</text>
+          ${renderNumberText(percent, `x="675" y="${y}" text-anchor="end"`, { className: "chart-label visual-fade", style: animationVars(index), suffix: "%", decimals: 0, delayIndex: index })}
+        `;
+      }).join("");
+
+      return `
+        ${slices}
+        ${legend}
+      `;
+    }
+
+    function renderDonut3D(data, colors) {
+      const cx = 258;
+      const cy = 178;
+      const outerRx = 138;
+      const outerRy = 90;
+      const innerRx = 78;
+      const innerRy = 50;
+      const depth = 36;
+      const total = data.reduce((sum, item) => sum + item.value, 0) || 1;
+      let startAngle = 0;
+
+      const slices = data.map((item, index) => {
+        const angle = item.value / total * 360;
+        const endAngle = startAngle + angle;
+        const color = colors[index % colors.length];
+        const fill = chartPaint(index, color);
+        const sideFill = shiftColor(color, -54);
+        const origin = `--origin-x:${cx}px;--origin-y:${cy}px;`;
+        const delay = animationVars(index, origin);
+
+        if (angle >= 359.99) {
+          startAngle = endAngle;
+          const midRx = (outerRx + innerRx) / 2;
+          const midRy = (outerRy + innerRy) / 2;
+          const strokeWidth = outerRx - innerRx;
+          return {
+            side: `<ellipse class="visual-bar-side" cx="${cx}" cy="${cy + depth}" rx="${midRx}" ry="${midRy}" fill="none" stroke="${sideFill}" stroke-width="${strokeWidth}" style="${delay}"></ellipse>`,
+            top: `<ellipse class="visual-slice visual-shape" cx="${cx}" cy="${cy}" rx="${midRx}" ry="${midRy}" fill="none" stroke="${fill}" stroke-width="${strokeWidth}" style="${delay}"></ellipse>`
+          };
+        }
+
+        const sidePath = describeEllipseSide(cx, cy, outerRx, outerRy, depth, startAngle, endAngle);
+        const topPath = describeEllipseRingSlice(cx, cy, outerRx, outerRy, innerRx, innerRy, startAngle, endAngle);
+        startAngle = endAngle;
+        return {
+          side: `<path class="visual-bar-side" d="${sidePath}" fill="${sideFill}" style="${delay}"></path>`,
+          top: `<path class="visual-slice visual-shape" d="${topPath}" fill="${fill}" stroke="#ffffff" stroke-width="2" style="${delay}"></path>`
+        };
+      });
+
+      const legendStart = data.length > 8 ? 66 : 92;
+      const legendStep = data.length > 8 ? 26 : 35;
+      const labelMax = data.length > 8 ? 6 : 8;
+      const legend = data.map((item, index) => {
+        const y = legendStart + index * legendStep;
+        const percent = Math.round(item.value / total * 100);
+        return `
+          <circle class="visual-fade" cx="520" cy="${y - 4}" r="7" fill="${colors[index % colors.length]}" style="${animationVars(index)}"></circle>
+          <text class="legend-label visual-fade" x="540" y="${y}" style="${animationVars(index)}">${escapeHtml(shortLabel(item.label, labelMax))}</text>
+          ${renderNumberText(percent, `x="675" y="${y}" text-anchor="end"`, { className: "chart-label visual-fade", style: animationVars(index), suffix: "%", decimals: 0, delayIndex: index })}
+        `;
+      }).join("");
+
+      return `
+        <ellipse class="visual-shadow visual-fade" cx="${cx + 10}" cy="${cy + depth + outerRy + 12}" rx="${outerRx * 0.9}" ry="17" fill="rgba(15, 23, 42, 0.22)" style="${animationVars(0)}"></ellipse>
+        <g class="visual-3d-object">
+          ${slices.map((slice) => slice.side).join("")}
+          ${slices.map((slice) => slice.top).join("")}
+          <ellipse cx="${cx}" cy="${cy + 4}" rx="${innerRx}" ry="${innerRy}" fill="#ffffff" stroke="#d8e0ec" stroke-width="1.5"></ellipse>
+        </g>
+        <text class="chart-label visual-fade" x="${cx}" y="${cy - 10}" text-anchor="middle" style="${animationVars(2)}">总计</text>
+        ${renderNumberText(total, `x="${cx}" y="${cy + 20}" text-anchor="middle"`, { style: `font-size:24px;${animationVars(2)}`, delayIndex: 2 })}
+        ${legend}
+      `;
+    }
+
+    function renderDonut(data, colors) {
+      if (activeVisualStyle === "three-d") {
+        return renderDonut3D(data, colors);
+      }
+
+      const cx = 258;
+      const cy = 210;
+      const radius = 116;
+      const total = data.reduce((sum, item) => sum + item.value, 0) || 1;
+      let startAngle = 0;
+      const arcs = data.map((item, index) => {
+        const angle = item.value / total * 360;
+        const endAngle = startAngle + angle;
+        const color = colors[index % colors.length];
+        const stroke = chartPaint(index, color);
+        const arcLength = Math.max(2 * Math.PI * radius * angle / 360, 1);
+        if (angle >= 359.99) {
+          startAngle = endAngle;
+          return `<circle class="visual-arc visual-shape" cx="${cx}" cy="${cy}" r="${radius}" fill="none" stroke="${stroke}" stroke-width="42" style="${animationVars(index, `--path-length:${2 * Math.PI * radius};`)}"></circle>`;
+        }
+        const path = describeArc(cx, cy, radius, startAngle, endAngle);
+        startAngle = endAngle;
+        return `<path class="visual-arc visual-shape" d="${path}" fill="none" stroke="${stroke}" stroke-width="42" stroke-linecap="round" style="${animationVars(index, `--path-length:${arcLength};`)}"></path>`;
+      }).join("");
+
+      const legendStart = data.length > 8 ? 66 : 92;
+      const legendStep = data.length > 8 ? 26 : 35;
+      const labelMax = data.length > 8 ? 6 : 8;
+      const legend = data.map((item, index) => {
+        const y = legendStart + index * legendStep;
+        const percent = Math.round(item.value / total * 100);
+        return `
+          <circle class="visual-fade" cx="520" cy="${y - 4}" r="7" fill="${colors[index % colors.length]}" style="${animationVars(index)}"></circle>
+          <text class="legend-label visual-fade" x="540" y="${y}" style="${animationVars(index)}">${escapeHtml(shortLabel(item.label, labelMax))}</text>
+          ${renderNumberText(percent, `x="675" y="${y}" text-anchor="end"`, { className: "chart-label visual-fade", style: animationVars(index), suffix: "%", decimals: 0, delayIndex: index })}
+        `;
+      }).join("");
+
+      return `
+        <circle cx="${cx}" cy="${cy}" r="${radius}" fill="none" stroke="#e5eaf1" stroke-width="42"></circle>
+        ${arcs}
+        <text class="chart-label visual-fade" x="${cx}" y="${cy - 10}" text-anchor="middle" style="${animationVars(2)}">总计</text>
+        ${renderNumberText(total, `x="${cx}" y="${cy + 20}" text-anchor="middle"`, { style: `font-size:24px;${animationVars(2)}`, delayIndex: 2 })}
+        ${legend}
+      `;
+    }
+
+    chartTypeGroup.addEventListener("change", (event) => {
+      if (event.target.name === "chartType") {
+        activeType = event.target.value;
+        render();
+      }
+    });
+
+    animationDurationInput.addEventListener("input", () => {
+      animationDuration = Number(animationDurationInput.value);
+      render();
+    });
+
+    animationLoopInput.addEventListener("change", () => {
+      animationLoop = animationLoopInput.checked;
+      render();
+    });
+
+    visualStyleGroup.addEventListener("change", (event) => {
+      if (event.target.name === "visualStyle") {
+        activeVisualStyle = event.target.value;
+        render();
+      }
+    });
+
+    shadowEnabledInput.addEventListener("change", () => {
+      shadowEnabled = shadowEnabledInput.checked;
+      render();
+    });
+
+    hideDataInput.addEventListener("change", () => {
+      hideData = hideDataInput.checked;
+      render();
+    });
+
+    paletteList.addEventListener("click", (event) => {
+      const button = event.target.closest(".palette-option");
+      if (!button) return;
+      paletteList.querySelectorAll(".palette-option").forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
+      applyTheme(button.dataset.palette);
+    });
+
+    applyData.addEventListener("click", applyInputData);
+
+    resetData.addEventListener("click", () => {
+      dataInput.value = sampleData;
+      applyInputData();
+    });
+
+    dataInput.addEventListener("input", () => {
+      dataStatus.textContent = "数据已修改";
+      dataStatus.classList.remove("error");
+    });
+
+    render();
+  </script>
+</body>
+</html>
