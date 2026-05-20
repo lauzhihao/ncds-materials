@@ -338,6 +338,33 @@ body.recording .controls { display: none; }
 body.recording .scene image-slot { /* 隐掉 drop ring 等编辑装饰 */ }
 body.recording image-slot::part(ring) { display: none; }
 
+/* 录制模式下隐藏所有"编辑器残留"，保证视频不漏 UI */
+body.recording .twk-panel { display: none !important; }     /* React Tweaks 面板 */
+body.recording .scene .placeholder { display: none; }       /* 拖图前的 ph-id + ph-prompt 提示文字 */
+
+/* 录制启动倒数：3 秒大字覆盖在 stage 中心。倒数完毕后淡出再 play()，
+   保证视频第一帧就是干净的封面镜，字幕不带 "准备录制… 3" */
+.rec-countdown {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 18, 15, 0.55);
+  color: #fff;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  font-weight: 900;
+  font-size: 480px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 50;
+  transition: opacity 0.32s ease;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+.rec-countdown.show { opacity: 1; }
+
 /* "录制中" 微提示，只在动手指挥录屏前几秒露一下 */
 .rec-flash {
   position: fixed; top: 16px; right: 16px;

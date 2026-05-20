@@ -144,20 +144,30 @@
   function enterRecording() {
     pause();
     cur = 0;
-    showBeat(0);
     document.body.classList.add('recording');
-    recFlash.classList.add('show');
-    setTimeout(() => recFlash.classList.remove('show'), 2500);
+
+    // 预先把第一镜激活（让 Ken Burns 起跑），但字幕带保持空白——
+    // 倒数期间录到的字幕带不应该出现"准备录制…"或第一句中文。
+    for (const id of sceneOrder) {
+      sceneNodes[id].classList.toggle('active', id === beats[0].scene);
+    }
+    capZh.textContent = '';
+    capEn.textContent = '';
+    progress.textContent = '1 / ' + beats.length;
+
+    const countdown = $('recCountdown');
     let n = 3;
-    capZh.textContent = '准备录制… 3';
-    capEn.textContent = 'Get ready…';
+    countdown.textContent = String(n);
+    countdown.classList.add('show');
     const tick = setInterval(() => {
       n--;
       if (n > 0) {
-        capZh.textContent = '准备录制… ' + n;
+        countdown.textContent = String(n);
       } else {
         clearInterval(tick);
-        play();
+        countdown.classList.remove('show');
+        // 等覆盖层淡出（CSS 0.32s）再 play()，第一帧字幕和第一镜同时干净出现。
+        setTimeout(() => { if (document.body.classList.contains('recording')) play(); }, 340);
       }
     }, 1000);
   }
@@ -165,14 +175,23 @@
   function exitRecording() {
     document.body.classList.remove('recording');
     recFlash.classList.remove('show');
+    const countdown = $('recCountdown');
+    if (countdown) {
+      countdown.classList.remove('show');
+      countdown.textContent = '';
+    }
     pause();
   }
 
   document.addEventListener('keydown', (e) => {
+    const isRecording = document.body.classList.contains('recording');
     if (e.key === 'Escape') {
-      if (document.body.classList.contains('recording')) exitRecording();
+      if (isRecording) exitRecording();
       else pause();
+      return;
     }
+    // 录制模式下只接 Esc：防止手抖按空格/方向键把视频卡在某一帧。
+    if (isRecording) return;
     if (e.key === ' ') {
       e.preventDefault();
       playing ? pause() : play();
