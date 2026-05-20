@@ -1,0 +1,40 @@
+{
+  "id": "007-knowledge-short-film",
+  "name": "Knowledge Short Film · Editorial",
+  "title": "知识短片 · Issue 07",
+  "entry": "007-knowledge-short-film.html",
+  "style": "007-knowledge-short-film-assets/style.css",
+  "script": "007-knowledge-short-film-assets/app.js",
+  "assets": "007-knowledge-short-film-assets/",
+  "description": "面向抖音中长视频 + 剪映字幕 + 数字人 配音流程的知识短片模板。Editorial 杂志风（米白 / 深墨绿 / 朱红 accent / 衬线大标题），下 1/4 留出字幕安全区，右下角预留数字人占位。JSON 驱动 6 套版式（标题 / 数字 / 对照 / 图表 / 关系图 / 引述），逐帧导出 1080P60 底片到剪映合成。",
+  "version": "1.0.0",
+  "features": [
+    "Editorial 杂志风视觉系统（米白 / 深墨绿 / 朱红）",
+    "6 套版式：headline / numbers / compare / chart / diagram / quote",
+    "JSON 驱动场景切换 + highlight beat 节奏",
+    "beat 系统：keywordPulse / underlineDraw / numberRoll / panelReveal / barsGrow / nodeReveal / lineReveal / 等",
+    "下 1/4 字幕安全区 · 右下角数字人占位",
+    "干净录制模式（导出底片不带控制台、安全区提示、数字人占位）",
+    "复用 005 的 Headless Chrome 逐帧导出框架 · 支持多 worker + NVENC + 序列帧"
+  ],
+  "export": {
+    "script": "007-knowledge-short-film-assets/export-video.mjs",
+    "defaultCommand": "node 007-knowledge-short-film-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/007-knowledge-short-film-1080p60.mp4",
+    "fastNvidiaCommand": "node 007-knowledge-short-film-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --jpeg-quality 94 --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/007-knowledge-short-film-1080p60-fast.mp4",
+    "framesOnlyCommand": "node 007-knowledge-short-film-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frames-only --frame-format jpeg --jpeg-quality 94 --chrome-gpu --frames-dir exports/007-knowledge-short-film-frames",
+    "output": "1920x1080 / 60FPS / MP4 or JPEG sequence",
+    "requires": [
+      "Node.js",
+      "Google Chrome or Chromium",
+      "ffmpeg"
+    ]
+  },
+  "queryParams": {
+    "t": "指定起始时间，单位秒",
+    "frame": "指定起始帧序号，需配合 fps；优先级高于 t",
+    "fps": "frame 参数换算秒数时使用的帧率，默认读取 story.json 的 meta.fps",
+    "autoplay": "1 表示自动播放",
+    "clean": "1 表示默认进入干净录制模式",
+    "scene": "按 scene id 直接跳转"
+  }
+}

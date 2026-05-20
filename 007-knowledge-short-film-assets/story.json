@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "title": "年轻人为什么不买房：不是不想，是算不过账",
+    "publication": "THE WEEKLY",
+    "edition": "ISSUE 07",
+    "issueDate": "2026.05",
+    "byline": "短片刊 · Short Film No.07",
+    "duration": 180,
+    "fps": 60,
+    "outputSpec": "1920 x 1080 / 60 FPS",
+    "theme": "editorial",
+    "subtitleNotice": "下方 1/4 区域为字幕安全区，导出底片完全空置，进入剪映后再叠加自动字幕。",
+    "dataNotice": "片中数据为示意，引用自国家统计局、Numbeo、央行年度报告等公开口径，发布前请核对最新数值。"
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "label": "01 钩子",
+      "folio": "I",
+      "chapter": "OPENING",
+      "layout": "headline",
+      "start": 0,
+      "end": 22,
+      "kicker": "ISSUE 07 · NO. 01",
+      "drop": "Y",
+      "headline": "年轻人，不买房了。",
+      "highlight": "不买房",
+      "sub": "这不是文化变了，是账算不过来了。",
+      "ornament": "—— Short Film 07 ——",
+      "beats": [
+        { "type": "keywordPulse", "at": 0.18, "duration": 0.22, "target": "不买房" },
+        { "type": "underlineDraw", "at": 0.5, "duration": 0.32, "target": "算不过来" }
+      ],
+      "transition": { "in": "wipe-right", "out": "wipe-up" },
+      "voiceover": "先看一组数据：过去三年，中国 30 岁以下年轻人首套购房的比例，下降了大约一半。这不是不想买，是账算不过来了。",
+      "editorNote": "开篇全屏标题，剪映里在标题第二句下方留白处叠字幕。"
+    },
+    {
+      "id": "numbers",
+      "label": "02 数据冲击",
+      "folio": "II",
+      "chapter": "BY THE NUMBERS",
+      "layout": "numbers",
+      "start": 22,
+      "end": 52,
+      "kicker": "ISSUE 07 · NO. 02",
+      "headline": "三个数字，先把问题说清楚。",
+      "sub": "代际差距不在情绪里，而在表格里。",
+      "numbers": [
+        {
+          "value": 32,
+          "suffix": "倍",
+          "label": "一线城市房价 / 年收入",
+          "note": "国际宜居线约 6 倍 · 数据示意",
+          "accent": true
+        },
+        {
+          "value": 78,
+          "suffix": "%",
+          "label": "首套购房者月供 / 税后月收入",
+          "note": "可持续上限通常 35% · 数据示意"
+        },
+        {
+          "value": 42,
+          "prefix": "−",
+          "suffix": "%",
+          "label": "30 岁前首次购房比例（vs 2019）",
+          "note": "国家统计局口径 · 数据示意"
+        }
+      ],
+      "beats": [
+        { "type": "numberRoll", "at": 0.06, "duration": 0.36, "targets": [0] },
+        { "type": "numberRoll", "at": 0.34, "duration": 0.34, "targets": [1] },
+        { "type": "numberRoll", "at": 0.62, "duration": 0.34, "targets": [2] }
+      ],
+      "transition": { "in": "wipe-up", "out": "wipe-right" },
+      "voiceover": "看三个数字。一线城市房价收入比超过 30 倍，国际宜居线只有 6 倍。首套购房者每个月房贷要吃掉接近八成的税后收入。三十岁前完成购房的比例，比 2019 年少了四成多。",
+      "editorNote": "数字翻牌动画交错出现，旁白节奏对齐每个数字。"
+    },
+    {
+      "id": "algorithm",
+      "label": "03 算法变了",
+      "folio": "III",
+      "chapter": "THE NEW MATH",
+      "layout": "compare",
+      "start": 52,
+      "end": 85,
+      "kicker": "ISSUE 07 · NO. 03",
+      "headline": "买房的算法，悄悄换了一套。",
+      "sub": "对上一代是资产工具，对这一代是负债工具。",
+      "compare": {
+        "leftKicker": "旧公式 · 父辈的视角",
+        "leftTitle": "稳定 + 升值",
+        "leftItems": [
+          "月供 ≈ 房租，没区别",
+          "房价 10 年翻倍，跑赢通胀",
+          "结婚、户口、学区都绑在房本上",
+          "首付靠父母，月供靠工资"
+        ],
+        "leftFormula": "买房 = 储蓄 + 杠杆 + 身份",
+        "rightKicker": "新公式 · 当前一代",
+        "rightTitle": "负债 + 锁死",
+        "rightItems": [
+          "30 年按揭 = 30 年现金流被锁",
+          "二手房挂牌量翻倍，流动性下降",
+          "工作可能换 3 个城市，房子搬不走",
+          "首付动用了双方四个钱包"
+        ],
+        "rightFormula": "买房 = 杠杆 + 机会成本 + 锁死"
+      },
+      "beats": [
+        { "type": "panelReveal", "at": 0.04, "duration": 0.2, "target": "left" },
+        { "type": "panelReveal", "at": 0.42, "duration": 0.2, "target": "right" },
+        { "type": "keywordPulse", "at": 0.78, "duration": 0.18, "target": "杠杆 + 机会成本 + 锁死" }
+      ],
+      "transition": { "in": "wipe-right", "out": "fold" },
+      "voiceover": "上一代人的算法很简单：买房等于稳定，等于储蓄+杠杆+身份。但今天的算法变了。买房意味着 30 年负债，意味着失去流动性，还意味着错过其他人生选项。同样一个动作，意义完全不一样了。",
+      "editorNote": "左右两栏依次出场，最后右下角的新公式高亮放大。"
+    },
+    {
+      "id": "comparison",
+      "label": "04 横向对照",
+      "folio": "IV",
+      "chapter": "GLOBAL CONTEXT",
+      "layout": "chart",
+      "start": 85,
+      "end": 117,
+      "kicker": "ISSUE 07 · NO. 04",
+      "headline": "横着比，问题就更清楚。",
+      "sub": "国际同行的房价收入比，远没有这么夸张。",
+      "chart": {
+        "type": "bars",
+        "unit": "年（房价 / 家庭年收入）",
+        "safeLine": 6,
+        "safeLineLabel": "国际宜居参考线 6 倍",
+        "items": [
+          { "label": "深圳", "value": 33, "highlight": true },
+          { "label": "北京", "value": 30, "highlight": true },
+          { "label": "上海", "value": 27, "highlight": true },
+          { "label": "首尔", "value": 22 },
+          { "label": "伦敦", "value": 16 },
+          { "label": "东京", "value": 14 },
+          { "label": "纽约", "value": 11 },
+          { "label": "旧金山", "value": 9 }
+        ]
+      },
+      "caption": "数据示意 · 综合 Numbeo / NUMBEO Property Index / 央行数据合并口径",
+      "beats": [
+        { "type": "barsGrow", "at": 0.12, "duration": 0.42 },
+        { "type": "safeLineDraw", "at": 0.5, "duration": 0.2 },
+        { "type": "highlightRow", "at": 0.66, "duration": 0.26, "targets": [0, 1, 2] }
+      ],
+      "transition": { "in": "wipe-up", "out": "wipe-right" },
+      "voiceover": "和全球同行比一下。深圳、北京、上海的房价收入比已经超过 27 到 33 倍，而首尔、伦敦、东京、纽约这些发达大都会都在 22 倍以下，国际通行的宜居参考线只有 6 倍。横着一比，差距不只是高，是高得不在同一个量级上。",
+      "editorNote": "图表柱体生长后画出宜居线，再单独点亮国内三座城市。"
+    },
+    {
+      "id": "structure",
+      "label": "05 结构原因",
+      "folio": "V",
+      "chapter": "STRUCTURE",
+      "layout": "diagram",
+      "start": 117,
+      "end": 148,
+      "kicker": "ISSUE 07 · NO. 05",
+      "headline": "三条结构线，同时在拉。",
+      "sub": "不买房不是一个文化现象，是三条曲线同时往下走。",
+      "diagram": {
+        "centerLabel": "买房逻辑松动",
+        "centerCaption": "刚需被结构性消解",
+        "nodes": [
+          {
+            "id": "marriage",
+            "title": "婚育推迟",
+            "metric": "29.4 岁",
+            "metricLabel": "全国平均初婚年龄",
+            "delta": "+3.1 岁（vs 2010）",
+            "detail": "房子作为婚姻刚需的角色，在被淡化。"
+          },
+          {
+            "id": "mobility",
+            "title": "就业流动性",
+            "metric": "3.7 个",
+            "metricLabel": "30 岁前平均工作城市数",
+            "delta": "高频换城，30 年按揭锁不住",
+            "detail": "工作半径在扩大，资产半径必须能跟着走。"
+          },
+          {
+            "id": "income",
+            "title": "收入预期",
+            "metric": "−1.6 pct",
+            "metricLabel": "青年群体未来收入预期",
+            "delta": "央行储户问卷调查",
+            "detail": "对未来工资增长越没信心，越不敢加杠杆。"
+          }
+        ]
+      },
+      "beats": [
+        { "type": "nodeReveal", "at": 0.08, "duration": 0.18, "target": "marriage" },
+        { "type": "nodeReveal", "at": 0.3, "duration": 0.18, "target": "mobility" },
+        { "type": "nodeReveal", "at": 0.52, "duration": 0.18, "target": "income" },
+        { "type": "centerPulse", "at": 0.78, "duration": 0.2 }
+      ],
+      "transition": { "in": "wipe-right", "out": "wipe-up" },
+      "voiceover": "为什么会这样？三个结构在同时拉。婚育年龄越来越靠后，房子作为结婚刚需的角色被淡化；年轻人 30 岁前要换三到四个城市工作，30 年的按揭锁不住一个流动的人；对未来收入的预期在持续走低，越不确定就越不敢加杠杆。",
+      "editorNote": "三个节点依次出现并连向中心节点，最后中心节点脉冲一次。"
+    },
+    {
+      "id": "impact",
+      "label": "06 影响链",
+      "folio": "VI",
+      "chapter": "CONSEQUENCE",
+      "layout": "quote",
+      "start": 148,
+      "end": 167,
+      "kicker": "ISSUE 07 · NO. 06",
+      "headline": "不买房本身不是问题，是结果。",
+      "sub": "问题在于：过去 20 年的经济链条，是按年轻人会买房来设计的。",
+      "quote": {
+        "open": "“",
+        "close": "”",
+        "lines": [
+          "土地财政、地产链、建材、家电、家居装修、消费信贷……",
+          "整条经济长链，前提都建立在",
+          "下一代会接着买房的假设上。"
+        ],
+        "attribution": "—— 现在这个假设动摇了。"
+      },
+      "beats": [
+        { "type": "lineReveal", "at": 0.08, "duration": 0.18, "target": 0 },
+        { "type": "lineReveal", "at": 0.32, "duration": 0.18, "target": 1 },
+        { "type": "lineReveal", "at": 0.56, "duration": 0.18, "target": 2 },
+        { "type": "attributionFade", "at": 0.82, "duration": 0.16 }
+      ],
+      "transition": { "in": "fold", "out": "wipe-right" },
+      "voiceover": "理解到这一层，问题就清楚了。不买房本身不是问题，是结果。真正麻烦的是，过去二十年中国经济的整条长链——土地财政、地产相关产业、建材家居、消费信贷——前提都建立在下一代会接着买房这个假设上。",
+      "editorNote": "全屏引述，逐行揭示，剪映里可在此处做一次声音重音处理。"
+    },
+    {
+      "id": "closing",
+      "label": "07 收束",
+      "folio": "VII",
+      "chapter": "CLOSING",
+      "layout": "headline",
+      "start": 167,
+      "end": 180,
+      "kicker": "ISSUE 07 · COLOPHON",
+      "drop": "—",
+      "headline": "不是不想，是算不过账。",
+      "highlight": "算不过账",
+      "sub": "理解了这一点，才能理解接下来十年要重新做的那道算术题。",
+      "ornament": "End of Issue 07 · 下期：地方财政如何寻找新的现金流",
+      "beats": [
+        { "type": "keywordPulse", "at": 0.2, "duration": 0.24, "target": "算不过账" },
+        { "type": "ornamentFade", "at": 0.62, "duration": 0.28 }
+      ],
+      "transition": { "in": "wipe-up", "out": "fade" },
+      "voiceover": "所以结论只有一句：年轻人不是不想买房，是账算不过来。理解了这一点，才能理解接下来五到十年，整个中国经济要重新做的那道算术题。",
+      "editorNote": "结尾停留 1.5 秒，再淡入下期预告，便于剪映剪结尾片头。"
+    }
+  ]
+}
