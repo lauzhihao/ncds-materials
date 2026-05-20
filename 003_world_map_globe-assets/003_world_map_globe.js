@@ -226,7 +226,7 @@ function setRouteCity(index, cityId) {
 
 async function loadMaterialConfig() {
   try {
-    const response = await fetch('003_world_map_globe.json', { cache: 'no-store' });
+    const response = await fetch('003_world_map_globe-assets/003_world_map_globe.json', { cache: 'no-store' });
     if (!response.ok) throw new Error(`config ${response.status}`);
     const config = await response.json();
     const loadedCities = Array.isArray(config.capitalCities)
