@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>专业知识视频模板</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="005-knowledge-video-template-assets/style.css">
-  <script defer src="005-knowledge-video-template-assets/vendor/d3.min.js"></script>
-  <script defer src="005-knowledge-video-template-assets/vendor/topojson-client.min.js"></script>
-  <script defer src="005-knowledge-video-template-assets/app.js"></script>
+  <link rel="stylesheet" href=".005-knowledge-video-template-assets/style.css">
+  <script defer src=".005-knowledge-video-template-assets/vendor/d3.min.js"></script>
+  <script defer src=".005-knowledge-video-template-assets/vendor/topojson-client.min.js"></script>
+  <script defer src=".005-knowledge-video-template-assets/app.js"></script>
 </head>
 <body>
   <div class="app-shell">
@@ -212,9 +212,9 @@
           </div>
         </div>
         <p class="control-copy">服务端脚本会按 <code>frame / fps</code> 精确定位每一帧，用 Headless Chrome 截取 1080P 画面。可以直接编码 MP4，也可以用 <code>--frames-only</code> 只导出序列帧。</p>
-        <pre class="export-command" id="exportCommand">node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/005-knowledge-video-template-1080p60.mp4</pre>
-        <pre class="export-command fast-command" id="fastExportCommand">node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --jpeg-quality 94 --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/005-knowledge-video-template-1080p60-fast.mp4</pre>
-        <pre class="export-command frames-command" id="framesExportCommand">node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frames-only --frame-format jpeg --jpeg-quality 94 --chrome-gpu --frames-dir exports/005-knowledge-video-template-frames</pre>
+        <pre class="export-command" id="exportCommand">node .005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/005-knowledge-video-template-1080p60.mp4</pre>
+        <pre class="export-command fast-command" id="fastExportCommand">node .005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --jpeg-quality 94 --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/005-knowledge-video-template-1080p60-fast.mp4</pre>
+        <pre class="export-command frames-command" id="framesExportCommand">node .005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frames-only --frame-format jpeg --jpeg-quality 94 --chrome-gpu --frames-dir exports/005-knowledge-video-template-frames</pre>
         <div class="control-actions export-actions">
           <button type="button" class="button primary" id="copyExportCommandButton">复制导出命令</button>
           <button type="button" class="button" id="copyFastExportCommandButton">复制快速命令</button>

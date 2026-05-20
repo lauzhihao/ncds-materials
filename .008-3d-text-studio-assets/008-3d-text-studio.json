@@ -3,9 +3,9 @@
   "name": "3D Text Studio",
   "title": "立体字工作台",
   "entry": "008-3d-text-studio.html",
-  "style": "008-3d-text-studio-assets/style.css",
-  "script": "008-3d-text-studio-assets/app.jsx",
-  "assets": "008-3d-text-studio-assets/",
+  "style": ".008-3d-text-studio-assets/style.css",
+  "script": ".008-3d-text-studio-assets/app.jsx",
+  "assets": ".008-3d-text-studio-assets/",
   "description": "基于 React、Three.js 和 opentype.js 的中文立体字设计工作台，支持预设中文字体、本地字体拖拽、材质库、逐字语义材质建议、入场动画、粒子、背景调节、PNG 与 GIF 导出。",
   "version": "1.0.0",
   "features": [
@@ -19,10 +19,10 @@
     "PNG 静帧导出与 GIF 动画导出"
   ],
   "scripts": [
-    "008-3d-text-studio-assets/char-data.js",
-    "008-3d-text-studio-assets/materials.js",
-    "008-3d-text-studio-assets/scene.js",
-    "008-3d-text-studio-assets/app.jsx"
+    ".008-3d-text-studio-assets/char-data.js",
+    ".008-3d-text-studio-assets/materials.js",
+    ".008-3d-text-studio-assets/scene.js",
+    ".008-3d-text-studio-assets/app.jsx"
   ],
   "dependencies": [
     {

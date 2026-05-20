@@ -3,9 +3,9 @@
   "name": "Paper Card Talk",
   "title": "暖纸卡片口播 · 月薪再稳，也别把工牌当靠山",
   "entry": "009-paper-card-talk.html",
-  "style": "009-paper-card-talk-assets/styles.css",
-  "script": "009-paper-card-talk-assets/player.js",
-  "assets": "009-paper-card-talk-assets/",
+  "style": ".009-paper-card-talk-assets/styles.css",
+  "script": ".009-paper-card-talk-assets/player.js",
+  "assets": ".009-paper-card-talk-assets/",
   "description": "1920×1080 暖纸卡片风口播短片模板：顶部品牌标题 + 中央分镜卡片 + 底部双语字幕带。BEATS 字幕节拍数据驱动播放推进，SCENES 提供分镜底图；图位走 <image-slot> 拖拽填充并通过 .image-slots.state.json sidecar 持久化。React + Babel 注入的 Tweaks 面板可改标题、配色（暖纸 / 鼠尾草 / 灰蓝 / 黑白报刊）、字号、节奏、字幕带样式。音轨由用户在剪映里另接 TTS / 真人 / 文本朗读。",
   "version": "1.0.0",
   "features": [
@@ -19,11 +19,11 @@
     "<image-slot> 拖拽填图 + sidecar 持久化"
   ],
   "scripts": [
-    "009-paper-card-talk-assets/image-slot.js",
-    "009-paper-card-talk-assets/beats.js",
-    "009-paper-card-talk-assets/player.js",
-    "009-paper-card-talk-assets/tweaks-panel.jsx",
-    "009-paper-card-talk-assets/tweaks.jsx"
+    ".009-paper-card-talk-assets/image-slot.js",
+    ".009-paper-card-talk-assets/beats.js",
+    ".009-paper-card-talk-assets/player.js",
+    ".009-paper-card-talk-assets/tweaks-panel.jsx",
+    ".009-paper-card-talk-assets/tweaks.jsx"
   ],
   "dependencies": [
     {

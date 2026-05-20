@@ -3,9 +3,9 @@
   "name": "Knowledge Video Template",
   "title": "专业知识视频模板",
   "entry": "005-knowledge-video-template.html",
-  "style": "005-knowledge-video-template-assets/style.css",
-  "script": "005-knowledge-video-template-assets/app.js",
-  "assets": "005-knowledge-video-template-assets/",
+  "style": ".005-knowledge-video-template-assets/style.css",
+  "script": ".005-knowledge-video-template-assets/app.js",
+  "assets": ".005-knowledge-video-template-assets/",
   "description": "面向专业知识与财经内容的 3 分钟视频模板，内置世界地图、图表、时间线、右下角数字人安全区和放大镜头占位，支持服务端逐帧导出 1080P60 视频底片或序列帧后再进入剪映补字幕与声音。",
   "version": "1.1.0",
   "features": [
@@ -21,10 +21,10 @@
     "支持 --frames-only 只导出 PNG/JPEG 序列帧"
   ],
   "export": {
-    "script": "005-knowledge-video-template-assets/export-video.mjs",
-    "defaultCommand": "node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/005-knowledge-video-template-1080p60.mp4",
-    "fastNvidiaCommand": "node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --jpeg-quality 94 --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/005-knowledge-video-template-1080p60-fast.mp4",
-    "framesOnlyCommand": "node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frames-only --frame-format jpeg --jpeg-quality 94 --chrome-gpu --frames-dir exports/005-knowledge-video-template-frames",
+    "script": ".005-knowledge-video-template-assets/export-video.mjs",
+    "defaultCommand": "node .005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/005-knowledge-video-template-1080p60.mp4",
+    "fastNvidiaCommand": "node .005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --jpeg-quality 94 --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/005-knowledge-video-template-1080p60-fast.mp4",
+    "framesOnlyCommand": "node .005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frames-only --frame-format jpeg --jpeg-quality 94 --chrome-gpu --frames-dir exports/005-knowledge-video-template-frames",
     "output": "1920x1080 / 60FPS / MP4 or PNG/JPEG image sequence",
     "requires": [
       "Node.js",

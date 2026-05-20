@@ -3,9 +3,9 @@
   "name": "World Map Globe Background",
   "title": "世界地图与地球背景",
   "entry": "003_world_map_globe.html",
-  "style": "003_world_map_globe-assets/003_world_map_globe.css",
-  "script": "003_world_map_globe-assets/003_world_map_globe.js",
-  "assets": "003_world_map_globe-assets/",
+  "style": ".003_world_map_globe-assets/003_world_map_globe.css",
+  "script": ".003_world_map_globe-assets/003_world_map_globe.js",
+  "assets": ".003_world_map_globe-assets/",
   "description": "融合世界地图与地球模型的全球城市连线动态背景，右侧控制台可切换视图、提交自定义配色，并调整连线城市顺序。",
   "version": "1.1.0",
   "dataSource": {

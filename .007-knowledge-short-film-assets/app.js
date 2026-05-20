@@ -1,5 +1,5 @@
 (function () {
-  const ASSET_ROOT = "007-knowledge-short-film-assets";
+  const ASSET_ROOT = ".007-knowledge-short-film-assets";
 
   const state = {
     story: null,

@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const REPO_ROOT = resolve(__dirname, "..");
-const ENTRY = "005-knowledge-video-template.html";
+const ENTRY = "007-knowledge-short-film.html";
 const STORY_PATH = join(__dirname, "story.json");
 
 const MIME_TYPES = {
@@ -30,7 +30,7 @@ function parseArgs(argv) {
     start: 0,
     end: null,
     workers: 1,
-    output: "exports/005-knowledge-video-template-1080p60.mp4",
+    output: "exports/007-knowledge-short-film-1080p60.mp4",
     framesDir: null,
     frameFormat: "png",
     jpegQuality: 94,
@@ -130,7 +130,7 @@ function parseArgs(argv) {
 
 function printHelp() {
   console.log(`Usage:
-  node 005-knowledge-video-template-assets/export-video.mjs [options]
+  node .007-knowledge-short-film-assets/export-video.mjs [options]
 
 Options:
   --fps <number>          Output frame rate. Default: 60
@@ -138,7 +138,7 @@ Options:
   --start <seconds>       Start time in seconds. Default: 0
   --end <seconds>         End time in seconds. Default: story meta duration
   --workers <number>      Parallel Headless Chrome capture workers. Default: 1
-  --output <path>         MP4 output path. Default: exports/005-knowledge-video-template-1080p60.mp4
+  --output <path>         MP4 output path. Default: exports/007-knowledge-short-film-1080p60.mp4
   --frames-dir <path>     Temporary frame directory.
   --frame-format <format> Intermediate frame format: png or jpeg. Default: png
   --jpeg-quality <1-100>  JPEG frame quality when --frame-format jpeg is used. Default: 94
@@ -152,13 +152,13 @@ Options:
   --chrome-gpu            Try GPU compositing/rasterization in Headless Chrome
 
 Example:
-  node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/005-knowledge-video-template-1080p60.mp4
+  node .007-knowledge-short-film-assets/export-video.mjs --fps 60 --size 1920x1080 --output exports/007-knowledge-short-film-1080p60.mp4
 
 Fast NVIDIA path:
-  node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/005-knowledge-video-template-1080p60.mp4
+  node .007-knowledge-short-film-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frame-format jpeg --encoder h264_nvenc --preset p4 --chrome-gpu --output exports/007-knowledge-short-film-1080p60.mp4
 
 Image sequence only:
-  node 005-knowledge-video-template-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frames-only --frame-format jpeg --jpeg-quality 94 --frames-dir exports/005-knowledge-video-template-frames
+  node .007-knowledge-short-film-assets/export-video.mjs --fps 60 --size 1920x1080 --workers 4 --frames-only --frame-format jpeg --jpeg-quality 94 --frames-dir exports/007-knowledge-short-film-frames
 `);
 }
 
@@ -280,7 +280,7 @@ function waitForDevToolsUrl(process) {
 }
 
 async function launchChrome(chromePath, width, height, useGpu) {
-  const userDataDir = await mkdtemp(join(tmpdir(), `005-video-export-${process.pid}-`));
+  const userDataDir = await mkdtemp(join(tmpdir(), `007-short-film-export-${process.pid}-`));
 
   const chromeArgs = [
     "--headless=new",
@@ -434,7 +434,7 @@ async function createPage(client, url, width, height) {
     const ready = await evaluate(
       client,
       sessionId,
-      "Boolean(window.KnowledgeVideoTemplate && document.readyState === 'complete')"
+      "Boolean(window.KnowledgeShortFilm && document.readyState === 'complete')"
     );
     if (ready.result?.value) {
       return { targetId, sessionId };
@@ -522,7 +522,7 @@ async function captureFrames(client, sessionId, options) {
     const time = start + globalFrame / fps;
     await evaluate(client, sessionId, `
       (() => {
-        const api = window.KnowledgeVideoTemplate;
+        const api = window.KnowledgeShortFilm;
         api.pause();
         document.body.classList.add("static-frame");
         api.setCleanMode(true);
@@ -648,7 +648,7 @@ async function main() {
   const output = options.framesOnly ? null : resolveFromRoot(options.output);
   const framesDir = options.framesDir
     ? resolveFromRoot(options.framesDir)
-    : join(REPO_ROOT, options.framesOnly ? "exports" : ".export-frames", `005-frames-${Date.now()}`);
+    : join(REPO_ROOT, options.framesOnly ? "exports" : ".export-frames", `007-frames-${Date.now()}`);
 
   if (output) {
     await mkdir(dirname(output), { recursive: true });

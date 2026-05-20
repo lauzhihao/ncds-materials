@@ -1,5 +1,5 @@
 (function () {
-  const ASSET_ROOT = "005-knowledge-video-template-assets";
+  const ASSET_ROOT = ".005-knowledge-video-template-assets";
   const SCENE_ACCENTS = [
     "#59d0ff",
     "#7adfb7",
