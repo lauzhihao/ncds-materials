@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>月薪再稳，也别把工牌当靠山</title>
+<meta name="viewport" content="width=1920">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="009-paper-card-talk-assets/styles.css">
+
+<!-- React + Babel：仅 tweaks-panel.jsx 用 -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="viewport">
+  <div class="stage" id="stage">
+
+    <!-- 顶部栏 -->
+    <header class="top-bar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="brand-title" id="brandTitle">月薪再稳，也别把工牌当靠山</div>
+      </div>
+      <div></div>
+      <div class="disclaimer">观点仅供参考　无不良引导</div>
+    </header>
+
+    <!-- 中央卡片 -->
+    <main class="card-area">
+      <div class="card">
+        <div class="scene-stack" id="sceneStack"><!-- 由 player.js 填充 --></div>
+      </div>
+    </main>
+
+    <!-- 底部双语字幕 -->
+    <footer class="subtitle-band" id="band">
+      <div class="subtitle-zh" id="capZh">　</div>
+      <div class="subtitle-en" id="capEn">　</div>
+    </footer>
+
+  </div>
+</div>
+
+<!-- 控制条 -->
+<div class="controls" id="controls">
+  <button class="primary" id="playBtn">▶ 播放</button>
+  <button id="restartBtn">↺ 重头</button>
+  <button id="prevBtn">‹ 上一句</button>
+  <button id="nextBtn">下一句 ›</button>
+  <span class="progress" id="progress">0 / 0</span>
+  <label>节奏 <input type="range" id="rate" min="0.6" max="1.6" step="0.05" value="1"></label>
+  <button id="recBtn">● 录制模式</button>
+</div>
+
+<div class="rec-flash" id="recFlash">录制模式 · 按 Esc 退出</div>
+
+<!-- 自适应缩放：把 1920×1080 等比缩放到视口 -->
+<script>
+(function () {
+  const stage = document.getElementById('stage');
+  function fit() {
+    const sx = window.innerWidth / 1920;
+    const sy = window.innerHeight / 1080;
+    const s = Math.min(sx, sy);
+    stage.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+
+<script src="009-paper-card-talk-assets/image-slot.js"></script>
+<script src="009-paper-card-talk-assets/beats.js"></script>
+<script src="009-paper-card-talk-assets/player.js"></script>
+
+<!-- Tweaks 面板 -->
+<script type="text/babel" src="009-paper-card-talk-assets/tweaks-panel.jsx"></script>
+<script type="text/babel" src="009-paper-card-talk-assets/tweaks.jsx"></script>
+
+</body>
+</html>
