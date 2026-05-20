@@ -96,18 +96,21 @@ html, body {
   justify-self: start;
 }
 
-/* 三色小标，模仿参考图左上角 */
+/* 印章式品牌标：方形红底 + 反白衬线汉字 + 微旋转，仿藏书印 / 杂志刊号印 */
 .brand-mark {
-  position: relative;
-  width: 56px; height: 36px;
+  width: 60px; height: 60px;
+  background: var(--accent);
+  color: var(--card);
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.55);
+  transform: rotate(-2deg);
+  border-radius: 2px;
+  letter-spacing: 0;
 }
-.brand-mark span {
-  position: absolute;
-  border-radius: 50%;
-}
-.brand-mark span:nth-child(1) { left: 0;  top: 14px; width: 22px; height: 22px; background: var(--accent); }
-.brand-mark span:nth-child(2) { left: 16px;top: 4px;  width: 26px; height: 26px; background: var(--accent-soft); }
-.brand-mark span:nth-child(3) { left: 30px;top: 12px; width: 24px; height: 24px; background: var(--ink); }
 
 .brand-title {
   font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
@@ -152,18 +155,24 @@ html, body {
   position: absolute; inset: 0;
 }
 
+/* 默认无 Ken Burns（瞬切）；body.ken-burns 时启用慢推。
+   player.js 在激活每个 scene 时会按"该 scene 占多少秒"覆盖 transform-duration，
+   让短 beat 的镜头不会"还没动起来就切走了"。 */
 .scene {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
   opacity: 0;
   transform: scale(1.02);
-  transition: opacity .55s ease, transform 5s ease-out;
+  transition: opacity .55s ease, transform .3s ease;
   pointer-events: none;
+}
+body.ken-burns .scene {
+  transition: opacity .55s ease, transform 5s ease-out;
 }
 
 .scene.active {
   opacity: 1;
-  transform: scale(1.06);   /* 缓慢 Ken Burns */
+  transform: scale(1.06);
   pointer-events: auto;
 }
 
@@ -199,13 +208,13 @@ html, body {
   color: var(--ink-soft);
 }
 
-/* 章节封面卡：大数字+小标题，覆盖图上层 */
+/* 章节封面卡：左侧大序号 + 中间红色细线 + 右侧章节名（杂志栏目排版） */
 .scene.is-chapter .placeholder { display: none; }
 .scene .chapter-card {
   display: none;
   position: absolute; inset: 0;
   align-items: center; justify-content: center;
-  gap: 80px;
+  gap: 60px;
   z-index: 3;
 }
 .scene.is-chapter .chapter-card { display: flex; }
@@ -220,20 +229,21 @@ html, body {
   font-style: normal;
   color: var(--accent);
 }
+/* 红色细立线，把序号和章名隔开——magazine masthead 既视感 */
+.scene .chapter-rule {
+  width: 3px;
+  height: 260px;
+  background: var(--accent);
+  align-self: center;
+  border-radius: 1px;
+}
 .scene .chapter-text {
   font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 1.4;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 1.32;
   color: var(--ink);
-  max-width: 720px;
-}
-.scene .chapter-text .small {
-  display: block;
-  font-size: 36px;
-  font-weight: 500;
-  color: var(--ink-soft);
-  margin-top: 14px;
+  max-width: 700px;
 }
 
 /* ── 底部字幕带 ──────────────────────────────────────────────────── */
@@ -247,6 +257,7 @@ html, body {
   padding: 0 var(--pad-x);
   z-index: 4;
   gap: 18px;
+  overflow: hidden;                /* 防字号过大时撑爆字幕带 */
 }
 
 .subtitle-zh, .subtitle-en {
@@ -335,12 +346,20 @@ html, body {
 .controls label { opacity: .7; }
 
 body.recording .controls { display: none; }
-body.recording .scene image-slot { /* 隐掉 drop ring 等编辑装饰 */ }
-body.recording image-slot::part(ring) { display: none; }
 
 /* 录制模式下隐藏所有"编辑器残留"，保证视频不漏 UI */
-body.recording .twk-panel { display: none !important; }     /* React Tweaks 面板 */
-body.recording .scene .placeholder { display: none; }       /* 拖图前的 ph-id + ph-prompt 提示文字 */
+body.recording .twk-panel { display: none !important; }       /* React Tweaks 面板 */
+body.recording .scene .placeholder { display: none; }         /* player.js 渲染的 ph-id + ph-prompt 提示 */
+body.recording image-slot::part(ring) { display: none; }      /* image-slot 拖拽指示环 */
+body.recording image-slot::part(empty) { display: none; }     /* image-slot 空状态：图标 + placeholder= 文字 */
+
+/* 片尾淡出：playFrom 走完后挂 body.ending 1.5s，字幕轻轻淡掉、镜头继续慢推，
+   给录屏者一个明确的结束信号；ending 期间 stop()，但仍在 recording 状态等用户按 Esc */
+body.ending .subtitle-zh,
+body.ending .subtitle-en {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
 
 /* 录制启动倒数：3 秒大字覆盖在 stage 中心。倒数完毕后淡出再 play()，
    保证视频第一帧就是干净的封面镜，字幕不带 "准备录制… 3" */
@@ -350,7 +369,7 @@ body.recording .scene .placeholder { display: none; }       /* 拖图前的 ph-i
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(20, 18, 15, 0.55);
+  background: rgba(20, 18, 15, 0.94);   /* 几乎不透明，挡住底下未激活的空 scene */
   color: #fff;
   font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
   font-weight: 900;

@@ -72,11 +72,10 @@ function App() {
     document.getElementById("capEn").style.display = t.showSubtitleEn ? "" : "none";
   }, [t.showSubtitleEn]);
   React.useEffect(() => {
-    document.querySelectorAll(".scene").forEach(s => {
-      s.style.transition = t.kenBurns
-        ? "opacity .55s ease, transform 5s ease-out"
-        : "opacity .25s ease, transform .25s ease";
-    });
+    // 用 body class 切换 Ken Burns，让 player.js 在每个 scene 激活时
+    // 可以按 scene 的总播放时长动态设 transform-duration（短句不再"还没动就切"）。
+    // 不清 inline transition：showBeat 在每个 scene 重激活时会自行根据当前 ken-burns 状态重置。
+    document.body.classList.toggle("ken-burns", t.kenBurns);
   }, [t.kenBurns]);
   React.useEffect(() => {
     const r = document.getElementById("rate");

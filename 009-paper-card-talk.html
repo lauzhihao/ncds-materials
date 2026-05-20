@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <title>月薪再稳，也别把工牌当靠山</title>
 <meta name="viewport" content="width=1920">
+<!-- body 默认带 ken-burns 类（与 Tweaks 初值 kenBurns:true 同步）。Tweaks 加载后会接管 toggle，
+     先在这里挂上是为了让 player.js 首次 showBeat 时能正确读到 ken-burns 状态。 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +18,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="ken-burns">
 
 <div class="viewport">
   <div class="stage" id="stage">
@@ -24,7 +26,7 @@
     <!-- 顶部栏 -->
     <header class="top-bar">
       <div class="brand">
-        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="brand-mark" aria-hidden="true">册</div>
         <div class="brand-title" id="brandTitle">月薪再稳，也别把工牌当靠山</div>
       </div>
       <div></div>
