@@ -1320,6 +1320,305 @@ body.clean-mode .video-frame {
   box-shadow: none;
 }
 
+/* ============================================================
+   Layout: bigword (PPT-style minimal slide)
+   ============================================================ */
+.layout-bigword {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2.4cqh;
+  padding: 1cqh 4cqw;
+}
+
+.bigword-kicker {
+  font-family: var(--font-mono);
+  font-size: 1.2cqw;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4cqw;
+}
+
+.bigword-kicker::before,
+.bigword-kicker::after {
+  content: "";
+  width: 4cqw;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+.bigword-shell {
+  position: relative;
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.bigword-text {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.bigword-text.size-huge   { font-size: 17cqw; }
+.bigword-text.size-xlarge { font-size: 12cqw; }
+.bigword-text.size-large  { font-size: 9cqw; }
+.bigword-text.size-medium { font-size: 6cqw; }
+
+.bigword-text.is-accent { color: var(--accent); }
+
+.bigword-strike-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 53%;
+  height: 0.06em;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  z-index: 2;
+}
+
+.bigword-underline-bar {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 8%;
+  height: 0.08em;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.bigword-circle {
+  position: absolute;
+  inset: -16% -8%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
+}
+
+.bigword-circle path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bigword-question-mark {
+  display: inline-block;
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-weight: 900;
+  margin-left: 0.08em;
+}
+
+.bigword-caption {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.8cqw;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   Layout: bignumber (PPT-style giant number)
+   ============================================================ */
+.layout-bignumber {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.6cqh;
+  padding: 1cqh 4cqw;
+}
+
+.bignumber-kicker {
+  font-family: var(--font-mono);
+  font-size: 1.3cqw;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4cqw;
+}
+
+.bignumber-kicker::before,
+.bignumber-kicker::after {
+  content: "";
+  width: 3cqw;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+.bignumber-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6cqw;
+  line-height: 0.86;
+}
+
+.bignumber-value {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 24cqw;
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+
+.bignumber-value.is-accent { color: var(--accent); }
+
+.bignumber-unit {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 5.6cqw;
+  color: var(--ink-soft);
+  align-self: end;
+  padding-bottom: 1cqh;
+}
+
+.bignumber-caption {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.8cqw;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   Layout: phraseflow (vertical stack of keywords with arrows)
+   ============================================================ */
+.layout-phraseflow {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1cqh;
+  padding: 1cqh 4cqw;
+}
+
+.phraseflow-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2cqh;
+}
+
+.phraseflow-item {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 5.8cqw;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.04;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.phraseflow-item.is-accent { color: var(--accent); }
+
+.phraseflow-arrow {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 2.4cqw;
+  color: var(--accent);
+  line-height: 1;
+  margin: 0.2cqh 0;
+}
+
+.phraseflow-footnote {
+  margin: 1.6cqh 0 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.8cqw;
+  color: var(--ink-mute);
+}
+
+/* ============================================================
+   Layout: chartonly (full-width bars, minimal text)
+   ============================================================ */
+.layout-chartonly {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.4cqh;
+  padding: 2cqh 6cqw 0;
+}
+
+.chartonly-kicker {
+  align-self: center;
+  font-family: var(--font-mono);
+  font-size: 1.4cqw;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1cqh;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4cqw;
+}
+
+.chartonly-kicker::before,
+.chartonly-kicker::after {
+  content: "";
+  width: 3cqw;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+.layout-chartonly .chart-area {
+  border-left: none;
+  padding: 0;
+}
+
+.layout-chartonly .chart-row {
+  grid-template-columns: 6cqw 1fr auto;
+  font-size: 1.9cqw;
+}
+
+.layout-chartonly .chart-row .row-track {
+  height: 3.4cqh;
+}
+
+.layout-chartonly .chart-row .row-value {
+  font-size: 2.1cqw;
+  min-width: 4cqw;
+}
+
+.layout-chartonly .chart-unit,
+.layout-chartonly .chart-foot {
+  font-size: 1cqw;
+}
+
+.layout-chartonly .chart-safe-line::before {
+  font-size: 0.9cqw;
+}
+
 @media (max-width: 1380px) {
   .app-shell { grid-template-columns: 1fr; }
 }

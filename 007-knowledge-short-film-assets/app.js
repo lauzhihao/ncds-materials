@@ -127,12 +127,16 @@
       card.dataset.sceneId = scene.id;
       const internals = {};
       switch (scene.layout) {
-        case "headline": buildHeadline(card, scene, internals); break;
-        case "numbers":  buildNumbers(card, scene, internals);  break;
-        case "compare":  buildCompare(card, scene, internals);  break;
-        case "chart":    buildChart(card, scene, internals);    break;
-        case "diagram":  buildDiagram(card, scene, internals);  break;
-        case "quote":    buildQuote(card, scene, internals);    break;
+        case "headline":   buildHeadline(card, scene, internals); break;
+        case "numbers":    buildNumbers(card, scene, internals);  break;
+        case "compare":    buildCompare(card, scene, internals);  break;
+        case "chart":      buildChart(card, scene, internals);    break;
+        case "diagram":    buildDiagram(card, scene, internals);  break;
+        case "quote":      buildQuote(card, scene, internals);    break;
+        case "bigword":    buildBigword(card, scene, internals);    break;
+        case "bignumber":  buildBignumber(card, scene, internals);  break;
+        case "phraseflow": buildPhraseflow(card, scene, internals); break;
+        case "chartonly":  buildChartonly(card, scene, internals);  break;
         default: card.textContent = `Unknown layout: ${scene.layout}`;
       }
       dom.mainStage.appendChild(card);
@@ -363,6 +367,182 @@
     card.append(head, body, attr);
   }
 
+  function buildBigword(card, scene, internals) {
+    if (scene.kicker) {
+      const kicker = el("p", "bigword-kicker");
+      kicker.textContent = scene.kicker;
+      card.appendChild(kicker);
+    }
+    const shell = el("div", "bigword-shell");
+    const size = scene.size || "large";
+    const text = el("h2", `bigword-text size-${size}`);
+    text.textContent = scene.text || "";
+    if (scene.style === "accent" || scene.style === "strike" || scene.style === "underline" || scene.style === "circle" || scene.style === "question") {
+      // accent: red color; others: keep ink color but apply decoration
+    }
+    if (scene.style === "accent") text.classList.add("is-accent");
+    shell.appendChild(text);
+
+    const wantStrike = scene.style === "strike" || (scene.beats || []).some((b) => b.type === "strikethrough");
+    if (wantStrike) {
+      const strike = el("span", "bigword-strike-bar");
+      shell.appendChild(strike);
+      internals.strikeBar = strike;
+    }
+    const wantUnderline = scene.style === "underline" || (scene.beats || []).some((b) => b.type === "underline");
+    if (wantUnderline) {
+      const bar = el("span", "bigword-underline-bar");
+      shell.appendChild(bar);
+      internals.underlineBar = bar;
+    }
+    const wantCircle = scene.style === "circle" || (scene.beats || []).some((b) => b.type === "circle");
+    if (wantCircle) {
+      const ns = "http://www.w3.org/2000/svg";
+      const svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("class", "bigword-circle");
+      svg.setAttribute("viewBox", "0 0 200 100");
+      svg.setAttribute("preserveAspectRatio", "none");
+      const path = document.createElementNS(ns, "path");
+      path.setAttribute("d", "M 100 5 C 50 5 5 25 5 50 C 5 75 50 95 100 95 C 150 95 195 75 195 50 C 195 25 150 5 100 5");
+      svg.appendChild(path);
+      shell.appendChild(svg);
+      internals.circlePath = path;
+    }
+    if (scene.style === "question") {
+      const q = el("span", "bigword-question-mark");
+      q.textContent = "？";
+      text.appendChild(q);
+    }
+
+    card.appendChild(shell);
+
+    if (scene.caption) {
+      const cap = el("p", "bigword-caption");
+      cap.textContent = scene.caption;
+      card.appendChild(cap);
+    }
+
+    if (scene.ornament) {
+      const orn = el("p", "headline-ornament");
+      orn.textContent = scene.ornament;
+      card.appendChild(orn);
+      internals.ornament = orn;
+    }
+
+    internals.text = text;
+    internals.shell = shell;
+  }
+
+  function buildBignumber(card, scene, internals) {
+    if (scene.kicker) {
+      const kicker = el("p", "bignumber-kicker");
+      kicker.textContent = scene.kicker;
+      card.appendChild(kicker);
+    }
+    const row = el("div", "bignumber-row");
+    const value = el("span", `bignumber-value${scene.style === "accent" ? " is-accent" : ""}`);
+    value.textContent = "0";
+    const unit = el("span", "bignumber-unit");
+    unit.textContent = scene.unit || "";
+    row.append(value, unit);
+    card.appendChild(row);
+
+    if (scene.caption) {
+      const cap = el("p", "bignumber-caption");
+      cap.textContent = scene.caption;
+      card.appendChild(cap);
+    }
+
+    internals.numberRefs = [{ valueSpan: value, target: Number(scene.value) || 0 }];
+    internals.shell = row;
+  }
+
+  function buildPhraseflow(card, scene, internals) {
+    if (scene.kicker) {
+      const k = el("p", "bigword-kicker");
+      k.textContent = scene.kicker;
+      card.appendChild(k);
+    }
+    const list = el("div", "phraseflow-list");
+    internals.phraseItems = [];
+    (scene.phrases || []).forEach((phrase, i) => {
+      if (i > 0) {
+        const arrow = el("div", "phraseflow-arrow");
+        arrow.textContent = scene.arrow || "↓";
+        list.appendChild(arrow);
+        internals.phraseItems.push(arrow);
+      }
+      const p = el("p", "phraseflow-item");
+      const text = typeof phrase === "string" ? phrase : phrase.text;
+      p.textContent = text;
+      if (typeof phrase === "object" && phrase.accent) p.classList.add("is-accent");
+      list.appendChild(p);
+      internals.phraseItems.push(p);
+    });
+    card.appendChild(list);
+
+    if (scene.footnote) {
+      const foot = el("p", "phraseflow-footnote");
+      foot.textContent = scene.footnote;
+      card.appendChild(foot);
+      internals.phraseFootnote = foot;
+    }
+  }
+
+  function buildChartonly(card, scene, internals) {
+    if (scene.kicker) {
+      const k = el("p", "chartonly-kicker");
+      k.textContent = scene.kicker;
+      card.appendChild(k);
+    }
+
+    const area = el("div", "chart-area");
+    const items = scene.chart?.items || [];
+    const max = Math.max(...items.map((it) => Number(it.value) || 0), 1);
+
+    const unit = el("div", "chart-unit");
+    const unitL = el("span"); unitL.textContent = scene.chart?.unit || "";
+    const unitR = el("span"); unitR.textContent = `MAX ${max}`;
+    unit.append(unitL, unitR);
+
+    const bars = el("div", "chart-bars");
+    bars.style.gridTemplateRows = `repeat(${items.length}, minmax(0, 1fr))`;
+    internals.barRefs = [];
+    items.forEach((item) => {
+      const row = el("div", "chart-row");
+      if (item.highlight) row.classList.add("is-highlight");
+      const label = el("div", "row-label");
+      label.textContent = item.label || "";
+      const track = el("div", "row-track");
+      const fill = el("div", "row-fill");
+      track.appendChild(fill);
+      const value = el("div", "row-value");
+      value.textContent = String(item.value);
+      row.append(label, track, value);
+      bars.appendChild(row);
+      internals.barRefs.push({
+        row, fill, value,
+        targetPct: (Number(item.value) / max) * 100
+      });
+    });
+
+    if (scene.chart?.safeLine != null) {
+      const safeLine = el("div", "chart-safe-line");
+      safeLine.style.left = `calc(${(scene.chart.safeLine / max) * 100}% )`;
+      safeLine.dataset.label = scene.chart.safeLineLabel || "";
+      bars.appendChild(safeLine);
+      internals.safeLine = safeLine;
+    }
+
+    const foot = el("div", "chart-foot");
+    const footL = el("span"); footL.textContent = "低 ←";
+    const footR = el("span"); footR.textContent = "→ 高";
+    foot.append(footL, footR);
+
+    area.append(unit, bars, foot);
+    card.appendChild(area);
+  }
+
   function activateScene(index) {
     const scene = state.story.scenes[index];
     if (!scene) return;
@@ -510,6 +690,70 @@
       else {
         const eased = easeOutCubic(beatProgress(scene, beat, progress));
         applyShow(internals.ornament, eased, 0.6);
+      }
+    }
+
+    // Bigword shell entry animation (first 0.18 of scene)
+    if (internals.shell) {
+      const intro = clamp(progress / 0.18, 0, 1);
+      const eased = easeOutCubic(intro);
+      const s = 0.94 + 0.06 * eased;
+      internals.shell.style.transform = `scale(${s.toFixed(3)})`;
+      internals.shell.style.opacity = eased.toFixed(3);
+    }
+
+    // Bigword strikethrough — drives off "strikethrough" beat OR scene.style==="strike"
+    if (internals.strikeBar) {
+      let val = 0;
+      const strikeBeat = beats.find((b) => b.type === "strikethrough");
+      if (strikeBeat) {
+        val = easeOutCubic(beatProgress(scene, strikeBeat, progress));
+      } else if (scene.style === "strike") {
+        val = easeOutCubic(clamp((progress - 0.22) / 0.34, 0, 1));
+      }
+      internals.strikeBar.style.transform = `scaleX(${val.toFixed(3)})`;
+    }
+
+    // Bigword underline (full-phrase, not inline)
+    if (internals.underlineBar) {
+      let val = 0;
+      const ulBeat = beats.find((b) => b.type === "underline");
+      if (ulBeat) {
+        val = easeOutCubic(beatProgress(scene, ulBeat, progress));
+      } else if (scene.style === "underline") {
+        val = easeOutCubic(clamp((progress - 0.22) / 0.34, 0, 1));
+      }
+      internals.underlineBar.style.transform = `scaleX(${val.toFixed(3)})`;
+    }
+
+    // Bigword circle (SVG path draw)
+    if (internals.circlePath) {
+      let val = 0;
+      const cBeat = beats.find((b) => b.type === "circle");
+      if (cBeat) {
+        val = easeOutCubic(beatProgress(scene, cBeat, progress));
+      } else if (scene.style === "circle") {
+        val = easeOutCubic(clamp((progress - 0.22) / 0.4, 0, 1));
+      }
+      const len = internals.circlePath.getTotalLength?.() || 600;
+      internals.circlePath.style.strokeDasharray = String(len);
+      internals.circlePath.style.strokeDashoffset = String(len * (1 - val));
+    }
+
+    // Phraseflow staggered reveal
+    if (internals.phraseItems) {
+      const total = internals.phraseItems.length;
+      internals.phraseItems.forEach((item, i) => {
+        const stagger = (i / Math.max(1, total - 1)) * 0.42;
+        const local = clamp((progress - 0.06 - stagger) / 0.22, 0, 1);
+        const eased = easeOutCubic(local);
+        item.style.opacity = eased.toFixed(3);
+        item.style.transform = `translateY(${((1 - eased) * 0.8).toFixed(2)}cqh)`;
+      });
+      if (internals.phraseFootnote) {
+        const local = clamp((progress - 0.55) / 0.2, 0, 1);
+        const eased = easeOutCubic(local);
+        internals.phraseFootnote.style.opacity = eased.toFixed(3);
       }
     }
 
