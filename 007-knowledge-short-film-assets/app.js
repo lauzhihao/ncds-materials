@@ -403,7 +403,8 @@
       svg.setAttribute("viewBox", "0 0 200 100");
       svg.setAttribute("preserveAspectRatio", "none");
       const path = document.createElementNS(ns, "path");
-      path.setAttribute("d", "M 100 5 C 50 5 5 25 5 50 C 5 75 50 95 100 95 C 150 95 195 75 195 50 C 195 25 150 5 100 5");
+      path.setAttribute("d", "M 38 24 C 60 8 140 6 168 22 C 192 34 194 70 172 84 C 140 96 50 96 24 80 C 4 66 6 28 30 16 C 44 12 52 18 58 22");
+      path.setAttribute("vector-effect", "non-scaling-stroke");
       svg.appendChild(path);
       shell.appendChild(svg);
       internals.circlePath = path;

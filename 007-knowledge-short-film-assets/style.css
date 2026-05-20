@@ -1300,7 +1300,9 @@ body.clean-mode .preview-header,
 body.clean-mode .control-panel,
 body.clean-mode .progress-bar,
 body.clean-mode .avatar-dock,
-body.clean-mode .subtitle-safe-zone::before {
+body.clean-mode .subtitle-safe-zone::before,
+body.clean-mode .masthead-spec,
+body.clean-mode .folio {
   display: none !important;
 }
 body.clean-mode .preview-panel {
@@ -1406,7 +1408,10 @@ body.clean-mode .video-frame {
 
 .bigword-circle {
   position: absolute;
-  inset: -16% -8%;
+  left: -4%;
+  right: -4%;
+  top: -22%;
+  bottom: -18%;
   pointer-events: none;
   z-index: 2;
   overflow: visible;
@@ -1415,9 +1420,10 @@ body.clean-mode .video-frame {
 .bigword-circle path {
   fill: none;
   stroke: var(--accent);
-  stroke-width: 3.6;
+  stroke-width: 3.2;
   stroke-linecap: round;
   stroke-linejoin: round;
+  opacity: 0.92;
 }
 
 .bigword-question-mark {
