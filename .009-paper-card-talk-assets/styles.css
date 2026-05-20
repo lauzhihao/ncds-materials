@@ -96,7 +96,7 @@ html, body {
   justify-self: start;
 }
 
-/* 印章式品牌标：方形红底 + 反白衬线汉字 + 微旋转，仿藏书印 / 杂志刊号印 */
+/* 出版符号式品牌标：红色方块 + 反白 ※（CJK 引用 / 编者注符号），摆正不旋转 */
 .brand-mark {
   width: 60px; height: 60px;
   background: var(--accent);
@@ -104,12 +104,13 @@ html, body {
   display: flex; align-items: center; justify-content: center;
   font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
   font-weight: 900;
-  font-size: 40px;
+  font-size: 44px;
   line-height: 1;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.55);
-  transform: rotate(-2deg);
   border-radius: 2px;
   letter-spacing: 0;
+  /* ※ 的位图相对 em-box 偏小一点，向上 nudge 让它视觉居中 */
+  padding-bottom: 2px;
 }
 
 .brand-title {
