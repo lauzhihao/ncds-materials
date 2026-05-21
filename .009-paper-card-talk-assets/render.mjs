@@ -37,7 +37,8 @@ const TMP_AUDIO = '/tmp/009-render-audio.mp3';
 const HTTP_PORT = 8765;
 const URL_009 = `http://127.0.0.1:${HTTP_PORT}/009-paper-card-talk.html`;
 const FPS = 30;
-const GAP_MS = 80;     // beat 之间的"喘息"间隔，必须跟 player.js 里的 setTimeout 一致
+const INTRO_MS = 300;   // recorder 起来到 startRecordingPlayback 之间的空白纸面段
+const GAP_MS = 80;      // beat 之间的"喘息"间隔，必须跟 player.js 里的 setTimeout 一致
 const ENDING_MS = 1500; // body.ending 持续时间，跟 player.js 一致
 
 const log = (...a) => console.log('[render]', ...a);
@@ -72,15 +73,17 @@ async function buildAudioTrack() {
     .filter((f) => /^\d+\.mp3$/.test(f))
     .sort();
   if (files.length === 0) throw new Error(`no audio/*.mp3 found in ${AUDIO_DIR}`);
-  log(`audio: concatenating ${files.length} mp3s + ${GAP_MS}ms gaps + ${ENDING_MS}ms tail silence`);
+  log(`audio: ${INTRO_MS}ms intro + ${files.length} mp3s + ${GAP_MS}ms gaps + ${ENDING_MS}ms tail silence`);
 
+  const silenceIntro = '/tmp/009-silence-intro.mp3';
   const silenceGap = '/tmp/009-silence-gap.mp3';
   const silenceTail = '/tmp/009-silence-tail.mp3';
+  await makeSilence(INTRO_MS / 1000, silenceIntro);
   await makeSilence(GAP_MS / 1000, silenceGap);
   await makeSilence(ENDING_MS / 1000, silenceTail);
 
   const concatList = '/tmp/009-concat.txt';
-  const lines = [];
+  const lines = [`file '${silenceIntro}'`];
   for (let i = 0; i < files.length; i++) {
     lines.push(`file '${path.join(AUDIO_DIR, files[i])}'`);
     if (i < files.length - 1) lines.push(`file '${silenceGap}'`);
@@ -143,6 +146,15 @@ async function main() {
     );
     await sleep(1200);
 
+    // 录前先把 UI 抹掉（控件 / Tweaks 面板 / image-slot ring），
+    // 不然 recorder 起来的前几帧会拍到左下角的"导演台"。
+    log('hiding UI (pre-recording state)');
+    await page.evaluate(() => {
+      document.body.classList.add('recording');
+      document.getElementById('capZh').textContent = '';
+      document.getElementById('capEn').textContent = '';
+    });
+
     log('starting screen recorder (30fps, 1920×1080)');
     // viewport 跟 videoFrame 都是 1920×1080，不需要 autopad；带 autopad 时 ffmpeg pad
     // 滤镜会拒绝 3 位 hex 颜色，整段录制会静默失败。
@@ -157,11 +169,12 @@ async function main() {
     });
     await recorder.start(TMP_VIDEO);
 
-    // 小热身，让 CDP screencast 通道先稳一稳，避免错过前几帧
-    await sleep(300);
+    // 小段空白纸面 intro：让 CDP 通道稳一稳，给观众一拍准备时间。
+    // 音轨那侧也会插同样长度的 leading silence。
+    await sleep(INTRO_MS);
 
-    log('triggering recording playback (no 3s countdown)');
-    await page.evaluate(() => window.__player.startRecordingPlayback());
+    log('triggering scripted playback (audio-duration-driven, no audio.onended drift)');
+    await page.evaluate(() => window.__player.startRecordingPlayback({ scripted: true }));
 
     log('waiting for ending fade to begin (full playback)');
     await page.waitForFunction(

@@ -367,7 +367,14 @@
 
   // 离线渲染入口：跳过 3 秒倒数，直接进 recording 状态从头播。
   // render.mjs 用 puppeteer 拉起页面后调它，配合 CDP screencast 抓帧。
-  function startRecordingPlayback() {
+  //
+  // opts.scripted=true 时改用 setTimeout(audio.duration) 驱动 beat 推进，
+  //   不依赖 audio.onended。headless --mute-audio 下 onended 触发时刻跟
+  //   实际 audio.duration 有 ms 级抖动，139 个 beat 累加会让视觉比离线拼
+  //   的音轨短几百 ms（muxed 后音频显得落后字幕）。scripted 模式锁死时
+  //   长 = 音轨长，保证音画对齐。
+  function startRecordingPlayback(opts) {
+    opts = opts || {};
     pause();
     cur = 0;
     for (const a of audioElements) {
@@ -378,7 +385,27 @@
     capZh.textContent = '';
     capEn.textContent = '';
     progress.textContent = '1 / ' + beats.length;
-    play();
+
+    if (opts.scripted) {
+      playing = true;
+      $('playBtn').textContent = '⏸ 暂停';
+      const rate = 1; // scripted 不读 rate 滑杆，固定 1x
+      function scriptedNext(i) {
+        if (!playing) return;
+        if (i >= beats.length) { endRun(); return; }
+        showBeat(i);
+        const a = audioElements[i];
+        const durMs = (a && isFinite(a.duration) ? a.duration * 1000 : estimateMs(beats[i].zh)) / rate;
+        const myToken = ++advanceToken;
+        pendingTimer = setTimeout(() => {
+          if (myToken !== advanceToken || !playing) return;
+          pendingTimer = setTimeout(() => scriptedNext(i + 1), 80);
+        }, durMs);
+      }
+      scriptedNext(0);
+    } else {
+      play();
+    }
   }
 
   // 暴露给 Tweaks 和 render.mjs
