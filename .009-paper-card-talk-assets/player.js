@@ -1,12 +1,14 @@
 /* ──────────────────────────────────────────────────────────────────
-   播放引擎（纯节奏版，无 TTS）
-   - 把 BEATS 渲染为字幕序列，按字符数估算每句停留时长自动推进
-   - 每个 beat 对应一个 scene（中央图）；同 scene 连续 beat 共享一张图
-   - 录制模式：3 秒倒数 → 隐控件 → 自动从头播到尾
-   - 音轨由用户在剪映里另接（API TTS / 真人 / 剪映文本朗读）
+   播放引擎（音频驱动版）
+   - 每条 beat 对应一个 audio/NNNN.mp3（由 tts_gen.py 生成）
+   - 字幕推进由 audio 的 'ended' 事件触发，不再用字符数估时
+   - 节奏滑杆改写 audio.playbackRate
+   - Ken Burns 镜头时长 = 该 scene 全部 beat 音频时长之和（含 rate）
+   - 若某条 audio 加载失败，回退到字符估时，保证片子能播完
    ────────────────────────────────────────────────────────────────── */
 
 (function () {
+  const ASSET_ROOT = '.009-paper-card-talk-assets';
   const $ = (id) => document.getElementById(id);
   const beats = window.BEATS || [];
   const scenes = window.SCENES || {};
@@ -26,18 +28,28 @@
     }
   }
 
+  // 预生成图片路径：pictures/NN-<scene-id>.webp，NN 跟 SCENES 出场顺序对齐
+  // image-slot 的 src 属性是 author-controlled，会 fallback 到空状态（不破坏页面），
+  // 所以即使某张图还没生成也能正常播。
+  const PIC_DIR = ASSET_ROOT + '/pictures';
+  function picSrcFor(sceneId, index) {
+    const nn = String(index + 1).padStart(2, '0');
+    return PIC_DIR + '/' + nn + '-' + sceneId + '.webp';
+  }
+
   const sceneNodes = {};
-  for (const id of sceneOrder) {
+  sceneOrder.forEach((id, i) => {
     const def = scenes[id] || { prompt: '(未定义)', label: '' };
     const el = document.createElement('div');
     el.className = 'scene';
+    const src = picSrcFor(id, i);
     if (id.startsWith('ch')) {
       el.classList.add('is-chapter');
       const num = ({ ch1: '一', ch2: '二', ch3: '三', ch4: '四', ch5: '五' })[id] || '';
       const firstBeat = beats.find(b => b.scene === id);
       const sub = firstBeat ? firstBeat.zh.replace(/^[一二三四五六七八九十]、/, '') : '';
       el.innerHTML =
-        '<image-slot id="slot-' + id + '" placeholder="(可选) 拖入章节背景图，留空则用纯色封面"></image-slot>' +
+        '<image-slot id="slot-' + id + '" src="' + src + '" fit="contain" placeholder="(可选) 章节背景图，留空则用纯色封面"></image-slot>' +
         '<div class="chapter-card">' +
         '  <div class="chapter-num"><em>' + num + '</em></div>' +
         '  <div class="chapter-rule" aria-hidden="true"></div>' +
@@ -45,7 +57,7 @@
         '</div>';
     } else {
       el.innerHTML =
-        '<image-slot id="slot-' + id + '" placeholder="拖入此场景的图（详见左侧）"></image-slot>' +
+        '<image-slot id="slot-' + id + '" src="' + src + '" fit="contain" placeholder="拖入此场景的图（详见左侧）"></image-slot>' +
         '<div class="placeholder">' +
         '  <div class="ph-id">' + id + '</div>' +
         '  <div class="ph-prompt">' + (def.prompt || '') + '</div>' +
@@ -53,7 +65,17 @@
     }
     stack.appendChild(el);
     sceneNodes[id] = el;
-  }
+  });
+
+  // ── 预加载所有 beat 的音频 ─────────────────────────────────────
+  // 总体积 ~2.7MB（139 段），preload=auto 让浏览器尽早缓存，避免句间空白。
+  const padWidth = Math.max(4, String(beats.length).length);
+  const audioElements = beats.map((_, i) => {
+    const a = new Audio();
+    a.src = `${ASSET_ROOT}/audio/${String(i + 1).padStart(padWidth, '0')}.mp3`;
+    a.preload = 'auto';
+    return a;
+  });
 
   // ── 当前 beat 状态 ─────────────────────────────────────────────
   let cur = 0;
@@ -61,35 +83,36 @@
   let pendingTimer = null;
   let advanceToken = 0;
 
-  // ── 按字符数估算一句的停留时长 ─────────────────────────────────
+  // ── 当前句子在音频不可用时的字符估时（fallback）─────────────────
   function estimateMs(zh) {
-    // 中文 ~0.20 sec/字 + 0.7 秒基础留白
     const n = (zh || '').replace(/\s/g, '').length;
     return Math.max(1000, n * 200 + 700);
   }
 
+  // ── 单条 beat 的"应该停留多久"（含 rate）：优先用音频时长 ─────
+  function beatMs(i, rate) {
+    const a = audioElements[i];
+    const dur = a && isFinite(a.duration) ? a.duration * 1000 : estimateMs(beats[i].zh);
+    return dur / (rate || 1);
+  }
+
   // ── 计算某个 scene 从 startIdx 起的连续 beat 总时长（ms，含 rate） ───
-  // 用来把 Ken Burns 的 transform 时长设成"这个 scene 一共要播多久"，
-  // 短句也能慢慢推完一镜，长句也不会推一半就重置。
+  // 给 Ken Burns 的 transform 时长做参考，使镜头推进与 scene 实际播放对齐。
   function computeSceneRunMs(startIdx) {
     const rate = parseFloat($('rate').value) || 1;
     const sc = beats[startIdx].scene;
     let total = 0;
     for (let j = startIdx; j < beats.length && beats[j].scene === sc; j++) {
-      total += estimateMs(beats[j].zh) / rate;
+      total += beatMs(j, rate);
     }
-    // 加 80ms × N "喘息"间隔的近似补偿（与 playFrom 里 setTimeout(80) 对齐）
     return Math.max(800, total + 80);
   }
 
   // ── 字幕带溢出保护：缩放 capZh / capEn 至 band 容下为止 ───────────
-  // ZH 字号上限可拉到 110px，长句会换行甚至撑爆字幕带，所以每次 showBeat 后
-  // 测量一次，必要时按比例缩字号。重置→测量→缩，loop 最多 12 次。
   function fitBand() {
     capZh.style.fontSize = '';
     capEn.style.fontSize = '';
     void band.offsetHeight;
-    // 横向：英文/中文都可能超宽
     for (const el of [capZh, capEn]) {
       let tries = 10;
       while (tries-- > 0 && el.scrollWidth > el.clientWidth + 1) {
@@ -97,7 +120,6 @@
         el.style.fontSize = (sz * 0.93) + 'px';
       }
     }
-    // 纵向：如果 band 内容总高超出，进一步缩中文
     let tries = 10;
     while (tries-- > 0 && band.scrollHeight > band.clientHeight + 1) {
       const sz = parseFloat(getComputedStyle(capZh).fontSize);
@@ -113,7 +135,6 @@
     capZh.textContent = b.zh;
     capEn.textContent = b.en;
 
-    // 切换 active 类；记录哪些 scene 是新激活的，需要重置 Ken Burns
     const newSceneId = b.scene;
     const sceneEl = sceneNodes[newSceneId];
     const sceneWasActive = sceneEl.classList.contains('active');
@@ -121,16 +142,18 @@
       sceneNodes[id].classList.toggle('active', id === newSceneId);
     }
 
+    // 新激活的 scene 重渲染 overlays（重建 DOM 强制重放 CSS 入场动效）
+    if (!sceneWasActive && window.__overlays) {
+      const def = scenes[newSceneId] || {};
+      window.__overlays.renderInto(sceneEl, def.overlays);
+    }
+
     if (!sceneWasActive && document.body.classList.contains('ken-burns')) {
-      // 新激活的 scene：先 snap 回 1.02 再启动按时长定制的 transform，
-      // 保证镜头从头推、并恰好在该 scene 全部 beat 播完时到达 scale(1.06)。
       sceneEl.style.transition = 'none';
-      // 强制 reflow，让 inline transition:none 立即生效
       void sceneEl.offsetWidth;
       const ms = computeSceneRunMs(i);
       sceneEl.style.transition = 'opacity 0.55s ease, transform ' + ms + 'ms ease-out';
     } else if (!document.body.classList.contains('ken-burns')) {
-      // Ken Burns 关闭：清掉之前可能残留的 inline transition，让 CSS 默认的 .3s 起效
       sceneEl.style.transition = '';
     }
 
@@ -138,33 +161,61 @@
     fitBand();
   }
 
-  // ── 主播放循环 ────────────────────────────────────────────────
+  // ── 停掉除指定 index 外所有 audio 的播放（用于 prev/next/restart）─
+  function silenceOthers(keep) {
+    for (let j = 0; j < audioElements.length; j++) {
+      if (j === keep) continue;
+      const a = audioElements[j];
+      if (!a) continue;
+      a.onended = null;
+      if (!a.paused) a.pause();
+    }
+  }
+
+  // ── 主播放循环（音频驱动）──────────────────────────────────────
+  // 每个 beat：showBeat → audio.play()；onended 触发下一句。
+  // 80ms 喘息延迟保留，让 scene 切换的视觉过渡不被音频立刻盖掉。
   function playFrom(i) {
     if (!playing) return;
     if (i >= beats.length) { endRun(); return; }
     showBeat(i);
+    silenceOthers(i);
+
+    const audio = audioElements[i];
     const rate = parseFloat($('rate').value) || 1;
-    const ms = estimateMs(beats[i].zh) / rate;
     const myToken = ++advanceToken;
-    pendingTimer = setTimeout(() => {
+
+    audio.onended = null;
+    audio.currentTime = 0;
+    audio.playbackRate = rate;
+
+    const goNext = () => {
       if (myToken !== advanceToken || !playing) return;
-      // 切到下一句前给一个极短的"喘息"
-      setTimeout(() => playFrom(i + 1), 80);
-    }, ms);
+      pendingTimer = setTimeout(() => playFrom(i + 1), 80);
+    };
+
+    audio.onended = goNext;
+
+    const p = audio.play();
+    if (p && typeof p.catch === 'function') {
+      p.catch((err) => {
+        console.warn('audio play failed at beat', i + 1, err);
+        // 音频失败兜底：用字符估时推进，保证片子不卡死
+        if (myToken !== advanceToken || !playing) return;
+        pendingTimer = setTimeout(() => {
+          if (myToken !== advanceToken || !playing) return;
+          playFrom(i + 1);
+        }, beatMs(i, rate));
+      });
+    }
   }
 
   // ── 片尾淡出 ──────────────────────────────────────────────────
-  // 走完最后一个 beat 不立刻 stop()——挂 body.ending 1.5s：
-  //   * 字幕淡到 0（视觉上的"END"信号，剪辑时也容易找尾）
-  //   * 镜头继续慢推（Ken Burns 不被打断）
-  //   * 不自动退出 recording，由用户按 Esc 决定何时收手
   function endRun() {
     document.body.classList.add('ending');
     setTimeout(() => {
       document.body.classList.remove('ending');
       stop();
-      // body.ending 移除后字幕 opacity 会缓回 1，但此时 textContent 已经是
-      // 最后一句的内容，会"复活"到屏上。手动清空避免回闪。
       capZh.textContent = '';
       capEn.textContent = '';
     }, 1500);
@@ -174,7 +225,28 @@
     if (playing) return;
     playing = true;
     $('playBtn').textContent = '⏸ 暂停';
-    playFrom(cur);
+    const audio = audioElements[cur];
+    // 若当前 beat 的音频处于"已开始但未结束"的中间态，直接续播；否则从头开始
+    if (
+      audio &&
+      isFinite(audio.duration) &&
+      audio.currentTime > 0.05 &&
+      audio.currentTime < audio.duration - 0.05
+    ) {
+      const myToken = ++advanceToken;
+      const rate = parseFloat($('rate').value) || 1;
+      audio.playbackRate = rate;
+      audio.onended = () => {
+        if (myToken !== advanceToken || !playing) return;
+        pendingTimer = setTimeout(() => playFrom(cur + 1), 80);
+      };
+      const p = audio.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch((err) => console.warn('audio resume failed', err));
+      }
+    } else {
+      playFrom(cur);
+    }
   }
 
   function pause() {
@@ -182,6 +254,11 @@
     $('playBtn').textContent = '▶ 播放';
     advanceToken++;
     if (pendingTimer) { clearTimeout(pendingTimer); pendingTimer = null; }
+    const a = audioElements[cur];
+    if (a) {
+      a.onended = null;
+      if (!a.paused) a.pause();
+    }
   }
 
   function stop() {
@@ -190,22 +267,34 @@
 
   // ── 控件 ──────────────────────────────────────────────────────
   $('playBtn').addEventListener('click', () => playing ? pause() : play());
+
   $('restartBtn').addEventListener('click', () => {
     pause();
+    // reset all audios so we can replay cleanly
+    for (const a of audioElements) {
+      try { a.currentTime = 0; } catch (_) { /* metadata not yet loaded */ }
+    }
     cur = 0;
     showBeat(0);
   });
-  $('prevBtn').addEventListener('click', () => {
+
+  function jumpTo(i) {
     const wasPlaying = playing;
     pause();
-    showBeat(Math.max(0, cur - 1));
+    const a = audioElements[cur];
+    if (a) { try { a.currentTime = 0; } catch (_) {} }
+    showBeat(Math.max(0, Math.min(beats.length - 1, i)));
     if (wasPlaying) play();
-  });
-  $('nextBtn').addEventListener('click', () => {
-    const wasPlaying = playing;
-    pause();
-    showBeat(Math.min(beats.length - 1, cur + 1));
-    if (wasPlaying) play();
+  }
+
+  $('prevBtn').addEventListener('click', () => jumpTo(cur - 1));
+  $('nextBtn').addEventListener('click', () => jumpTo(cur + 1));
+
+  // 节奏滑杆：实时调整当前正在播的 audio.playbackRate
+  $('rate').addEventListener('input', () => {
+    const r = parseFloat($('rate').value) || 1;
+    const a = audioElements[cur];
+    if (a) a.playbackRate = r;
   });
 
   // 录制模式
@@ -217,11 +306,12 @@
   function enterRecording() {
     pause();
     cur = 0;
+    // 录制前重置全部 audio.currentTime，避免上次播到一半的状态污染
+    for (const a of audioElements) {
+      try { a.currentTime = 0; } catch (_) {}
+    }
     document.body.classList.add('recording');
 
-    // 倒数期间不预激活 scene——保留 play() 调用时通过 showBeat 走完整流程，
-    // 这样 Ken Burns 的 transform 时长能按 scene-run 精确算。覆盖层近不透明，
-    // 底下的空白不会露出来。
     for (const id of sceneOrder) {
       sceneNodes[id].classList.remove('active');
     }
@@ -239,9 +329,7 @@
         countdown.textContent = String(n);
       } else {
         clearInterval(tick);
-        countdown.classList.remove('show');     // 覆盖层淡出 0.32s
-        // 同时 play()：scene fade-in 在覆盖层淡出期间发生，
-        // 视觉上是一个"自然显现"，不会有空一帧的尴尬。
+        countdown.classList.remove('show');
         if (document.body.classList.contains('recording')) play();
       }
     }, 1000);
@@ -265,7 +353,6 @@
       else pause();
       return;
     }
-    // 录制模式下只接 Esc：防止手抖按空格/方向键把视频卡在某一帧。
     if (isRecording) return;
     if (e.key === ' ') {
       e.preventDefault();
@@ -278,6 +365,22 @@
   // ── 初始化 ─────────────────────────────────────────────────────
   showBeat(0);
 
-  // 暴露给 Tweaks
-  window.__player = { play, pause, showBeat, enterRecording, exitRecording, beats };
+  // 离线渲染入口：跳过 3 秒倒数，直接进 recording 状态从头播。
+  // render.mjs 用 puppeteer 拉起页面后调它，配合 CDP screencast 抓帧。
+  function startRecordingPlayback() {
+    pause();
+    cur = 0;
+    for (const a of audioElements) {
+      try { a.currentTime = 0; } catch (_) {}
+    }
+    document.body.classList.add('recording');
+    for (const id of sceneOrder) sceneNodes[id].classList.remove('active');
+    capZh.textContent = '';
+    capEn.textContent = '';
+    progress.textContent = '1 / ' + beats.length;
+    play();
+  }
+
+  // 暴露给 Tweaks 和 render.mjs
+  window.__player = { play, pause, showBeat, enterRecording, exitRecording, startRecordingPlayback, beats };
 })();

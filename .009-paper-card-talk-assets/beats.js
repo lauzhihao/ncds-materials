@@ -206,8 +206,11 @@ window.BEATS = [
 // ─────────────────────────────────────────────────────────────────────────
 window.SCENES = {
   hook: {
-    prompt: "扁平插画风格，一个站立的小人，脖子上挂着一张巨大的工牌，工牌上有一根铁链锁在脚踝，米黄底色，主体黑色简约线条，留白多，居中构图。",
-    label: "工牌＝靠山？"
+    prompt: "扁平插画。画面左半部站着一个穿白衬衫黑裤的小人，脖子上挂着一张大号空白工牌（工牌正面完全无文字），脚踝有一根细铁链。画面右上方四分之一区域完全留白。米黄底色，主体黑色简约线条，造型极简。",
+    label: "工牌＝靠山？",
+    overlays: [
+      { text: "工牌 = 靠山？", xPct: 62, yPct: 30, style: "os-callout-red", animation: "oa-fly-right" },
+    ]
   },
   ch1: { prompt: "章节封面卡：米黄底，居中大字 \"一\" 用毛笔感衬线字体，下方一行小字\"先把不上班说清楚\"，极简留白。", label: "" },
   "lying-flat": {
@@ -224,28 +227,45 @@ window.SCENES = {
   },
   ch2: { prompt: "章节封面卡：米黄底，居中大字 \"二\"，下方小字 \"上班的风险，常被包装成稳定\"。极简留白。", label: "" },
   "stable-illusion": {
-    prompt: "扁平插画：一个被精致礼物盒包装的炸弹，礼物盒上的标签写着 \"稳定\"。米黄底，礼物盒红丝带，炸弹黑色。",
-    label: "稳定 ?"
+    prompt: "扁平插画。画面下半部正中摆着一个被精致礼物盒包装的圆形黑色炸弹，礼物盒系红色蝴蝶结丝带，盒身侧面挂着一枚完全空白的吊牌。画面上半部完全留白。米黄底色，简约线条。",
+    label: "稳定 ?",
+    overlays: [
+      { text: "稳定 ?", xPct: 50, yPct: 22, style: "os-stamp", animation: "oa-stamp-hit" },
+    ]
   },
   borrowed: {
     prompt: "扁平插画：一座公司大楼伸出几只手，把工牌/工资袋/头衔奖章/桌椅 通过细绳吊给下方一个小人。米黄底，公司大楼深灰，物品红+黑。",
     label: ""
   },
   layoff: {
-    prompt: "扁平插画：一排倒下的多米诺骨牌，每一块都贴着 \"岗位\"\"部门\"\"项目\" 的小标签，最后一块刚刚倒下。米黄底，骨牌黑色，最后一块红色。",
-    label: ""
+    prompt: "扁平插画。画面中央水平带上横向排列三块倒下的多米诺骨牌（黑色），骨牌之间间距均匀，每块骨牌正面下半部贴着一枚完全空白的矩形小标签。最右边一块刚刚倒下，用红色突出。画面上方和下方留白。米黄底色，简约线条。",
+    label: "",
+    overlays: [
+      { text: "岗位", xPct: 28, yPct: 52, style: "os-tag-pill", animation: "oa-fly-top", delay: 0 },
+      { text: "部门", xPct: 50, yPct: 52, style: "os-tag-pill", animation: "oa-fly-top", delay: 180 },
+      { text: "项目", xPct: 72, yPct: 52, style: "os-tag-pill", animation: "oa-fly-top", delay: 360 },
+    ]
   },
   "ai-reprice": {
-    prompt: "扁平插画：一个机器人手臂正在给一个写着\"技能\"的标签贴价格条，标签上的价格从高变低。米黄底，机器人灰色，价格标签红色。",
-    label: ""
+    prompt: "扁平插画。画面正中央悬浮着一枚大尺寸长方形标签（红色边框、白色内底），标签内部完全空白无字。一只机器人手臂从画面右上角伸入，手指捏着一根波浪向下的价格曲线条正要贴上去。画面左下方和底部留白。米黄底色，机器人灰色简约线条。",
+    label: "",
+    overlays: [
+      { text: "技能", xPct: 50, yPct: 40, style: "os-tag-pill", animation: "oa-zoom" },
+    ]
   },
   "trapped-experience": {
     prompt: "扁平插画：一个小人从大楼门口走出来，但他的工具（电脑/文件夹/客户名单）都被门里的钩子拉住带不走。米黄底，大楼深色，工具浅色。",
     label: ""
   },
   "all-eggs": {
-    prompt: "扁平插画：一个篮子里装着所有的鸡蛋，每个鸡蛋上写着\"工资\"\"安全感\"\"未来\"\"身份\"，篮子的提手已经开裂。米黄底，篮子棕色，鸡蛋米白。",
-    label: ""
+    prompt: "扁平插画。画面中下部摆着一个棕色编织的椭圆扁篮，篮内并排横向放着四枚椭圆形米白色鸡蛋（鸡蛋大小一致、间距均匀、清晰可数），鸡蛋表面光滑空白无纹理。篮子上方提手处有一道明显的裂口。画面上方留白。米黄底色，简约线条。",
+    label: "",
+    overlays: [
+      { text: "工资",   xPct: 28, yPct: 52, style: "os-tag-pill", delay: 0   },
+      { text: "安全感", xPct: 43, yPct: 52, style: "os-tag-pill", delay: 150 },
+      { text: "未来",   xPct: 58, yPct: 52, style: "os-tag-pill", delay: 300 },
+      { text: "身份",   xPct: 73, yPct: 52, style: "os-tag-pill", delay: 450 },
+    ]
   },
   ch3: { prompt: "章节封面卡：米黄底，居中大字 \"三\"，下方小字 \"不上班不轻松，只是积累属于自己\"。极简留白。", label: "" },
   "freelance-life": {
@@ -261,8 +281,14 @@ window.SCENES = {
     label: ""
   },
   accumulate: {
-    prompt: "扁平插画：树木横切面的年轮，每一圈标注着\"作品\"\"客户\"\"审美\"\"表达\"。米黄底，年轮棕色，标签黑色。",
-    label: ""
+    prompt: "扁平插画。画面正中央绘制一个树木横切面的同心圆年轮，圆心点突出，5-6 圈深棕色细线圈由内向外。年轮的整体直径只占画面宽度的 35%（不要画太大）。画面的上、下、左、右四个方向（12 点、3 点、6 点、9 点位置）都保持大面积空白米黄底。简约线条。",
+    label: "",
+    overlays: [
+      { text: "作品", xPct: 50, yPct: 24, style: "os-handwrite", delay: 0   },
+      { text: "客户", xPct: 76, yPct: 50, style: "os-handwrite", delay: 200 },
+      { text: "审美", xPct: 50, yPct: 76, style: "os-handwrite", delay: 400 },
+      { text: "表达", xPct: 24, yPct: 50, style: "os-handwrite", delay: 600 },
+    ]
   },
   marathon: {
     prompt: "扁平插画：一个长跑选手在长长的赛道上独自奔跑，身后一串脚印。米黄底，跑者黑色，赛道浅灰。",
@@ -286,8 +312,11 @@ window.SCENES = {
     label: ""
   },
   "two-hours": {
-    prompt: "扁平插画：一个沙漏中间标着 \"2h\"，下方堆积着一摞摞小方块，越堆越高。米黄底，沙漏黑色，方块由浅入深。",
-    label: ""
+    prompt: "扁平插画。画面正中央一个高瘦沙漏，沙漏腰部留出一个空白圆形徽章位（无字）。沙漏下方堆积着一摞摞小方块，由下往上逐渐叠高，方块颜色由浅到深。米黄底色，沙漏黑色简约线条。",
+    label: "",
+    overlays: [
+      { text: "2h", xPct: 50, yPct: 38, style: "os-stamp", animation: "oa-stamp-hit" },
+    ]
   },
   "scroll-time": {
     prompt: "扁平插画：一个人低头刷手机，手机屏幕里时间像沙子一样流走。米黄底，人黑色，时间沙粒金色。",
@@ -295,12 +324,22 @@ window.SCENES = {
   },
   ch5: { prompt: "章节封面卡：米黄底，居中大字 \"五\"，下方小字 \"别急着裸辞，先把副业跑通\"。极简留白。", label: "" },
   "fork-road": {
-    prompt: "扁平插画：一个人站在一个 \"Y\" 形岔路口前，一条路标 \"裸辞\" 通向悬崖，另一条标 \"副业\" 通向远方建筑。米黄底，主体黑色，悬崖路用红色虚线。",
-    label: ""
+    prompt: "扁平插画。画面底部正中站着一个背影小人，他脚下分出 Y 形两条道路：左侧一条用红色虚线表示，朝画面左上方延伸到一处悬崖边；右侧一条用黑色实线表示，朝画面右上方延伸到一栋远方建筑。两条道路上各立一块完全空白的木质路标（路标内部无字）。米黄底色，简约线条。",
+    label: "",
+    overlays: [
+      { text: "裸辞", xPct: 28, yPct: 56, style: "os-callout-red", animation: "oa-fly-left",  delay: 0   },
+      { text: "副业", xPct: 72, yPct: 56, style: "os-callout",     animation: "oa-fly-right", delay: 220 },
+    ]
   },
   burden: {
-    prompt: "扁平插画：一个小人扛着一个巨大的杠铃，杠铃两端是分别贴着 \"房租\"\"家庭\"\"贷款\"\"社保\" 的圆盘。米黄底，小人黑色，圆盘深灰。",
-    label: ""
+    prompt: "扁平插画。画面中央偏上站着一个小人物，肩上水平扛着一根巨大的杠铃。杠铃左端串着两片相邻的深灰色圆盘，右端也串着两片相邻的深灰色圆盘，全部四片圆盘表面光滑无标签无文字。小人姿势略弯曲表示重负。画面上方留白。米黄底色，简约线条。",
+    label: "",
+    overlays: [
+      { text: "房租", xPct: 22, yPct: 60, style: "os-tag-pill", delay: 0   },
+      { text: "家庭", xPct: 33, yPct: 60, style: "os-tag-pill", delay: 150 },
+      { text: "贷款", xPct: 67, yPct: 60, style: "os-tag-pill", delay: 300 },
+      { text: "社保", xPct: 78, yPct: 60, style: "os-tag-pill", delay: 450 },
+    ]
   },
   "cliff-jump": {
     prompt: "扁平插画：一个蒙着眼的人从悬崖边纵身跳下，下方是问号云雾。米黄底，人黑色，问号红色。",
@@ -315,12 +354,19 @@ window.SCENES = {
     label: ""
   },
   "pay-for-value": {
-    prompt: "扁平插画：一个天平，左边放着 \"我提供的价值\"，右边放着钱袋。米黄底，天平黑色，钱袋红色。",
-    label: ""
+    prompt: "扁平插画。画面正中央有一个天平，左侧盘子里放着一块大尺寸的浅色方板（占左盘大部分面积，板面完全空白无字），右侧盘子里放着一个圆鼓鼓的红色钱袋。天平基本平衡。米黄底色，天平黑色细线条。",
+    label: "",
+    overlays: [
+      { text: "我提供的价值", xPct: 28, yPct: 48, style: "os-callout", animation: "oa-fly-left" },
+    ]
   },
   hedge: {
-    prompt: "扁平插画：一个跷跷板，一端坐着 \"工资\" 字样的圆球，另一端坐着 \"副业\" 字样的圆球，趋于平衡。米黄底，跷跷板棕色，圆球红绿。",
-    label: ""
+    prompt: "扁平插画。画面中央横向放置一个棕色跷跷板，左端上方坐着一个红色圆球，右端上方坐着一个绿色圆球，两球表面光滑空白无纹理。跷跷板水平，趋于平衡。画面上方留白。米黄底色，简约线条。",
+    label: "",
+    overlays: [
+      { text: "工资", xPct: 30, yPct: 48, style: "os-callout", animation: "oa-fly-left",  delay: 0   },
+      { text: "副业", xPct: 70, yPct: 48, style: "os-callout", animation: "oa-fly-right", delay: 200 },
+    ]
   },
   patching: {
     prompt: "扁平插画：一座未完工的建筑，外面是脚手架，工人在补墙补漏。米黄底，建筑灰色，脚手架黑色。",
@@ -335,7 +381,10 @@ window.SCENES = {
     label: ""
   },
   "start-now": {
-    prompt: "扁平插画：一个时钟特写，指针指着 2 小时区间，钟面下方一行小字 \"START\"。米黄底，时钟黑色，2 小时区域填红色。",
-    label: ""
+    prompt: "扁平插画。画面上方 2/3 区域绘制一个圆形时钟特写（占画面宽度约 45%），钟面只有 12 个短刻度（无数字），指针指着 2 小时扇形区间，扇形用红色填充。画面底部 1/3 区域完全空白留白。米黄底色，时钟黑色简约线条。",
+    label: "",
+    overlays: [
+      { text: "START", xPct: 50, yPct: 82, style: "os-stamp", animation: "oa-stamp-hit" },
+    ]
   },
 };
