@@ -5,3 +5,4 @@ exports/
 node_modules/
 package-lock.json
 .009-paper-card-talk-assets/output/
+.009-paper-card-talk-assets/audio-edge-yunyang/
