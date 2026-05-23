@@ -213,32 +213,34 @@ body.ken-burns .scene {
   z-index: 3;
 }
 .scene.is-chapter .chapter-card { display: flex; }
+/* 章节卡字号/字体走 CSS variable，episode.json 的 scenes[id].style 可 per-chapter 覆盖 */
 .scene .chapter-num {
-  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
-  font-weight: 900;
-  font-size: 360px;
+  font-family: var(--chapter-num-font, "Noto Serif SC"), "Source Han Serif SC", "Songti SC", serif;
+  font-weight: var(--chapter-num-weight, 900);
+  font-size: var(--chapter-num-size, 360px);
   line-height: 1;
-  color: var(--ink);
+  color: var(--chapter-num-color, var(--ink));
+  letter-spacing: var(--chapter-num-letter-spacing, normal);
 }
 .scene .chapter-num em {
   font-style: normal;
-  color: var(--accent);
+  color: var(--chapter-num-accent, var(--accent));
 }
-/* 红色细立线，把序号和章名隔开——magazine masthead 既视感 */
 .scene .chapter-rule {
-  width: 3px;
-  height: 260px;
-  background: var(--accent);
+  width: var(--chapter-rule-width, 3px);
+  height: var(--chapter-rule-height, 260px);
+  background: var(--chapter-rule-color, var(--accent));
   align-self: center;
   border-radius: 1px;
 }
 .scene .chapter-text {
-  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 1.32;
-  color: var(--ink);
-  max-width: 700px;
+  font-family: var(--chapter-text-font, "Noto Serif SC"), "Source Han Serif SC", "Songti SC", serif;
+  font-weight: var(--chapter-text-weight, 600);
+  font-size: var(--chapter-text-size, 64px);
+  line-height: var(--chapter-text-line-height, 1.32);
+  color: var(--chapter-text-color, var(--ink));
+  text-align: var(--chapter-text-align, left);
+  max-width: var(--chapter-text-max-width, 700px);
 }
 
 /* ── 底部字幕带 ──────────────────────────────────────────────────── */

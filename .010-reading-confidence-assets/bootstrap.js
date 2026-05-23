@@ -31,6 +31,15 @@
     if (visual.kenBurns) document.body.classList.add('ken-burns');
   }
 
+  function ensureMotionCss(dirAbs) {
+    if (document.querySelector('link[data-motion-css]')) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = dirAbs + '/motion.css';
+    link.dataset.motionCss = 'true';
+    document.head.appendChild(link);
+  }
+
   function injectScript(src) {
     return new Promise((resolve, reject) => {
       const s = document.createElement('script');
@@ -74,6 +83,7 @@
     ep.__slug = slug;
 
     applyStaticDom(ep);
+    ensureMotionCss(dirAbs);
 
     try {
       await injectScript(dirAbs + '/image-slot.js');

@@ -1,46 +1,72 @@
 /* ──────────────────────────────────────────────────────────────────
    场景文字 overlay 引擎
    - 把 SCENES[id].overlays 渲染成绝对定位 div，叠在中央卡片上
-   - 字体字号 = STYLES（os-* 前缀），入场动效 = ANIMS（oa-* 前缀）
-   - 每个 overlay 可显式指定 style / animation，未指定则按 sceneId+index
-     哈希到一个固定挑选（同一场景每次刷新视觉一致）
-   - overlay 是 .scene 的子节点，跟随父级 opacity / Ken Burns transform
+   - 字体字号 = STYLES（os-* 前缀），入场动效 = ANIMS（oa-* 前缀）或 mo-ov-*
    - 切到新 scene 时整批重建 DOM，强制重放 CSS keyframes
 
-   数据形状（在 beats.js 的 SCENES[id] 上加 overlays: [...]）：
-     {
-       text: "稳定",          // 必填
-       xPct: 50,              // 横向位置，相对 .scene 0-100；默认 50
-       yPct: 30,              // 纵向位置，相对 .scene 0-100；默认 50
-       style: "auto"|"<class>", // 字体字号风格，见 STYLES；默认 auto
-       animation: "auto"|"<class>", // 入场动效，见 ANIMS；默认 auto
-       delay: 200,            // 入场延迟 ms；默认按 index 阶梯（i × 180）
-       size: 56,              // 可选，字号 px；不填走 style 自带
-       rotate: -3,            // 可选，整体旋转 deg
-     }
+   schema（两种格式都支持）：
+
+   旧扁平格式：
+     { text, xPct, yPct, style: "os-stamp", animation: "oa-fade",
+       delay, rotate, size }
+
+   新对象格式：
+     { text,
+       pos:   { x, y },
+       style: { font, size, weight, color, rotation, letterSpacing,
+                shadow, padding, background, border, borderRadius },
+       motion:{ enter: "fly-in"|"fade"|"zoom-in"|"stamp"|"blur"
+                       |"ink-bleed"|"typewriter"|"handwrite"|"slide-clip"
+                       |"iris"|"glitch"|"bounce"|"drift-in"|"zoom-pop",
+                from: "left"|"right"|"top"|"bottom",  // 仅 fly-in 用
+                duration, easing, delay } }
    ────────────────────────────────────────────────────────────────── */
 (function () {
   const STYLES = [
-    'os-tag-pill',     // 小号白底圆角徽章 + 黑色衬线字
-    'os-stamp',        // 红色印章感：圆角矩形 + 红色粗字 + 轻微旋转
-    'os-marker',       // 黑色字 + 红色 highlighter 横条（marker 划重点感）
-    'os-handwrite',    // Noto Serif SC + 轻微倾斜，像手写卡片
-    'os-typewriter',   // JetBrains Mono + 灰底便利贴
-    'os-callout',      // 大号衬线 + 细下划线
-    'os-callout-red',  // 同上但红墨水
-    'os-circle-mark',  // 红色 marker 圈出来（::before 椭圆边框）
+    'os-tag-pill', 'os-stamp', 'os-marker', 'os-handwrite',
+    'os-typewriter', 'os-callout', 'os-callout-red', 'os-circle-mark',
   ];
 
   const ANIMS = [
-    'oa-fly-top',      // 从上方掉下
-    'oa-fly-bottom',   // 从下方升上来
-    'oa-fly-left',     // 从左飞入
-    'oa-fly-right',    // 从右飞入
-    'oa-fade',         // 纯渐入
-    'oa-zoom',         // 缩放 0.6 → 1 + 渐入
-    'oa-stamp-hit',    // 缩放 1.4→1 + 反向旋转，"啪"地盖章感
-    'oa-blur',         // translateY + blur 渐入
+    'oa-fly-top', 'oa-fly-bottom', 'oa-fly-left', 'oa-fly-right',
+    'oa-fade', 'oa-zoom', 'oa-stamp-hit', 'oa-blur',
   ];
+
+  // motion.enter → CSS class 映射
+  // oa-* 是 styles.css 已有的老库；mo-ov-* 是 motion.css 新库
+  function motionToClass(motion) {
+    if (!motion || !motion.enter) return null;
+    const e = motion.enter;
+    if (e === 'fly-in' && motion.from) {
+      const dir = ({ left: 'left', right: 'right', top: 'top', up: 'top', bottom: 'bottom', down: 'bottom' })[motion.from] || 'right';
+      return 'oa-fly-' + dir;
+    }
+    // 老库映射
+    const oa = { fade: 'oa-fade', 'zoom-in': 'oa-zoom', stamp: 'oa-stamp-hit', blur: 'oa-blur' }[e];
+    if (oa) return oa;
+    // 否则视作新库
+    return 'mo-ov-' + e;
+  }
+
+  function hasStyleKeys(s) {
+    if (!s || typeof s !== 'object') return false;
+    return ['font', 'size', 'weight', 'color', 'rotation', 'letterSpacing',
+            'shadow', 'padding', 'background', 'border', 'borderRadius'].some(k => s[k] != null);
+  }
+
+  function applyStyleObject(el, s) {
+    if (s.font)         el.style.fontFamily = '"' + s.font + '", "Noto Sans SC", sans-serif';
+    if (s.size != null) el.style.fontSize = s.size + 'px';
+    if (s.weight)       el.style.fontWeight = s.weight;
+    if (s.color)        el.style.color = s.color;
+    if (s.letterSpacing != null) el.style.letterSpacing = s.letterSpacing + 'em';
+    if (s.shadow)       el.style.textShadow = s.shadow;
+    if (s.padding)      el.style.padding = s.padding;
+    if (s.background)   el.style.background = s.background;
+    if (s.border)       el.style.border = s.border;
+    if (s.borderRadius != null) el.style.borderRadius = s.borderRadius + 'px';
+    if (s.rotation != null) el.style.setProperty('--os-rotate', s.rotation + 'deg');
+  }
 
   // 简单确定性哈希：sceneId+index → 32-bit int
   function hash(s) {
@@ -56,7 +82,6 @@
   }
 
   function renderInto(sceneEl, overlays) {
-    // 先清掉旧的（同一 scene 多次激活时强制重放动效）
     sceneEl.querySelectorAll(':scope > .overlay-layer').forEach((e) => e.remove());
     if (!Array.isArray(overlays) || overlays.length === 0) return;
 
@@ -68,25 +93,60 @@
 
     overlays.forEach((o, i) => {
       const seedBase = sceneId + ':' + i + ':' + (o.text || '');
-      const style = (o.style && o.style !== 'auto') ? o.style : pick(STYLES, seedBase + '#s');
-      const anim  = (o.animation && o.animation !== 'auto') ? o.animation : pick(ANIMS, seedBase + '#a');
+
+      // 位置：pos.{x,y} 优先；fallback 到 xPct/yPct；最终默认 50/50
+      const x = (o.pos && o.pos.x != null) ? o.pos.x : (o.xPct != null ? o.xPct : 50);
+      const y = (o.pos && o.pos.y != null) ? o.pos.y : (o.yPct != null ? o.yPct : 50);
+
+      // style：字符串走旧 class；对象走 inline；缺省走随机 os-*
+      const classNames = ['scene-overlay'];
+      if (typeof o.style === 'string' && o.style !== 'auto') {
+        classNames.push(o.style);
+      } else if (!hasStyleKeys(o.style)) {
+        classNames.push(pick(STYLES, seedBase + '#s'));
+      }
+      // 新对象 style 不加 os-* class，直接 inline 写在下方
+
+      // motion：对象优先；fallback 到旧 animation 字符串；最终随机 oa-*
+      let motionClass = null;
+      if (o.motion && typeof o.motion === 'object') {
+        motionClass = motionToClass(o.motion);
+      } else if (typeof o.animation === 'string' && o.animation !== 'auto') {
+        motionClass = o.animation;
+      }
+      if (!motionClass) motionClass = pick(ANIMS, seedBase + '#a');
+      classNames.push(motionClass);
 
       const el = document.createElement('div');
-      el.className = 'scene-overlay ' + style + ' ' + anim;
+      el.className = classNames.join(' ');
       el.textContent = o.text || '';
-      el.style.left = (o.xPct != null ? o.xPct : 50) + '%';
-      el.style.top  = (o.yPct != null ? o.yPct : 50) + '%';
+      el.style.left = x + '%';
+      el.style.top  = y + '%';
 
-      const delay = (o.delay != null) ? o.delay : (i * 180);
+      // 新 style 对象 → inline
+      if (hasStyleKeys(o.style)) applyStyleObject(el, o.style);
+
+      // 兼容旧扁平字段（仅在新对象未覆盖时生效）
+      if (o.size != null && !el.style.fontSize) el.style.setProperty('--os-size', o.size + 'px');
+      if (o.rotate != null && !el.style.getPropertyValue('--os-rotate')) {
+        el.style.setProperty('--os-rotate', o.rotate + 'deg');
+      }
+
+      // delay（新优先；旧 fallback；最终按 index 阶梯）
+      const delay = (o.motion && o.motion.delay != null)
+                     ? o.motion.delay
+                     : (o.delay != null ? o.delay : (i * 180));
       el.style.setProperty('--oa-delay', delay + 'ms');
 
-      if (o.size != null) el.style.setProperty('--os-size', o.size + 'px');
-      if (o.rotate != null) el.style.setProperty('--os-rotate', o.rotate + 'deg');
+      // duration / easing（新 motion 才有）
+      if (o.motion) {
+        if (o.motion.duration) el.style.setProperty('--motion-ov-duration', o.motion.duration + 'ms');
+        if (o.motion.easing)   el.style.setProperty('--motion-ov-easing', o.motion.easing);
+      }
 
       layer.appendChild(el);
     });
 
-    // 强制 reflow 让新元素的入场动效从头播
     void layer.offsetHeight;
   }
 
@@ -94,10 +154,5 @@
     sceneEl.querySelectorAll(':scope > .overlay-layer').forEach((e) => e.remove());
   }
 
-  window.__overlays = {
-    renderInto,
-    clear,
-    STYLES,
-    ANIMS,
-  };
+  window.__overlays = { renderInto, clear, STYLES, ANIMS };
 })();

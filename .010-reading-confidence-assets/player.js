@@ -13,11 +13,6 @@
   const $ = (id) => document.getElementById(id);
   const beats = EP.beats || [];
   const scenes = EP.scenes || {};
-  const stack = $('sceneStack');
-  const capZh = $('capZh');
-  const capEn = $('capEn');
-  const progress = $('progress');
-  const band = $('band');
 
   // ── 构造 scene 节点（每个 SCENES 项一个节点） ──────────────────────
   const sceneOrder = [];
@@ -30,34 +25,71 @@
   }
 
   // 预生成图片路径：pictures/NN-<scene-id>.webp，NN 跟 SCENES 出场顺序对齐
-  // image-slot 的 src 属性是 author-controlled，会 fallback 到空状态（不破坏页面），
-  // 所以即使某张图还没生成也能正常播。
   const PIC_DIR = ASSET_ROOT + '/pictures';
   function picSrcFor(sceneId, index) {
     const nn = String(index + 1).padStart(2, '0');
     return PIC_DIR + '/' + nn + '-' + sceneId + '.webp';
   }
 
+  // 应用 scene 级 motion 配置：加 mo-scene-* class + 写 duration/easing CSS var
+  function applySceneMotion(el, motion) {
+    if (!motion) return;
+    if (motion.enter) el.classList.add('mo-scene-' + motion.enter);
+    if (motion.duration) el.style.setProperty('--motion-scene-duration', motion.duration + 'ms');
+    if (motion.easing) el.style.setProperty('--motion-scene-easing', motion.easing);
+  }
+
+  // 应用 chapter style：把 style.* 字段写成 CSS variable
+  function applyChapterStyle(el, style) {
+    if (!style) return;
+    const setVar = (k, v, unit) => { if (v != null) el.style.setProperty(k, v + (unit || '')); };
+    setVar('--chapter-num-size',          style.numSize, 'px');
+    setVar('--chapter-num-font',          style.numFont ? '"' + style.numFont + '"' : null, '');
+    setVar('--chapter-num-weight',        style.numWeight);
+    setVar('--chapter-num-color',         style.numColor);
+    setVar('--chapter-num-accent',        style.numAccentColor);
+    setVar('--chapter-num-letter-spacing', style.numLetterSpacing);
+    setVar('--chapter-text-size',         style.subtitleSize, 'px');
+    setVar('--chapter-text-font',         style.subtitleFont ? '"' + style.subtitleFont + '"' : null, '');
+    setVar('--chapter-text-weight',       style.subtitleWeight);
+    setVar('--chapter-text-color',        style.subtitleColor);
+    setVar('--chapter-text-line-height',  style.subtitleLineHeight);
+    setVar('--chapter-text-align',        style.subtitleAlign);
+    setVar('--chapter-text-max-width',    style.subtitleMaxWidth, 'px');
+    const rule = style.rule || {};
+    setVar('--chapter-rule-width',  rule.width,  'px');
+    setVar('--chapter-rule-height', rule.height, 'px');
+    setVar('--chapter-rule-color',  rule.color);
+  }
+
+  const stack = $('sceneStack');
+  const capZh = $('capZh');
+  const capEn = $('capEn');
+  const progress = $('progress');
+  const band = $('band');
+
   const sceneNodes = {};
   sceneOrder.forEach((id, i) => {
-    const def = scenes[id] || { prompt: '(未定义)', label: '' };
+    const def = scenes[id] || { prompt: '(未定义)' };
     const el = document.createElement('div');
     el.className = 'scene';
     const src = picSrcFor(id, i);
-    if (id.startsWith('ch')) {
+
+    // motion class（场景过渡）
+    applySceneMotion(el, def.motion);
+
+    if (def.type === 'chapter') {
+      // 新章节卡：从 def 自己的 num/subtitle/style 读，章节数量不再受限
       el.classList.add('is-chapter');
-      const num = ({ ch1: '一', ch2: '二', ch3: '三', ch4: '四', ch5: '五' })[id] || '';
-      const firstBeat = beats.find(b => b.scene === id);
-      // 章节大标题：去掉 "一、" 前缀，并把中文逗号转成 <br> 以按句换行（字幕带走 textContent 不受影响）
-      const sub = firstBeat
-        ? firstBeat.zh.replace(/^[一二三四五六七八九十]、/, '').replace(/，/g, '<br>')
-        : '';
+      applyChapterStyle(el, def.style);
+      const num = def.num || '';
+      const subtitle = (def.subtitle || '').replace(/，/g, '<br>');
       el.innerHTML =
         '<image-slot id="slot-' + id + '" src="' + src + '" fit="contain" placeholder="(可选) 章节背景图，留空则用纯色封面"></image-slot>' +
         '<div class="chapter-card">' +
         '  <div class="chapter-num"><em>' + num + '</em></div>' +
         '  <div class="chapter-rule" aria-hidden="true"></div>' +
-        '  <div class="chapter-text">' + sub + '</div>' +
+        '  <div class="chapter-text">' + subtitle + '</div>' +
         '</div>';
     } else {
       el.innerHTML =
@@ -72,7 +104,6 @@
   });
 
   // ── 预加载所有 beat 的音频 ─────────────────────────────────────
-  // 总体积 ~2.7MB（139 段），preload=auto 让浏览器尽早缓存，避免句间空白。
   const padWidth = Math.max(4, String(beats.length).length);
   const audioElements = beats.map((_, i) => {
     const a = new Audio();
@@ -87,21 +118,17 @@
   let pendingTimer = null;
   let advanceToken = 0;
 
-  // ── 当前句子在音频不可用时的字符估时（fallback）─────────────────
   function estimateMs(zh) {
     const n = (zh || '').replace(/\s/g, '').length;
     return Math.max(1000, n * 200 + 700);
   }
 
-  // ── 单条 beat 的"应该停留多久"（含 rate）：优先用音频时长 ─────
   function beatMs(i, rate) {
     const a = audioElements[i];
     const dur = a && isFinite(a.duration) ? a.duration * 1000 : estimateMs(beats[i].zh);
     return dur / (rate || 1);
   }
 
-  // ── 计算某个 scene 从 startIdx 起的连续 beat 总时长（ms，含 rate） ───
-  // 给 Ken Burns 的 transform 时长做参考，使镜头推进与 scene 实际播放对齐。
   function computeSceneRunMs(startIdx) {
     const rate = parseFloat($('rate').value) || 1;
     const sc = beats[startIdx].scene;
@@ -112,7 +139,6 @@
     return Math.max(800, total + 80);
   }
 
-  // ── 字幕带溢出保护：缩放 capZh / capEn 至 band 容下为止 ───────────
   function fitBand() {
     capZh.style.fontSize = '';
     capEn.style.fontSize = '';
@@ -131,7 +157,6 @@
     }
   }
 
-  // ── 渲染当前 beat ──────────────────────────────────────────────
   function showBeat(i) {
     if (i < 0 || i >= beats.length) return;
     const b = beats[i];
@@ -146,7 +171,6 @@
       sceneNodes[id].classList.toggle('active', id === newSceneId);
     }
 
-    // 新激活的 scene 重渲染 overlays（重建 DOM 强制重放 CSS 入场动效）
     if (!sceneWasActive && window.__overlays) {
       const def = scenes[newSceneId] || {};
       window.__overlays.renderInto(sceneEl, def.overlays);
@@ -165,7 +189,6 @@
     fitBand();
   }
 
-  // ── 停掉除指定 index 外所有 audio 的播放（用于 prev/next/restart）─
   function silenceOthers(keep) {
     for (let j = 0; j < audioElements.length; j++) {
       if (j === keep) continue;
@@ -176,9 +199,6 @@
     }
   }
 
-  // ── 主播放循环（音频驱动）──────────────────────────────────────
-  // 每个 beat：showBeat → audio.play()；onended 触发下一句。
-  // 80ms 喘息延迟保留，让 scene 切换的视觉过渡不被音频立刻盖掉。
   function playFrom(i) {
     if (!playing) return;
     if (i >= beats.length) { endRun(); return; }
@@ -204,7 +224,6 @@
     if (p && typeof p.catch === 'function') {
       p.catch((err) => {
         console.warn('audio play failed at beat', i + 1, err);
-        // 音频失败兜底：用字符估时推进，保证片子不卡死
         if (myToken !== advanceToken || !playing) return;
         pendingTimer = setTimeout(() => {
           if (myToken !== advanceToken || !playing) return;
@@ -214,7 +233,6 @@
     }
   }
 
-  // ── 片尾淡出 ──────────────────────────────────────────────────
   function endRun() {
     document.body.classList.add('ending');
     setTimeout(() => {
@@ -230,7 +248,6 @@
     playing = true;
     $('playBtn').textContent = '⏸ 暂停';
     const audio = audioElements[cur];
-    // 若当前 beat 的音频处于"已开始但未结束"的中间态，直接续播；否则从头开始
     if (
       audio &&
       isFinite(audio.duration) &&
@@ -269,12 +286,10 @@
     pause();
   }
 
-  // ── 控件 ──────────────────────────────────────────────────────
   $('playBtn').addEventListener('click', () => playing ? pause() : play());
 
   $('restartBtn').addEventListener('click', () => {
     pause();
-    // reset all audios so we can replay cleanly
     for (const a of audioElements) {
       try { a.currentTime = 0; } catch (_) { /* metadata not yet loaded */ }
     }
@@ -294,14 +309,12 @@
   $('prevBtn').addEventListener('click', () => jumpTo(cur - 1));
   $('nextBtn').addEventListener('click', () => jumpTo(cur + 1));
 
-  // 节奏滑杆：实时调整当前正在播的 audio.playbackRate
   $('rate').addEventListener('input', () => {
     const r = parseFloat($('rate').value) || 1;
     const a = audioElements[cur];
     if (a) a.playbackRate = r;
   });
 
-  // 录制模式
   const recFlash = $('recFlash');
   $('recBtn').addEventListener('click', () => {
     enterRecording();
@@ -310,7 +323,6 @@
   function enterRecording() {
     pause();
     cur = 0;
-    // 录制前重置全部 audio.currentTime，避免上次播到一半的状态污染
     for (const a of audioElements) {
       try { a.currentTime = 0; } catch (_) {}
     }
@@ -369,14 +381,6 @@
   // ── 初始化 ─────────────────────────────────────────────────────
   showBeat(0);
 
-  // 离线渲染入口：跳过 3 秒倒数，直接进 recording 状态从头播。
-  // render.mjs 用 puppeteer 拉起页面后调它，配合 CDP screencast 抓帧。
-  //
-  // opts.scripted=true 时改用 setTimeout(audio.duration) 驱动 beat 推进，
-  //   不依赖 audio.onended。headless --mute-audio 下 onended 触发时刻跟
-  //   实际 audio.duration 有 ms 级抖动，139 个 beat 累加会让视觉比离线拼
-  //   的音轨短几百 ms（muxed 后音频显得落后字幕）。scripted 模式锁死时
-  //   长 = 音轨长，保证音画对齐。
   function startRecordingPlayback(opts) {
     opts = opts || {};
     pause();
@@ -393,7 +397,7 @@
     if (opts.scripted) {
       playing = true;
       $('playBtn').textContent = '⏸ 暂停';
-      const rate = 1; // scripted 不读 rate 滑杆，固定 1x
+      const rate = 1;
       function scriptedNext(i) {
         if (!playing) return;
         if (i >= beats.length) { endRun(); return; }
@@ -412,6 +416,5 @@
     }
   }
 
-  // 暴露给 Tweaks 和 render.mjs
   window.__player = { play, pause, showBeat, enterRecording, exitRecording, startRecordingPlayback, beats };
 })();
