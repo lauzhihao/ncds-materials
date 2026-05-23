@@ -12,6 +12,7 @@
       "读书不是为了学历，是为了给自己留退路"
     ]
   },
+  "fonts": [],
   "visual": {
     "palette": "paper",
     "bandStyle": "paper",
@@ -848,14 +849,36 @@
       "motion": {
         "enter": "push-left",
         "duration": 600
-      }
+      },
+      "overlays": [
+        {
+          "text": "十年",
+          "pos": {
+            "x": 70,
+            "y": 28
+          },
+          "style": {
+            "font": "Noto Serif SC",
+            "size": 96,
+            "weight": 900,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "shadow": "3px 5px 0 rgba(0,0,0,.1)"
+          },
+          "motion": {
+            "enter": "spin-in",
+            "duration": 800,
+            "delay": 200
+          }
+        }
+      ]
     },
     "excuse": {
       "prompt": "扁平插画。画面中央一个小人嘴边飘出一个对话气泡，气泡里是一个大大的问号。小人耸肩。米黄底色，气泡浅灰，问号红色，小人黑色。",
       "label": "",
       "motion": {
-        "enter": "fade",
-        "duration": 400
+        "enter": "wipe-left",
+        "duration": 600
       }
     },
     "saving-up": {
@@ -1030,7 +1053,47 @@
       "motion": {
         "enter": "mask-grid",
         "duration": 800
-      }
+      },
+      "overlays": [
+        {
+          "text": "账单",
+          "pos": {
+            "x": 30,
+            "y": 78
+          },
+          "style": {
+            "font": "Noto Sans SC",
+            "size": 56,
+            "weight": 900,
+            "color": "var(--accent)",
+            "rotation": -3
+          },
+          "motion": {
+            "enter": "drop-in",
+            "duration": 700,
+            "delay": 200
+          }
+        },
+        {
+          "text": "现实",
+          "pos": {
+            "x": 70,
+            "y": 78
+          },
+          "style": {
+            "font": "Noto Sans SC",
+            "size": 56,
+            "weight": 900,
+            "color": "var(--accent)",
+            "rotation": 4
+          },
+          "motion": {
+            "enter": "drop-in",
+            "duration": 700,
+            "delay": 500
+          }
+        }
+      ]
     },
     "ch3": {
       "type": "chapter",
@@ -1061,8 +1124,8 @@
       "prompt": "扁平插画。画面中央三个成年人侧身排队前行，每个人肩上都扛着抽象的方块（行李、责任、压力）。每个人都微微前倾。米黄底色，人物黑色，方块深棕色。",
       "label": "",
       "motion": {
-        "enter": "fade",
-        "duration": 500
+        "enter": "slide-up",
+        "duration": 700
       }
     },
     "no-chips": {
@@ -1087,9 +1150,33 @@
       "prompt": "扁平插画。画面中央一本翻开的书，书页中央的字被风吹起来变成了几条向远处延伸的小路径。米黄底色，书本白色，路径浅红色虚线。",
       "label": "",
       "motion": {
-        "enter": "wipe-circle",
+        "enter": "wipe-down",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "多一条路",
+          "pos": {
+            "x": 50,
+            "y": 78
+          },
+          "style": {
+            "font": "Noto Serif SC",
+            "size": 56,
+            "weight": 700,
+            "color": "var(--ink)",
+            "letterSpacing": 0.06,
+            "padding": "8px 22px",
+            "background": "rgba(193, 57, 43, .12)",
+            "borderRadius": 6
+          },
+          "motion": {
+            "enter": "unfold",
+            "duration": 700,
+            "delay": 300
+          }
+        }
+      ]
     },
     "inner-skill": {
       "prompt": "扁平插画。画面中央一个小人胸口位置长出一棵小树，树根扎进胸口，树枝上挂着四个发光的叶片（标着\"坚持\"\"理解\"\"判断\"\"抗压\"——用空白方框代替）。米黄底色，小人黑色，树绿色，叶片金黄色。",
@@ -1097,7 +1184,28 @@
       "motion": {
         "enter": "ink-bleed",
         "duration": 900
-      }
+      },
+      "overlays": [
+        {
+          "text": "坚持 / 理解 / 判断",
+          "pos": {
+            "x": 50,
+            "y": 78
+          },
+          "style": {
+            "font": "Noto Serif SC",
+            "size": 48,
+            "weight": 700,
+            "color": "var(--ink)",
+            "letterSpacing": 0.08
+          },
+          "motion": {
+            "enter": "typewriter",
+            "duration": 1400,
+            "delay": 400
+          }
+        }
+      ]
     },
     "excuse-mask": {
       "prompt": "扁平插画。画面中央一个小人手里举着一张面具，面具上写着一个大大的\"不擅长\"（用空白方框代替）。小人正在把面具往自己脸上扣。米黄底色，小人黑色，面具深棕色，方框红色。",
@@ -1113,7 +1221,27 @@
       "motion": {
         "enter": "glitch",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "?",
+          "pos": {
+            "x": 50,
+            "y": 30
+          },
+          "style": {
+            "font": "Noto Serif SC",
+            "size": 220,
+            "weight": 900,
+            "color": "var(--accent)"
+          },
+          "motion": {
+            "enter": "shake-attention",
+            "duration": 1000,
+            "delay": 300
+          }
+        }
+      ]
     },
     "real-choice": {
       "prompt": "扁平插画。画面分两半：左侧一个小人被一只大手推着往前走（被动）；右侧同一个小人长出翅膀，主动向前飞（主动）。中间一道分割。米黄底色，左半灰色调，右半暖色调。",
@@ -1162,16 +1290,16 @@
       "prompt": "扁平插画。画面中央一个小人坐在书桌前，身后两个大人（父母）头顶各有一个对话气泡，气泡里都是省略号。小人捂着耳朵。米黄底色，父母灰色，小人黑色。",
       "label": "",
       "motion": {
-        "enter": "fade",
-        "duration": 500
+        "enter": "push-right",
+        "duration": 600
       }
     },
     "parents-elder": {
       "prompt": "扁平插画。画面分两半：左侧父母背影，眼前是一片风雨场景（已经走过）；右侧孩子背影，眼前是晴朗的小操场（还没经历）。中间一道竖线分隔。米黄底色，左半深色，右半浅色。",
       "label": "",
       "motion": {
-        "enter": "wipe-right",
-        "duration": 700
+        "enter": "fade",
+        "duration": 500
       }
     },
     "no-mercy": {
@@ -1188,8 +1316,8 @@
         }
       ],
       "motion": {
-        "enter": "fade",
-        "duration": 500
+        "enter": "iris-out",
+        "duration": 800
       }
     },
     "society-blunt": {
@@ -1374,5 +1502,6 @@
         "duration": 900
       }
     }
-  }
+  },
+  "__fontsDoc__": "自定义字体：把 .woff2 文件放进 .{slug}-assets/fonts/ 子目录，在 fonts[] 数组里声明 { family, src, weight, style, format, display }，bootstrap.js 会自动生成 @font-face；chapter.style.numFont / chapter.style.subtitleFont / overlay.style.font 直接引用 family 名即可"
 }

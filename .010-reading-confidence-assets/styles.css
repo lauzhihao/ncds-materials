@@ -396,6 +396,22 @@ body.ending .subtitle-en {
 }
 .rec-flash.show { opacity: 1; }
 
+/* ── 动效守门：首页静态，点击播放/录制后才启用动效 ──────────────── */
+body:not(.motion-enabled) .scene.active[class*="mo-scene-"] {
+  animation: none !important;
+  transition: opacity .35s ease !important;
+}
+body:not(.motion-enabled) .scene.active .scene-overlay {
+  animation: none !important;
+  opacity: 1 !important;
+}
+body:not(.motion-enabled) .scene.active .scene-overlay[class*="mo-ov-typewriter"],
+body:not(.motion-enabled) .scene.active .scene-overlay[class*="mo-ov-handwrite"],
+body:not(.motion-enabled) .scene.active .scene-overlay[class*="mo-ov-slide-clip"],
+body:not(.motion-enabled) .scene.active .scene-overlay[class*="mo-ov-iris"] {
+  clip-path: none !important;
+}
+
 /* ── 提示：浏览器无中文 TTS 时 ─────────────────────────────────────── */
 .tts-notice {
   position: fixed; left: 50%; top: 64px;

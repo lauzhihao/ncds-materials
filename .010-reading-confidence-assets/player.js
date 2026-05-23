@@ -79,13 +79,13 @@
     applySceneMotion(el, def.motion);
 
     if (def.type === 'chapter') {
-      // 新章节卡：从 def 自己的 num/subtitle/style 读，章节数量不再受限
+      // 章节卡纯 CSS 渲染，不挂 image-slot 也不显示 placeholder；
+      // 背景就是 var(--card) 暖纸底色，章节卡覆盖在上面
       el.classList.add('is-chapter');
       applyChapterStyle(el, def.style);
       const num = def.num || '';
       const subtitle = (def.subtitle || '').replace(/，/g, '<br>');
       el.innerHTML =
-        '<image-slot id="slot-' + id + '" src="' + src + '" fit="contain" placeholder="(可选) 章节背景图，留空则用纯色封面"></image-slot>' +
         '<div class="chapter-card">' +
         '  <div class="chapter-num"><em>' + num + '</em></div>' +
         '  <div class="chapter-rule" aria-hidden="true"></div>' +
@@ -243,8 +243,25 @@
     }, 1500);
   }
 
+  function enableMotion() {
+    document.body.classList.add('motion-enabled');
+    // 当前 scene 已激活但因守门没动效，需要"重新激活"才能触发 keyframes
+    const sceneId = beats[cur] && beats[cur].scene;
+    const sceneEl = sceneId && sceneNodes[sceneId];
+    if (sceneEl && sceneEl.classList.contains('active')) {
+      sceneEl.classList.remove('active');
+      void sceneEl.offsetWidth;
+      sceneEl.classList.add('active');
+      if (window.__overlays) {
+        const def = scenes[sceneId] || {};
+        window.__overlays.renderInto(sceneEl, def.overlays);
+      }
+    }
+  }
+
   function play() {
     if (playing) return;
+    enableMotion();
     playing = true;
     $('playBtn').textContent = '⏸ 暂停';
     const audio = audioElements[cur];
@@ -322,6 +339,7 @@
 
   function enterRecording() {
     pause();
+    enableMotion();
     cur = 0;
     for (const a of audioElements) {
       try { a.currentTime = 0; } catch (_) {}
@@ -384,6 +402,7 @@
   function startRecordingPlayback(opts) {
     opts = opts || {};
     pause();
+    enableMotion();
     cur = 0;
     for (const a of audioElements) {
       try { a.currentTime = 0; } catch (_) {}

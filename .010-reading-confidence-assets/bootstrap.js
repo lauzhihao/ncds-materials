@@ -40,6 +40,31 @@
     document.head.appendChild(link);
   }
 
+  // 自定义字体注入：从 episode.json.fonts[] 生成 @font-face；
+  // 路径相对 .{slug}-assets 目录（如 "fonts/chapter.woff2"），也可填绝对 URL
+  function injectFontFaces(fonts, dirAbs) {
+    if (!Array.isArray(fonts) || fonts.length === 0) return;
+    const css = fonts.map((f) => {
+      if (!f || !f.family || !f.src) return '';
+      const url = /^https?:|^\/|^data:/.test(f.src) ? f.src : (dirAbs + '/' + f.src);
+      const fmt = f.format || 'woff2';
+      return [
+        '@font-face {',
+        '  font-family: "' + f.family + '";',
+        '  src: url("' + url + '") format("' + fmt + '");',
+        '  font-weight: ' + (f.weight || 'normal') + ';',
+        '  font-style: '  + (f.style  || 'normal') + ';',
+        '  font-display: ' + (f.display || 'swap') + ';',
+        '}',
+      ].join('\n');
+    }).filter(Boolean).join('\n\n');
+    if (!css) return;
+    const style = document.createElement('style');
+    style.dataset.fontFaces = 'true';
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+
   function injectScript(src) {
     return new Promise((resolve, reject) => {
       const s = document.createElement('script');
@@ -82,6 +107,7 @@
     ep.__assetsRoot = '.' + slug + '-assets';
     ep.__slug = slug;
 
+    injectFontFaces(ep.fonts, dirAbs);
     applyStaticDom(ep);
     ensureMotionCss(dirAbs);
 

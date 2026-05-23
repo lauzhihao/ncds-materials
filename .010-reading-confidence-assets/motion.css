@@ -163,6 +163,37 @@
   100% { opacity: 1; transform: translate(-50%, -50%) rotate(var(--os-rotate, 0deg)); }
 }
 
+/* spin-in：旋转入场（带回正） */
+@keyframes mo-ov-spin-in {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(.3) rotate(calc(var(--os-rotate, 0deg) - 360deg)); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1)  rotate(var(--os-rotate, 0deg)); }
+}
+
+/* drop-in：从顶部重力下落 + 弹性落定 */
+@keyframes mo-ov-drop-in {
+  0%   { opacity: 0; transform: translate(-50%, calc(-50% - 200px)) rotate(var(--os-rotate, 0deg)); animation-timing-function: cubic-bezier(.55, .055, .675, .19); }
+  60%  { opacity: 1; transform: translate(-50%, calc(-50% + 18px)) rotate(var(--os-rotate, 0deg)); animation-timing-function: cubic-bezier(.215, .61, .355, 1); }
+  78%  { transform:            translate(-50%, calc(-50% - 8px)) rotate(var(--os-rotate, 0deg)); }
+  92%  { transform:            translate(-50%, calc(-50% + 3px)) rotate(var(--os-rotate, 0deg)); }
+  100% { opacity: 1; transform: translate(-50%, -50%) rotate(var(--os-rotate, 0deg)); }
+}
+
+/* shake-attention：先放大震荡后回位（强调） */
+@keyframes mo-ov-shake-attention {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(.8) rotate(var(--os-rotate, 0deg)); }
+  20%  { opacity: 1; transform: translate(-50%, -50%) scale(1.15) rotate(calc(var(--os-rotate, 0deg) + 4deg)); }
+  40%  { transform: translate(-50%, -50%) scale(1.08) rotate(calc(var(--os-rotate, 0deg) - 5deg)); }
+  60%  { transform: translate(-50%, -50%) scale(1.1)  rotate(calc(var(--os-rotate, 0deg) + 3deg)); }
+  80%  { transform: translate(-50%, -50%) scale(1.05) rotate(calc(var(--os-rotate, 0deg) - 2deg)); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(var(--os-rotate, 0deg)); }
+}
+
+/* unfold：水平展开（像扇子打开） */
+@keyframes mo-ov-unfold {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scaleX(0) rotate(var(--os-rotate, 0deg)); transform-origin: center; }
+  100% { opacity: 1; transform: translate(-50%, -50%) scaleX(1) rotate(var(--os-rotate, 0deg)); transform-origin: center; }
+}
+
 /* 应用 */
 .scene.active .scene-overlay[class*="mo-ov-"] {
   animation-duration: var(--motion-ov-duration);
@@ -179,3 +210,7 @@
 .scene.active .scene-overlay.mo-ov-glitch      { animation-name: mo-ov-glitch;      animation-timing-function: steps(6); }
 .scene.active .scene-overlay.mo-ov-bounce      { animation-name: mo-ov-bounce;      animation-timing-function: cubic-bezier(.6, -0.28, .735, .045); }
 .scene.active .scene-overlay.mo-ov-drift-in    { animation-name: mo-ov-drift-in; }
+.scene.active .scene-overlay.mo-ov-spin-in     { animation-name: mo-ov-spin-in;        animation-timing-function: cubic-bezier(.34, 1.2, .64, 1); }
+.scene.active .scene-overlay.mo-ov-drop-in     { animation-name: mo-ov-drop-in; }
+.scene.active .scene-overlay.mo-ov-shake-attention { animation-name: mo-ov-shake-attention; animation-timing-function: cubic-bezier(.36, .07, .19, .97); }
+.scene.active .scene-overlay.mo-ov-unfold      { animation-name: mo-ov-unfold;          animation-timing-function: cubic-bezier(.16, 1, .3, 1); }
