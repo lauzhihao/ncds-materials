@@ -72,8 +72,8 @@
       "scene": "title"
     },
     {
-      "zh": "一、先把「读书没用」说清楚",
-      "en": "1. Let's settle the idea that school is useless",
+      "zh": "「读书真的没用吗」？",
+      "en": "Is studying really useless?",
       "scene": "ch1",
       "chapter": 1
     },
@@ -163,8 +163,8 @@
       "scene": "fair-road"
     },
     {
-      "zh": "二、你逃避的不是作业，是未来的余地",
-      "en": "2. You're not avoiding homework — you're avoiding future room to move",
+      "zh": "你逃避的不是作业，是未来的余地",
+      "en": "You're not avoiding homework — you're avoiding future room to move",
       "scene": "ch2",
       "chapter": 2
     },
@@ -279,8 +279,8 @@
       "scene": "escalation"
     },
     {
-      "zh": "三、别把「不擅长」当成清醒",
-      "en": "3. Don't dress up not being good at it as clear-headedness",
+      "zh": "别把「不擅长」当成清醒",
+      "en": "Don't dress up not being good at it as clear-headedness",
       "scene": "ch3",
       "chapter": 3
     },
@@ -465,8 +465,8 @@
       "scene": "real-choice"
     },
     {
-      "zh": "四、父母不是想逼你，是想推你一把",
-      "en": "4. Parents aren't pressing down on you — they're nudging you forward",
+      "zh": "父母不是想逼你，是想推你一把",
+      "en": "Parents aren't pressing you, they're pushing you forward",
       "scene": "ch4",
       "chapter": 4
     },
@@ -616,8 +616,8 @@
       "scene": "parent-care"
     },
     {
-      "zh": "五、给未来的自己，留一句感谢",
-      "en": "5. Leave your future self a thank-you",
+      "zh": "给未来的自己，留一句感谢",
+      "en": "Leave a 'thank you' for your future self",
       "scene": "ch5",
       "chapter": 5
     },
