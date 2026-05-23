@@ -226,26 +226,32 @@
   --motion-img-delay: 120ms;        /* 让 scene 自身的 opacity fade-in 先吃掉一拍 */
 }
 
-@keyframes mo-img-zoom-in   { from { transform: scale(1.00); }                                to { transform: scale(1.12); } }
-@keyframes mo-img-zoom-out  { from { transform: scale(1.14); }                                to { transform: scale(1.00); } }
-@keyframes mo-img-pan-l     { from { transform: scale(1.10) translate( 2.5%, 0); }            to { transform: scale(1.10) translate(-2.5%, 0); } }
-@keyframes mo-img-pan-r     { from { transform: scale(1.10) translate(-2.5%, 0); }            to { transform: scale(1.10) translate( 2.5%, 0); } }
-@keyframes mo-img-pan-u     { from { transform: scale(1.10) translate(0,  2.0%); }            to { transform: scale(1.10) translate(0, -2.0%); } }
-@keyframes mo-img-pan-d     { from { transform: scale(1.10) translate(0, -2.0%); }            to { transform: scale(1.10) translate(0,  2.0%); } }
-@keyframes mo-img-diag-br   { from { transform: scale(1.06) translate(-1.6%, -1.6%); }        to { transform: scale(1.14) translate( 1.6%,  1.6%); } }
-@keyframes mo-img-diag-tl   { from { transform: scale(1.06) translate( 1.6%,  1.6%); }        to { transform: scale(1.14) translate(-1.6%, -1.6%); } }
+/* image-slot.js 用 left:50%/top:50% + transform: translate(-50%,-50%) 居中内层 <img>，
+   所以这里每个 keyframe 都必须把 translate(-50%,-50%) 作为第一段写进去，
+   再叠 scale / 旋转 / 微 pan，否则图会跳到容器右下角只显示一部分。
+   平移百分比是相对元素自身（unscaled）尺寸，calc(-50% ± delta%) 即可表达"在中心
+   附近左右/上下漂"，无需额外的嵌套 translate。 */
+@keyframes mo-img-zoom-in   { from { transform: translate(-50%, -50%) scale(1.00); }                                  to { transform: translate(-50%, -50%) scale(1.12); } }
+@keyframes mo-img-zoom-out  { from { transform: translate(-50%, -50%) scale(1.14); }                                  to { transform: translate(-50%, -50%) scale(1.00); } }
+@keyframes mo-img-pan-l     { from { transform: translate(calc(-50% + 2.5%), -50%) scale(1.10); }                     to { transform: translate(calc(-50% - 2.5%), -50%) scale(1.10); } }
+@keyframes mo-img-pan-r     { from { transform: translate(calc(-50% - 2.5%), -50%) scale(1.10); }                     to { transform: translate(calc(-50% + 2.5%), -50%) scale(1.10); } }
+@keyframes mo-img-pan-u     { from { transform: translate(-50%, calc(-50% + 2.0%)) scale(1.10); }                     to { transform: translate(-50%, calc(-50% - 2.0%)) scale(1.10); } }
+@keyframes mo-img-pan-d     { from { transform: translate(-50%, calc(-50% - 2.0%)) scale(1.10); }                     to { transform: translate(-50%, calc(-50% + 2.0%)) scale(1.10); } }
+@keyframes mo-img-diag-br   { from { transform: translate(calc(-50% + 1.6%), calc(-50% + 1.6%)) scale(1.06); }        to { transform: translate(calc(-50% - 1.6%), calc(-50% - 1.6%)) scale(1.14); } }
+@keyframes mo-img-diag-tl   { from { transform: translate(calc(-50% - 1.6%), calc(-50% - 1.6%)) scale(1.06); }        to { transform: translate(calc(-50% + 1.6%), calc(-50% + 1.6%)) scale(1.14); } }
 @keyframes mo-img-parallax  {
-  from { transform: perspective(2200px) scale(1.06) rotateX( 1.4deg) rotateY(-1.4deg); }
-  to   { transform: perspective(2200px) scale(1.12) rotateX(-1.0deg) rotateY( 1.0deg); }
+  /* perspective() 放在 translate 后面，先在 3D 空间产生倾斜再整体平移回中央 */
+  from { transform: translate(-50%, -50%) perspective(2200px) scale(1.06) rotateX( 1.4deg) rotateY(-1.4deg); }
+  to   { transform: translate(-50%, -50%) perspective(2200px) scale(1.12) rotateX(-1.0deg) rotateY( 1.0deg); }
 }
 @keyframes mo-img-wobble    {
-  0%   { transform: scale(1.08) rotate(-.4deg); }
-  50%  { transform: scale(1.12) rotate( .35deg); }
-  100% { transform: scale(1.08) rotate(-.25deg); }
+  0%   { transform: translate(-50%, -50%) scale(1.08) rotate(-.4deg); }
+  50%  { transform: translate(-50%, -50%) scale(1.12) rotate( .35deg); }
+  100% { transform: translate(-50%, -50%) scale(1.08) rotate(-.25deg); }
 }
 @keyframes mo-img-breathe   {
-  0%, 100% { transform: scale(1.04); filter: brightness(1); }
-  50%      { transform: scale(1.10); filter: brightness(1.04); }
+  0%, 100% { transform: translate(-50%, -50%) scale(1.04); filter: brightness(1); }
+  50%      { transform: translate(-50%, -50%) scale(1.10); filter: brightness(1.04); }
 }
 
 .scene.active image-slot::part(image) {
