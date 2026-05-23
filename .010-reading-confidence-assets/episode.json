@@ -12,7 +12,88 @@
       "读书不是为了学历，是为了给自己留退路"
     ]
   },
-  "fonts": [],
+  "fonts": [
+    {
+      "family": "QK Zhiya",
+      "src": "fonts/qk-zhiyati/Light.woff2",
+      "weight": 300,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "QK Zhiya",
+      "src": "fonts/qk-zhiyati/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "QK Zhiya",
+      "src": "fonts/qk-zhiyati/Bold.woff2",
+      "weight": 700,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "QK Naihei",
+      "src": "fonts/qk-naiheiti/Light.woff2",
+      "weight": 300,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "QK Naihei",
+      "src": "fonts/qk-naiheiti/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "QK Naihei",
+      "src": "fonts/qk-naiheiti/Medium.woff2",
+      "weight": 500,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "QK Naihei",
+      "src": "fonts/qk-naiheiti/Bold.woff2",
+      "weight": 700,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "QK Shouhuisong",
+      "src": "fonts/qk-shouhuisong/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZS Fangsong",
+      "src": "fonts/zs-fangsong/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "XY Kaiti",
+      "src": "fonts/xy-kaiti/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    }
+  ],
   "visual": {
     "palette": "paper",
     "bandStyle": "paper",
@@ -772,9 +853,9 @@
             "y": 70
           },
           "style": {
-            "font": "Noto Serif SC",
+            "font": "XY Kaiti",
             "size": 72,
-            "weight": 700,
+            "weight": 400,
             "color": "var(--accent)",
             "rotation": -3,
             "letterSpacing": 0.08,
@@ -797,13 +878,13 @@
       "num": "一",
       "subtitle": "先把「读书没用」说清楚",
       "style": {
-        "numFont": "Noto Serif SC",
+        "numFont": "QK Naihei",
         "numSize": 360,
-        "numWeight": 900,
+        "numWeight": 700,
         "numAccentColor": "var(--accent)",
-        "subtitleFont": "Noto Serif SC",
+        "subtitleFont": "QK Zhiya",
         "subtitleSize": 64,
-        "subtitleWeight": 600,
+        "subtitleWeight": 400,
         "subtitleAlign": "left",
         "subtitleMaxWidth": 700,
         "rule": {
@@ -858,9 +939,9 @@
             "y": 28
           },
           "style": {
-            "font": "Noto Serif SC",
+            "font": "QK Naihei",
             "size": 96,
-            "weight": 900,
+            "weight": 700,
             "color": "var(--accent)",
             "rotation": -4,
             "shadow": "3px 5px 0 rgba(0,0,0,.1)"
@@ -936,13 +1017,13 @@
       "num": "二",
       "subtitle": "你逃避的不是作业，是未来的余地",
       "style": {
-        "numFont": "Noto Serif SC",
+        "numFont": "QK Naihei",
         "numSize": 360,
-        "numWeight": 900,
+        "numWeight": 700,
         "numAccentColor": "var(--accent)",
-        "subtitleFont": "Noto Serif SC",
+        "subtitleFont": "QK Zhiya",
         "subtitleSize": 64,
-        "subtitleWeight": 600,
+        "subtitleWeight": 400,
         "subtitleAlign": "left",
         "subtitleMaxWidth": 700,
         "rule": {
@@ -1100,13 +1181,13 @@
       "num": "三",
       "subtitle": "别把「不擅长」当成清醒",
       "style": {
-        "numFont": "Noto Serif SC",
+        "numFont": "QK Naihei",
         "numSize": 360,
-        "numWeight": 900,
+        "numWeight": 700,
         "numAccentColor": "var(--accent)",
-        "subtitleFont": "Noto Serif SC",
+        "subtitleFont": "QK Zhiya",
         "subtitleSize": 64,
-        "subtitleWeight": 600,
+        "subtitleWeight": 400,
         "subtitleAlign": "left",
         "subtitleMaxWidth": 700,
         "rule": {
@@ -1193,9 +1274,9 @@
             "y": 78
           },
           "style": {
-            "font": "Noto Serif SC",
+            "font": "ZS Fangsong",
             "size": 48,
-            "weight": 700,
+            "weight": 400,
             "color": "var(--ink)",
             "letterSpacing": 0.08
           },
@@ -1266,13 +1347,13 @@
       "num": "四",
       "subtitle": "父母不是想逼你，是想推你一把",
       "style": {
-        "numFont": "Noto Serif SC",
+        "numFont": "QK Naihei",
         "numSize": 360,
-        "numWeight": 900,
+        "numWeight": 700,
         "numAccentColor": "var(--accent)",
-        "subtitleFont": "Noto Serif SC",
+        "subtitleFont": "QK Zhiya",
         "subtitleSize": 64,
-        "subtitleWeight": 600,
+        "subtitleWeight": 400,
         "subtitleAlign": "left",
         "subtitleMaxWidth": 700,
         "rule": {
@@ -1359,13 +1440,13 @@
       "num": "五",
       "subtitle": "给未来的自己，留一句感谢",
       "style": {
-        "numFont": "Noto Serif SC",
+        "numFont": "QK Naihei",
         "numSize": 360,
-        "numWeight": 900,
+        "numWeight": 700,
         "numAccentColor": "var(--accent)",
-        "subtitleFont": "Noto Serif SC",
+        "subtitleFont": "QK Zhiya",
         "subtitleSize": 64,
-        "subtitleWeight": 600,
+        "subtitleWeight": 400,
         "subtitleAlign": "left",
         "subtitleMaxWidth": 700,
         "rule": {
@@ -1484,9 +1565,9 @@
             "y": 75
           },
           "style": {
-            "font": "Noto Serif SC",
+            "font": "QK Shouhuisong",
             "size": 64,
-            "weight": 500,
+            "weight": 400,
             "color": "var(--ink-soft)",
             "rotation": -3
           },
