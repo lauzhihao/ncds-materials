@@ -14,64 +14,8 @@
   },
   "fonts": [
     {
-      "family": "QK Zhiya",
-      "src": "fonts/qk-zhiyati/Light.woff2",
-      "weight": 300,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "QK Zhiya",
-      "src": "fonts/qk-zhiyati/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "QK Zhiya",
-      "src": "fonts/qk-zhiyati/Bold.woff2",
-      "weight": 700,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "QK Naihei",
-      "src": "fonts/qk-naiheiti/Light.woff2",
-      "weight": 300,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "QK Naihei",
-      "src": "fonts/qk-naiheiti/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "QK Naihei",
-      "src": "fonts/qk-naiheiti/Medium.woff2",
-      "weight": 500,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "QK Naihei",
-      "src": "fonts/qk-naiheiti/Bold.woff2",
-      "weight": 700,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "QK Shouhuisong",
-      "src": "fonts/qk-shouhuisong/Regular.woff2",
+      "family": "XY Kaiti",
+      "src": "fonts/xy-kaiti/Regular.woff2",
       "weight": 400,
       "style": "normal",
       "format": "woff2",
@@ -80,14 +24,6 @@
     {
       "family": "ZS Fangsong",
       "src": "fonts/zs-fangsong/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "XY Kaiti",
-      "src": "fonts/xy-kaiti/Regular.woff2",
       "weight": 400,
       "style": "normal",
       "format": "woff2",
@@ -877,18 +813,6 @@
       "type": "chapter",
       "num": "一",
       "subtitle": "先把「读书没用」说清楚",
-      "style": {
-        "numSize": 360,
-        "numAccentColor": "var(--accent)",
-        "subtitleSize": 64,
-        "subtitleAlign": "left",
-        "subtitleMaxWidth": 700,
-        "rule": {
-          "width": 3,
-          "height": 260,
-          "color": "var(--accent)"
-        }
-      },
       "motion": {
         "enter": "ink-bleed",
         "duration": 900
@@ -935,7 +859,7 @@
             "y": 28
           },
           "style": {
-            "font": "QK Naihei",
+            "font": "ZS Fangsong",
             "size": 96,
             "weight": 700,
             "color": "var(--accent)",
@@ -969,7 +893,7 @@
             "y": 30
           },
           "style": {
-            "font": "Noto Sans SC",
+            "font": "XY Kaiti",
             "size": 88,
             "weight": 900,
             "color": "var(--accent)",
@@ -1012,18 +936,6 @@
       "type": "chapter",
       "num": "二",
       "subtitle": "你逃避的不是作业，是未来的余地",
-      "style": {
-        "numSize": 360,
-        "numAccentColor": "var(--accent)",
-        "subtitleSize": 64,
-        "subtitleAlign": "left",
-        "subtitleMaxWidth": 700,
-        "rule": {
-          "width": 3,
-          "height": 260,
-          "color": "var(--accent)"
-        }
-      },
       "motion": {
         "enter": "ink-bleed",
         "duration": 900
@@ -1135,7 +1047,6 @@
             "y": 78
           },
           "style": {
-            "font": "Noto Sans SC",
             "size": 56,
             "weight": 900,
             "color": "var(--accent)",
@@ -1154,7 +1065,6 @@
             "y": 78
           },
           "style": {
-            "font": "Noto Sans SC",
             "size": 56,
             "weight": 900,
             "color": "var(--accent)",
@@ -1172,18 +1082,6 @@
       "type": "chapter",
       "num": "三",
       "subtitle": "别把「不擅长」当成清醒",
-      "style": {
-        "numSize": 360,
-        "numAccentColor": "var(--accent)",
-        "subtitleSize": 64,
-        "subtitleAlign": "left",
-        "subtitleMaxWidth": 700,
-        "rule": {
-          "width": 3,
-          "height": 260,
-          "color": "var(--accent)"
-        }
-      },
       "motion": {
         "enter": "ink-bleed",
         "duration": 900
@@ -1230,7 +1128,7 @@
             "y": 78
           },
           "style": {
-            "font": "Noto Serif SC",
+            "font": "XY Kaiti",
             "size": 56,
             "weight": 700,
             "color": "var(--ink)",
@@ -1299,7 +1197,6 @@
             "y": 30
           },
           "style": {
-            "font": "Noto Serif SC",
             "size": 220,
             "weight": 900,
             "color": "var(--accent)"
@@ -1334,18 +1231,6 @@
       "type": "chapter",
       "num": "四",
       "subtitle": "父母不是想逼你，是想推你一把",
-      "style": {
-        "numSize": 360,
-        "numAccentColor": "var(--accent)",
-        "subtitleSize": 64,
-        "subtitleAlign": "left",
-        "subtitleMaxWidth": 700,
-        "rule": {
-          "width": 3,
-          "height": 260,
-          "color": "var(--accent)"
-        }
-      },
       "motion": {
         "enter": "ink-bleed",
         "duration": 900
@@ -1423,18 +1308,6 @@
       "type": "chapter",
       "num": "五",
       "subtitle": "给未来的自己，留一句感谢",
-      "style": {
-        "numSize": 360,
-        "numAccentColor": "var(--accent)",
-        "subtitleSize": 64,
-        "subtitleAlign": "left",
-        "subtitleMaxWidth": 700,
-        "rule": {
-          "width": 3,
-          "height": 260,
-          "color": "var(--accent)"
-        }
-      },
       "motion": {
         "enter": "ink-bleed",
         "duration": 900
@@ -1477,7 +1350,7 @@
             "y": 30
           },
           "style": {
-            "font": "Noto Serif SC",
+            "font": "ZS Fangsong",
             "size": 56,
             "weight": 700,
             "color": "var(--ink)",
@@ -1497,7 +1370,7 @@
             "y": 30
           },
           "style": {
-            "font": "Noto Serif SC",
+            "font": "ZS Fangsong",
             "size": 56,
             "weight": 700,
             "color": "var(--accent)",
@@ -1545,7 +1418,7 @@
             "y": 75
           },
           "style": {
-            "font": "QK Shouhuisong",
+            "font": "XY Kaiti",
             "size": 64,
             "weight": 400,
             "color": "var(--ink-soft)",

@@ -236,11 +236,12 @@ body.ken-burns .scene {
 .scene .chapter-text {
   font-family: var(--chapter-text-font, "Noto Serif SC"), "Source Han Serif SC", "Songti SC", serif;
   font-weight: var(--chapter-text-weight, 600);
-  font-size: var(--chapter-text-size, 64px);
+  font-size: var(--chapter-text-size, 80px);
   line-height: var(--chapter-text-line-height, 1.32);
   color: var(--chapter-text-color, var(--ink));
-  text-align: var(--chapter-text-align, left);
-  max-width: var(--chapter-text-max-width, 700px);
+  text-align: var(--chapter-text-align, center);
+  max-width: var(--chapter-text-max-width, 1400px);
+  letter-spacing: var(--chapter-text-letter-spacing, .04em);
 }
 
 /* ── 底部字幕带 ──────────────────────────────────────────────────── */

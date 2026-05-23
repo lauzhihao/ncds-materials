@@ -80,15 +80,13 @@
 
     if (def.type === 'chapter') {
       // 章节卡纯 CSS 渲染，不挂 image-slot 也不显示 placeholder；
-      // 背景就是 var(--card) 暖纸底色，章节卡覆盖在上面
+      // 背景就是 var(--card) 暖纸底色，章节卡覆盖在上面。
+      // 当前实现：只渲染 chapter-text 一行居中（num/rule 已从视觉中撤掉）
       el.classList.add('is-chapter');
       applyChapterStyle(el, def.style);
-      const num = def.num || '';
-      const subtitle = (def.subtitle || '').replace(/，/g, '<br>');
+      const subtitle = def.subtitle || '';
       el.innerHTML =
         '<div class="chapter-card">' +
-        '  <div class="chapter-num"><em>' + num + '</em></div>' +
-        '  <div class="chapter-rule" aria-hidden="true"></div>' +
         '  <div class="chapter-text">' + subtitle + '</div>' +
         '</div>';
     } else {
