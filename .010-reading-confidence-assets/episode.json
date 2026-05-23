@@ -3,13 +3,14 @@
   "__doc__": "暖纸卡片口播视频 per-episode 元数据，唯一真理源。HTML/JS/TTS/图生图全部从这个文件读取；引擎层文件 (player.js / overlays.js / tweaks*.jsx / styles.css / HTML 骨架) 不含任何 per-episode 字段。",
   "meta": {
     "slug": "010-reading-confidence",
-    "title": "你以为上不上学，只是你一个人的事吗？",
-    "brandTitle": "你以为上不上学，只是你一个人的事吗？",
+    "title": "你以为读书没用吗？别天真了",
+    "brandTitle": "你以为读书没用吗？别天真了",
     "disclaimer": "观点仅供参考　无不良引导",
     "titleOptions": [
-      "你以为上不上学，只是你一个人的事吗？",
-      "你逃避的不是作业，是未来说「不」的资格",
-      "读书不是为了学历，是为了给自己留退路"
+      "你以为读书没用吗？别天真了",
+      "别天真了——读书是普通人最公平的那条路",
+      "今天逃避的不是作业，是未来的底气",
+      "给未来的自己，留一句谢谢"
     ]
   },
   "fonts": [
@@ -62,731 +63,626 @@
   },
   "beats": [
     {
-      "zh": "读书不是唯一出路，",
-      "en": "Schooling isn't the only way forward —",
+      "zh": "你以为上不上学、读不读书，",
+      "en": "You think whether you go to school, whether you study,",
       "scene": "title"
-    },
-    {
-      "zh": "但它是普通人最公平的那条。",
-      "en": "but for ordinary people, it's the fairest road there is.",
-      "scene": "title"
-    },
-    {
-      "zh": "「读书真的没用吗」？",
-      "en": "Is studying really useless?",
-      "scene": "ch1",
-      "chapter": 1
-    },
-    {
-      "zh": "你以为上不上学，",
-      "en": "You think whether you stay in school",
-      "scene": "alone"
     },
     {
       "zh": "真的只是你一个人的事吗？",
       "en": "is really just your own business?",
-      "scene": "alone"
+      "scene": "title"
     },
     {
       "zh": "别天真了。",
       "en": "Don't be naive.",
-      "scene": "alone"
+      "scene": "title"
     },
     {
-      "zh": "你今天坐在教室里，",
-      "en": "Sitting in that classroom today,",
-      "scene": "seat-future"
+      "zh": "别天真了，这不是你一个人的事",
+      "en": "Don't be naive — this isn't just about you",
+      "scene": "ch1",
+      "chapter": 1
     },
     {
-      "zh": "看起来是在听课、写作业、背书、考试，",
-      "en": "you look like you're listening, writing, memorizing, taking tests —",
-      "scene": "seat-future"
+      "zh": "很多人觉得，不爱学习是自己的自由。",
+      "en": "Many people think dodging school is their own freedom.",
+      "scene": "freedom-illusion"
     },
     {
-      "zh": "实际上你是在给未来的自己争位置。",
-      "en": "but really, you're claiming a seat for the person you'll be.",
-      "scene": "seat-future"
+      "zh": "大不了不要文凭，送外卖、打零工也能养活。",
+      "en": "Worst case, skip the diploma — deliver, take odd jobs, you'll get by.",
+      "scene": "freedom-illusion"
     },
     {
-      "zh": "你不是在和一张试卷较劲，",
-      "en": "You're not wrestling with a test paper.",
-      "scene": "arena"
+      "zh": "凭什么天天被父母催、被老师管？",
+      "en": "Why be nagged by parents and bossed by teachers every day?",
+      "scene": "nag-cage"
     },
     {
-      "zh": "你是在和十年后的工作、收入、家庭责任较劲。",
-      "en": "You're wrestling with the job, income, and family weight of ten years from now.",
-      "scene": "arena"
+      "zh": "可是，你真的太天真了。",
+      "en": "But honestly — you are way too naive.",
+      "scene": "too-naive"
     },
     {
-      "zh": "很多人一厌学就会说：",
-      "en": "When kids get sick of school, they often say:",
-      "scene": "excuse"
+      "zh": "你以为这只是一份作业的事吗？",
+      "en": "You think this is only about one piece of homework?",
+      "scene": "too-naive"
     },
     {
-      "zh": "我不想学了，学这些有什么用？",
-      "en": "I'm done — what's the point of any of this?",
-      "scene": "excuse"
+      "zh": "生活，是一场无比残酷的淘汰赛。",
+      "en": "Life is a brutal elimination race.",
+      "scene": "brutal-race"
     },
     {
-      "zh": "听起来好像有道理。",
-      "en": "It sounds reasonable enough.",
-      "scene": "excuse"
+      "zh": "它不会因为你累了，就为你取消比赛。",
+      "en": "It won't cancel the race just because you're tired.",
+      "scene": "brutal-race"
     },
     {
-      "zh": "但读书不是要你保证以后过得轻松，",
-      "en": "But studying isn't a promise that life later will be easy.",
-      "scene": "saving-up"
+      "zh": "表面上，你只是在逃避作业、走神、刷手机，",
+      "en": "On the surface, you're just dodging homework, zoning out, scrolling.",
+      "scene": "surface-vs-deep"
     },
     {
-      "zh": "它是在你没有资源、没有兜底的时候，",
-      "en": "It's a way, when you have no resources and no safety net,",
-      "scene": "saving-up"
+      "zh": "觉得这没什么。",
+      "en": "You think it's no big deal.",
+      "scene": "surface-vs-deep"
     },
     {
-      "zh": "给自己多攒一点说不的力气。",
-      "en": "to save up a little more strength to say no.",
-      "scene": "saving-up"
+      "zh": "但实际上，你是在剥夺未来的选择权。",
+      "en": "But really, you're stripping your future self of the right to choose.",
+      "scene": "stolen-choice"
     },
     {
-      "zh": "读书也不是唯一出路，",
-      "en": "Schooling isn't the only way forward.",
-      "scene": "fair-road"
+      "zh": "削弱抵御风险的能力，",
+      "en": "Weakening your ability to weather risk,",
+      "scene": "shield-broken"
     },
     {
-      "zh": "但对普通家庭的孩子来说，",
-      "en": "But for kids from ordinary families,",
-      "scene": "fair-road"
+      "zh": "把未来的尊严拱手让人。",
+      "en": "and handing over your future dignity for free.",
+      "scene": "shield-broken"
     },
     {
-      "zh": "它是最公平的那条。",
-      "en": "it's the fairest road there is.",
-      "scene": "fair-road"
+      "zh": "你做的每一件事，不是在应付差事，",
+      "en": "Everything you do isn't just checking boxes —",
+      "scene": "claim-seat"
     },
     {
-      "zh": "你逃避的不是作业，是未来的余地",
-      "en": "You're not avoiding homework — you're avoiding future room to move",
+      "zh": "是在为你未来的社会位置争位置。",
+      "en": "you're fighting for your future seat in society.",
+      "scene": "claim-seat"
+    },
+    {
+      "zh": "今天你逃避的，不是枯燥的课本，",
+      "en": "What you dodge today isn't a boring textbook,",
+      "scene": "dodge-no-textbook"
+    },
+    {
+      "zh": "不是难解的数学题，",
+      "en": "isn't a tough math problem.",
+      "scene": "dodge-no-textbook"
+    },
+    {
+      "zh": "而是未来面对低收入、没选择的无奈，",
+      "en": "It's the helplessness of low income and no choices ahead,",
+      "scene": "dodge-low-income"
+    },
+    {
+      "zh": "以及面对家庭责任时的全部底气。",
+      "en": "and every ounce of standing you'll need when family weight lands.",
+      "scene": "dodge-family-back"
+    },
+    {
+      "zh": "你逃避的，是未来的底气",
+      "en": "What you dodge is your future standing",
       "scene": "ch2",
       "chapter": 2
     },
     {
-      "zh": "普通家庭的孩子，",
-      "en": "For kids from ordinary families,",
-      "scene": "narrow-paths"
+      "zh": "你总觉得未来很远，时间还多。",
+      "en": "You always feel the future is far away, time is plentiful.",
+      "scene": "sand-young"
     },
     {
-      "zh": "最怕的不是现在多写几套题，",
-      "en": "the real fear isn't a few more practice sets now.",
-      "scene": "narrow-paths"
+      "zh": "可你，算过这笔账吗？",
+      "en": "But have you ever done the math?",
+      "scene": "ledger-account"
     },
     {
-      "zh": "而是长大以后才发现，",
-      "en": "It's growing up and realizing",
-      "scene": "narrow-paths"
+      "zh": "二十岁步入社会，没有学历这块敲门砖，",
+      "en": "At twenty, stepping into society without the diploma as a key,",
+      "scene": "age-20-knock"
     },
     {
-      "zh": "自己手里能选的路太少。",
-      "en": "the paths left to choose from are too few.",
-      "scene": "narrow-paths"
+      "zh": "你只能做最容易被替代的体力劳动。",
+      "en": "all you get is the most replaceable manual labor.",
+      "scene": "replaceable-labor"
     },
     {
-      "zh": "你今天逃避的不是作业，",
-      "en": "What you're dodging today isn't homework,",
-      "scene": "bill-pressure"
+      "zh": "三十岁，看着可怜的存款和越来越重的账单，",
+      "en": "At thirty, looking at meager savings and bills piling up,",
+      "scene": "age-30-savings"
     },
     {
-      "zh": "不是考试，不是老师的要求。",
-      "en": "isn't exams, isn't the teacher's demands.",
-      "scene": "bill-pressure"
+      "zh": "你拿什么去支撑你的家庭？",
+      "en": "with what will you hold up a family?",
+      "scene": "cant-support"
     },
     {
-      "zh": "你逃避的是未来面对账单、房贷、工作压力时，",
-      "en": "You're dodging the moment, years from now, when bills, mortgage, and work pressure land in front of you",
-      "scene": "bill-pressure"
+      "zh": "四十岁人到中年，",
+      "en": "At forty, hitting middle age,",
+      "scene": "age-40-shoulder"
     },
     {
-      "zh": "连一句「我不接受」都说不出来的那一刻。",
-      "en": "and you can't even push back with a no.",
-      "scene": "bill-pressure"
+      "zh": "上有年迈的父母要赡养，",
+      "en": "aging parents to support above,",
+      "scene": "elder-parents"
     },
     {
-      "zh": "真正的苦是什么？",
-      "en": "What does real hardship look like?",
-      "scene": "age-20"
+      "zh": "下有读书的孩子要供养，",
+      "en": "a child in school to provide for below,",
+      "scene": "child-education"
     },
     {
-      "zh": "是二十岁的时候，别人有得选，你只能将就。",
-      "en": "At twenty, others have options and you're stuck settling.",
-      "scene": "age-20"
+      "zh": "面对失业危机和生活重压，",
+      "en": "facing layoffs and the full weight of life,",
+      "scene": "jobless-vs-young"
     },
     {
-      "zh": "是三十岁的时候，账单摆在面前，你连换一份工作都不敢。",
-      "en": "At thirty, bills on the table, you don't even dare switch jobs.",
-      "scene": "age-30"
+      "zh": "你拿什么去和年轻人竞争？",
+      "en": "with what will you compete against the young?",
+      "scene": "jobless-vs-young"
     },
     {
-      "zh": "是四十岁的时候，家庭责任压下来，",
-      "en": "At forty, family responsibilities bearing down,",
-      "scene": "age-40"
+      "zh": "别天真了，生活不会取消比赛，",
+      "en": "Don't be naive — life won't cancel the race,",
+      "scene": "race-no-mercy"
     },
     {
-      "zh": "你才发现自己当年没攒够退路。",
-      "en": "you realize you never saved enough of a fallback.",
-      "scene": "age-40"
+      "zh": "更不会因为你的懒散而对你网开一面。",
+      "en": "and won't cut you a break for being lazy.",
+      "scene": "no-mercy-lazy"
     },
     {
-      "zh": "生活不会因为你讨厌竞争，",
-      "en": "Life won't cancel the race",
-      "scene": "no-pass"
+      "zh": "在写字楼加班到深夜，只拿微薄薪水的人；",
+      "en": "Those grinding overtime in office towers for thin paychecks;",
+      "scene": "office-night"
     },
     {
-      "zh": "就取消比赛。",
-      "en": "just because you hate competing.",
-      "scene": "no-pass"
+      "zh": "风雨里奔波送单不敢停一分钟的人；",
+      "en": "those running orders in wind and rain, not daring to pause;",
+      "scene": "delivery-rain"
     },
     {
-      "zh": "你可以不学、可以躲、可以混，",
-      "en": "You can skip it, hide from it, coast through it —",
-      "scene": "no-pass"
+      "zh": "突来开销只能咬牙四处借钱的人；",
+      "en": "those clenching teeth and borrowing money for sudden bills;",
+      "scene": "borrow-money"
     },
     {
-      "zh": "可社会不会因为你一句不想学就给你让路。",
-      "en": "but society isn't going to step aside because you didn't feel like trying.",
-      "scene": "no-pass"
+      "zh": "他们缺的真的只是努力吗？",
+      "en": "Is it really effort they're short on?",
+      "scene": "try-hard-stuck"
     },
     {
-      "zh": "今天你不愿意面对试卷，",
-      "en": "Today you won't face the test paper;",
-      "scene": "escalation"
+      "zh": "不，他们缺的不是汗水，",
+      "en": "No — what they lack isn't sweat.",
+      "scene": "try-hard-stuck"
     },
     {
-      "zh": "明天就可能要面对更难的选择。",
-      "en": "tomorrow you may face harder choices.",
-      "scene": "escalation"
+      "zh": "而是当年在教室里，没有攒够选择权和筹码。",
+      "en": "It's that back in the classroom, they didn't stack up enough choice and chips.",
+      "scene": "lacked-chips-then"
     },
     {
-      "zh": "今天你不愿意听父母唠叨，",
-      "en": "Today you won't sit through your parents' nagging;",
-      "scene": "escalation"
-    },
-    {
-      "zh": "明天催你的就不是父母，",
-      "en": "tomorrow what comes after you won't be parents —",
-      "scene": "escalation"
-    },
-    {
-      "zh": "而是工作、收入和账单。",
-      "en": "it'll be work, income, and bills.",
-      "scene": "escalation"
-    },
-    {
-      "zh": "别把「不擅长」当成清醒",
-      "en": "Don't dress up not being good at it as clear-headedness",
+      "zh": "别拿『不擅长』当清醒",
+      "en": "Don't dress 'I'm just not built for it' up as clarity",
       "scene": "ch3",
       "chapter": 3
     },
     {
-      "zh": "身边那些被生活推着走的成年人，",
-      "en": "Those adults around you, the ones life is pushing along —",
-      "scene": "adults-carry"
+      "zh": "你看看那些被账单追着跑、被房贷压得喘不过气、",
+      "en": "Look at the adults chased by bills, suffocated by mortgages,",
+      "scene": "paid-by-bills"
     },
     {
-      "zh": "他们真的都不努力吗？",
-      "en": "do you really think none of them try?",
-      "scene": "adults-carry"
+      "zh": "在社会面前低头的成年人。",
+      "en": "bowing their heads in front of society.",
+      "scene": "bowed-society"
     },
     {
-      "zh": "不是。",
-      "en": "They do.",
-      "scene": "adults-carry"
+      "zh": "他们不够拼命吗？",
+      "en": "Are they not trying hard enough?",
+      "scene": "try-already-hard"
     },
     {
-      "zh": "很多人很努力，每天都在扛。",
-      "en": "Most of them try hard, carrying it every single day.",
-      "scene": "adults-carry"
+      "zh": "起得比鸡早，睡得比狗晚，",
+      "en": "Up before the rooster, down after the dog,",
+      "scene": "early-late"
     },
     {
-      "zh": "他们缺的不是现在不肯吃苦，",
-      "en": "What they lack isn't a willingness to suffer now.",
-      "scene": "no-chips"
+      "zh": "为什么依然过得吃力？",
+      "en": "why is it still so exhausting?",
+      "scene": "early-late"
     },
     {
-      "zh": "而是当年没有攒够筹码。",
-      "en": "It's that they didn't stack up enough chips back then.",
-      "scene": "no-chips"
+      "zh": "因为他们没有退路了。",
+      "en": "Because they're out of fallback.",
+      "scene": "no-retreat"
     },
     {
-      "zh": "不是不想换一种活法，",
-      "en": "It isn't that they don't want a different life —",
-      "scene": "no-chips"
+      "zh": "在最该积攒筹码的年纪，他们选择了混日子。",
+      "en": "At the age they should've been stacking chips, they chose to coast.",
+      "scene": "chose-to-coast"
     },
     {
-      "zh": "而是手里能动的牌太少。",
-      "en": "it's that they're holding too few cards to play.",
-      "scene": "no-chips"
+      "zh": "很多人总给自己找借口，",
+      "en": "Many people keep handing themselves excuses,",
+      "scene": "self-excuse"
     },
     {
-      "zh": "所以你别总说读书没用。",
-      "en": "So stop telling yourself school is pointless.",
-      "scene": "one-page"
+      "zh": "说自己天生不是读书的料，",
+      "en": "saying they're not cut out for studying,",
+      "scene": "self-excuse"
     },
     {
-      "zh": "它有没有用，",
-      "en": "Whether it pays off",
-      "scene": "one-page"
+      "zh": "说自己脑子笨、不擅长考试，",
+      "en": "that their brain is slow, they're bad at tests,",
+      "scene": "self-excuse"
     },
     {
-      "zh": "不看你今天背的这一页书明天能不能换钱，",
-      "en": "isn't measured by whether today's page turns into cash tomorrow.",
-      "scene": "one-page"
+      "zh": "甚至说读书不是唯一的出路，行行都能出状元。",
+      "en": "even that school isn't the only way, every field has its champion.",
+      "scene": "self-excuse"
     },
     {
-      "zh": "而看它能不能在未来某一天，",
-      "en": "It's measured by whether, somewhere down the road,",
-      "scene": "one-page"
-    },
-    {
-      "zh": "让你多一条路，",
-      "en": "it gives you one more road,",
-      "scene": "one-page"
-    },
-    {
-      "zh": "多一个机会，",
-      "en": "one more chance,",
-      "scene": "one-page"
-    },
-    {
-      "zh": "多一点不被动的资格。",
-      "en": "a little more standing to not be pushed around.",
-      "scene": "one-page"
-    },
-    {
-      "zh": "你现在练出来的坚持、",
-      "en": "The persistence you're building now,",
-      "scene": "inner-skill"
-    },
-    {
-      "zh": "理解、判断、扛压力的能力，",
-      "en": "the comprehension, the judgment, the stress tolerance —",
-      "scene": "inner-skill"
-    },
-    {
-      "zh": "都会变成以后面对现实的本事。",
-      "en": "all of it becomes muscle for handling real life later.",
-      "scene": "inner-skill"
-    },
-    {
-      "zh": "还有人说：",
-      "en": "And then there's the line:",
-      "scene": "excuse-mask"
-    },
-    {
-      "zh": "我不是不想学，我就是不擅长。",
-      "en": "It's not that I don't want to — I'm just not built for it.",
-      "scene": "excuse-mask"
-    },
-    {
-      "zh": "说真的，",
-      "en": "Honestly,",
-      "scene": "excuse-mask"
+      "zh": "可真相是，",
+      "en": "But here's the truth —",
+      "scene": "truth-effort"
     },
     {
       "zh": "绝大多数人的努力程度，",
       "en": "most people's level of effort",
-      "scene": "excuse-mask"
+      "scene": "truth-effort"
     },
     {
-      "zh": "还没到拼天赋的时候。",
-      "en": "is nowhere near the point where talent becomes the tiebreaker.",
-      "scene": "excuse-mask"
+      "zh": "还没到需要拼天赋的地步。",
+      "en": "hasn't even reached the line where talent matters.",
+      "scene": "truth-effort"
     },
     {
-      "zh": "你是真的不擅长，",
-      "en": "Are you really not built for it,",
-      "scene": "self-quiz"
+      "zh": "那些能考上好大学的学霸，真的都是天才吗？",
+      "en": "Are top students really all geniuses?",
+      "scene": "not-genius"
     },
     {
-      "zh": "还是一遇难题就放弃？",
-      "en": "or do you quit the moment something gets hard?",
-      "scene": "self-quiz"
+      "zh": "不是的。",
+      "en": "They're not.",
+      "scene": "not-genius"
     },
     {
-      "zh": "你是真的学不会，",
-      "en": "Are you really unable to learn it,",
-      "scene": "self-quiz"
+      "zh": "他们只是比你多背了几个单词、多做了一道题，",
+      "en": "They just memorized a few more words, did one more problem,",
+      "scene": "extra-five-min"
     },
     {
-      "zh": "还是没认真坐下来弄明白？",
-      "en": "or have you never sat down and really worked it through?",
-      "scene": "self-quiz"
+      "zh": "在你想放弃时多咬牙坚持了五分钟。",
+      "en": "held on five more minutes when you wanted to give up.",
+      "scene": "extra-five-min"
     },
     {
-      "zh": "你是真的没有机会，",
-      "en": "Are you really out of chances,",
-      "scene": "self-quiz"
+      "zh": "读书确实不是唯一的出路，",
+      "en": "School really isn't the only road.",
+      "scene": "fair-road"
     },
     {
-      "zh": "还是一直用「我不行」给自己找台阶？",
-      "en": "or do you keep using I can't as a way out?",
-      "scene": "self-quiz"
+      "zh": "但对普通人来说，",
+      "en": "But for ordinary people,",
+      "scene": "fair-road"
     },
     {
-      "zh": "别把一时的懒当成清醒，",
-      "en": "Don't mistake a moment of laziness for clarity,",
-      "scene": "real-choice"
+      "zh": "它是最公平、最稳妥、最容易走的那条。",
+      "en": "it's the fairest, steadiest, easiest road there is.",
+      "scene": "fair-road"
     },
     {
-      "zh": "也别把逃避包装成选择。",
-      "en": "and don't dress up avoidance as a choice.",
-      "scene": "real-choice"
+      "zh": "没有学历这块敲门砖，",
+      "en": "Without that diploma as a key,",
+      "scene": "no-key-no-game"
     },
     {
-      "zh": "真正的选择，",
-      "en": "A real choice",
-      "scene": "real-choice"
+      "zh": "你连进入优质赛场的资格都没有。",
+      "en": "you can't even enter the better arenas.",
+      "scene": "no-key-no-game"
     },
     {
-      "zh": "是你有能力之后再决定走哪条路。",
-      "en": "is one you make after you've built the ability to walk any of them.",
-      "scene": "real-choice"
+      "zh": "拿什么去和别人竞争？拿什么去抵御未来的风雨？",
+      "en": "What will you compete with? What will shelter you from future storms?",
+      "scene": "no-shelter"
     },
     {
-      "zh": "没有能力的时候，",
-      "en": "Without that ability,",
-      "scene": "real-choice"
-    },
-    {
-      "zh": "你所谓的选择，",
-      "en": "what you call a choice",
-      "scene": "real-choice"
-    },
-    {
-      "zh": "常常只是被现实推着走。",
-      "en": "is usually just being pushed along by reality.",
-      "scene": "real-choice"
-    },
-    {
-      "zh": "父母不是想逼你，是想推你一把",
-      "en": "Parents aren't pressing you, they're pushing you forward",
+      "zh": "父母不是想逼你，是替你扛着门",
+      "en": "Parents aren't pressuring you — they're holding the door open for you",
       "scene": "ch4",
       "chapter": 4
     },
     {
-      "zh": "你现在讨厌父母催你，对不对？",
-      "en": "Right now you can't stand your parents pushing you, right?",
-      "scene": "parents-nag"
+      "zh": "父母和老师天天在你耳边唠叨，",
+      "en": "Parents and teachers nag at your ear every day,",
+      "scene": "parents-teacher-nag-2"
     },
     {
-      "zh": "觉得他们不懂你，",
-      "en": "You think they don't get you,",
-      "scene": "parents-nag"
+      "zh": "你是不是觉得特别烦？",
+      "en": "Doesn't it drive you crazy?",
+      "scene": "you-feel-annoyed"
     },
     {
-      "zh": "觉得他们只会说学习，",
-      "en": "that all they talk about is studying,",
-      "scene": "parents-nag"
+      "zh": "觉得他们不可理喻，只会施压？",
+      "en": "Unreasonable, just piling on pressure?",
+      "scene": "you-feel-annoyed"
     },
     {
-      "zh": "觉得他们把成绩看得太重。",
-      "en": "that they care way too much about grades.",
-      "scene": "parents-nag"
+      "zh": "其实，他们不是不知道你烦，",
+      "en": "Honestly, they know you're annoyed,",
+      "scene": "parents-know-tired"
     },
     {
-      "zh": "可是要明白，",
-      "en": "But here's what you have to see:",
-      "scene": "parents-elder"
+      "zh": "也不是不知道你有多累。",
+      "en": "and they know how tired you are.",
+      "scene": "parents-know-tired"
     },
     {
-      "zh": "父母不是不知道你烦，",
-      "en": "They know you're annoyed.",
-      "scene": "parents-elder"
+      "zh": "可他们更清楚，",
+      "en": "But they know better that —",
+      "scene": "society-after-you"
     },
     {
-      "zh": "也不是不知道你累。",
-      "en": "They know you're worn out.",
-      "scene": "parents-elder"
+      "zh": "未来催你的东西，不会给你留半分情面。",
+      "en": "what comes after you in the future won't spare you an inch.",
+      "scene": "society-after-you"
     },
     {
-      "zh": "他们只是比你更早见过生活的另一面。",
-      "en": "They've just seen the other side of life earlier than you have.",
-      "scene": "parents-elder"
+      "zh": "当冰冷的账单拍在你脸上时，",
+      "en": "When the cold bill slaps your face,",
+      "scene": "cold-bill-slap"
     },
     {
-      "zh": "他们知道，",
-      "en": "They know",
-      "scene": "no-mercy"
+      "zh": "当房贷的压力让你整夜失眠时，",
+      "en": "when the mortgage keeps you up all night,",
+      "scene": "mortgage-sleepless"
     },
     {
-      "zh": "未来真正来催你的东西，",
-      "en": "the things that'll really come after you in the years ahead",
-      "scene": "no-mercy"
+      "zh": "当社会用最残酷的规则筛选你时，",
+      "en": "when society filters you by the cruelest rules,",
+      "scene": "society-screen"
     },
     {
-      "zh": "不会像他们这样还给你留情面。",
-      "en": "won't spare your feelings the way they do.",
-      "scene": "no-mercy"
+      "zh": "没有人会因为你曾经觉得累就放过你。",
+      "en": "nobody lets you off because you once felt tired.",
+      "scene": "no-pardon"
     },
     {
-      "zh": "父母催你写作业，",
-      "en": "When parents push you on homework,",
-      "scene": "society-blunt"
+      "zh": "父母现在是你的兜底，是你的防线，",
+      "en": "Parents are right now your safety net and your last line,",
+      "scene": "parents-shield"
     },
     {
-      "zh": "最多语气重一点。",
-      "en": "the worst is a sharper tone.",
-      "scene": "society-blunt"
+      "zh": "因为他们知道，",
+      "en": "because they know —",
+      "scene": "parents-shield"
     },
     {
-      "zh": "老师催你学习，",
-      "en": "When teachers push you to study,",
-      "scene": "society-blunt"
+      "zh": "不读书，你未来要吃的苦，是现在的百倍千倍。",
+      "en": "if you skip school now, what awaits you is a hundredfold, a thousandfold of today.",
+      "scene": "future-pain-X100"
     },
     {
-      "zh": "最多批评几句。",
-      "en": "the worst is a few harsh words.",
-      "scene": "society-blunt"
+      "zh": "他们只是想让你在未来的社会毒打面前，",
+      "en": "They only want, when life really starts beating on you,",
+      "scene": "little-edge"
     },
     {
-      "zh": "可社会毒打你的时候，",
-      "en": "But when life actually starts to grind you down,",
-      "scene": "society-blunt"
+      "zh": "多一点点选择权，",
+      "en": "for you to have a sliver more choice,",
+      "scene": "little-edge"
     },
     {
-      "zh": "它不会问你心情好不好，",
-      "en": "it doesn't ask how you're feeling.",
-      "scene": "society-blunt"
+      "zh": "多一点点体面与底气。",
+      "en": "a sliver more dignity, a sliver more standing.",
+      "scene": "little-edge"
     },
     {
-      "zh": "也不会因为你后悔就让你重来。",
-      "en": "And it doesn't let you redo a thing just because you regret it.",
-      "scene": "society-blunt"
+      "zh": "他们是在用自己的肩膀，",
+      "en": "They're using their own shoulders",
+      "scene": "parents-carry-door"
     },
     {
-      "zh": "父母现在看起来是在逼你，",
-      "en": "Parents may look like they're pressing down on you,",
-      "scene": "gentle-push"
+      "zh": "替你扛着那扇通往未来的大门。",
+      "en": "to hold open the door that leads to your future.",
+      "scene": "parents-carry-door"
     },
     {
-      "zh": "其实是想在你还来得及的时候，",
-      "en": "but really, while there's still time,",
-      "scene": "gentle-push"
-    },
-    {
-      "zh": "把你往前推一把。",
-      "en": "they're trying to nudge you forward.",
-      "scene": "gentle-push"
-    },
-    {
-      "zh": "他们在乎的不是分数，",
-      "en": "What they care about isn't the score on the paper.",
-      "scene": "parent-care"
-    },
-    {
-      "zh": "是你将来有没有得选、",
-      "en": "It's whether, years from now, you'll have anything to choose from,",
-      "scene": "parent-care"
-    },
-    {
-      "zh": "有没有退路、",
-      "en": "whether you'll have a fallback,",
-      "scene": "parent-care"
-    },
-    {
-      "zh": "有没有不那么被动的可能。",
-      "en": "whether you'll have any room to not be cornered.",
-      "scene": "parent-care"
-    },
-    {
-      "zh": "他们不是要你替他们争面子，",
-      "en": "They aren't asking you to save face for them.",
-      "scene": "parent-care"
-    },
-    {
-      "zh": "而是不想看你长大以后，",
-      "en": "They just don't want to watch you grow up",
-      "scene": "parent-care"
-    },
-    {
-      "zh": "因为今天的混日子，",
-      "en": "and pay, in years of unnecessary hardship,",
-      "scene": "parent-care"
-    },
-    {
-      "zh": "去吃更多没必要的苦。",
-      "en": "for the days you coasted through today.",
-      "scene": "parent-care"
-    },
-    {
-      "zh": "给未来的自己，留一句感谢",
+      "zh": "给未来的自己，留一句谢谢",
       "en": "Leave a 'thank you' for your future self",
       "scene": "ch5",
       "chapter": 5
     },
     {
-      "zh": "读书不是让你变成只会考试的人，",
-      "en": "Studying isn't there to turn you into someone who only knows how to take exams,",
-      "scene": "common-path"
+      "zh": "我知道，现在的你很痛苦。",
+      "en": "I know — right now, you're in pain.",
+      "scene": "morning-wake"
     },
     {
-      "zh": "更不是说成绩代表一切。",
-      "en": "and grades certainly aren't the measure of everything.",
-      "scene": "common-path"
+      "zh": "天没亮就要爬起来，",
+      "en": "Up before sunrise,",
+      "scene": "morning-wake"
     },
     {
-      "zh": "可对普通人来说，",
-      "en": "But for ordinary people,",
-      "scene": "common-path"
+      "zh": "做不完的试卷，听不懂的公式，",
+      "en": "tests you can't finish, formulas you can't decode,",
+      "scene": "morning-wake"
     },
     {
-      "zh": "读书至少是一条看得见、摸得着、",
-      "en": "school is at least a road you can see and reach,",
-      "scene": "common-path"
+      "zh": "还有父母那期待又焦虑的眼神。",
+      "en": "and your parents' eyes — expectant, anxious.",
+      "scene": "parents-eyes"
     },
     {
-      "zh": "努力就可能往前走的路。",
-      "en": "one where effort can actually carry you forward.",
-      "scene": "common-path"
+      "zh": "但请你静下心来，",
+      "en": "But please — settle down,",
+      "scene": "quiet-think"
     },
     {
-      "zh": "你现在多坚持一天，",
-      "en": "Every extra day you hold on",
-      "scene": "recharge"
-    },
-    {
-      "zh": "不是为了取悦父母。",
-      "en": "isn't to please your parents.",
-      "scene": "recharge"
-    },
-    {
-      "zh": "你每认真听一节课，",
-      "en": "Every class you truly sit through",
-      "scene": "recharge"
-    },
-    {
-      "zh": "也不是为了让老师满意。",
-      "en": "isn't to satisfy a teacher.",
-      "scene": "recharge"
-    },
-    {
-      "zh": "你每一次把想放弃的念头压下去，",
-      "en": "Every time you push down the urge to quit",
-      "scene": "recharge"
-    },
-    {
-      "zh": "更不是为了给谁交差。",
-      "en": "isn't to clock in for anyone.",
-      "scene": "recharge"
-    },
-    {
-      "zh": "你是在给自己的未来充值。",
-      "en": "You're topping up the account of your own future.",
-      "scene": "recharge"
+      "zh": "做个思想实验，把时间线拉长。",
+      "en": "run a thought experiment, stretch the timeline.",
+      "scene": "quiet-think"
     },
     {
       "zh": "想象一下，",
       "en": "Picture it:",
-      "scene": "mirror-future"
+      "scene": "quiet-think"
     },
     {
-      "zh": "五年后的你回头看今天，",
-      "en": "five years from now, looking back at today —",
-      "scene": "mirror-future"
+      "zh": "五年后、十年后的你，会过着怎样的生活？",
+      "en": "five years, ten years from now, what does your life look like?",
+      "scene": "quiet-think"
     },
     {
-      "zh": "会希望现在的自己再坚持一下，",
-      "en": "will you wish today's you had held on a little longer,",
-      "scene": "mirror-future"
+      "zh": "因为没学历，你被心仪的工作拒之门外；",
+      "en": "Without a diploma, the job you wanted shuts its door on you;",
+      "scene": "future-hardships"
     },
     {
-      "zh": "还是希望就这样混过去？",
-      "en": "or wish you'd just drifted through?",
-      "scene": "mirror-future"
+      "zh": "父母生病住院，你却拿不出医药费；",
+      "en": "your parents fall ill, and you can't cover the bills;",
+      "scene": "future-hardships"
     },
     {
-      "zh": "十年后的你，",
-      "en": "Ten years from now,",
-      "scene": "mirror-future"
+      "zh": "别人轻松挑选自己想要的人生，",
+      "en": "while others freely pick the life they want,",
+      "scene": "future-hardships"
     },
     {
-      "zh": "面对工作、收入、家庭责任的时候，",
-      "en": "facing work, income, and family responsibilities,",
-      "scene": "mirror-future"
+      "zh": "你只能为了生计，做最辛苦的工作。",
+      "en": "you're stuck doing the hardest job just to scrape by.",
+      "scene": "future-hardships"
     },
     {
-      "zh": "会感谢今天那个咬牙学下去的自己，",
-      "en": "will you thank the version of you who gritted through and kept going,",
-      "scene": "mirror-future"
+      "zh": "那时候的你回头看，",
+      "en": "That future you, looking back,",
+      "scene": "backlook-regret"
     },
     {
-      "zh": "还是埋怨当年为什么那么轻易放弃？",
-      "en": "or resent the one who gave up so easily?",
-      "scene": "mirror-future"
+      "zh": "看着今天拿着笔却想放弃的自己，",
+      "en": "at today's you — pen in hand, ready to quit —",
+      "scene": "backlook-regret"
     },
     {
-      "zh": "如果你现在正想放弃，",
-      "en": "If right now you're ready to quit,",
-      "scene": "small-step"
+      "zh": "会希望你再坚持一下，还是就这样混过去？",
+      "en": "will it hope you held on a little longer, or just drifted through?",
+      "scene": "backlook-regret"
     },
     {
-      "zh": "就别想太远。",
-      "en": "don't look that far ahead.",
-      "scene": "small-step"
+      "zh": "你绝对不想成为那个，未来流泪后悔的人。",
+      "en": "You absolutely don't want to be the one in tears, regretting it later.",
+      "scene": "backlook-regret"
     },
     {
-      "zh": "今天就先做一件小事——",
-      "en": "Today, just do one small thing —",
-      "scene": "small-step"
+      "zh": "你今天写下的每一个字，做对的每一道题，",
+      "en": "Every word you write today, every problem you solve,",
+      "scene": "charging-future"
     },
     {
-      "zh": "把眼前这一节课听完，",
-      "en": "finish the class in front of you,",
-      "scene": "small-step"
+      "zh": "都不是在替父母完成任务，",
+      "en": "isn't checking off a task for your parents,",
+      "scene": "charging-future"
     },
     {
-      "zh": "把眼前这一道题做完，",
-      "en": "finish the problem in front of you,",
-      "scene": "small-step"
+      "zh": "也不是在取悦任何老师，",
+      "en": "isn't pleasing any teacher.",
+      "scene": "charging-future"
     },
     {
-      "zh": "把这一个想放弃的瞬间，",
-      "en": "and the single moment of wanting to quit,",
-      "scene": "small-step"
+      "zh": "你是在为自己的未来，充值。",
+      "en": "You're topping up your own future.",
+      "scene": "charging-future"
     },
     {
-      "zh": "撑过去。",
-      "en": "ride it out.",
-      "scene": "small-step"
+      "zh": "你在为自己争夺那个，对生活说『不』的权力，",
+      "en": "You're fighting for the right to say 'no' to a life you don't want,",
+      "scene": "say-no-power"
     },
     {
-      "zh": "读书不是替任何人完成任务，",
-      "en": "Studying isn't a task you complete for anyone else.",
-      "scene": "thanks-note"
+      "zh": "为自己未来的尊严和体面，拼尽全力。",
+      "en": "for your future dignity and standing — with everything you've got.",
+      "scene": "say-no-power"
     },
     {
-      "zh": "而是给你自己留退路。",
-      "en": "It's the fallback you leave for yourself.",
-      "scene": "thanks-note"
+      "zh": "所以，从现在开始，",
+      "en": "So, starting now —",
+      "scene": "sit-now-quiet"
     },
     {
-      "zh": "未来的你，",
-      "en": "The future you",
-      "scene": "thanks-note"
+      "zh": "把试卷拿起来，把浮躁的心沉下去。",
+      "en": "pick up the paper in front of you, settle the restless heart.",
+      "scene": "sit-now-quiet"
     },
     {
-      "zh": "真的会感谢现在这个没有混过去的自己。",
-      "en": "will be genuinely grateful to the present you who didn't drift through.",
-      "scene": "thanks-note"
+      "zh": "不要再想什么天赋，也不要再逃避困难。",
+      "en": "Stop talking about talent, stop dodging hardship.",
+      "scene": "promise-now"
+    },
+    {
+      "zh": "生活不会同情弱者，",
+      "en": "Life won't pity the weak,",
+      "scene": "promise-now"
+    },
+    {
+      "zh": "但绝不会辜负，每一个拼尽全力的人。",
+      "en": "but it never lets down anyone who's given it everything.",
+      "scene": "promise-now"
+    },
+    {
+      "zh": "让我们做一个约定，",
+      "en": "Let's make a deal —",
+      "scene": "promise-now"
+    },
+    {
+      "zh": "从这一刻起，不再抱怨，不再混日子，",
+      "en": "from this moment, no more complaining, no more coasting,",
+      "scene": "thanks-future-self"
+    },
+    {
+      "zh": "用你的汗水，为自己未来的尊严兜底。",
+      "en": "use your sweat as the floor under your future dignity.",
+      "scene": "thanks-future-self"
+    },
+    {
+      "zh": "只有这样，五年、十年甚至更远的将来，",
+      "en": "Only then, five, ten, even more years on,",
+      "scene": "thanks-future-self"
+    },
+    {
+      "zh": "当你过上想要的生活，拥有了选择的底气，",
+      "en": "when you live the life you wanted, holding the confidence to choose,",
+      "scene": "thanks-future-self"
+    },
+    {
+      "zh": "你才能让未来的自己，对现在的自己，说一声谢谢。",
+      "en": "can your future self look back and tell today's you — thank you.",
+      "scene": "thanks-future-self"
     }
   ],
   "scenes": {
     "title": {
-      "prompt": "扁平插画。米黄纸质底，画面中央一支红色蘸水笔正在纸上书写，笔尖下留下一道红色墨迹。墨迹未成字。四周大面积留白。主体黑色简约线条，墨迹饱和红色。",
+      "prompt": "扁平插画。米黄纸质底，画面中央一支红色蘸水笔悬停在纸面上方，笔尖正渗出一滴深红色墨水，墨水尚未落下成字，只有一道将散未散的墨晕。笔杆斜放，周围大面积空白。主体黑色简约线条，红色墨滴饱和鲜亮。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
       "label": "",
       "overlays": [
         {
-          "text": "最公平的那条路",
+          "text": "别天真了",
           "pos": {
             "x": 50,
-            "y": 70
+            "y": 72
           },
           "style": {
             "font": "XY Kaiti",
@@ -794,8 +690,7 @@
             "weight": 400,
             "color": "var(--accent)",
             "rotation": -3,
-            "letterSpacing": 0.08,
-            "shadow": "2px 4px 0 rgba(0,0,0,.12)"
+            "letterSpacing": 0.08
           },
           "motion": {
             "enter": "ink-bleed",
@@ -812,31 +707,109 @@
     "ch1": {
       "type": "chapter",
       "num": "一",
-      "subtitle": "「读书真的没用吗」？",
+      "subtitle": "别天真了，这不是你一个人的事",
       "motion": {
         "enter": "ink-bleed",
         "duration": 900
       }
     },
-    "alone": {
-      "prompt": "扁平插画。画面中央一个小人独自站立，身后是一片由许多小人组成的人群剪影。中间小人头顶有一个问号气泡。米黄底色，人群灰色，主体小人黑色，问号红色。",
+    "freedom-illusion": {
+      "prompt": "扁平插画。米黄底，画面中央一个少年双臂交叉抱胸、耸肩、神情漫不经心地站立。他身旁右侧飘着一个空白的对话气泡（无字）。脚踝处一根细线悄悄将他绊住，但他浑然不觉。身后大面积空白，远景只有极淡的写字楼剪影轮廓。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
       "label": "",
+      "overlays": [
+        {
+          "text": "自由？",
+          "xPct": 68,
+          "yPct": 30,
+          "style": "os-callout",
+          "animation": "oa-fly-right",
+          "delay": 200
+        }
+      ],
       "motion": {
-        "enter": "fade",
-        "duration": 500
+        "enter": "slide-left",
+        "duration": 600
       }
     },
-    "seat-future": {
-      "prompt": "扁平插画。画面中央一个教室的座位，桌面上摊开课本和试卷。座椅背后投出一个高大的人形剪影（代表未来的自己）。米黄底色，桌椅黑色线条，剪影深棕色。",
+    "nag-cage": {
+      "prompt": "扁平插画。米黄底，画面中央一个戴耳机的少年坐在椅子上。他的左侧站着父亲剪影，手指向前方；右侧站着老师剪影，手持教鞭指向空中。两侧人物头顶各有一个只含省略号符号的对话气泡。少年神情平静，周围大面积空白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "wipe-right",
+        "duration": 600
+      }
+    },
+    "too-naive": {
+      "prompt": "扁平插画。米黄底，画面中央同一个少年抬头望向远方，他面前飘着一层薄薄的半透明纱幕，纱幕一角正被一只无形的手掀起。透过纱幕隐约可见后方工地脚手架与写字楼远景剪影，轮廓朦胧深色。少年神情由轻松转为微愣。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "太天真了",
+          "xPct": 72,
+          "yPct": 68,
+          "style": "os-callout-red",
+          "animation": "oa-zoom",
+          "delay": 300
+        }
+      ],
+      "motion": {
+        "enter": "flip-h",
+        "duration": 700
+      }
+    },
+    "brutal-race": {
+      "prompt": "扁平插画。米黄底，画面中央一条向远方无尽延伸的跑道，跑道上密密麻麻挤满奔跑中的人影剪影，体态各异但步伐不停。前景正中一个小人弯腰双手撑膝喘气，跑道没有因他停止，其他人从他两侧继续向前奔跑。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "push-left",
+        "duration": 600
+      }
+    },
+    "surface-vs-deep": {
+      "prompt": "扁平插画。米黄底，画面上下分为两层。上层：一个少年躺在床上侧身刷手机，神情惬意，周围有手机屏幕发出的淡淡光晕。下层：同一个少年站在地面上，脚下的基石正被一只半透明的手悄悄抽走，他浑然不觉，地面出现裂缝。两层之间用一条细黑虚线分隔。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "slide-up",
+        "duration": 700
+      }
+    },
+    "stolen-choice": {
+      "prompt": "扁平插画。米黄底，画面中央一个少年手里正握着一张空白方框卡片（卡片内无文字），一只半透明的大手从侧面伸来，正将这张卡片从少年手中慢慢抽走。少年眼神茫然，手指微微张开。背景大面积留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "选择权",
+          "xPct": 65,
+          "yPct": 35,
+          "style": "os-callout-red",
+          "animation": "oa-fly-right",
+          "delay": 250
+        }
+      ],
+      "motion": {
+        "enter": "wipe-left",
+        "duration": 600
+      }
+    },
+    "shield-broken": {
+      "prompt": "扁平插画。米黄底，画面中央一面圆形盾牌占据主体，盾面出现明显的裂痕从中心向四周蔓延。盾牌后方一个人形剪影正微微后退，重心向后移。裂痕用红色描边强调，周围大面积空白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 900
+      }
+    },
+    "claim-seat": {
+      "prompt": "扁平插画。米黄底，画面中央一排整齐的课桌椅，其中一张椅子上方有一束淡淡的光斑打下来，光斑圆形柔和，暗示「被选中的未来座位」。一个少年正走向那张椅子，即将坐下，姿态认真。其余椅子没有光。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
       "label": "",
       "overlays": [
         {
           "text": "争位置",
-          "xPct": 70,
-          "yPct": 30,
-          "style": "os-callout-red",
-          "animation": "oa-fly-right",
-          "delay": 200
+          "xPct": 65,
+          "yPct": 28,
+          "style": "os-stamp",
+          "animation": "oa-stamp-hit",
+          "delay": 300
         }
       ],
       "motion": {
@@ -844,53 +817,699 @@
         "duration": 700
       }
     },
-    "arena": {
-      "prompt": "扁平插画。画面分两半：左侧一个学生面对一张试卷；右侧一个成年人面对账单、办公桌、家庭背景。中间用一条红色虚线相连。米黄底色，左半浅色调，右半深色调。",
+    "dodge-no-textbook": {
+      "prompt": "扁平插画。米黄底，画面中央一本厚厚的课本翻开悬浮在空中，书页展开，页面留白无字。一个少年站在课本旁边，侧过身去，头转向另一侧，眼神刻意回避。周围大面积留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
       "label": "",
       "motion": {
-        "enter": "push-left",
+        "enter": "wipe-right",
         "duration": 600
-      },
+      }
+    },
+    "dodge-low-income": {
+      "prompt": "扁平插画。米黄底，画面中央一张简陋的桌子，桌面上散落几枚硬币和一张薄薄的空白条状纸（工资条形状，内容完全空白）。桌子后方一个低头的成年人剪影，肩膀微塌。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "slide-left",
+        "duration": 500
+      }
+    },
+    "dodge-family-back": {
+      "prompt": "扁平插画。米黄底，画面中央一个大人弓背前行，肩上用扁担挑着两个抽象方块——左侧方块象征孩子（小书包形状），右侧方块象征老人（拐杖形状）。扁担中段因重量弯曲快要折断，但大人仍咬牙前行。脚下路面略有下沉感。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 900
+      }
+    },
+    "ch2": {
+      "type": "chapter",
+      "num": "二",
+      "subtitle": "你逃避的，是未来的底气",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 900
+      }
+    },
+    "sand-young": {
+      "prompt": "扁平插画。米黄底，画面中央一只倒置的沙漏占据主体，沙子快速从上方玻璃球往下方流落。下方玻璃球内有一个极小的年轻人剪影，仰头望着头顶加速落下的沙粒。沙漏外围大面积留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
       "overlays": [
         {
-          "text": "十年",
-          "pos": {
-            "x": 70,
-            "y": 28
-          },
-          "style": {
-            "font": "ZS Fangsong",
-            "size": 96,
-            "weight": 700,
-            "color": "var(--accent)",
-            "rotation": -4,
-            "shadow": "3px 5px 0 rgba(0,0,0,.1)"
-          },
-          "motion": {
-            "enter": "spin-in",
-            "duration": 800,
-            "delay": 200
-          }
+          "text": "时间",
+          "xPct": 65,
+          "yPct": 28,
+          "style": "os-callout-red",
+          "animation": "oa-fly-top",
+          "delay": 200
         }
-      ]
+      ],
+      "motion": {
+        "enter": "slide-left",
+        "duration": 500
+      }
     },
-    "excuse": {
-      "prompt": "扁平插画。画面中央一个小人嘴边飘出一个对话气泡，气泡里是一个大大的问号。小人耸肩。米黄底色，气泡浅灰，问号红色，小人黑色。",
+    "ledger-account": {
+      "prompt": "扁平插画。米黄底，画面中央一本翻开的老式账本，左页和右页均为空白方框（无任何文字或数字）。账本右侧放着一把木制算盘。整体呈俯视角度，周围大面积留白。暖棕色木质质感，纸页米白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
       "label": "",
       "motion": {
         "enter": "wipe-left",
         "duration": 600
       }
     },
-    "saving-up": {
-      "prompt": "扁平插画。画面中央一个储蓄罐，罐口正在落入硬币，硬币上不是数字而是\"力气\"\"机会\"等抽象图标。罐子下方四周留白。米黄底色，储蓄罐深棕色，硬币金黄色。",
+    "age-20-knock": {
+      "prompt": "扁平插画。米黄底，画面中央一栋写字楼正门台阶，台阶下站着一个年轻人（20岁感觉），他抬手敲一扇高大紧闭的玻璃门。门边有一个空白方框（招聘启事形状，无文字）。门内隐约有人影但没有开门。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
       "label": "",
       "overlays": [
         {
-          "text": "攒底气",
+          "text": "20",
+          "xPct": 50,
+          "yPct": 25,
+          "style": "os-stamp",
+          "animation": "oa-stamp-hit",
+          "delay": 0
+        }
+      ],
+      "motion": {
+        "enter": "slide-left",
+        "duration": 500
+      }
+    },
+    "replaceable-labor": {
+      "prompt": "扁平插画。米黄底，画面中央一条工厂流水线，线上一字排开七八个工人剪影，体态完全相同，重复着同一个机械动作。传送带上摆着完全一样的空白方形箱子。整体横向构图，工人轮廓简约，周围大面积留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "push-left",
+        "duration": 600
+      }
+    },
+    "age-30-savings": {
+      "prompt": "扁平插画。米黄底，画面中央一个30岁感觉的人坐在桌前，桌上左侧一摞空白方框账单叠放（账单内无字），右侧一只存钱罐出现裂缝，从裂缝里只能看到几枚零星硬币。人物表情凝重，低头望着桌面。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "30",
+          "xPct": 50,
+          "yPct": 25,
+          "style": "os-stamp",
+          "animation": "oa-stamp-hit",
+          "delay": 0
+        }
+      ],
+      "motion": {
+        "enter": "slide-left",
+        "duration": 500
+      }
+    },
+    "cant-support": {
+      "prompt": "扁平插画。米黄底，画面中央一双手高举托举着一座迷你小房子（家的象征），小房子微微倾斜摇晃，似乎随时要从手中滑落。手臂因用力微微颤抖，手指张开。房子轮廓简约，周围大面积留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "wipe-up",
+        "duration": 700
+      }
+    },
+    "age-40-shoulder": {
+      "prompt": "扁平插画。米黄底，画面中央一个中年人（40岁感觉）正面站立，双肩各被一根无形扁担压着，左肩挑一个深色抽象方块（父母责任），右肩挑一个深色抽象方块（孩子责任），两端方块因重量使肩膀下沉，身形微微弓曲。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "40",
+          "xPct": 50,
+          "yPct": 25,
+          "style": "os-stamp",
+          "animation": "oa-stamp-hit",
+          "delay": 0
+        }
+      ],
+      "motion": {
+        "enter": "slide-left",
+        "duration": 500
+      }
+    },
+    "elder-parents": {
+      "prompt": "扁平插画。米黄底，画面中央两位年迈老人并排坐在小板凳上，身形微弓，相互搀扶着对方的手。他们衣着朴素，神情安静。周围环境极简，只有地面阴影和大面积米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 500
+      }
+    },
+    "child-education": {
+      "prompt": "扁平插画。米黄底，画面中央一个背着大书包的孩子（体形明显书包大于身体）正迈步走向一扇学校大门。大门一侧挂着一个空白方框牌子（学费单形状，完全空白无字）。孩子步伐坚定，书包沉重。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "wipe-right",
+        "duration": 600
+      }
+    },
+    "jobless-vs-young": {
+      "prompt": "扁平插画。米黄底，画面中央一扇半开的面试室门，门外左侧站着一个中年人（体态略沉），右侧站着一个年轻人（体态轻盈）。门内只能接待一个人，年轻人正迈出第一步准备进入，中年人只能站在原地等待。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "push-left",
+        "duration": 600
+      }
+    },
+    "race-no-mercy": {
+      "prompt": "扁平插画。米黄底，画面中央一条跑道向远方地平线无尽延伸，跑道尽头只有暖色日落光晕，没有终点线，没有终点旗。道路两侧空无一物，只有透视感强烈的消失点。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "zoom-in",
+        "duration": 700
+      }
+    },
+    "no-mercy-lazy": {
+      "prompt": "扁平插画。米黄底，画面中央一个人形剪影原本躺在一个高台上（懒散姿态），一只巨大的深色手掌从侧面伸来，轻轻一推，把这个人从高台边缘推落台阶。手掌没有表情，动作漫不经心，仿佛本就如此理所当然。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "现实",
+          "xPct": 30,
+          "yPct": 35,
+          "style": "os-callout-red",
+          "animation": "oa-zoom",
+          "delay": 200
+        }
+      ],
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      }
+    },
+    "office-night": {
+      "prompt": "扁平插画。米黄底，画面中央一栋写字楼夜景正面轮廓，楼体大部分窗户已熄灯呈深色，只有一扇窗户仍透出暖黄灯光。灯光窗内隐约可见一个人趴在桌上的剪影。写字楼轮廓简约，周围夜空深色但克制，大面积留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "iris-in",
+        "duration": 900
+      }
+    },
+    "delivery-rain": {
+      "prompt": "扁平插画。米黄底，画面中央雨夜路灯下，一个骑手骑着电瓶车低头前行，身后绑着一个完全空白的外卖保温箱（无任何图案文字）。雨丝斜落，路灯光晕在湿地面形成倒影。骑手体态前倾，动作急促。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "slide-left",
+        "duration": 600
+      }
+    },
+    "borrow-money": {
+      "prompt": "扁平插画。米黄底，画面中央两双手相对而立：左侧一只手向前递出几张纸币；右侧一只手犹豫地半伸，手指微微收缩，还未完全接过。画面上方隐约可见侧脸剪影，眉头轻皱，神情复杂。背景大面积留白，只有手和脸的抽象轮廓。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 600
+      }
+    },
+    "try-hard-stuck": {
+      "prompt": "扁平插画。米黄底，画面中央一个人肩膀压低、身形塌陷，仍在向前迈步，步伐沉重。脚下留有浅淡脚印轨迹延伸到身后，暗示已走过很长的路。人物背后投出一道细长的影子。整体氛围沉重压抑，周围大面积留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "wipe-left",
+        "duration": 700
+      }
+    },
+    "lacked-chips-then": {
+      "prompt": "扁平插画。米黄底，画面中央一张牌桌俯视角度，桌面上只剩下三四个零散筹码和几张翻过来的空白牌，筹码稀疏可怜。桌边一只手垂落在桌沿，没有出牌，手指松弛。整体画面安静萧索，周围大面积留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "筹码",
+          "xPct": 50,
+          "yPct": 30,
+          "style": "os-callout-red",
+          "animation": "oa-zoom",
+          "delay": 300
+        }
+      ],
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 900
+      }
+    },
+    "ch3": {
+      "type": "chapter",
+      "num": "三",
+      "subtitle": "别拿『不擅长』当清醒",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 900
+      }
+    },
+    "paid-by-bills": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一个成年人正向前奔跑，身后拖着一长串飘动的空白方框（象征账单），像一群鸟追着他飞。人物姿态紧张、步伐慌乱。主体黑色线条，方框白色描边，背景米黄大面积留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "追账",
+          "xPct": 72,
+          "yPct": 38,
+          "style": "os-callout-red",
+          "animation": "oa-fly-right",
+          "delay": 200
+        }
+      ],
+      "motion": {
+        "enter": "wipe-left",
+        "duration": 700
+      }
+    },
+    "bowed-society": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一个成年人低头弓背行走，身后巨大的城市建筑群剪影如深色积云压在他身上。人物渺小、建筑高耸、压迫感强。主体黑色线条，建筑深灰色剪影，天空米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "iris-in",
+        "duration": 800
+      }
+    },
+    "try-already-hard": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一个人两手各提着公文包和工具箱，肩上还斜挂着一个书包，脚步急促却双肩下沉。三样东西同时在身，姿态疲惫而匆忙。主体黑色线条，包袋深棕色，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      }
+    },
+    "early-late": {
+      "prompt": "扁平插画。米黄纸质底。画面上下分层：上半圆形闹钟表盘指向四点半，窗外月亮仍挂着；下半同一个人正在穿外套、系扣，准备出门，室内昏黄。主体黑色线条，月亮浅黄色，闹钟深棕色，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "起得比鸡早",
+          "xPct": 65,
+          "yPct": 28,
+          "style": "os-handwrite",
+          "animation": "oa-fade",
+          "delay": 300
+        }
+      ],
+      "motion": {
+        "enter": "slide-left",
+        "duration": 600
+      }
+    },
+    "no-retreat": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一座断桥横跨深谷，桥已断裂；桥前一个人背对观者站立，脚边是旧脚印，前方是空谷悬崖，无路可退。主体黑色线条，断桥深灰色，悬崖深色，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "iris-in",
+        "duration": 900
+      }
+    },
+    "chose-to-coast": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一张翻开的课本，书页上满是涂鸦和乱画；旁边一支铅笔被放下，笔尖朝外，铅笔上方飘着一个慵懒的省略号气泡。主体黑色线条，课本米白，铅笔暖棕，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "zoom-in",
+        "duration": 700
+      }
+    },
+    "self-excuse": {
+      "prompt": "扁平插画。米黄纸质底。画面中央少年面对一面破裂的镜子，镜面裂成三块，每块中映出一个空白方框（暗示借口标签）。少年表情抗拒，一只手伸向镜面。主体黑色线条，镜框深棕色，镜面碎裂处红色描边，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "flip-h",
+        "duration": 800
+      }
+    },
+    "truth-effort": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一根纵向能量柱，柱上有两道刻度线：下方三分之一处标注普通人当前位置（红色箭头指向），上方是「天赋分界线」（空白方框）。能量条只填满三分之一。主体黑色线条，能量条朱红色，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "差距在这里",
+          "xPct": 68,
+          "yPct": 45,
+          "style": "os-callout-red",
+          "animation": "oa-zoom",
+          "delay": 200
+        }
+      ],
+      "motion": {
+        "enter": "glitch",
+        "duration": 700
+      }
+    },
+    "not-genius": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一个学生背影坐在书桌前，台灯亮着，桌上摊开课本和练习册。头顶没有光环、没有星光，只是一盏普通台灯照下来的圆形光晕。主体黑色线条，台灯暖黄色，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "wipe-right",
+        "duration": 600
+      }
+    },
+    "extra-five-min": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一只手握着铅笔，铅笔笔尖正落在纸面，旁边一个小沙漏快要走完最后一粒沙。手没有放下笔，眼神专注向下。主体黑色线条，沙漏暖棕色，沙粒金黄，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "再五分钟",
+          "xPct": 30,
+          "yPct": 68,
+          "style": "os-marker",
+          "animation": "oa-fly-left",
+          "delay": 300
+        }
+      ],
+      "motion": {
+        "enter": "zoom-in",
+        "duration": 700
+      }
+    },
+    "fair-road": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一条朴素乡间小路径直向远方地平线延伸，路两侧田野平坦、电线杆笔直排列。路上没有路障没有岔口，只有一条笔直通道。主体黑色线条，路面深灰，田野浅黄绿，地平线一抹暖光，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "最公平",
+          "xPct": 50,
+          "yPct": 32,
+          "style": "os-tag-pill",
+          "animation": "oa-fade",
+          "delay": 200
+        }
+      ],
+      "motion": {
+        "enter": "slide-left",
+        "duration": 600
+      }
+    },
+    "no-key-no-game": {
+      "prompt": "扁平插画。米黄纸质底。画面中央宏大赛场的正门入口，门口有一个钥匙形状的门孔；一个人站在门外，手里是空的，望着那个钥匙孔。入口之内隐约可见灯火辉煌的赛场。主体黑色线条，门深棕色，钥匙孔红色描边，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "iris-out",
+        "duration": 800
+      }
+    },
+    "no-shelter": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一片旷野，暴雨倾盆、大风横扫，少年没有雨伞，弓背低头在风雨中艰难前行，远处天边一道闪电。人物孤立无援，周围没有任何遮蔽物。主体黑色线条，雨线深蓝灰色，闪电朱红色，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "mask-grid",
+        "duration": 800
+      }
+    },
+    "ch4": {
+      "type": "chapter",
+      "num": "四",
+      "subtitle": "父母不是想逼你，是替你扛着门",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 900
+      }
+    },
+    "parents-teacher-nag-2": {
+      "prompt": "扁平插画。米黄纸质底。画面中央少年低头站立，左侧父母剪影头顶有省略号气泡，右侧老师剪影手持教鞭头顶也有省略号气泡。少年被两侧夹住，肩膀微缩。主体黑色线条，父母和老师深灰色剪影，气泡米白，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "push-right",
+        "duration": 600
+      }
+    },
+    "you-feel-annoyed": {
+      "prompt": "扁平插画。米黄纸质底。画面中央少年双手捂耳、皱眉闭眼，表情烦躁。身边飘着几个小型声波图形向他袭来（暗示催促噪音）。主体黑色线条，声波红色，少年黑色，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "烦！",
+          "xPct": 68,
+          "yPct": 30,
+          "style": "os-callout-red",
+          "animation": "oa-stamp-hit",
+          "delay": 200
+        }
+      ],
+      "motion": {
+        "enter": "glitch",
+        "duration": 700
+      }
+    },
+    "parents-know-tired": {
+      "prompt": "扁平插画。米黄纸质底。画面中央父母静静坐在桌的对面，不是催促姿态，双手交叠放在桌上，眼神温和注视前方；桌上摆一杯冒热气的温水。整体气氛温暖而克制。主体黑色线条，父母暖棕色，热气轻灰，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 800
+      }
+    },
+    "society-after-you": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一只冷色调的大手指向远处高耸的铁栅栏/冷灰高墙，墙后隐现写字楼和工厂的混合剪影，冷峻压抑。前景是一个小人的背影望向那堵墙。主体黑色线条，铁栅栏深蓝灰，高墙冷灰，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "push-right",
+        "duration": 600
+      }
+    },
+    "cold-bill-slap": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一张空白方框账单被风吹起，正贴向一张侧面人脸；脸侧颊微红，眼神惊愕。账单白色，边缘整齐有折痕，风的轨迹用流线表示。主体黑色线条，账单白色，腮红朱红，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "账单",
+          "xPct": 55,
+          "yPct": 38,
+          "style": "os-stamp",
+          "animation": "oa-stamp-hit",
+          "delay": 150
+        }
+      ],
+      "motion": {
+        "enter": "slide-left",
+        "duration": 600
+      }
+    },
+    "mortgage-sleepless": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一个人深夜躺在床上，双眼睁开盯着天花板，表情凝重；床头柜上放一份折叠的空白合同文件和一盏微亮的夜灯。夜晚深色背景衬托出孤独感。主体黑色线条，床铺暖灰，夜灯暖黄，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 900
+      }
+    },
+    "society-screen": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一个巨大的漏斗形筛选器，上方漏斗口挤满相似的小人剪影，下方出口只落出极少数几个；其余大多数卡在漏斗网格上，无法通过。主体黑色线条，漏斗深灰，卡住的人群浅灰，落出的人暖色，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      }
+    },
+    "no-pardon": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一只冷色调巨大的手，正把一个精疲力竭趴倒的小人推回跑道；小人挣扎抬头，大手没有表情、没有怜悯。跑道延伸向远处。主体黑色线条，大手冷蓝灰，小人黑色，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "slide-left",
+        "duration": 600
+      }
+    },
+    "parents-shield": {
+      "prompt": "扁平插画。米黄纸质底。画面中央父母并肩站立，双臂展开挡在身后孩子前面，前方是压境的乌云和风雨。父母背影坚定，孩子被父母完全保护在怀中。主体黑色线条，父母深棕色，乌云深灰，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 800
+      }
+    },
+    "future-pain-X100": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一杆天平秤：左盘放着一本薄薄的课本（轻），右盘放着一座小山形状的重物（代表未来要吃的苦），右盘明显压低。天平杆弯曲下倾。主体黑色线条，课本浅棕，右盘重物深灰，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "百倍",
+          "xPct": 70,
+          "yPct": 35,
+          "style": "os-callout-red",
+          "animation": "oa-zoom",
+          "delay": 300
+        }
+      ],
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 900
+      }
+    },
+    "little-edge": {
+      "prompt": "扁平插画。米黄纸质底。画面中央一只手在暗色背景中伸出，掌心托着一支燃着微光的细烛火；烛光周围散发出柔和的圆形暖晕，照亮一小片空间，象征多一点选择的底气。主体黑色线条，烛火朱红暖黄，光晕淡金，背景深米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "iris-in",
+        "duration": 900
+      }
+    },
+    "parents-carry-door": {
+      "prompt": "扁平插画。米黄纸质底。画面中央父母并肩弯腰，双手高举一扇巨大厚重的木门，门顶透进一束金色光芒；一个背着书包的孩子从门下昂首走过，走向光明前方。父母姿态用力却甘愿。主体黑色线条，大门深棕，光束暖金，孩子黑色，背景米黄留白。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "扛着门",
           "pos": {
             "x": 50,
-            "y": 30
+            "y": 28
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 80,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -2,
+            "letterSpacing": 0.06
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 400
+          }
+        }
+      ],
+      "motion": {
+        "enter": "fade",
+        "duration": 900
+      }
+    },
+    "ch5": {
+      "type": "chapter",
+      "num": "五",
+      "subtitle": "给未来的自己，留一句谢谢",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 900
+      }
+    },
+    "morning-wake": {
+      "prompt": "扁平插画。天还未亮的卧室，昏暗蓝灰色调。画面中央一个少年揉着眼睛从床上坐起，面朝桌面。书桌上一摞叠高的试卷、一本翻开的课本，黑板上漂浮着几个抽象公式符号（用空白几何图形代替）。窗外依然深色夜空。主体少年黑色线条，试卷白色，公式符号深灰，整体色调压低饱和度。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "痛苦",
+          "pos": {
+            "x": 72,
+            "y": 28
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 72,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.08
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 400
+          }
+        }
+      ],
+      "motion": {
+        "enter": "fade",
+        "duration": 800
+      }
+    },
+    "parents-eyes": {
+      "prompt": "扁平插画。画面中央一扇薄窗，窗内少年背影正坐在书桌前。窗外两个父母剪影，侧头望向窗内，眼神既期待又带着焦虑，神情温柔。整体暖棕色调，低饱和。父母剪影深色，窗框黑色线条，少年背影黑色。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 900
+      }
+    },
+    "quiet-think": {
+      "prompt": "扁平插画。画面中央一个少年端坐，双眼微闭，手放膝上。头顶正上方飘着几个细小的圆点（思绪）向上扩散。画面下方有一小块如水面倒影的镜面区域，镜面里映出一个轮廓更高更成熟的自己，抬头望回来。整体米黄底，低饱和暖色。少年黑色线条，镜面轮廓浅棕，思绪圆点深灰。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "想象",
+          "pos": {
+            "x": 50,
+            "y": 22
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 64,
+            "weight": 700,
+            "color": "var(--ink-soft)",
+            "rotation": -2,
+            "letterSpacing": 0.1
+          },
+          "motion": {
+            "enter": "fade",
+            "duration": 800,
+            "delay": 300
+          }
+        }
+      ],
+      "motion": {
+        "enter": "iris-in",
+        "duration": 900
+      }
+    },
+    "future-hardships": {
+      "prompt": "扁平插画。横版三联画构图，三格并排占满画面中央，四周留白。左格：一扇紧闭的招聘告示门前，一个年轻人拿着空白简历被门挡住（门上贴空白方框标识）。中格：医院走廊，一个人低头站在收费窗口前，窗口递出一张空白账单，人物双肩垂下。右格：左侧人物扛着沉重行李弓背前行，右侧另一人轻松挑一个小包昂首而走，形成对比。三格均用黑色线条、米黄底，整体低饱和暖色调，无任何光亮。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "motion": {
+        "enter": "zoom-in",
+        "duration": 800
+      }
+    },
+    "backlook-regret": {
+      "prompt": "扁平插画。画面中央一道竖向时间光柱，光柱从近景向远景延伸。近景：一个少年握着一支笔，眼角有细小泪光，姿态犹豫。远景光柱尽头：一个更年长的自己背影，缓缓回头，目光穿越时间望向近处的自己。光柱暖棕色，近景少年黑色线条，远景身影轮廓浅暖棕色。整体低饱和、沉重感。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "五年",
+          "pos": {
+            "x": 28,
+            "y": 28
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 60,
+            "weight": 700,
+            "color": "var(--ink)",
+            "rotation": -3
+          },
+          "motion": {
+            "enter": "fly-in",
+            "from": "left",
+            "duration": 500,
+            "delay": 200
+          }
+        },
+        {
+          "text": "十年",
+          "pos": {
+            "x": 72,
+            "y": 28
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 60,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": 3
+          },
+          "motion": {
+            "enter": "fly-in",
+            "from": "right",
+            "duration": 500,
+            "delay": 500
+          }
+        }
+      ],
+      "motion": {
+        "enter": "iris-in",
+        "duration": 900
+      }
+    },
+    "charging-future": {
+      "prompt": "扁平插画。画面中央一只手握着一支笔，笔的末端连出一根发光的电源线，线沿着弧线向右延伸，连接到画面右侧一个小人头顶的电量条。电量条一格格变绿，已亮起三格。整体色调开始变亮，米黄底暖光渐起，红色强调色出现在电量条上。主体笔和手黑色线条，电线暖黄，电量条格红色到绿色。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
+      "label": "",
+      "overlays": [
+        {
+          "text": "充值",
+          "pos": {
+            "x": 50,
+            "y": 25
           },
           "style": {
             "font": "XY Kaiti",
@@ -911,495 +1530,49 @@
         }
       ],
       "motion": {
-        "enter": "wipe-up",
-        "duration": 700
-      }
-    },
-    "fair-road": {
-      "prompt": "扁平插画。画面中央一条笔直的道路通向远方地平线，路两侧是空旷的田野。路上没有路障没有岔口。米黄底色，道路深灰色，地平线一抹暖光。",
-      "label": "",
-      "overlays": [
-        {
-          "text": "公平",
-          "xPct": 50,
-          "yPct": 35,
-          "style": "os-tag-pill",
-          "delay": 200
-        }
-      ],
-      "motion": {
-        "enter": "slide-right",
-        "duration": 700
-      }
-    },
-    "ch2": {
-      "type": "chapter",
-      "num": "二",
-      "subtitle": "你逃避的不是作业，是未来的余地",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      }
-    },
-    "narrow-paths": {
-      "prompt": "扁平插画。画面中央一个小人站在一个狭窄的岔口前，只剩两三条很窄的路向前延伸，其它路口都被横木挡住。米黄底色，小人黑色，路深灰色，横木红色。",
-      "label": "",
-      "motion": {
         "enter": "wipe-circle",
-        "duration": 700
-      }
-    },
-    "bill-pressure": {
-      "prompt": "扁平插画。画面中央一张桌子，桌上堆着账单、信封、计算器、一杯没喝完的咖啡。桌子后一个成年人背影，肩膀微塌。米黄底色，桌面深色，账单白色，背影黑色。",
-      "label": "",
-      "overlays": [
-        {
-          "text": "账单",
-          "xPct": 28,
-          "yPct": 50,
-          "style": "os-tag-pill",
-          "delay": 0
-        },
-        {
-          "text": "房贷",
-          "xPct": 72,
-          "yPct": 50,
-          "style": "os-tag-pill",
-          "delay": 200
-        }
-      ],
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      }
-    },
-    "age-20": {
-      "prompt": "扁平插画。画面中央一个年轻人站在两条岔路前，两条路都被淡淡的灰色虚线圈住，意味着选不到。米黄底色，年轻人黑色，路灰色。",
-      "label": "",
-      "overlays": [
-        {
-          "text": "20",
-          "xPct": 50,
-          "yPct": 25,
-          "style": "os-stamp",
-          "animation": "oa-stamp-hit"
-        }
-      ],
-      "motion": {
-        "enter": "slide-left",
-        "duration": 500
-      }
-    },
-    "age-30": {
-      "prompt": "扁平插画。画面中央一个成年人坐在办公桌前，桌上一摞账单，桌角一个小行李箱但他没有起身。米黄底色，桌椅深色，行李箱浅棕，账单白色。",
-      "label": "",
-      "overlays": [
-        {
-          "text": "30",
-          "xPct": 50,
-          "yPct": 25,
-          "style": "os-stamp",
-          "animation": "oa-stamp-hit"
-        }
-      ],
-      "motion": {
-        "enter": "slide-left",
-        "duration": 500
-      }
-    },
-    "age-40": {
-      "prompt": "扁平插画。画面中央一个中年人，肩上压着几个抽象方块（代表房子、孩子、老人），脚下是一条向后看的虚影路径。米黄底色，主体黑色，方块深棕色。",
-      "label": "",
-      "overlays": [
-        {
-          "text": "40",
-          "xPct": 50,
-          "yPct": 25,
-          "style": "os-stamp",
-          "animation": "oa-stamp-hit"
-        }
-      ],
-      "motion": {
-        "enter": "slide-left",
-        "duration": 500
-      }
-    },
-    "no-pass": {
-      "prompt": "扁平插画。画面中央一条跑道，跑道上其他选手都在向前奔跑，画面前景一个小人站着不动，跑道继续延伸不为他停下。米黄底色，跑道灰色，奔跑者黑色,主体小人深色。",
-      "label": "",
-      "motion": {
-        "enter": "wipe-right",
-        "duration": 600
-      }
-    },
-    "escalation": {
-      "prompt": "扁平插画。画面中央一组从小到大依次排列的方块，从左到右分别标注\"试卷\"\"父母唠叨\"\"工作\"\"账单\"（用空白方框代替文字），方块上方有一个小人逐级被推着走。米黄底色，方块灰色渐深，小人黑色。",
-      "label": "",
-      "motion": {
-        "enter": "mask-grid",
-        "duration": 800
-      },
-      "overlays": [
-        {
-          "text": "账单",
-          "pos": {
-            "x": 30,
-            "y": 78
-          },
-          "style": {
-            "size": 56,
-            "weight": 900,
-            "color": "var(--accent)",
-            "rotation": -3
-          },
-          "motion": {
-            "enter": "drop-in",
-            "duration": 700,
-            "delay": 200
-          }
-        },
-        {
-          "text": "现实",
-          "pos": {
-            "x": 70,
-            "y": 78
-          },
-          "style": {
-            "size": 56,
-            "weight": 900,
-            "color": "var(--accent)",
-            "rotation": 4
-          },
-          "motion": {
-            "enter": "drop-in",
-            "duration": 700,
-            "delay": 500
-          }
-        }
-      ]
-    },
-    "ch3": {
-      "type": "chapter",
-      "num": "三",
-      "subtitle": "别把「不擅长」当成清醒",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      }
-    },
-    "adults-carry": {
-      "prompt": "扁平插画。画面中央三个成年人侧身排队前行，每个人肩上都扛着抽象的方块（行李、责任、压力）。每个人都微微前倾。米黄底色，人物黑色，方块深棕色。",
-      "label": "",
-      "motion": {
-        "enter": "slide-up",
-        "duration": 700
-      }
-    },
-    "no-chips": {
-      "prompt": "扁平插画。画面中央一张牌桌，桌上散落几张牌和很少的几个筹码。一只手垂在桌边没有出牌。米黄底色，牌桌深绿色，筹码金色，手黑色线条。",
-      "label": "",
-      "overlays": [
-        {
-          "text": "筹码",
-          "xPct": 50,
-          "yPct": 30,
-          "style": "os-callout-red",
-          "animation": "oa-zoom",
-          "delay": 200
-        }
-      ],
-      "motion": {
-        "enter": "zoom-out",
-        "duration": 700
-      }
-    },
-    "one-page": {
-      "prompt": "扁平插画。画面中央一本翻开的书，书页中央的字被风吹起来变成了几条向远处延伸的小路径。米黄底色，书本白色，路径浅红色虚线。",
-      "label": "",
-      "motion": {
-        "enter": "wipe-down",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "多一条路",
-          "pos": {
-            "x": 50,
-            "y": 78
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 56,
-            "weight": 700,
-            "color": "var(--ink)",
-            "letterSpacing": 0.06,
-            "padding": "8px 22px",
-            "background": "rgba(193, 57, 43, .12)",
-            "borderRadius": 6
-          },
-          "motion": {
-            "enter": "unfold",
-            "duration": 700,
-            "delay": 300
-          }
-        }
-      ]
-    },
-    "inner-skill": {
-      "prompt": "扁平插画。画面中央一个小人胸口位置长出一棵小树，树根扎进胸口，树枝上挂着四个发光的叶片（标着\"坚持\"\"理解\"\"判断\"\"抗压\"——用空白方框代替）。米黄底色，小人黑色，树绿色，叶片金黄色。",
-      "label": "",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      },
-      "overlays": [
-        {
-          "text": "坚持 / 理解 / 判断",
-          "pos": {
-            "x": 50,
-            "y": 78
-          },
-          "style": {
-            "font": "ZS Fangsong",
-            "size": 48,
-            "weight": 400,
-            "color": "var(--ink)",
-            "letterSpacing": 0.08
-          },
-          "motion": {
-            "enter": "typewriter",
-            "duration": 1400,
-            "delay": 400
-          }
-        }
-      ]
-    },
-    "excuse-mask": {
-      "prompt": "扁平插画。画面中央一个小人手里举着一张面具，面具上写着一个大大的\"不擅长\"（用空白方框代替）。小人正在把面具往自己脸上扣。米黄底色，小人黑色，面具深棕色，方框红色。",
-      "label": "",
-      "motion": {
-        "enter": "flip-h",
         "duration": 800
       }
     },
-    "self-quiz": {
-      "prompt": "扁平插画。画面中央一个小人面前飘浮三个问号气泡。每个气泡里都是一个大大的\"?\"。小人摸着下巴思考。米黄底色，问号红色，气泡浅灰，小人黑色。",
+    "say-no-power": {
+      "prompt": "扁平插画。画面中央一只手臂抬起，掌心朝外（立掌），正挡住从右侧推过来的一个深色方块。方块被挡住、停在半空，无法前进。画面色调明亮，米黄底，阳光感。手臂黑色线条，方块深灰色，掌心朝外姿态有力。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
       "label": "",
       "motion": {
-        "enter": "glitch",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "?",
-          "pos": {
-            "x": 50,
-            "y": 30
-          },
-          "style": {
-            "size": 220,
-            "weight": 900,
-            "color": "var(--accent)"
-          },
-          "motion": {
-            "enter": "shake-attention",
-            "duration": 1000,
-            "delay": 300
-          }
-        }
-      ]
-    },
-    "real-choice": {
-      "prompt": "扁平插画。画面分两半：左侧一个小人被一只大手推着往前走（被动）；右侧同一个小人长出翅膀，主动向前飞（主动）。中间一道分割。米黄底色，左半灰色调，右半暖色调。",
-      "label": "",
-      "overlays": [
-        {
-          "text": "有能力之后才有选择",
-          "xPct": 50,
-          "yPct": 75,
-          "style": "os-handwrite",
-          "animation": "oa-fade",
-          "delay": 300
-        }
-      ],
-      "motion": {
-        "enter": "flip-v",
-        "duration": 800
-      }
-    },
-    "ch4": {
-      "type": "chapter",
-      "num": "四",
-      "subtitle": "父母不是想逼你，是想推你一把",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      }
-    },
-    "parents-nag": {
-      "prompt": "扁平插画。画面中央一个小人坐在书桌前，身后两个大人（父母）头顶各有一个对话气泡，气泡里都是省略号。小人捂着耳朵。米黄底色，父母灰色，小人黑色。",
-      "label": "",
-      "motion": {
-        "enter": "push-right",
-        "duration": 600
-      }
-    },
-    "parents-elder": {
-      "prompt": "扁平插画。画面分两半：左侧父母背影，眼前是一片风雨场景（已经走过）；右侧孩子背影，眼前是晴朗的小操场（还没经历）。中间一道竖线分隔。米黄底色，左半深色，右半浅色。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 500
-      }
-    },
-    "no-mercy": {
-      "prompt": "扁平插画。画面中央一个大门紧闭，门上没有窗，门前一个小人正在敲门，门没有任何反应。米黄底色，门深棕色，小人黑色。",
-      "label": "",
-      "overlays": [
-        {
-          "text": "不留情面",
-          "xPct": 50,
-          "yPct": 75,
-          "style": "os-callout-red",
-          "animation": "oa-fade",
-          "delay": 300
-        }
-      ],
-      "motion": {
-        "enter": "iris-out",
-        "duration": 800
-      }
-    },
-    "society-blunt": {
-      "prompt": "扁平插画。画面中央三层力度从轻到重的箭头叠在一起：最浅的标\"父母\"，中等的标\"老师\"，最重的红色箭头标\"社会\"（用空白代替文字）。下方一个小人被最重的箭头推得后退。米黄底色，箭头从灰到红渐变，小人黑色。",
-      "label": "",
-      "motion": {
-        "enter": "slide-down",
-        "duration": 600
-      }
-    },
-    "gentle-push": {
-      "prompt": "扁平插画。画面中央一个小人面朝前方，背后一只大手轻轻推他的后背（不是用力推倒）。前方是一条向前的小路。米黄底色，大手深灰色，小人黑色，路浅色。",
-      "label": "",
-      "overlays": [
-        {
-          "text": "推你一把",
-          "xPct": 50,
-          "yPct": 30,
-          "style": "os-stamp",
-          "animation": "oa-stamp-hit",
-          "delay": 200
-        }
-      ],
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 800
-      }
-    },
-    "parent-care": {
-      "prompt": "扁平插画。画面中央两个大人（父母）并排站着，他们身前一个小孩正抬头看远方的一条小路。父母手里没有任何\"成绩单\"道具，只是注视。米黄底色，父母深色，孩子黑色，路浅色。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 500
-      }
-    },
-    "ch5": {
-      "type": "chapter",
-      "num": "五",
-      "subtitle": "给未来的自己，留一句感谢",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      }
-    },
-    "common-path": {
-      "prompt": "扁平插画。画面中央一条朴素的乡间小路向远方延伸，路两边是田野和电线杆。没有任何捷径标志。米黄底色，路深灰，田野浅黄绿，电线杆黑色。",
-      "label": "",
-      "motion": {
-        "enter": "slide-right",
+        "enter": "push-left",
         "duration": 700
       }
     },
-    "recharge": {
-      "prompt": "扁平插画。画面中央一只手机或电池图标，正在通过一根线连接到一个小人头顶。电量条慢慢变满。米黄底色，电池金黄色，线深色，小人黑色。",
+    "sit-now-quiet": {
+      "prompt": "扁平插画。画面中央一张书桌，一双手从桌面拿起一摞试卷，试卷轻轻抬起。手腕附近原本有一圈涟漪状浮躁线条，现在正在向外消散、平息。桌面整洁，一盏暖色台灯亮着。米黄底色，台灯光暖黄，试卷白色，浮躁线条淡灰消散。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
       "label": "",
-      "overlays": [
-        {
-          "text": "充值",
-          "xPct": 50,
-          "yPct": 25,
-          "style": "os-stamp",
-          "animation": "oa-stamp-hit",
-          "delay": 200
-        }
-      ],
       "motion": {
         "enter": "zoom-in",
         "duration": 700
       }
     },
-    "mirror-future": {
-      "prompt": "扁平插画。画面中央一面椭圆形镜子，镜框深棕色。镜子里映出一个更年长的自己，正在抬头看回来。镜子前一个年轻人站着。米黄底色，镜框深棕，人物黑色。",
+    "promise-now": {
+      "prompt": "扁平插画。画面中央一只手掌，掌心朝上，上面有一个红色手印（约定印记）。手印旁边一杆小小的天平，天平一侧轻，一侧正在被细小的努力碎片慢慢压下。背景温暖明亮的米黄底，画面充满安定感。手黑色线条，手印朱砂红，天平深棕色，努力碎片金黄色。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
       "label": "",
       "overlays": [
         {
-          "text": "5年后",
+          "text": "约定",
           "pos": {
-            "x": 28,
-            "y": 30
+            "x": 50,
+            "y": 75
           },
           "style": {
-            "font": "ZS Fangsong",
-            "size": 56,
-            "weight": 700,
-            "color": "var(--ink)",
-            "rotation": -4
-          },
-          "motion": {
-            "enter": "fly-in",
-            "from": "left",
-            "duration": 500,
-            "delay": 200
-          }
-        },
-        {
-          "text": "10年后",
-          "pos": {
-            "x": 72,
-            "y": 30
-          },
-          "style": {
-            "font": "ZS Fangsong",
-            "size": 56,
+            "font": "XY Kaiti",
+            "size": 72,
             "weight": 700,
             "color": "var(--accent)",
-            "rotation": 4
+            "rotation": -3,
+            "letterSpacing": 0.08
           },
           "motion": {
-            "enter": "fly-in",
-            "from": "right",
-            "duration": 500,
-            "delay": 500
+            "enter": "handwrite",
+            "duration": 1000,
+            "delay": 400
           }
-        }
-      ],
-      "motion": {
-        "enter": "iris-in",
-        "duration": 900
-      }
-    },
-    "small-step": {
-      "prompt": "扁平插画。画面中央一只手正在合上一本笔记本（不是合上整个人生，只是收束这一刻）。笔记本旁边有一支铅笔。米黄底色，笔记本浅色，铅笔黑色。",
-      "label": "",
-      "overlays": [
-        {
-          "text": "今天先做一件小事",
-          "xPct": 50,
-          "yPct": 70,
-          "style": "os-handwrite",
-          "animation": "oa-fade",
-          "delay": 300
         }
       ],
       "motion": {
@@ -1407,8 +1580,8 @@
         "duration": 900
       }
     },
-    "thanks-note": {
-      "prompt": "扁平插画。画面中央一张便签纸，纸上写着一个红色的\"谢\"字（用空白红色方框代替）。便签的角微微卷起。米黄底色，便签米白，红字鲜艳。",
+    "thanks-future-self": {
+      "prompt": "扁平插画。画面中央一张便签纸，纸面中央是一个用红色墨水写就的大方框（空白，暗示\"谢\"字），红墨水有轻微晕染感。便签角微微卷起，便签边缘轻微阴影。便签下方留白处有几点散落的细小红墨水点（笔迹感）。整体色调温暖焕亮：米黄底，便签米白，红色方框鲜艳，阳光从左上角斜入。画面四周大面积留白；整张图不出现任何中文、英文、数字、标点。",
       "label": "",
       "overlays": [
         {
@@ -1422,7 +1595,8 @@
             "size": 64,
             "weight": 400,
             "color": "var(--ink-soft)",
-            "rotation": -3
+            "rotation": -3,
+            "letterSpacing": 0.06
           },
           "motion": {
             "enter": "handwrite",
@@ -1432,7 +1606,7 @@
         }
       ],
       "motion": {
-        "enter": "ink-bleed",
+        "enter": "iris-in",
         "duration": 900
       }
     }
