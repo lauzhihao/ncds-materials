@@ -15,6 +15,16 @@
   // 绝对 URL 的 dirname，用于 fetch episode.json 与同目录其它脚本
   const dirAbs = me.src.replace(/\/[^\/]+$/, '');
 
+  // Cache-bust 版本号：ncds.cc 的 nginx vhost 给 .css/.js 设了 immutable+30d，
+  // 预览阶段无法让用户每次都硬刷。bootstrap.js 给所有子资源 URL 附加
+  // ?v=<秒级时间戳>，确保每次加载都跨过 immutable cache 拿新版。
+  // 唯一例外：bootstrap.js 自己（被 HTML 静态引用）和 HTML，仍受 immutable
+  // 影响——但只要它们不变（罕见），其余 css/js/jsx/json/font 都新鲜。
+  const VER = Math.floor(Date.now() / 1000);
+  function busted(url) {
+    return url + (url.indexOf('?') >= 0 ? '&' : '?') + 'v=' + VER;
+  }
+
   function slugFromUrl(u) {
     const m = u.match(/\.([^\/]+)-assets$/);
     return m ? m[1] : null;
@@ -35,7 +45,7 @@
     if (document.querySelector('link[data-motion-css]')) return;
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = dirAbs + '/motion.css';
+    link.href = busted(dirAbs + '/motion.css');
     link.dataset.motionCss = 'true';
     document.head.appendChild(link);
   }
@@ -46,7 +56,9 @@
     if (!Array.isArray(fonts) || fonts.length === 0) return;
     const css = fonts.map((f) => {
       if (!f || !f.family || !f.src) return '';
-      const url = /^https?:|^\/|^data:/.test(f.src) ? f.src : (dirAbs + '/' + f.src);
+      // 字体也带 bust：woff2 改了名 / 内容变了 都能立刻生效（绝对 URL 不动）
+      const rawUrl = /^https?:|^\/|^data:/.test(f.src) ? f.src : (dirAbs + '/' + f.src);
+      const url = /^https?:|^data:/.test(rawUrl) ? rawUrl : busted(rawUrl);
       const fmt = f.format || 'woff2';
       return [
         '@font-face {',
@@ -68,7 +80,7 @@
   function injectScript(src) {
     return new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = src;
+      s.src = busted(src);
       s.onload = () => resolve();
       s.onerror = () => reject(new Error('inject failed: ' + src));
       document.body.appendChild(s);
@@ -78,7 +90,7 @@
   // type="text/babel" 的脚本若由 createElement 动态注入，浏览器会忽略且 Babel
   // standalone 默认只在 DOMContentLoaded 扫描一次。所以我们手动 fetch + 转译 + 内联挂载。
   async function injectBabel(src) {
-    const code = await fetch(src, { cache: 'no-cache' }).then(r => r.text());
+    const code = await fetch(busted(src), { cache: 'no-cache' }).then(r => r.text());
     if (!window.Babel) throw new Error('Babel standalone not loaded');
     const out = window.Babel.transform(code, {
       presets: ['react'],
@@ -93,7 +105,7 @@
   async function boot() {
     let ep;
     try {
-      const res = await fetch(dirAbs + '/episode.json', { cache: 'no-cache' });
+      const res = await fetch(busted(dirAbs + '/episode.json'), { cache: 'no-cache' });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       ep = await res.json();
     } catch (err) {
@@ -106,6 +118,7 @@
     // __assetsRoot 给 player.js 拼 audio/picture 路径用；保留相对路径以兼容 render.mjs 与 puppeteer base
     ep.__assetsRoot = '.' + slug + '-assets';
     ep.__slug = slug;
+    ep.__ver = VER;          // 暴露给 player.js / overlays.js 给 audio/picture URL 加 cache-bust
 
     injectFontFaces(ep.fonts, dirAbs);
     applyStaticDom(ep);

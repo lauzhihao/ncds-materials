@@ -10,9 +10,16 @@
 (function () {
   const EP = window.EPISODE || {};
   const ASSET_ROOT = EP.__assetsRoot || '.assets';
+  const VER = EP.__ver || Math.floor(Date.now() / 1000);
   const $ = (id) => document.getElementById(id);
   const beats = EP.beats || [];
   const scenes = EP.scenes || {};
+
+  // 给图片 / 音频 URL 加 cache-bust：ncds.cc 静态资源是 immutable+30d，
+  // 重新生图 / 重录音频后必须 ?v= 不同才能让浏览器拉新文件。
+  function bustedUrl(url) {
+    return url + (url.indexOf('?') >= 0 ? '&' : '?') + 'v=' + VER;
+  }
 
   // 字幕进场池：每条 beat 选一个，hash 确定性映射，headless 录制可复现
   const CAP_ENTERS = [
@@ -48,7 +55,7 @@
   const PIC_DIR = ASSET_ROOT + '/pictures';
   function picSrcFor(sceneId, index) {
     const nn = String(index + 1).padStart(2, '0');
-    return PIC_DIR + '/' + nn + '-' + sceneId + '.webp';
+    return bustedUrl(PIC_DIR + '/' + nn + '-' + sceneId + '.webp');
   }
 
   // 应用 scene 级 motion 配置：加 mo-scene-* class + 写 duration/easing CSS var
@@ -140,7 +147,7 @@
   const padWidth = Math.max(4, String(beats.length).length);
   const audioElements = beats.map((_, i) => {
     const a = new Audio();
-    a.src = `${ASSET_ROOT}/audio/${String(i + 1).padStart(padWidth, '0')}.mp3`;
+    a.src = bustedUrl(`${ASSET_ROOT}/audio/${String(i + 1).padStart(padWidth, '0')}.mp3`);
     a.preload = 'auto';
     return a;
   });
