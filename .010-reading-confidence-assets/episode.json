@@ -878,13 +878,9 @@
       "num": "一",
       "subtitle": "先把「读书没用」说清楚",
       "style": {
-        "numFont": "QK Naihei",
         "numSize": 360,
-        "numWeight": 700,
         "numAccentColor": "var(--accent)",
-        "subtitleFont": "QK Zhiya",
         "subtitleSize": 64,
-        "subtitleWeight": 400,
         "subtitleAlign": "left",
         "subtitleMaxWidth": 700,
         "rule": {
@@ -1017,13 +1013,9 @@
       "num": "二",
       "subtitle": "你逃避的不是作业，是未来的余地",
       "style": {
-        "numFont": "QK Naihei",
         "numSize": 360,
-        "numWeight": 700,
         "numAccentColor": "var(--accent)",
-        "subtitleFont": "QK Zhiya",
         "subtitleSize": 64,
-        "subtitleWeight": 400,
         "subtitleAlign": "left",
         "subtitleMaxWidth": 700,
         "rule": {
@@ -1181,13 +1173,9 @@
       "num": "三",
       "subtitle": "别把「不擅长」当成清醒",
       "style": {
-        "numFont": "QK Naihei",
         "numSize": 360,
-        "numWeight": 700,
         "numAccentColor": "var(--accent)",
-        "subtitleFont": "QK Zhiya",
         "subtitleSize": 64,
-        "subtitleWeight": 400,
         "subtitleAlign": "left",
         "subtitleMaxWidth": 700,
         "rule": {
@@ -1347,13 +1335,9 @@
       "num": "四",
       "subtitle": "父母不是想逼你，是想推你一把",
       "style": {
-        "numFont": "QK Naihei",
         "numSize": 360,
-        "numWeight": 700,
         "numAccentColor": "var(--accent)",
-        "subtitleFont": "QK Zhiya",
         "subtitleSize": 64,
-        "subtitleWeight": 400,
         "subtitleAlign": "left",
         "subtitleMaxWidth": 700,
         "rule": {
@@ -1440,13 +1424,9 @@
       "num": "五",
       "subtitle": "给未来的自己，留一句感谢",
       "style": {
-        "numFont": "QK Naihei",
         "numSize": 360,
-        "numWeight": 700,
         "numAccentColor": "var(--accent)",
-        "subtitleFont": "QK Zhiya",
         "subtitleSize": 64,
-        "subtitleWeight": 400,
         "subtitleAlign": "left",
         "subtitleMaxWidth": 700,
         "rule": {
