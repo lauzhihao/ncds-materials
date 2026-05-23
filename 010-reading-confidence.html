@@ -2,10 +2,9 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<title>你以为上不上学，只是你一个人的事吗？</title>
+<!-- 标题 / 品牌 / disclaimer / body class / 所有业务脚本全部由 bootstrap.js 从 episode.json 注入 -->
+<title></title>
 <meta name="viewport" content="width=1920">
-<!-- body 默认带 ken-burns 类（与 Tweaks 初值 kenBurns:true 同步）。Tweaks 加载后会接管 toggle，
-     先在这里挂上是为了让 player.js 首次 showBeat 时能正确读到 ken-burns 状态。 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +17,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
-<body class="ken-burns">
+<body>
 
 <div class="viewport">
   <div class="stage" id="stage">
@@ -32,10 +31,10 @@
             <path fill="currentColor" d="M136.6 138.79a64.003 64.003 0 0 0-43.31 41.35L0 460l14.69 14.69L164.8 324.58c-2.99-6.26-4.8-13.18-4.8-20.58c0-26.51 21.49-48 48-48s48 21.49 48 48s-21.49 48-48 48c-7.4 0-14.32-1.81-20.58-4.8L37.31 497.31L52 512l279.86-93.29a64.003 64.003 0 0 0 41.35-43.31L416 224L288 96l-151.4 42.79zm361.34-64.62l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55l128.02 128.02l56.55-56.55c18.75-18.75 18.75-49.15 0-67.91z"/>
           </svg>
         </div>
-        <div class="brand-title" id="brandTitle">你以为上不上学，只是你一个人的事吗？</div>
+        <div class="brand-title" id="brandTitle"></div>
       </div>
       <div></div>
-      <div class="disclaimer">观点仅供参考　无不良引导</div>
+      <div class="disclaimer"></div>
     </header>
 
     <!-- 中央卡片 -->
@@ -85,14 +84,8 @@
 })();
 </script>
 
-<script src=".010-reading-confidence-assets/image-slot.js"></script>
-<script src=".010-reading-confidence-assets/beats.js"></script>
-<script src=".010-reading-confidence-assets/overlays.js"></script>
-<script src=".010-reading-confidence-assets/player.js"></script>
-
-<!-- Tweaks 面板 -->
-<script type="text/babel" src=".010-reading-confidence-assets/tweaks-panel.jsx"></script>
-<script type="text/babel" src=".010-reading-confidence-assets/tweaks.jsx"></script>
+<!-- 唯一引擎入口：bootstrap.js fetch episode.json 并按依赖顺序加载其余脚本 -->
+<script src=".010-reading-confidence-assets/bootstrap.js"></script>
 
 </body>
 </html>

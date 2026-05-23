@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
-"""按 beats.js 顺序批量生成 audio/NNNN.mp3，走 DashScope CosyVoice。
+"""按 episode.json 的 beats 顺序批量生成 audio/NNNN.mp3，走 DashScope CosyVoice。
 
-- 模型：cosyvoice-v3-flash（plus / v3.5 系列当前 key 未开通）
-- 默认音色：longtian_v3（磁性理智男 · 咨询调）
-- 默认 rate=1.1，sample_rate=22050，mp3
+数据源：episode.json（audio.tts.{model,voice,sampleRate,rate,format} + beats[].zh）
+- 默认配置在 episode.json 里；环境变量仍可覆写：VOICE / RATE / COSY_MODEL / SAMPLE_RATE
 - 幂等：目标存在则跳过；--force 强制重生
-- 全部参数可用环境变量覆写：VOICE / RATE / COSY_MODEL / SAMPLE_RATE
 
 依赖：$DASHSCOPE_API_KEY。
 """
 import json
 import os
-import re
 import sys
 import time
 import urllib.error
@@ -19,32 +16,38 @@ import urllib.request
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-BEATS_JS = HERE / "beats.js"
+EPISODE_JSON = HERE / "episode.json"
 AUDIO_DIR = HERE / "audio"
 
 URL = "https://dashscope.aliyuncs.com/api/v1/services/audio/tts/SpeechSynthesizer"
-MODEL = os.environ.get("COSY_MODEL", "cosyvoice-v3-flash")
-VOICE = os.environ.get("VOICE", "longtian_v3")
-SAMPLE_RATE = int(os.environ.get("SAMPLE_RATE", "22050"))
-RATE = float(os.environ.get("RATE", "1.1"))
-
-ZH_PATTERN = re.compile(r'\bzh:\s*"((?:[^"\\]|\\.)*)"')
 
 
-def parse_beats(text: str) -> list[str]:
-    return [m.group(1) for m in ZH_PATTERN.finditer(text)]
+def load_episode() -> dict:
+    return json.loads(EPISODE_JSON.read_text(encoding="utf-8"))
 
 
-def synth(text: str, out_path: Path, attempts: int = 4) -> None:
+def load_tts_config(episode: dict) -> dict:
+    """合并 episode.audio.tts 与环境变量（环境变量优先）。"""
+    tts = (episode.get("audio") or {}).get("tts") or {}
+    return {
+        "model":       os.environ.get("COSY_MODEL")  or tts.get("model")      or "cosyvoice-v3-flash",
+        "voice":       os.environ.get("VOICE")       or tts.get("voice")      or "longtian_v3",
+        "sample_rate": int(os.environ.get("SAMPLE_RATE") or tts.get("sampleRate") or 22050),
+        "rate":        float(os.environ.get("RATE")  or tts.get("rate")       or 1.0),
+        "format":      tts.get("format") or "mp3",
+    }
+
+
+def synth(text: str, out_path: Path, *, cfg: dict, attempts: int = 4) -> None:
     api_key = os.environ["DASHSCOPE_API_KEY"]
     payload = {
-        "model": MODEL,
+        "model": cfg["model"],
         "input": {
             "text": text,
-            "voice": VOICE,
-            "format": "mp3",
-            "sample_rate": SAMPLE_RATE,
-            "rate": RATE,
+            "voice": cfg["voice"],
+            "format": cfg["format"],
+            "sample_rate": cfg["sample_rate"],
+            "rate": cfg["rate"],
         },
     }
     body = json.dumps(payload).encode("utf-8")
@@ -81,26 +84,28 @@ def main() -> int:
         return 2
     force = "--force" in sys.argv[1:]
 
-    beats = parse_beats(BEATS_JS.read_text(encoding="utf-8"))
-    if not beats:
-        print("No zh: entries found in beats.js", file=sys.stderr)
+    episode = load_episode()
+    cfg = load_tts_config(episode)
+    beats_zh = [b.get("zh", "") for b in episode.get("beats", []) if b.get("zh")]
+    if not beats_zh:
+        print("No zh entries found in episode.json beats[]", file=sys.stderr)
         return 2
 
     AUDIO_DIR.mkdir(exist_ok=True)
-    total = len(beats)
+    total = len(beats_zh)
     width = max(4, len(str(total)))
     new_count = 0
     skip_count = 0
 
-    print(f"target: {total} beats · model={MODEL} voice={VOICE} rate={RATE} sr={SAMPLE_RATE}")
-    for i, zh in enumerate(beats, start=1):
+    print(f"target: {total} beats · model={cfg['model']} voice={cfg['voice']} rate={cfg['rate']} sr={cfg['sample_rate']}")
+    for i, zh in enumerate(beats_zh, start=1):
         name = f"{i:0{width}d}.mp3"
         out = AUDIO_DIR / name
         if out.exists() and not force:
             skip_count += 1
             continue
         print(f"[{i:>{width}}/{total}] {zh[:32]}{'…' if len(zh) > 32 else ''}", flush=True)
-        synth(zh, out)
+        synth(zh, out, cfg=cfg)
         new_count += 1
         time.sleep(0.25)  # gentle throttle
 

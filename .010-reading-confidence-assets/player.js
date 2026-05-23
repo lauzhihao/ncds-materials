@@ -8,10 +8,11 @@
    ────────────────────────────────────────────────────────────────── */
 
 (function () {
-  const ASSET_ROOT = '.010-reading-confidence-assets';
+  const EP = window.EPISODE || {};
+  const ASSET_ROOT = EP.__assetsRoot || '.assets';
   const $ = (id) => document.getElementById(id);
-  const beats = window.BEATS || [];
-  const scenes = window.SCENES || {};
+  const beats = EP.beats || [];
+  const scenes = EP.scenes || {};
   const stack = $('sceneStack');
   const capZh = $('capZh');
   const capEn = $('capEn');

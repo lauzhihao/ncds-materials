@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
-"""按 SCENES 顺序本地调 gpt-image-2 生成插图，转 WebP 落库。
+"""按 SCENES 出场顺序本地调 gpt-image-2 生成插图，转 WebP 落库。
 
-- 输出尺寸：1536×1024（gpt-image-2 landscape 最高），落到 1640×740 的卡片
-  area 走 image-slot 默认 cover，上下各裁约 176px，提示词里要给出"上下方留白"
-  以避免主体被裁。
+数据源：episode.json（meta.slug / image.size / image.quality / image.noTextHint / beats / scenes）
+- 输出尺寸：image.size（默认 1536×1024 landscape）
 - 落地：pictures/NN-<scene-id>.webp，编号跟 SCENES 出场顺序对齐
 - 幂等：目标 webp 存在则跳过；--force 强制重生
 - 章节封面 ch1-ch5 跳过不生成（player.js 里走 CSS chapter-card 渲染）
 
-依赖：本机 Pillow（pip install Pillow），环境变量 GPT_IMAGE2_BASE_URL 和
-GPT_IMAGE2_API_KEY（在 ~/.zshrc 中），以及本机
-~/.codex/skills/gpt-image/scripts/gpt_image_gen.py。
+依赖：本机 Pillow（pip install Pillow），环境变量 GPT_IMAGE2_BASE_URL / GPT_IMAGE2_API_KEY，
+以及本机 ~/.codex/skills/gpt-image/scripts/gpt_image_gen.py。
 """
 import json
 import os
@@ -21,38 +19,38 @@ import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-BEATS_JS = HERE / "beats.js"
+EPISODE_JSON = HERE / "episode.json"
 PIC_DIR = HERE / "pictures"
 GEN_SCRIPT = Path.home() / ".codex/skills/gpt-image/scripts/gpt_image_gen.py"
-SIZE = os.environ.get("PIC_SIZE", "1536x1024")
-QUALITY = os.environ.get("PIC_QUALITY", "auto")
-NO_TEXT_SUFFIX = (
-    " 严格要求：整张图绝对不能出现任何中文字、汉字、英文字母、阿拉伯数字或者标点。"
-    " 所有标签、标牌、招牌、徽章、吊牌内部必须完全空白（留出贴标签的位置），"
-    " 不要画任何文字或文字纹理。"
-)
 
 
-def extract_scenes() -> list[dict]:
-    """node 进 assets 目录把 SCENES 按 BEATS 顺序 dump 成 JSON。"""
-    script = (
-        "global.window = global;"
-        "require('./beats.js');"
-        "const seen = new Set(), order = [];"
-        "for (const b of window.BEATS) { if (!seen.has(b.scene)) { seen.add(b.scene); order.push(b.scene); } }"
-        "process.stdout.write(JSON.stringify(order.map((id, idx) => ({"
-        "  id, index: idx, is_chapter: id.startsWith('ch'),"
-        "  prompt: (window.SCENES[id] || {}).prompt || ''"
-        "}))));"
-    )
-    res = subprocess.run(
-        ["node", "-e", script],
-        capture_output=True, text=True, cwd=str(HERE), check=True,
-    )
-    return json.loads(res.stdout)
+def load_episode() -> dict:
+    return json.loads(EPISODE_JSON.read_text(encoding="utf-8"))
 
 
-def generate_one(scene: dict, force: bool) -> str:
+def extract_scenes(episode: dict) -> list[dict]:
+    """按 BEATS 出场顺序返回去重的 scene 列表（含 prompt）。"""
+    beats = episode.get("beats", [])
+    scenes_def = episode.get("scenes", {})
+    seen: set[str] = set()
+    order: list[str] = []
+    for b in beats:
+        sid = b.get("scene")
+        if sid and sid not in seen:
+            seen.add(sid)
+            order.append(sid)
+    return [
+        {
+            "id": sid,
+            "index": i,
+            "is_chapter": sid.startswith("ch"),
+            "prompt": (scenes_def.get(sid) or {}).get("prompt", ""),
+        }
+        for i, sid in enumerate(order)
+    ]
+
+
+def generate_one(scene: dict, *, slug: str, no_text_hint: str, size: str, quality: str, force: bool) -> str:
     """Returns 'ok' | 'skipped' | 'failed'."""
     idx = scene["index"]
     sid = scene["id"]
@@ -61,20 +59,22 @@ def generate_one(scene: dict, force: bool) -> str:
     if out_path.exists() and not force:
         return "skipped"
 
-    prompt = scene["prompt"].strip() + NO_TEXT_SUFFIX
+    prompt = scene["prompt"].strip()
+    if no_text_hint:
+        prompt = prompt + " " + no_text_hint
 
-    gen_out_dir = Path("/tmp") / "gpt-image" / f"010-{nn}-{sid}"
+    gen_out_dir = Path("/tmp") / "gpt-image" / f"{slug}-{nn}-{sid}"
     shutil.rmtree(gen_out_dir, ignore_errors=True)
     gen_out_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"  [{nn}/{sid}] generating ({SIZE} {QUALITY})...", flush=True)
+    print(f"  [{nn}/{sid}] generating ({size} {quality})...", flush=True)
     t0 = time.time()
     res = subprocess.run(
         [
             "python3", str(GEN_SCRIPT),
             "--out-dir", str(gen_out_dir),
-            "--size", SIZE,
-            "--quality", QUALITY,
+            "--size", size,
+            "--quality", quality,
             "--overwrite",
             "--prompt", prompt,
         ],
@@ -90,7 +90,6 @@ def generate_one(scene: dict, force: bool) -> str:
         print(f"  ! [{nn}/{sid}] expected {local_png} not found", file=sys.stderr)
         return "failed"
 
-    # Convert PNG → WebP, write atomically
     try:
         from PIL import Image
     except ImportError:
@@ -114,19 +113,26 @@ def main() -> int:
     force = "--force" in sys.argv[1:]
     only = [a for a in sys.argv[1:] if not a.startswith("--")]
 
-    scenes = extract_scenes()
+    episode = load_episode()
+    slug = (episode.get("meta") or {}).get("slug") or "episode"
+    image_cfg = episode.get("image") or {}
+    size = os.environ.get("PIC_SIZE") or image_cfg.get("size") or "1536x1024"
+    quality = os.environ.get("PIC_QUALITY") or image_cfg.get("quality") or "auto"
+    no_text_hint = image_cfg.get("noTextHint") or ""
+
+    scenes = extract_scenes(episode)
     if only:
         scenes = [s for s in scenes if s["id"] in only]
         print(f"only scenes: {[s['id'] for s in scenes]}")
 
     total_eligible = sum(1 for s in scenes if not s["is_chapter"])
-    print(f"target: {total_eligible} scenes ({SIZE} {QUALITY})")
+    print(f"target: {total_eligible} scenes ({size} {quality})")
 
     ok = sk = fail = 0
     for s in scenes:
         if s["is_chapter"]:
             continue
-        result = generate_one(s, force=force)
+        result = generate_one(s, slug=slug, no_text_hint=no_text_hint, size=size, quality=quality, force=force)
         if result == "ok":
             ok += 1
         elif result == "skipped":
