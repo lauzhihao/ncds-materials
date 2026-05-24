@@ -67,8 +67,8 @@
       "scene": "title"
     },
     {
-      "zh": "但它是普通人最稳的那条。",
-      "en": "but for ordinary people, it's the steadiest road there is.",
+      "zh": "但它是普通人最近的那条。",
+      "en": "but for ordinary people, it's the shortest one there is.",
       "scene": "title"
     },
     {
@@ -787,7 +787,7 @@
       },
       "overlays": [
         {
-          "text": "最稳的那条路",
+          "text": "最近的那条路",
           "pos": {
             "x": 50,
             "y": 70
