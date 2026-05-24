@@ -67,8 +67,8 @@
       "scene": "title"
     },
     {
-      "zh": "但它是普通人最公平的那条。",
-      "en": "but for ordinary people, it's the fairest road there is.",
+      "zh": "但它是普通人最稳的那条。",
+      "en": "but for ordinary people, it's the steadiest road there is.",
       "scene": "title"
     },
     {
@@ -200,7 +200,7 @@
     },
     {
       "zh": "你逃避的是未来面对账单、房贷、工作压力时，",
-      "en": "You're dodging the moment, years from now, when bills, mortgage, and work pressure land in front of you",
+      "en": "The day bills, mortgage, and work pressure pile up on you—",
       "scene": "say-no-fail"
     },
     {
@@ -279,8 +279,8 @@
       "scene": "tomorrow-bill"
     },
     {
-      "zh": "别把「不擅长」当成清醒",
-      "en": "Don't dress up not being good at it as clear-headedness",
+      "zh": "别把「不擅长」当成借口",
+      "en": "Don't mistake \"I'm not good at it\" for an excuse",
       "scene": "ch3",
       "chapter": 3
     },
@@ -787,7 +787,7 @@
       },
       "overlays": [
         {
-          "text": "最公平的那条路",
+          "text": "最稳的那条路",
           "pos": {
             "x": 50,
             "y": 70
@@ -832,7 +832,30 @@
       "motion": {
         "enter": "wipe-left",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "天真",
+          "pos": {
+            "x": 80,
+            "y": 22
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 88,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -6,
+            "letterSpacing": 0.04,
+            "shadow": "2px 4px 0 rgba(0,0,0,.15)"
+          },
+          "motion": {
+            "enter": "elastic-pop",
+            "duration": 800,
+            "delay": 400
+          }
+        }
+      ]
     },
     "classroom-seat": {
       "prompt": "扁平插画。米黄底色，画面中央一张教室课桌椅，桌面上摊开课本、试卷、铅笔。座椅背后地面投出一个高大的成年人剪影（代表未来的自己），剪影朝向远方。桌椅黑色线条，剪影深棕色，试卷米白。",
@@ -864,7 +887,33 @@
       "motion": {
         "enter": "mask-grid",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "有道理",
+          "pos": {
+            "x": 50,
+            "y": 50
+          },
+          "style": {
+            "font": "Noto Sans SC",
+            "size": 72,
+            "weight": 900,
+            "color": "var(--accent)",
+            "rotation": 0,
+            "letterSpacing": 0.06,
+            "padding": "14px 32px",
+            "background": "rgba(251, 246, 232, .85)",
+            "border": "4px solid var(--accent)",
+            "borderRadius": 8
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 700,
+            "delay": 600
+          }
+        }
+      ]
     },
     "savings-jar": {
       "prompt": "扁平插画。米黄底色，画面中央一个透明储蓄罐，罐口正在掉入硬币状的圆形抽象图标（一些是齿轮、一些是地图标记、一些是握紧的小拳头），代表\"力气\"\"机会\"\"说不的资格\"。储蓄罐深棕色边框，硬币暖金黄色，拳头小图标红色。",
@@ -929,7 +978,34 @@
       "motion": {
         "enter": "flip-h",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "20",
+          "pos": {
+            "x": 50,
+            "y": 18
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 108,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.1)",
+            "padding": "8px 28px",
+            "background": "rgba(251, 246, 232, .75)",
+            "border": "5px solid var(--accent)",
+            "borderRadius": 999
+          },
+          "motion": {
+            "enter": "elastic-pop",
+            "duration": 800,
+            "delay": 1800
+          }
+        }
+      ]
     },
     "age-30-stuck": {
       "prompt": "扁平插画。米黄底色，画面中央一个三十岁左右的成年人坐在办公桌前，桌上堆着账单，桌角放着一个收拾好的小行李箱但他没有起身。桌椅深色，行李箱浅棕色，账单白色，人物黑色。",
@@ -937,7 +1013,34 @@
       "motion": {
         "enter": "flip-h",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "30",
+          "pos": {
+            "x": 82,
+            "y": 22
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 108,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.1)",
+            "padding": "8px 28px",
+            "background": "rgba(251, 246, 232, .75)",
+            "border": "5px solid var(--accent)",
+            "borderRadius": 999
+          },
+          "motion": {
+            "enter": "elastic-pop",
+            "duration": 800,
+            "delay": 300
+          }
+        }
+      ]
     },
     "age-40-weight": {
       "prompt": "扁平插画。米黄底色，画面中央一个四十岁左右的中年人，肩上压着三个抽象方块（标注用空白小图标代替：一栋小房子、一个小婴儿轮廓、一个老者拐杖），脚下是一条向后看的虚影路径。中年人黑色，方块深棕色，虚影浅灰。",
@@ -945,7 +1048,34 @@
       "motion": {
         "enter": "wipe-left",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "40",
+          "pos": {
+            "x": 82,
+            "y": 22
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 108,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.1)",
+            "padding": "8px 28px",
+            "background": "rgba(251, 246, 232, .75)",
+            "border": "5px solid var(--accent)",
+            "borderRadius": 999
+          },
+          "motion": {
+            "enter": "elastic-pop",
+            "duration": 800,
+            "delay": 300
+          }
+        }
+      ]
     },
     "race-going": {
       "prompt": "扁平插画。米黄底色，画面中央一条跑道，跑道上其他选手正朝前奔跑形成动态线条，跑道继续向远方延伸。无主角小人。跑道灰色，奔跑者剪影黑色，远方暖光。",
@@ -982,7 +1112,7 @@
     "ch3": {
       "type": "chapter",
       "num": "三",
-      "subtitle": "别把「不擅长」当成清醒",
+      "subtitle": "别把「不擅长」当成借口",
       "motion": {
         "enter": "ink-bleed",
         "duration": 900
@@ -1002,7 +1132,30 @@
       "motion": {
         "enter": "wipe-left",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "NO",
+          "pos": {
+            "x": 86,
+            "y": 78
+          },
+          "style": {
+            "font": "Noto Sans SC",
+            "size": 96,
+            "weight": 900,
+            "color": "var(--accent)",
+            "rotation": 8,
+            "letterSpacing": 0.06,
+            "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 700,
+            "delay": 600
+          }
+        }
+      ]
     },
     "no-chips-cards": {
       "prompt": "扁平插画。米黄底色，画面中央一张牌桌，桌面散落几张牌和很少的几个筹码。桌边一只手垂着没有出牌。牌桌深绿色，筹码暖金色，扑克牌米白，手部黑色线条。",
@@ -1034,7 +1187,31 @@
       "motion": {
         "enter": "slide-up",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "Today",
+          "pos": {
+            "x": 32,
+            "y": 50
+          },
+          "style": {
+            "font": "Inter",
+            "size": 80,
+            "weight": 600,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.04,
+            "shadow": "2px 4px 0 rgba(0,0,0,.15)"
+          },
+          "motion": {
+            "enter": "fly-in",
+            "duration": 700,
+            "delay": 400,
+            "from": "left"
+          }
+        }
+      ]
     },
     "more-options": {
       "prompt": "扁平插画。米黄底色，画面中央一片广阔空间内，三四条路从同一起点呈扇形向远处分叉，每条路上各有一个小图标（齿轮/麦穗/钥匙/罗盘），近景一个小人胸口位置长出一只手主动指向其中一条路。路灰色，图标暖红色，小人黑色，主动伸出的手红色。",
@@ -1050,7 +1227,114 @@
       "motion": {
         "enter": "fade",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "坚持",
+          "pos": {
+            "x": 50,
+            "y": 17
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 42,
+            "weight": 400,
+            "color": "#1c1a16",
+            "rotation": 0,
+            "letterSpacing": 0.02,
+            "shadow": "1px 2px 0 rgba(0,0,0,.1)"
+          },
+          "motion": {
+            "enter": "zoom-pop",
+            "duration": 600,
+            "delay": 500
+          }
+        },
+        {
+          "text": "理解",
+          "pos": {
+            "x": 35,
+            "y": 30
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 42,
+            "weight": 400,
+            "color": "#1c1a16",
+            "rotation": 0,
+            "letterSpacing": 0.02,
+            "shadow": "1px 2px 0 rgba(0,0,0,.1)"
+          },
+          "motion": {
+            "enter": "zoom-pop",
+            "duration": 600,
+            "delay": 1100
+          }
+        },
+        {
+          "text": "判断",
+          "pos": {
+            "x": 66,
+            "y": 30
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 42,
+            "weight": 400,
+            "color": "#1c1a16",
+            "rotation": 0,
+            "letterSpacing": 0.02,
+            "shadow": "1px 2px 0 rgba(0,0,0,.1)"
+          },
+          "motion": {
+            "enter": "zoom-pop",
+            "duration": 600,
+            "delay": 1700
+          }
+        },
+        {
+          "text": "抗压",
+          "pos": {
+            "x": 35,
+            "y": 50
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 42,
+            "weight": 400,
+            "color": "#1c1a16",
+            "rotation": 0,
+            "letterSpacing": 0.02,
+            "shadow": "1px 2px 0 rgba(0,0,0,.1)"
+          },
+          "motion": {
+            "enter": "zoom-pop",
+            "duration": 600,
+            "delay": 2300
+          }
+        },
+        {
+          "text": "本事",
+          "pos": {
+            "x": 66,
+            "y": 50
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 42,
+            "weight": 400,
+            "color": "#1c1a16",
+            "rotation": 0,
+            "letterSpacing": 0.02,
+            "shadow": "1px 2px 0 rgba(0,0,0,.1)"
+          },
+          "motion": {
+            "enter": "zoom-pop",
+            "duration": 600,
+            "delay": 2900
+          }
+        }
+      ]
     },
     "not-talent": {
       "prompt": "扁平插画。米黄底色，画面中央一个小人手里举着一张面具，面具是一个空白的红色方框（暗示\"不擅长\"的标签）。小人正在把面具往自己脸上扣。小人黑色，面具深棕色边框，红色方框饱和。",
@@ -1058,7 +1342,30 @@
       "motion": {
         "enter": "zoom-in",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "我不行",
+          "pos": {
+            "x": 50,
+            "y": 18
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 84,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.06,
+            "shadow": "2px 4px 0 rgba(0,0,0,.15)"
+          },
+          "motion": {
+            "enter": "handwrite",
+            "duration": 900,
+            "delay": 400
+          }
+        }
+      ]
     },
     "effort-first": {
       "prompt": "扁平插画。米黄底色，画面中央一架天平，左盘装着许多小汗珠和小拳头图标（代表\"努力\"），右盘只放着一个很大但空荡的方框（代表\"天赋\"）。左盘明显下沉。天平深棕色，汗珠浅蓝，拳头红色，方框暗灰。",
@@ -1074,7 +1381,30 @@
       "motion": {
         "enter": "push-right",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "？",
+          "pos": {
+            "x": 84,
+            "y": 22
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 160,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": 12,
+            "letterSpacing": 0,
+            "shadow": "3px 6px 0 rgba(0,0,0,.18)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 700,
+            "delay": 600
+          }
+        }
+      ]
     },
     "sit-down-learn": {
       "prompt": "扁平插画。米黄底色，画面中央一张空着的书桌椅，桌面摊开课本和笔。地面散落几本未读过的书。空荡的座椅暗示\"没有真的坐下来\"。书桌深棕色，课本米白，座椅黑色线条。",
@@ -1106,17 +1436,7 @@
       "motion": {
         "enter": "wipe-circle",
         "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "有能力之后才有选择",
-          "xPct": 50,
-          "yPct": 75,
-          "style": "os-handwrite",
-          "animation": "oa-fade",
-          "delay": 300
-        }
-      ]
+      }
     },
     "pushed-by-reality": {
       "prompt": "扁平插画。米黄底色，画面中央一只巨大的灰色手掌从画面右侧伸过来，正在用力推一个小人往左走，小人脚步打滑、肩膀被推得歪斜，地面是一条被动延伸的灰色路径。大手深灰色，小人黑色，路径浅灰。",
@@ -1124,7 +1444,30 @@
       "motion": {
         "enter": "push-left",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "现实",
+          "pos": {
+            "x": 82,
+            "y": 78
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 92,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -6,
+            "letterSpacing": 0.08,
+            "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 500
+          }
+        }
+      ]
     },
     "ch4": {
       "type": "chapter",
@@ -1272,7 +1615,31 @@
       "motion": {
         "enter": "push-right",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "读书 ≠ 考试",
+          "pos": {
+            "x": 22,
+            "y": 16
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 56,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.06,
+            "shadow": "2px 4px 0 rgba(0,0,0,.15)"
+          },
+          "motion": {
+            "enter": "fly-in",
+            "duration": 700,
+            "delay": 400,
+            "from": "top"
+          }
+        }
+      ]
     },
     "visible-path": {
       "prompt": "扁平插画。米黄底色，画面中央一条朴素的乡间小路从近景铺向远方地平线，路两侧是田野和电线杆。一个小人正迈步走在路上，远处有暖光。路深灰色，田野浅黄绿，电线杆黑色，小人黑色，远方暖光。",
@@ -1312,7 +1679,30 @@
       "motion": {
         "enter": "glitch",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "2031",
+          "pos": {
+            "x": 80,
+            "y": 50
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 120,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 400
+          }
+        }
+      ]
     },
     "persist-or-mix": {
       "prompt": "扁平插画。米黄底色，画面中央一个十字岔路口，左侧一条路明亮通向远方暖光（坚持），右侧一条路暗淡通向地平线下的雾气（混过去）。中间一个小人站着权衡。明亮路浅暖色，暗路深灰雾蓝，小人黑色。",
@@ -1328,7 +1718,30 @@
       "motion": {
         "enter": "zoom-in",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "2036",
+          "pos": {
+            "x": 24,
+            "y": 18
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 110,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 400
+          }
+        }
+      ]
     },
     "mirror-thanks-blame": {
       "prompt": "扁平插画。米黄底色，画面中央一面双面镜：左侧镜面里映出一个露出笑容的自己（感谢过去坚持）；右侧镜面里映出一个皱眉的自己（埋怨当年放弃）。镜框深棕色，左侧暖红光，右侧冷灰光。",
@@ -1368,7 +1781,31 @@
       "motion": {
         "enter": "glitch",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "任务",
+          "pos": {
+            "x": 50,
+            "y": 50
+          },
+          "style": {
+            "font": "Noto Sans SC",
+            "size": 120,
+            "weight": 900,
+            "color": "#4a4639",
+            "rotation": -3,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.12)",
+            "textDecoration": "line-through 6px var(--accent)"
+          },
+          "motion": {
+            "enter": "zoom-pop",
+            "duration": 700,
+            "delay": 500
+          }
+        }
+      ]
     },
     "thanks-note": {
       "prompt": "扁平插画。米黄底色，画面中央一张便签纸悬浮在画面中央，纸上是一个鲜艳的红色空白方框（暗示\"谢\"字位置，不写文字）。便签的角微微卷起。便签米白，红色方框饱和，背景留白。",
@@ -1379,21 +1816,23 @@
       },
       "overlays": [
         {
-          "text": "感谢现在的自己",
+          "text": "谢",
           "pos": {
-            "x": 50,
-            "y": 75
+            "x": 45,
+            "y": 50
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 64,
+            "size": 300,
             "weight": 400,
-            "color": "var(--ink-soft)",
-            "rotation": -3
+            "color": "#ffffff",
+            "rotation": -2,
+            "letterSpacing": 0,
+            "shadow": "6px 10px 0 rgba(0,0,0,.18)"
           },
           "motion": {
-            "enter": "handwrite",
-            "duration": 1100,
+            "enter": "ink-bleed",
+            "duration": 1500,
             "delay": 600
           }
         }
