@@ -328,7 +328,30 @@ body.ken-burns .scene {
   opacity: .8;
   min-width: 92px;
   text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
+.controls .progress-input {
+  width: 44px;
+  padding: 2px 4px;
+  background: rgba(255,255,255,.10);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.20);
+  border-radius: 6px;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  outline: none;
+  transition: background .15s, border-color .15s;
+}
+.controls .progress-input:focus {
+  background: rgba(255,255,255,.18);
+  border-color: var(--accent);
+  opacity: 1;
+}
+.controls .progress-sep { opacity: .6; }
 
 .controls input[type=range] { width: 100px; accent-color: var(--accent); }
 .controls select {

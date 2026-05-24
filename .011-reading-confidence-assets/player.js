@@ -92,8 +92,18 @@
   const stack = $('sceneStack');
   const capZh = $('capZh');
   const capEn = $('capEn');
-  const progress = $('progress');
+  const progressInput = $('progressInput');
+  const progressTotal = $('progressTotal');
   const band = $('band');
+
+  // 进度更新：把 beat 序号(1-based) 与总数分别写入 input/total
+  // 当用户正在编辑 input 时不覆盖，避免冲掉他正在输入的数字
+  function setProgress(curIdx1) {
+    if (progressTotal) progressTotal.textContent = String(beats.length);
+    if (progressInput && document.activeElement !== progressInput) {
+      progressInput.value = String(curIdx1);
+    }
+  }
 
   const sceneNodes = {};
   sceneOrder.forEach((id, i) => {
@@ -239,7 +249,7 @@
       sceneEl.style.transition = '';
     }
 
-    progress.textContent = (i + 1) + ' / ' + beats.length;
+    setProgress(i + 1);
     fitBand();
   }
 
@@ -380,6 +390,35 @@
   $('prevBtn').addEventListener('click', () => jumpTo(cur - 1));
   $('nextBtn').addEventListener('click', () => jumpTo(cur + 1));
 
+  // 进度输入：聚焦时全选方便覆盖；回车解析 → jumpTo；Esc 取消恢复当前条号
+  if (progressInput) {
+    progressInput.addEventListener('focus', () => {
+      try { progressInput.select(); } catch (_) {}
+    });
+    progressInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const n = parseInt(progressInput.value, 10);
+        if (Number.isFinite(n) && n >= 1 && n <= beats.length) {
+          progressInput.blur();
+          jumpTo(n - 1);
+        } else {
+          // 不合法 → 回填当前条号
+          progressInput.value = String(cur + 1);
+          progressInput.blur();
+        }
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        progressInput.value = String(cur + 1);
+        progressInput.blur();
+      }
+    });
+    // 失焦时若用户没回车直接点别处，恢复当前条号
+    progressInput.addEventListener('blur', () => {
+      progressInput.value = String(cur + 1);
+    });
+  }
+
   $('rate').addEventListener('input', () => {
     const r = parseFloat($('rate').value) || 1;
     const a = audioElements[cur];
@@ -405,7 +444,7 @@
     }
     capZh.textContent = '';
     capEn.textContent = '';
-    progress.textContent = '1 / ' + beats.length;
+    setProgress(1);
 
     const countdown = $('recCountdown');
     let n = 3;
@@ -442,6 +481,8 @@
       return;
     }
     if (isRecording) return;
+    // 进度输入聚焦时，空格 / 左右键留给输入框本身（编辑数字）
+    if (document.activeElement === progressInput) return;
     if (e.key === ' ') {
       e.preventDefault();
       playing ? pause() : play();
@@ -465,7 +506,7 @@
     for (const id of sceneOrder) sceneNodes[id].classList.remove('active');
     capZh.textContent = '';
     capEn.textContent = '';
-    progress.textContent = '1 / ' + beats.length;
+    setProgress(1);
 
     if (opts.scripted) {
       playing = true;
