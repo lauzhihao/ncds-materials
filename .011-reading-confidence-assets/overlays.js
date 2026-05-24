@@ -62,7 +62,7 @@
   function hasStyleKeys(s) {
     if (!s || typeof s !== 'object') return false;
     return ['font', 'size', 'weight', 'color', 'rotation', 'letterSpacing',
-            'shadow', 'padding', 'background', 'border', 'borderRadius', 'textDecoration'].some(k => s[k] != null);
+            'shadow', 'padding', 'background', 'border', 'borderRadius', 'textDecoration', 'whiteSpace'].some(k => s[k] != null);
   }
 
   function applyStyleObject(el, s) {
@@ -77,6 +77,7 @@
     if (s.border)       el.style.border = s.border;
     if (s.borderRadius != null) el.style.borderRadius = s.borderRadius + 'px';
     if (s.textDecoration) el.style.textDecoration = s.textDecoration;
+    if (s.whiteSpace) el.style.whiteSpace = s.whiteSpace;  // 支持 pre-line 让 text 里的 \n 渲染换行
     if (s.rotation != null) el.style.setProperty('--os-rotate', s.rotation + 'deg');
   }
 
