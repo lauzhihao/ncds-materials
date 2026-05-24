@@ -1818,12 +1818,12 @@
         {
           "text": "Thank\nYou",
           "pos": {
-            "x": 45,
+            "x": 50,
             "y": 50
           },
           "style": {
             "font": "Inter",
-            "size": 120,
+            "size": 96,
             "weight": 800,
             "color": "var(--accent)",
             "rotation": -2,
