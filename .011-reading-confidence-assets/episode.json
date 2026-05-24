@@ -1823,12 +1823,12 @@
           },
           "style": {
             "font": "Inter",
-            "size": 168,
-            "weight": 700,
-            "color": "#ffffff",
+            "size": 120,
+            "weight": 800,
+            "color": "var(--accent)",
             "rotation": -2,
             "letterSpacing": 0.02,
-            "shadow": "6px 10px 0 rgba(0,0,0,.18)",
+            "shadow": "3px 5px 0 rgba(0,0,0,.15)",
             "whiteSpace": "pre-line"
           },
           "motion": {
