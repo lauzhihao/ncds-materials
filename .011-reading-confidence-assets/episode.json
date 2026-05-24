@@ -1823,9 +1823,9 @@
           },
           "style": {
             "font": "Inter",
-            "size": 96,
+            "size": 80,
             "weight": 800,
-            "color": "var(--accent)",
+            "color": "var(--band-text)",
             "rotation": -2,
             "letterSpacing": 0.02,
             "shadow": "3px 5px 0 rgba(0,0,0,.15)",
