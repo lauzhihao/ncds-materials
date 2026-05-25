@@ -15,7 +15,7 @@
   "fonts": [
     {
       "family": "XY Kaiti",
-      "src": "fonts/xy-kaiti/Regular.woff2",
+      "src": "/fonts/xy-kaiti/Regular.woff2",
       "weight": 400,
       "style": "normal",
       "format": "woff2",
@@ -23,7 +23,7 @@
     },
     {
       "family": "ZS Fangsong",
-      "src": "fonts/zs-fangsong/Regular.woff2",
+      "src": "/fonts/zs-fangsong/Regular.woff2",
       "weight": 400,
       "style": "normal",
       "format": "woff2",
