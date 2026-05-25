@@ -1019,12 +1019,12 @@
       },
       "overlays": [
         {
-          "text": "它需要你",
+          "text": "I Need You!",
           "pos": { "x": 50, "y": 78 },
           "style": {
-            "font": "XY Kaiti", "size": 72, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.08, "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "font": "Inter", "size": 80, "weight": 700,
+            "color": "var(--accent)", "rotation": -4,
+            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.16)"
           },
           "motion": { "enter": "handwrite", "duration": 1100, "delay": 500 }
         }
@@ -1039,12 +1039,12 @@
       },
       "overlays": [
         {
-          "text": "太懂你",
+          "text": "I Know You!",
           "pos": { "x": 50, "y": 80 },
           "style": {
-            "font": "XY Kaiti", "size": 72, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.08, "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "font": "Inter", "size": 80, "weight": 700,
+            "color": "var(--accent)", "rotation": -4,
+            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.16)"
           },
           "motion": { "enter": "ink-bleed", "duration": 1000, "delay": 500 }
         }
@@ -1059,25 +1059,19 @@
       },
       "overlays": [
         {
-          "text": "-10%",
-          "pos": {
-            "x": 60,
-            "y": 58
-          },
+          "text": "You save 10%",
+          "pos": { "x": 60, "y": 58 },
           "style": {
-            "font": "Inter",
-            "size": 90,
-            "weight": 700,
-            "color": "#ffffff",
-            "rotation": -8,
+            "font": "Inter", "size": 64, "weight": 700,
+            "color": "var(--accent)", "rotation": -6,
             "letterSpacing": 0.02,
-            "shadow": "3px 5px 0 rgba(0,0,0,.2)"
+            "background": "rgba(255,253,247,.94)",
+            "padding": "8px 20px",
+            "border": "4px solid var(--accent)",
+            "borderRadius": 8,
+            "shadow": "4px 6px 0 rgba(0,0,0,.18)"
           },
-          "motion": {
-            "enter": "stamp",
-            "duration": 700,
-            "delay": 500
-          }
+          "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
         }
       ]
     },
@@ -1130,14 +1124,14 @@
       },
       "overlays": [
         {
-          "text": "情绪最低时",
+          "text": "按住那只手",
           "pos": { "x": 50, "y": 80 },
           "style": {
-            "font": "XY Kaiti", "size": 58, "weight": 400,
+            "font": "XY Kaiti", "size": 64, "weight": 400,
             "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+            "letterSpacing": 0.08, "shadow": "2px 4px 0 rgba(0,0,0,.14)"
           },
-          "motion": { "enter": "typewriter", "duration": 1200, "delay": 500 }
+          "motion": { "enter": "handwrite", "duration": 1100, "delay": 500 }
         }
       ]
     },
