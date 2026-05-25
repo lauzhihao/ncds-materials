@@ -3,11 +3,11 @@
   "__doc__": "暖纸卡片口播视频 per-episode 元数据，唯一真理源。HTML/JS/TTS/图生图全部从这个文件读取；引擎层文件 (player.js / overlays.js / tweaks*.jsx / styles.css / HTML 骨架) 不含任何 per-episode 字段。",
   "meta": {
     "slug": "012-not-fooled",
-    "title": "别再被算法套路了：互联网+AI 时代的省钱信息差",
-    "brandTitle": "别再被算法套路了：互联网+AI 时代的省钱信息差",
+    "title": "别再上算法的当",
+    "brandTitle": "别再上算法的当",
     "disclaimer": "观点仅供参考　无不良引导",
     "titleOptions": [
-      "别再被算法套路了：互联网+AI 时代的省钱信息差",
+      "别再上算法的当",
       "同一杯咖啡，凭什么别人只花一半的钱？",
       "不上当：下单之前停五分钟"
     ]
@@ -87,8 +87,8 @@
       "scene": "title"
     },
     {
-      "zh": "一、一杯咖啡，藏着一场信息差",
-      "en": "I. One cup of coffee, one whole information gap",
+      "zh": "一杯咖啡，藏着一场信息差",
+      "en": "One cup of coffee, one whole information gap",
       "scene": "ch1",
       "chapter": 1
     },
@@ -213,8 +213,8 @@
       "scene": "info-gap"
     },
     {
-      "zh": "二、算法时代的两套话术",
-      "en": "II. The two scripts of the algorithmic age",
+      "zh": "算法时代的两套话术",
+      "en": "The two scripts of the algorithmic age",
       "scene": "ch2",
       "chapter": 2
     },
@@ -354,8 +354,8 @@
       "scene": "emotion-low"
     },
     {
-      "zh": "三、我们为什么愿意付「智商税」",
-      "en": "III. Why we willingly pay the \"idiot tax\"",
+      "zh": "我们为什么愿意付「智商税」",
+      "en": "Why we willingly pay the \"idiot tax\"",
       "scene": "ch3",
       "chapter": 3
     },
@@ -485,8 +485,8 @@
       "scene": "anxiety-business"
     },
     {
-      "zh": "四、你不是在花钱，是在花注意力",
-      "en": "IV. You're not spending money, you're spending attention",
+      "zh": "你不是在花钱，是在花注意力",
+      "en": "You're not spending money, you're spending attention",
       "scene": "ch4",
       "chapter": 4
     },
@@ -616,8 +616,8 @@
       "scene": "one-week-later"
     },
     {
-      "zh": "五、五分钟，把决策权拿回手里",
-      "en": "V. Five minutes — taking the decision back into your hands",
+      "zh": "五分钟，把决策权拿回手里",
+      "en": "Five minutes — taking the decision back into your hands",
       "scene": "ch5",
       "chapter": 5
     },
@@ -1153,12 +1153,12 @@
       },
       "overlays": [
         {
-          "text": "+¥2000",
+          "text": "仅需两千！",
           "pos": { "x": 70, "y": 30 },
           "style": {
-            "font": "Inter", "size": 86, "weight": 700,
+            "font": "XY Kaiti", "size": 70, "weight": 400,
             "color": "var(--accent)", "rotation": -6,
-            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+            "letterSpacing": 0.06, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
           },
           "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
         }
