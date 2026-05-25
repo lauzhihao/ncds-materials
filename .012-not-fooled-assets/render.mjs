@@ -27,6 +27,12 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+// 跨平台 chrome 路径：env 覆盖 > mac > linux 默认
+const CHROME_PATH = process.env.PUPPETEER_EXECUTABLE_PATH
+  || (process.platform === 'darwin'
+        ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+        : '/usr/bin/google-chrome');
+
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(HERE, '..');
 const AUDIO_DIR = path.join(HERE, 'audio');
@@ -119,7 +125,7 @@ async function main() {
 
   log('launching headless chrome');
   const browser = await puppeteer.launch({
-    executablePath: '/usr/bin/google-chrome',
+    executablePath: CHROME_PATH,
     headless: 'new',
     protocolTimeout: 15 * 60 * 1000, // 整片 ~6:15，默认 180s 不够 waitForFunction 蹲到尾
     args: [
