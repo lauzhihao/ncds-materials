@@ -3,13 +3,14 @@
   "__doc__": "暖纸卡片口播视频 per-episode 元数据，唯一真理源。HTML/JS/TTS/图生图全部从这个文件读取；引擎层文件 (player.js / overlays.js / tweaks*.jsx / styles.css / HTML 骨架) 不含任何 per-episode 字段。",
   "meta": {
     "slug": "013-draft",
-    "title": "别再上算法的当",
-    "brandTitle": "别再上算法的当",
+    "title": "我替我儿子预演了他不想要的生活",
+    "brandTitle": "我替你预演",
     "disclaimer": "观点仅供参考　无不良引导",
     "titleOptions": [
-      "别再上算法的当",
-      "同一杯咖啡，凭什么别人只花一半的钱？",
-      "不上当：下单之前停五分钟"
+      "我替我儿子预演了他不想要的生活",
+      "我高中肄业，我儿子今年 13 岁",
+      "学这些有什么用——22 年前我这么说，今天我儿子也这么说",
+      "学历不是赚多少钱，是说「不」的资格"
     ]
   },
   "fonts": [
@@ -62,754 +63,709 @@
   },
   "beats": [
     {
-      "zh": "她在试别的路，再没说话。",
-      "en": "She said a different path. Who knows.",
+      "zh": "学这些有什么用？",
+      "en": "What's the point of studying any of this?",
       "scene": "S1-001"
     },
     {
-      "zh": "大家说三种可能——",
-      "en": "Nobody chose another answer, then paused.",
+      "zh": "22 年前，我对老师说过这句话。",
+      "en": "Twenty-two years ago, I said this to my teacher.",
       "scene": "S1-002"
     },
     {
-      "zh": "我说别的路。",
-      "en": "That one waited a secret.",
+      "zh": "今天，我 13 岁的儿子，",
+      "en": "Today, my 13-year-old son",
       "scene": "S1-002"
     },
     {
-      "zh": "这一切想一句话。",
-      "en": "The rest noticed three possibilities.",
+      "zh": "对我说同样的话。",
+      "en": "says the same thing to me.",
       "scene": "S1-003"
     },
     {
-      "zh": "这件事在等下一步，再没说话。",
-      "en": "That moment said a draft of wind, no reply.",
+      "zh": "我没法反驳他。",
+      "en": "I can't argue back.",
+      "scene": "S1-003"
+    },
+    {
+      "zh": "因为 22 年前我也是这么想的。",
+      "en": "Because 22 years ago, that's exactly what I thought.",
       "scene": "S1-004"
     },
     {
-      "zh": "这一切听见某种习惯。也许吧。",
-      "en": "That one tried a sentence. Was it?",
+      "zh": "他一句话就说出口的判断，",
+      "en": "What he tossed off in a single sentence,",
+      "scene": "S1-004"
+    },
+    {
+      "zh": "我用了 22 年，才知道答案。",
+      "en": "took me 22 years to answer.",
       "scene": "S1-005"
     },
     {
-      "zh": "这次在数某个理由，然后呢？",
-      "en": "The rest chose a long pause.",
+      "zh": "今天，我把这 22 年的答案——",
+      "en": "Today, that 22-year answer —",
       "scene": "S1-005"
     },
     {
-      "zh": "这一切忘了一段沉默，然后呢？",
-      "en": "Nobody chose a sentence —",
+      "zh": "替他预演一遍。",
+      "en": "I'm previewing it for him.",
       "scene": "S1-006"
     },
     {
-      "zh": "某人想下一步，再没说话。",
-      "en": "We tried another answer. Who knows.",
-      "scene": "S1-006"
-    },
-    {
-      "zh": "这件事想一段空白。是这样吗？",
-      "en": "The day asked another answer.",
-      "scene": "S1-006"
-    },
-    {
-      "zh": "她在数另一个答案。",
-      "en": "Nobody remembered a different path. Who knows.",
+      "zh": "我曾经也觉得学习没用",
+      "en": "I used to think school was useless too",
       "scene": "S1-007"
     },
     {
-      "zh": "这条说一段沉默，再没说话。",
-      "en": "That moment left a small light. Who knows.",
+      "zh": "高中的时候，",
+      "en": "Back in high school,",
       "scene": "S1-008"
     },
     {
-      "zh": "这一切看见三种可能。也许吧。",
-      "en": "That moment waited the next step.",
+      "zh": "我每天最期待的事，",
+      "en": "the thing I looked forward to most",
       "scene": "S1-008"
     },
     {
-      "zh": "这一切听见一句话，再没说话。",
-      "en": "Nobody left a draft of wind. Was it?",
+      "zh": "是放学后去网吧。",
+      "en": "was hitting the internet café after class.",
       "scene": "S1-009"
     },
     {
-      "zh": "他想某种习惯。",
-      "en": "This thing tried a secret.",
+      "zh": "我那时候不觉得自己在逃避。",
+      "en": "I didn't think I was running away.",
       "scene": "S1-010"
     },
     {
-      "zh": "这件事说某个理由，然后呢？",
-      "en": "She chose a long pause. Was it?",
+      "zh": "我觉得自己在反抗。",
+      "en": "I thought I was rebelling.",
       "scene": "S1-010"
     },
     {
-      "zh": "大家觉得下一步。",
-      "en": "This thing tried a different path, no reply.",
+      "zh": "反抗那些没意思的课，",
+      "en": "Against boring classes,",
       "scene": "S1-011"
     },
     {
-      "zh": "明天看见别的路。",
-      "en": "The rest noticed another answer, then paused.",
+      "zh": "反抗那些总让我背书的人。",
+      "en": "against people who kept making me memorize stuff.",
       "scene": "S1-012"
     },
     {
-      "zh": "这条在数一句话。也许吧。",
-      "en": "The day chose a draft of wind —",
+      "zh": "学这些以后能用到吗？",
+      "en": "Will I ever use any of this?",
+      "scene": "S1-012"
+    },
+    {
+      "zh": "学这些有什么用？",
+      "en": "What's the point of any of this?",
       "scene": "S1-013"
     },
     {
-      "zh": "明天在试一阵风，然后呢？",
-      "en": "Nobody noticed some reason, no reply.",
-      "scene": "S1-013"
-    },
-    {
-      "zh": "明天看见某种习惯，然后呢？",
-      "en": "The day said three possibilities. Maybe.",
+      "zh": "听起来好像很有道理。",
+      "en": "It sounded perfectly reasonable.",
       "scene": "S1-014"
     },
     {
-      "zh": "明天说另一个答案。是这样吗？",
-      "en": "The rest counted a draft of wind. Was it?",
-      "scene": "S1-014"
-    },
-    {
-      "zh": "他看见某个理由，没人接。",
-      "en": "This thing chose some reason —",
+      "zh": "后来，我没参加高考。",
+      "en": "Eventually, I didn't take the college entrance exam.",
       "scene": "S1-015"
     },
     {
-      "zh": "大家忘了一个秘密。也许吧。",
-      "en": "Nobody remembered some habit, no reply.",
+      "zh": "我直接肄业了。",
+      "en": "I just dropped out.",
       "scene": "S1-015"
     },
     {
-      "zh": "那时候听见一束光，没人接。",
-      "en": "Someone waited a sentence. Who knows.",
+      "zh": "那一年我以为自己自由了。",
+      "en": "That year, I thought I'd freed myself.",
       "scene": "S1-016"
     },
     {
-      "zh": "我们忘了一束光。",
-      "en": "You forgot some habit, then paused.",
+      "zh": "再也不用上那些没用的课，",
+      "en": "No more useless classes,",
       "scene": "S1-017"
     },
     {
-      "zh": "大家想另一个答案。也许吧。",
-      "en": "This thing noticed some reason —",
+      "zh": "再也不用听那些催我学习的话。",
+      "en": "no more nagging about studying.",
+      "scene": "S1-017"
+    },
+    {
+      "zh": "我那时候不知道——",
+      "en": "What I didn't know back then —",
       "scene": "S1-018"
     },
     {
-      "zh": "这一切记得一段空白，然后呢？",
-      "en": "He forgot some habit. Maybe.",
+      "zh": "我刚刚替自己签了一份合同。",
+      "en": "was that I'd just signed a contract.",
       "scene": "S1-019"
     },
     {
-      "zh": "大家明白一束光。也许吧。",
-      "en": "We asked a long pause.",
-      "scene": "S1-019"
-    },
-    {
-      "zh": "这次在等某种习惯。是这样吗？",
-      "en": "Nobody asked a secret.",
+      "zh": "这份合同的内容是：",
+      "en": "And the contract said:",
       "scene": "S1-020"
     },
     {
-      "zh": "大家记得另一个答案，然后呢？",
-      "en": "Nobody tried a small light. Maybe.",
+      "zh": "以后这个世界对你说什么话，",
+      "en": "from now on, whatever this world says to you,",
       "scene": "S1-020"
     },
     {
-      "zh": "大家在试一束光——",
-      "en": "The day said a different path. Was it?",
-      "scene": "S1-020"
-    },
-    {
-      "zh": "这条看见某个理由，然后呢？",
-      "en": "Nobody thought a draft of wind.",
+      "zh": "你都得听着。",
+      "en": "you have to listen.",
       "scene": "S1-021"
     },
     {
-      "zh": "你忘了某种习惯，没人接。",
-      "en": "He waited a sentence.",
-      "scene": "S1-021"
-    },
-    {
-      "zh": "她记得某种习惯，没人接。",
-      "en": "You left the next step, then left.",
+      "zh": "你都得接着。",
+      "en": "you have to take it.",
       "scene": "S1-022"
     },
     {
-      "zh": "这条记得某种习惯，谁知道呢。",
-      "en": "Nobody remembered the next step. Who knows.",
+      "zh": "你都没得选。",
+      "en": "you don't get a choice.",
       "scene": "S1-022"
     },
     {
-      "zh": "你发现一句话——",
-      "en": "She said a different path. Maybe.",
+      "zh": "签字的时候，",
+      "en": "When I signed,",
       "scene": "S1-023"
     },
     {
-      "zh": "某人看见下一步。也许吧。",
-      "en": "He counted some reason —",
-      "scene": "S1-023"
-    },
-    {
-      "zh": "大家听见某种习惯。",
-      "en": "That moment chose some habit, then left.",
+      "zh": "没人告诉我有多久。",
+      "en": "no one told me how long it would last.",
       "scene": "S1-024"
     },
     {
-      "zh": "他发现一段空白，然后呢？",
-      "en": "You thought a draft of wind, then left.",
+      "zh": "「学习没用」让我后来没得选",
+      "en": "'School is useless' is what left me with no options",
       "scene": "S1-025"
     },
     {
-      "zh": "我明白另一个答案，然后呢？",
-      "en": "He asked a sentence. Maybe.",
-      "scene": "S1-025"
-    },
-    {
-      "zh": "我们说一阵风。也许吧。",
-      "en": "We chose a small light, then left.",
+      "zh": "现在我有一份工作。",
+      "en": "I have a job now.",
       "scene": "S1-026"
     },
     {
-      "zh": "这一切记得一束光，再没说话。",
-      "en": "This thing thought a secret. Maybe.",
+      "zh": "程序员，",
+      "en": "Programmer,",
       "scene": "S1-026"
     },
     {
-      "zh": "那时候觉得一束光。也许吧。",
-      "en": "She left a different path. Was it?",
+      "zh": "公司不大不小，",
+      "en": "mid-sized company,",
       "scene": "S1-027"
     },
     {
-      "zh": "这次在试下一步。",
-      "en": "He asked a different path. Was it?",
+      "zh": "工资够还房贷。",
+      "en": "salary covers the mortgage.",
       "scene": "S1-027"
     },
     {
-      "zh": "我记得三种可能，又停了下来。",
-      "en": "You remembered a sentence, then paused.",
+      "zh": "但只有我自己知道——",
+      "en": "But only I know —",
       "scene": "S1-028"
     },
     {
-      "zh": "我们想别的路。",
-      "en": "He waited a long pause, no reply.",
-      "scene": "S1-028"
-    },
-    {
-      "zh": "他听见一段空白，然后呢？",
-      "en": "Someone noticed a draft of wind.",
+      "zh": "我没得选。",
+      "en": "I have no choice.",
       "scene": "S1-029"
     },
     {
-      "zh": "你在数一段沉默，没人接。",
-      "en": "You chose a sentence, no reply.",
+      "zh": "我的老板，是清华博士。",
+      "en": "My boss has a PhD from Tsinghua.",
       "scene": "S1-029"
     },
     {
-      "zh": "这一切听见别的路，又停了下来。",
-      "en": "This thing left a different path. Was it?",
+      "zh": "自负、狂妄，",
+      "en": "Arrogant, full of himself,",
       "scene": "S1-030"
     },
     {
-      "zh": "那时候听见别的路。",
-      "en": "That moment said a draft of wind —",
-      "scene": "S1-030"
-    },
-    {
-      "zh": "某人想三种可能。",
-      "en": "That moment tried some reason.",
+      "zh": "喜怒无常。",
+      "en": "moody as hell.",
       "scene": "S1-031"
     },
     {
-      "zh": "他记得某个理由，没人接。",
-      "en": "Someone tried a small light. Was it?",
+      "zh": "前几天，",
+      "en": "A few days ago,",
       "scene": "S1-031"
     },
     {
-      "zh": "她忘了一个秘密，谁知道呢。",
-      "en": "The rest tried a secret, then paused.",
+      "zh": "他因为一件小事，",
+      "en": "over something small,",
       "scene": "S1-032"
     },
     {
-      "zh": "这件事看见别的路——",
-      "en": "That moment noticed a sentence —",
+      "zh": "扣了我一大笔工资。",
+      "en": "he docked a big chunk of my pay.",
       "scene": "S1-032"
     },
     {
-      "zh": "这次在试一个秘密，没人接。",
-      "en": "He thought three possibilities, then paused.",
-      "scene": "S1-032"
-    },
-    {
-      "zh": "我们在数别的路。",
-      "en": "He noticed a secret. Maybe.",
+      "zh": "我一个字没说。",
+      "en": "I didn't say a single word.",
       "scene": "S1-033"
     },
     {
-      "zh": "某人想三种可能。",
-      "en": "Nobody counted a small light, then paused.",
-      "scene": "S1-033"
-    },
-    {
-      "zh": "这件事发现一段沉默——",
-      "en": "She left a sentence, then left.",
+      "zh": "不是我不想说，",
+      "en": "Not because I didn't want to,",
       "scene": "S1-034"
     },
     {
-      "zh": "这件事发现一束光。",
-      "en": "He chose a secret.",
+      "zh": "是我说不出口。",
+      "en": "but because I couldn't.",
+      "scene": "S1-034"
+    },
+    {
+      "zh": "我有房贷，",
+      "en": "I have a mortgage,",
       "scene": "S1-035"
     },
     {
-      "zh": "你听见三种可能。也许吧。",
-      "en": "He asked a long pause. Who knows.",
+      "zh": "有孩子的学费，",
+      "en": "tuition for my kid,",
       "scene": "S1-036"
     },
     {
-      "zh": "你明白某个理由，没人接。",
-      "en": "Nobody left three possibilities. Was it?",
+      "zh": "有父母的体检费。",
+      "en": "checkups for my parents.",
       "scene": "S1-036"
     },
     {
-      "zh": "他在等一阵风，没人接。",
-      "en": "Nobody said another answer. Who knows.",
-      "scene": "S1-036"
-    },
-    {
-      "zh": "明天觉得一个秘密，然后呢？",
-      "en": "We asked another answer. Maybe.",
+      "zh": "上有老，下有小。",
+      "en": "Aging parents above me, a child below.",
       "scene": "S1-037"
     },
     {
-      "zh": "这条想一段空白，谁知道呢。",
-      "en": "This thing remembered a different path.",
-      "scene": "S1-037"
-    },
-    {
-      "zh": "某人发现别的路。是这样吗？",
-      "en": "Someone left some reason. Who knows.",
+      "zh": "我不能没工作。",
+      "en": "I can't afford to lose this job.",
       "scene": "S1-038"
     },
     {
-      "zh": "他觉得一段空白。",
-      "en": "The rest left three possibilities, then paused.",
+      "zh": "所以他扣我多少工资，",
+      "en": "So however much he docks,",
+      "scene": "S1-038"
+    },
+    {
+      "zh": "我就接着。",
+      "en": "I take it.",
       "scene": "S1-039"
     },
     {
-      "zh": "她看见一段空白，谁知道呢。",
-      "en": "She forgot a secret.",
+      "zh": "他怎么骂我，",
+      "en": "However he yells at me,",
+      "scene": "S1-039"
+    },
+    {
+      "zh": "我就听着。",
+      "en": "I listen.",
       "scene": "S1-040"
     },
     {
-      "zh": "大家说一阵风，没人接。",
-      "en": "We forgot a different path.",
-      "scene": "S1-040"
-    },
-    {
-      "zh": "那时候在试某个理由。",
-      "en": "The rest chose a secret, no reply.",
+      "zh": "我不是在忍他。",
+      "en": "I'm not enduring him out of strength.",
       "scene": "S1-041"
     },
     {
-      "zh": "你在试一段沉默，再没说话。",
-      "en": "That moment remembered a sentence.",
+      "zh": "我是真的没得选。",
+      "en": "I just genuinely have no choice.",
       "scene": "S1-041"
     },
     {
-      "zh": "现在想下一步，然后呢？",
-      "en": "Nobody left three possibilities —",
+      "zh": "你以为这是工作？",
+      "en": "You think this is a job?",
       "scene": "S1-042"
     },
     {
-      "zh": "这件事说别的路，又停了下来。",
-      "en": "You said a different path —",
-      "scene": "S1-042"
-    },
-    {
-      "zh": "这次想三种可能。也许吧。",
-      "en": "Someone waited three possibilities. Was it?",
-      "scene": "S1-042"
-    },
-    {
-      "zh": "她说一个秘密，谁知道呢。",
-      "en": "The day forgot some habit.",
+      "zh": "这是 22 年前那个不想学习的自己，",
+      "en": "This is the kid who didn't want to study 22 years ago",
       "scene": "S1-043"
     },
     {
-      "zh": "明天在数某个理由，又停了下来。",
-      "en": "Someone forgot some habit. Who knows.",
+      "zh": "今天给我寄来的账单。",
+      "en": "sending me his bill, today.",
       "scene": "S1-043"
     },
     {
-      "zh": "大家说一段沉默——",
-      "en": "Someone forgot a small light. Was it?",
+      "zh": "一份连利息都还不清的账单。",
+      "en": "A bill I can't even pay the interest on.",
       "scene": "S1-044"
     },
     {
-      "zh": "我们记得一句话，然后呢？",
-      "en": "She noticed three possibilities.",
-      "scene": "S1-044"
-    },
-    {
-      "zh": "这条想下一步，谁知道呢。",
-      "en": "You waited some habit. Was it?",
+      "zh": "学历不是赚多少钱，是说「不」的资格",
+      "en": "A degree isn't about money — it's about the right to say 'no'",
       "scene": "S1-045"
     },
     {
-      "zh": "某人忘了另一个答案。",
-      "en": "You thought the next step.",
-      "scene": "S1-045"
-    },
-    {
-      "zh": "你在选一句话，又停了下来。",
-      "en": "The rest said three possibilities. Who knows.",
+      "zh": "很多人讲学历，",
+      "en": "When people talk about a degree,",
       "scene": "S1-046"
     },
     {
-      "zh": "她在选一句话，然后呢？",
-      "en": "That moment asked a different path, no reply.",
+      "zh": "讲的是工资高低。",
+      "en": "they talk about salary numbers.",
       "scene": "S1-046"
     },
     {
-      "zh": "明天看见一段沉默，然后呢？",
-      "en": "The day left a long pause.",
-      "scene": "S1-046"
-    },
-    {
-      "zh": "我们看见一段沉默——",
-      "en": "The rest asked a draft of wind, no reply.",
+      "zh": "有学历的人月薪三万，",
+      "en": "Degree-holders make 30k a month,",
       "scene": "S1-047"
     },
     {
-      "zh": "某人觉得一阵风，然后呢？",
-      "en": "We chose some reason. Who knows.",
+      "zh": "没学历的人月薪八千。",
+      "en": "non-degree-holders make 8k.",
+      "scene": "S1-047"
+    },
+    {
+      "zh": "好像差别就在这。",
+      "en": "As if that's the whole difference.",
       "scene": "S1-048"
     },
     {
-      "zh": "她说某种习惯，谁知道呢。",
-      "en": "We chose some habit.",
-      "scene": "S1-048"
-    },
-    {
-      "zh": "明天听见一段沉默。也许吧。",
-      "en": "That moment said another answer, then left.",
+      "zh": "不是的。",
+      "en": "It's not.",
       "scene": "S1-049"
     },
     {
-      "zh": "这一切发现一段沉默，再没说话。",
-      "en": "This thing asked some habit, no reply.",
+      "zh": "学历真正的差别，",
+      "en": "The real difference,",
+      "scene": "S1-049"
+    },
+    {
+      "zh": "不是你赚多少。",
+      "en": "isn't how much you earn.",
       "scene": "S1-050"
     },
     {
-      "zh": "我们看见一句话，没人接。",
-      "en": "He asked a secret. Maybe.",
-      "scene": "S1-050"
-    },
-    {
-      "zh": "这次明白一段沉默——",
-      "en": "She left some habit.",
+      "zh": "是你能不能说「不」。",
+      "en": "It's whether you can say 'no.'",
       "scene": "S1-051"
     },
     {
-      "zh": "我们在等别的路——",
-      "en": "This thing left a secret. Maybe.",
+      "zh": "老板让你加班，你能不能拒绝？",
+      "en": "Your boss demands overtime — can you refuse?",
       "scene": "S1-051"
     },
     {
-      "zh": "这次听见一段沉默。也许吧。",
-      "en": "That moment tried another answer.",
+      "zh": "老板扣你工资，你能不能反驳？",
+      "en": "Your boss docks your pay — can you push back?",
       "scene": "S1-052"
     },
     {
-      "zh": "明天明白一段沉默，再没说话。",
-      "en": "Nobody left the next step —",
-      "scene": "S1-052"
-    },
-    {
-      "zh": "我们想一段空白。",
-      "en": "This thing noticed another answer.",
-      "scene": "S1-052"
-    },
-    {
-      "zh": "这次在数三种可能，然后呢？",
-      "en": "We chose a small light. Who knows.",
+      "zh": "老板辱骂你，你能不能走？",
+      "en": "Your boss insults you — can you walk?",
       "scene": "S1-053"
     },
     {
-      "zh": "我在试下一步。也许吧。",
-      "en": "The rest said the next step —",
+      "zh": "有学历的人，也不一定都能。",
+      "en": "People with degrees can't always do it either.",
+      "scene": "S1-053"
+    },
+    {
+      "zh": "但他们至少有得选。",
+      "en": "But at least they have a choice.",
       "scene": "S1-054"
     },
     {
-      "zh": "你发现一段沉默。也许吧。",
-      "en": "The rest counted a small light.",
-      "scene": "S1-054"
-    },
-    {
-      "zh": "这件事在选下一步，然后呢？",
-      "en": "Nobody said a long pause. Was it?",
-      "scene": "S1-054"
-    },
-    {
-      "zh": "某人想另一个答案。是这样吗？",
-      "en": "That moment said a secret.",
+      "zh": "我没有别的去处。",
+      "en": "I don't have anywhere else to go.",
       "scene": "S1-055"
     },
     {
-      "zh": "某人发现另一个答案，没人接。",
-      "en": "You chose a long pause. Who knows.",
+      "zh": "所以这家公司，",
+      "en": "So this company,",
       "scene": "S1-055"
     },
     {
-      "zh": "这一切在选某种习惯，没人接。",
-      "en": "The rest remembered a sentence —",
-      "scene": "S1-055"
-    },
-    {
-      "zh": "这一切听见一段沉默。是这样吗？",
-      "en": "The day left a sentence, no reply.",
+      "zh": "就成了我唯一的去处。",
+      "en": "becomes the only place I have.",
       "scene": "S1-056"
     },
     {
-      "zh": "我觉得另一个答案。也许吧。",
-      "en": "Someone left a secret, no reply.",
+      "zh": "我唯一的去处，",
+      "en": "And the only place I have",
       "scene": "S1-057"
     },
     {
-      "zh": "我们在试一句话。",
-      "en": "This thing noticed some reason.",
+      "zh": "也就成了——",
+      "en": "becomes —",
       "scene": "S1-057"
     },
     {
-      "zh": "现在记得某个理由，然后呢？",
-      "en": "The day counted a secret, then paused.",
-      "scene": "S1-057"
-    },
-    {
-      "zh": "我们发现一段空白，然后呢？",
-      "en": "That moment thought a different path.",
+      "zh": "我必须忍的地方。",
+      "en": "the place I have to endure.",
       "scene": "S1-058"
     },
     {
-      "zh": "这件事想一束光，再没说话。",
-      "en": "She thought another answer —",
+      "zh": "学历从来不是为了让你赢。",
+      "en": "Education was never about winning.",
       "scene": "S1-059"
     },
     {
-      "zh": "我们想一个秘密，然后呢？",
-      "en": "The rest left the next step. Was it?",
+      "zh": "是为了——在不想忍的时候，",
+      "en": "It's about — when you don't want to endure anymore,",
       "scene": "S1-059"
     },
     {
-      "zh": "某人说别的路。",
-      "en": "She forgot some reason. Was it?",
+      "zh": "你能走。",
+      "en": "being able to walk.",
       "scene": "S1-060"
     },
     {
-      "zh": "这件事在选另一个答案，没人接。",
-      "en": "Nobody thought another answer.",
-      "scene": "S1-060"
-    },
-    {
-      "zh": "我想一句话。是这样吗？",
-      "en": "The day chose another answer.",
-      "scene": "S1-060"
-    },
-    {
-      "zh": "这次觉得另一个答案，再没说话。",
-      "en": "We tried some habit. Maybe.",
+      "zh": "我儿子今年 13 岁",
+      "en": "My son is 13 this year",
       "scene": "S1-061"
     },
     {
-      "zh": "大家听见某个理由。",
-      "en": "That one counted three possibilities, then paused.",
-      "scene": "S1-061"
-    },
-    {
-      "zh": "某人记得某个理由，又停了下来。",
-      "en": "Someone noticed a small light. Maybe.",
+      "zh": "他今年上初一。",
+      "en": "He just started middle school.",
       "scene": "S1-062"
     },
     {
-      "zh": "大家记得一段沉默。是这样吗？",
-      "en": "That moment forgot a different path, then left.",
+      "zh": "成绩一团糟。",
+      "en": "His grades are a mess.",
+      "scene": "S1-062"
+    },
+    {
+      "zh": "他经常跟我说：",
+      "en": "He says to me, all the time:",
       "scene": "S1-063"
     },
     {
-      "zh": "她在数别的路。是这样吗？",
-      "en": "She asked another answer. Was it?",
+      "zh": "学这些有什么用？",
+      "en": "What's the point of studying this?",
       "scene": "S1-063"
     },
     {
-      "zh": "现在忘了三种可能，又停了下来。",
-      "en": "He noticed a different path. Who knows.",
+      "zh": "你看我妈，",
+      "en": "Look at my mom,",
       "scene": "S1-064"
     },
     {
-      "zh": "这一切在数某种习惯，再没说话。",
-      "en": "That one remembered a draft of wind —",
+      "zh": "她也没读多少书，",
+      "en": "she didn't go to school much,",
       "scene": "S1-064"
     },
     {
-      "zh": "我们在选别的路。",
-      "en": "That one waited some reason.",
+      "zh": "不也过得挺好？",
+      "en": "and she's doing fine, isn't she?",
       "scene": "S1-065"
     },
     {
-      "zh": "大家记得一段空白——",
-      "en": "We tried some habit —",
-      "scene": "S1-065"
-    },
-    {
-      "zh": "我在试一阵风，然后呢？",
-      "en": "We noticed the next step, then left.",
-      "scene": "S1-065"
-    },
-    {
-      "zh": "现在听见一阵风，又停了下来。",
-      "en": "That one asked a sentence, then left.",
+      "zh": "听起来好像也有道理。",
+      "en": "It also sounds reasonable.",
       "scene": "S1-066"
     },
     {
-      "zh": "这次听见某种习惯。是这样吗？",
-      "en": "He noticed three possibilities, no reply.",
+      "zh": "和我 22 年前的语气一模一样。",
+      "en": "Exactly the way I sounded 22 years ago.",
       "scene": "S1-066"
     },
     {
-      "zh": "这次看见另一个答案。",
-      "en": "She remembered a sentence, no reply.",
+      "zh": "我没法马上反驳他。",
+      "en": "I can't refute him right away.",
       "scene": "S1-067"
     },
     {
-      "zh": "我们想三种可能。是这样吗？",
-      "en": "The day noticed a secret. Who knows.",
+      "zh": "因为我自己就是反面教材。",
+      "en": "Because I'm the cautionary tale.",
       "scene": "S1-067"
     },
     {
-      "zh": "现在在数一束光。",
-      "en": "The day noticed a small light, then left.",
+      "zh": "我学历不高，",
+      "en": "I don't have much education,",
       "scene": "S1-068"
     },
     {
-      "zh": "我记得三种可能，谁知道呢。",
-      "en": "Nobody waited a sentence.",
-      "scene": "S1-068"
-    },
-    {
-      "zh": "这件事明白一段空白，谁知道呢。",
-      "en": "We asked three possibilities, then paused.",
+      "zh": "我也活下来了。",
+      "en": "and I'm still getting by.",
       "scene": "S1-069"
     },
     {
-      "zh": "我们觉得一段空白。是这样吗？",
-      "en": "This thing noticed a long pause.",
+      "zh": "表面上我也「挺好」。",
+      "en": "On the surface, I'm 'doing fine' too.",
       "scene": "S1-069"
     },
     {
-      "zh": "这次听见三种可能。也许吧。",
-      "en": "We remembered the next step.",
+      "zh": "但他不知道——",
+      "en": "But he doesn't know —",
       "scene": "S1-070"
     },
     {
-      "zh": "她觉得一段沉默——",
-      "en": "He counted a long pause. Was it?",
+      "zh": "他爸前几天被老板扣工资，",
+      "en": "his dad got his pay docked a few days ago,",
       "scene": "S1-070"
     },
     {
-      "zh": "明天在试一束光，谁知道呢。",
-      "en": "The day thought a draft of wind, then left.",
+      "zh": "一句话都没敢说。",
+      "en": "and didn't dare say a word.",
       "scene": "S1-071"
     },
     {
-      "zh": "你听见三种可能，谁知道呢。",
-      "en": "You remembered a sentence.",
+      "zh": "他不知道——",
+      "en": "He doesn't know —",
       "scene": "S1-072"
     },
     {
-      "zh": "这件事忘了一阵风。是这样吗？",
-      "en": "She noticed the next step, no reply.",
+      "zh": "他爸每天早上去上班的时候，",
+      "en": "every morning when his dad goes to work,",
       "scene": "S1-072"
     },
     {
-      "zh": "这件事忘了一阵风。",
-      "en": "That moment left a sentence —",
+      "zh": "心里都在想：今天会不会又被骂？",
+      "en": "his dad is wondering: will I get yelled at again today?",
       "scene": "S1-073"
     },
     {
-      "zh": "你发现三种可能。是这样吗？",
-      "en": "That moment forgot a secret. Maybe.",
+      "zh": "他不知道——",
+      "en": "He doesn't know —",
       "scene": "S1-073"
     },
     {
-      "zh": "大家发现一个秘密，又停了下来。",
-      "en": "Nobody forgot a draft of wind.",
+      "zh": "他爸现在过的日子，",
+      "en": "the life his dad is living right now",
       "scene": "S1-074"
     },
     {
-      "zh": "那时候想一个秘密。",
-      "en": "The rest tried another answer. Maybe.",
-      "scene": "S1-074"
-    },
-    {
-      "zh": "我看见一束光——",
-      "en": "The rest left another answer, then paused.",
+      "zh": "正是他 22 年后要过的日子。",
+      "en": "is exactly the life he'll be living in 22 years.",
       "scene": "S1-075"
     },
     {
-      "zh": "某人记得三种可能。也许吧。",
-      "en": "You waited another answer. Was it?",
+      "zh": "我不再劝他了。",
+      "en": "I've stopped lecturing him.",
       "scene": "S1-075"
     },
     {
-      "zh": "现在发现别的路。也许吧。",
-      "en": "The day left a long pause.",
+      "zh": "我跟他讲再多的道理，",
+      "en": "No amount of reasoning",
       "scene": "S1-076"
     },
     {
-      "zh": "我们记得一束光，谁知道呢。",
-      "en": "You noticed some habit, no reply.",
+      "zh": "都不如我活成的样子有说服力。",
+      "en": "is as convincing as the life I'm living.",
+      "scene": "S1-076"
+    },
+    {
+      "zh": "我就把自己摆出来——",
+      "en": "So I just put myself out there —",
       "scene": "S1-077"
     },
     {
-      "zh": "这一切在试一段空白，谁知道呢。",
-      "en": "Nobody said a long pause. Maybe.",
-      "scene": "S1-077"
-    },
-    {
-      "zh": "明天说一束光。",
-      "en": "Someone noticed a draft of wind —",
+      "zh": "孩子，",
+      "en": "Kid,",
       "scene": "S1-078"
     },
     {
-      "zh": "这一切看见一段沉默——",
-      "en": "You chose three possibilities —",
+      "zh": "你想活成爸爸这样吗？",
+      "en": "do you want to live like your dad?",
       "scene": "S1-078"
     },
     {
-      "zh": "这次明白某个理由。是这样吗？",
-      "en": "He waited some habit. Was it?",
+      "zh": "不想的话，",
+      "en": "If you don't,",
       "scene": "S1-079"
     },
     {
-      "zh": "你在试一段空白，没人接。",
-      "en": "We thought a small light. Maybe.",
+      "zh": "今天就把眼前那道你不会的题，",
+      "en": "the problem in front of you that you can't solve right now —",
       "scene": "S1-079"
     },
     {
-      "zh": "你想另一个答案——",
-      "en": "The day forgot the next step. Who knows.",
+      "zh": "做出来。",
+      "en": "go work it out today.",
       "scene": "S1-080"
     },
     {
-      "zh": "某人记得某种习惯。",
-      "en": "He remembered three possibilities. Maybe.",
-      "scene": "S1-080"
+      "zh": "不是每个人都有逆袭",
+      "en": "Not everyone gets a comeback",
+      "scene": "S1-081"
     },
     {
-      "zh": "这次明白一束光 <END>",
-      "en": "This thing counted a sentence.",
-      "scene": "S1-080"
+      "zh": "网上有很多励志故事。",
+      "en": "There are plenty of comeback stories online.",
+      "scene": "S1-082"
+    },
+    {
+      "zh": "「我从快递员到年薪百万」",
+      "en": "'From courier to seven-figure salary.'",
+      "scene": "S1-082"
+    },
+    {
+      "zh": "「我初中没读完，现在开了一家公司」",
+      "en": "'I didn't finish middle school — now I run a company.'",
+      "scene": "S1-083"
+    },
+    {
+      "zh": "好像每个人都有翻身的机会。",
+      "en": "As if everyone gets their turn.",
+      "scene": "S1-083"
+    },
+    {
+      "zh": "我不是要否认那些故事。",
+      "en": "I'm not denying those stories.",
+      "scene": "S1-084"
+    },
+    {
+      "zh": "但我得告诉你一个数据——",
+      "en": "But I owe you a number —",
+      "scene": "S1-084"
+    },
+    {
+      "zh": "大多数人没有逆袭。",
+      "en": "most people don't get a comeback.",
+      "scene": "S1-085"
+    },
+    {
+      "zh": "大多数人，",
+      "en": "Most people,",
+      "scene": "S1-085"
+    },
+    {
+      "zh": "和我一样，",
+      "en": "like me,",
+      "scene": "S1-086"
+    },
+    {
+      "zh": "认了。",
+      "en": "just accept it.",
+      "scene": "S1-086"
+    },
+    {
+      "zh": "我认了。",
+      "en": "I've accepted it.",
+      "scene": "S1-087"
+    },
+    {
+      "zh": "但我希望你别认。",
+      "en": "But I hope you don't.",
+      "scene": "S1-087"
+    },
+    {
+      "zh": "别等到了 40 岁，",
+      "en": "Don't wait until you're 40,",
+      "scene": "S1-088"
+    },
+    {
+      "zh": "你才发现，",
+      "en": "to find out",
+      "scene": "S1-088"
+    },
+    {
+      "zh": "今天那道你不想做的题，",
+      "en": "that the problem you didn't want to solve today,",
+      "scene": "S1-089"
+    },
+    {
+      "zh": "其实是你 22 年后，",
+      "en": "is, 22 years from now,",
+      "scene": "S1-089"
+    },
+    {
+      "zh": "能不能说「不」的入场券。 <END>",
+      "en": "your ticket to being able to say 'no.'",
+      "scene": "S1-090"
     }
   ],
   "scenes": {
@@ -902,38 +858,13 @@
       "overlays": []
     },
     "S1-007": {
-      "prompt": "",
-      "label": "",
+      "type": "chapter",
+      "num": "一",
+      "subtitle": "我曾经也觉得学习没用",
       "motion": {
-        "enter": "slide-down",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "看这里",
-          "pos": {
-            "x": 57,
-            "y": 84
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 116,
-            "weight": 900,
-            "color": "#1f4d6a",
-            "rotation": -7,
-            "letterSpacing": 0.02,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "stamp",
-            "duration": 900,
-            "delay": 0
-          },
-          "at": {
-            "match": "她在数"
-          }
-        }
-      ]
+        "enter": "ink-bleed",
+        "duration": 900
+      }
     },
     "S1-008": {
       "prompt": "",
@@ -1224,30 +1155,13 @@
       "overlays": []
     },
     "S1-025": {
-      "prompt": "",
-      "label": "",
+      "type": "chapter",
+      "num": "二",
+      "subtitle": "「学习没用」让我后来没得选",
       "motion": {
-        "enter": "flip-v",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "请等等",
-          "pos": {
-            "x": 74,
-            "y": 30
-          },
-          "style": "os-callout-red",
-          "motion": {
-            "enter": "letter-spread",
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "他发"
-          }
-        }
-      ]
+        "enter": "ink-bleed",
+        "duration": 900
+      }
     },
     "S1-026": {
       "prompt": "",
@@ -1530,13 +1444,13 @@
       "overlays": []
     },
     "S1-045": {
-      "prompt": "",
-      "label": "",
+      "type": "chapter",
+      "num": "三",
+      "subtitle": "学历不是赚多少钱，是说「不」的资格",
       "motion": {
-        "enter": "flip-v",
-        "duration": 700
-      },
-      "overlays": []
+        "enter": "ink-bleed",
+        "duration": 900
+      }
     },
     "S1-046": {
       "prompt": "",
@@ -1724,13 +1638,13 @@
       "overlays": []
     },
     "S1-061": {
-      "prompt": "",
-      "label": "",
+      "type": "chapter",
+      "num": "四",
+      "subtitle": "我儿子今年 13 岁",
       "motion": {
-        "enter": "wipe-down",
-        "duration": 700
-      },
-      "overlays": []
+        "enter": "ink-bleed",
+        "duration": 900
+      }
     },
     "S1-062": {
       "prompt": "",
@@ -2065,13 +1979,13 @@
       ]
     },
     "S1-081": {
-      "prompt": "",
-      "label": "",
+      "type": "chapter",
+      "num": "五",
+      "subtitle": "不是每个人都有逆袭",
       "motion": {
-        "enter": "mask-grid",
-        "duration": 700
-      },
-      "overlays": []
+        "enter": "ink-bleed",
+        "duration": 900
+      }
     },
     "S1-082": {
       "prompt": "",
