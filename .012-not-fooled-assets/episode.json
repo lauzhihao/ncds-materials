@@ -72,8 +72,8 @@
       "scene": "title"
     },
     {
-      "zh": "同一杯咖啡、同一张机票、同一双鞋，",
-      "en": "Same coffee, same flight, same pair of shoes —",
+      "zh": "同一杯咖啡、同一份外卖、同一双鞋，",
+      "en": "Same coffee, same takeout, same pair of shoes —",
       "scene": "title"
     },
     {
@@ -173,8 +173,8 @@
       "scene": "many-brands"
     },
     {
-      "zh": "某门 N 件套、疯狂星期四，",
-      "en": "X-Mac combo meals, Crazy Thursday,",
+      "zh": "某幸会员日、疯狂星期四，",
+      "en": "Some-Luckin members' day, Crazy Thursday,",
       "scene": "many-brands"
     },
     {
@@ -196,6 +196,11 @@
       "zh": "是你没去搜那五分钟。",
       "en": "you're paying for the five minutes you didn't spend searching.",
       "scene": "many-brands"
+    },
+    {
+      "zh": "打开小黄鱼，每天都是会员日。",
+      "en": "Open Little Yellow Fish — every day is members' day.",
+      "scene": "xianyu-result"
     },
     {
       "zh": "互联网这十年最值钱的东西，",
@@ -370,8 +375,8 @@
       "scene": "applecare-checkout"
     },
     {
-      "zh": "「要不要加 AppleCare？再多两千。」",
-      "en": "\"Add AppleCare? Just two thousand more.\"",
+      "zh": "「要不要加 AppleCare？仅需两千。」",
+      "en": "\"Add AppleCare? Only two thousand.\"",
       "scene": "applecare-checkout"
     },
     {
@@ -1153,12 +1158,12 @@
       },
       "overlays": [
         {
-          "text": "仅需两千！",
+          "text": "¥2,000",
           "pos": { "x": 70, "y": 30 },
           "style": {
-            "font": "XY Kaiti", "size": 70, "weight": 400,
+            "font": "Inter", "size": 86, "weight": 700,
             "color": "var(--accent)", "rotation": -6,
-            "letterSpacing": 0.06, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
           },
           "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
         }
