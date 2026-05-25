@@ -230,6 +230,14 @@
       window.__overlays.renderInto(sceneEl, def.overlays);
     }
 
+    // 每条 beat 都给 overlays 一次机会：at.match 命中时 overlay 才入场
+    if (window.__overlays && window.__overlays.onBeat) {
+      // 传 beatMs 让 overlays 按 keyword 字符位置占比算飞入时刻
+      const a = audioElements[i];
+      const beatMsForOverlay = (a && isFinite(a.duration) ? a.duration * 1000 : estimateMs(b.zh));
+      window.__overlays.onBeat(sceneEl, b, beatMsForOverlay);
+    }
+
     if (!sceneWasActive && document.body.classList.contains('ken-burns')) {
       sceneEl.style.transition = 'none';
       void sceneEl.offsetWidth;

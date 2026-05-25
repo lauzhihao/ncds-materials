@@ -20,11 +20,18 @@
                        |"iris"|"glitch"|"bounce"|"drift-in"|"zoom-pop",
                 from: "left"|"right"|"top"|"bottom",  // 仅 fly-in 用
                 duration, easing, delay },
-       countdown:{ from: "03:00", interval: 1000, ticks: null, startDelay: 0 } }
+       countdown:{ from: "03:00", interval: 1000, ticks: null, startDelay: 0 },
                 // 入场动效结束 startDelay ms 后，textContent 每 interval ms 减 1 秒。
                 // ticks=null/缺省 → 一直跳到 0；ticks=N → 只跳 N 次后停。
                 // 切 scene 时 layer 被销毁，isConnected 守卫自动停 interval。
                 // from 支持 "MM:SS" 或纯整数秒；解析失败则跳过。
+       at:{ match: "仅需两千", delay: 200 } }
+                // 把 overlay 飞入时机锁到字幕关键词上：当 player 播到某条 beat
+                // 且 beat.zh 包含 match 字符串时，overlay 才入场（再过 delay ms）。
+                // 没配 at → 沿用 motion.delay 在 scene 切入时直接播。
+                // 同一 scene 内只触发一次（首触发后打 data-at-fired），重进 scene
+                // 走 renderInto 重建 DOM 自动清状态。
+                // player.js 在 showBeat 末尾调用 window.__overlays.onBeat(sceneEl, b)。
    ────────────────────────────────────────────────────────────────── */
 (function () {
   const STYLES = [
@@ -164,14 +171,62 @@
 
       layer.appendChild(el);
 
-      // countdown：入场动效结束后逐秒减 textContent
-      if (o.countdown && o.countdown.from != null) {
+      // at：把入场时机绑到字幕关键词。把 motion class 先摘掉藏到 dataset，
+      // 元素 display:none；onBeat 命中 match 时还原 + reflow + 启动 countdown。
+      if (o.at && o.at.match) {
+        el.dataset.atMatch = String(o.at.match);
+        el.dataset.atDelay = String(o.at.delay || 0);
+        el.dataset.pendingMotion = motionClass;
+        el.classList.remove(motionClass);
+        if (o.countdown && o.countdown.from != null) {
+          el.dataset.pendingCountdown = JSON.stringify(o.countdown);
+          el.dataset.pendingMotionDur = String((o.motion && o.motion.duration) || 0);
+        }
+        el.style.display = 'none';
+      } else if (o.countdown && o.countdown.from != null) {
+        // 非 at：原行为，入场动效结束后立即倒计时
         const motionDur = (o.motion && o.motion.duration) || 0;
         startCountdown(el, o.countdown, delay + motionDur);
       }
     });
 
     void layer.offsetHeight;
+  }
+
+  // player 在 showBeat 末尾调用：扫该 scene 内所有未触发的 at-overlay，beat.zh 含 match 则激活
+  // beatMs（可选）= 当前 beat TTS 时长。提供时按 keyword 在 zh 里的字符位置自动算
+  // overlay 入场 delay，让 overlay 跟 TTS 读到关键词那一刻同步飞入。
+  function onBeat(sceneEl, beat, beatMs) {
+    if (!sceneEl || !beat || !beat.zh) return;
+    const els = sceneEl.querySelectorAll('[data-at-match]:not([data-at-fired])');
+    els.forEach((el) => {
+      const m = el.dataset.atMatch;
+      if (!m) return;
+      const kpos = beat.zh.indexOf(m);
+      if (kpos < 0) return;
+      el.dataset.atFired = '1';
+      // 自动 delay：(关键词起始位置 / 字符总数) × beat 时长 - lead（提前量，看着像同步起飞）
+      // 再叠加显式 at.delay 做微调
+      const explicit = Number(el.dataset.atDelay || 0);
+      const lead = 200;
+      let autoDelay = 0;
+      if (beatMs && beat.zh.length > 0) {
+        autoDelay = Math.max(0, (kpos / beat.zh.length) * beatMs - lead);
+      }
+      const delay = Math.round(autoDelay + explicit);
+      const motionClass = el.dataset.pendingMotion;
+      el.style.display = '';
+      el.style.setProperty('--oa-delay', delay + 'ms');
+      void el.offsetHeight; // reflow 强制重启 keyframes
+      if (motionClass) el.classList.add(motionClass);
+      if (el.dataset.pendingCountdown) {
+        try {
+          const cfg = JSON.parse(el.dataset.pendingCountdown);
+          const motionDur = Number(el.dataset.pendingMotionDur || 0);
+          startCountdown(el, cfg, delay + motionDur);
+        } catch (_) { /* ignore */ }
+      }
+    });
   }
 
   // 解析 "MM:SS" 或纯整数秒；返回 { total, format(sec) }，解析失败返回 null
@@ -219,5 +274,5 @@
     sceneEl.querySelectorAll(':scope > .overlay-layer').forEach((e) => e.remove());
   }
 
-  window.__overlays = { renderInto, clear, STYLES, ANIMS };
+  window.__overlays = { renderInto, onBeat, clear, STYLES, ANIMS };
 })();

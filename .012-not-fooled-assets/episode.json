@@ -805,6 +805,9 @@
             "enter": "ink-bleed",
             "duration": 900,
             "delay": 400
+          },
+          "at": {
+            "match": "不是你不够精"
           }
         }
       ]
@@ -828,13 +831,27 @@
       "overlays": [
         {
           "text": "¥32",
-          "pos": { "x": 72, "y": 32 },
-          "style": {
-            "font": "Inter", "size": 110, "weight": 700,
-            "color": "var(--accent)", "rotation": -6,
-            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          "pos": {
+            "x": 72,
+            "y": 32
           },
-          "motion": { "enter": "stamp", "duration": 700, "delay": 600 }
+          "style": {
+            "font": "Inter",
+            "size": 110,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -6,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 700,
+            "delay": 600
+          },
+          "at": {
+            "match": "一杯拿铁三十二"
+          }
         }
       ]
     },
@@ -865,6 +882,9 @@
             "enter": "stamp",
             "duration": 700,
             "delay": 500
+          },
+          "at": {
+            "match": "十八块到手"
           }
         }
       ]
@@ -879,13 +899,27 @@
       "overlays": [
         {
           "text": "+¥14",
-          "pos": { "x": 30, "y": 30 },
-          "style": {
-            "font": "Inter", "size": 88, "weight": 700,
-            "color": "var(--accent)", "rotation": -5,
-            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 30,
+            "y": 30
           },
-          "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
+          "style": {
+            "font": "Inter",
+            "size": 88,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -5,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 700,
+            "delay": 500
+          },
+          "at": {
+            "match": "多付的那十四块"
+          }
         }
       ]
     },
@@ -899,13 +933,27 @@
       "overlays": [
         {
           "text": "那 5 分钟",
-          "pos": { "x": 50, "y": 80 },
-          "style": {
-            "font": "XY Kaiti", "size": 64, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.06, "shadow": "2px 4px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 80
           },
-          "motion": { "enter": "handwrite", "duration": 1000, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 64,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.06,
+            "shadow": "2px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "handwrite",
+            "duration": 1000,
+            "delay": 500
+          },
+          "at": {
+            "match": "你没去搜那五分钟"
+          }
         }
       ]
     },
@@ -936,6 +984,9 @@
             "enter": "ink-bleed",
             "duration": 1100,
             "delay": 500
+          },
+          "at": {
+            "match": "那段信息差"
           }
         }
       ]
@@ -981,6 +1032,9 @@
             "from": "03:00",
             "interval": 1000,
             "startDelay": 300
+          },
+          "at": {
+            "match": "限时三分钟"
           }
         }
       ]
@@ -995,23 +1049,51 @@
       "overlays": [
         {
           "text": "真稀缺",
-          "pos": { "x": 28, "y": 26 },
-          "style": {
-            "font": "XY Kaiti", "size": 56, "weight": 400,
-            "color": "#2f3744", "rotation": -3,
-            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.12)"
+          "pos": {
+            "x": 28,
+            "y": 26
           },
-          "motion": { "enter": "ink-bleed", "duration": 900, "delay": 400 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 56,
+            "weight": 400,
+            "color": "#2f3744",
+            "rotation": -3,
+            "letterSpacing": 0.06,
+            "shadow": "2px 3px 0 rgba(0,0,0,.12)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "真正的稀缺"
+          }
         },
         {
           "text": "伪稀缺",
-          "pos": { "x": 72, "y": 26 },
-          "style": {
-            "font": "XY Kaiti", "size": 56, "weight": 400,
-            "color": "var(--accent)", "rotation": 3,
-            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 72,
+            "y": 26
           },
-          "motion": { "enter": "ink-bleed", "duration": 900, "delay": 900 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 56,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": 3,
+            "letterSpacing": 0.06,
+            "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 900
+          },
+          "at": {
+            "match": "伪造的稀缺"
+          }
         }
       ]
     },
@@ -1025,13 +1107,27 @@
       "overlays": [
         {
           "text": "I Need You!",
-          "pos": { "x": 50, "y": 78 },
-          "style": {
-            "font": "Inter", "size": 80, "weight": 700,
-            "color": "var(--accent)", "rotation": -4,
-            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.16)"
+          "pos": {
+            "x": 50,
+            "y": 78
           },
-          "motion": { "enter": "handwrite", "duration": 1100, "delay": 500 }
+          "style": {
+            "font": "Inter",
+            "size": 80,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.16)"
+          },
+          "motion": {
+            "enter": "handwrite",
+            "duration": 1100,
+            "delay": 500
+          },
+          "at": {
+            "match": "是它需要你"
+          }
         }
       ]
     },
@@ -1045,13 +1141,27 @@
       "overlays": [
         {
           "text": "I Know You!",
-          "pos": { "x": 50, "y": 80 },
-          "style": {
-            "font": "Inter", "size": 80, "weight": 700,
-            "color": "var(--accent)", "rotation": -4,
-            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.16)"
+          "pos": {
+            "x": 50,
+            "y": 80
           },
-          "motion": { "enter": "ink-bleed", "duration": 1000, "delay": 500 }
+          "style": {
+            "font": "Inter",
+            "size": 80,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.16)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 1000,
+            "delay": 500
+          },
+          "at": {
+            "match": "反复给你推"
+          }
         }
       ]
     },
@@ -1065,10 +1175,16 @@
       "overlays": [
         {
           "text": "You save 10%",
-          "pos": { "x": 60, "y": 58 },
+          "pos": {
+            "x": 60,
+            "y": 58
+          },
           "style": {
-            "font": "Inter", "size": 64, "weight": 700,
-            "color": "var(--accent)", "rotation": -6,
+            "font": "Inter",
+            "size": 64,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -6,
             "letterSpacing": 0.02,
             "background": "rgba(255,253,247,.94)",
             "padding": "8px 20px",
@@ -1076,7 +1192,14 @@
             "borderRadius": 8,
             "shadow": "4px 6px 0 rgba(0,0,0,.18)"
           },
-          "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
+          "motion": {
+            "enter": "stamp",
+            "duration": 700,
+            "delay": 500
+          },
+          "at": {
+            "match": "立刻给你打九折"
+          }
         }
       ]
     },
@@ -1090,13 +1213,27 @@
       "overlays": [
         {
           "text": "最累 · 最烦 · 最孤独",
-          "pos": { "x": 50, "y": 82 },
-          "style": {
-            "font": "XY Kaiti", "size": 52, "weight": 400,
-            "color": "var(--accent)", "rotation": -2,
-            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 82
           },
-          "motion": { "enter": "letter-spread", "duration": 1200, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 52,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -2,
+            "letterSpacing": 0.06,
+            "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "letter-spread",
+            "duration": 1200,
+            "delay": 500
+          },
+          "at": {
+            "match": "最累、最烦、最孤独"
+          }
         }
       ]
     },
@@ -1110,13 +1247,27 @@
       "overlays": [
         {
           "text": "耐心",
-          "pos": { "x": 72, "y": 30 },
-          "style": {
-            "font": "XY Kaiti", "size": 80, "weight": 400,
-            "color": "var(--accent)", "rotation": -5,
-            "letterSpacing": 0.12, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 72,
+            "y": 30
           },
-          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 400 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 80,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -5,
+            "letterSpacing": 0.12,
+            "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 1100,
+            "delay": 400
+          },
+          "at": {
+            "match": "算法不缺耐心"
+          }
         }
       ]
     },
@@ -1130,13 +1281,27 @@
       "overlays": [
         {
           "text": "按住那只手",
-          "pos": { "x": 50, "y": 80 },
-          "style": {
-            "font": "XY Kaiti", "size": 64, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.08, "shadow": "2px 4px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 80
           },
-          "motion": { "enter": "handwrite", "duration": 1100, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 64,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.08,
+            "shadow": "2px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "handwrite",
+            "duration": 1100,
+            "delay": 500
+          },
+          "at": {
+            "match": "情绪最低的时候打开"
+          }
         }
       ]
     },
@@ -1159,13 +1324,27 @@
       "overlays": [
         {
           "text": "¥2,000",
-          "pos": { "x": 70, "y": 30 },
-          "style": {
-            "font": "Inter", "size": 86, "weight": 700,
-            "color": "var(--accent)", "rotation": -6,
-            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          "pos": {
+            "x": 70,
+            "y": 30
           },
-          "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
+          "style": {
+            "font": "Inter",
+            "size": 86,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -6,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 700,
+            "delay": 500
+          },
+          "at": {
+            "match": "仅需两千"
+          }
         }
       ]
     },
@@ -1196,6 +1375,9 @@
             "enter": "ink-bleed",
             "duration": 900,
             "delay": 500
+          },
+          "at": {
+            "match": "焦虑越深"
           }
         }
       ]
@@ -1210,13 +1392,27 @@
       "overlays": [
         {
           "text": "−50%",
-          "pos": { "x": 72, "y": 50 },
-          "style": {
-            "font": "Inter", "size": 110, "weight": 700,
-            "color": "var(--accent)", "rotation": -8,
-            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          "pos": {
+            "x": 72,
+            "y": 50
           },
-          "motion": { "enter": "stamp", "duration": 700, "delay": 600 }
+          "style": {
+            "font": "Inter",
+            "size": 110,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -8,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 700,
+            "delay": 600
+          },
+          "at": {
+            "match": "价格直接腰斩"
+          }
         }
       ]
     },
@@ -1230,13 +1426,27 @@
       "overlays": [
         {
           "text": "智商税",
-          "pos": { "x": 50, "y": 80 },
-          "style": {
-            "font": "XY Kaiti", "size": 72, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.08, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 80
           },
-          "motion": { "enter": "ink-bleed", "duration": 1000, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 72,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.08,
+            "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 1000,
+            "delay": 500
+          },
+          "at": {
+            "match": "替你交完的智商税"
+          }
         }
       ]
     },
@@ -1267,6 +1477,9 @@
             "enter": "stamp",
             "duration": 700,
             "delay": 400
+          },
+          "at": {
+            "match": "两千块的健身年卡"
           }
         }
       ]
@@ -1281,13 +1494,27 @@
       "overlays": [
         {
           "text": "焦虑收费",
-          "pos": { "x": 50, "y": 78 },
-          "style": {
-            "font": "XY Kaiti", "size": 68, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.08, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 78
           },
-          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 68,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.08,
+            "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 1100,
+            "delay": 500
+          },
+          "at": {
+            "match": "焦虑收费"
+          }
         }
       ]
     },
@@ -1310,13 +1537,27 @@
       "overlays": [
         {
           "text": "下一个你想要的",
-          "pos": { "x": 50, "y": 82 },
-          "style": {
-            "font": "XY Kaiti", "size": 54, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.05, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 82
           },
-          "motion": { "enter": "typewriter", "duration": 1300, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 54,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.05,
+            "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "typewriter",
+            "duration": 1300,
+            "delay": 500
+          },
+          "at": {
+            "match": "下一个你可能会想要的"
+          }
         }
       ]
     },
@@ -1330,13 +1571,27 @@
       "overlays": [
         {
           "text": "第 20 屏",
-          "pos": { "x": 70, "y": 30 },
-          "style": {
-            "font": "Inter", "size": 80, "weight": 700,
-            "color": "var(--accent)", "rotation": -5,
-            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          "pos": {
+            "x": 70,
+            "y": 30
           },
-          "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
+          "style": {
+            "font": "Inter",
+            "size": 80,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -5,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 700,
+            "delay": 500
+          },
+          "at": {
+            "match": "猜你喜欢"
+          }
         }
       ]
     },
@@ -1350,13 +1605,27 @@
       "overlays": [
         {
           "text": "注意力 = 入口",
-          "pos": { "x": 50, "y": 80 },
-          "style": {
-            "font": "XY Kaiti", "size": 58, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 80
           },
-          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 58,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.06,
+            "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 1100,
+            "delay": 500
+          },
+          "at": {
+            "match": "注意力"
+          }
         }
       ]
     },
@@ -1370,13 +1639,27 @@
       "overlays": [
         {
           "text": "先花注意力",
-          "pos": { "x": 50, "y": 80 },
-          "style": {
-            "font": "XY Kaiti", "size": 62, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 80
           },
-          "motion": { "enter": "handwrite", "duration": 1100, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 62,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.06,
+            "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "handwrite",
+            "duration": 1100,
+            "delay": 500
+          },
+          "at": {
+            "match": "先有人花了你的注意力"
+          }
         }
       ]
     },
@@ -1390,13 +1673,27 @@
       "overlays": [
         {
           "text": "关掉「为你推荐」",
-          "pos": { "x": 50, "y": 22 },
-          "style": {
-            "font": "XY Kaiti", "size": 52, "weight": 400,
-            "color": "var(--accent)", "rotation": -2,
-            "letterSpacing": 0.05, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 22
           },
-          "motion": { "enter": "slide-clip", "duration": 900, "delay": 400 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 52,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -2,
+            "letterSpacing": 0.05,
+            "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "slide-clip",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "「为你推荐」开关"
+          }
         }
       ]
     },
@@ -1410,13 +1707,27 @@
       "overlays": [
         {
           "text": "一周后",
-          "pos": { "x": 28, "y": 28 },
-          "style": {
-            "font": "XY Kaiti", "size": 68, "weight": 400,
-            "color": "var(--accent)", "rotation": -4,
-            "letterSpacing": 0.08, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 28,
+            "y": 28
           },
-          "motion": { "enter": "ink-bleed", "duration": 1000, "delay": 400 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 68,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.08,
+            "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 1000,
+            "delay": 400
+          },
+          "at": {
+            "match": "一周以后"
+          }
         }
       ]
     },
@@ -1456,6 +1767,9 @@
             "enter": "fade",
             "duration": 700,
             "delay": 500
+          },
+          "at": {
+            "match": "停五分钟"
           }
         }
       ]
@@ -1470,13 +1784,27 @@
       "overlays": [
         {
           "text": "更有耐心",
-          "pos": { "x": 28, "y": 28 },
-          "style": {
-            "font": "XY Kaiti", "size": 60, "weight": 400,
-            "color": "#6b5a3a", "rotation": -3,
-            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.12)"
+          "pos": {
+            "x": 28,
+            "y": 28
           },
-          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 60,
+            "weight": 400,
+            "color": "#6b5a3a",
+            "rotation": -3,
+            "letterSpacing": 0.06,
+            "shadow": "2px 3px 0 rgba(0,0,0,.12)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 1100,
+            "delay": 500
+          },
+          "at": {
+            "match": "它比你更有耐心"
+          }
         }
       ]
     },
@@ -1490,13 +1818,27 @@
       "overlays": [
         {
           "text": "留 5 分钟无聊",
-          "pos": { "x": 50, "y": 82 },
-          "style": {
-            "font": "XY Kaiti", "size": 56, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 82
           },
-          "motion": { "enter": "handwrite", "duration": 1200, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 56,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.06,
+            "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "handwrite",
+            "duration": 1200,
+            "delay": 500
+          },
+          "at": {
+            "match": "给自己留五分钟"
+          }
         }
       ]
     },
@@ -1510,33 +1852,72 @@
       "overlays": [
         {
           "text": "①",
-          "pos": { "x": 28, "y": 30 },
+          "pos": {
+            "x": 28,
+            "y": 30
+          },
           "style": {
-            "font": "Inter", "size": 88, "weight": 700,
-            "color": "var(--accent)", "rotation": -4,
+            "font": "Inter",
+            "size": 88,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -4,
             "shadow": "3px 4px 0 rgba(0,0,0,.14)"
           },
-          "motion": { "enter": "bounce", "duration": 700, "delay": 300 }
+          "motion": {
+            "enter": "bounce",
+            "duration": 700,
+            "delay": 300
+          },
+          "at": {
+            "match": "下个月还会用它吗"
+          }
         },
         {
           "text": "②",
-          "pos": { "x": 50, "y": 30 },
+          "pos": {
+            "x": 50,
+            "y": 30
+          },
           "style": {
-            "font": "Inter", "size": 88, "weight": 700,
-            "color": "var(--accent)", "rotation": -2,
+            "font": "Inter",
+            "size": 88,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": -2,
             "shadow": "3px 4px 0 rgba(0,0,0,.14)"
           },
-          "motion": { "enter": "bounce", "duration": 700, "delay": 700 }
+          "motion": {
+            "enter": "bounce",
+            "duration": 700,
+            "delay": 700
+          },
+          "at": {
+            "match": "是我需要它"
+          }
         },
         {
           "text": "③",
-          "pos": { "x": 72, "y": 30 },
+          "pos": {
+            "x": 72,
+            "y": 30
+          },
           "style": {
-            "font": "Inter", "size": 88, "weight": 700,
-            "color": "var(--accent)", "rotation": 2,
+            "font": "Inter",
+            "size": 88,
+            "weight": 700,
+            "color": "var(--accent)",
+            "rotation": 2,
             "shadow": "3px 4px 0 rgba(0,0,0,.14)"
           },
-          "motion": { "enter": "bounce", "duration": 700, "delay": 1100 }
+          "motion": {
+            "enter": "bounce",
+            "duration": 700,
+            "delay": 1100
+          },
+          "at": {
+            "match": "明早起来我还想要它吗"
+          }
         }
       ]
     },
@@ -1550,13 +1931,27 @@
       "overlays": [
         {
           "text": "拿回决策权",
-          "pos": { "x": 50, "y": 80 },
-          "style": {
-            "font": "XY Kaiti", "size": 68, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.08, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 80
           },
-          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 600 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 68,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.08,
+            "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 1100,
+            "delay": 600
+          },
+          "at": {
+            "match": "把决策权"
+          }
         }
       ]
     },
@@ -1570,13 +1965,27 @@
       "overlays": [
         {
           "text": "省出来",
-          "pos": { "x": 72, "y": 30 },
-          "style": {
-            "font": "XY Kaiti", "size": 76, "weight": 400,
-            "color": "var(--accent)", "rotation": -5,
-            "letterSpacing": 0.1, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 72,
+            "y": 30
           },
-          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 76,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -5,
+            "letterSpacing": 0.1,
+            "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 1100,
+            "delay": 500
+          },
+          "at": {
+            "match": "钱更是省出来的"
+          }
         }
       ]
     },
@@ -1590,13 +1999,27 @@
       "overlays": [
         {
           "text": "不被套路",
-          "pos": { "x": 50, "y": 80 },
-          "style": {
-            "font": "XY Kaiti", "size": 68, "weight": 400,
-            "color": "var(--accent)", "rotation": -3,
-            "letterSpacing": 0.08, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          "pos": {
+            "x": 50,
+            "y": 80
           },
-          "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
+          "style": {
+            "font": "XY Kaiti",
+            "size": 68,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.08,
+            "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 700,
+            "delay": 500
+          },
+          "at": {
+            "match": "用来不被别人套路"
+          }
         }
       ]
     },
@@ -1627,6 +2050,9 @@
             "enter": "ink-bleed",
             "duration": 1200,
             "delay": 600
+          },
+          "at": {
+            "match": "都是清醒的选择"
           }
         }
       ]
