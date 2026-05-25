@@ -10,9 +10,9 @@
  *   7. ffmpeg 把视频和音频合到最终 mp4
  *
  * 用法（仓库根目录）：
- *   node .012-reading-confidence-assets/render.mjs
+ *   node .012-not-fooled-assets/render.mjs
  *
- * 输出：.012-reading-confidence-assets/output/012-reading-confidence.mp4
+ * 输出：.012-not-fooled-assets/output/012-not-fooled.mp4
  *
  * 需要：
  *   - /usr/bin/google-chrome
@@ -31,11 +31,11 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(HERE, '..');
 const AUDIO_DIR = path.join(HERE, 'audio');
 const OUTPUT_DIR = path.join(HERE, 'output');
-const OUTPUT_MP4 = path.join(OUTPUT_DIR, '012-reading-confidence.mp4');
+const OUTPUT_MP4 = path.join(OUTPUT_DIR, '012-not-fooled.mp4');
 const TMP_VIDEO = '/tmp/012-render-silent.mp4';
 const TMP_AUDIO = '/tmp/012-render-audio.mp3';
 const HTTP_PORT = 8765;
-const URL_012 = `http://127.0.0.1:${HTTP_PORT}/012-reading-confidence.html`;
+const URL_012 = `http://127.0.0.1:${HTTP_PORT}/012-not-fooled.html`;
 const FPS = 30;
 const INTRO_MS = 300;   // recorder 起来到 startRecordingPlayback 之间的空白纸面段
 const GAP_MS = 80;      // beat 之间的"喘息"间隔，必须跟 player.js 里的 setTimeout 一致
