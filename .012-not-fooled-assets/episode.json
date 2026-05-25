@@ -819,7 +819,19 @@
       "motion": {
         "enter": "slide-up",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "¥32",
+          "pos": { "x": 72, "y": 32 },
+          "style": {
+            "font": "Inter", "size": 110, "weight": 700,
+            "color": "var(--accent)", "rotation": -6,
+            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": { "enter": "stamp", "duration": 700, "delay": 600 }
+        }
+      ]
     },
     "xianyu-result": {
       "prompt": "扁平插画。米黄底色，画面中央一只小黄鱼跃出水面，鱼背上驮着一杯打包好的拿铁。鱼亮黄，拿铁褐色，水花浅蓝，背景留白。",
@@ -858,7 +870,19 @@
       "motion": {
         "enter": "ink-bleed",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "+¥14",
+          "pos": { "x": 30, "y": 30 },
+          "style": {
+            "font": "Inter", "size": 88, "weight": 700,
+            "color": "var(--accent)", "rotation": -5,
+            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
+        }
+      ]
     },
     "many-brands": {
       "prompt": "扁平插画。米黄底色，画面横向并排两个圆形空白徽章（代表连锁餐饮 logo 位，不写文字），徽章下方各有一只小手势举着一份套餐。徽章深棕描边内白，套餐颜色暖色。",
@@ -866,7 +890,19 @@
       "motion": {
         "enter": "push-right",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "那 5 分钟",
+          "pos": { "x": 50, "y": 80 },
+          "style": {
+            "font": "XY Kaiti", "size": 64, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.06, "shadow": "2px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "handwrite", "duration": 1000, "delay": 500 }
+        }
+      ]
     },
     "info-gap": {
       "prompt": "扁平插画。米黄底色，画面中央两座小山之间一道狭长的裂缝，裂缝底部透出一束暖光。山深灰，裂缝深棕，暖光金黄，背景留白。",
@@ -917,7 +953,7 @@
       },
       "overlays": [
         {
-          "text": "3 : 00",
+          "text": "03:00",
           "pos": {
             "x": 50,
             "y": 48
@@ -935,6 +971,12 @@
             "enter": "zoom-pop",
             "duration": 700,
             "delay": 400
+          },
+          "countdown": {
+            "from": "03:00",
+            "ticks": 4,
+            "interval": 350,
+            "startDelay": 200
           }
         }
       ]
@@ -945,7 +987,29 @@
       "motion": {
         "enter": "wipe-right",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "真稀缺",
+          "pos": { "x": 28, "y": 26 },
+          "style": {
+            "font": "XY Kaiti", "size": 56, "weight": 400,
+            "color": "#2f3744", "rotation": -3,
+            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.12)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 900, "delay": 400 }
+        },
+        {
+          "text": "伪稀缺",
+          "pos": { "x": 72, "y": 26 },
+          "style": {
+            "font": "XY Kaiti", "size": 56, "weight": 400,
+            "color": "var(--accent)", "rotation": 3,
+            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 900, "delay": 900 }
+        }
+      ]
     },
     "need-you-back": {
       "prompt": "扁平插画。米黄底色，画面中央一只大手伸出来扯住一个小人的衣角，小人正想往画面外走。手浅灰半透明，小人黑色线条，背景留白。",
@@ -953,7 +1017,19 @@
       "motion": {
         "enter": "push-left",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "它需要你",
+          "pos": { "x": 50, "y": 78 },
+          "style": {
+            "font": "XY Kaiti", "size": 72, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.08, "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "handwrite", "duration": 1100, "delay": 500 }
+        }
+      ]
     },
     "algo-knows": {
       "prompt": "扁平插画。米黄底色，画面中央一只手机屏幕，屏幕里浮出一只眼睛剪影，瞳孔位置是一颗小红心。手机黑色边框，眼睛米白，红心饱和红色。",
@@ -961,7 +1037,19 @@
       "motion": {
         "enter": "iris-in",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "太懂你",
+          "pos": { "x": 50, "y": 80 },
+          "style": {
+            "font": "XY Kaiti", "size": 72, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.08, "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 1000, "delay": 500 }
+        }
+      ]
     },
     "discount-bait": {
       "prompt": "扁平插画。米黄底色，画面中央一只钓鱼竿斜出，钩子上挂着一张写有「9 折」位置（位置空白方框）的价格牌。钓竿深棕，价格牌饱和红色，背景留白。",
@@ -1000,7 +1088,19 @@
       "motion": {
         "enter": "fade",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "最累 · 最烦 · 最孤独",
+          "pos": { "x": 50, "y": 82 },
+          "style": {
+            "font": "XY Kaiti", "size": 52, "weight": 400,
+            "color": "var(--accent)", "rotation": -2,
+            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "letter-spread", "duration": 1200, "delay": 500 }
+        }
+      ]
     },
     "algo-patience": {
       "prompt": "扁平插画。米黄底色，画面中央一只老式机械沙漏，沙子缓慢流下；沙漏旁边一只睁开的眼睛在静静看着。沙漏暖金，眼睛米白瞳孔黑，背景留白。",
@@ -1008,7 +1108,19 @@
       "motion": {
         "enter": "slide-down",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "耐心",
+          "pos": { "x": 72, "y": 30 },
+          "style": {
+            "font": "XY Kaiti", "size": 80, "weight": 400,
+            "color": "var(--accent)", "rotation": -5,
+            "letterSpacing": 0.12, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 400 }
+        }
+      ]
     },
     "emotion-low": {
       "prompt": "扁平插画。米黄底色，画面中央一部手机屏幕亮着，屏幕外一只手悬停未按。手机黑色，屏幕浅蓝冷光，手部黑色线条，背景留白。",
@@ -1016,7 +1128,19 @@
       "motion": {
         "enter": "wipe-circle",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "情绪最低时",
+          "pos": { "x": 50, "y": 80 },
+          "style": {
+            "font": "XY Kaiti", "size": 58, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "typewriter", "duration": 1200, "delay": 500 }
+        }
+      ]
     },
     "ch3": {
       "type": "chapter",
@@ -1033,7 +1157,19 @@
       "motion": {
         "enter": "slide-up",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "+¥2000",
+          "pos": { "x": 70, "y": 30 },
+          "style": {
+            "font": "Inter", "size": 86, "weight": 700,
+            "color": "var(--accent)", "rotation": -6,
+            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
+        }
+      ]
     },
     "anxiety-tax": {
       "prompt": "扁平插画。米黄底色，画面中央一个手机外套着透明盾牌，盾牌上飘起一个大问号气泡。手机深灰，盾牌浅金边线，问号饱和红色。",
@@ -1072,7 +1208,19 @@
       "motion": {
         "enter": "wipe-left",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "−50%",
+          "pos": { "x": 72, "y": 50 },
+          "style": {
+            "font": "Inter", "size": 110, "weight": 700,
+            "color": "var(--accent)", "rotation": -8,
+            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": { "enter": "stamp", "duration": 700, "delay": 600 }
+        }
+      ]
     },
     "new-vs-secondhand-2": {
       "prompt": "扁平插画。米黄底色，画面中央一张被对半切开的钞票剪影，左半边贴在「新品」的圆框里，右半边贴在「二手」的圆框里。钞票浅米暖灰，圆框深棕描边，背景留白。",
@@ -1080,7 +1228,19 @@
       "motion": {
         "enter": "push-right",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "智商税",
+          "pos": { "x": 50, "y": 80 },
+          "style": {
+            "font": "XY Kaiti", "size": 72, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.08, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 1000, "delay": 500 }
+        }
+      ]
     },
     "gym-card": {
       "prompt": "扁平插画。米黄底色，画面中央一张健身房年卡的剪影（卡面空白方框，仅勾勒边框和打孔位置），卡的旁边一只跑步机的剪影上落了一层薄灰。卡浅蓝，跑步机深灰带浅灰尘埃点。",
@@ -1119,7 +1279,19 @@
       "motion": {
         "enter": "ink-bleed",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "焦虑收费",
+          "pos": { "x": 50, "y": 78 },
+          "style": {
+            "font": "XY Kaiti", "size": 68, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.08, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 500 }
+        }
+      ]
     },
     "ch4": {
       "type": "chapter",
@@ -1136,7 +1308,19 @@
       "motion": {
         "enter": "slide-down",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "下一个你想要的",
+          "pos": { "x": 50, "y": 82 },
+          "style": {
+            "font": "XY Kaiti", "size": 54, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.05, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "typewriter", "duration": 1300, "delay": 500 }
+        }
+      ]
     },
     "scroll-trap": {
       "prompt": "扁平插画。米黄底色，画面中央一只手指悬停在手机屏幕上向下滑，屏幕里有一长串模糊的卡片列表向上滚动。手机黑色边框，卡片浅米和浅红渐变，背景留白。",
@@ -1144,7 +1328,19 @@
       "motion": {
         "enter": "glitch",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "第 20 屏",
+          "pos": { "x": 70, "y": 30 },
+          "style": {
+            "font": "Inter", "size": 80, "weight": 700,
+            "color": "var(--accent)", "rotation": -5,
+            "letterSpacing": 0.02, "shadow": "3px 5px 0 rgba(0,0,0,.18)"
+          },
+          "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
+        }
+      ]
     },
     "attention-gateway": {
       "prompt": "扁平插画。米黄底色，画面中央一扇半开的木门，门后透出一道暖光，门口地上散落着几枚硬币剪影。门深棕，硬币暖金，光晕金黄。",
@@ -1152,7 +1348,19 @@
       "motion": {
         "enter": "iris-in",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "注意力 = 入口",
+          "pos": { "x": 50, "y": 80 },
+          "style": {
+            "font": "XY Kaiti", "size": 58, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 500 }
+        }
+      ]
     },
     "attention-spent": {
       "prompt": "扁平插画。米黄底色，画面横向是一只钱包剪影，钱包里飞出几张钞票，钞票上贴的不是数字而是一只眼睛符号（位置空白）。钱包深棕，钞票浅米，眼睛符号红色描边。",
@@ -1160,7 +1368,19 @@
       "motion": {
         "enter": "push-left",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "先花注意力",
+          "pos": { "x": 50, "y": 80 },
+          "style": {
+            "font": "XY Kaiti", "size": 62, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "handwrite", "duration": 1100, "delay": 500 }
+        }
+      ]
     },
     "kill-recommend": {
       "prompt": "扁平插画。米黄底色，画面中央一个手机设置界面剪影，界面里几行开关位置依次从「开」拨到「关」（开关方框空白）。手机黑色，开关浅米，关闭后的开关饱和红色。",
@@ -1168,7 +1388,19 @@
       "motion": {
         "enter": "wipe-left",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "关掉「为你推荐」",
+          "pos": { "x": 50, "y": 22 },
+          "style": {
+            "font": "XY Kaiti", "size": 52, "weight": 400,
+            "color": "var(--accent)", "rotation": -2,
+            "letterSpacing": 0.05, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "slide-clip", "duration": 900, "delay": 400 }
+        }
+      ]
     },
     "one-week-later": {
       "prompt": "扁平插画。米黄底色，画面中央一张日历的剪影，第七格被红色圆圈圈住；日历旁边一部安静的手机屏幕熄灭。日历米白，红圈饱和，手机深灰熄屏。",
@@ -1176,7 +1408,19 @@
       "motion": {
         "enter": "zoom-out",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "一周后",
+          "pos": { "x": 28, "y": 28 },
+          "style": {
+            "font": "XY Kaiti", "size": 68, "weight": 400,
+            "color": "var(--accent)", "rotation": -4,
+            "letterSpacing": 0.08, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 1000, "delay": 400 }
+        }
+      ]
     },
     "ch5": {
       "type": "chapter",
@@ -1224,7 +1468,19 @@
       "motion": {
         "enter": "wipe-right",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "更有耐心",
+          "pos": { "x": 28, "y": 28 },
+          "style": {
+            "font": "XY Kaiti", "size": 60, "weight": 400,
+            "color": "#6b5a3a", "rotation": -3,
+            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.12)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 500 }
+        }
+      ]
     },
     "bored-five-min": {
       "prompt": "扁平插画。米黄底色，画面中央一个小人坐在窗边发呆，桌上一杯凉了的茶；窗外一束阳光斜照进来。小人黑色，茶杯米白，阳光暖金，背景留白。",
@@ -1232,7 +1488,19 @@
       "motion": {
         "enter": "fade",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "留 5 分钟无聊",
+          "pos": { "x": 50, "y": 82 },
+          "style": {
+            "font": "XY Kaiti", "size": 56, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.06, "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "handwrite", "duration": 1200, "delay": 500 }
+        }
+      ]
     },
     "three-questions": {
       "prompt": "扁平插画。米黄底色，画面中央三个并排的圆形问号气泡（气泡内空白方框），气泡下方各有一只指向画面外的小箭头。气泡浅米，问号位置红色描边，箭头深棕。",
@@ -1240,7 +1508,39 @@
       "motion": {
         "enter": "stamp",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "①",
+          "pos": { "x": 28, "y": 30 },
+          "style": {
+            "font": "Inter", "size": 88, "weight": 700,
+            "color": "var(--accent)", "rotation": -4,
+            "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "bounce", "duration": 700, "delay": 300 }
+        },
+        {
+          "text": "②",
+          "pos": { "x": 50, "y": 30 },
+          "style": {
+            "font": "Inter", "size": 88, "weight": 700,
+            "color": "var(--accent)", "rotation": -2,
+            "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "bounce", "duration": 700, "delay": 700 }
+        },
+        {
+          "text": "③",
+          "pos": { "x": 72, "y": 30 },
+          "style": {
+            "font": "Inter", "size": 88, "weight": 700,
+            "color": "var(--accent)", "rotation": 2,
+            "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "bounce", "duration": 700, "delay": 1100 }
+        }
+      ]
     },
     "decision-back": {
       "prompt": "扁平插画。米黄底色，画面中央一只手从手机屏幕里把一张「决策」字位置（位置空白方框）的小卡片拿出来攥在手心。手机深灰，卡片浅米带饱和红色边框，手部黑色。",
@@ -1248,7 +1548,19 @@
       "motion": {
         "enter": "iris-in",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "拿回决策权",
+          "pos": { "x": 50, "y": 80 },
+          "style": {
+            "font": "XY Kaiti", "size": 68, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.08, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 600 }
+        }
+      ]
     },
     "save-not-earn": {
       "prompt": "扁平插画。米黄底色，画面中央一只透明罐子，罐子里叠着几张钞票剪影，旁边一只手正把又一张轻轻放进去。罐子浅蓝透明边线，钞票浅米暖灰，手部黑色。",
@@ -1256,7 +1568,19 @@
       "motion": {
         "enter": "ink-bleed",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "省出来",
+          "pos": { "x": 72, "y": 30 },
+          "style": {
+            "font": "XY Kaiti", "size": 76, "weight": 400,
+            "color": "var(--accent)", "rotation": -5,
+            "letterSpacing": 0.1, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "ink-bleed", "duration": 1100, "delay": 500 }
+        }
+      ]
     },
     "info-gap-protection": {
       "prompt": "扁平插画。米黄底色，画面中央两座小山之间一道暖光裂缝，裂缝前一个小人侧身站立，背朝裂缝伸开双手挡住背后涌来的浅灰算法之手。小人黑色，算法手浅灰半透明，裂缝暖金。",
@@ -1264,7 +1588,19 @@
       "motion": {
         "enter": "flip-h",
         "duration": 700
-      }
+      },
+      "overlays": [
+        {
+          "text": "不被套路",
+          "pos": { "x": 50, "y": 80 },
+          "style": {
+            "font": "XY Kaiti", "size": 68, "weight": 400,
+            "color": "var(--accent)", "rotation": -3,
+            "letterSpacing": 0.08, "shadow": "3px 4px 0 rgba(0,0,0,.14)"
+          },
+          "motion": { "enter": "stamp", "duration": 700, "delay": 500 }
+        }
+      ]
     },
     "final-wish": {
       "prompt": "扁平插画。米黄底色，画面中央一个小人侧身朝远处地平线走，远方一抹暖光，小人脚步从容。小人黑色，地平线暖金，背景大面积留白。",

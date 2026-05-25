@@ -1,7 +1,7 @@
 {
   "id": "012-not-fooled",
   "name": "Paper Card Talk",
-  "title": "暖纸卡片口播 · 读书不是为了学历，是为了给自己留退路",
+  "title": "暖纸卡片口播 · 别再被算法套路了：互联网+AI 时代的省钱信息差",
   "entry": "012-not-fooled.html",
   "style": ".012-not-fooled-assets/styles.css",
   "script": ".012-not-fooled-assets/player.js",
@@ -19,8 +19,9 @@
     "<image-slot> 拖拽填图 + sidecar 持久化"
   ],
   "scripts": [
+    ".012-not-fooled-assets/bootstrap.js",
     ".012-not-fooled-assets/image-slot.js",
-    ".012-not-fooled-assets/beats.js",
+    ".012-not-fooled-assets/overlays.js",
     ".012-not-fooled-assets/player.js",
     ".012-not-fooled-assets/tweaks-panel.jsx",
     ".012-not-fooled-assets/tweaks.jsx"

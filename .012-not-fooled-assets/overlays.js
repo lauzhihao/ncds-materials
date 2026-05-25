@@ -19,7 +19,10 @@
                        |"ink-bleed"|"typewriter"|"handwrite"|"slide-clip"
                        |"iris"|"glitch"|"bounce"|"drift-in"|"zoom-pop",
                 from: "left"|"right"|"top"|"bottom",  // 仅 fly-in 用
-                duration, easing, delay } }
+                duration, easing, delay },
+       countdown:{ from: "03:00", ticks: 3, interval: 500, startDelay: 0 } }
+                // 入场动效结束 startDelay ms 后，textContent 每 interval ms 减 1 秒，跳 ticks 次后停。
+                // from 支持 "MM:SS" 或纯整数秒；解析失败则跳过。
    ────────────────────────────────────────────────────────────────── */
 (function () {
   const STYLES = [
@@ -158,9 +161,55 @@
       }
 
       layer.appendChild(el);
+
+      // countdown：入场动效结束后逐秒减 textContent
+      if (o.countdown && o.countdown.from != null) {
+        const motionDur = (o.motion && o.motion.duration) || 0;
+        startCountdown(el, o.countdown, delay + motionDur);
+      }
     });
 
     void layer.offsetHeight;
+  }
+
+  // 解析 "MM:SS" 或纯整数秒；返回 { total, format(sec) }，解析失败返回 null
+  function parseTimer(from) {
+    const str = String(from);
+    if (str.indexOf(':') >= 0) {
+      const parts = str.split(':').map((n) => parseInt(n, 10));
+      if (parts.some(isNaN)) return null;
+      const total = parts[0] * 60 + parts[1];
+      return {
+        total,
+        format: (sec) => String(Math.floor(sec / 60)).padStart(2, '0') + ':' + String(sec % 60).padStart(2, '0'),
+      };
+    }
+    const n = parseInt(str, 10);
+    if (isNaN(n)) return null;
+    return { total: n, format: (sec) => String(sec) };
+  }
+
+  function startCountdown(el, cfg, baseDelay) {
+    const t = parseTimer(cfg.from);
+    if (!t) return;
+    const ticks = Math.max(1, Number(cfg.ticks || 3));
+    const interval = Math.max(60, Number(cfg.interval || 500));
+    const startDelay = Math.max(0, Number(cfg.startDelay || 0));
+
+    let remaining = t.total;
+    el.textContent = t.format(remaining);
+
+    setTimeout(() => {
+      if (!el.isConnected) return;
+      let n = 0;
+      const id = setInterval(() => {
+        if (!el.isConnected) { clearInterval(id); return; }
+        remaining = Math.max(0, remaining - 1);
+        el.textContent = t.format(remaining);
+        n += 1;
+        if (n >= ticks || remaining <= 0) clearInterval(id);
+      }, interval);
+    }, baseDelay + startDelay);
   }
 
   function clear(sceneEl) {
