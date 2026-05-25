@@ -114,7 +114,19 @@
     }
 
     window.EPISODE = ep;
-    const slug = (ep.meta && ep.meta.slug) || slugFromUrl(dirAbs);
+    // URL 推出的 slug 是磁盘实际目录名（唯一可信来源 — picture/audio 都在这下面）。
+    // episode.meta.slug 仅作 fallback：如果两者冲突，meta.slug 输，因为听 meta.slug
+    // 会让 picture/audio 路径指向不存在的目录、全员 404，错得无声无息。
+    const urlSlug = slugFromUrl(dirAbs);
+    const metaSlug = ep.meta && ep.meta.slug;
+    if (urlSlug && metaSlug && urlSlug !== metaSlug) {
+      console.warn(
+        'bootstrap: slug mismatch — directory says "' + urlSlug +
+        '", episode.meta.slug says "' + metaSlug +
+        '". Using URL-derived "' + urlSlug + '". 把 meta.slug 改成 "' + urlSlug + '" 消除告警。'
+      );
+    }
+    const slug = urlSlug || metaSlug;
     // __assetsRoot 给 player.js 拼 audio/picture 路径用；保留相对路径以兼容 render.mjs 与 puppeteer base
     ep.__assetsRoot = '.' + slug + '-assets';
     ep.__slug = slug;
