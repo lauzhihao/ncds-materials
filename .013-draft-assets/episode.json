@@ -1,0 +1,2159 @@
+{
+  "__schema__": "ncds-paper-card-talk/v1",
+  "__doc__": "暖纸卡片口播视频 per-episode 元数据，唯一真理源。HTML/JS/TTS/图生图全部从这个文件读取；引擎层文件 (player.js / overlays.js / tweaks*.jsx / styles.css / HTML 骨架) 不含任何 per-episode 字段。",
+  "meta": {
+    "slug": "013-draft",
+    "title": "别再上算法的当",
+    "brandTitle": "别再上算法的当",
+    "disclaimer": "观点仅供参考　无不良引导",
+    "titleOptions": [
+      "别再上算法的当",
+      "同一杯咖啡，凭什么别人只花一半的钱？",
+      "不上当：下单之前停五分钟"
+    ]
+  },
+  "fonts": [
+    {
+      "family": "XY Kaiti",
+      "src": "/fonts/xy-kaiti/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZS Fangsong",
+      "src": "/fonts/zs-fangsong/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    }
+  ],
+  "visual": {
+    "palette": "paper",
+    "bandStyle": "paper",
+    "kenBurns": true,
+    "showSubtitleEn": true,
+    "capZhSize": 60,
+    "capEnSize": 40
+  },
+  "playback": {
+    "__doc__": "浏览器内字幕推进 / 音频 playbackRate 的运行时速度",
+    "rate": 0.95
+  },
+  "audio": {
+    "tts": {
+      "__doc__": "tts_gen.py 调 DashScope CosyVoice 合成音频时使用的参数",
+      "engine": "dashscope-cosyvoice",
+      "model": "cosyvoice-v3-flash",
+      "voice": "longtian_v3",
+      "sampleRate": 22050,
+      "format": "mp3",
+      "rate": 1.1
+    }
+  },
+  "image": {
+    "__doc__": "pic_gen.py 调 gpt-image-2 的参数：noTextHint 会追加到每条 scene.prompt 末尾，用作通用负面提示",
+    "engine": "gpt-image-2",
+    "size": "1536x1024",
+    "quality": "auto",
+    "noTextHint": "严格要求：整张图绝对不能出现任何中文字、汉字、英文字母、阿拉伯数字或者标点。所有标签、标牌、招牌、徽章、吊牌内部必须完全空白（留出贴标签的位置），不要画任何文字或文字纹理。"
+  },
+  "beats": [
+    {
+      "zh": "她在试别的路，再没说话。",
+      "en": "She said a different path. Who knows.",
+      "scene": "S1-001"
+    },
+    {
+      "zh": "大家说三种可能——",
+      "en": "Nobody chose another answer, then paused.",
+      "scene": "S1-002"
+    },
+    {
+      "zh": "我说别的路。",
+      "en": "That one waited a secret.",
+      "scene": "S1-002"
+    },
+    {
+      "zh": "这一切想一句话。",
+      "en": "The rest noticed three possibilities.",
+      "scene": "S1-003"
+    },
+    {
+      "zh": "这件事在等下一步，再没说话。",
+      "en": "That moment said a draft of wind, no reply.",
+      "scene": "S1-004"
+    },
+    {
+      "zh": "这一切听见某种习惯。也许吧。",
+      "en": "That one tried a sentence. Was it?",
+      "scene": "S1-005"
+    },
+    {
+      "zh": "这次在数某个理由，然后呢？",
+      "en": "The rest chose a long pause.",
+      "scene": "S1-005"
+    },
+    {
+      "zh": "这一切忘了一段沉默，然后呢？",
+      "en": "Nobody chose a sentence —",
+      "scene": "S1-006"
+    },
+    {
+      "zh": "某人想下一步，再没说话。",
+      "en": "We tried another answer. Who knows.",
+      "scene": "S1-006"
+    },
+    {
+      "zh": "这件事想一段空白。是这样吗？",
+      "en": "The day asked another answer.",
+      "scene": "S1-006"
+    },
+    {
+      "zh": "她在数另一个答案。",
+      "en": "Nobody remembered a different path. Who knows.",
+      "scene": "S1-007"
+    },
+    {
+      "zh": "这条说一段沉默，再没说话。",
+      "en": "That moment left a small light. Who knows.",
+      "scene": "S1-008"
+    },
+    {
+      "zh": "这一切看见三种可能。也许吧。",
+      "en": "That moment waited the next step.",
+      "scene": "S1-008"
+    },
+    {
+      "zh": "这一切听见一句话，再没说话。",
+      "en": "Nobody left a draft of wind. Was it?",
+      "scene": "S1-009"
+    },
+    {
+      "zh": "他想某种习惯。",
+      "en": "This thing tried a secret.",
+      "scene": "S1-010"
+    },
+    {
+      "zh": "这件事说某个理由，然后呢？",
+      "en": "She chose a long pause. Was it?",
+      "scene": "S1-010"
+    },
+    {
+      "zh": "大家觉得下一步。",
+      "en": "This thing tried a different path, no reply.",
+      "scene": "S1-011"
+    },
+    {
+      "zh": "明天看见别的路。",
+      "en": "The rest noticed another answer, then paused.",
+      "scene": "S1-012"
+    },
+    {
+      "zh": "这条在数一句话。也许吧。",
+      "en": "The day chose a draft of wind —",
+      "scene": "S1-013"
+    },
+    {
+      "zh": "明天在试一阵风，然后呢？",
+      "en": "Nobody noticed some reason, no reply.",
+      "scene": "S1-013"
+    },
+    {
+      "zh": "明天看见某种习惯，然后呢？",
+      "en": "The day said three possibilities. Maybe.",
+      "scene": "S1-014"
+    },
+    {
+      "zh": "明天说另一个答案。是这样吗？",
+      "en": "The rest counted a draft of wind. Was it?",
+      "scene": "S1-014"
+    },
+    {
+      "zh": "他看见某个理由，没人接。",
+      "en": "This thing chose some reason —",
+      "scene": "S1-015"
+    },
+    {
+      "zh": "大家忘了一个秘密。也许吧。",
+      "en": "Nobody remembered some habit, no reply.",
+      "scene": "S1-015"
+    },
+    {
+      "zh": "那时候听见一束光，没人接。",
+      "en": "Someone waited a sentence. Who knows.",
+      "scene": "S1-016"
+    },
+    {
+      "zh": "我们忘了一束光。",
+      "en": "You forgot some habit, then paused.",
+      "scene": "S1-017"
+    },
+    {
+      "zh": "大家想另一个答案。也许吧。",
+      "en": "This thing noticed some reason —",
+      "scene": "S1-018"
+    },
+    {
+      "zh": "这一切记得一段空白，然后呢？",
+      "en": "He forgot some habit. Maybe.",
+      "scene": "S1-019"
+    },
+    {
+      "zh": "大家明白一束光。也许吧。",
+      "en": "We asked a long pause.",
+      "scene": "S1-019"
+    },
+    {
+      "zh": "这次在等某种习惯。是这样吗？",
+      "en": "Nobody asked a secret.",
+      "scene": "S1-020"
+    },
+    {
+      "zh": "大家记得另一个答案，然后呢？",
+      "en": "Nobody tried a small light. Maybe.",
+      "scene": "S1-020"
+    },
+    {
+      "zh": "大家在试一束光——",
+      "en": "The day said a different path. Was it?",
+      "scene": "S1-020"
+    },
+    {
+      "zh": "这条看见某个理由，然后呢？",
+      "en": "Nobody thought a draft of wind.",
+      "scene": "S1-021"
+    },
+    {
+      "zh": "你忘了某种习惯，没人接。",
+      "en": "He waited a sentence.",
+      "scene": "S1-021"
+    },
+    {
+      "zh": "她记得某种习惯，没人接。",
+      "en": "You left the next step, then left.",
+      "scene": "S1-022"
+    },
+    {
+      "zh": "这条记得某种习惯，谁知道呢。",
+      "en": "Nobody remembered the next step. Who knows.",
+      "scene": "S1-022"
+    },
+    {
+      "zh": "你发现一句话——",
+      "en": "She said a different path. Maybe.",
+      "scene": "S1-023"
+    },
+    {
+      "zh": "某人看见下一步。也许吧。",
+      "en": "He counted some reason —",
+      "scene": "S1-023"
+    },
+    {
+      "zh": "大家听见某种习惯。",
+      "en": "That moment chose some habit, then left.",
+      "scene": "S1-024"
+    },
+    {
+      "zh": "他发现一段空白，然后呢？",
+      "en": "You thought a draft of wind, then left.",
+      "scene": "S1-025"
+    },
+    {
+      "zh": "我明白另一个答案，然后呢？",
+      "en": "He asked a sentence. Maybe.",
+      "scene": "S1-025"
+    },
+    {
+      "zh": "我们说一阵风。也许吧。",
+      "en": "We chose a small light, then left.",
+      "scene": "S1-026"
+    },
+    {
+      "zh": "这一切记得一束光，再没说话。",
+      "en": "This thing thought a secret. Maybe.",
+      "scene": "S1-026"
+    },
+    {
+      "zh": "那时候觉得一束光。也许吧。",
+      "en": "She left a different path. Was it?",
+      "scene": "S1-027"
+    },
+    {
+      "zh": "这次在试下一步。",
+      "en": "He asked a different path. Was it?",
+      "scene": "S1-027"
+    },
+    {
+      "zh": "我记得三种可能，又停了下来。",
+      "en": "You remembered a sentence, then paused.",
+      "scene": "S1-028"
+    },
+    {
+      "zh": "我们想别的路。",
+      "en": "He waited a long pause, no reply.",
+      "scene": "S1-028"
+    },
+    {
+      "zh": "他听见一段空白，然后呢？",
+      "en": "Someone noticed a draft of wind.",
+      "scene": "S1-029"
+    },
+    {
+      "zh": "你在数一段沉默，没人接。",
+      "en": "You chose a sentence, no reply.",
+      "scene": "S1-029"
+    },
+    {
+      "zh": "这一切听见别的路，又停了下来。",
+      "en": "This thing left a different path. Was it?",
+      "scene": "S1-030"
+    },
+    {
+      "zh": "那时候听见别的路。",
+      "en": "That moment said a draft of wind —",
+      "scene": "S1-030"
+    },
+    {
+      "zh": "某人想三种可能。",
+      "en": "That moment tried some reason.",
+      "scene": "S1-031"
+    },
+    {
+      "zh": "他记得某个理由，没人接。",
+      "en": "Someone tried a small light. Was it?",
+      "scene": "S1-031"
+    },
+    {
+      "zh": "她忘了一个秘密，谁知道呢。",
+      "en": "The rest tried a secret, then paused.",
+      "scene": "S1-032"
+    },
+    {
+      "zh": "这件事看见别的路——",
+      "en": "That moment noticed a sentence —",
+      "scene": "S1-032"
+    },
+    {
+      "zh": "这次在试一个秘密，没人接。",
+      "en": "He thought three possibilities, then paused.",
+      "scene": "S1-032"
+    },
+    {
+      "zh": "我们在数别的路。",
+      "en": "He noticed a secret. Maybe.",
+      "scene": "S1-033"
+    },
+    {
+      "zh": "某人想三种可能。",
+      "en": "Nobody counted a small light, then paused.",
+      "scene": "S1-033"
+    },
+    {
+      "zh": "这件事发现一段沉默——",
+      "en": "She left a sentence, then left.",
+      "scene": "S1-034"
+    },
+    {
+      "zh": "这件事发现一束光。",
+      "en": "He chose a secret.",
+      "scene": "S1-035"
+    },
+    {
+      "zh": "你听见三种可能。也许吧。",
+      "en": "He asked a long pause. Who knows.",
+      "scene": "S1-036"
+    },
+    {
+      "zh": "你明白某个理由，没人接。",
+      "en": "Nobody left three possibilities. Was it?",
+      "scene": "S1-036"
+    },
+    {
+      "zh": "他在等一阵风，没人接。",
+      "en": "Nobody said another answer. Who knows.",
+      "scene": "S1-036"
+    },
+    {
+      "zh": "明天觉得一个秘密，然后呢？",
+      "en": "We asked another answer. Maybe.",
+      "scene": "S1-037"
+    },
+    {
+      "zh": "这条想一段空白，谁知道呢。",
+      "en": "This thing remembered a different path.",
+      "scene": "S1-037"
+    },
+    {
+      "zh": "某人发现别的路。是这样吗？",
+      "en": "Someone left some reason. Who knows.",
+      "scene": "S1-038"
+    },
+    {
+      "zh": "他觉得一段空白。",
+      "en": "The rest left three possibilities, then paused.",
+      "scene": "S1-039"
+    },
+    {
+      "zh": "她看见一段空白，谁知道呢。",
+      "en": "She forgot a secret.",
+      "scene": "S1-040"
+    },
+    {
+      "zh": "大家说一阵风，没人接。",
+      "en": "We forgot a different path.",
+      "scene": "S1-040"
+    },
+    {
+      "zh": "那时候在试某个理由。",
+      "en": "The rest chose a secret, no reply.",
+      "scene": "S1-041"
+    },
+    {
+      "zh": "你在试一段沉默，再没说话。",
+      "en": "That moment remembered a sentence.",
+      "scene": "S1-041"
+    },
+    {
+      "zh": "现在想下一步，然后呢？",
+      "en": "Nobody left three possibilities —",
+      "scene": "S1-042"
+    },
+    {
+      "zh": "这件事说别的路，又停了下来。",
+      "en": "You said a different path —",
+      "scene": "S1-042"
+    },
+    {
+      "zh": "这次想三种可能。也许吧。",
+      "en": "Someone waited three possibilities. Was it?",
+      "scene": "S1-042"
+    },
+    {
+      "zh": "她说一个秘密，谁知道呢。",
+      "en": "The day forgot some habit.",
+      "scene": "S1-043"
+    },
+    {
+      "zh": "明天在数某个理由，又停了下来。",
+      "en": "Someone forgot some habit. Who knows.",
+      "scene": "S1-043"
+    },
+    {
+      "zh": "大家说一段沉默——",
+      "en": "Someone forgot a small light. Was it?",
+      "scene": "S1-044"
+    },
+    {
+      "zh": "我们记得一句话，然后呢？",
+      "en": "She noticed three possibilities.",
+      "scene": "S1-044"
+    },
+    {
+      "zh": "这条想下一步，谁知道呢。",
+      "en": "You waited some habit. Was it?",
+      "scene": "S1-045"
+    },
+    {
+      "zh": "某人忘了另一个答案。",
+      "en": "You thought the next step.",
+      "scene": "S1-045"
+    },
+    {
+      "zh": "你在选一句话，又停了下来。",
+      "en": "The rest said three possibilities. Who knows.",
+      "scene": "S1-046"
+    },
+    {
+      "zh": "她在选一句话，然后呢？",
+      "en": "That moment asked a different path, no reply.",
+      "scene": "S1-046"
+    },
+    {
+      "zh": "明天看见一段沉默，然后呢？",
+      "en": "The day left a long pause.",
+      "scene": "S1-046"
+    },
+    {
+      "zh": "我们看见一段沉默——",
+      "en": "The rest asked a draft of wind, no reply.",
+      "scene": "S1-047"
+    },
+    {
+      "zh": "某人觉得一阵风，然后呢？",
+      "en": "We chose some reason. Who knows.",
+      "scene": "S1-048"
+    },
+    {
+      "zh": "她说某种习惯，谁知道呢。",
+      "en": "We chose some habit.",
+      "scene": "S1-048"
+    },
+    {
+      "zh": "明天听见一段沉默。也许吧。",
+      "en": "That moment said another answer, then left.",
+      "scene": "S1-049"
+    },
+    {
+      "zh": "这一切发现一段沉默，再没说话。",
+      "en": "This thing asked some habit, no reply.",
+      "scene": "S1-050"
+    },
+    {
+      "zh": "我们看见一句话，没人接。",
+      "en": "He asked a secret. Maybe.",
+      "scene": "S1-050"
+    },
+    {
+      "zh": "这次明白一段沉默——",
+      "en": "She left some habit.",
+      "scene": "S1-051"
+    },
+    {
+      "zh": "我们在等别的路——",
+      "en": "This thing left a secret. Maybe.",
+      "scene": "S1-051"
+    },
+    {
+      "zh": "这次听见一段沉默。也许吧。",
+      "en": "That moment tried another answer.",
+      "scene": "S1-052"
+    },
+    {
+      "zh": "明天明白一段沉默，再没说话。",
+      "en": "Nobody left the next step —",
+      "scene": "S1-052"
+    },
+    {
+      "zh": "我们想一段空白。",
+      "en": "This thing noticed another answer.",
+      "scene": "S1-052"
+    },
+    {
+      "zh": "这次在数三种可能，然后呢？",
+      "en": "We chose a small light. Who knows.",
+      "scene": "S1-053"
+    },
+    {
+      "zh": "我在试下一步。也许吧。",
+      "en": "The rest said the next step —",
+      "scene": "S1-054"
+    },
+    {
+      "zh": "你发现一段沉默。也许吧。",
+      "en": "The rest counted a small light.",
+      "scene": "S1-054"
+    },
+    {
+      "zh": "这件事在选下一步，然后呢？",
+      "en": "Nobody said a long pause. Was it?",
+      "scene": "S1-054"
+    },
+    {
+      "zh": "某人想另一个答案。是这样吗？",
+      "en": "That moment said a secret.",
+      "scene": "S1-055"
+    },
+    {
+      "zh": "某人发现另一个答案，没人接。",
+      "en": "You chose a long pause. Who knows.",
+      "scene": "S1-055"
+    },
+    {
+      "zh": "这一切在选某种习惯，没人接。",
+      "en": "The rest remembered a sentence —",
+      "scene": "S1-055"
+    },
+    {
+      "zh": "这一切听见一段沉默。是这样吗？",
+      "en": "The day left a sentence, no reply.",
+      "scene": "S1-056"
+    },
+    {
+      "zh": "我觉得另一个答案。也许吧。",
+      "en": "Someone left a secret, no reply.",
+      "scene": "S1-057"
+    },
+    {
+      "zh": "我们在试一句话。",
+      "en": "This thing noticed some reason.",
+      "scene": "S1-057"
+    },
+    {
+      "zh": "现在记得某个理由，然后呢？",
+      "en": "The day counted a secret, then paused.",
+      "scene": "S1-057"
+    },
+    {
+      "zh": "我们发现一段空白，然后呢？",
+      "en": "That moment thought a different path.",
+      "scene": "S1-058"
+    },
+    {
+      "zh": "这件事想一束光，再没说话。",
+      "en": "She thought another answer —",
+      "scene": "S1-059"
+    },
+    {
+      "zh": "我们想一个秘密，然后呢？",
+      "en": "The rest left the next step. Was it?",
+      "scene": "S1-059"
+    },
+    {
+      "zh": "某人说别的路。",
+      "en": "She forgot some reason. Was it?",
+      "scene": "S1-060"
+    },
+    {
+      "zh": "这件事在选另一个答案，没人接。",
+      "en": "Nobody thought another answer.",
+      "scene": "S1-060"
+    },
+    {
+      "zh": "我想一句话。是这样吗？",
+      "en": "The day chose another answer.",
+      "scene": "S1-060"
+    },
+    {
+      "zh": "这次觉得另一个答案，再没说话。",
+      "en": "We tried some habit. Maybe.",
+      "scene": "S1-061"
+    },
+    {
+      "zh": "大家听见某个理由。",
+      "en": "That one counted three possibilities, then paused.",
+      "scene": "S1-061"
+    },
+    {
+      "zh": "某人记得某个理由，又停了下来。",
+      "en": "Someone noticed a small light. Maybe.",
+      "scene": "S1-062"
+    },
+    {
+      "zh": "大家记得一段沉默。是这样吗？",
+      "en": "That moment forgot a different path, then left.",
+      "scene": "S1-063"
+    },
+    {
+      "zh": "她在数别的路。是这样吗？",
+      "en": "She asked another answer. Was it?",
+      "scene": "S1-063"
+    },
+    {
+      "zh": "现在忘了三种可能，又停了下来。",
+      "en": "He noticed a different path. Who knows.",
+      "scene": "S1-064"
+    },
+    {
+      "zh": "这一切在数某种习惯，再没说话。",
+      "en": "That one remembered a draft of wind —",
+      "scene": "S1-064"
+    },
+    {
+      "zh": "我们在选别的路。",
+      "en": "That one waited some reason.",
+      "scene": "S1-065"
+    },
+    {
+      "zh": "大家记得一段空白——",
+      "en": "We tried some habit —",
+      "scene": "S1-065"
+    },
+    {
+      "zh": "我在试一阵风，然后呢？",
+      "en": "We noticed the next step, then left.",
+      "scene": "S1-065"
+    },
+    {
+      "zh": "现在听见一阵风，又停了下来。",
+      "en": "That one asked a sentence, then left.",
+      "scene": "S1-066"
+    },
+    {
+      "zh": "这次听见某种习惯。是这样吗？",
+      "en": "He noticed three possibilities, no reply.",
+      "scene": "S1-066"
+    },
+    {
+      "zh": "这次看见另一个答案。",
+      "en": "She remembered a sentence, no reply.",
+      "scene": "S1-067"
+    },
+    {
+      "zh": "我们想三种可能。是这样吗？",
+      "en": "The day noticed a secret. Who knows.",
+      "scene": "S1-067"
+    },
+    {
+      "zh": "现在在数一束光。",
+      "en": "The day noticed a small light, then left.",
+      "scene": "S1-068"
+    },
+    {
+      "zh": "我记得三种可能，谁知道呢。",
+      "en": "Nobody waited a sentence.",
+      "scene": "S1-068"
+    },
+    {
+      "zh": "这件事明白一段空白，谁知道呢。",
+      "en": "We asked three possibilities, then paused.",
+      "scene": "S1-069"
+    },
+    {
+      "zh": "我们觉得一段空白。是这样吗？",
+      "en": "This thing noticed a long pause.",
+      "scene": "S1-069"
+    },
+    {
+      "zh": "这次听见三种可能。也许吧。",
+      "en": "We remembered the next step.",
+      "scene": "S1-070"
+    },
+    {
+      "zh": "她觉得一段沉默——",
+      "en": "He counted a long pause. Was it?",
+      "scene": "S1-070"
+    },
+    {
+      "zh": "明天在试一束光，谁知道呢。",
+      "en": "The day thought a draft of wind, then left.",
+      "scene": "S1-071"
+    },
+    {
+      "zh": "你听见三种可能，谁知道呢。",
+      "en": "You remembered a sentence.",
+      "scene": "S1-072"
+    },
+    {
+      "zh": "这件事忘了一阵风。是这样吗？",
+      "en": "She noticed the next step, no reply.",
+      "scene": "S1-072"
+    },
+    {
+      "zh": "这件事忘了一阵风。",
+      "en": "That moment left a sentence —",
+      "scene": "S1-073"
+    },
+    {
+      "zh": "你发现三种可能。是这样吗？",
+      "en": "That moment forgot a secret. Maybe.",
+      "scene": "S1-073"
+    },
+    {
+      "zh": "大家发现一个秘密，又停了下来。",
+      "en": "Nobody forgot a draft of wind.",
+      "scene": "S1-074"
+    },
+    {
+      "zh": "那时候想一个秘密。",
+      "en": "The rest tried another answer. Maybe.",
+      "scene": "S1-074"
+    },
+    {
+      "zh": "我看见一束光——",
+      "en": "The rest left another answer, then paused.",
+      "scene": "S1-075"
+    },
+    {
+      "zh": "某人记得三种可能。也许吧。",
+      "en": "You waited another answer. Was it?",
+      "scene": "S1-075"
+    },
+    {
+      "zh": "现在发现别的路。也许吧。",
+      "en": "The day left a long pause.",
+      "scene": "S1-076"
+    },
+    {
+      "zh": "我们记得一束光，谁知道呢。",
+      "en": "You noticed some habit, no reply.",
+      "scene": "S1-077"
+    },
+    {
+      "zh": "这一切在试一段空白，谁知道呢。",
+      "en": "Nobody said a long pause. Maybe.",
+      "scene": "S1-077"
+    },
+    {
+      "zh": "明天说一束光。",
+      "en": "Someone noticed a draft of wind —",
+      "scene": "S1-078"
+    },
+    {
+      "zh": "这一切看见一段沉默——",
+      "en": "You chose three possibilities —",
+      "scene": "S1-078"
+    },
+    {
+      "zh": "这次明白某个理由。是这样吗？",
+      "en": "He waited some habit. Was it?",
+      "scene": "S1-079"
+    },
+    {
+      "zh": "你在试一段空白，没人接。",
+      "en": "We thought a small light. Maybe.",
+      "scene": "S1-079"
+    },
+    {
+      "zh": "你想另一个答案——",
+      "en": "The day forgot the next step. Who knows.",
+      "scene": "S1-080"
+    },
+    {
+      "zh": "某人记得某种习惯。",
+      "en": "He remembered three possibilities. Maybe.",
+      "scene": "S1-080"
+    },
+    {
+      "zh": "这次明白一束光 <END>",
+      "en": "This thing counted a sentence.",
+      "scene": "S1-080"
+    }
+  ],
+  "scenes": {
+    "S1-001": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-002": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-left",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-003": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-circle",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "NEW",
+          "pos": {
+            "x": 23,
+            "y": 39
+          },
+          "style": "os-marker",
+          "motion": {
+            "enter": "fade",
+            "duration": 500,
+            "delay": 400
+          },
+          "at": {
+            "match": "想一"
+          }
+        }
+      ]
+    },
+    "S1-004": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-005": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "注意",
+          "pos": {
+            "x": 26,
+            "y": 46
+          },
+          "style": "os-tag-pill",
+          "motion": {
+            "enter": "fade",
+            "duration": 700,
+            "delay": 0
+          },
+          "at": {
+            "match": "习惯"
+          }
+        }
+      ]
+    },
+    "S1-006": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-left",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-007": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-down",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "看这里",
+          "pos": {
+            "x": 57,
+            "y": 84
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 116,
+            "weight": 900,
+            "color": "#1f4d6a",
+            "rotation": -7,
+            "letterSpacing": 0.02,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 900,
+            "delay": 0
+          },
+          "at": {
+            "match": "她在数"
+          }
+        }
+      ]
+    },
+    "S1-008": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "mask-grid",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "关键",
+          "pos": {
+            "x": 45,
+            "y": 80
+          },
+          "style": "os-callout",
+          "motion": {
+            "enter": "slide-clip",
+            "duration": 500,
+            "delay": 400
+          },
+          "at": {
+            "match": "条说"
+          }
+        }
+      ]
+    },
+    "S1-009": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-up",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "低概率",
+          "pos": {
+            "x": 34,
+            "y": 31
+          },
+          "style": {
+            "font": "Noto Serif SC",
+            "size": 73,
+            "weight": 400,
+            "color": "#1f4d6a",
+            "rotation": -2,
+            "letterSpacing": 0.12,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "zoom-in",
+            "duration": 500,
+            "delay": 0
+          },
+          "at": {
+            "match": "这一"
+          }
+        }
+      ]
+    },
+    "S1-010": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "glitch",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-011": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "flip-h",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-012": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-013": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-left",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "⚠️",
+          "pos": {
+            "x": 32,
+            "y": 83
+          },
+          "style": "os-marker",
+          "motion": {
+            "enter": "iris",
+            "duration": 1200,
+            "delay": 600
+          },
+          "at": {
+            "match": "也许"
+          }
+        }
+      ]
+    },
+    "S1-014": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-up",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-015": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-up",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-016": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-017": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "iris-out",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "关键",
+          "pos": {
+            "x": 75,
+            "y": 46
+          },
+          "style": {
+            "font": "Inter",
+            "size": 69,
+            "weight": 500,
+            "color": "#222",
+            "rotation": 6,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "fold-down",
+            "duration": 900,
+            "delay": 600
+          },
+          "at": {
+            "match": "一束光"
+          }
+        }
+      ]
+    },
+    "S1-018": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "关键",
+          "pos": {
+            "x": 85,
+            "y": 63
+          },
+          "style": "os-callout-red",
+          "motion": {
+            "enter": "zoom-in",
+            "duration": 1200,
+            "delay": 600
+          },
+          "at": {
+            "match": "案。也"
+          }
+        }
+      ]
+    },
+    "S1-019": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-left",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-020": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "mask-grid",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-021": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-up",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "注意",
+          "pos": {
+            "x": 26,
+            "y": 50
+          },
+          "style": "os-circle-mark",
+          "motion": {
+            "enter": "rise-glow",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "然后"
+          }
+        }
+      ]
+    },
+    "S1-022": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "mask-grid",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "请等等",
+          "pos": {
+            "x": 48,
+            "y": 67
+          },
+          "style": "os-handwrite",
+          "motion": {
+            "enter": "shimmer-sweep",
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "习惯"
+          }
+        }
+      ]
+    },
+    "S1-023": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "flip-h",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-024": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-025": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "flip-v",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "请等等",
+          "pos": {
+            "x": 74,
+            "y": 30
+          },
+          "style": "os-callout-red",
+          "motion": {
+            "enter": "letter-spread",
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "他发"
+          }
+        }
+      ]
+    },
+    "S1-026": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "glitch",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-027": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-circle",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-028": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-left",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "再想想",
+          "pos": {
+            "x": 83,
+            "y": 73
+          },
+          "style": {
+            "font": "Noto Serif SC",
+            "size": 50,
+            "weight": 900,
+            "color": "#222",
+            "rotation": 2,
+            "letterSpacing": 0.07,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "typewriter",
+            "duration": 700,
+            "delay": 400
+          },
+          "at": {
+            "match": "又停"
+          }
+        }
+      ]
+    },
+    "S1-029": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-030": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "flip-h",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-031": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "zoom-out",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "★",
+          "pos": {
+            "x": 42,
+            "y": 36
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 85,
+            "weight": 900,
+            "color": "#1f4d6a",
+            "rotation": -2,
+            "letterSpacing": 0.05,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "unfold",
+            "duration": 500,
+            "delay": 400
+          },
+          "at": {
+            "match": "三种可"
+          }
+        }
+      ]
+    },
+    "S1-032": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-circle",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "?",
+          "pos": {
+            "x": 45,
+            "y": 68
+          },
+          "style": "os-callout-red",
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 200
+          },
+          "at": {
+            "match": "谁知道"
+          }
+        }
+      ]
+    },
+    "S1-033": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-left",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "★",
+          "pos": {
+            "x": 21,
+            "y": 82
+          },
+          "style": {
+            "font": "Inter",
+            "size": 91,
+            "weight": 500,
+            "color": "#9a5b2c",
+            "rotation": 5,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "slide-clip",
+            "duration": 500,
+            "delay": 0
+          },
+          "at": {
+            "match": "在数"
+          }
+        }
+      ]
+    },
+    "S1-034": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-up",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-035": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "zoom-out",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-036": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-037": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-up",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-038": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-039": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-040": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-left",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-041": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-left",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-042": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-043": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-circle",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "TAG",
+          "pos": {
+            "x": 85,
+            "y": 85
+          },
+          "style": "os-typewriter",
+          "motion": {
+            "enter": "slide-clip",
+            "duration": 1200,
+            "delay": 400
+          },
+          "at": {
+            "match": "谁知道"
+          }
+        }
+      ]
+    },
+    "S1-044": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-045": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "flip-v",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-046": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "mask-grid",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-047": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-048": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-049": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-up",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-050": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "mask-grid",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-051": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "zoom-in",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-052": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "★",
+          "pos": {
+            "x": 70,
+            "y": 77
+          },
+          "style": {
+            "font": "Noto Serif SC",
+            "size": 79,
+            "weight": 700,
+            "color": "#9a5b2c",
+            "rotation": 6,
+            "letterSpacing": 0.1,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 900,
+            "delay": 0
+          },
+          "at": {
+            "match": "一段"
+          }
+        }
+      ]
+    },
+    "S1-053": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-left",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-054": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "glitch",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-055": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-up",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-056": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-up",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-057": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-right",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "再想想",
+          "pos": {
+            "x": 22,
+            "y": 45
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 104,
+            "weight": 900,
+            "color": "#222",
+            "rotation": 1,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "fade",
+            "duration": 900,
+            "delay": 0
+          },
+          "at": {
+            "match": "案。"
+          }
+        }
+      ]
+    },
+    "S1-058": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-059": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "zoom-in",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-060": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-up",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-061": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-062": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-down",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "注意",
+          "pos": {
+            "x": 41,
+            "y": 53
+          },
+          "style": {
+            "font": "Noto Serif SC",
+            "size": 89,
+            "weight": 400,
+            "color": "#222",
+            "rotation": 3,
+            "letterSpacing": 0.08,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 500,
+            "delay": 200
+          },
+          "at": {
+            "match": "了下来"
+          }
+        }
+      ]
+    },
+    "S1-063": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-064": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-circle",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "NEW",
+          "pos": {
+            "x": 25,
+            "y": 16
+          },
+          "style": "os-typewriter",
+          "motion": {
+            "enter": "blur-pulse",
+            "duration": 500,
+            "delay": 0
+          },
+          "at": {
+            "match": "三种"
+          }
+        }
+      ]
+    },
+    "S1-065": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "flip-v",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "?",
+          "pos": {
+            "x": 79,
+            "y": 17
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 51,
+            "weight": 700,
+            "color": "#222",
+            "rotation": 4,
+            "letterSpacing": 0.07,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "fly-in",
+            "duration": 900,
+            "delay": 200,
+            "from": "bottom"
+          },
+          "at": {
+            "match": "选别的"
+          }
+        }
+      ]
+    },
+    "S1-066": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-left",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-067": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-068": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-left",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-069": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-left",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-070": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-up",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "TAG",
+          "pos": {
+            "x": 26,
+            "y": 61
+          },
+          "style": {
+            "font": "Noto Serif SC",
+            "size": 97,
+            "weight": 500,
+            "color": "#222",
+            "rotation": -6,
+            "letterSpacing": 0.11,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "unfold",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "种可能"
+          }
+        }
+      ]
+    },
+    "S1-071": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-circle",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "注意",
+          "pos": {
+            "x": 23,
+            "y": 84
+          },
+          "style": "os-callout-red",
+          "motion": {
+            "enter": "fold-down",
+            "duration": 500,
+            "delay": 400
+          },
+          "at": {
+            "match": "谁知道"
+          }
+        }
+      ]
+    },
+    "S1-072": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-up",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-073": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-074": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-075": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "mask-grid",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-076": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-077": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-078": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "flip-v",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-079": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-right",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "看这里",
+          "pos": {
+            "x": 83,
+            "y": 36
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 76,
+            "weight": 700,
+            "color": "#9a5b2c",
+            "rotation": 0,
+            "letterSpacing": 0.07,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "fade",
+            "duration": 1200,
+            "delay": 200
+          },
+          "at": {
+            "match": "白某"
+          }
+        }
+      ]
+    },
+    "S1-080": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-circle",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "关键",
+          "pos": {
+            "x": 49,
+            "y": 54
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 119,
+            "weight": 500,
+            "color": "#222",
+            "rotation": -1,
+            "letterSpacing": 0.03,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "fly-in",
+            "duration": 900,
+            "delay": 0,
+            "from": "right"
+          },
+          "at": {
+            "match": "一个"
+          }
+        }
+      ]
+    },
+    "S1-081": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "mask-grid",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-082": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-083": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "zoom-out",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-084": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-085": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-086": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-087": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "zoom-out",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-088": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "push-right",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-089": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "wipe-circle",
+        "duration": 700
+      },
+      "overlays": []
+    },
+    "S1-090": {
+      "prompt": "",
+      "label": "",
+      "motion": {
+        "enter": "slide-up",
+        "duration": 700
+      },
+      "overlays": []
+    }
+  },
+  "__fontsDoc__": "自定义字体：把 .woff2 文件放进 .{slug}-assets/fonts/ 子目录，在 fonts[] 数组里声明 { family, src, weight, style, format, display }，bootstrap.js 会自动生成 @font-face；chapter.style.numFont / chapter.style.subtitleFont / overlay.style.font 直接引用 family 名即可"
+}
