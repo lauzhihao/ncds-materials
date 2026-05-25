@@ -47,7 +47,7 @@
       "__doc__": "tts_gen.py 调 DashScope CosyVoice 合成音频时使用的参数",
       "engine": "dashscope-cosyvoice",
       "model": "cosyvoice-v3-flash",
-      "voice": "longtian_v3",
+      "voice": "longanlang_v3",
       "sampleRate": 22050,
       "format": "mp3",
       "rate": 1.1
