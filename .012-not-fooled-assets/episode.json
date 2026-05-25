@@ -790,7 +790,7 @@
           "text": "不上当",
           "pos": {
             "x": 50,
-            "y": 72
+            "y": 33
           },
           "style": {
             "font": "XY Kaiti",
@@ -1016,11 +1016,11 @@
           "text": "03:00",
           "pos": {
             "x": 50,
-            "y": 48
+            "y": 55
           },
           "style": {
             "font": "Inter",
-            "size": 140,
+            "size": 98,
             "weight": 700,
             "color": "#ffffff",
             "rotation": -2,
@@ -1284,23 +1284,27 @@
       },
       "overlays": [
         {
-          "text": "按住那只手",
+          "text": "STOP",
           "pos": {
             "x": 50,
             "y": 80
           },
           "style": {
-            "font": "XY Kaiti",
-            "size": 64,
-            "weight": 400,
+            "font": "Inter",
+            "size": 72,
+            "weight": 900,
             "color": "var(--accent)",
             "rotation": -3,
-            "letterSpacing": 0.08,
-            "shadow": "2px 4px 0 rgba(0,0,0,.14)"
+            "letterSpacing": 0.12,
+            "shadow": "2px 4px 0 rgba(0,0,0,.14)",
+            "padding": "10px 24px",
+            "border": "5px solid var(--accent)",
+            "borderRadius": 8,
+            "background": "rgba(255,253,247,.94)"
           },
           "motion": {
-            "enter": "handwrite",
-            "duration": 1100,
+            "enter": "stamp",
+            "duration": 700,
             "delay": 500
           },
           "at": {
@@ -1334,10 +1338,10 @@
           },
           "style": {
             "font": "Inter",
-            "size": 86,
+            "size": 77,
             "weight": 700,
             "color": "var(--accent)",
-            "rotation": -6,
+            "rotation": -16,
             "letterSpacing": 0.02,
             "shadow": "3px 5px 0 rgba(0,0,0,.18)"
           },
@@ -1364,7 +1368,7 @@
           "text": "焦虑税",
           "pos": {
             "x": 50,
-            "y": 80
+            "y": 63
           },
           "style": {
             "font": "XY Kaiti",
@@ -1373,7 +1377,8 @@
             "color": "var(--accent)",
             "rotation": -3,
             "letterSpacing": 0.06,
-            "shadow": "2px 4px 0 rgba(0,0,0,.14)"
+            "shadow": "2px 4px 0 rgba(0,0,0,.14)",
+            "textDecoration": "underline"
           },
           "motion": {
             "enter": "ink-bleed",
@@ -1465,8 +1470,8 @@
         {
           "text": "¥2000",
           "pos": {
-            "x": 30,
-            "y": 30
+            "x": 37,
+            "y": 49
           },
           "style": {
             "font": "Inter",
@@ -1611,7 +1616,7 @@
           "text": "注意力 = 入口",
           "pos": {
             "x": 50,
-            "y": 80
+            "y": 64
           },
           "style": {
             "font": "XY Kaiti",
@@ -1717,8 +1722,8 @@
         {
           "text": "一周后",
           "pos": {
-            "x": 28,
-            "y": 28
+            "x": 48,
+            "y": 42
           },
           "style": {
             "font": "XY Kaiti",
@@ -1829,7 +1834,7 @@
           "text": "「无聊」",
           "pos": {
             "x": 50,
-            "y": 82
+            "y": 50
           },
           "style": {
             "font": "XY Kaiti",
@@ -1862,7 +1867,7 @@
         {
           "text": "①",
           "pos": {
-            "x": 28,
+            "x": 33,
             "y": 30
           },
           "style": {
@@ -1885,7 +1890,7 @@
         {
           "text": "②",
           "pos": {
-            "x": 50,
+            "x": 45,
             "y": 30
           },
           "style": {
@@ -1908,7 +1913,7 @@
         {
           "text": "③",
           "pos": {
-            "x": 72,
+            "x": 61,
             "y": 30
           },
           "style": {
@@ -1941,7 +1946,7 @@
         {
           "text": "决策权",
           "pos": {
-            "x": 50,
+            "x": 43,
             "y": 80
           },
           "style": {
