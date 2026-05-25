@@ -932,15 +932,15 @@
       },
       "overlays": [
         {
-          "text": "那 5 分钟",
+          "text": "5 min",
           "pos": {
             "x": 50,
             "y": 80
           },
           "style": {
-            "font": "XY Kaiti",
+            "font": "Inter",
             "size": 64,
-            "weight": 400,
+            "weight": 600,
             "color": "var(--accent)",
             "rotation": -3,
             "letterSpacing": 0.06,
@@ -978,7 +978,11 @@
             "color": "var(--accent)",
             "rotation": -3,
             "letterSpacing": 0.08,
-            "shadow": "2px 4px 0 rgba(0,0,0,.14)"
+            "shadow": "2px 4px 0 rgba(0,0,0,.14)",
+            "background": "rgba(255,253,247,.94)",
+            "padding": "8px 20px",
+            "border": "4px solid var(--accent)",
+            "borderRadius": 8
           },
           "motion": {
             "enter": "ink-bleed",
@@ -1536,23 +1540,23 @@
       },
       "overlays": [
         {
-          "text": "下一个你想要的",
+          "text": "NEXT",
           "pos": {
             "x": 50,
             "y": 82
           },
           "style": {
-            "font": "XY Kaiti",
-            "size": 54,
-            "weight": 400,
+            "font": "Inter",
+            "size": 96,
+            "weight": 900,
             "color": "var(--accent)",
             "rotation": -3,
-            "letterSpacing": 0.05,
+            "letterSpacing": 0.15,
             "shadow": "2px 3px 0 rgba(0,0,0,.14)"
           },
           "motion": {
-            "enter": "typewriter",
-            "duration": 1300,
+            "enter": "stamp",
+            "duration": 700,
             "delay": 500
           },
           "at": {
@@ -1570,14 +1574,14 @@
       },
       "overlays": [
         {
-          "text": "第 20 屏",
+          "text": "The 20th",
           "pos": {
             "x": 70,
             "y": 30
           },
           "style": {
             "font": "Inter",
-            "size": 80,
+            "size": 72,
             "weight": 700,
             "color": "var(--accent)",
             "rotation": -5,
@@ -1638,23 +1642,27 @@
       },
       "overlays": [
         {
-          "text": "先花注意力",
+          "text": "注意！",
           "pos": {
             "x": 50,
             "y": 80
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 62,
+            "size": 70,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": -3,
-            "letterSpacing": 0.06,
-            "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+            "letterSpacing": 0.12,
+            "shadow": "2px 3px 0 rgba(0,0,0,.14)",
+            "background": "rgba(255,253,247,.94)",
+            "padding": "8px 20px",
+            "border": "4px solid var(--accent)",
+            "borderRadius": 8
           },
           "motion": {
-            "enter": "handwrite",
-            "duration": 1100,
+            "enter": "stamp",
+            "duration": 700,
             "delay": 500
           },
           "at": {
@@ -1684,7 +1692,8 @@
             "color": "var(--accent)",
             "rotation": -2,
             "letterSpacing": 0.05,
-            "shadow": "2px 3px 0 rgba(0,0,0,.14)"
+            "shadow": "2px 3px 0 rgba(0,0,0,.14)",
+            "textDecoration": "underline"
           },
           "motion": {
             "enter": "slide-clip",
@@ -1783,18 +1792,18 @@
       },
       "overlays": [
         {
-          "text": "更有耐心",
+          "text": "PATIENCE",
           "pos": {
             "x": 28,
             "y": 28
           },
           "style": {
-            "font": "XY Kaiti",
-            "size": 60,
-            "weight": 400,
-            "color": "#6b5a3a",
+            "font": "Inter",
+            "size": 76,
+            "weight": 900,
+            "color": "var(--accent)",
             "rotation": -3,
-            "letterSpacing": 0.06,
+            "letterSpacing": 0.15,
             "shadow": "2px 3px 0 rgba(0,0,0,.12)"
           },
           "motion": {
@@ -1817,14 +1826,14 @@
       },
       "overlays": [
         {
-          "text": "留 5 分钟无聊",
+          "text": "「无聊」",
           "pos": {
             "x": 50,
             "y": 82
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 56,
+            "size": 76,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": -3,
@@ -1837,7 +1846,7 @@
             "delay": 500
           },
           "at": {
-            "match": "给自己留五分钟"
+            "match": "「无聊」"
           }
         }
       ]
@@ -1930,7 +1939,7 @@
       },
       "overlays": [
         {
-          "text": "拿回决策权",
+          "text": "决策权",
           "pos": {
             "x": 50,
             "y": 80
@@ -2032,19 +2041,23 @@
       },
       "overlays": [
         {
-          "text": "清醒的选择",
+          "text": "清醒！",
           "pos": {
             "x": 50,
             "y": 72
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 64,
+            "size": 76,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": -3,
-            "letterSpacing": 0.06,
-            "shadow": "2px 4px 0 rgba(0,0,0,.14)"
+            "letterSpacing": 0.12,
+            "shadow": "2px 4px 0 rgba(0,0,0,.14)",
+            "background": "rgba(255,253,247,.94)",
+            "padding": "8px 20px",
+            "border": "4px solid var(--accent)",
+            "borderRadius": 8
           },
           "motion": {
             "enter": "ink-bleed",
