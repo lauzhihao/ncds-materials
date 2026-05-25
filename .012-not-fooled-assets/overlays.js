@@ -20,8 +20,10 @@
                        |"iris"|"glitch"|"bounce"|"drift-in"|"zoom-pop",
                 from: "left"|"right"|"top"|"bottom",  // 仅 fly-in 用
                 duration, easing, delay },
-       countdown:{ from: "03:00", ticks: 3, interval: 500, startDelay: 0 } }
-                // 入场动效结束 startDelay ms 后，textContent 每 interval ms 减 1 秒，跳 ticks 次后停。
+       countdown:{ from: "03:00", interval: 1000, ticks: null, startDelay: 0 } }
+                // 入场动效结束 startDelay ms 后，textContent 每 interval ms 减 1 秒。
+                // ticks=null/缺省 → 一直跳到 0；ticks=N → 只跳 N 次后停。
+                // 切 scene 时 layer 被销毁，isConnected 守卫自动停 interval。
                 // from 支持 "MM:SS" 或纯整数秒；解析失败则跳过。
    ────────────────────────────────────────────────────────────────── */
 (function () {
@@ -192,7 +194,8 @@
   function startCountdown(el, cfg, baseDelay) {
     const t = parseTimer(cfg.from);
     if (!t) return;
-    const ticks = Math.max(1, Number(cfg.ticks || 3));
+    // ticks 缺省（null/undefined）→ 一直跳到 remaining 归零；显式给数字才限步
+    const ticks = (cfg.ticks == null) ? Infinity : Math.max(1, Number(cfg.ticks));
     const interval = Math.max(60, Number(cfg.interval || 500));
     const startDelay = Math.max(0, Number(cfg.startDelay || 0));
 
