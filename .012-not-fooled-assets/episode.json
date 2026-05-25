@@ -1497,14 +1497,14 @@
       },
       "overlays": [
         {
-          "text": "焦虑收费",
+          "text": "焦虑 = 收费",
           "pos": {
             "x": 50,
             "y": 78
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 68,
+            "size": 64,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": -3,
@@ -1642,7 +1642,7 @@
       },
       "overlays": [
         {
-          "text": "注意！",
+          "text": "注意力",
           "pos": {
             "x": 50,
             "y": 80
@@ -2007,18 +2007,18 @@
       },
       "overlays": [
         {
-          "text": "不被套路",
+          "text": "NEVER FOOL",
           "pos": {
             "x": 50,
             "y": 80
           },
           "style": {
-            "font": "XY Kaiti",
-            "size": 68,
-            "weight": 400,
+            "font": "Inter",
+            "size": 80,
+            "weight": 900,
             "color": "var(--accent)",
             "rotation": -3,
-            "letterSpacing": 0.08,
+            "letterSpacing": 0.12,
             "shadow": "3px 4px 0 rgba(0,0,0,.14)"
           },
           "motion": {
@@ -2041,7 +2041,7 @@
       },
       "overlays": [
         {
-          "text": "清醒！",
+          "text": "清醒",
           "pos": {
             "x": 50,
             "y": 72
