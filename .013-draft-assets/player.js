@@ -432,11 +432,15 @@
   });
 
   // 编辑模式入口；edit-mode.js 在 player.js 之后才注入，所以这里只挂 click，
-  // 真正调用时 window.__editMode 已就绪
-  $('editBtn').addEventListener('click', () => {
-    if (window.__editMode && window.__editMode.enter) window.__editMode.enter();
-    else console.error('edit-mode.js 未加载');
-  });
+  // 真正调用时 window.__editMode 已就绪。ncds.cc 上 edit-mode 自禁用，按钮一并移除。
+  if (/(?:^|\.)ncds\.cc$/i.test(location.hostname)) {
+    $('editBtn').remove();
+  } else {
+    $('editBtn').addEventListener('click', () => {
+      if (window.__editMode && window.__editMode.enter) window.__editMode.enter();
+      else console.error('edit-mode.js 未加载');
+    });
+  }
 
   function enterRecording() {
     pause();
