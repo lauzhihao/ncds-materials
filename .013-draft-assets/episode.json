@@ -534,17 +534,18 @@
         {
           "text": "DARE",
           "pos": {
-            "x": 82,
-            "y": 16
+            "x": 51,
+            "y": 43
           },
           "style": {
             "font": "Inter",
-            "size": 96,
+            "size": 70,
             "weight": 700,
             "color": "var(--accent)",
             "rotation": -3,
             "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
             "enter": "ink-bleed",
@@ -566,16 +567,16 @@
       },
       "overlays": [
         {
-          "text": "1 A.M.",
+          "text": "01:00 AM",
           "pos": {
-            "x": 15,
-            "y": 16
+            "x": 34,
+            "y": 14.5
           },
           "style": {
             "font": "Inter",
             "size": 84,
             "weight": 700,
-            "color": "#1f4d6a",
+            "color": "#9ecae6",
             "rotation": 0,
             "letterSpacing": 0.04,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
@@ -595,24 +596,28 @@
       "prompt": "扁平插画。米黄底色，画面中央偏右一只紧握着的手机，屏幕里泛出冷绿色微光（像银行到账提示，但不画任何文字数字），握手机的手腕青筋微凸表达紧张。背景留白，左下角是没被点亮的台灯轮廓。",
       "label": "",
       "motion": {
-        "enter": "wipe-circle",
+        "enter": "fade",
         "duration": 700
       },
       "overlays": [
         {
           "text": "到账",
           "pos": {
-            "x": 18,
-            "y": 80
+            "x": 56.5,
+            "y": 47
           },
-          "style": "os-marker",
+          "style": {
+            "preset": "os-marker",
+            "rotation": -14,
+            "color": "#e4e5d7"
+          },
           "motion": {
             "enter": "stamp",
             "duration": 900,
             "delay": 400
           },
           "at": {
-            "match": "工资到账"
+            "match": "第一"
           }
         }
       ]
@@ -626,19 +631,20 @@
       },
       "overlays": [
         {
-          "text": "房贷",
+          "text": "房贷合同",
           "pos": {
-            "x": 16,
-            "y": 18
+            "x": 62.5,
+            "y": 57.5
           },
           "style": {
             "font": "ZS Fangsong",
-            "size": 110,
+            "size": 40,
             "weight": 900,
             "color": "#222",
-            "rotation": -2,
+            "rotation": 8,
             "letterSpacing": 0.05,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
             "enter": "fly-in",
@@ -646,7 +652,7 @@
             "delay": 400
           },
           "at": {
-            "match": "算房贷"
+            "match": "计算器"
           }
         }
       ]
@@ -660,10 +666,10 @@
       },
       "overlays": [
         {
-          "text": "撑着",
+          "text": "撑下去",
           "pos": {
-            "x": 78,
-            "y": 20
+            "x": 49.5,
+            "y": 20.5
           },
           "style": "os-handwrite",
           "motion": {
@@ -686,19 +692,20 @@
       },
       "overlays": [
         {
-          "text": "AGE 20",
+          "text": "20",
           "pos": {
-            "x": 15,
-            "y": 16
+            "x": 36.5,
+            "y": 32.5
           },
           "style": {
             "font": "Inter",
-            "size": 82,
+            "size": 42,
             "weight": 500,
             "color": "#222",
             "rotation": 0,
             "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
             "enter": "fade",
@@ -722,10 +729,15 @@
         {
           "text": "重来",
           "pos": {
-            "x": 82,
-            "y": 80
+            "x": 50.5,
+            "y": 47
           },
-          "style": "os-typewriter",
+          "style": {
+            "preset": "os-typewriter",
+            "weight": 700,
+            "font": "XY Kaiti",
+            "size": 60
+          },
           "motion": {
             "enter": "blur-pulse",
             "duration": 500,
@@ -746,19 +758,20 @@
       },
       "overlays": [
         {
-          "text": "AGE 30",
+          "text": "30",
           "pos": {
-            "x": 82,
-            "y": 18
+            "x": 51,
+            "y": 80.5
           },
           "style": {
             "font": "Inter",
-            "size": 82,
+            "size": 45,
             "weight": 500,
             "color": "#222",
-            "rotation": 0,
+            "rotation": -18,
             "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
             "enter": "fly-in",
@@ -780,19 +793,20 @@
       },
       "overlays": [
         {
-          "text": "AGE 40",
+          "text": "40",
           "pos": {
-            "x": 15,
-            "y": 18
+            "x": 62.5,
+            "y": 19
           },
           "style": {
             "font": "Inter",
-            "size": 82,
+            "size": 45,
             "weight": 500,
             "color": "#222",
             "rotation": 0,
             "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
             "enter": "fade",
@@ -814,19 +828,19 @@
       },
       "overlays": [
         {
-          "text": "不敢错",
+          "text": "不敢",
           "pos": {
-            "x": 78,
-            "y": 82
+            "x": 52.5,
+            "y": 73.5
           },
-          "style": "os-callout-red",
+          "style": "os-circle-mark",
           "motion": {
             "enter": "fold-down",
             "duration": 700,
             "delay": 600
           },
           "at": {
-            "match": "付不起"
+            "match": "已经"
           }
         }
       ]
@@ -842,8 +856,8 @@
         {
           "text": "原地",
           "pos": {
-            "x": 82,
-            "y": 16
+            "x": 50,
+            "y": 38.5
           },
           "style": {
             "font": "XY Kaiti",
@@ -874,19 +888,19 @@
       },
       "overlays": [
         {
-          "text": "还在",
+          "text": "stay",
           "pos": {
-            "x": 78,
-            "y": 14
+            "x": 41,
+            "y": 42
           },
-          "style": "os-tag-pill",
+          "style": "os-marker",
           "motion": {
-            "enter": "shimmer-sweep",
+            "enter": "rise-glow",
             "duration": 700,
             "delay": 400
           },
           "at": {
-            "match": "原位置"
+            "match": "同事"
           }
         }
       ]
@@ -895,21 +909,21 @@
       "prompt": "扁平插画。米黄底色但整体压暗，俯视镜头：床上半坐起来的一个人，屏幕的冷蓝光打在脸上，毯子堆在腿边。主体居中偏左，右上方留白。色调：屏光冷蓝、阴影深褐。",
       "label": "",
       "motion": {
-        "enter": "iris-out",
+        "enter": "slide-up",
         "duration": 700
       },
       "overlays": [
         {
-          "text": "2 A.M.",
+          "text": "02:00 AM",
           "pos": {
-            "x": 82,
-            "y": 82
+            "x": 66.5,
+            "y": 14.5
           },
           "style": {
             "font": "Inter",
             "size": 80,
             "weight": 700,
-            "color": "#1f4d6a",
+            "color": "#496779",
             "rotation": 0,
             "letterSpacing": 0.04,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
@@ -936,14 +950,14 @@
         {
           "text": "10 YEARS",
           "pos": {
-            "x": 78,
-            "y": 16
+            "x": 71,
+            "y": 72.5
           },
           "style": {
             "font": "Inter",
-            "size": 86,
+            "size": 20,
             "weight": 700,
-            "color": "#222",
+            "color": "#2159ca",
             "rotation": -2,
             "letterSpacing": 0.05,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
@@ -954,7 +968,22 @@
             "delay": 400
           },
           "at": {
-            "match": "大好十年"
+            "match": "大好"
+          }
+        },
+        {
+          "text": "10",
+          "pos": {
+            "x": 29.5,
+            "y": 71.5
+          },
+          "style": {
+            "preset": "os-callout",
+            "size": 20,
+            "color": "#601010"
+          },
+          "at": {
+            "match": "大好"
           }
         }
       ]
@@ -968,19 +997,23 @@
       },
       "overlays": [
         {
-          "text": "你？",
+          "text": "YOU!",
           "pos": {
-            "x": 82,
-            "y": 80
+            "x": 62,
+            "y": 49
           },
-          "style": "os-callout-red",
+          "style": {
+            "preset": "os-callout",
+            "color": "#d92020",
+            "size": 80
+          },
           "motion": {
-            "enter": "iris",
+            "enter": "fade",
             "duration": 900,
             "delay": 400
           },
           "at": {
-            "match": "可能是你"
+            "match": "你心里"
           }
         }
       ]
@@ -994,10 +1027,10 @@
       },
       "overlays": [
         {
-          "text": "签字",
+          "text": "your name",
           "pos": {
-            "x": 15,
-            "y": 18
+            "x": 50,
+            "y": 77.5
           },
           "style": {
             "font": "XY Kaiti",
@@ -1006,15 +1039,16 @@
             "color": "#222",
             "rotation": -3,
             "letterSpacing": 0.07,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-handwrite"
           },
           "motion": {
-            "enter": "stamp",
+            "enter": "handwrite",
             "duration": 900,
             "delay": 400
           },
           "at": {
-            "match": "签字"
+            "match": "都在替你"
           }
         }
       ]
@@ -1028,14 +1062,17 @@
       },
       "overlays": [
         {
-          "text": "翻来覆去",
+          "text": "工作、收入、房贷",
           "pos": {
-            "x": 82,
-            "y": 20
+            "x": 49.5,
+            "y": 24
           },
-          "style": "os-handwrite",
+          "style": {
+            "preset": "os-handwrite",
+            "color": "#f1e4e4"
+          },
           "motion": {
-            "enter": "shimmer-sweep",
+            "enter": "handwrite",
             "duration": 900,
             "delay": 400
           },
@@ -1054,19 +1091,20 @@
       },
       "overlays": [
         {
-          "text": "三条路",
+          "text": "迷茫",
           "pos": {
-            "x": 16,
-            "y": 82
+            "x": 49.5,
+            "y": 23.5
           },
           "style": {
-            "font": "ZS Fangsong",
+            "font": "XY Kaiti",
             "size": 90,
             "weight": 700,
-            "color": "#222",
+            "color": "#e13d3d",
             "rotation": 0,
             "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-circle-mark"
           },
           "motion": {
             "enter": "slide-clip",
@@ -1074,7 +1112,39 @@
             "delay": 400
           },
           "at": {
-            "match": "怎么走"
+            "match": "要"
+          }
+        },
+        {
+          "text": "3",
+          "pos": {
+            "x": 63.5,
+            "y": 62
+          },
+          "at": {
+            "match": "万一"
+          }
+        },
+        {
+          "text": "1",
+          "pos": {
+            "x": 33.5,
+            "y": 55.5
+          },
+          "style": "os-stamp",
+          "at": {
+            "match": "吃饭"
+          }
+        },
+        {
+          "text": "2",
+          "pos": {
+            "x": 49.5,
+            "y": 44.5
+          },
+          "style": "os-stamp",
+          "at": {
+            "match": "路要"
           }
         }
       ]
@@ -1088,10 +1158,10 @@
       },
       "overlays": [
         {
-          "text": "靠啥",
+          "text": "HOW?",
           "pos": {
-            "x": 15,
-            "y": 18
+            "x": 56,
+            "y": 26.5
           },
           "style": {
             "font": "XY Kaiti",
@@ -1108,7 +1178,7 @@
             "delay": 400
           },
           "at": {
-            "match": "靠什么吃饭"
+            "match": "什么"
           }
         }
       ]
@@ -1124,8 +1194,8 @@
         {
           "text": "卖力气",
           "pos": {
-            "x": 76,
-            "y": 14
+            "x": 50,
+            "y": 39.5
           },
           "style": "os-marker",
           "motion": {
@@ -1134,7 +1204,7 @@
             "delay": 200
           },
           "at": {
-            "match": "身子骨"
+            "match": "还是"
           }
         }
       ]
@@ -1148,27 +1218,28 @@
       },
       "overlays": [
         {
-          "text": "才值钱",
+          "text": "值钱",
           "pos": {
-            "x": 80,
-            "y": 80
+            "x": 37.5,
+            "y": 64
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 96,
+            "size": 40,
             "weight": 400,
             "color": "var(--accent)",
-            "rotation": 3,
+            "rotation": -11,
             "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
-            "enter": "ink-bleed",
+            "enter": "stamp",
             "duration": 900,
             "delay": 400
           },
           "at": {
-            "match": "才刚刚开始值钱"
+            "match": "才刚"
           }
         }
       ]
@@ -1184,14 +1255,14 @@
         {
           "text": "越走越窄",
           "pos": {
-            "x": 78,
-            "y": 16
+            "x": 51,
+            "y": 86
           },
           "style": {
             "font": "ZS Fangsong",
-            "size": 88,
+            "size": 48,
             "weight": 700,
-            "color": "#222",
+            "color": "#a99e9e",
             "rotation": 0,
             "letterSpacing": 0.05,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
@@ -1202,7 +1273,7 @@
             "delay": 400
           },
           "at": {
-            "match": "越走越窄"
+            "match": "那条路"
           }
         }
       ]
@@ -1211,24 +1282,28 @@
       "prompt": "扁平插画。米黄底色，前景一双站定不动的皮鞋占据画面下方，远景一队人影正背对镜头往地平线方向走远，前后景距离感强。主体偏画面左侧，右上方留白。色调：站定的脚深棕、远去队伍剪影暖灰、底色米黄。",
       "label": "",
       "motion": {
-        "enter": "wipe-circle",
+        "enter": "fade",
         "duration": 700
       },
       "overlays": [
         {
-          "text": "被扔下",
+          "text": "掉队",
           "pos": {
-            "x": 16,
-            "y": 18
+            "x": 46.5,
+            "y": 57.5
           },
-          "style": "os-callout-red",
+          "style": {
+            "preset": "os-marker",
+            "size": 60,
+            "rotation": -4
+          },
           "motion": {
             "enter": "fold-down",
             "duration": 700,
             "delay": 600
           },
           "at": {
-            "match": "扔下"
+            "match": "路"
           }
         }
       ]
@@ -1242,10 +1317,10 @@
       },
       "overlays": [
         {
-          "text": "想不出",
+          "text": "HOW？",
           "pos": {
-            "x": 15,
-            "y": 18
+            "x": 53,
+            "y": 24.5
           },
           "style": "os-handwrite",
           "motion": {
@@ -1254,7 +1329,7 @@
             "delay": 200
           },
           "at": {
-            "match": "沙发"
+            "match": "怎么"
           }
         }
       ]
@@ -1270,8 +1345,8 @@
         {
           "text": "小步走",
           "pos": {
-            "x": 78,
-            "y": 16
+            "x": 50.5,
+            "y": 39.5
           },
           "style": {
             "font": "XY Kaiti",
@@ -1302,27 +1377,28 @@
       },
       "overlays": [
         {
-          "text": "看着你",
+          "text": "LOSER",
           "pos": {
-            "x": 16,
-            "y": 82
+            "x": 50.5,
+            "y": 22
           },
           "style": {
             "font": "ZS Fangsong",
-            "size": 100,
+            "size": 80,
             "weight": 900,
-            "color": "#222",
+            "color": "#715b5b",
             "rotation": 2,
             "letterSpacing": 0.06,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
-            "enter": "iris",
+            "enter": "fade",
             "duration": 900,
             "delay": 400
           },
           "at": {
-            "match": "失败的眼神"
+            "match": "周围"
           }
         }
       ]
@@ -1336,14 +1412,18 @@
       },
       "overlays": [
         {
-          "text": "忘了",
+          "text": "FORGET",
           "pos": {
-            "x": 16,
-            "y": 16
+            "x": 56.5,
+            "y": 48.5
           },
-          "style": "os-tag-pill",
+          "style": {
+            "preset": "os-handwrite",
+            "font": "XY Kaiti",
+            "rotation": -10
+          },
           "motion": {
-            "enter": "shimmer-sweep",
+            "enter": "handwrite",
             "duration": 700,
             "delay": 400
           },
@@ -1364,10 +1444,13 @@
         {
           "text": "NO REFUND",
           "pos": {
-            "x": 82,
-            "y": 16
+            "x": 50.5,
+            "y": 87.5
           },
-          "style": "os-callout-red",
+          "style": {
+            "preset": "os-callout-red",
+            "color": "#e5cccc"
+          },
           "motion": {
             "enter": "stamp",
             "duration": 900,
@@ -1390,8 +1473,8 @@
         {
           "text": "U-TURN",
           "pos": {
-            "x": 78,
-            "y": 14
+            "x": 51.5,
+            "y": 73
           },
           "style": {
             "font": "Inter",
@@ -1422,16 +1505,16 @@
       },
       "overlays": [
         {
-          "text": "不是再撑",
+          "text": "CONTINUE",
           "pos": {
-            "x": 15,
-            "y": 18
+            "x": 49.5,
+            "y": 82
           },
           "style": {
             "font": "ZS Fangsong",
             "size": 84,
             "weight": 700,
-            "color": "#222",
+            "color": "#442c2c",
             "rotation": 0,
             "letterSpacing": 0.04,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
@@ -1456,19 +1539,20 @@
       },
       "overlays": [
         {
-          "text": "掉头",
+          "text": "BACK",
           "pos": {
-            "x": 80,
-            "y": 82
+            "x": 30,
+            "y": 23.5
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 120,
+            "size": 60,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": -4,
             "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
             "enter": "stamp",
@@ -1492,14 +1576,14 @@
         {
           "text": "不是钱",
           "pos": {
-            "x": 15,
-            "y": 16
+            "x": 50,
+            "y": 30
           },
           "style": {
             "font": "ZS Fangsong",
             "size": 96,
             "weight": 700,
-            "color": "#222",
+            "color": "#d93f3f",
             "rotation": 0,
             "letterSpacing": 0.05,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
@@ -1510,7 +1594,7 @@
             "delay": 400
           },
           "at": {
-            "match": "不是钱"
+            "match": "最贵的"
           }
         }
       ]
@@ -1519,27 +1603,28 @@
       "prompt": "扁平插画。米黄底色，特写：一只手指尝试翻动一本日记本，但前半本的纸页已经被胶水粘成厚厚一块，再也翻不回去；翻不动的那块纸页边缘泛黄、卷曲。主体居中偏右，左侧留白。色调：日记本米褐、胶水痕迹深棕、手暖灰。",
       "label": "",
       "motion": {
-        "enter": "iris-out",
+        "enter": "ink-bleed",
         "duration": 700
       },
       "overlays": [
         {
           "text": "时间",
           "pos": {
-            "x": 82,
-            "y": 18
+            "x": 66,
+            "y": 65
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 108,
+            "size": 60,
             "weight": 400,
             "color": "var(--accent)",
-            "rotation": 4,
+            "rotation": 16,
             "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
-            "enter": "ink-bleed",
+            "enter": "stamp",
             "duration": 900,
             "delay": 400
           },
@@ -1558,10 +1643,10 @@
       },
       "overlays": [
         {
-          "text": "承认",
+          "text": "勇敢",
           "pos": {
-            "x": 78,
-            "y": 16
+            "x": 44.5,
+            "y": 43
           },
           "style": "os-marker",
           "motion": {
@@ -1584,10 +1669,10 @@
       },
       "overlays": [
         {
-          "text": "走得到",
+          "text": "arrival",
           "pos": {
-            "x": 16,
-            "y": 82
+            "x": 65,
+            "y": 20.5
           },
           "style": {
             "font": "XY Kaiti",
@@ -1604,7 +1689,7 @@
             "delay": 400
           },
           "at": {
-            "match": "才走得到后面"
+            "match": "才走"
           }
         }
       ]
@@ -1618,14 +1703,14 @@
       },
       "overlays": [
         {
-          "text": "续命",
+          "text": "有的人……",
           "pos": {
-            "x": 14,
-            "y": 18
+            "x": 35,
+            "y": 29
           },
           "style": {
             "font": "ZS Fangsong",
-            "size": 96,
+            "size": 46,
             "weight": 700,
             "color": "#222",
             "rotation": 0,
@@ -1638,7 +1723,7 @@
             "delay": 200
           },
           "at": {
-            "match": "续命"
+            "match": "很多人"
           }
         }
       ]
@@ -1654,8 +1739,8 @@
         {
           "text": "SUNK COST",
           "pos": {
-            "x": 78,
-            "y": 16
+            "x": 49.5,
+            "y": 14.5
           },
           "style": "os-callout-red",
           "motion": {
@@ -1678,27 +1763,28 @@
       },
       "overlays": [
         {
-          "text": "错的地",
+          "text": "ERROR",
           "pos": {
-            "x": 14,
-            "y": 18
+            "x": 50.5,
+            "y": 15.5
           },
           "style": {
             "font": "ZS Fangsong",
-            "size": 96,
+            "size": 60,
             "weight": 900,
-            "color": "#222",
+            "color": "#c22929",
             "rotation": 2,
             "letterSpacing": 0.05,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
-            "enter": "iris",
+            "enter": "fade",
             "duration": 900,
             "delay": 400
           },
           "at": {
-            "match": "对的花"
+            "match": "你把脚"
           }
         }
       ]
@@ -1712,10 +1798,10 @@
       },
       "overlays": [
         {
-          "text": "问自己",
+          "text": "拍板",
           "pos": {
-            "x": 16,
-            "y": 82
+            "x": 37.5,
+            "y": 31.5
           },
           "style": {
             "font": "XY Kaiti",
@@ -1724,7 +1810,9 @@
             "color": "#222",
             "rotation": -3,
             "letterSpacing": 0.07,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "textDecoration": "line-through",
+            "preset": "os-marker"
           },
           "motion": {
             "enter": "ink-bleed",
@@ -1746,12 +1834,15 @@
       },
       "overlays": [
         {
-          "text": "再耗一年?",
+          "text": "1 year",
           "pos": {
-            "x": 78,
-            "y": 16
+            "x": 50,
+            "y": 55
           },
-          "style": "os-callout-red",
+          "style": {
+            "preset": "os-callout",
+            "color": "#d81313"
+          },
           "motion": {
             "enter": "fly-in",
             "duration": 900,
@@ -1772,19 +1863,20 @@
       },
       "overlays": [
         {
-          "text": "别等了",
+          "text": "十年",
           "pos": {
-            "x": 78,
-            "y": 82
+            "x": 39.5,
+            "y": 39
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 108,
+            "size": 58,
             "weight": 400,
             "color": "var(--accent)",
-            "rotation": -4,
+            "rotation": 1,
             "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
+            "preset": "os-stamp"
           },
           "motion": {
             "enter": "stamp",

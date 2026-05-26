@@ -67,11 +67,9 @@
     kenBurns:       'visual.kenBurns',
   };
 
-  // 在 localhost / 127.0.0.1 下才发请求；线上发了也是 404，省点噪音
-  const IS_LOCAL = (() => {
-    const h = location.hostname;
-    return h === '127.0.0.1' || h === 'localhost' || h === '0.0.0.0';
-  })();
+  // bootstrap.js 启动时已 ping /__ping，可达才启用 auto-save；
+  // 不可达（线上纯静态托管）发了也是 404，省点噪音
+  const IS_LOCAL = !!window.__editServerOk;
 
   // module-scope 的待写补丁 + 计时器：跨多次 setTweak 合并成一次 POST
   const _pending = {};

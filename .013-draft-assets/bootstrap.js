@@ -102,16 +102,37 @@
     document.body.appendChild(s);
   }
 
-  async function boot() {
-    let ep;
+  // 探测 edit-server 是否在本机/反代后可达：可达 → 启用 Tweaks/Inspector/编辑模式 +
+  // 落盘 + 热重载；不可达（线上 ncds.cc 静态托管 / 公网纯只读）→ 下游全部静默 no-op。
+  // 替代了原先按 hostname 白名单（localhost/127.0.0.1）的判断 —— 那条规则在
+  // 本机 nginx 反代到 3000 + 自定义 host 的情况下会误伤。
+  async function pingEditServer() {
     try {
-      const res = await fetch(busted(dirAbs + '/episode.json'), { cache: 'no-cache' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      ep = await res.json();
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 1500);
+      const res = await fetch('/__ping', { signal: ctrl.signal, cache: 'no-cache' });
+      clearTimeout(timer);
+      return res.ok;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  async function boot() {
+    let ep, editServerOk;
+    try {
+      const [epRes, pingOk] = await Promise.all([
+        fetch(busted(dirAbs + '/episode.json'), { cache: 'no-cache' }),
+        pingEditServer(),
+      ]);
+      if (!epRes.ok) throw new Error('HTTP ' + epRes.status);
+      ep = await epRes.json();
+      editServerOk = pingOk;
     } catch (err) {
       console.error('bootstrap: fetch episode.json failed', err);
       return;
     }
+    window.__editServerOk = editServerOk;
 
     window.EPISODE = ep;
     // URL 推出的 slug 是磁盘实际目录名（唯一可信来源 — picture/audio 都在这下面）。

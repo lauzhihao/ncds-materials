@@ -217,6 +217,10 @@ class Handler(SimpleHTTPRequestHandler):
         path = urlparse(self.path).path
         if path == '/__reload_events':
             return self._sse_loop()
+        if path == '/__ping':
+            # 前端启动时探测 edit-server 是否可达 —— 可达则启用保存 + 编辑 UI，
+            # 不可达（线上 ncds.cc / 纯静态托管）则前端静默隐藏 UI、不发保存请求。
+            return self._json_ok({'ok': True, 'service': 'edit-server'})
         return super().do_GET()
 
     def _sse_loop(self):

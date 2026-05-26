@@ -47,7 +47,8 @@
     'oa-fade', 'oa-zoom', 'oa-stamp-hit', 'oa-blur',
     // motion.css 第一批扩展
     'mo-ov-zoom-pop', 'mo-ov-ink-bleed', 'mo-ov-handwrite', 'mo-ov-slide-clip',
-    'mo-ov-iris', 'mo-ov-bounce', 'mo-ov-drift-in', 'mo-ov-spin-in',
+    // mo-ov-iris (clip-path circle 遮罩) 在部分浏览器渲染会白屏，已从池子剔除
+    'mo-ov-bounce', 'mo-ov-drift-in', 'mo-ov-spin-in',
     'mo-ov-drop-in', 'mo-ov-unfold',
     // motion.css 第二批扩展（PPT 风：弹性 / 翻面 / 散光 / 浮起 / 高光扫光）
     'mo-ov-letter-spread', 'mo-ov-elastic-pop', 'mo-ov-tilt-in',

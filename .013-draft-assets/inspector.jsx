@@ -11,8 +11,8 @@
  * TweakText / TweakNumber / TweakColor / TweakButton / TweakSelect / TweakRadio / TweakRow。
  */
 (function () {
-  // ncds.cc 上 edit-mode.js 已自我禁用，__editMode 不存在属于预期，静默退出。
-  if (/(?:^|\.)ncds\.cc$/i.test(location.hostname)) return;
+  // 无 edit-server 时 edit-mode.js 已自我禁用，__editMode 不存在属于预期，静默退出。
+  if (!window.__editServerOk) return;
   if (!window.__editMode) { console.error('inspector: __editMode missing'); return; }
   const EM = window.__editMode;
 
@@ -208,12 +208,14 @@
   function _label(id) { return ZH[id] ? `${ZH[id]} (${id})` : id; }
 
   // scene 入场动效池（motion.css 里的 mo-scene-*）；'' = 不挂动效
+  // 注意：iris-in / iris-out / wipe-circle 都是 clip-path: circle() 全屏遮罩，
+  // 某些浏览器渲染会导致整张图白屏；池子里直接剔除避免再被选中。
   const SCENE_ENTERS = [
     '', 'fade',
-    'flip-h', 'flip-v', 'glitch', 'ink-bleed', 'iris-in', 'iris-out', 'mask-grid',
+    'flip-h', 'flip-v', 'glitch', 'ink-bleed', 'mask-grid',
     'push-left', 'push-right',
     'slide-down', 'slide-left', 'slide-right', 'slide-up',
-    'wipe-circle', 'wipe-down', 'wipe-left', 'wipe-right', 'wipe-up',
+    'wipe-down', 'wipe-left', 'wipe-right', 'wipe-up',
     'zoom-in', 'zoom-out',
   ];
   // 图片 Ken Burns 池（motion.css 里的 mo-img-*）；'' = 按 hash 随机；'none' = 静止
@@ -230,10 +232,6 @@
   // 并把同样的 dot-path 排进 debounce 自动保存队列（complex 路径：'scenes.S1-003.motion.enter'）
   const _scenePending = {};
   let _sceneTimer = null;
-  const IS_LOCAL = (() => {
-    const h = location.hostname;
-    return h === '127.0.0.1' || h === 'localhost' || h === '0.0.0.0';
-  })();
   function patchScene(sceneId, field, value) {
     if (!sceneId) return;
     const ep = window.EPISODE;
@@ -246,7 +244,7 @@
     }
     cur[parts[parts.length - 1]] = value;
     fireLocal(); // 让 SceneFields 重渲，否则受控 input 改不了
-    if (!IS_LOCAL) return;
+    if (!window.__editServerOk) return;
     _scenePending['scenes.' + sceneId + '.' + field] = value;
     if (_sceneTimer) clearTimeout(_sceneTimer);
     _sceneTimer = setTimeout(flushScenePatches, 300);
@@ -269,10 +267,12 @@
   }
 
   // 动效池：和 overlays.js / motion.css 保持一致；空 = 让引擎按 hash 自动挑
+  // 注意：iris (mo-ov-iris) 是 clip-path 圆形遮罩，跟 scene 级 iris-in/wipe-circle
+  // 一样有白屏风险，池子里剔除。
   const MOTION_ENTERS = [
     '', // auto
     'fade', 'fly-in', 'zoom-in', 'stamp', 'blur',
-    'zoom-pop', 'ink-bleed', 'handwrite', 'slide-clip', 'iris',
+    'zoom-pop', 'ink-bleed', 'handwrite', 'slide-clip',
     'bounce', 'drift-in', 'spin-in', 'drop-in', 'unfold',
     'letter-spread', 'elastic-pop', 'tilt-in', 'fold-down',
     'blur-pulse', 'rise-glow', 'shimmer-sweep',

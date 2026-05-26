@@ -27,9 +27,11 @@
  */
 (function () {
   if (window.__editMode) return;
-  // 线上 ncds.cc 没有 edit-server，按 E 也只能拖个寂寞，UI 还会盖住正常观看。
-  // 在域名层早退；inspector.jsx 见 __editMode 不存在会自己 no-op。
-  if (/(?:^|\.)ncds\.cc$/i.test(location.hostname)) return;
+  // 没探测到 edit-server（线上纯静态托管），按 E 也只能拖个寂寞，UI 还会盖住正常观看。
+  // 在启动层早退；inspector.jsx 见 __editMode 不存在会自己 no-op。
+  // bootstrap.js 用 GET /__ping 判定是否启用，比按 hostname 白名单更鲁棒
+  // （本机 nginx 反代到 127.0.0.1:3000 + 自定义 host 时白名单会误伤）。
+  if (!window.__editServerOk) return;
 
   const EP = window.EPISODE;
   if (!EP) { console.error('edit-mode: EPISODE missing'); return; }
@@ -171,6 +173,13 @@
 
   function activateScene(sceneId) {
     if (!sceneId) return;
+    // 切到不同 scene 时清掉旧 selection ——
+    // inspector 顶部 `EM.getSelected()` 一直返回旧 merged，OverlayFields 持续
+    // 渲染旧 overlay 的字段（text / at.match / x / y），受控 input 显示旧值看着像"没清空"。
+    if (selection && selection.sceneId !== sceneId) {
+      if (selection.el) selection.el.classList.remove('em-selected');
+      selection = null;
+    }
     const nodes = (window.__player && window.__player.sceneNodes) || {};
     Object.keys(nodes).forEach((id) => nodes[id].classList.toggle('active', id === sceneId));
     currentSceneId = sceneId;
@@ -198,22 +207,33 @@
     const prev = dirty.get(key) || {};
     const next = deepMerge(prev, patch);
     dirty.set(key, next);
-    // live update DOM
-    window.__overlays.updateLive(sceneElOf(selection.sceneId), selection.index, patch);
-    selection.el.classList.add('em-dirty');
+    // updateLive 只热改 pos / text / inline style 子集；preset 是 class 上挂的
+    // (overlays.js renderInto 里 classNames.push(presetFromObj))，applyStyleObject 跳过
+    // preset 字段，所以下拉里选 os-marker → os-stamp 不会立刻变样。这里检测到 preset
+    // 切换或 style 类型变（字符串 ↔ 对象 ↔ null）时整 scene 重渲，重渲会按 dirty
+    // buffer 自动重挂选中态和 em-dirty 标记。
+    const styleSwapsClass = (
+      'style' in patch && (
+        typeof patch.style === 'string'
+        || patch.style === null
+        || (patch.style && typeof patch.style === 'object' && 'preset' in patch.style)
+      )
+    );
+    if (styleSwapsClass) {
+      renderSceneEdit(selection.sceneId);
+    } else {
+      window.__overlays.updateLive(sceneElOf(selection.sceneId), selection.index, patch);
+      selection.el.classList.add('em-dirty');
+    }
     notify();
     scheduleAutoSave();
   }
 
-  // auto-save：每次 apply 后 300ms debounce 触发 save()。仅 localhost 生效。
-  // 拖动连发的 patch 会在静止时一次写盘；线上 ncds.cc 不存在端点，直接 no-op。
-  const IS_LOCAL_HOST = (() => {
-    const h = location.hostname;
-    return h === '127.0.0.1' || h === 'localhost' || h === '0.0.0.0';
-  })();
+  // auto-save：每次 apply 后 300ms debounce 触发 save()。仅 edit-server 可达时生效。
+  // 拖动连发的 patch 会在静止时一次写盘；线上无端点时上层 enter() 已早退，这里只是保险。
   let _autoSaveTimer = null;
   function scheduleAutoSave() {
-    if (!IS_LOCAL_HOST) return;
+    if (!window.__editServerOk) return;
     if (_autoSaveTimer) clearTimeout(_autoSaveTimer);
     _autoSaveTimer = setTimeout(() => {
       _autoSaveTimer = null;
@@ -380,6 +400,17 @@
     active = false;
     selection = null;
     document.body.classList.remove('edit-mode');
+    // 把当前 scene 的 overlay DOM 从 edit 模式（直显 / 无 data-at-match / 无入场 class）
+    // 重渲到正常播放模式 —— at.match / motion 改动才能在 player 继续播放时按预期触发。
+    // 必须自己重渲一次：showBeat 内部判断 sceneWasActive=true 就跳过 renderInto，
+    // 而当前 scene 一直挂着 .active，所以光靠 showBeat 不会触发重建。
+    if (currentSceneId && window.__overlays) {
+      const sceneEl = sceneElOf(currentSceneId);
+      const def = EP.scenes[currentSceneId];
+      if (sceneEl && def) {
+        window.__overlays.renderInto(sceneEl, def.overlays || []);
+      }
+    }
     // 让 player 重新按 onBeat 流程恢复当前 scene
     if (window.__player && window.__player.showBeat) {
       const beats = window.__player.beats || [];
