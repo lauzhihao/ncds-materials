@@ -267,7 +267,7 @@
       "scene": "S1-18"
     },
     {
-      "zh": "万一走错了又怎么办。",
+      "zh": "万一走错了又怎么办？",
       "en": "and what if you take the wrong turn.",
       "scene": "S1-18"
     },
@@ -417,7 +417,7 @@
       "scene": "S1-32"
     },
     {
-      "zh": "是那段你已经耗进去、",
+      "zh": "是那段你已经耗进去，",
       "en": "it's the stretch of time you've already poured in",
       "scene": "S1-33"
     },
@@ -502,7 +502,7 @@
       "scene": "S1-40"
     },
     {
-      "zh": "再耗一年。",
+      "zh": "再耗一年？",
       "en": "for another year.",
       "scene": "S1-40"
     },
@@ -538,9 +538,9 @@
             "y": 16
           },
           "style": {
-            "font": "XY Kaiti",
+            "font": "Inter",
             "size": 96,
-            "weight": 400,
+            "weight": 700,
             "color": "var(--accent)",
             "rotation": -3,
             "letterSpacing": 0.08,
@@ -600,7 +600,7 @@
       },
       "overlays": [
         {
-          "text": "PAYDAY",
+          "text": "到账",
           "pos": {
             "x": 18,
             "y": 80
@@ -626,14 +626,14 @@
       },
       "overlays": [
         {
-          "text": "DEBT",
+          "text": "房贷",
           "pos": {
             "x": 16,
             "y": 18
           },
           "style": {
             "font": "ZS Fangsong",
-            "size": 100,
+            "size": 110,
             "weight": 900,
             "color": "#222",
             "rotation": -2,
@@ -660,7 +660,7 @@
       },
       "overlays": [
         {
-          "text": "ENDURE",
+          "text": "撑着",
           "pos": {
             "x": 78,
             "y": 20
@@ -720,7 +720,7 @@
       },
       "overlays": [
         {
-          "text": "REDO",
+          "text": "重来",
           "pos": {
             "x": 82,
             "y": 80
@@ -814,7 +814,7 @@
       },
       "overlays": [
         {
-          "text": "NO RETRY",
+          "text": "不敢错",
           "pos": {
             "x": 78,
             "y": 82
@@ -840,18 +840,18 @@
       },
       "overlays": [
         {
-          "text": "FROZEN",
+          "text": "原地",
           "pos": {
             "x": 82,
             "y": 16
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 92,
+            "size": 96,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": 3,
-            "letterSpacing": 0.07,
+            "letterSpacing": 0.08,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
@@ -874,7 +874,7 @@
       },
       "overlays": [
         {
-          "text": "STILL HERE",
+          "text": "还在",
           "pos": {
             "x": 78,
             "y": 14
@@ -940,9 +940,9 @@
             "y": 16
           },
           "style": {
-            "font": "ZS Fangsong",
-            "size": 92,
-            "weight": 900,
+            "font": "Inter",
+            "size": 86,
+            "weight": 700,
             "color": "#222",
             "rotation": -2,
             "letterSpacing": 0.05,
@@ -968,7 +968,7 @@
       },
       "overlays": [
         {
-          "text": "YOU?",
+          "text": "你？",
           "pos": {
             "x": 82,
             "y": 80
@@ -994,15 +994,15 @@
       },
       "overlays": [
         {
-          "text": "SIGN",
+          "text": "签字",
           "pos": {
             "x": 15,
             "y": 18
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 92,
-            "weight": 700,
+            "size": 100,
+            "weight": 400,
             "color": "#222",
             "rotation": -3,
             "letterSpacing": 0.07,
@@ -1028,7 +1028,7 @@
       },
       "overlays": [
         {
-          "text": "OVERTHINK",
+          "text": "翻来覆去",
           "pos": {
             "x": 82,
             "y": 20
@@ -1054,14 +1054,14 @@
       },
       "overlays": [
         {
-          "text": "3 PATHS",
+          "text": "三条路",
           "pos": {
             "x": 16,
             "y": 82
           },
           "style": {
-            "font": "Inter",
-            "size": 80,
+            "font": "ZS Fangsong",
+            "size": 90,
             "weight": 700,
             "color": "#222",
             "rotation": 0,
@@ -1088,18 +1088,18 @@
       },
       "overlays": [
         {
-          "text": "BY WHAT",
+          "text": "靠啥",
           "pos": {
             "x": 15,
             "y": 18
           },
           "style": {
-            "font": "ZS Fangsong",
-            "size": 94,
-            "weight": 500,
-            "color": "#222",
+            "font": "XY Kaiti",
+            "size": 108,
+            "weight": 400,
+            "color": "var(--accent)",
             "rotation": -2,
-            "letterSpacing": 0.06,
+            "letterSpacing": 0.08,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
@@ -1122,7 +1122,7 @@
       },
       "overlays": [
         {
-          "text": "BODY ≠ FOREVER",
+          "text": "卖力气",
           "pos": {
             "x": 76,
             "y": 14
@@ -1148,14 +1148,14 @@
       },
       "overlays": [
         {
-          "text": "WORTH IT",
+          "text": "才值钱",
           "pos": {
             "x": 80,
             "y": 80
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 88,
+            "size": 96,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": 3,
@@ -1182,15 +1182,15 @@
       },
       "overlays": [
         {
-          "text": "NARROW",
+          "text": "越走越窄",
           "pos": {
             "x": 78,
             "y": 16
           },
           "style": {
-            "font": "Inter",
-            "size": 84,
-            "weight": 500,
+            "font": "ZS Fangsong",
+            "size": 88,
+            "weight": 700,
             "color": "#222",
             "rotation": 0,
             "letterSpacing": 0.05,
@@ -1216,7 +1216,7 @@
       },
       "overlays": [
         {
-          "text": "LEFT BEHIND",
+          "text": "被扔下",
           "pos": {
             "x": 16,
             "y": 18
@@ -1242,7 +1242,7 @@
       },
       "overlays": [
         {
-          "text": "NOT HERE",
+          "text": "想不出",
           "pos": {
             "x": 15,
             "y": 18
@@ -1268,18 +1268,18 @@
       },
       "overlays": [
         {
-          "text": "SMALL STEP",
+          "text": "小步走",
           "pos": {
             "x": 78,
             "y": 16
           },
           "style": {
-            "font": "Inter",
-            "size": 80,
-            "weight": 700,
-            "color": "#222",
-            "rotation": 0,
-            "letterSpacing": 0.04,
+            "font": "XY Kaiti",
+            "size": 92,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": 2,
+            "letterSpacing": 0.07,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
@@ -1302,14 +1302,14 @@
       },
       "overlays": [
         {
-          "text": "EYES",
+          "text": "看着你",
           "pos": {
             "x": 16,
             "y": 82
           },
           "style": {
             "font": "ZS Fangsong",
-            "size": 92,
+            "size": 100,
             "weight": 900,
             "color": "#222",
             "rotation": 2,
@@ -1336,7 +1336,7 @@
       },
       "overlays": [
         {
-          "text": "FORGOTTEN",
+          "text": "忘了",
           "pos": {
             "x": 16,
             "y": 16
@@ -1394,12 +1394,12 @@
             "y": 14
           },
           "style": {
-            "font": "XY Kaiti",
+            "font": "Inter",
             "size": 104,
-            "weight": 400,
+            "weight": 700,
             "color": "var(--accent)",
             "rotation": -5,
-            "letterSpacing": 0.08,
+            "letterSpacing": 0.06,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
@@ -1422,14 +1422,14 @@
       },
       "overlays": [
         {
-          "text": "NOT YET",
+          "text": "不是再撑",
           "pos": {
             "x": 15,
             "y": 18
           },
           "style": {
-            "font": "Inter",
-            "size": 80,
+            "font": "ZS Fangsong",
+            "size": 84,
             "weight": 700,
             "color": "#222",
             "rotation": 0,
@@ -1456,14 +1456,14 @@
       },
       "overlays": [
         {
-          "text": "TURN",
+          "text": "掉头",
           "pos": {
             "x": 80,
             "y": 82
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 112,
+            "size": 120,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": -4,
@@ -1490,14 +1490,14 @@
       },
       "overlays": [
         {
-          "text": "NOT MONEY",
+          "text": "不是钱",
           "pos": {
             "x": 15,
             "y": 16
           },
           "style": {
             "font": "ZS Fangsong",
-            "size": 88,
+            "size": 96,
             "weight": 700,
             "color": "#222",
             "rotation": 0,
@@ -1524,14 +1524,14 @@
       },
       "overlays": [
         {
-          "text": "TIME",
+          "text": "时间",
           "pos": {
             "x": 82,
             "y": 18
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 100,
+            "size": 108,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": 4,
@@ -1558,7 +1558,7 @@
       },
       "overlays": [
         {
-          "text": "ADMIT",
+          "text": "承认",
           "pos": {
             "x": 78,
             "y": 16
@@ -1584,14 +1584,14 @@
       },
       "overlays": [
         {
-          "text": "ARRIVE",
+          "text": "走得到",
           "pos": {
             "x": 16,
             "y": 82
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 92,
+            "size": 100,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": -2,
@@ -1618,14 +1618,14 @@
       },
       "overlays": [
         {
-          "text": "LIFE SUPPORT",
+          "text": "续命",
           "pos": {
             "x": 14,
             "y": 18
           },
           "style": {
-            "font": "Inter",
-            "size": 80,
+            "font": "ZS Fangsong",
+            "size": 96,
             "weight": 700,
             "color": "#222",
             "rotation": 0,
@@ -1678,14 +1678,14 @@
       },
       "overlays": [
         {
-          "text": "WRONG SOIL",
+          "text": "错的地",
           "pos": {
             "x": 14,
             "y": 18
           },
           "style": {
             "font": "ZS Fangsong",
-            "size": 86,
+            "size": 96,
             "weight": 900,
             "color": "#222",
             "rotation": 2,
@@ -1712,14 +1712,14 @@
       },
       "overlays": [
         {
-          "text": "ASK YOURSELF",
+          "text": "问自己",
           "pos": {
             "x": 16,
             "y": 82
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 88,
+            "size": 96,
             "weight": 700,
             "color": "#222",
             "rotation": -3,
@@ -1746,7 +1746,7 @@
       },
       "overlays": [
         {
-          "text": "ONE MORE YEAR?",
+          "text": "再耗一年?",
           "pos": {
             "x": 78,
             "y": 16
@@ -1772,14 +1772,14 @@
       },
       "overlays": [
         {
-          "text": "DON'T WAIT",
+          "text": "别等了",
           "pos": {
             "x": 78,
             "y": 82
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 100,
+            "size": 108,
             "weight": 400,
             "color": "var(--accent)",
             "rotation": -4,
