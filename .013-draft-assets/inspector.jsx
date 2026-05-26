@@ -11,6 +11,8 @@
  * TweakText / TweakNumber / TweakColor / TweakButton / TweakSelect / TweakRadio / TweakRow。
  */
 (function () {
+  // ncds.cc 上 edit-mode.js 已自我禁用，__editMode 不存在属于预期，静默退出。
+  if (/(?:^|\.)ncds\.cc$/i.test(location.hostname)) return;
   if (!window.__editMode) { console.error('inspector: __editMode missing'); return; }
   const EM = window.__editMode;
 

@@ -27,6 +27,9 @@
  */
 (function () {
   if (window.__editMode) return;
+  // 线上 ncds.cc 没有 edit-server，按 E 也只能拖个寂寞，UI 还会盖住正常观看。
+  // 在域名层早退；inspector.jsx 见 __editMode 不存在会自己 no-op。
+  if (/(?:^|\.)ncds\.cc$/i.test(location.hostname)) return;
 
   const EP = window.EPISODE;
   if (!EP) { console.error('edit-mode: EPISODE missing'); return; }
