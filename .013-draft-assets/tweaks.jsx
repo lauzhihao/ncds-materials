@@ -1,4 +1,6 @@
-/* Tweaks 面板：标题、配色、配音、字号、字幕带样式
+/* Tweaks 面板：标题、配色、配音、字号
+ *
+ * 字幕带固定走纸底（透明背景 + ink 文字），不再可调。
  *
  * 全部默认值与候选都来自 window.EPISODE（由 bootstrap.js 从 episode.json 加载）。
  * 本文件不再含 per-episode 字面值；调参请改 episode.json。
@@ -32,7 +34,6 @@
     rate:           (ep.playback && ep.playback.rate) || 1,
     capZhSize:      (ep.visual && ep.visual.capZhSize) || 60,
     capEnSize:      (ep.visual && ep.visual.capEnSize) || 40,
-    bandStyle:      (ep.visual && ep.visual.bandStyle) || "paper",
     showSubtitleEn: (ep.visual && ep.visual.showSubtitleEn) !== false,
     kenBurns:       (ep.visual && ep.visual.kenBurns) !== false,
   };
@@ -44,20 +45,14 @@
       .forEach(k => root.style.setProperty(k, p[k]));
   }
 
-  function applyBandStyle(s) {
+  // 字幕带固定纸底：透明背景，文字直接走 ink 色。
+  // 每次切配色后都要重跑一次，因为 applyPalette 会把 --band-* 改回 palette 自带的深色值。
+  function applyPaperBand() {
     const root = document.documentElement;
-    document.body.classList.toggle("band-dark", s !== "paper");
-    document.body.classList.toggle("band-paper", s === "paper");
-    if (s === "paper") {
-      root.style.setProperty("--band", "transparent");
-      root.style.setProperty("--band-text", "var(--ink)");
-      root.style.setProperty("--band-sub", "var(--ink-soft)");
-    } else {
-      const p = PALETTES[window.__lastPalette || "paper"];
-      root.style.setProperty("--band", p["--band"]);
-      root.style.setProperty("--band-text", p["--band-text"]);
-      root.style.setProperty("--band-sub", p["--band-sub"]);
-    }
+    document.body.classList.add("band-paper");
+    root.style.setProperty("--band", "transparent");
+    root.style.setProperty("--band-text", "var(--ink)");
+    root.style.setProperty("--band-sub", "var(--ink-soft)");
   }
 
   // 字段 → episode.json dot-path 映射（auto-save 用）
@@ -68,7 +63,6 @@
     rate:           'playback.rate',
     capZhSize:      'visual.capZhSize',
     capEnSize:      'visual.capEnSize',
-    bandStyle:      'visual.bandStyle',
     showSubtitleEn: 'visual.showSubtitleEn',
     kenBurns:       'visual.kenBurns',
   };
@@ -152,9 +146,8 @@
     React.useEffect(() => {
       window.__lastPalette = t.palette;
       applyPalette(t.palette);
-      applyBandStyle(t.bandStyle);
+      applyPaperBand();
     }, [t.palette]);
-    React.useEffect(() => { applyBandStyle(t.bandStyle); }, [t.bandStyle]);
     React.useEffect(() => {
       document.documentElement.style.setProperty("--type-cap-zh", t.capZhSize + "px");
     }, [t.capZhSize]);
@@ -191,9 +184,6 @@
           <TweakSelect label="主题" value={t.palette}
             options={Object.entries(PALETTES).map(([k, v]) => ({ value: k, label: v.name }))}
             onChange={v => setTweak("palette", v)} />
-          <TweakRadio label="字幕带" value={t.bandStyle}
-            options={[{ value: "dark", label: "深色带" }, { value: "paper", label: "纸底" }]}
-            onChange={v => setTweak("bandStyle", v)} />
         </TweakSection>
 
         <TweakSection title="字幕">

@@ -73,7 +73,9 @@
           </div>
         </TweakSection>
 
-        {currentSid && <SceneFields sceneId={currentSid} />}
+        {/* 没选 overlay 时才显示场景级（含提示词 / Ken Burns / 图片填充等图片相关）字段；
+            一旦点中 overlay，就让 inspector 完全聚焦到 overlay 自身的设置上。 */}
+        {currentSid && !selected && <SceneFields sceneId={currentSid} />}
 
         <TweakSection label={
           <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

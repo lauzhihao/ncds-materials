@@ -33,7 +33,6 @@
   ],
   "visual": {
     "palette": "paper",
-    "bandStyle": "paper",
     "kenBurns": true,
     "showSubtitleEn": true,
     "capZhSize": 60,

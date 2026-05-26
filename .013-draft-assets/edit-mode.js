@@ -70,6 +70,8 @@
       touch-action: none;
     }
     body.edit-mode .scene-overlay:hover { outline: 2px solid rgba(0,120,255,.7); }
+    /* hover 图片容器时给手型，提示这块也是可点击/可操作区域 */
+    body.edit-mode .scene image-slot:hover { cursor: pointer; }
     body.edit-mode .scene-overlay.em-selected { outline: 2px solid #0a84ff; outline-offset: 3px; box-shadow: 0 0 0 6px rgba(10,132,255,.18); cursor: grabbing; }
     body.edit-mode .em-toast {
       position: fixed; left: 50%; top: 16px; transform: translateX(-50%);
