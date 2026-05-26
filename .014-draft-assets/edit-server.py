@@ -110,6 +110,29 @@ def add_overlay(slug, scene, overlay):
     return new_idx
 
 
+def del_overlay(slug, scene, index):
+    """从 scenes[scene].overlays.pop(index)；返回剩余 overlay 数."""
+    ep_path = episode_path(slug)
+    with open(ep_path, 'r', encoding='utf-8') as f:
+        ep = json.load(f)
+    scenes = ep.get('scenes') or {}
+    if scene not in scenes:
+        raise KeyError(f'scene not found: {scene}')
+    sc = scenes[scene]
+    ovs = sc.get('overlays')
+    if not isinstance(ovs, list):
+        raise ValueError(f'scene {scene} has no overlays list')
+    if not isinstance(index, int) or index < 0 or index >= len(ovs):
+        raise IndexError(f'overlay index out of range: {scene}#{index} (len={len(ovs)})')
+    ovs.pop(index)
+    tmp = ep_path + '.tmp'
+    with open(tmp, 'w', encoding='utf-8') as f:
+        json.dump(ep, f, ensure_ascii=False, indent=2)
+        f.write('\n')
+    os.replace(tmp, ep_path)
+    return len(ovs)
+
+
 def apply_patches(slug, patches):
     ep_path = episode_path(slug)
     with open(ep_path, 'r', encoding='utf-8') as f:
@@ -256,7 +279,7 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_POST(self):
         path = urlparse(self.path).path
-        if path not in ('/__save_overlays', '/__save_episode', '/__add_overlay'):
+        if path not in ('/__save_overlays', '/__save_episode', '/__add_overlay', '/__del_overlay'):
             return self._json_error(404, 'unknown endpoint')
         try:
             n = int(self.headers.get('Content-Length') or '0')
@@ -279,13 +302,22 @@ class Handler(SimpleHTTPRequestHandler):
                     return self._json_error(400, 'patches must be dict of {path: value}')
                 touched = apply_path_patches(slug, patches)
                 self._json_ok({'ok': True, 'touched': touched})
-            else:  # /__add_overlay
+            elif path == '/__add_overlay':
                 scene = body.get('scene')
                 overlay = body.get('overlay')
                 if not scene:
                     return self._json_error(400, 'missing scene')
                 new_idx = add_overlay(slug, scene, overlay or {})
                 self._json_ok({'ok': True, 'index': new_idx})
+            else:  # /__del_overlay
+                scene = body.get('scene')
+                index = body.get('index')
+                if not scene:
+                    return self._json_error(400, 'missing scene')
+                if not isinstance(index, int):
+                    return self._json_error(400, 'index must be int')
+                remaining = del_overlay(slug, scene, index)
+                self._json_ok({'ok': True, 'remaining': remaining})
         except (ValueError, KeyError, IndexError, FileNotFoundError) as e:
             self._json_error(400, str(e))
         except Exception as e:

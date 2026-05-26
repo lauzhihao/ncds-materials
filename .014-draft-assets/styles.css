@@ -293,15 +293,21 @@ body.ken-burns .scene {
   opacity: 0;
 }
 
-/* ── 控制条（录制时隐藏） ──────────────────────────────────────────── */
+/* ── 控制条：左下角，在 1920×1080 缩放后的左侧黑边中水平居中（录制时隐藏） ───
+   --bar 是左侧黑边宽度 (viewport - 16:9 stage) / 2; 黑边窄时 fallback 到左 8px 保底间距 */
 .controls {
+  --bar: max(0px, (100vw - 100vh * 16 / 9) / 2);
+  --bar-w: 48px;
   position: fixed;
-  left: 16px; bottom: 16px;
-  display: flex; gap: 8px; align-items: center;
+  bottom: 16px;
+  left: max(8px, calc((var(--bar) - var(--bar-w)) / 2));
+  width: var(--bar-w);
+  box-sizing: border-box;
+  display: flex; flex-direction: column; gap: 6px; align-items: stretch;
   background: rgba(20,18,15,.85);
   color: #fff;
-  border-radius: 12px;
-  padding: 10px 12px;
+  border-radius: 10px;
+  padding: 8px 6px;
   font-size: 13px;
   z-index: 9999;
   backdrop-filter: blur(8px);
@@ -313,33 +319,60 @@ body.ken-burns .scene {
   border: 0;
   background: rgba(255,255,255,.12);
   color: #fff;
-  padding: 6px 12px;
+  width: 36px; height: 36px;
+  padding: 0;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 13px;
   font-family: inherit;
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center;
 }
 .controls button:hover { background: rgba(255,255,255,.22); }
 .controls button.primary { background: var(--accent); }
 .controls button.primary:hover { background: #d44535; }
 
+/* SVG icons */
+.controls .ico { width: 18px; height: 18px; display: block; }
+.controls #playBtn .ico-pause { display: none; }
+.controls #playBtn[data-state="playing"] .ico-play { display: none; }
+.controls #playBtn[data-state="playing"] .ico-pause { display: block; }
+
+/* hover 时把 data-label 浮在右侧 */
+.controls [data-label]:hover::after {
+  content: attr(data-label);
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20,18,15,.95);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 分页：input 在上 (当前 beat), total 在下 (跳到末尾), 都跟其他按钮一样 36×36 方块 */
 .controls .progress {
   font-variant-numeric: tabular-nums;
-  opacity: .8;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 2px;
+  display: flex; flex-direction: column; align-items: stretch;
+  gap: 6px;
+  padding: 0;
 }
 .controls .progress input[type=number] {
   background: rgba(255,255,255,.12);
   color: #fff;
   border: 0;
-  padding: 2px 4px;
-  border-radius: 4px;
+  width: 36px; height: 36px;
+  padding: 0;
+  border-radius: 8px;
   font: inherit;
+  font-size: 13px;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
-  width: 4ch;
-  text-align: right;
+  text-align: center;
   -moz-appearance: textfield;
 }
 .controls .progress input[type=number]::-webkit-outer-spin-button,
@@ -347,20 +380,15 @@ body.ken-burns .scene {
   -webkit-appearance: none; margin: 0;
 }
 .controls .progress input[type=number]:focus { outline: 1px solid var(--accent); }
-.controls .progress .progress-sep { opacity: .55; }
-
-.controls input[type=range] { width: 100px; accent-color: var(--accent); }
-.controls select {
-  background: rgba(255,255,255,.12);
-  color: #fff;
-  border: 0;
-  padding: 6px 8px;
-  border-radius: 8px;
+.controls .progress .progress-sep { display: none; }
+.controls .progress #progressTotal {
   font-size: 13px;
-  font-family: inherit;
-  max-width: 160px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
-.controls label { opacity: .7; }
+
+/* 节奏 slider：藏起来不参与布局，但保留 #rate 在 DOM 里供 player.js 读 value */
+.controls .rate-control { display: none; }
 
 body.recording .controls { display: none; }
 
@@ -534,14 +562,14 @@ body:not(.motion-enabled) .scene.active .scene-overlay[class*="mo-ov-iris"] {
   letter-spacing: .04em;
 }
 
-/* 大号衬线 + 细下划线 */
+/* 大号衬线 + 细下划线 (下划线用 currentColor, 跟随 inline style 改的 color) */
 .os-callout {
   font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
   font-weight: 700;
   font-size: var(--os-size, 60px);
   color: var(--ink);
   padding-bottom: 8px;
-  border-bottom: 3px solid var(--ink);
+  border-bottom: 3px solid currentColor;
 }
 
 /* 同上，红墨水版 */

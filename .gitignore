@@ -15,3 +15,9 @@ package-lock.json
 .010-reading-confidence-assets/fonts/zips/
 .010-reading-confidence-assets/fonts/extracted/
 .010-reading-confidence-assets/__pycache__/
+.gstack/
+
+# 字体文件不进 git: 本地渲染时仍可读, 远端站点用 cache/CDN 单独管.
+# 注: fonts/xy-kaiti/Regular.woff2 和 fonts/zs-fangsong/Regular.woff2 在加这条之前
+# 已经 git tracked, 这里 ignore 不影响它们 — 如要彻底 untrack 用 `git rm --cached`.
+fonts/**/*.woff2

@@ -215,6 +215,7 @@
   }
 
   const root = document.createElement("div");
+  root.id = "__tweaks_mount";
   document.body.appendChild(root);
   ReactDOM.createRoot(root).render(<App />);
 })();

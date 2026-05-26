@@ -42,26 +42,99 @@
        注意：跳 beat 已经通过 inspector 的场景选择器 + [/] 快捷键覆盖了，
        per-beat 精度的播放控制在编辑期不需要。 */
     body.edit-mode .controls { display: none; }
-    /* 原 Tweaks 面板（不是 inspector）淡出 + 移到左下，腾出右下给 inspector。
-       注意：不能给 pointer-events:none，否则 :hover 也接不到鼠标，永远唤不醒。
-       opacity:.35 + transition 让它静默时退到背景；hover/focus 时直接到 100%。 */
-    body.edit-mode #inspector-mount ~ .twk-panel,
-    body.edit-mode .twk-panel:not(#inspector-mount .twk-panel) {
-      left: 16px; right: auto;
-      opacity: .35;
-      transition: opacity .15s;
-    }
-    body.edit-mode .twk-panel:not(#inspector-mount .twk-panel):hover,
-    body.edit-mode .twk-panel:not(#inspector-mount .twk-panel):focus-within {
-      opacity: 1;
-    }
-    /* inspector 自己永远 100% 不透明 + 强制右下角 + 顶到最上层 */
-    #inspector-mount .twk-panel {
-      opacity: 1 !important; pointer-events: auto !important;
-      right: 16px !important; left: auto !important; bottom: 16px !important;
+    /* ── 左侧合并抽屉: 顶部 tabs 切换 Tweaks/Inspector, 同时只显示一个 ──
+       触发: hover/focus (临时滑出) 或 .pinned (固定; 选中 overlay 时自动加) */
+    .em-drawer {
+      position: fixed; left: 0; top: 0;
+      height: 100vh; width: 340px;
       z-index: 2147483646;
-      width: 320px;
+      display: flex; flex-direction: column;
+      background: rgba(250,249,247,.82);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      backdrop-filter: blur(24px) saturate(160%);
+      border-right: .5px solid rgba(0,0,0,.1);
+      box-shadow: 0 12px 40px rgba(0,0,0,.18);
+      transform: translateX(calc(-100% + 6px));
+      transition: transform .25s ease;
+      pointer-events: auto;
+      font: 11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;
+      color: #29261b;
     }
+    .em-drawer::before {
+      content: ""; position: absolute;
+      right: 0; top: 0; width: 6px; height: 100%;
+      background: linear-gradient(180deg, rgba(10,132,255,.55), rgba(10,132,255,.15));
+      pointer-events: none;
+    }
+    .em-drawer:hover, .em-drawer:focus-within, .em-drawer.pinned {
+      transform: translateX(0);
+    }
+    /* tabs bar */
+    .em-drawer-tabs {
+      display: flex; gap: 2px;
+      padding: 10px 10px 0;
+      border-bottom: .5px solid rgba(0,0,0,.08);
+      flex: 0 0 auto;
+    }
+    .em-drawer-tabs button {
+      appearance: none; border: 0; background: transparent;
+      color: rgba(41,38,27,.55); font: inherit; font-weight: 500;
+      padding: 7px 14px;
+      border-radius: 8px 8px 0 0;
+      cursor: pointer; position: relative;
+    }
+    .em-drawer-tabs button:hover { color: #29261b; }
+    .em-drawer-tabs button.active {
+      color: #29261b;
+      background: rgba(255,255,255,.55);
+    }
+    .em-drawer-tabs button.active::after {
+      content: ""; position: absolute;
+      left: 8px; right: 8px; bottom: -1px; height: 2px;
+      background: #0a84ff;
+    }
+    /* body 区, 装两个 mount; 通过 data-active-tab 控制显示 */
+    .em-drawer-body {
+      flex: 1 1 0; min-height: 0;
+      display: flex; flex-direction: column;
+    }
+    .em-drawer-body > * {
+      flex: 1 1 0; min-height: 0;
+      display: flex; flex-direction: column;
+    }
+    .em-drawer[data-active-tab="tweaks"] #inspector-mount,
+    .em-drawer[data-active-tab="inspector"] #__tweaks_mount {
+      display: none;
+    }
+    /* drawer 内的 panel: 重置定位/边角/transform, 让它撑满 mount 容器 */
+    .em-drawer .twk-panel {
+      position: relative !important;
+      left: auto !important; right: auto !important;
+      top: auto !important; bottom: auto !important;
+      width: 100% !important;
+      max-height: 100% !important;
+      flex: 1 1 0; min-height: 0;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: transparent !important;
+      border: 0 !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    /* 抽屉里的 panel 自带 header (Tweaks / Overlay Inspector 标题条) 隐藏掉,
+       因为 tabs 已经标识当前面板; 这样空间全留给内容 */
+    .em-drawer .twk-hd { display: none !important; }
+    /* 字号 ×1.2: 原 panel 11.5px 太小, 整体放大到 14px;
+       section heading 原 10px → 12px. 用 !important 覆盖 inline style 里的 fontSize. */
+    .em-drawer,
+    .em-drawer .twk-panel,
+    .em-drawer .twk-panel * { font-size: 14px !important; }
+    .em-drawer .twk-sect,
+    .em-drawer .twk-sect * { font-size: 12px !important; }
+    .em-drawer-tabs button { font-size: 14px !important; }
+    /* 字体预览 chip: family name 小标 + 示例字大号, 都覆盖整体 14px override */
+    .em-drawer .em-font-chip-label { font-size: 10px !important; }
+    .em-drawer .em-font-chip-sample { font-size: 20px !important; line-height: 1.15 !important; }
     /* 关键：正常播放时 .overlay-layer 是 pointer-events:none，事件穿过去。
        编辑模式让 layer 仍透明但每个 overlay 自己接收事件；
        同时强制 opacity:1，覆盖未播放时的 opacity:0 入场起点。 */
@@ -96,6 +169,8 @@
   let active = false;
   let currentSceneId = null;
   let selection = null; // { sceneId, index, el }
+  let focusMode = 'scene'; // 'scene' | 'overlay' — Inspector 内部根据这个切显示
+  let drawerEl = null;  // 编辑模式专用：把两个 panel mount 都搬进来的左侧抽屉
   const listeners = new Set();
   const notify = () => listeners.forEach((cb) => { try { cb(); } catch (e) { console.error(e); } });
 
@@ -189,16 +264,43 @@
 
   function select(sceneId, index) {
     if (selection && selection.el) selection.el.classList.remove('em-selected');
-    if (sceneId == null) { selection = null; notify(); return; }
+    if (sceneId == null) {
+      selection = null; notify();
+      if (drawerEl) drawerEl.classList.remove('pinned');
+      return;
+    }
     if (currentSceneId !== sceneId) activateScene(sceneId);
     const sceneEl = sceneElOf(sceneId);
     const el = sceneEl && sceneEl.querySelector(
       '.scene-overlay[data-overlay-index="' + index + '"]'
     );
-    if (!el) { selection = null; notify(); return; }
+    if (!el) {
+      selection = null; notify();
+      if (drawerEl) drawerEl.classList.remove('pinned');
+      return;
+    }
     el.classList.add('em-selected');
     selection = { sceneId, index, el };
+    focusMode = 'overlay';
     notify();
+    // 选中 overlay -> 钉住抽屉 + 切到 Inspector tab, 否则 hover 走开就会缩回
+    if (drawerEl) {
+      drawerEl.classList.add('pinned');
+      setDrawerTab('inspector');
+    }
+  }
+
+  // 点击图片容器 -> 进 scene 模式: 不选 overlay, 抽屉 pin 在 Inspector tab, 显示场景设置
+  function selectScene(sid) {
+    if (selection && selection.el) selection.el.classList.remove('em-selected');
+    selection = null;
+    focusMode = 'scene';
+    if (sid && currentSceneId !== sid) activateScene(sid);
+    notify();
+    if (drawerEl) {
+      drawerEl.classList.add('pinned');
+      setDrawerTab('inspector');
+    }
   }
 
   function apply(patch) {
@@ -260,6 +362,18 @@
     els.forEach((el) => {
       el.addEventListener('pointerdown', onPointerDown);
     });
+    // image-slot 点击 -> 弹抽屉 + scene 模式 (落在容器本身, overlay 自己 stopPropagation 不会冒到这里)
+    sceneEl.querySelectorAll('image-slot').forEach((slot) => {
+      slot.addEventListener('pointerdown', onSlotPointerDown);
+    });
+  }
+  function onSlotPointerDown(e) {
+    if (!active) return;
+    if (e.button !== 0) return;
+    const sceneEl = e.currentTarget.closest('.scene');
+    if (!sceneEl) return;
+    selectScene(sceneEl.dataset.sceneId);
+    e.stopPropagation();
   }
 
   let drag = null; // { startX, startY, startPosX, startPosY, sceneRect, sceneId, index, el, moved }
@@ -335,6 +449,19 @@
       return;
     }
 
+    // Backspace / Delete: 删掉当前选中的 overlay
+    if ((e.key === 'Backspace' || e.key === 'Delete') && selection) {
+      e.preventDefault();
+      const sid = selection.sceneId;
+      const idx = selection.index;
+      const m = mergedOverlay(sid, idx);
+      const preview = (m.text || '').slice(0, 20) || '(空)';
+      if (confirm(`删除 overlay #${idx}「${preview}」?`)) {
+        deleteOverlay(sid, idx);
+      }
+      return;
+    }
+
     // scene 翻页
     if (e.key === '[' || e.key === ']') {
       const ids = sceneIdsWithOverlays();
@@ -368,9 +495,18 @@
   });
 
   // 点击空白处反选（点 .scene 而不是 overlay）
+  // 关键: 用 mousedown 起点判断, 不能用 click 的 target —— 在抽屉里 input/textarea
+  // 内向右拖选文字时 mouseup 会落到抽屉外, click 的 target 变成共同祖先 (body),
+  // 闭包到老逻辑会误反选并 unpin 抽屉, 体感"抽屉被关掉了".
+  let _mouseDownInPanel = false;
+  document.addEventListener('mousedown', (e) => {
+    _mouseDownInPanel = !!e.target.closest('.em-drawer, .twk-panel, .em-toast');
+  }, true);
   document.addEventListener('click', (e) => {
     if (!active) return;
+    if (_mouseDownInPanel) return;
     if (e.target.closest('.scene-overlay')) return;
+    if (e.target.closest('.em-drawer')) return;
     if (e.target.closest('.twk-panel')) return;
     if (e.target.closest('.em-toast')) return;
     if (selection) select(null);
@@ -387,7 +523,40 @@
     const withOv = sceneIdsWithOverlays();
     const sid = (withOv.indexOf(startSid) >= 0) ? startSid : (withOv[0] || startSid);
     activateScene(sid);
+    // 建左侧抽屉: 顶部 tabs 切 Inspector / Tweaks, body 区把两个 mount 都搬进来.
+    // mount 是 React root 容器, 整体 reparent 不影响内部 reconciliation.
+    if (!drawerEl) {
+      drawerEl = document.createElement('div');
+      drawerEl.className = 'em-drawer';
+      drawerEl.dataset.activeTab = 'inspector';
+      const tabsEl = document.createElement('div');
+      tabsEl.className = 'em-drawer-tabs';
+      for (const [name, label] of [['inspector', 'Inspector'], ['tweaks', 'Tweaks']]) {
+        const b = document.createElement('button');
+        b.type = 'button'; b.dataset.tab = name; b.textContent = label;
+        if (name === 'inspector') b.classList.add('active');
+        b.addEventListener('click', () => setDrawerTab(name));
+        tabsEl.appendChild(b);
+      }
+      drawerEl.appendChild(tabsEl);
+      const bodyEl = document.createElement('div');
+      bodyEl.className = 'em-drawer-body';
+      drawerEl.appendChild(bodyEl);
+      document.body.appendChild(drawerEl);
+      const t = document.getElementById('__tweaks_mount');
+      const i = document.getElementById('inspector-mount');
+      if (t) bodyEl.appendChild(t);
+      if (i) bodyEl.appendChild(i);
+    }
     toast('编辑模式  ·  E 退出  ·  [ ] 切场景  ·  方向键微调', 2200);
+  }
+
+  function setDrawerTab(name) {
+    if (!drawerEl) return;
+    drawerEl.dataset.activeTab = name;
+    drawerEl.querySelectorAll('.em-drawer-tabs button').forEach((b) => {
+      b.classList.toggle('active', b.dataset.tab === name);
+    });
   }
 
   function exit() {
@@ -400,6 +569,15 @@
     active = false;
     selection = null;
     document.body.classList.remove('edit-mode');
+    // 还原 panel mount 回 body, 拆抽屉.
+    if (drawerEl) {
+      const t = document.getElementById('__tweaks_mount');
+      const i = document.getElementById('inspector-mount');
+      if (t) document.body.appendChild(t);
+      if (i) document.body.appendChild(i);
+      drawerEl.remove();
+      drawerEl = null;
+    }
     // 把当前 scene 的 overlay DOM 从 edit 模式（直显 / 无 data-at-match / 无入场 class）
     // 重渲到正常播放模式 —— at.match / motion 改动才能在 player 继续播放时按预期触发。
     // 必须自己重渲一次：showBeat 内部判断 sceneWasActive=true 就跳过 renderInto，
@@ -490,6 +668,39 @@
     }
   }
 
+  // 删除一个 overlay: 服务端 pop + 客户端同步 EP + 清掉该 scene 在 dirty buffer 里
+  // 的所有 patch (避免后续 save 时 index 错位).
+  async function deleteOverlay(sceneId, index) {
+    if (!sceneId || !Number.isInteger(index)) return false;
+    const slug = EP.__slug || (EP.meta && EP.meta.slug);
+    try {
+      const res = await fetch('/__del_overlay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, scene: sceneId, index }),
+      });
+      if (!res.ok) {
+        const txt = await res.text().catch(() => res.statusText);
+        throw new Error(`HTTP ${res.status}: ${txt}`);
+      }
+      // 同步 EP 内存
+      EP.scenes[sceneId].overlays.splice(index, 1);
+      // 清掉该 scene 所有 dirty patch (index 已经平移, 旧 patch 没法对齐)
+      for (const k of Array.from(dirty.keys())) {
+        if (k.startsWith(sceneId + '#')) dirty.delete(k);
+      }
+      // 反选 + 重渲
+      select(null);
+      if (currentSceneId === sceneId) renderSceneEdit(sceneId);
+      toast('已删除 overlay #' + index);
+      return true;
+    } catch (e) {
+      toast('删除失败：' + e.message, 2400);
+      console.warn('[edit-mode] deleteOverlay failed:', e);
+      return false;
+    }
+  }
+
   // ── 暴露给 inspector ─────────────────────────────────
   window.__editMode = {
     isActive: () => active,
@@ -504,6 +715,9 @@
       return { sceneId: selection.sceneId, index: selection.index, def: base, merged };
     },
     select,
+    selectScene,
+    deleteOverlay,
+    getFocusMode: () => focusMode,
     deselect: () => select(null),
     apply,
     addOverlay,

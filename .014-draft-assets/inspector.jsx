@@ -33,6 +33,25 @@
     return n;
   }
 
+  // 把 text 中所有 needle 子串包成 <mark>, 用来让 at.match 关键词在下方 beat 列表里发亮.
+  function highlightMatches(text, needle) {
+    if (!needle || !text || !text.includes(needle)) return text;
+    const parts = text.split(needle);
+    const out = [];
+    parts.forEach((p, i) => {
+      if (p) out.push(p);
+      if (i < parts.length - 1) {
+        out.push(
+          React.createElement('mark', {
+            key: 'm' + i,
+            style: { background: 'rgba(255,214,0,.7)', color: 'inherit', padding: '0 1px', borderRadius: 2 },
+          }, needle)
+        );
+      }
+    });
+    return out;
+  }
+
   function Inspector() {
     const tick = useEditState();
     const active = EM.isActive();
@@ -79,47 +98,44 @@
             一旦点中 overlay，就让 inspector 完全聚焦到 overlay 自身的设置上。 */}
         {currentSid && !selected && <SceneFields sceneId={currentSid} />}
 
-        <TweakSection label={
-          <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <span>选择 Overlay</span>
+        <TweakSection label="选择 Overlay">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+            {sceneOverlays.map((o, i) => {
+              const on = selected && selected.sceneId === currentSid && selected.index === i;
+              const txt = (o.text || '').slice(0, 8) || '(空)';
+              return (
+                <button key={i} type="button"
+                  style={{
+                    appearance: 'none',
+                    border: on ? '2px solid #0a84ff' : '1px solid rgba(0,0,0,.18)',
+                    background: on ? 'rgba(10,132,255,.12)' : '#fff',
+                    color: '#29261b',
+                    borderRadius: 6,
+                    padding: '4px 8px',
+                    font: '11px ui-sans-serif,system-ui,sans-serif',
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => EM.select(currentSid, i)}>
+                  #{i} {txt}
+                </button>
+              );
+            })}
             <button type="button" title="新增 overlay 到当前 scene 中心"
               onClick={() => EM.addOverlay(currentSid)}
               style={{
-                appearance: 'none', border: '1px solid rgba(0,0,0,.25)',
+                appearance: 'none',
+                border: '1px dashed rgba(0,0,0,.3)',
                 background: '#fff', color: '#29261b',
-                width: 22, height: 22, lineHeight: '18px', textAlign: 'center',
-                borderRadius: 5, font: '14px ui-sans-serif,system-ui,sans-serif',
-                cursor: 'pointer', padding: 0,
+                borderRadius: 6,
+                padding: '4px 10px',
+                font: '13px ui-sans-serif,system-ui,sans-serif',
+                cursor: 'pointer',
+                lineHeight: 1,
               }}>+</button>
-          </span>
-        }>
-          {sceneOverlays.length === 0
-            ? <div style={{ fontSize: 11, color: 'rgba(41,38,27,.55)' }}>当前场景没有 overlay，点 + 加一个</div>
-            : (
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-                {sceneOverlays.map((o, i) => {
-                  const on = selected && selected.sceneId === currentSid && selected.index === i;
-                  const txt = (o.text || '').slice(0, 8) || '(空)';
-                  return (
-                    <button key={i} type="button"
-                      style={{
-                        appearance: 'none',
-                        border: on ? '2px solid #0a84ff' : '1px solid rgba(0,0,0,.18)',
-                        background: on ? 'rgba(10,132,255,.12)' : '#fff',
-                        color: '#29261b',
-                        borderRadius: 6,
-                        padding: '4px 8px',
-                        font: '11px ui-sans-serif,system-ui,sans-serif',
-                        cursor: 'pointer',
-                      }}
-                      onClick={() => EM.select(currentSid, i)}>
-                      #{i} {txt}
-                    </button>
-                  );
-                })}
-              </div>
-            )
-          }
+          </div>
+          {sceneOverlays.length === 0 && (
+            <div style={{ fontSize: 11, color: 'rgba(41,38,27,.55)', marginTop: 6 }}>当前场景没有 overlay，点末尾的 + 加一个</div>
+          )}
         </TweakSection>
 
         {selected && (
@@ -294,8 +310,22 @@
             onChange={(v) => patchScene(sceneId, 'subtitle', v)} />
         ) : (
           <React.Fragment>
-            <TweakText label="提示词 (生图用)" value={scene.prompt || ''}
-              onChange={(v) => patchScene(sceneId, 'prompt', v)} />
+            <TweakRow label="提示词 (生图用)">
+              <textarea rows={5}
+                value={scene.prompt || ''}
+                onChange={(e) => patchScene(sceneId, 'prompt', e.target.value)}
+                style={{
+                  width: '100%', boxSizing: 'border-box',
+                  resize: 'vertical',
+                  padding: '6px 8px',
+                  border: '.5px solid rgba(0,0,0,.12)',
+                  borderRadius: 7,
+                  background: '#fff7d4',
+                  color: '#29261b',
+                  font: '11.5px/1.5 ui-sans-serif,system-ui,-apple-system,sans-serif',
+                  outline: 'none',
+                }} />
+            </TweakRow>
             <TweakText label="标签 / 备注" value={scene.label || ''}
               onChange={(v) => patchScene(sceneId, 'label', v)} />
           </React.Fragment>
@@ -375,7 +405,7 @@
             onChange={(v) => EM.apply({ pos: { x: pos.x, y: round1(v) } })} />
         </TweakSection>
 
-        <TweakSection label="样式">
+        <TweakSection label="文字样式">
           <TweakSelect label="预设" value={presetStr}
             options={[{ value: '', label: '— 纯 inline / 按 hash 随机 —' }]
               .concat(STYLE_PRESETS.map((s) => ({ value: s, label: _label(s) })))}
@@ -396,22 +426,17 @@
             }} />
           <TweakColor label="颜色" value={color || '#000000'}
             onChange={(v) => patchStyle({ color: v })} />
-          <div style={{ display: 'flex', gap: 6, alignItems: 'flex-end' }}>
-            <div style={{ flex: '7 1 0', minWidth: 0 }}>
-              {FONTS.length > 0
-                ? <TweakSelect label="字体" value={fontFam}
-                    options={[{ value: '', label: '— 默认 —' }].concat(FONTS.map((f) => ({ value: f, label: f })))}
-                    onChange={(v) => patchStyle({ font: v || null })} />
-                : <TweakRow label="字体"><div style={{fontSize:11,opacity:.55}}>无可用字体</div></TweakRow>}
+          {FONTS.length > 0
+            ? <FontPicker value={fontFam} options={FONTS}
+                onChange={(v) => patchStyle({ font: v || null })} />
+            : <TweakRow label="字体"><div style={{fontSize:11,opacity:.55}}>无可用字体</div></TweakRow>}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <SizeInput value={fontSize} placeholder="字号 px" min={8} max={400}
+                onCommit={(v) => patchStyle({ size: v == null ? null : v })} />
             </div>
-            <div style={{ flex: '3 1 0', minWidth: 0 }}>
-              <TweakRow label="字号 px">
-                <SizeInput value={fontSize} placeholder="css" min={8} max={400}
-                  onCommit={(v) => patchStyle({ size: v == null ? null : v })} />
-              </TweakRow>
-            </div>
+            <TextStyleToggles styleObj={styleObj} mStyle={m.style} onPatch={(s) => patchStyle(s)} />
           </div>
-          <TextStyleToggles styleObj={styleObj} mStyle={m.style} onPatch={(s) => patchStyle(s)} />
           <TweakSlider label="旋转 deg" value={rotation} min={-45} max={45} step={1}
             onChange={(v) => patchStyle({ rotation: Number(v) })} />
         </TweakSection>
@@ -445,11 +470,15 @@
                 点字幕直接填入 at.match，再到上面输入框裁短：
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
-                {beatsForScene.map((b, i) => (
+                {beatsForScene.map((b, i) => {
+                  const matched = atMatch && b.zh.includes(atMatch);
+                  return (
                   <button key={i} type="button"
                     style={{
-                      appearance: 'none', border: '1px solid rgba(0,0,0,.15)',
-                      background: '#fff', color: '#29261b', borderRadius: 4,
+                      appearance: 'none',
+                      border: matched ? '1px solid rgba(255,200,0,.7)' : '1px solid rgba(0,0,0,.15)',
+                      background: matched ? 'rgba(255,235,59,.12)' : '#fff',
+                      color: '#29261b', borderRadius: 4,
                       padding: '3px 6px', font: '11px ui-sans-serif,system-ui,sans-serif',
                       cursor: 'pointer', textAlign: 'left',
                     }}
@@ -460,9 +489,10 @@
                       e.preventDefault();
                       patchAt(b.zh);
                     }}>
-                    {b.zh}
+                    {highlightMatches(b.zh, atMatch)}
                   </button>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}
@@ -504,28 +534,23 @@
         }, style)}>{label}</button>
     );
     return (
-      <div className="twk-row twk-row-h" style={{ gap: 4 }}>
-        <div className="twk-lbl"><span>样式</span></div>
-        <div style={{ display: 'flex', gap: 4 }}>
-          {btn('B', isBold,   () => onPatch({ weight: isBold ? 'normal' : 700 }),       { fontWeight: 800 })}
-          {btn('I', isItalic, () => onPatch({ fontStyle: isItalic ? 'normal' : 'italic' }), { fontStyle: 'italic', fontFamily: 'serif' })}
-          {btn('U', isUnder,  () => toggleDec('underline', !isUnder),                   { textDecoration: 'underline' })}
-          {btn('S', isStrike, () => toggleDec('line-through', !isStrike),               { textDecoration: 'line-through' })}
-        </div>
+      <div style={{ display: 'flex', gap: 4, flexShrink: 0 }}>
+        {btn('B', isBold,   () => onPatch({ weight: isBold ? 'normal' : 700 }),       { fontWeight: 800 })}
+        {btn('I', isItalic, () => onPatch({ fontStyle: isItalic ? 'normal' : 'italic' }), { fontStyle: 'italic', fontFamily: 'serif' })}
+        {btn('U', isUnder,  () => toggleDec('underline', !isUnder),                   { textDecoration: 'underline' })}
+        {btn('S', isStrike, () => toggleDec('line-through', !isStrike),               { textDecoration: 'line-through' })}
       </div>
     );
   }
 
-  // 字号窄输入框：onChange 不 clamp（否则按 "3" 想输 30 时 min=10 把 3 钳成 10，
-  // 你永远输不进十位数）。只在 blur / Enter 时 clamp + commit。
+  // 字号输入框：普通 text input 只允许整数, 没有 number type 的上下 spinner.
   // 留空 commit → onCommit(null) 让上层把 size 置 null（回退预设默认）。
   function SizeInput({ value, min, max, placeholder, onCommit }) {
     const [draft, setDraft] = React.useState(value == null ? '' : String(value));
-    // 外部 value 变了（切了 overlay / 撤回 / save 后）刷一次本地草稿
     React.useEffect(() => { setDraft(value == null ? '' : String(value)); }, [value]);
     function commit() {
       if (draft === '' || draft == null) { onCommit(null); return; }
-      let n = parseFloat(draft);
+      let n = parseInt(draft, 10);
       if (!isFinite(n)) { setDraft(value == null ? '' : String(value)); return; }
       if (min != null && n < min) n = min;
       if (max != null && n > max) n = max;
@@ -533,15 +558,70 @@
       onCommit(n);
     }
     return (
-      <input className="twk-field" type="number" inputMode="numeric"
+      <input className="twk-field" type="text" inputMode="numeric"
         value={draft} placeholder={placeholder || ''} title="字号 px (留空 = 走预设)"
-        style={{ width: '10ch', flex: '0 0 auto', textAlign: 'right' }}
-        onChange={(e) => setDraft(e.target.value)}
+        style={{ width: '100%', boxSizing: 'border-box', textAlign: 'right' }}
+        onChange={(e) => setDraft(e.target.value.replace(/\D/g, ''))}
         onBlur={commit}
         onKeyDown={(e) => {
           if (e.key === 'Enter') { e.preventDefault(); commit(); e.target.blur(); }
           else if (e.key === 'Escape') { setDraft(value == null ? '' : String(value)); e.target.blur(); }
         }} />
+    );
+  }
+
+  // 字体选择器: native <option> 不支持 inline font-family,
+  // 改成 chip grid, 每 chip 用 fontFamily 渲染示例字 "永和九年" + 小标 family 名.
+  const SAMPLE_TEXT = '能成大事';
+  function FontPicker({ value, options, onChange }) {
+    return (
+      <TweakRow label="字体">
+        <div style={{
+          display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 4,
+          maxHeight: 168, overflowY: 'auto',  /* 6 个 chip (3 行 × 2 列) 的高度 */
+          background: 'rgba(255,255,255,.4)', borderRadius: 6,
+          padding: 4, border: '.5px solid rgba(0,0,0,.08)',
+        }}>
+          <FontChip family={null} selected={!value} onClick={() => onChange('')} />
+          {options.map((f) => (
+            <FontChip key={f} family={f} selected={value === f} onClick={() => onChange(f)} />
+          ))}
+        </div>
+      </TweakRow>
+    );
+  }
+  function FontChip({ family, selected, onClick }) {
+    const label = family || '— 默认 —';
+    return (
+      <button type="button" onClick={onClick}
+        style={{
+          appearance: 'none',
+          border: selected ? '2px solid #0a84ff' : '1px solid rgba(0,0,0,.12)',
+          background: selected ? 'rgba(10,132,255,.08)' : '#fff',
+          color: '#29261b',
+          borderRadius: 5,
+          padding: '5px 7px',
+          cursor: 'pointer',
+          textAlign: 'left',
+          minWidth: 0,
+          lineHeight: 1.1,
+        }}>
+        <span className="em-font-chip-label"
+          style={{ display: 'block', color: 'rgba(41,38,27,.55)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
+          {label}
+        </span>
+        <span className="em-font-chip-sample"
+          style={{
+            display: 'block',
+            fontFamily: family ? `"${family}", "Noto Serif SC", serif` : 'inherit',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            width: '100%',
+          }}>
+          {SAMPLE_TEXT}
+        </span>
+      </button>
     );
   }
 

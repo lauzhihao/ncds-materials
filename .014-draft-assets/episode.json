@@ -29,6 +29,271 @@
       "style": "normal",
       "format": "woff2",
       "display": "swap"
+    },
+    {
+      "family": "Mao Zedong",
+      "src": "/fonts/mao-zedong/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "Fengsao",
+      "src": "/fonts/fengsao/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "Huangyou",
+      "src": "/fonts/huangyou/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "Huanxi Shouzha",
+      "src": "/fonts/huanxi-shouzha/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "PP Fangfang",
+      "src": "/fonts/pp-fangfang/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "PP Katong",
+      "src": "/fonts/pp-katong/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "PP Keai",
+      "src": "/fonts/pp-keai/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "PP Naila",
+      "src": "/fonts/pp-naila/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "PP Riji",
+      "src": "/fonts/pp-riji/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "PP Shouxie",
+      "src": "/fonts/pp-shouxie/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "PP Xiaogou",
+      "src": "/fonts/pp-xiaogou/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "XK Naila",
+      "src": "/fonts/xk-naila/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Dundun",
+      "src": "/fonts/zqk-dundun/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Guaiguai",
+      "src": "/fonts/zqk-guaiguai/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Jingsu",
+      "src": "/fonts/zqk-jingsu/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Jingya",
+      "src": "/fonts/zqk-jingya/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Keai",
+      "src": "/fonts/zqk-keai/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Lengku",
+      "src": "/fonts/zqk-lengku/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Naihei",
+      "src": "/fonts/zqk-naihei/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Nainai",
+      "src": "/fonts/zqk-nainai/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Qiaoke",
+      "src": "/fonts/zqk-qiaoke/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Shouhui",
+      "src": "/fonts/zqk-shouhui/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Shuaihei",
+      "src": "/fonts/zqk-shuaihei/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Shuma",
+      "src": "/fonts/zqk-shuma/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Yayun",
+      "src": "/fonts/zqk-yayun/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Youhuabi",
+      "src": "/fonts/zqk-youhuabi/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Zhiya",
+      "src": "/fonts/zqk-zhiya/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZQK Ziyou",
+      "src": "/fonts/zqk-ziyou/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZS Cukai",
+      "src": "/fonts/zs-cukai/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZS Moran",
+      "src": "/fonts/zs-moran/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZS Qingkai",
+      "src": "/fonts/zs-qingkai/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZS Shiguang",
+      "src": "/fonts/zs-shiguang/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "Noto Sans SC"
+    },
+    {
+      "family": "Noto Serif SC"
+    },
+    {
+      "family": "Inter"
     }
   ],
   "visual": {
@@ -534,18 +799,18 @@
         {
           "text": "DARE",
           "pos": {
-            "x": 51,
-            "y": 43
+            "x": 50,
+            "y": 38.5
           },
           "style": {
-            "font": "Inter",
+            "font": "ZS Shiguang",
             "size": 70,
             "weight": 700,
-            "color": "var(--accent)",
+            "color": "#cd1313",
             "rotation": -3,
             "letterSpacing": 0.08,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
+            "preset": "os-callout"
           },
           "motion": {
             "enter": "ink-bleed",
@@ -553,10 +818,11 @@
             "delay": 400
           },
           "at": {
-            "match": "你是不敢"
+            "match": "你是不敢。"
           }
         }
-      ]
+      ],
+      "imageFit": "contain"
     },
     "S1-02": {
       "prompt": "扁平插画。深米黄夜色底，仰视镜头：一只手机举在脸的上方，屏幕泛冷蓝光，光打在下颌和颧骨上，脸的轮廓只剩一道剪影。主体在画面中下偏右，左上角大量留白。整体调子压低、冷色。",
@@ -735,7 +1001,7 @@
           "style": {
             "preset": "os-typewriter",
             "weight": 700,
-            "font": "XY Kaiti",
+            "font": "Mao Zedong",
             "size": 60
           },
           "motion": {
@@ -745,6 +1011,13 @@
           },
           "at": {
             "match": "回头再来"
+          }
+        },
+        {
+          "text": "新文字",
+          "pos": {
+            "x": 44.5,
+            "y": 31
           }
         }
       ]

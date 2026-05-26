@@ -56,20 +56,34 @@
   </div>
 </div>
 
-<!-- 控制条 -->
+<!-- 控制条（竖向贴左侧黑边；按钮 icon-only, hover 出 tooltip）
+     icon set: Ionicons (MIT), inline SVG，fill/stroke=currentColor 随 hover/primary 状态自然换色 -->
 <div class="controls" id="controls">
-  <button class="primary" id="playBtn">▶ 播放</button>
-  <button id="restartBtn">↺ 重头</button>
-  <button id="prevBtn">‹ 上一句</button>
-  <button id="nextBtn">下一句 ›</button>
+  <button class="primary" id="playBtn" data-label="播放" data-state="paused">
+    <svg class="ico ico-play" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M133 440a35.37 35.37 0 0 1-17.5-4.67c-12-6.8-19.46-20-19.46-34.33V111c0-14.37 7.46-27.53 19.46-34.33a35.13 35.13 0 0 1 35.77.45l247.85 148.36a36 36 0 0 1 0 61l-247.89 148.4A35.5 35.5 0 0 1 133 440Z"/></svg>
+    <svg class="ico ico-pause" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M208 432h-48a16 16 0 0 1-16-16V96a16 16 0 0 1 16-16h48a16 16 0 0 1 16 16v320a16 16 0 0 1-16 16zM352 432h-48a16 16 0 0 1-16-16V96a16 16 0 0 1 16-16h48a16 16 0 0 1 16 16v320a16 16 0 0 1-16 16z"/></svg>
+  </button>
+  <button id="restartBtn" data-label="重头">
+    <svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M320 146s24.36-12-64-12a160 160 0 1 0 160 160"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="m256 58l80 80l-80 80"/></svg>
+  </button>
+  <button id="prevBtn" data-label="上一句">
+    <svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144"/></svg>
+  </button>
+  <button id="nextBtn" data-label="下一句">
+    <svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144l-144 144"/></svg>
+  </button>
   <span class="progress" id="progress">
-    <input id="progressInput" type="number" min="1" value="1" aria-label="跳到指定 beat">
-    <span class="progress-sep"> / </span>
-    <span id="progressTotal">0</span>
+    <input id="progressInput" type="number" min="1" value="1" aria-label="跳到指定 beat" data-label="跳到指定 beat">
+    <span class="progress-sep">/</span>
+    <button id="progressTotal" type="button" data-label="跳到末尾">0</button>
   </span>
-  <label>节奏 <input type="range" id="rate" min="0.6" max="1.6" step="0.05" value="1"></label>
-  <button id="recBtn">● 录制模式</button>
-  <button id="editBtn" title="进入 overlay 编辑模式 (E)">✎ (E)dit</button>
+  <label class="rate-control">节奏 <input type="range" id="rate" min="0.6" max="1.6" step="0.05" value="1"></label>
+  <button id="recBtn" data-label="录制模式">
+    <svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><circle cx="256" cy="256" r="208" fill="none" stroke="currentColor" stroke-width="32"/><circle cx="256" cy="256" r="128" fill="currentColor"/></svg>
+  </button>
+  <button id="editBtn" data-label="Edit overlay (E)">
+    <svg class="ico" viewBox="0 0 512 512" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="44" d="M358.62 129.28L86.49 402.08L70 442l39.92-16.49l272.8-272.13l-24.1-24.1zM413.07 74.84l-11.79 11.78l24.1 24.1l11.79-11.79a16.51 16.51 0 0 0 0-23.34l-.75-.75a16.51 16.51 0 0 0-23.35 0z"/></svg>
+  </button>
 </div>
 
 <div class="rec-flash" id="recFlash">录制模式 · 按 Esc 退出</div>

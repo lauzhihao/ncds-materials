@@ -342,7 +342,7 @@
     if (playing) return;
     enableMotion();
     playing = true;
-    $('playBtn').textContent = '⏸ 暂停';
+    { const b = $('playBtn'); b.dataset.state = 'playing'; b.dataset.label = '暂停'; }
     const audio = audioElements[cur];
     if (
       audio &&
@@ -368,7 +368,7 @@
 
   function pause() {
     playing = false;
-    $('playBtn').textContent = '▶ 播放';
+    { const b = $('playBtn'); b.dataset.state = 'paused'; b.dataset.label = '播放'; }
     advanceToken++;
     if (pendingTimer) { clearTimeout(pendingTimer); pendingTimer = null; }
     const a = audioElements[cur];
@@ -404,6 +404,7 @@
 
   $('prevBtn').addEventListener('click', () => jumpTo(cur - 1));
   $('nextBtn').addEventListener('click', () => jumpTo(cur + 1));
+  $('progressTotal').addEventListener('click', () => jumpTo(beats.length - 1));
 
   // 可编辑 beat 计数框：回车 / 失焦 跳到指定 beat（1-based）；
   // ↑/↓ 走 input 自带步进；Esc 取消编辑。
@@ -532,7 +533,7 @@
 
     if (opts.scripted) {
       playing = true;
-      $('playBtn').textContent = '⏸ 暂停';
+      { const b = $('playBtn'); b.dataset.state = 'playing'; b.dataset.label = '暂停'; }
       const rate = 1;
       function scriptedNext(i) {
         if (!playing) return;
