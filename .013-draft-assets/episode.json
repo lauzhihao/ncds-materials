@@ -3,14 +3,14 @@
   "__doc__": "暖纸卡片口播视频 per-episode 元数据，唯一真理源。HTML/JS/TTS/图生图全部从这个文件读取；引擎层文件 (player.js / overlays.js / tweaks*.jsx / styles.css / HTML 骨架) 不含任何 per-episode 字段。",
   "meta": {
     "slug": "013-draft",
-    "title": "我替我儿子预演了他不想要的生活",
+    "title": "你不是不想换条路，你是不敢",
     "brandTitle": "我替你预演",
     "disclaimer": "观点仅供参考　无不良引导",
     "titleOptions": [
-      "我替我儿子预演了他不想要的生活",
-      "我高中肄业，我儿子今年 13 岁",
-      "学这些有什么用——22 年前我这么说，今天我儿子也这么说",
-      "学历不是赚多少钱，是说「不」的资格"
+      "你不是不想换条路，你是不敢",
+      "凌晨一点算房贷的人，没资格说\"再撑一下\"",
+      "中年最贵的从来不是钱，是耗进去要不回来的时间",
+      "走错了就掉头——不是再撑、再等、再咬牙"
     ]
   },
   "fonts": [
@@ -62,732 +62,537 @@
   },
   "beats": [
     {
-      "zh": "学这些有什么用？",
-      "en": "What's the point of studying any of this?",
-      "scene": "S1-001"
+      "zh": "你不是不想换条路，",
+      "en": "It's not that you don't want a different road,",
+      "scene": "S1-01"
     },
     {
-      "zh": "22 年前，我对老师说过这句话。",
-      "en": "Twenty-two years ago, I said this to my teacher.",
-      "scene": "S1-002"
+      "zh": "你是不敢。",
+      "en": "you just don't dare.",
+      "scene": "S1-01"
     },
     {
-      "zh": "今天，我 13 岁的儿子，",
-      "en": "Today, my 13-year-old son",
-      "scene": "S1-002"
+      "zh": "凌晨一点，",
+      "en": "It's one a.m.,",
+      "scene": "S1-02"
     },
     {
-      "zh": "对我说同样的话。",
-      "en": "says the same thing to me.",
-      "scene": "S1-003"
+      "zh": "你又一次把手机举在脸上方。",
+      "en": "and once again you're holding the phone above your face.",
+      "scene": "S1-02"
     },
     {
-      "zh": "我没法反驳他。",
-      "en": "I can't argue back.",
-      "scene": "S1-003"
+      "zh": "工资到账，",
+      "en": "Your paycheck lands,",
+      "scene": "S1-03"
     },
     {
-      "zh": "因为 22 年前我也是这么想的。",
-      "en": "Because 22 years ago, that's exactly what I thought.",
-      "scene": "S1-004"
+      "zh": "第一反应不是松一口气，",
+      "en": "and your first reaction isn't relief,",
+      "scene": "S1-03"
     },
     {
-      "zh": "他一句话就说出口的判断，",
-      "en": "What he tossed off in a single sentence,",
-      "scene": "S1-004"
+      "zh": "是打开计算器，",
+      "en": "it's opening the calculator,",
+      "scene": "S1-04"
     },
     {
-      "zh": "我用了 22 年，才知道答案。",
-      "en": "took me 22 years to answer.",
-      "scene": "S1-005"
+      "zh": "算房贷还差几个月。",
+      "en": "counting how many months of mortgage are left.",
+      "scene": "S1-04"
     },
     {
-      "zh": "今天，我把这 22 年的答案——",
-      "en": "Today, that 22-year answer —",
-      "scene": "S1-005"
+      "zh": "算完发现，",
+      "en": "When you're done you realize,",
+      "scene": "S1-05"
     },
     {
-      "zh": "替他预演一遍。",
-      "en": "I'm previewing it for him.",
-      "scene": "S1-006"
+      "zh": "这份工作你再不情愿，",
+      "en": "no matter how unwilling you are at this job,",
+      "scene": "S1-05"
     },
     {
-      "zh": "我曾经也觉得学习没用",
-      "en": "I used to think school was useless too",
-      "scene": "S1-007"
+      "zh": "也得撑下去。",
+      "en": "you have to keep going.",
+      "scene": "S1-05"
     },
     {
-      "zh": "高中的时候，",
-      "en": "Back in high school,",
-      "scene": "S1-008"
+      "zh": "二十岁那会儿，",
+      "en": "Back when you were twenty,",
+      "scene": "S1-06"
     },
     {
-      "zh": "我每天最期待的事，",
-      "en": "the thing I looked forward to most",
-      "scene": "S1-008"
+      "zh": "你觉得时间多得是，",
+      "en": "you thought you had all the time in the world,",
+      "scene": "S1-06"
     },
     {
-      "zh": "是放学后去网吧。",
-      "en": "was hitting the internet café after class.",
-      "scene": "S1-009"
+      "zh": "犯错没事，",
+      "en": "mistakes were fine,",
+      "scene": "S1-07"
     },
     {
-      "zh": "我那时候不觉得自己在逃避。",
-      "en": "I didn't think I was running away.",
-      "scene": "S1-010"
+      "zh": "回头再来。",
+      "en": "you could always start over.",
+      "scene": "S1-07"
     },
     {
-      "zh": "我觉得自己在反抗。",
-      "en": "I thought I was rebelling.",
-      "scene": "S1-010"
+      "zh": "三十岁那年，",
+      "en": "At thirty,",
+      "scene": "S1-08"
     },
     {
-      "zh": "反抗那些没意思的课，",
-      "en": "Against boring classes,",
-      "scene": "S1-011"
+      "zh": "账单和房贷",
+      "en": "the bills and the mortgage",
+      "scene": "S1-08"
     },
     {
-      "zh": "反抗那些总让我背书的人。",
-      "en": "against people who kept making me memorize stuff.",
-      "scene": "S1-012"
+      "zh": "已经替你做了一半的决定。",
+      "en": "had already made half your decisions for you.",
+      "scene": "S1-08"
     },
     {
-      "zh": "学这些以后能用到吗？",
-      "en": "Will I ever use any of this?",
-      "scene": "S1-012"
+      "zh": "到了四十岁，",
+      "en": "By forty,",
+      "scene": "S1-09"
     },
     {
-      "zh": "学这些有什么用？",
-      "en": "What's the point of any of this?",
-      "scene": "S1-013"
+      "zh": "你坐在工位上盯着屏幕，",
+      "en": "you sit at your desk staring at the screen,",
+      "scene": "S1-09"
     },
     {
-      "zh": "听起来好像很有道理。",
-      "en": "It sounded perfectly reasonable.",
-      "scene": "S1-014"
+      "zh": "心里很清楚——",
+      "en": "and you know it in your bones——",
+      "scene": "S1-10"
     },
     {
-      "zh": "后来，我没参加高考。",
-      "en": "Eventually, I didn't take the college entrance exam.",
-      "scene": "S1-015"
+      "zh": "你已经付不起试错的成本了。",
+      "en": "you can't afford the cost of getting it wrong anymore.",
+      "scene": "S1-10"
     },
     {
-      "zh": "我直接肄业了。",
-      "en": "I just dropped out.",
-      "scene": "S1-015"
+      "zh": "可越是付不起，",
+      "en": "Yet the more you can't afford it,",
+      "scene": "S1-11"
     },
     {
-      "zh": "那一年我以为自己自由了。",
-      "en": "That year, I thought I'd freed myself.",
-      "scene": "S1-016"
+      "zh": "你越是站在原地不动。",
+      "en": "the more you stand still.",
+      "scene": "S1-11"
     },
     {
-      "zh": "再也不用上那些没用的课，",
-      "en": "No more useless classes,",
-      "scene": "S1-017"
+      "zh": "你不是没看见身边那些人。",
+      "en": "It's not like you haven't seen the people around you.",
+      "scene": "S1-12"
     },
     {
-      "zh": "再也不用听那些催我学习的话。",
-      "en": "no more nagging about studying.",
-      "scene": "S1-017"
+      "zh": "那个天天说要辞职的同事，",
+      "en": "The coworker who says he'll quit every single day,",
+      "scene": "S1-12"
     },
     {
-      "zh": "我那时候不知道——",
-      "en": "What I didn't know back then —",
-      "scene": "S1-018"
+      "zh": "三年了还在原位置。",
+      "en": "three years on, still in the same seat.",
+      "scene": "S1-12"
     },
     {
-      "zh": "我刚刚替自己签了一份合同。",
-      "en": "was that I'd just signed a contract.",
-      "scene": "S1-019"
+      "zh": "那个早就睡不好的发小，",
+      "en": "The childhood friend who long stopped sleeping well,",
+      "scene": "S1-13"
     },
     {
-      "zh": "这份合同的内容是：",
-      "en": "And the contract said:",
-      "scene": "S1-020"
+      "zh": "每天熬到两点，",
+      "en": "stays up until two every night,",
+      "scene": "S1-13"
     },
     {
-      "zh": "以后这个世界对你说什么话，",
-      "en": "from now on, whatever this world says to you,",
-      "scene": "S1-020"
+      "zh": "第二天照样上班。",
+      "en": "and shows up to work the next morning all the same.",
+      "scene": "S1-13"
     },
     {
-      "zh": "你都得听着。",
-      "en": "you have to listen.",
-      "scene": "S1-021"
+      "zh": "那个把大好十年",
+      "en": "The one who burned his best ten years",
+      "scene": "S1-14"
     },
     {
-      "zh": "你都得接着。",
-      "en": "you have to take it.",
-      "scene": "S1-022"
+      "zh": "耗在一个错方向上的人，",
+      "en": "on the wrong direction——",
+      "scene": "S1-14"
     },
     {
-      "zh": "你都没得选。",
-      "en": "you don't get a choice.",
-      "scene": "S1-022"
+      "zh": "你心里有个数，",
+      "en": "you know in your gut,",
+      "scene": "S1-15"
     },
     {
-      "zh": "签字的时候，",
-      "en": "When I signed,",
-      "scene": "S1-023"
+      "zh": "那也可能是你。",
+      "en": "that could be you too.",
+      "scene": "S1-15"
     },
     {
-      "zh": "没人告诉我有多久。",
-      "en": "no one told me how long it would last.",
-      "scene": "S1-024"
+      "zh": "这十年，",
+      "en": "This decade,",
+      "scene": "S1-16"
     },
     {
-      "zh": "「学习没用」让我后来没得选",
-      "en": "'School is useless' is what left me with no options",
-      "scene": "S1-025"
+      "zh": "你走的每一步，",
+      "en": "every step you take,",
+      "scene": "S1-16"
     },
     {
-      "zh": "现在我有一份工作。",
-      "en": "I have a job now.",
-      "scene": "S1-026"
+      "zh": "都在替你五十岁以后的自己签字。",
+      "en": "is signing the contract for the you that comes after fifty.",
+      "scene": "S1-16"
     },
     {
-      "zh": "程序员，",
-      "en": "Programmer,",
-      "scene": "S1-026"
+      "zh": "你翻来覆去想的，",
+      "en": "What you keep turning over in your head,",
+      "scene": "S1-17"
     },
     {
-      "zh": "公司不大不小，",
-      "en": "mid-sized company,",
-      "scene": "S1-027"
+      "zh": "其实就是几件事。",
+      "en": "is really just a few questions.",
+      "scene": "S1-17"
     },
     {
-      "zh": "工资够还房贷。",
-      "en": "salary covers the mortgage.",
-      "scene": "S1-027"
+      "zh": "要靠什么吃饭，",
+      "en": "What will you live on,",
+      "scene": "S1-18"
     },
     {
-      "zh": "但只有我自己知道——",
-      "en": "But only I know —",
-      "scene": "S1-028"
+      "zh": "路要怎么走，",
+      "en": "how do you walk the road,",
+      "scene": "S1-18"
     },
     {
-      "zh": "我没得选。",
-      "en": "I have no choice.",
-      "scene": "S1-029"
+      "zh": "万一走错了又怎么办。",
+      "en": "and what if you take the wrong turn.",
+      "scene": "S1-18"
     },
     {
-      "zh": "我的老板，是清华博士。",
-      "en": "My boss has a PhD from Tsinghua.",
-      "scene": "S1-029"
+      "zh": "先说靠什么吃饭。",
+      "en": "Start with what you live on.",
+      "scene": "S1-19"
     },
     {
-      "zh": "自负、狂妄，",
-      "en": "Arrogant, full of himself,",
-      "scene": "S1-030"
+      "zh": "你愿不愿意，",
+      "en": "Are you willing,",
+      "scene": "S1-19"
     },
     {
-      "zh": "喜怒无常。",
-      "en": "moody as hell.",
-      "scene": "S1-031"
+      "zh": "再过十年",
+      "en": "ten years from now,",
+      "scene": "S1-20"
     },
     {
-      "zh": "前几天，",
-      "en": "A few days ago,",
-      "scene": "S1-031"
+      "zh": "还是靠这副身子骨换钱。",
+      "en": "to still be trading this body for money.",
+      "scene": "S1-20"
     },
     {
-      "zh": "他因为一件小事，",
-      "en": "over something small,",
-      "scene": "S1-032"
+      "zh": "三十五岁以后体力是往下走的，",
+      "en": "After thirty-five, physical strength only goes down,",
+      "scene": "S1-21"
     },
     {
-      "zh": "扣了我一大笔工资。",
-      "en": "he docked a big chunk of my pay.",
-      "scene": "S1-032"
+      "zh": "可你这些年攒下的阅历和判断",
+      "en": "but the experience and judgment you've built up",
+      "scene": "S1-21"
     },
     {
-      "zh": "我一个字没说。",
-      "en": "I didn't say a single word.",
-      "scene": "S1-033"
+      "zh": "才刚刚开始值钱。",
+      "en": "are only just starting to be worth something.",
+      "scene": "S1-21"
     },
     {
-      "zh": "不是我不想说，",
-      "en": "Not because I didn't want to,",
-      "scene": "S1-034"
+      "zh": "光靠力气的那条路",
+      "en": "The road built on muscle alone",
+      "scene": "S1-22"
     },
     {
-      "zh": "是我说不出口。",
-      "en": "but because I couldn't.",
-      "scene": "S1-034"
+      "zh": "只会越走越窄，",
+      "en": "only gets narrower the further you walk,",
+      "scene": "S1-22"
     },
     {
-      "zh": "我有房贷，",
-      "en": "I have a mortgage,",
-      "scene": "S1-035"
+      "zh": "总有一天你干不动了，",
+      "en": "and one day you simply can't keep up,",
+      "scene": "S1-23"
     },
     {
-      "zh": "有孩子的学费，",
-      "en": "tuition for my kid,",
-      "scene": "S1-036"
+      "zh": "路就把你扔下了。",
+      "en": "and the road throws you off.",
+      "scene": "S1-23"
     },
     {
-      "zh": "有父母的体检费。",
-      "en": "checkups for my parents.",
-      "scene": "S1-036"
+      "zh": "至于怎么走，",
+      "en": "As for how to walk it,",
+      "scene": "S1-24"
     },
     {
-      "zh": "上有老，下有小。",
-      "en": "Aging parents above me, a child below.",
-      "scene": "S1-037"
+      "zh": "不是坐在沙发上想出来的。",
+      "en": "you don't figure that out on the couch.",
+      "scene": "S1-24"
     },
     {
-      "zh": "我不能没工作。",
-      "en": "I can't afford to lose this job.",
-      "scene": "S1-038"
+      "zh": "是小步走，",
+      "en": "You walk in small steps,",
+      "scene": "S1-25"
     },
     {
-      "zh": "所以他扣我多少工资，",
-      "en": "So however much he docks,",
-      "scene": "S1-038"
+      "zh": "走错了回头，",
+      "en": "turn back when you're wrong,",
+      "scene": "S1-25"
     },
     {
-      "zh": "我就接着。",
-      "en": "I take it.",
-      "scene": "S1-039"
+      "zh": "走对了再往前一点。",
+      "en": "push a bit further when you're right.",
+      "scene": "S1-25"
     },
     {
-      "zh": "他怎么骂我，",
-      "en": "However he yells at me,",
-      "scene": "S1-039"
+      "zh": "你之前怕的不是试错，",
+      "en": "What you used to fear wasn't the trial and error,",
+      "scene": "S1-26"
     },
     {
-      "zh": "我就听着。",
-      "en": "I listen.",
-      "scene": "S1-040"
+      "zh": "是怕周围人看你失败的眼神。",
+      "en": "it was the eyes around you watching you fail.",
+      "scene": "S1-26"
     },
     {
-      "zh": "我不是在忍他。",
-      "en": "I'm not enduring him out of strength.",
-      "scene": "S1-041"
+      "zh": "可那些眼神，",
+      "en": "But those eyes,",
+      "scene": "S1-27"
     },
     {
-      "zh": "我是真的没得选。",
-      "en": "I just genuinely have no choice.",
-      "scene": "S1-041"
+      "zh": "三个月就忘了，",
+      "en": "they forget in three months,",
+      "scene": "S1-27"
     },
     {
-      "zh": "你以为这是工作？",
-      "en": "You think this is a job?",
-      "scene": "S1-042"
+      "zh": "你浪费的时间",
+      "en": "while the time you wasted",
+      "scene": "S1-28"
     },
     {
-      "zh": "这是 22 年前那个不想学习的自己，",
-      "en": "This is the kid who didn't want to study 22 years ago",
-      "scene": "S1-043"
+      "zh": "却永远要不回来。",
+      "en": "you can never take back.",
+      "scene": "S1-28"
     },
     {
-      "zh": "今天给我寄来的账单。",
-      "en": "sending me his bill, today.",
-      "scene": "S1-043"
+      "zh": "那万一走错了——掉头。",
+      "en": "And if you do take the wrong turn—— turn around.",
+      "scene": "S1-29"
     },
     {
-      "zh": "一份连利息都还不清的账单。",
-      "en": "A bill I can't even pay the interest on.",
-      "scene": "S1-044"
+      "zh": "不是再撑一下，",
+      "en": "Not hang on a little longer,",
+      "scene": "S1-30"
     },
     {
-      "zh": "学历不是赚多少钱，是说「不」的资格",
-      "en": "A degree isn't about money — it's about the right to say 'no'",
-      "scene": "S1-045"
+      "zh": "不是再等一等，",
+      "en": "not wait it out a little more,",
+      "scene": "S1-30"
     },
     {
-      "zh": "很多人讲学历，",
-      "en": "When people talk about a degree,",
-      "scene": "S1-046"
+      "zh": "不是再咬咬牙。",
+      "en": "not grit your teeth one more time.",
+      "scene": "S1-31"
     },
     {
-      "zh": "讲的是工资高低。",
-      "en": "they talk about salary numbers.",
-      "scene": "S1-046"
+      "zh": "是掉头。",
+      "en": "Turn around.",
+      "scene": "S1-31"
     },
     {
-      "zh": "有学历的人月薪三万，",
-      "en": "Degree-holders make 30k a month,",
-      "scene": "S1-047"
+      "zh": "人到中年，",
+      "en": "In middle age,",
+      "scene": "S1-32"
     },
     {
-      "zh": "没学历的人月薪八千。",
-      "en": "non-degree-holders make 8k.",
-      "scene": "S1-047"
+      "zh": "最贵的从来不是钱，",
+      "en": "the most expensive thing has never been money,",
+      "scene": "S1-32"
     },
     {
-      "zh": "好像差别就在这。",
-      "en": "As if that's the whole difference.",
-      "scene": "S1-048"
+      "zh": "是那段你已经耗进去、",
+      "en": "it's the stretch of time you've already poured in",
+      "scene": "S1-33"
     },
     {
-      "zh": "不是的。",
-      "en": "It's not.",
-      "scene": "S1-049"
+      "zh": "再也要不回来的时间。",
+      "en": "and can never get back.",
+      "scene": "S1-33"
     },
     {
-      "zh": "学历真正的差别，",
-      "en": "The real difference,",
-      "scene": "S1-049"
+      "zh": "承认走错，",
+      "en": "Admitting you were wrong",
+      "scene": "S1-34"
     },
     {
-      "zh": "不是你赚多少。",
-      "en": "isn't how much you earn.",
-      "scene": "S1-050"
+      "zh": "比死撑下去要勇敢得多。",
+      "en": "takes far more courage than holding on.",
+      "scene": "S1-34"
     },
     {
-      "zh": "是你能不能说「不」。",
-      "en": "It's whether you can say 'no.'",
-      "scene": "S1-051"
+      "zh": "能掉头的人，",
+      "en": "Only those who can turn around",
+      "scene": "S1-35"
     },
     {
-      "zh": "老板让你加班，你能不能拒绝？",
-      "en": "Your boss demands overtime — can you refuse?",
-      "scene": "S1-051"
+      "zh": "才走得到后面。",
+      "en": "make it all the way through.",
+      "scene": "S1-35"
     },
     {
-      "zh": "老板扣你工资，你能不能反驳？",
-      "en": "Your boss docks your pay — can you push back?",
-      "scene": "S1-052"
+      "zh": "我见过很多人，",
+      "en": "I've seen many people,",
+      "scene": "S1-36"
     },
     {
-      "zh": "老板辱骂你，你能不能走？",
-      "en": "Your boss insults you — can you walk?",
-      "scene": "S1-053"
+      "zh": "四十岁还在为一个错决定续命，",
+      "en": "at forty still keeping a wrong decision on life support,",
+      "scene": "S1-36"
     },
     {
-      "zh": "有学历的人，也不一定都能。",
-      "en": "People with degrees can't always do it either.",
-      "scene": "S1-053"
+      "zh": "理由是“都走到这一步了”。",
+      "en": "and the reason is, “I've already come this far.”",
+      "scene": "S1-37"
     },
     {
-      "zh": "但他们至少有得选。",
-      "en": "But at least they have a choice.",
-      "scene": "S1-054"
+      "zh": "可这一步以后还有更长的路，",
+      "en": "But there's a much longer road after this step,",
+      "scene": "S1-38"
     },
     {
-      "zh": "我没有别的去处。",
-      "en": "I don't have anywhere else to go.",
-      "scene": "S1-055"
+      "zh": "你把脚埋在错的地里，",
+      "en": "and if you bury your feet in the wrong soil,",
+      "scene": "S1-38"
     },
     {
-      "zh": "所以这家公司，",
-      "en": "So this company,",
-      "scene": "S1-055"
+      "zh": "它不会自己长出对的花。",
+      "en": "it won't grow the right flowers on its own.",
+      "scene": "S1-38"
     },
     {
-      "zh": "就成了我唯一的去处。",
-      "en": "becomes the only place I have.",
-      "scene": "S1-056"
+      "zh": "你不需要别人替你拍板。",
+      "en": "You don't need someone else to make the call for you.",
+      "scene": "S1-39"
     },
     {
-      "zh": "我唯一的去处，",
-      "en": "And the only place I have",
-      "scene": "S1-057"
+      "zh": "你只需要在今晚躺下之前，",
+      "en": "You only need, before you lie down tonight,",
+      "scene": "S1-39"
     },
     {
-      "zh": "也就成了——",
-      "en": "becomes —",
-      "scene": "S1-057"
+      "zh": "问自己一句：",
+      "en": "to ask yourself one thing:",
+      "scene": "S1-39"
     },
     {
-      "zh": "我必须忍的地方。",
-      "en": "the place I have to endure.",
-      "scene": "S1-058"
+      "zh": "明天醒来，",
+      "en": "when I wake up tomorrow,",
+      "scene": "S1-40"
     },
     {
-      "zh": "学历从来不是为了让你赢。",
-      "en": "Education was never about winning.",
-      "scene": "S1-059"
+      "zh": "我还要不要在这条路上",
+      "en": "do I still want to be on this road,",
+      "scene": "S1-40"
     },
     {
-      "zh": "是为了——在不想忍的时候，",
-      "en": "It's about — when you don't want to endure anymore,",
-      "scene": "S1-059"
+      "zh": "再耗一年。",
+      "en": "for another year.",
+      "scene": "S1-40"
     },
     {
-      "zh": "你能走。",
-      "en": "being able to walk.",
-      "scene": "S1-060"
+      "zh": "如果答案不是肯定的，",
+      "en": "If the answer isn't yes,",
+      "scene": "S1-41"
     },
     {
-      "zh": "我儿子今年 13 岁",
-      "en": "My son is 13 this year",
-      "scene": "S1-061"
+      "zh": "那就别等下一个十年，",
+      "en": "then don't wait another decade,",
+      "scene": "S1-41"
     },
     {
-      "zh": "他今年上初一。",
-      "en": "He just started middle school.",
-      "scene": "S1-062"
-    },
-    {
-      "zh": "成绩一团糟。",
-      "en": "His grades are a mess.",
-      "scene": "S1-062"
-    },
-    {
-      "zh": "他经常跟我说：",
-      "en": "He says to me, all the time:",
-      "scene": "S1-063"
-    },
-    {
-      "zh": "学这些有什么用？",
-      "en": "What's the point of studying this?",
-      "scene": "S1-063"
-    },
-    {
-      "zh": "你看我妈，",
-      "en": "Look at my mom,",
-      "scene": "S1-064"
-    },
-    {
-      "zh": "她也没读多少书，",
-      "en": "she didn't go to school much,",
-      "scene": "S1-064"
-    },
-    {
-      "zh": "不也过得挺好？",
-      "en": "and she's doing fine, isn't she?",
-      "scene": "S1-065"
-    },
-    {
-      "zh": "听起来好像也有道理。",
-      "en": "It also sounds reasonable.",
-      "scene": "S1-066"
-    },
-    {
-      "zh": "和我 22 年前的语气一模一样。",
-      "en": "Exactly the way I sounded 22 years ago.",
-      "scene": "S1-066"
-    },
-    {
-      "zh": "我没法马上反驳他。",
-      "en": "I can't refute him right away.",
-      "scene": "S1-067"
-    },
-    {
-      "zh": "因为我自己就是反面教材。",
-      "en": "Because I'm the cautionary tale.",
-      "scene": "S1-067"
-    },
-    {
-      "zh": "我学历不高，",
-      "en": "I don't have much education,",
-      "scene": "S1-068"
-    },
-    {
-      "zh": "我也活下来了。",
-      "en": "and I'm still getting by.",
-      "scene": "S1-069"
-    },
-    {
-      "zh": "表面上我也「挺好」。",
-      "en": "On the surface, I'm 'doing fine' too.",
-      "scene": "S1-069"
-    },
-    {
-      "zh": "但他不知道——",
-      "en": "But he doesn't know —",
-      "scene": "S1-070"
-    },
-    {
-      "zh": "他爸前几天被老板扣工资，",
-      "en": "his dad got his pay docked a few days ago,",
-      "scene": "S1-070"
-    },
-    {
-      "zh": "一句话都没敢说。",
-      "en": "and didn't dare say a word.",
-      "scene": "S1-071"
-    },
-    {
-      "zh": "他不知道——",
-      "en": "He doesn't know —",
-      "scene": "S1-072"
-    },
-    {
-      "zh": "他爸每天早上去上班的时候，",
-      "en": "every morning when his dad goes to work,",
-      "scene": "S1-072"
-    },
-    {
-      "zh": "心里都在想：今天会不会又被骂？",
-      "en": "his dad is wondering: will I get yelled at again today?",
-      "scene": "S1-073"
-    },
-    {
-      "zh": "他不知道——",
-      "en": "He doesn't know —",
-      "scene": "S1-073"
-    },
-    {
-      "zh": "他爸现在过的日子，",
-      "en": "the life his dad is living right now",
-      "scene": "S1-074"
-    },
-    {
-      "zh": "正是他 22 年后要过的日子。",
-      "en": "is exactly the life he'll be living in 22 years.",
-      "scene": "S1-075"
-    },
-    {
-      "zh": "我不再劝他了。",
-      "en": "I've stopped lecturing him.",
-      "scene": "S1-075"
-    },
-    {
-      "zh": "我跟他讲再多的道理，",
-      "en": "No amount of reasoning",
-      "scene": "S1-076"
-    },
-    {
-      "zh": "都不如我活成的样子有说服力。",
-      "en": "is as convincing as the life I'm living.",
-      "scene": "S1-076"
-    },
-    {
-      "zh": "我就把自己摆出来——",
-      "en": "So I just put myself out there —",
-      "scene": "S1-077"
-    },
-    {
-      "zh": "孩子，",
-      "en": "Kid,",
-      "scene": "S1-078"
-    },
-    {
-      "zh": "你想活成爸爸这样吗？",
-      "en": "do you want to live like your dad?",
-      "scene": "S1-078"
-    },
-    {
-      "zh": "不想的话，",
-      "en": "If you don't,",
-      "scene": "S1-079"
-    },
-    {
-      "zh": "今天就把眼前那道你不会的题，",
-      "en": "the problem in front of you that you can't solve right now —",
-      "scene": "S1-079"
-    },
-    {
-      "zh": "做出来。",
-      "en": "go work it out today.",
-      "scene": "S1-080"
-    },
-    {
-      "zh": "不是每个人都有逆袭",
-      "en": "Not everyone gets a comeback",
-      "scene": "S1-081"
-    },
-    {
-      "zh": "网上有很多励志故事。",
-      "en": "There are plenty of comeback stories online.",
-      "scene": "S1-082"
-    },
-    {
-      "zh": "「我从快递员到年薪百万」",
-      "en": "'From courier to seven-figure salary.'",
-      "scene": "S1-082"
-    },
-    {
-      "zh": "「我初中没读完，现在开了一家公司」",
-      "en": "'I didn't finish middle school — now I run a company.'",
-      "scene": "S1-083"
-    },
-    {
-      "zh": "好像每个人都有翻身的机会。",
-      "en": "As if everyone gets their turn.",
-      "scene": "S1-083"
-    },
-    {
-      "zh": "我不是要否认那些故事。",
-      "en": "I'm not denying those stories.",
-      "scene": "S1-084"
-    },
-    {
-      "zh": "但我得告诉你一个数据——",
-      "en": "But I owe you a number —",
-      "scene": "S1-084"
-    },
-    {
-      "zh": "大多数人没有逆袭。",
-      "en": "most people don't get a comeback.",
-      "scene": "S1-085"
-    },
-    {
-      "zh": "大多数人，",
-      "en": "Most people,",
-      "scene": "S1-085"
-    },
-    {
-      "zh": "和我一样，",
-      "en": "like me,",
-      "scene": "S1-086"
-    },
-    {
-      "zh": "认了。",
-      "en": "just accept it.",
-      "scene": "S1-086"
-    },
-    {
-      "zh": "我认了。",
-      "en": "I've accepted it.",
-      "scene": "S1-087"
-    },
-    {
-      "zh": "但我希望你别认。",
-      "en": "But I hope you don't.",
-      "scene": "S1-087"
-    },
-    {
-      "zh": "别等到了 40 岁，",
-      "en": "Don't wait until you're 40,",
-      "scene": "S1-088"
-    },
-    {
-      "zh": "你才发现，",
-      "en": "to find out",
-      "scene": "S1-088"
-    },
-    {
-      "zh": "今天那道你不想做的题，",
-      "en": "that the problem you didn't want to solve today,",
-      "scene": "S1-089"
-    },
-    {
-      "zh": "其实是你 22 年后，",
-      "en": "is, 22 years from now,",
-      "scene": "S1-089"
-    },
-    {
-      "zh": "能不能说「不」的入场券。 <END>",
-      "en": "your ticket to being able to say 'no.'",
-      "scene": "S1-090"
+      "zh": "再来后悔今晚的沉默。",
+      "en": "to regret your silence tonight.",
+      "scene": "S1-41"
     }
   ],
   "scenes": {
-    "S1-001": {
-      "prompt": "",
+    "S1-01": {
+      "prompt": "扁平插画。米黄纸质底，一个黑色剪影站在十字路口正中央，前方两条路在远处分岔成 Y 字，地平线低，天空大面积留白。颜色克制：剪影黑、路面深灰、底色米黄。视觉重心偏下，画面上半部分大块留白方便贴文字。",
       "label": "",
       "motion": {
         "enter": "slide-down",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "DARE",
+          "pos": {
+            "x": 82,
+            "y": 16
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 96,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -3,
+            "letterSpacing": 0.08,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "你是不敢"
+          }
+        }
+      ]
     },
-    "S1-002": {
-      "prompt": "",
+    "S1-02": {
+      "prompt": "扁平插画。深米黄夜色底，仰视镜头：一只手机举在脸的上方，屏幕泛冷蓝光，光打在下颌和颧骨上，脸的轮廓只剩一道剪影。主体在画面中下偏右，左上角大量留白。整体调子压低、冷色。",
       "label": "",
       "motion": {
         "enter": "slide-left",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "1 A.M.",
+          "pos": {
+            "x": 15,
+            "y": 16
+          },
+          "style": {
+            "font": "Inter",
+            "size": 84,
+            "weight": 700,
+            "color": "#1f4d6a",
+            "rotation": 0,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "typewriter",
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "凌晨一点"
+          }
+        }
+      ]
     },
-    "S1-003": {
-      "prompt": "学习无用",
+    "S1-03": {
+      "prompt": "扁平插画。米黄底色，画面中央偏右一只紧握着的手机，屏幕里泛出冷绿色微光（像银行到账提示，但不画任何文字数字），手腕上有一个小血管的暗示。背景留白，左下角是没被点亮的台灯轮廓。",
       "label": "",
       "motion": {
         "enter": "wipe-circle",
@@ -795,35 +600,25 @@
       },
       "overlays": [
         {
-          "text": "NEW",
+          "text": "PAYDAY",
           "pos": {
-            "x": 23,
-            "y": 39
+            "x": 18,
+            "y": 80
           },
           "style": "os-marker",
           "motion": {
-            "enter": "fade",
-            "duration": 500,
+            "enter": "stamp",
+            "duration": 900,
             "delay": 400
           },
           "at": {
-            "match": "想一"
+            "match": "工资到账"
           }
         }
-      ],
-      "imageFit": "contain"
+      ]
     },
-    "S1-004": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-down",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-005": {
-      "prompt": "",
+    "S1-04": {
+      "prompt": "扁平插画。米黄底色，俯视镜头：桌面上一只老式按键计算器，旁边一沓纸边角微卷，纸面留白不写字。计算器和纸都偏画面下半部，上方大面积留白。整体调子冷峻、克制。",
       "label": "",
       "motion": {
         "enter": "wipe-down",
@@ -831,43 +626,93 @@
       },
       "overlays": [
         {
-          "text": "注意",
+          "text": "DEBT",
           "pos": {
-            "x": 26,
-            "y": 46
+            "x": 16,
+            "y": 18
           },
-          "style": "os-tag-pill",
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 100,
+            "weight": 900,
+            "color": "#222",
+            "rotation": -2,
+            "letterSpacing": 0.05,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
           "motion": {
-            "enter": "fade",
-            "duration": 700,
-            "delay": 0
+            "enter": "fly-in",
+            "duration": 900,
+            "delay": 400
           },
           "at": {
-            "match": "习惯"
+            "match": "算房贷"
           }
         }
       ]
     },
-    "S1-006": {
-      "prompt": "",
+    "S1-05": {
+      "prompt": "扁平插画。米黄底色，背影构图：一个穿衬衫的中年男人坐在椅子上，背微弓，双肩压得很低，头微垂。主体偏画面中央偏下，背景留白。整体姿态写“承重”。颜色低饱和：衬衫灰蓝、皮肤暖灰。",
       "label": "",
       "motion": {
         "enter": "wipe-left",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "ENDURE",
+          "pos": {
+            "x": 78,
+            "y": 20
+          },
+          "style": "os-handwrite",
+          "motion": {
+            "enter": "shimmer-sweep",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "撑下去"
+          }
+        }
+      ]
     },
-    "S1-007": {
-      "type": "chapter",
-      "num": "一",
-      "subtitle": "我曾经也觉得学习没用",
+    "S1-06": {
+      "prompt": "扁平插画。米黄底色，一扇大窗户敞开，窗外是大片晴朗的浅蓝天空和远山，阳光斜斜地从右上方打进来，地面有一道金黄光斑。视觉重心偏右上，画面整体明亮、开阔。",
+      "label": "",
       "motion": {
         "enter": "ink-bleed",
         "duration": 900
-      }
+      },
+      "overlays": [
+        {
+          "text": "AGE 20",
+          "pos": {
+            "x": 15,
+            "y": 16
+          },
+          "style": {
+            "font": "Inter",
+            "size": 82,
+            "weight": 500,
+            "color": "#222",
+            "rotation": 0,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "fade",
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "二十岁"
+          }
+        }
+      ]
     },
-    "S1-008": {
-      "prompt": "",
+    "S1-07": {
+      "prompt": "扁平插画。米黄底色，画面中央是一张被揉皱后又勉强展开的稿纸，旁边一支铅笔横置。纸上没有任何文字。色调温柔：稿纸米白、铅笔木色、底色米黄。视觉重心居中，四角留白。",
       "label": "",
       "motion": {
         "enter": "mask-grid",
@@ -875,25 +720,25 @@
       },
       "overlays": [
         {
-          "text": "关键",
+          "text": "REDO",
           "pos": {
-            "x": 45,
+            "x": 82,
             "y": 80
           },
-          "style": "os-callout",
+          "style": "os-typewriter",
           "motion": {
-            "enter": "slide-clip",
+            "enter": "blur-pulse",
             "duration": 500,
             "delay": 400
           },
           "at": {
-            "match": "条说"
+            "match": "回头再来"
           }
         }
       ]
     },
-    "S1-009": {
-      "prompt": "",
+    "S1-08": {
+      "prompt": "扁平插画。米黄底色，一摞厚重的文件夹+信封堆在桌面上，把桌面压出弧度。文件没有任何字。主体偏画面左下，右上方大面积留白。颜色：文件夹深褐和墨绿混色，桌面木纹米色。",
       "label": "",
       "motion": {
         "enter": "slide-up",
@@ -901,113 +746,153 @@
       },
       "overlays": [
         {
-          "text": "低概率",
+          "text": "AGE 30",
           "pos": {
-            "x": 34,
-            "y": 31
+            "x": 82,
+            "y": 18
           },
           "style": {
-            "font": "Noto Serif SC",
-            "size": 73,
-            "weight": 400,
-            "color": "#1f4d6a",
-            "rotation": -2,
-            "letterSpacing": 0.12,
+            "font": "Inter",
+            "size": 82,
+            "weight": 500,
+            "color": "#222",
+            "rotation": 0,
+            "letterSpacing": 0.04,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
-            "enter": "zoom-in",
-            "duration": 500,
-            "delay": 0
+            "enter": "fly-in",
+            "duration": 700,
+            "delay": 200
           },
           "at": {
-            "match": "这一"
+            "match": "三十岁"
           }
         }
       ]
     },
-    "S1-010": {
-      "prompt": "",
+    "S1-09": {
+      "prompt": "扁平插画。米黄底色但整体压暗，工位侧视图：一个穿西装的剪影坐在屏幕前，肩颈紧绷，屏幕背面对观众（不显示任何字）。屏光勾出剪影的轮廓。主体偏右，左侧留白。冷蓝屏光 + 暖灰皮肤。",
       "label": "",
       "motion": {
         "enter": "glitch",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "AGE 40",
+          "pos": {
+            "x": 15,
+            "y": 18
+          },
+          "style": {
+            "font": "Inter",
+            "size": 82,
+            "weight": 500,
+            "color": "#222",
+            "rotation": 0,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "fade",
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "四十岁"
+          }
+        }
+      ]
     },
-    "S1-011": {
-      "prompt": "",
+    "S1-10": {
+      "prompt": "扁平插画。米黄底色，侧脸特写：眉头微锁，目光望向画面右下，嘴角紧抿。脸偏画面左侧，右侧留白。色调克制：皮肤暖灰、阴影深棕。",
       "label": "",
       "motion": {
         "enter": "flip-h",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "NO RETRY",
+          "pos": {
+            "x": 78,
+            "y": 82
+          },
+          "style": "os-callout-red",
+          "motion": {
+            "enter": "fold-down",
+            "duration": 700,
+            "delay": 600
+          },
+          "at": {
+            "match": "付不起"
+          }
+        }
+      ]
     },
-    "S1-012": {
-      "prompt": "",
+    "S1-11": {
+      "prompt": "扁平插画。米黄底色，俯视镜头：地面上一双静止的皮鞋，鞋面磨损，鞋尖朝前。鞋后地面没有脚印，鞋前一段虚线箭头指向远方。主体居中偏下，上半部分留白。",
       "label": "",
       "motion": {
         "enter": "slide-right",
         "duration": 700
       },
-      "overlays": []
-    },
-    "S1-013": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-left",
-        "duration": 700
-      },
       "overlays": [
         {
-          "text": "⚠️",
+          "text": "FROZEN",
           "pos": {
-            "x": 32,
-            "y": 83
+            "x": 82,
+            "y": 16
           },
-          "style": "os-marker",
+          "style": {
+            "font": "XY Kaiti",
+            "size": 92,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": 3,
+            "letterSpacing": 0.07,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
           "motion": {
-            "enter": "iris",
-            "duration": 1200,
-            "delay": 600
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 400
           },
           "at": {
-            "match": "也许"
+            "match": "站在原地"
           }
         }
       ]
     },
-    "S1-014": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-up",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-015": {
-      "prompt": "",
+    "S1-12": {
+      "prompt": "扁平插画。米黄底色，一个空工位：椅子半推半倒，桌面上一只马克杯、一只反扣的手机，再无他物。工位居中偏左，右侧留白。色调：桌面木色、椅子灰蓝。",
       "label": "",
       "motion": {
         "enter": "wipe-up",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "STILL HERE",
+          "pos": {
+            "x": 78,
+            "y": 14
+          },
+          "style": "os-tag-pill",
+          "motion": {
+            "enter": "shimmer-sweep",
+            "duration": 700,
+            "delay": 400
+          },
+          "at": {
+            "match": "原位置"
+          }
+        }
+      ]
     },
-    "S1-016": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-down",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-017": {
-      "prompt": "",
+    "S1-13": {
+      "prompt": "扁平插画。米黄底色但整体压暗，俯视镜头：床上半坐起来的一个人，屏幕的冷蓝光打在脸上，毯子堆在腿边。主体居中偏左，右上方留白。色调：屏光冷蓝、阴影深褐。",
       "label": "",
       "motion": {
         "enter": "iris-out",
@@ -1015,193 +900,18 @@
       },
       "overlays": [
         {
-          "text": "关键",
+          "text": "2 A.M.",
           "pos": {
-            "x": 75,
-            "y": 46
+            "x": 82,
+            "y": 82
           },
           "style": {
             "font": "Inter",
-            "size": 69,
-            "weight": 500,
-            "color": "#222",
-            "rotation": 6,
+            "size": 80,
+            "weight": 700,
+            "color": "#1f4d6a",
+            "rotation": 0,
             "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "fold-down",
-            "duration": 900,
-            "delay": 600
-          },
-          "at": {
-            "match": "一束光"
-          }
-        }
-      ]
-    },
-    "S1-018": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "关键",
-          "pos": {
-            "x": 85,
-            "y": 63
-          },
-          "style": "os-callout-red",
-          "motion": {
-            "enter": "zoom-in",
-            "duration": 1200,
-            "delay": 600
-          },
-          "at": {
-            "match": "案。也"
-          }
-        }
-      ]
-    },
-    "S1-019": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-left",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-020": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "mask-grid",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-021": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-up",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "注意",
-          "pos": {
-            "x": 26,
-            "y": 50
-          },
-          "style": "os-circle-mark",
-          "motion": {
-            "enter": "rise-glow",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "然后"
-          }
-        }
-      ]
-    },
-    "S1-022": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "mask-grid",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "请等等",
-          "pos": {
-            "x": 48,
-            "y": 67
-          },
-          "style": "os-handwrite",
-          "motion": {
-            "enter": "shimmer-sweep",
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "习惯"
-          }
-        }
-      ]
-    },
-    "S1-023": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "flip-h",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-024": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-down",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-025": {
-      "type": "chapter",
-      "num": "二",
-      "subtitle": "「学习没用」让我后来没得选",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      }
-    },
-    "S1-026": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "glitch",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-027": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-circle",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-028": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-left",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "再想想",
-          "pos": {
-            "x": 83,
-            "y": 73
-          },
-          "style": {
-            "font": "Noto Serif SC",
-            "size": 50,
-            "weight": 900,
-            "color": "#222",
-            "rotation": 2,
-            "letterSpacing": 0.07,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
@@ -1210,31 +920,73 @@
             "delay": 400
           },
           "at": {
-            "match": "又停"
+            "match": "两点"
           }
         }
       ]
     },
-    "S1-029": {
-      "prompt": "",
+    "S1-14": {
+      "prompt": "扁平插画。米黄底色，地平线很低的远景：一条单调笔直的公路从画面下方延伸到地平线远处，路的尽头没有任何建筑、只有空旷。视觉重心居中偏下，上方大面积天空米黄。",
+      "label": "",
+      "motion": {
+        "enter": "ink-bleed",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "10 YEARS",
+          "pos": {
+            "x": 78,
+            "y": 16
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 92,
+            "weight": 900,
+            "color": "#222",
+            "rotation": -2,
+            "letterSpacing": 0.05,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "unfold",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "大好十年"
+          }
+        }
+      ]
+    },
+    "S1-15": {
+      "prompt": "扁平插画。米黄底色，一面立式镜子放在画面左侧，镜中映出的人影和镜外的人影是同一个轮廓，但方向相反。主体偏左，右侧留白。色调克制：镜框深棕、人影暖灰。",
       "label": "",
       "motion": {
         "enter": "wipe-right",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "YOU?",
+          "pos": {
+            "x": 82,
+            "y": 80
+          },
+          "style": "os-callout-red",
+          "motion": {
+            "enter": "iris",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "可能是你"
+          }
+        }
+      ]
     },
-    "S1-030": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "flip-h",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-031": {
-      "prompt": "",
+    "S1-16": {
+      "prompt": "扁平插画。米黄底色，特写：一支钢笔的笔尖将落未落，纸面留白不写任何字，墨水在笔尖凝成一滴未滴下的墨珠。主体偏画面中央偏右，左侧大量留白。",
       "label": "",
       "motion": {
         "enter": "zoom-out",
@@ -1242,33 +994,221 @@
       },
       "overlays": [
         {
-          "text": "★",
+          "text": "SIGN",
           "pos": {
-            "x": 42,
-            "y": 36
+            "x": 15,
+            "y": 18
           },
           "style": {
-            "font": "ZS Fangsong",
-            "size": 85,
-            "weight": 900,
-            "color": "#1f4d6a",
-            "rotation": -2,
-            "letterSpacing": 0.05,
+            "font": "XY Kaiti",
+            "size": 92,
+            "weight": 700,
+            "color": "#222",
+            "rotation": -3,
+            "letterSpacing": 0.07,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
-            "enter": "unfold",
-            "duration": 500,
+            "enter": "stamp",
+            "duration": 900,
             "delay": 400
           },
           "at": {
-            "match": "三种可"
+            "match": "签字"
           }
         }
       ]
     },
-    "S1-032": {
-      "prompt": "",
+    "S1-17": {
+      "prompt": "扁平插画。米黄底色但压暗，俯视镜头：床上一床被子被翻得乱糟糟，枕头歪在一侧，主体居中偏下。整体调子昏黄、不安。",
+      "label": "",
+      "motion": {
+        "enter": "push-right",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "OVERTHINK",
+          "pos": {
+            "x": 82,
+            "y": 20
+          },
+          "style": "os-handwrite",
+          "motion": {
+            "enter": "shimmer-sweep",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "翻来覆去"
+          }
+        }
+      ]
+    },
+    "S1-18": {
+      "prompt": "扁平插画。米黄底色，远景：脚下的小路在中景处分叉成三条，向左、向中、向右铺开，三条路在远处都看不见尽头。主体居中，上半部分天空留白。",
+      "label": "",
+      "motion": {
+        "enter": "push-left",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "3 PATHS",
+          "pos": {
+            "x": 16,
+            "y": 82
+          },
+          "style": {
+            "font": "Inter",
+            "size": 80,
+            "weight": 700,
+            "color": "#222",
+            "rotation": 0,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "slide-clip",
+            "duration": 700,
+            "delay": 400
+          },
+          "at": {
+            "match": "怎么走"
+          }
+        }
+      ]
+    },
+    "S1-19": {
+      "prompt": "扁平插画。米黄底色，俯视镜头：两只摊开向上的手心，手心干净没拿东西，手腕处衣袖卷起。主体偏画面右下，左上方大面积留白。色调：皮肤暖灰、衬衫米白。",
+      "label": "",
+      "motion": {
+        "enter": "zoom-in",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "BY WHAT",
+          "pos": {
+            "x": 15,
+            "y": 18
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 94,
+            "weight": 500,
+            "color": "#222",
+            "rotation": -2,
+            "letterSpacing": 0.06,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "fade",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "靠什么吃饭"
+          }
+        }
+      ]
+    },
+    "S1-20": {
+      "prompt": "扁平插画。米黄底色，远景：一个弯腰搬运重物的人影，背影构图，重物的形状没有具体细节，剪影感强。主体居中偏下，整体调子沉重。颜色：剪影深棕、底色米黄。",
+      "label": "",
+      "motion": {
+        "enter": "flip-v",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "BODY ≠ FOREVER",
+          "pos": {
+            "x": 76,
+            "y": 14
+          },
+          "style": "os-marker",
+          "motion": {
+            "enter": "blur-pulse",
+            "duration": 500,
+            "delay": 200
+          },
+          "at": {
+            "match": "身子骨"
+          }
+        }
+      ]
+    },
+    "S1-21": {
+      "prompt": "扁平插画。米黄底色，并置构图：左侧一只磨损的老旧工具箱半开着，右侧一卷未展开的新图纸卷得紧紧的。两者中间是一条隐形的分界。色调：工具箱深褐、图纸米白。",
+      "label": "",
+      "motion": {
+        "enter": "slide-down",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "WORTH IT",
+          "pos": {
+            "x": 80,
+            "y": 80
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 88,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": 3,
+            "letterSpacing": 0.08,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "才刚刚开始值钱"
+          }
+        }
+      ]
+    },
+    "S1-22": {
+      "prompt": "扁平插画。米黄底色，强透视：一条小巷向远方迅速收窄，两侧墙体高大，尽头几乎只剩一道竖缝。主体居中，整体调子压抑。色调：墙体深灰褐、底光米黄。",
+      "label": "",
+      "motion": {
+        "enter": "slide-left",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "NARROW",
+          "pos": {
+            "x": 78,
+            "y": 16
+          },
+          "style": {
+            "font": "Inter",
+            "size": 84,
+            "weight": 500,
+            "color": "#222",
+            "rotation": 0,
+            "letterSpacing": 0.05,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "fly-in",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "越走越窄"
+          }
+        }
+      ]
+    },
+    "S1-23": {
+      "prompt": "扁平插画。米黄底色，地上散落着一只丢下的工具，远景一个背影越走越远。主体居中偏下，地平线低。色调：工具铁灰、底色米黄、背影深棕。",
       "label": "",
       "motion": {
         "enter": "wipe-circle",
@@ -1276,25 +1216,51 @@
       },
       "overlays": [
         {
-          "text": "?",
+          "text": "LEFT BEHIND",
           "pos": {
-            "x": 45,
-            "y": 68
+            "x": 16,
+            "y": 18
           },
           "style": "os-callout-red",
           "motion": {
-            "enter": "ink-bleed",
-            "duration": 900,
-            "delay": 200
+            "enter": "fold-down",
+            "duration": 700,
+            "delay": 600
           },
           "at": {
-            "match": "谁知道"
+            "match": "扔下"
           }
         }
       ]
     },
-    "S1-033": {
-      "prompt": "",
+    "S1-24": {
+      "prompt": "扁平插画。米黄底色，画面右侧一张老式布艺沙发，沙发上斜躺着一个人，眼睛望向天花板。主体偏右，左侧大面积留白。色调：沙发米褐、抱枕暗红。",
+      "label": "",
+      "motion": {
+        "enter": "wipe-down",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "NOT HERE",
+          "pos": {
+            "x": 15,
+            "y": 18
+          },
+          "style": "os-handwrite",
+          "motion": {
+            "enter": "fade",
+            "duration": 900,
+            "delay": 200
+          },
+          "at": {
+            "match": "沙发"
+          }
+        }
+      ]
+    },
+    "S1-25": {
+      "prompt": "扁平插画。米黄底色，俯视镜头：一只皮鞋的尖端正小心试探地落在一块石板上，下一块石板还在远处。主体居中偏下，整体留白。色调：石板冷灰、鞋暖棕。",
       "label": "",
       "motion": {
         "enter": "wipe-left",
@@ -1302,282 +1268,187 @@
       },
       "overlays": [
         {
-          "text": "★",
+          "text": "SMALL STEP",
           "pos": {
-            "x": 21,
-            "y": 82
+            "x": 78,
+            "y": 16
           },
           "style": {
             "font": "Inter",
-            "size": 91,
-            "weight": 500,
-            "color": "#9a5b2c",
-            "rotation": 5,
+            "size": 80,
+            "weight": 700,
+            "color": "#222",
+            "rotation": 0,
             "letterSpacing": 0.04,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
-            "enter": "slide-clip",
-            "duration": 500,
-            "delay": 0
+            "enter": "typewriter",
+            "duration": 700,
+            "delay": 200
           },
           "at": {
-            "match": "在数"
+            "match": "小步"
           }
         }
       ]
     },
-    "S1-034": {
-      "prompt": "",
+    "S1-26": {
+      "prompt": "扁平插画。米黄底色，画面中央一个人正面剪影，背景围着一圈模糊的、只能看见眼睛的人影，眼睛朝中央剪影望来。主体居中。色调：剪影深棕、底色米黄。",
       "label": "",
-      "motion": {
-        "enter": "wipe-up",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-035": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "zoom-out",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-036": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-down",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-037": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-up",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-038": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "push-right",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-039": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-down",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-040": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "push-left",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-041": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "push-left",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-042": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-043": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-circle",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "TAG",
-          "pos": {
-            "x": 85,
-            "y": 85
-          },
-          "style": "os-typewriter",
-          "motion": {
-            "enter": "slide-clip",
-            "duration": 1200,
-            "delay": 400
-          },
-          "at": {
-            "match": "谁知道"
-          }
-        }
-      ]
-    },
-    "S1-044": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-right",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-045": {
-      "type": "chapter",
-      "num": "三",
-      "subtitle": "学历不是赚多少钱，是说「不」的资格",
       "motion": {
         "enter": "ink-bleed",
         "duration": 900
-      }
+      },
+      "overlays": [
+        {
+          "text": "EYES",
+          "pos": {
+            "x": 16,
+            "y": 82
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 92,
+            "weight": 900,
+            "color": "#222",
+            "rotation": 2,
+            "letterSpacing": 0.06,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "iris",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "失败的眼神"
+          }
+        }
+      ]
     },
-    "S1-046": {
-      "prompt": "",
+    "S1-27": {
+      "prompt": "扁平插画。米黄底色，一阵风把一摞便签纸吹散到空中，纸片旋转着向画面外飞去。主体居中偏右，左侧留白。色调：便签纸米白、风的方向感强。",
       "label": "",
       "motion": {
         "enter": "mask-grid",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "FORGOTTEN",
+          "pos": {
+            "x": 16,
+            "y": 16
+          },
+          "style": "os-tag-pill",
+          "motion": {
+            "enter": "shimmer-sweep",
+            "duration": 700,
+            "delay": 400
+          },
+          "at": {
+            "match": "三个月"
+          }
+        }
+      ]
     },
-    "S1-047": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-down",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-048": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "push-right",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-049": {
-      "prompt": "",
+    "S1-28": {
+      "prompt": "扁平插画。米黄底色，一只玻璃沙漏放在桌面中央，上半部分的沙子已经快漏完，下半部分堆得很满。主体居中。色调：沙漏铜框、沙金黄、桌面深棕。",
       "label": "",
       "motion": {
         "enter": "slide-up",
         "duration": 700
       },
-      "overlays": []
-    },
-    "S1-050": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "mask-grid",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-051": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "zoom-in",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-052": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 700
-      },
       "overlays": [
         {
-          "text": "★",
+          "text": "NO REFUND",
           "pos": {
-            "x": 70,
-            "y": 77
+            "x": 82,
+            "y": 16
           },
-          "style": {
-            "font": "Noto Serif SC",
-            "size": 79,
-            "weight": 700,
-            "color": "#9a5b2c",
-            "rotation": 6,
-            "letterSpacing": 0.1,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
+          "style": "os-callout-red",
           "motion": {
             "enter": "stamp",
             "duration": 900,
-            "delay": 0
+            "delay": 600
           },
           "at": {
-            "match": "一段"
+            "match": "要不回来"
           }
         }
       ]
     },
-    "S1-053": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "push-left",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-054": {
-      "prompt": "",
+    "S1-29": {
+      "prompt": "扁平插画。米黄底色，画面中央一个粗壮的 U 型箭头路标，箭头方向 180 度回转。路标立在荒野上，地平线低。色调：路标深棕、底色米黄、天空浅米。",
       "label": "",
       "motion": {
         "enter": "glitch",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "U-TURN",
+          "pos": {
+            "x": 78,
+            "y": 14
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 104,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -5,
+            "letterSpacing": 0.08,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "掉头"
+          }
+        }
+      ]
     },
-    "S1-055": {
-      "prompt": "",
+    "S1-30": {
+      "prompt": "扁平插画。米黄底色，特写：一只攥紧的拳头在画面中央慢慢松开，指节因为用力还泛白。主体居中。色调：皮肤暖灰、阴影深褐。",
       "label": "",
       "motion": {
-        "enter": "wipe-up",
+        "enter": "flip-h",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "NOT YET",
+          "pos": {
+            "x": 15,
+            "y": 18
+          },
+          "style": {
+            "font": "Inter",
+            "size": 80,
+            "weight": 700,
+            "color": "#222",
+            "rotation": 0,
+            "letterSpacing": 0.04,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "blur-pulse",
+            "duration": 500,
+            "delay": 200
+          },
+          "at": {
+            "match": "再撑"
+          }
+        }
+      ]
     },
-    "S1-056": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-up",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-057": {
-      "prompt": "",
+    "S1-31": {
+      "prompt": "扁平插画。米黄底色，全身剪影：一个人正在转身，半个身体朝向原路、半个身体朝向新路，脚步定格在转身的瞬间。主体居中偏左，右侧留白。色调：剪影深棕。",
       "label": "",
       "motion": {
         "enter": "slide-right",
@@ -1585,209 +1456,33 @@
       },
       "overlays": [
         {
-          "text": "再想想",
+          "text": "TURN",
           "pos": {
-            "x": 22,
-            "y": 45
+            "x": 80,
+            "y": 82
           },
           "style": {
-            "font": "ZS Fangsong",
-            "size": 104,
-            "weight": 900,
-            "color": "#222",
-            "rotation": 1,
-            "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "fade",
-            "duration": 900,
-            "delay": 0
-          },
-          "at": {
-            "match": "案。"
-          }
-        }
-      ]
-    },
-    "S1-058": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-down",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-059": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "zoom-in",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-060": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-up",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-061": {
-      "type": "chapter",
-      "num": "四",
-      "subtitle": "我儿子今年 13 岁",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      }
-    },
-    "S1-062": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-down",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "注意",
-          "pos": {
-            "x": 41,
-            "y": 53
-          },
-          "style": {
-            "font": "Noto Serif SC",
-            "size": 89,
+            "font": "XY Kaiti",
+            "size": 112,
             "weight": 400,
-            "color": "#222",
-            "rotation": 3,
+            "color": "var(--accent)",
+            "rotation": -4,
             "letterSpacing": 0.08,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
-            "enter": "ink-bleed",
-            "duration": 500,
-            "delay": 200
-          },
-          "at": {
-            "match": "了下来"
-          }
-        }
-      ]
-    },
-    "S1-063": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "push-right",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-064": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-circle",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "NEW",
-          "pos": {
-            "x": 25,
-            "y": 16
-          },
-          "style": "os-typewriter",
-          "motion": {
-            "enter": "blur-pulse",
-            "duration": 500,
-            "delay": 0
-          },
-          "at": {
-            "match": "三种"
-          }
-        }
-      ]
-    },
-    "S1-065": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "flip-v",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "?",
-          "pos": {
-            "x": 79,
-            "y": 17
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 51,
-            "weight": 700,
-            "color": "#222",
-            "rotation": 4,
-            "letterSpacing": 0.07,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "fly-in",
+            "enter": "stamp",
             "duration": 900,
-            "delay": 200,
-            "from": "bottom"
+            "delay": 400
           },
           "at": {
-            "match": "选别的"
+            "match": "是掉头"
           }
         }
       ]
     },
-    "S1-066": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "push-left",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-067": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-right",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-068": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "push-left",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-069": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "push-left",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-070": {
-      "prompt": "",
+    "S1-32": {
+      "prompt": "扁平插画。米黄底色，桌面上一只旧皮夹翻开着，里面没有钞票，只夹着几张褪色的旧票根，票根上没有任何字。主体居中。色调：皮夹深棕、票根米黄、桌面木色。",
       "label": "",
       "motion": {
         "enter": "wipe-up",
@@ -1795,18 +1490,18 @@
       },
       "overlays": [
         {
-          "text": "TAG",
+          "text": "NOT MONEY",
           "pos": {
-            "x": 26,
-            "y": 61
+            "x": 15,
+            "y": 16
           },
           "style": {
-            "font": "Noto Serif SC",
-            "size": 97,
-            "weight": 500,
+            "font": "ZS Fangsong",
+            "size": 88,
+            "weight": 700,
             "color": "#222",
-            "rotation": -6,
-            "letterSpacing": 0.11,
+            "rotation": 0,
+            "letterSpacing": 0.05,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
@@ -1815,258 +1510,292 @@
             "delay": 400
           },
           "at": {
-            "match": "种可能"
+            "match": "不是钱"
           }
         }
       ]
     },
-    "S1-071": {
-      "prompt": "",
+    "S1-33": {
+      "prompt": "扁平插画。米黄底色，特写：一只手张开，沙子正从指缝里漏下来，下方接住沙子的是另一只手心。主体居中偏右，左侧留白。色调：沙金黄、皮肤暖灰。",
       "label": "",
       "motion": {
-        "enter": "wipe-circle",
+        "enter": "iris-out",
         "duration": 700
       },
       "overlays": [
         {
-          "text": "注意",
+          "text": "TIME",
           "pos": {
-            "x": 23,
-            "y": 84
+            "x": 82,
+            "y": 18
           },
-          "style": "os-callout-red",
+          "style": {
+            "font": "XY Kaiti",
+            "size": 100,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": 4,
+            "letterSpacing": 0.08,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
           "motion": {
-            "enter": "fold-down",
-            "duration": 500,
+            "enter": "ink-bleed",
+            "duration": 900,
             "delay": 400
           },
           "at": {
-            "match": "谁知道"
+            "match": "耗进去"
           }
         }
       ]
     },
-    "S1-072": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-up",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-073": {
-      "prompt": "",
+    "S1-34": {
+      "prompt": "扁平插画。米黄底色，全身剪影：一个人抬头挺胸地站着，脚跟微微离地、即将迈步。主体偏画面左下。色调：剪影深棕、底色米黄。",
       "label": "",
       "motion": {
         "enter": "ink-bleed",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "ADMIT",
+          "pos": {
+            "x": 78,
+            "y": 16
+          },
+          "style": "os-marker",
+          "motion": {
+            "enter": "typewriter",
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "承认走错"
+          }
+        }
+      ]
     },
-    "S1-074": {
-      "prompt": "",
+    "S1-35": {
+      "prompt": "扁平插画。米黄底色，远景：地平线远处一座小山的山顶被一道斜射的暖光打亮，山脚下隐约有一条小路通往山顶。视觉重心偏右上，左下方留白。",
       "label": "",
       "motion": {
         "enter": "wipe-right",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-075": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "mask-grid",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-076": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-down",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-077": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-right",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-078": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "flip-v",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-079": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "push-right",
         "duration": 700
       },
       "overlays": [
         {
-          "text": "看这里",
+          "text": "ARRIVE",
           "pos": {
-            "x": 83,
-            "y": 36
+            "x": 16,
+            "y": 82
           },
           "style": {
             "font": "XY Kaiti",
-            "size": 76,
-            "weight": 700,
-            "color": "#9a5b2c",
-            "rotation": 0,
+            "size": 92,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -2,
             "letterSpacing": 0.07,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
             "enter": "fade",
-            "duration": 1200,
-            "delay": 200
+            "duration": 900,
+            "delay": 400
           },
           "at": {
-            "match": "白某"
+            "match": "才走得到后面"
           }
         }
       ]
     },
-    "S1-080": {
-      "prompt": "",
+    "S1-36": {
+      "prompt": "扁平插画。米黄底色，特写：一只输液架立在画面右侧，输液袋里液体几乎流尽，输液管垂下来。主体偏右，左侧留白。色调：输液架冷银、底色米黄、阴影深褐。",
       "label": "",
       "motion": {
-        "enter": "wipe-circle",
+        "enter": "zoom-out",
         "duration": 700
       },
       "overlays": [
         {
-          "text": "关键",
+          "text": "LIFE SUPPORT",
           "pos": {
-            "x": 49,
-            "y": 54
+            "x": 14,
+            "y": 18
           },
           "style": {
-            "font": "ZS Fangsong",
-            "size": 119,
-            "weight": 500,
+            "font": "Inter",
+            "size": 80,
+            "weight": 700,
             "color": "#222",
-            "rotation": -1,
-            "letterSpacing": 0.03,
+            "rotation": 0,
+            "letterSpacing": 0.04,
             "shadow": "3px 5px 0 rgba(0,0,0,.14)"
           },
           "motion": {
-            "enter": "fly-in",
-            "duration": 900,
-            "delay": 0,
-            "from": "right"
+            "enter": "blur-pulse",
+            "duration": 500,
+            "delay": 200
           },
           "at": {
-            "match": "一个"
+            "match": "续命"
           }
         }
       ]
     },
-    "S1-081": {
-      "type": "chapter",
-      "num": "五",
-      "subtitle": "不是每个人都有逆袭",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      }
-    },
-    "S1-082": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-down",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-083": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "zoom-out",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-084": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-right",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-085": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "wipe-down",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-086": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "slide-right",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-087": {
-      "prompt": "",
-      "label": "",
-      "motion": {
-        "enter": "zoom-out",
-        "duration": 700
-      },
-      "overlays": []
-    },
-    "S1-088": {
-      "prompt": "",
+    "S1-37": {
+      "prompt": "扁平插画。米黄底色，回头视角：脚下一条长长的来路从画面下方延伸到地平线远处，路上有清晰的脚印朝着观众这一侧走来。主体居中。色调：路面深褐、脚印更深。",
       "label": "",
       "motion": {
         "enter": "push-right",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "SUNK COST",
+          "pos": {
+            "x": 78,
+            "y": 16
+          },
+          "style": "os-callout-red",
+          "motion": {
+            "enter": "fold-down",
+            "duration": 700,
+            "delay": 600
+          },
+          "at": {
+            "match": "都走到这一步了"
+          }
+        }
+      ]
     },
-    "S1-089": {
-      "prompt": "",
+    "S1-38": {
+      "prompt": "扁平插画。米黄底色，特写：一片干裂的褐色土地上冒出一根枯黑的细枝，没有花朵也没有叶子。主体居中偏下。色调：土地深褐、枯枝近黑。",
       "label": "",
       "motion": {
-        "enter": "wipe-circle",
+        "enter": "push-left",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "WRONG SOIL",
+          "pos": {
+            "x": 14,
+            "y": 18
+          },
+          "style": {
+            "font": "ZS Fangsong",
+            "size": 86,
+            "weight": 900,
+            "color": "#222",
+            "rotation": 2,
+            "letterSpacing": 0.05,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "iris",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "对的花"
+          }
+        }
+      ]
     },
-    "S1-090": {
-      "prompt": "",
+    "S1-39": {
+      "prompt": "扁平插画。米黄底色，立式镜中一张正面的脸正在凝视镜外的人，镜外只看到后脑勺剪影。主体偏右，左侧留白。色调：镜框深棕、皮肤暖灰。",
       "label": "",
       "motion": {
-        "enter": "slide-up",
+        "enter": "zoom-in",
         "duration": 700
       },
-      "overlays": []
+      "overlays": [
+        {
+          "text": "ASK YOURSELF",
+          "pos": {
+            "x": 16,
+            "y": 82
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 88,
+            "weight": 700,
+            "color": "#222",
+            "rotation": -3,
+            "letterSpacing": 0.07,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "ink-bleed",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "问自己"
+          }
+        }
+      ]
+    },
+    "S1-40": {
+      "prompt": "扁平插画。米黄底色，特写：一只老式机械闹钟放在床头柜上，指针没有具体刻度，只剩两只箭头。主体居中。色调：闹钟金属冷灰、柜面木色、底色米黄。",
+      "label": "",
+      "motion": {
+        "enter": "flip-v",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "ONE MORE YEAR?",
+          "pos": {
+            "x": 78,
+            "y": 16
+          },
+          "style": "os-callout-red",
+          "motion": {
+            "enter": "fly-in",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "再耗一年"
+          }
+        }
+      ]
+    },
+    "S1-41": {
+      "prompt": "扁平插画。米黄底色，大片日历纸正被风从画面右侧吹向左侧，纸页空白不印任何数字。主体覆盖大部分画面，但左下角和右上角留出一些缝隙。色调：纸米白、阴影深米。",
+      "label": "",
+      "motion": {
+        "enter": "slide-down",
+        "duration": 700
+      },
+      "overlays": [
+        {
+          "text": "DON'T WAIT",
+          "pos": {
+            "x": 78,
+            "y": 82
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 100,
+            "weight": 400,
+            "color": "var(--accent)",
+            "rotation": -4,
+            "letterSpacing": 0.08,
+            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+          },
+          "motion": {
+            "enter": "stamp",
+            "duration": 900,
+            "delay": 400
+          },
+          "at": {
+            "match": "下一个十年"
+          }
+        }
+      ]
     }
   },
   "__fontsDoc__": "自定义字体：把 .woff2 文件放进 .{slug}-assets/fonts/ 子目录，在 fonts[] 数组里声明 { family, src, weight, style, format, display }，bootstrap.js 会自动生成 @font-face；chapter.style.numFont / chapter.style.subtitleFont / overlay.style.font 直接引用 family 名即可"

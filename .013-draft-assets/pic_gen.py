@@ -3,7 +3,7 @@
 
 数据源：episode.json（meta.slug / image.size / image.quality / image.noTextHint / beats / scenes）
 - 输出尺寸：image.size（默认 1536×1024 landscape）
-- 落地：pictures/NN-<scene-id>.webp，编号跟 SCENES 出场顺序对齐
+- 落地：pictures/<scene-id>.webp（player.js 的 picSrcFor 直接读 sceneId）
 - 幂等：目标 webp 存在则跳过；--force 强制重生
 - 章节封面 ch1-ch5 跳过不生成（player.js 里走 CSS chapter-card 渲染）
 
@@ -55,7 +55,7 @@ def generate_one(scene: dict, *, slug: str, no_text_hint: str, size: str, qualit
     idx = scene["index"]
     sid = scene["id"]
     nn = f"{idx + 1:02d}"
-    out_path = PIC_DIR / f"{nn}-{sid}.webp"
+    out_path = PIC_DIR / f"{sid}.webp"
     if out_path.exists() and not force:
         return "skipped"
 
@@ -63,7 +63,7 @@ def generate_one(scene: dict, *, slug: str, no_text_hint: str, size: str, qualit
     if no_text_hint:
         prompt = prompt + " " + no_text_hint
 
-    gen_out_dir = Path("/tmp") / "gpt-image" / f"{slug}-{nn}-{sid}"
+    gen_out_dir = Path("/tmp") / "gpt-image" / f"{slug}-{sid}"
     shutil.rmtree(gen_out_dir, ignore_errors=True)
     gen_out_dir.mkdir(parents=True, exist_ok=True)
 
