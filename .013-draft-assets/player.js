@@ -149,18 +149,6 @@
         '  <div class="ph-id">' + id + '</div>' +
         '  <div class="ph-prompt">' + (def.prompt || '') + '</div>' +
         '</div>';
-      // 右上角 prompt 提示牌：纯文本注入避开 XSS；录制模式下 CSS 隐藏
-      const tip = document.createElement('div');
-      tip.className = 'scene-prompt-tip';
-      const tipId = document.createElement('div');
-      tipId.className = 'spt-id';
-      tipId.textContent = id;
-      const tipText = document.createElement('div');
-      tipText.className = 'spt-text';
-      tipText.textContent = def.prompt || '(未填 prompt)';
-      tip.appendChild(tipId);
-      tip.appendChild(tipText);
-      el.appendChild(tip);
     }
     stack.appendChild(el);
     sceneNodes[id] = el;

@@ -177,36 +177,6 @@ body.ken-burns .scene {
   display: block;
 }
 
-/* 右上角 prompt 提示牌：把 scene 的 prompt 钉在画面右上角方便 review；
-   不管图是否填充都常驻显示，但 body.recording 时由后面的规则隐藏掉。 */
-.scene-prompt-tip {
-  position: absolute;
-  top: 24px; right: 24px;
-  max-width: 620px;
-  padding: 14px 18px;
-  background: rgba(20, 20, 22, .78);
-  color: #f4f1ea;
-  font-size: 20px;
-  line-height: 1.5;
-  border-radius: 8px;
-  pointer-events: none;
-  z-index: 60;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
-  text-align: left;
-}
-.scene-prompt-tip .spt-id {
-  font-family: "JetBrains Mono", "SF Mono", "Menlo", monospace;
-  font-size: 14px;
-  letter-spacing: .12em;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 6px;
-  text-transform: uppercase;
-}
-.scene-prompt-tip .spt-text {
-  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-
 /* 占位时显示的 prompt 文字（用户没拖图前的提示） */
 .scene .placeholder {
   position: absolute;
@@ -397,7 +367,6 @@ body.recording .controls { display: none; }
 /* 录制模式下隐藏所有"编辑器残留"，保证视频不漏 UI */
 body.recording .twk-panel { display: none !important; }       /* React Tweaks 面板 */
 body.recording .scene .placeholder { display: none; }         /* player.js 渲染的 ph-id + ph-prompt 提示 */
-body.recording .scene-prompt-tip { display: none; }            /* 右上角 prompt 提示牌：录制不可漏 */
 /* 图已填充时也隐藏 placeholder 提示文字（image-slot 在 src 加载完成后置 data-filled） */
 .scene image-slot[data-filled] + .placeholder { display: none; }
 body.recording image-slot::part(ring) { display: none; }      /* image-slot 拖拽指示环 */
