@@ -20,11 +20,14 @@
   ],
   "scripts": [
     ".013-draft-assets/bootstrap.js",
+    ".013-draft-assets/dev-reload.js",
     ".013-draft-assets/image-slot.js",
     ".013-draft-assets/overlays.js",
     ".013-draft-assets/player.js",
     ".013-draft-assets/tweaks-panel.jsx",
-    ".013-draft-assets/tweaks.jsx"
+    ".013-draft-assets/tweaks.jsx",
+    ".013-draft-assets/edit-mode.js",
+    ".013-draft-assets/inspector.jsx"
   ],
   "dependencies": [
     {

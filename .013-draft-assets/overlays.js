@@ -71,10 +71,13 @@
     return 'mo-ov-' + e;
   }
 
+  const STYLE_INLINE_KEYS = ['font', 'size', 'weight', 'color', 'rotation', 'letterSpacing',
+            'shadow', 'padding', 'background', 'border', 'borderRadius', 'textDecoration',
+            'fontStyle', 'whiteSpace'];
+
   function hasStyleKeys(s) {
     if (!s || typeof s !== 'object') return false;
-    return ['font', 'size', 'weight', 'color', 'rotation', 'letterSpacing',
-            'shadow', 'padding', 'background', 'border', 'borderRadius', 'textDecoration', 'whiteSpace'].some(k => s[k] != null);
+    return STYLE_INLINE_KEYS.some(k => s[k] != null);
   }
 
   function applyStyleObject(el, s) {
@@ -89,6 +92,7 @@
     if (s.border)       el.style.border = s.border;
     if (s.borderRadius != null) el.style.borderRadius = s.borderRadius + 'px';
     if (s.textDecoration) el.style.textDecoration = s.textDecoration;
+    if (s.fontStyle) el.style.fontStyle = s.fontStyle;
     if (s.whiteSpace) el.style.whiteSpace = s.whiteSpace;  // 支持 pre-line 让 text 里的 \n 渲染换行
     if (s.rotation != null) el.style.setProperty('--os-rotate', s.rotation + 'deg');
   }
@@ -106,7 +110,11 @@
     return arr[hash(seed) % arr.length];
   }
 
-  function renderInto(sceneEl, overlays) {
+  // edit 模式：跳过 at.match 延后入场（直接显示）+ 跳过 enter 动效（直接落到终态）。
+  // 为了让编辑器能拖拽 / 高亮 / 写回，每个 overlay DOM 还会带上
+  // data-scene-id + data-overlay-index，定位回 episode.json 的 scenes[id].overlays[index]。
+  function renderInto(sceneEl, overlays, opts) {
+    const edit = !!(opts && opts.edit);
     sceneEl.querySelectorAll(':scope > .overlay-layer').forEach((e) => e.remove());
     if (!Array.isArray(overlays) || overlays.length === 0) return;
 
@@ -123,14 +131,21 @@
       const x = (o.pos && o.pos.x != null) ? o.pos.x : (o.xPct != null ? o.xPct : 50);
       const y = (o.pos && o.pos.y != null) ? o.pos.y : (o.yPct != null ? o.yPct : 50);
 
-      // style：字符串走旧 class；对象走 inline；缺省走随机 os-*
+      // style 三种形态：
+      //   1) 字符串（"os-marker"）→ 老 preset 走 class
+      //   2) {preset:"os-marker", color:"#...", ...} → preset 走 class，其余 inline 覆盖
+      //   3) {color, font, size, ...} 纯 inline → 不加 preset class
+      //   4) 缺省 / "auto" → 按 seed 哈希随机 preset class
       const classNames = ['scene-overlay'];
+      const styleIsObject = o.style && typeof o.style === 'object';
+      const presetFromObj = styleIsObject && typeof o.style.preset === 'string' ? o.style.preset : null;
       if (typeof o.style === 'string' && o.style !== 'auto') {
         classNames.push(o.style);
+      } else if (presetFromObj) {
+        classNames.push(presetFromObj);
       } else if (!hasStyleKeys(o.style)) {
         classNames.push(pick(STYLES, seedBase + '#s'));
       }
-      // 新对象 style 不加 os-* class，直接 inline 写在下方
 
       // motion：对象优先；fallback 到旧 animation 字符串；最终随机 oa-*
       let motionClass = null;
@@ -140,15 +155,18 @@
         motionClass = o.animation;
       }
       if (!motionClass) motionClass = pick(ANIMS, seedBase + '#a');
-      classNames.push(motionClass);
+      // edit 模式不挂入场动效，避免每次切场景都重放一遍
+      if (!edit) classNames.push(motionClass);
 
       const el = document.createElement('div');
       el.className = classNames.join(' ');
       el.textContent = o.text || '';
       el.style.left = x + '%';
       el.style.top  = y + '%';
+      el.dataset.sceneId = sceneId;
+      el.dataset.overlayIndex = String(i);
 
-      // 新 style 对象 → inline
+      // 新 style 对象 → inline（preset 字段会被 applyStyleObject 忽略，只写已知 key）
       if (hasStyleKeys(o.style)) applyStyleObject(el, o.style);
 
       // 兼容旧扁平字段（仅在新对象未覆盖时生效）
@@ -173,7 +191,8 @@
 
       // at：把入场时机绑到字幕关键词。把 motion class 先摘掉藏到 dataset，
       // 元素 display:none；onBeat 命中 match 时还原 + reflow + 启动 countdown。
-      if (o.at && o.at.match) {
+      // edit 模式跳过整段，编辑器需要看到所有 overlay 的终态。
+      if (!edit && o.at && o.at.match) {
         el.dataset.atMatch = String(o.at.match);
         el.dataset.atDelay = String(o.at.delay || 0);
         el.dataset.pendingMotion = motionClass;
@@ -183,7 +202,7 @@
           el.dataset.pendingMotionDur = String((o.motion && o.motion.duration) || 0);
         }
         el.style.display = 'none';
-      } else if (o.countdown && o.countdown.from != null) {
+      } else if (!edit && o.countdown && o.countdown.from != null) {
         // 非 at：原行为，入场动效结束后立即倒计时
         const motionDur = (o.motion && o.motion.duration) || 0;
         startCountdown(el, o.countdown, delay + motionDur);
@@ -274,5 +293,21 @@
     sceneEl.querySelectorAll(':scope > .overlay-layer').forEach((e) => e.remove());
   }
 
-  window.__overlays = { renderInto, onBeat, clear, STYLES, ANIMS };
+  // 编辑模式 60fps 拖动用：按 data-* 选中一个已渲染的 overlay 节点，原地改 pos / text / style，
+  // 不动 class / motion，不重建 DOM。patch 形态与 episode.json 里的 overlay 子集一致。
+  function updateLive(sceneEl, index, patch) {
+    if (!sceneEl || !patch) return;
+    const el = sceneEl.querySelector(
+      ':scope > .overlay-layer > .scene-overlay[data-overlay-index="' + index + '"]'
+    );
+    if (!el) return;
+    if (patch.pos) {
+      if (patch.pos.x != null) el.style.left = patch.pos.x + '%';
+      if (patch.pos.y != null) el.style.top  = patch.pos.y + '%';
+    }
+    if (patch.text != null) el.textContent = patch.text;
+    if (patch.style && typeof patch.style === 'object') applyStyleObject(el, patch.style);
+  }
+
+  window.__overlays = { renderInto, onBeat, clear, updateLive, STYLES, ANIMS };
 })();

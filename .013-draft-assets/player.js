@@ -100,6 +100,8 @@
   const capZh = $('capZh');
   const capEn = $('capEn');
   const progress = $('progress');
+  const progressInput = $('progressInput');
+  const progressTotal = $('progressTotal');
   const band = $('band');
 
   const sceneNodes = {};
@@ -107,6 +109,7 @@
     const def = scenes[id] || { prompt: '(未定义)' };
     const el = document.createElement('div');
     el.className = 'scene';
+    el.dataset.sceneId = id;
     const src = picSrcFor(id);
 
     // motion class（场景过渡）
@@ -139,8 +142,9 @@
         '  <div class="chapter-text">' + subtitle + '</div>' +
         '</div>';
     } else {
+      const fit = (def.imageFit === 'cover' || def.imageFit === 'fill') ? def.imageFit : 'contain';
       el.innerHTML =
-        '<image-slot id="slot-' + id + '" src="' + src + '" fit="contain" placeholder="拖入此场景的图（详见左侧）"></image-slot>' +
+        '<image-slot id="slot-' + id + '" src="' + src + '" fit="' + fit + '" placeholder="拖入此场景的图（详见左侧）"></image-slot>' +
         '<div class="placeholder">' +
         '  <div class="ph-id">' + id + '</div>' +
         '  <div class="ph-prompt">' + (def.prompt || '') + '</div>' +
@@ -254,8 +258,14 @@
       sceneEl.style.transition = '';
     }
 
-    progress.textContent = (i + 1) + ' / ' + beats.length;
+    setProgress(i + 1);
     fitBand();
+  }
+
+  function setProgress(n) {
+    // 录制中、用户正在编辑输入框时，不去覆盖
+    if (document.activeElement === progressInput) return;
+    progressInput.value = String(n);
   }
 
   function silenceOthers(keep) {
@@ -395,6 +405,21 @@
   $('prevBtn').addEventListener('click', () => jumpTo(cur - 1));
   $('nextBtn').addEventListener('click', () => jumpTo(cur + 1));
 
+  // 可编辑 beat 计数框：回车 / 失焦 跳到指定 beat（1-based）；
+  // ↑/↓ 走 input 自带步进；Esc 取消编辑。
+  function commitProgressInput() {
+    const v = parseInt(progressInput.value, 10);
+    if (!isFinite(v)) { setProgress(cur + 1); return; }
+    const clamped = Math.max(1, Math.min(beats.length, v));
+    progressInput.value = String(clamped);
+    if (clamped - 1 !== cur) jumpTo(clamped - 1);
+  }
+  progressInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); commitProgressInput(); progressInput.blur(); }
+    else if (e.key === 'Escape') { setProgress(cur + 1); progressInput.blur(); }
+  });
+  progressInput.addEventListener('blur', commitProgressInput);
+
   $('rate').addEventListener('input', () => {
     const r = parseFloat($('rate').value) || 1;
     const a = audioElements[cur];
@@ -404,6 +429,13 @@
   const recFlash = $('recFlash');
   $('recBtn').addEventListener('click', () => {
     enterRecording();
+  });
+
+  // 编辑模式入口；edit-mode.js 在 player.js 之后才注入，所以这里只挂 click，
+  // 真正调用时 window.__editMode 已就绪
+  $('editBtn').addEventListener('click', () => {
+    if (window.__editMode && window.__editMode.enter) window.__editMode.enter();
+    else console.error('edit-mode.js 未加载');
   });
 
   function enterRecording() {
@@ -420,7 +452,7 @@
     }
     capZh.textContent = '';
     capEn.textContent = '';
-    progress.textContent = '1 / ' + beats.length;
+    setProgress(1);
 
     const countdown = $('recCountdown');
     let n = 3;
@@ -457,6 +489,9 @@
       return;
     }
     if (isRecording) return;
+    // 输入框 / textarea 里别抢键（progress 跳转输入 + 编辑模式 inspector 都有 input）
+    const tag = (e.target && e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || (e.target && e.target.isContentEditable)) return;
     if (e.key === ' ') {
       e.preventDefault();
       playing ? pause() : play();
@@ -466,7 +501,16 @@
   });
 
   // ── 初始化 ─────────────────────────────────────────────────────
-  showBeat(0);
+  progressInput.max = String(beats.length);
+  progressTotal.textContent = String(beats.length);
+
+  // URL ?p=N （1-based）→ 启动时跳到指定 beat；超界 clamp 进有效范围
+  let startBeat = 0;
+  try {
+    const p = parseInt(new URLSearchParams(location.search).get('p') || '', 10);
+    if (isFinite(p)) startBeat = Math.max(0, Math.min(beats.length - 1, p - 1));
+  } catch (_) { /* ignore */ }
+  showBeat(startBeat);
 
   function startRecordingPlayback(opts) {
     opts = opts || {};
@@ -480,7 +524,7 @@
     for (const id of sceneOrder) sceneNodes[id].classList.remove('active');
     capZh.textContent = '';
     capEn.textContent = '';
-    progress.textContent = '1 / ' + beats.length;
+    setProgress(1);
 
     if (opts.scripted) {
       playing = true;
@@ -504,5 +548,5 @@
     }
   }
 
-  window.__player = { play, pause, showBeat, enterRecording, exitRecording, startRecordingPlayback, beats };
+  window.__player = { play, pause, showBeat, enterRecording, exitRecording, startRecordingPlayback, beats, scenes, sceneNodes, sceneOrder };
 })();

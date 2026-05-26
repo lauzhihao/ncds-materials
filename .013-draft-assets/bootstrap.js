@@ -137,11 +137,19 @@
     ensureMotionCss(dirAbs);
 
     try {
+      // 开发期热重载（仅 127.0.0.1/localhost 下生效，线上 ncds.cc 直接 no-op）。
+      // 优先于其它脚本注入，这样后续编译失败也能在改完代码后自动 reload 看到结果。
+      await injectScript(dirAbs + '/dev-reload.js').catch(() => {});
       await injectScript(dirAbs + '/image-slot.js');
       await injectScript(dirAbs + '/overlays.js');
       await injectScript(dirAbs + '/player.js');
       await injectBabel(dirAbs + '/tweaks-panel.jsx');
       await injectBabel(dirAbs + '/tweaks.jsx');
+      // 编辑模式：vanilla JS 控制器 + React inspector 面板。
+      // 必须在 player + tweaks-panel 之后注入：编辑模式要读 __player.sceneNodes，
+      // inspector 要用 tweaks-panel 暴露的 TweaksPanel/TweakSection/... 全局组件。
+      await injectScript(dirAbs + '/edit-mode.js');
+      await injectBabel(dirAbs + '/inspector.jsx');
     } catch (err) {
       console.error('bootstrap: script inject failed', err);
     }

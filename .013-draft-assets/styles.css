@@ -326,9 +326,28 @@ body.ken-burns .scene {
 .controls .progress {
   font-variant-numeric: tabular-nums;
   opacity: .8;
-  min-width: 92px;
-  text-align: center;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
 }
+.controls .progress input[type=number] {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border: 0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  width: 4ch;
+  text-align: right;
+  -moz-appearance: textfield;
+}
+.controls .progress input[type=number]::-webkit-outer-spin-button,
+.controls .progress input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none; margin: 0;
+}
+.controls .progress input[type=number]:focus { outline: 1px solid var(--accent); }
+.controls .progress .progress-sep { opacity: .55; }
 
 .controls input[type=range] { width: 100px; accent-color: var(--accent); }
 .controls select {

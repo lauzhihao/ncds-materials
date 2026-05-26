@@ -788,7 +788,7 @@
       "overlays": []
     },
     "S1-003": {
-      "prompt": "",
+      "prompt": "学习无用",
       "label": "",
       "motion": {
         "enter": "wipe-circle",
@@ -811,7 +811,8 @@
             "match": "想一"
           }
         }
-      ]
+      ],
+      "imageFit": "contain"
     },
     "S1-004": {
       "prompt": "",

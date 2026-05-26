@@ -2,7 +2,10 @@
  *
  * 全部默认值与候选都来自 window.EPISODE（由 bootstrap.js 从 episode.json 加载）。
  * 本文件不再含 per-episode 字面值；调参请改 episode.json。
- * tweaks-panel 的 EDITMODE 写回协议是给外部 host 编辑工具用的，浏览器内调参不会持久化。
+ *
+ * 持久化：在 127.0.0.1 / localhost 下，每次 setTweak 后 500ms debounce 自动 POST
+ * /__save_episode 把改动按 dot-path 写回 episode.json；线上 ncds.cc 不发请求。
+ * 一次性的"摸索性微调"也会被记下来——所以别把它当临时调味，调完就是确定的样式。
  */
 
 (function () {
@@ -57,8 +60,92 @@
     }
   }
 
+  // 字段 → episode.json dot-path 映射（auto-save 用）
+  const FIELD_PATHS = {
+    title:          'meta.title',
+    disclaimer:     'meta.disclaimer',
+    palette:        'visual.palette',
+    rate:           'playback.rate',
+    capZhSize:      'visual.capZhSize',
+    capEnSize:      'visual.capEnSize',
+    bandStyle:      'visual.bandStyle',
+    showSubtitleEn: 'visual.showSubtitleEn',
+    kenBurns:       'visual.kenBurns',
+  };
+
+  // 在 localhost / 127.0.0.1 下才发请求；线上发了也是 404，省点噪音
+  const IS_LOCAL = (() => {
+    const h = location.hostname;
+    return h === '127.0.0.1' || h === 'localhost' || h === '0.0.0.0';
+  })();
+
+  // module-scope 的待写补丁 + 计时器：跨多次 setTweak 合并成一次 POST
+  const _pending = {};
+  let _saveTimer = null;
+  function autoSaveField(field, value) {
+    if (!IS_LOCAL) return;
+    const p = FIELD_PATHS[field];
+    if (!p) return; // 没映射的字段不动 episode.json
+    _pending[p] = value;
+    if (_saveTimer) clearTimeout(_saveTimer);
+    _saveTimer = setTimeout(flushSave, 500);
+  }
+  async function flushSave() {
+    _saveTimer = null;
+    if (Object.keys(_pending).length === 0) return;
+    // 先快照再清，让随后的 setTweak 进入新批次；不能 `const patches = _pending`
+    // 然后清 _pending —— 那是同一个对象的引用，会把 patches 也清空（之前的坑）
+    const patches = Object.assign({}, _pending);
+    for (const k of Object.keys(_pending)) delete _pending[k];
+    const slug = (ep.__slug) || (ep.meta && ep.meta.slug);
+    try {
+      const res = await fetch('/__save_episode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, patches }),
+      });
+      if (!res.ok) {
+        const txt = await res.text().catch(() => res.statusText);
+        console.warn('[tweaks] save failed', res.status, txt);
+        toastSave('保存失败 · ' + res.status, true);
+      } else {
+        // 同步内存中的 EPISODE，让其它读者拿到一致快照
+        for (const [path, value] of Object.entries(patches)) {
+          const parts = path.split('.');
+          let cur = ep;
+          for (const p of parts.slice(0, -1)) {
+            if (!cur[p] || typeof cur[p] !== 'object') cur[p] = {};
+            cur = cur[p];
+          }
+          cur[parts[parts.length - 1]] = value;
+        }
+        toastSave('已保存');
+      }
+    } catch (e) {
+      console.warn('[tweaks] save error', e);
+      toastSave('保存出错', true);
+    }
+  }
+  function toastSave(msg, isErr) {
+    const t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;left:50%;top:16px;transform:translateX(-50%);'
+      + 'background:' + (isErr ? 'rgba(180,40,40,.9)' : 'rgba(0,0,0,.78)') + ';'
+      + 'color:#fff;padding:4px 10px;border-radius:6px;'
+      + 'font:11px ui-sans-serif,system-ui,sans-serif;z-index:2147483647;'
+      + 'pointer-events:none;transition:opacity .25s;opacity:1;';
+    document.body.appendChild(t);
+    setTimeout(() => { t.style.opacity = '0'; }, 800);
+    setTimeout(() => t.remove(), 1100);
+  }
+
   function App() {
-    const [t, setTweak] = useTweaks(DEFAULTS);
+    const [t, setTweakRaw] = useTweaks(DEFAULTS);
+    // 包一层 setTweak：每次写也排进 auto-save 队列
+    const setTweak = React.useCallback((k, v) => {
+      setTweakRaw(k, v);
+      autoSaveField(k, v);
+    }, [setTweakRaw]);
 
     React.useEffect(() => { document.getElementById("brandTitle").textContent = t.title; }, [t.title]);
     React.useEffect(() => { document.querySelector(".disclaimer").textContent = t.disclaimer; }, [t.disclaimer]);
@@ -124,9 +211,6 @@
               setTweak("rate", v);
               const r = document.getElementById("rate"); if (r) r.value = v;
             }} />
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,.55)", marginTop: 6, lineHeight: 1.5 }}>
-            按字幕字数估算每句停留时长；其他 TTS / 配音在剪映等后期加。
-          </div>
         </TweakSection>
 
         <TweakSection title="动画">
@@ -137,9 +221,6 @@
         <TweakSection title="录制">
           <TweakButton label="▶ 从头播放" onClick={goPlay} />
           <TweakButton label="● 进入录制模式" onClick={goRecord} />
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,.55)", marginTop: 6, lineHeight: 1.5 }}>
-            进入录制模式后会隐藏所有控件并 3 秒倒数自动播放，按 Esc 退出。建议先开 OBS / 剪映 / 录屏宝再点。
-          </div>
         </TweakSection>
       </TweaksPanel>
     );
