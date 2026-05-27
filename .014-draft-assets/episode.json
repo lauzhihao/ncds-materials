@@ -477,8 +477,8 @@
       "scene": "S1-16"
     },
     {
-      "zh": "你不举手抬一下他写一笔。",
-      "en": "raise a hand and only then will he write a single stroke.",
+      "zh": "你不举手抬一下他不写一笔。",
+      "en": "and don't raise a hand and he won't write a single stroke.",
       "scene": "S1-16"
     },
     {
@@ -492,7 +492,7 @@
       "scene": "S1-18"
     },
     {
-      "zh": "每天作业糊弄过去交公差，",
+      "zh": "每天作业糊弄过去应付公差，",
       "en": "Every day's homework is just clocking in,",
       "scene": "S1-19"
     },
