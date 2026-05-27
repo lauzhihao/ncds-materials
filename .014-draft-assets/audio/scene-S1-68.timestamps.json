@@ -1,0 +1,36 @@
+{
+  "scene": "S1-68",
+  "text": "别急。",
+  "words": [
+    {
+      "text": "别",
+      "begin_index": 0,
+      "end_index": 1,
+      "begin_time": 80,
+      "end_time": 320
+    },
+    {
+      "text": "急",
+      "begin_index": 1,
+      "end_index": 2,
+      "begin_time": 400,
+      "end_time": 560
+    },
+    {
+      "text": "。",
+      "begin_index": 2,
+      "end_index": 3,
+      "begin_time": 640,
+      "end_time": 1040
+    }
+  ],
+  "perBeat": [
+    {
+      "beat": 128,
+      "audioStart": 0,
+      "audioEnd": 1149,
+      "chars": 3,
+      "wordsFound": 3
+    }
+  ]
+}

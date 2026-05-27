@@ -69,23 +69,34 @@ async function makeSilence(seconds, outPath) {
 }
 
 async function buildAudioTrack() {
-  const files = (await fs.readdir(AUDIO_DIR))
-    .filter((f) => /^\d+\.mp3$/.test(f))
-    .sort();
-  if (files.length === 0) throw new Error(`no audio/*.mp3 found in ${AUDIO_DIR}`);
-  log(`audio: ${INTRO_MS}ms intro + ${files.length} mp3s + ${GAP_MS}ms gaps + ${ENDING_MS}ms tail silence`);
+  // 新版按 scene 整段 TTS：episode.json 的 beats[].audioFile 是 scene mp3 路径，
+  // 按 scene 出现顺序去重收集。scene 内 beat 不再有 80ms gap（音频天然连续），
+  // GAP_MS 只用在 scene 之间（跟 player.js 一致）。
+  const ep = JSON.parse(await fs.readFile(path.join(HERE, 'episode.json'), 'utf-8'));
+  const seen = new Set();
+  const files = [];
+  for (const b of ep.beats || []) {
+    if (b.audioFile && !seen.has(b.audioFile)) {
+      seen.add(b.audioFile);
+      files.push(b.audioFile);   // 如 "audio/scene-S1-01.mp3"
+    }
+  }
+  if (files.length === 0) {
+    throw new Error('no audioFile in episode.json beats[] — run tts_gen.py first');
+  }
+  // 新顺序下 recorder.start 在 startRecordingPlayback 之后，视频开头直接
+  // 是第一字幕，没 leading 空白 → audio 也不再需要 intro silence。
+  log(`audio: ${files.length} scene mp3s + ${GAP_MS}ms gaps + ${ENDING_MS}ms tail silence`);
 
-  const silenceIntro = '/tmp/012-silence-intro.mp3';
   const silenceGap = '/tmp/012-silence-gap.mp3';
   const silenceTail = '/tmp/012-silence-tail.mp3';
-  await makeSilence(INTRO_MS / 1000, silenceIntro);
   await makeSilence(GAP_MS / 1000, silenceGap);
   await makeSilence(ENDING_MS / 1000, silenceTail);
 
   const concatList = '/tmp/012-concat.txt';
-  const lines = [`file '${silenceIntro}'`];
+  const lines = [];
   for (let i = 0; i < files.length; i++) {
-    lines.push(`file '${path.join(AUDIO_DIR, files[i])}'`);
+    lines.push(`file '${path.join(HERE, files[i])}'`);
     if (i < files.length - 1) lines.push(`file '${silenceGap}'`);
   }
   lines.push(`file '${silenceTail}'`);
@@ -146,18 +157,25 @@ async function main() {
     );
     await sleep(1200);
 
-    // 录前先把 UI 抹掉（控件 / Tweaks 面板 / image-slot ring），
-    // 不然 recorder 起来的前几帧会拍到左下角的"导演台"。
-    log('hiding UI (pre-recording state)');
+    // 录前先把 UI 抹掉（控件 / Tweaks 面板 / image-slot ring）。
+    log('hiding UI');
     await page.evaluate(() => {
       document.body.classList.add('recording');
       document.getElementById('capZh').textContent = '';
       document.getElementById('capEn').textContent = '';
     });
 
+    // 关键顺序：**先** startRecordingPlayback，**再** recorder.start。
+    // startRecordingPlayback 内部第一次 showBeat(0) 同步执行会阻塞主线程
+    // ~6 秒（首次 image-slot mount / overlay renderInto / fitBand 重 layout
+    // 全堆在一起）。await page.evaluate 会等这段同步部分跑完；返回时第一字幕
+    // 已显示、scriptedNext 的 setTimeout 也已入队、wallclock 计时已开始。
+    // 这时再 recorder.start，录制器开机就直接拍到第一字幕的画面，
+    // 而不是先录到 6 秒空白静态帧。
+    log('triggering scripted playback (sync setup, may block ~5s on first showBeat)');
+    await page.evaluate(() => window.__player.startRecordingPlayback({ scripted: true }));
+
     log('starting screen recorder (30fps, 1920×1080)');
-    // viewport 跟 videoFrame 都是 1920×1080，不需要 autopad；带 autopad 时 ffmpeg pad
-    // 滤镜会拒绝 3 位 hex 颜色，整段录制会静默失败。
     const recorder = new PuppeteerScreenRecorder(page, {
       fps: FPS,
       videoFrame: { width: 1920, height: 1080 },
@@ -168,13 +186,6 @@ async function main() {
       aspectRatio: '16:9',
     });
     await recorder.start(TMP_VIDEO);
-
-    // 小段空白纸面 intro：让 CDP 通道稳一稳，给观众一拍准备时间。
-    // 音轨那侧也会插同样长度的 leading silence。
-    await sleep(INTRO_MS);
-
-    log('triggering scripted playback (audio-duration-driven, no audio.onended drift)');
-    await page.evaluate(() => window.__player.startRecordingPlayback({ scripted: true }));
 
     log('waiting for ending fade to begin (full playback)');
     await page.waitForFunction(

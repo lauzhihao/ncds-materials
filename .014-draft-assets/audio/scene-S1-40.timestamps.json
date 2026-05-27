@@ -1,0 +1,64 @@
+{
+  "scene": "S1-40",
+  "text": "我家住十一楼。",
+  "words": [
+    {
+      "text": "我",
+      "begin_index": 0,
+      "end_index": 1,
+      "begin_time": 80,
+      "end_time": 240
+    },
+    {
+      "text": "家",
+      "begin_index": 1,
+      "end_index": 2,
+      "begin_time": 320,
+      "end_time": 400
+    },
+    {
+      "text": "住",
+      "begin_index": 2,
+      "end_index": 3,
+      "begin_time": 480,
+      "end_time": 560
+    },
+    {
+      "text": "十",
+      "begin_index": 3,
+      "end_index": 4,
+      "begin_time": 640,
+      "end_time": 800
+    },
+    {
+      "text": "一",
+      "begin_index": 4,
+      "end_index": 5,
+      "begin_time": 800,
+      "end_time": 880
+    },
+    {
+      "text": "楼",
+      "begin_index": 5,
+      "end_index": 6,
+      "begin_time": 960,
+      "end_time": 1040
+    },
+    {
+      "text": "。",
+      "begin_index": 6,
+      "end_index": 7,
+      "begin_time": 1120,
+      "end_time": 1440
+    }
+  ],
+  "perBeat": [
+    {
+      "beat": 70,
+      "audioStart": 0,
+      "audioEnd": 1567,
+      "chars": 7,
+      "wordsFound": 7
+    }
+  ]
+}

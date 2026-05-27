@@ -328,737 +328,1178 @@
     {
       "zh": "你家那个七年级的男孩，",
       "en": "Your boy in seventh grade,",
-      "scene": "S1-01"
+      "scene": "S1-01",
+      "audioFile": "audio/scene-S1-01.mp3",
+      "audioStart": 0,
+      "audioEnd": 2160
     },
     {
       "zh": "是不是已经被你骂了好多年了？",
       "en": "have you been yelling at him for seven, eight years now?",
-      "scene": "S1-01"
+      "scene": "S1-01",
+      "audioFile": "audio/scene-S1-01.mp3",
+      "audioStart": 2160,
+      "audioEnd": 4362
     },
     {
       "zh": "不愿意阅读，",
       "en": "Won't read,",
-      "scene": "S1-02"
+      "scene": "S1-02",
+      "audioFile": "audio/scene-S1-02.mp3",
+      "audioStart": 0,
+      "audioEnd": 1200
     },
     {
       "zh": "不愿意背诵，",
       "en": "won't recite,",
-      "scene": "S1-02"
+      "scene": "S1-02",
+      "audioFile": "audio/scene-S1-02.mp3",
+      "audioStart": 1200,
+      "audioEnd": 2640
     },
     {
       "zh": "更不愿意书写。",
       "en": "and definitely won't write.",
-      "scene": "S1-02"
+      "scene": "S1-02",
+      "audioFile": "audio/scene-S1-02.mp3",
+      "audioStart": 2640,
+      "audioEnd": 4441
     },
     {
       "zh": "你说他懒，",
       "en": "You call him lazy,",
-      "scene": "S1-04"
+      "scene": "S1-04",
+      "audioFile": "audio/scene-S1-04.mp3",
+      "audioStart": 0,
+      "audioEnd": 1120
     },
     {
       "zh": "你以为他天生就这样吗？不是。",
       "en": "Do you think he was born this way? He wasn't.",
-      "scene": "S1-04"
+      "scene": "S1-04",
+      "audioFile": "audio/scene-S1-04.mp3",
+      "audioStart": 1120,
+      "audioEnd": 5407
     },
     {
       "zh": "是被爷爷宠溺、妈妈包办、爸爸“修理”",
       "en": "spoiled, smothered, and hit into it",
-      "scene": "S1-06"
+      "scene": "S1-06",
+      "audioFile": "audio/scene-S1-06.mp3",
+      "audioStart": 0,
+      "audioEnd": 3200
     },
     {
       "zh": "合力创造出来的。",
       "en": "all three together make him this way.",
-      "scene": "S1-06"
+      "scene": "S1-06",
+      "audioFile": "audio/scene-S1-06.mp3",
+      "audioStart": 3200,
+      "audioEnd": 4911
     },
     {
       "zh": "每一次你说“我来帮你”，",
       "en": "Every time you said 'I'll do it for you,'",
-      "scene": "S1-08"
+      "scene": "S1-08",
+      "audioFile": "audio/scene-S1-08.mp3",
+      "audioStart": 0,
+      "audioEnd": 1840
     },
     {
       "zh": "他就少一次“我自己做”。",
       "en": "he lost one chance to do it himself.",
-      "scene": "S1-08"
+      "scene": "S1-08",
+      "audioFile": "audio/scene-S1-08.mp3",
+      "audioStart": 1840,
+      "audioEnd": 4441
     },
     {
       "zh": "心理学里有个理论：",
       "en": "There's a theory in psychology:",
-      "scene": "S1-09"
+      "scene": "S1-09",
+      "audioFile": "audio/scene-S1-09.mp3",
+      "audioStart": 0,
+      "audioEnd": 2480
     },
     {
       "zh": "一个人长期被怀疑，",
       "en": "when someone is doubted for long enough,",
-      "scene": "S1-09"
+      "scene": "S1-09",
+      "audioFile": "audio/scene-S1-09.mp3",
+      "audioStart": 2480,
+      "audioEnd": 4080
     },
     {
       "zh": "他就主动放弃自己。",
       "en": "they give up on themselves.",
-      "scene": "S1-09"
+      "scene": "S1-09",
+      "audioFile": "audio/scene-S1-09.mp3",
+      "audioStart": 4080,
+      "audioEnd": 5956
     },
     {
       "zh": "更何况你面前是一个十二三岁的孩子。",
       "en": "And remember—the person in front of you is just twelve or thirteen.",
-      "scene": "S1-10"
+      "scene": "S1-10",
+      "audioFile": "audio/scene-S1-10.mp3",
+      "audioStart": 0,
+      "audioEnd": 3631
     },
     {
       "zh": "神经科学早就讲清楚了，",
       "en": "Neuroscience has been clear on this for years:",
-      "scene": "S1-11"
+      "scene": "S1-11",
+      "audioFile": "audio/scene-S1-11.mp3",
+      "audioStart": 0,
+      "audioEnd": 2400
     },
     {
       "zh": "人的前额叶——大脑里主管自控的那块区域——",
       "en": "the prefrontal cortex—the part of the brain that runs self-control—",
-      "scene": "S1-11"
+      "scene": "S1-11",
+      "audioFile": "audio/scene-S1-11.mp3",
+      "audioStart": 2400,
+      "audioEnd": 6240
     },
     {
       "zh": "要到二十五岁才完全长好。",
       "en": "doesn't fully mature until you're twenty-five.",
-      "scene": "S1-11"
+      "scene": "S1-11",
+      "audioFile": "audio/scene-S1-11.mp3",
+      "audioStart": 6240,
+      "audioEnd": 9064
     },
     {
       "zh": "一个初中生的执行能力，",
       "en": "A middle schooler's executive function,",
-      "scene": "S1-12"
+      "scene": "S1-12",
+      "audioFile": "audio/scene-S1-12.mp3",
+      "audioStart": 0,
+      "audioEnd": 1920
     },
     {
       "zh": "在神经层面相当于成年人的一半。",
       "en": "at the neural level, is about half an adult's.",
-      "scene": "S1-12"
+      "scene": "S1-12",
+      "audioFile": "audio/scene-S1-12.mp3",
+      "audioStart": 1920,
+      "audioEnd": 5303
     },
     {
       "zh": "他不是不想自律，",
       "en": "It's not that he doesn't want to be disciplined—",
-      "scene": "S1-13"
+      "scene": "S1-13",
+      "audioFile": "audio/scene-S1-13.mp3",
+      "audioStart": 0,
+      "audioEnd": 1440
     },
     {
       "zh": "是脑子还没长齐。",
       "en": "his brain just isn't there yet.",
-      "scene": "S1-13"
+      "scene": "S1-13",
+      "audioFile": "audio/scene-S1-13.mp3",
+      "audioStart": 1440,
+      "audioEnd": 3396
     },
     {
       "zh": "这个年纪的他需要的是被相信、被引导；",
       "en": "What he needs at this age is to be trusted, to be guided.",
-      "scene": "S1-14"
+      "scene": "S1-14",
+      "audioFile": "audio/scene-S1-14.mp3",
+      "audioStart": 0,
+      "audioEnd": 3553
     },
     {
       "zh": "可你给他的，是埋怨、是怒吼，",
       "en": "Instead, what you give him is complaint, shouting,",
-      "scene": "S1-15"
+      "scene": "S1-15",
+      "audioFile": "audio/scene-S1-15.mp3",
+      "audioStart": 0,
+      "audioEnd": 2960
     },
     {
       "zh": "最严重的时候，是你抬起来的手。",
       "en": "and at the worst moments, your raised hand.",
-      "scene": "S1-15"
+      "scene": "S1-15",
+      "audioFile": "audio/scene-S1-15.mp3",
+      "audioStart": 2960,
+      "audioEnd": 6269
     },
     {
       "zh": "结果就是，你不吼三遍他不挪一步，",
       "en": "And so: three shouts and he won't budge,",
-      "scene": "S1-16"
+      "scene": "S1-16",
+      "audioFile": "audio/scene-S1-16.mp3",
+      "audioStart": 0,
+      "audioEnd": 3840
     },
     {
       "zh": "非得你扬起手中的戒尺，他才肯动笔。",
       "en": "only when you raise the ruler does he pick up his pen.",
-      "scene": "S1-16"
+      "scene": "S1-16",
+      "audioFile": "audio/scene-S1-16.mp3",
+      "audioStart": 3840,
+      "audioEnd": 7236
     },
     {
       "zh": "他对你说的话早就免疫了。",
       "en": "Your words have stopped landing on him long ago.",
-      "scene": "S1-17"
+      "scene": "S1-17",
+      "audioFile": "audio/scene-S1-17.mp3",
+      "audioStart": 0,
+      "audioEnd": 2194
     },
     {
       "zh": "于是他学会了在你面前装样子。",
       "en": "So he learned to put on a show in front of you.",
-      "scene": "S1-18"
+      "scene": "S1-18",
+      "audioFile": "audio/scene-S1-18.mp3",
+      "audioStart": 0,
+      "audioEnd": 2847
     },
     {
       "zh": "每天作业糊弄过去应付公差，",
       "en": "Every day's homework is just clocking in,",
-      "scene": "S1-19"
+      "scene": "S1-19",
+      "audioFile": "audio/scene-S1-19.mp3",
+      "audioStart": 0,
+      "audioEnd": 3200
     },
     {
       "zh": "前一天的错题你不催他就不改；",
       "en": "yesterday's mistakes don't get touched unless you push.",
-      "scene": "S1-19"
+      "scene": "S1-19",
+      "audioFile": "audio/scene-S1-19.mp3",
+      "audioStart": 3200,
+      "audioEnd": 6113
     },
     {
       "zh": "阅读理解从来不读原文，",
       "en": "He never actually reads the passage,",
-      "scene": "S1-20"
+      "scene": "S1-20",
+      "audioFile": "audio/scene-S1-20.mp3",
+      "audioStart": 0,
+      "audioEnd": 2160
     },
     {
       "zh": "直接翻到题目蒙答案；",
       "en": "he flips to the questions and guesses.",
-      "scene": "S1-20"
+      "scene": "S1-20",
+      "audioFile": "audio/scene-S1-20.mp3",
+      "audioStart": 2160,
+      "audioEnd": 4519
     },
     {
       "zh": "能写五言律诗的绝不写七言绝句，",
       "en": "If a five-character poem will do, he won't write a seven-character one,",
-      "scene": "S1-21"
+      "scene": "S1-21",
+      "audioFile": "audio/scene-S1-21.mp3",
+      "audioStart": 0,
+      "audioEnd": 3788
     },
     {
       "zh": "试卷上的阅读理解更是多一个字都不写。",
       "en": "and on a reading-comprehension test he won't write a single extra character.",
-      "scene": "S1-22"
+      "scene": "S1-22",
+      "audioFile": "audio/scene-S1-22.mp3",
+      "audioStart": 0,
+      "audioEnd": 4284
     },
     {
       "zh": "过程投入不够，",
       "en": "Not enough effort in the process—",
-      "scene": "S1-23"
+      "scene": "S1-23",
+      "audioFile": "audio/scene-S1-23.mp3",
+      "audioStart": 0,
+      "audioEnd": 1600
     },
     {
       "zh": "考试结果全靠运气吗？",
       "en": "and the test results are just luck?",
-      "scene": "S1-23"
+      "scene": "S1-23",
+      "audioFile": "audio/scene-S1-23.mp3",
+      "audioStart": 1600,
+      "audioEnd": 3553
     },
     {
       "zh": "别跟我说成绩不重要，",
       "en": "Don't tell me grades don't matter.",
-      "scene": "S1-77"
+      "scene": "S1-77",
+      "audioFile": "audio/scene-S1-77.mp3",
+      "audioStart": 0,
+      "audioEnd": 1680
     },
     {
       "zh": "当下教育制度最公平的就是我们的高考成绩。",
       "en": "The fairest thing in our current education system is the gaokao score.",
-      "scene": "S1-77"
+      "scene": "S1-77",
+      "audioFile": "audio/scene-S1-77.mp3",
+      "audioStart": 1680,
+      "audioEnd": 5878
     },
     {
       "zh": "真正在悄悄消失的，",
       "en": "What's quietly slipping away,",
-      "scene": "S1-24"
+      "scene": "S1-24",
+      "audioFile": "audio/scene-S1-24.mp3",
+      "audioStart": 0,
+      "audioEnd": 1760
     },
     {
       "zh": "是他将来选自己人生的权利。",
       "en": "is his future right to choose his own life.",
-      "scene": "S1-24"
+      "scene": "S1-24",
+      "audioFile": "audio/scene-S1-24.mp3",
+      "audioStart": 1760,
+      "audioEnd": 4519
     },
     {
       "zh": "现在他偷掉的每一道题、",
       "en": "Every problem he skipped today,",
-      "scene": "S1-25"
+      "scene": "S1-25",
+      "audioFile": "audio/scene-S1-25.mp3",
+      "audioStart": 0,
+      "audioEnd": 2560
     },
     {
       "zh": "躲掉的每一篇课文、",
       "en": "every passage he dodged,",
-      "scene": "S1-25"
+      "scene": "S1-25",
+      "audioFile": "audio/scene-S1-25.mp3",
+      "audioStart": 2560,
+      "audioEnd": 4160
     },
     {
       "zh": "拖到第二天的每一个早晨，",
       "en": "every morning he pushed to tomorrow—",
-      "scene": "S1-25"
+      "scene": "S1-25",
+      "audioFile": "audio/scene-S1-25.mp3",
+      "audioStart": 4160,
+      "audioEnd": 6504
     },
     {
       "zh": "将来都会让他举步维艰。",
       "en": "later on, every step will become an uphill battle.",
-      "scene": "S1-26"
+      "scene": "S1-26",
+      "audioFile": "audio/scene-S1-26.mp3",
+      "audioStart": 0,
+      "audioEnd": 2743
     },
     {
       "zh": "该读书的年龄放纵他偷懒，",
       "en": "Let him slack off in the years made for learning,",
-      "scene": "S1-27"
+      "scene": "S1-27",
+      "audioFile": "audio/scene-S1-27.mp3",
+      "audioStart": 0,
+      "audioEnd": 2400
     },
     {
       "zh": "他后半生将会寸步难行。",
       "en": "and the rest of his life he won't be able to move an inch.",
-      "scene": "S1-27"
+      "scene": "S1-27",
+      "audioFile": "audio/scene-S1-27.mp3",
+      "audioStart": 2400,
+      "audioEnd": 4911
     },
     {
       "zh": "是苦这几年和苦后半辈子，",
       "en": "Three hard years now, or forty hard years later—",
-      "scene": "S1-28"
+      "scene": "S1-28",
+      "audioFile": "audio/scene-S1-28.mp3",
+      "audioStart": 0,
+      "audioEnd": 3200
     },
     {
       "zh": "我相信各位家长都知道选哪个。",
       "en": "I trust every parent knows which to pick.",
-      "scene": "S1-28"
+      "scene": "S1-28",
+      "audioFile": "audio/scene-S1-28.mp3",
+      "audioStart": 3200,
+      "audioEnd": 5878
     },
     {
       "zh": "想让他蜕变，得你先蜕变。",
       "en": "If you want him to transform, you transform first.",
-      "scene": "S1-29"
+      "scene": "S1-29",
+      "audioFile": "audio/scene-S1-29.mp3",
+      "audioStart": 0,
+      "audioEnd": 2743
     },
     {
       "zh": "从今天起把吼声咽回去。",
       "en": "Starting today, swallow the shouting back down.",
-      "scene": "S1-30"
+      "scene": "S1-30",
+      "audioFile": "audio/scene-S1-30.mp3",
+      "audioStart": 0,
+      "audioEnd": 2664
     },
     {
       "zh": "今天他书写比昨天工整，",
       "en": "His handwriting today is neater than yesterday,",
-      "scene": "S1-31"
+      "scene": "S1-31",
+      "audioFile": "audio/scene-S1-31.mp3",
+      "audioStart": 0,
+      "audioEnd": 2480
     },
     {
       "zh": "老师在群里夸他举手积极，",
       "en": "the teacher said in the group chat that he was active in class—",
-      "scene": "S1-31"
+      "scene": "S1-31",
+      "audioFile": "audio/scene-S1-31.mp3",
+      "audioStart": 2480,
+      "audioEnd": 4960
     },
     {
       "zh": "这种小到看不见的事，你要不吝赞美之词，回家立刻表扬。",
       "en": "for these tiny things, don't hold back your praise—go home and say it right away.",
-      "scene": "S1-31"
+      "scene": "S1-31",
+      "audioFile": "audio/scene-S1-31.mp3",
+      "audioStart": 4960,
+      "audioEnd": 10344
     },
     {
       "zh": "一个十几岁的孩子，",
       "en": "For a kid in his teens,",
-      "scene": "S1-32"
+      "scene": "S1-32",
+      "audioFile": "audio/scene-S1-32.mp3",
+      "audioStart": 0,
+      "audioEnd": 1760
     },
     {
       "zh": "从爸爸嘴里听到一句真心的“今天这件事你做得不错”，",
       "en": "one real 'you did this well today' from his dad,",
-      "scene": "S1-32"
+      "scene": "S1-32",
+      "audioFile": "audio/scene-S1-32.mp3",
+      "audioStart": 1760,
+      "audioEnd": 7120
     },
     {
       "zh": "比你骂他一百句都管用。",
       "en": "is worth a hundred scoldings.",
-      "scene": "S1-32"
+      "scene": "S1-32",
+      "audioFile": "audio/scene-S1-32.mp3",
+      "audioStart": 7120,
+      "audioEnd": 8986
     },
     {
       "zh": "包办的手也要收回去。",
       "en": "The over-helping hands have to come back too.",
-      "scene": "S1-33"
+      "scene": "S1-33",
+      "audioFile": "audio/scene-S1-33.mp3",
+      "audioStart": 0,
+      "audioEnd": 2038
     },
     {
       "zh": "男孩子在这个年纪你别什么都护着，",
       "en": "A boy this age—stop protecting him from everything.",
-      "scene": "S1-34"
+      "scene": "S1-34",
+      "audioFile": "audio/scene-S1-34.mp3",
+      "audioStart": 0,
+      "audioEnd": 3161
     },
     {
       "zh": "摔个跟头、蹭破点皮没关系；",
       "en": "Let him fall, scrape a knee—it's fine.",
-      "scene": "S1-35"
+      "scene": "S1-35",
+      "audioFile": "audio/scene-S1-35.mp3",
+      "audioStart": 0,
+      "audioEnd": 2508
     },
     {
       "zh": "坐错一次公交，",
       "en": "Take the wrong bus once,",
-      "scene": "S1-36"
+      "scene": "S1-36",
+      "audioFile": "audio/scene-S1-36.mp3",
+      "audioStart": 0,
+      "audioEnd": 1200
     },
     {
       "zh": "买东西被坑一回，",
       "en": "get ripped off once,",
-      "scene": "S1-36"
+      "scene": "S1-36",
+      "audioFile": "audio/scene-S1-36.mp3",
+      "audioStart": 1200,
+      "audioEnd": 2640
     },
     {
       "zh": "都是他成长的过程。",
       "en": "all part of how he grows.",
-      "scene": "S1-36"
+      "scene": "S1-36",
+      "audioFile": "audio/scene-S1-36.mp3",
+      "audioStart": 2640,
+      "audioEnd": 4441
     },
     {
       "zh": "你越什么都替他兜底，他越长成个豆芽菜；",
       "en": "The more you cushion everything, the more he grows into a beansprout.",
-      "scene": "S1-37"
+      "scene": "S1-37",
+      "audioFile": "audio/scene-S1-37.mp3",
+      "audioStart": 0,
+      "audioEnd": 3840
     },
     {
       "zh": "你舍得让他野一点，他的翅膀硬得越快。",
       "en": "loosen the grip, and his wings get stronger faster.",
-      "scene": "S1-37"
+      "scene": "S1-37",
+      "audioFile": "audio/scene-S1-37.mp3",
+      "audioStart": 3840,
+      "audioEnd": 8124
     },
     {
       "zh": "十几岁的男孩子没经历点小挫折，",
       "en": "a boy in his teens with no small setbacks—",
-      "scene": "S1-38"
+      "scene": "S1-38",
+      "audioFile": "audio/scene-S1-38.mp3",
+      "audioStart": 0,
+      "audioEnd": 3440
     },
     {
       "zh": "到二十几岁碰上真事的时候才叫慌。",
       "en": "is the one who panics when real things come at twenty-something.",
-      "scene": "S1-38"
+      "scene": "S1-38",
+      "audioFile": "audio/scene-S1-38.mp3",
+      "audioStart": 3440,
+      "audioEnd": 7158
     },
     {
       "zh": "然后做你欠他的那件事——",
       "en": "Then do the one thing you owe him—",
-      "scene": "S1-39"
+      "scene": "S1-39",
+      "audioFile": "audio/scene-S1-39.mp3",
+      "audioStart": 0,
+      "audioEnd": 2080
     },
     {
       "zh": "不再给他布置任务，",
       "en": "stop assigning him tasks,",
-      "scene": "S1-39"
+      "scene": "S1-39",
+      "audioFile": "audio/scene-S1-39.mp3",
+      "audioStart": 2080,
+      "audioEnd": 3440
     },
     {
       "zh": "而是跟他一起做一件有成就的事。",
       "en": "and start one thing together with him—something that means something.",
-      "scene": "S1-39"
+      "scene": "S1-39",
+      "audioFile": "audio/scene-S1-39.mp3",
+      "audioStart": 3440,
+      "audioEnd": 6269
     },
     {
       "zh": "我家住十一楼。",
       "en": "We live on the eleventh floor.",
-      "scene": "S1-40"
+      "scene": "S1-40",
+      "audioFile": "audio/scene-S1-40.mp3",
+      "audioStart": 0,
+      "audioEnd": 1567
     },
     {
       "zh": "我跟他商量：“要不然你陪我一块儿，咱俩去爬楼吧。”",
       "en": "I asked him: 'How about you keep me company—let's climb the stairs together.'",
-      "scene": "S1-42"
+      "scene": "S1-42",
+      "audioFile": "audio/scene-S1-42.mp3",
+      "audioStart": 0,
+      "audioEnd": 5224
     },
     {
       "zh": "我没把这事说成是给他布置的功课，",
       "en": "I never framed it as homework for him,",
-      "scene": "S1-43"
+      "scene": "S1-43",
+      "audioFile": "audio/scene-S1-43.mp3",
+      "audioStart": 0,
+      "audioEnd": 3040
     },
     {
       "zh": "是我俩一起开始的一件事。",
       "en": "it was something the two of us started together.",
-      "scene": "S1-43"
+      "scene": "S1-43",
+      "audioFile": "audio/scene-S1-43.mp3",
+      "audioStart": 3040,
+      "audioEnd": 5068
     },
     {
       "zh": "早上一趟、放学一趟、晚上一趟。",
       "en": "Once in the morning, once after school, once at night.",
-      "scene": "S1-44"
+      "scene": "S1-44",
+      "audioFile": "audio/scene-S1-44.mp3",
+      "audioStart": 0,
+      "audioEnd": 3082
     },
     {
       "zh": "不过我们只往上爬，下楼坐电梯——",
       "en": "But we only walk up—we take the elevator down—",
-      "scene": "S1-45"
+      "scene": "S1-45",
+      "audioFile": "audio/scene-S1-45.mp3",
+      "audioStart": 0,
+      "audioEnd": 3553
     },
     {
       "zh": "下楼时膝盖承受的冲击是上楼的三倍多；",
       "en": "going down, your knees take more than three times the impact of going up.",
-      "scene": "S1-46"
+      "scene": "S1-46",
+      "audioFile": "audio/scene-S1-46.mp3",
+      "audioStart": 0,
+      "audioEnd": 4206
     },
     {
       "zh": "我们不是吃完晚饭爬，",
       "en": "We don't climb after dinner,",
-      "scene": "S1-78"
+      "scene": "S1-78",
+      "audioFile": "audio/scene-S1-78.mp3",
+      "audioStart": 0,
+      "audioEnd": 1680
     },
     {
       "zh": "而是饭前空腹开始。",
       "en": "we start before dinner, on an empty stomach.",
-      "scene": "S1-78"
+      "scene": "S1-78",
+      "audioFile": "audio/scene-S1-78.mp3",
+      "audioStart": 1680,
+      "audioEnd": 3788
     },
     {
       "zh": "一开始只听到我俩的粗喘，",
       "en": "at first, all you'd hear was the two of us gasping,",
-      "scene": "S1-47"
+      "scene": "S1-47",
+      "audioFile": "audio/scene-S1-47.mp3",
+      "audioStart": 0,
+      "audioEnd": 2320
     },
     {
       "zh": "第二天腿和肚皮疼，膝盖倒不疼。",
       "en": "next day our legs and bellies ached—but not the knees.",
-      "scene": "S1-47"
+      "scene": "S1-47",
+      "audioFile": "audio/scene-S1-47.mp3",
+      "audioStart": 2320,
+      "audioEnd": 5721
     },
     {
       "zh": "一个月之后，能边爬边聊几句白天的事；",
       "en": "A month in, we could chat along the way about the day,",
-      "scene": "S1-48"
+      "scene": "S1-48",
+      "audioFile": "audio/scene-S1-48.mp3",
+      "audioStart": 0,
+      "audioEnd": 3600
     },
     {
       "zh": "突然有一天，他跟我讲起同学在学校里说他的一句话——",
       "en": "one day, he told me something a classmate said about him at school—",
-      "scene": "S1-48"
+      "scene": "S1-48",
+      "audioFile": "audio/scene-S1-48.mp3",
+      "audioStart": 3600,
+      "audioEnd": 8640
     },
     {
       "zh": "这种话他以前打死也不会跟我说。",
       "en": "the kind of thing he would never have told me before.",
-      "scene": "S1-48"
+      "scene": "S1-48",
+      "audioFile": "audio/scene-S1-48.mp3",
+      "audioStart": 8640,
+      "audioEnd": 11546
     },
     {
       "zh": "三个月下来，我俩都瘦了十几斤。",
       "en": "Three months in, we'd each dropped over ten pounds.",
-      "scene": "S1-49"
+      "scene": "S1-49",
+      "audioFile": "audio/scene-S1-49.mp3",
+      "audioStart": 0,
+      "audioEnd": 3318
     },
     {
       "zh": "有一个强壮的身体，比学习成绩更重要。",
       "en": "A strong body matters more than any grade.",
-      "scene": "S1-79"
+      "scene": "S1-79",
+      "audioFile": "audio/scene-S1-79.mp3",
+      "audioStart": 0,
+      "audioEnd": 3553
     },
     {
       "zh": "爬到八楼，谁也讲不出整句，只听见两个人的呼吸；",
       "en": "By the eighth floor, neither of us can finish a sentence—you just hear our breathing.",
-      "scene": "S1-51"
+      "scene": "S1-51",
+      "audioFile": "audio/scene-S1-51.mp3",
+      "audioStart": 0,
+      "audioEnd": 6400
     },
     {
       "zh": "原本想顶的嘴、想吵的架，到十一楼也都算了。",
       "en": "all the arguments we'd planned—gone by the eleventh floor.",
-      "scene": "S1-51"
+      "scene": "S1-51",
+      "audioFile": "audio/scene-S1-51.mp3",
+      "audioStart": 6400,
+      "audioEnd": 11886
     },
     {
       "zh": "这种一块儿坚持下来的成就感，",
       "en": "The sense of accomplishment you build side by side,",
-      "scene": "S1-52"
+      "scene": "S1-52",
+      "audioFile": "audio/scene-S1-52.mp3",
+      "audioStart": 0,
+      "audioEnd": 2320
     },
     {
       "zh": "是骂十年都骂不出来的。",
       "en": "no ten years of scolding could ever give you.",
-      "scene": "S1-52"
+      "scene": "S1-52",
+      "audioFile": "audio/scene-S1-52.mp3",
+      "audioStart": 2320,
+      "audioEnd": 4441
     },
     {
       "zh": "现在他也不再把自己关在房间里“学习”，",
       "en": "Now he no longer locks himself in his room to 'study'—",
-      "scene": "S1-53"
+      "scene": "S1-53",
+      "audioFile": "audio/scene-S1-53.mp3",
+      "audioStart": 0,
+      "audioEnd": 3788
     },
     {
       "zh": "我们一起在餐桌上，",
       "en": "we sit at the dining table together,",
-      "scene": "S1-54"
+      "scene": "S1-54",
+      "audioFile": "audio/scene-S1-54.mp3",
+      "audioStart": 0,
+      "audioEnd": 1600
     },
     {
       "zh": "他写作业，",
       "en": "he does his homework,",
-      "scene": "S1-54"
+      "scene": "S1-54",
+      "audioFile": "audio/scene-S1-54.mp3",
+      "audioStart": 1600,
+      "audioEnd": 3396
     },
     {
       "zh": "我写他的字帖练字；",
       "en": "I practice on his calligraphy book stroke by stroke;",
-      "scene": "S1-55"
+      "scene": "S1-55",
+      "audioFile": "audio/scene-S1-55.mp3",
+      "audioStart": 0,
+      "audioEnd": 1600
     },
     {
       "zh": "练累了就翻开他的《朝花夕拾》《骆驼祥子》一页一页读。",
       "en": "when my hand gets tired I pick up his books and read a page at a time.",
-      "scene": "S1-55"
+      "scene": "S1-55",
+      "audioFile": "audio/scene-S1-55.mp3",
+      "audioStart": 1600,
+      "audioEnd": 6844
     },
     {
       "zh": "他抬头能看见我也在写、也在皱眉、也在喝口水歇一下——",
       "en": "When he looks up he sees me writing too, frowning too, taking a sip of water too—",
-      "scene": "S1-56"
+      "scene": "S1-56",
+      "audioFile": "audio/scene-S1-56.mp3",
+      "audioStart": 0,
+      "audioEnd": 5280
     },
     {
       "zh": "不是被人盯着写，是被人陪着写。",
       "en": "not being watched as he writes, being accompanied.",
-      "scene": "S1-56"
+      "scene": "S1-56",
+      "audioFile": "audio/scene-S1-56.mp3",
+      "audioStart": 5280,
+      "audioEnd": 8281
     },
     {
       "zh": "这种安静，比你坐在他身后骂他半个钟头管用得多。",
       "en": "This kind of quiet beats half an hour of scolding behind his back.",
-      "scene": "S1-57"
+      "scene": "S1-57",
+      "audioFile": "audio/scene-S1-57.mp3",
+      "audioStart": 0,
+      "audioEnd": 4519
     },
     {
       "zh": "一个孩子愿意在父母身边写完一道题，",
       "en": "A child willing to finish one problem at his parents' side,",
-      "scene": "S1-58"
+      "scene": "S1-58",
+      "audioFile": "audio/scene-S1-58.mp3",
+      "audioStart": 0,
+      "audioEnd": 2800
     },
     {
       "zh": "比他自己关在屋里熬一晚都强。",
       "en": "is worth more than him grinding alone in his room all night.",
-      "scene": "S1-58"
+      "scene": "S1-58",
+      "audioFile": "audio/scene-S1-58.mp3",
+      "audioStart": 2800,
+      "audioEnd": 5564
     },
     {
       "zh": "再就是要注意：电子产品要严管。",
       "en": "One more thing to watch: be strict about screens.",
-      "scene": "S1-59"
+      "scene": "S1-59",
+      "audioFile": "audio/scene-S1-59.mp3",
+      "audioStart": 0,
+      "audioEnd": 3239
     },
     {
       "zh": "今年寒假，他每次找我要 Switch 之前，",
       "en": "This past winter break, every time he wanted the Switch,",
-      "scene": "S1-60"
+      "scene": "S1-60",
+      "audioFile": "audio/scene-S1-60.mp3",
+      "audioStart": 0,
+      "audioEnd": 4640
     },
     {
       "zh": "都得先背诵十二首诗，",
       "en": "he had to first recite twelve poems,",
-      "scene": "S1-60"
+      "scene": "S1-60",
+      "audioFile": "audio/scene-S1-60.mp3",
+      "audioStart": 4640,
+      "audioEnd": 6480
     },
     {
       "zh": "包括《木兰诗》全文。",
       "en": "the full Ballad of Mulan included.",
-      "scene": "S1-60"
+      "scene": "S1-60",
+      "audioFile": "audio/scene-S1-60.mp3",
+      "audioStart": 6480,
+      "audioEnd": 7471
     },
     {
       "zh": "整个寒假下来你会发现，",
       "en": "By the end of the break you realize:",
-      "scene": "S1-80"
+      "scene": "S1-80",
+      "audioFile": "audio/scene-S1-80.mp3",
+      "audioStart": 0,
+      "audioEnd": 2640
     },
     {
       "zh": "他不是做不到，只是想不想做——",
       "en": "it's not that he can't do it, it's just whether he wants to—",
-      "scene": "S1-80"
+      "scene": "S1-80",
+      "audioFile": "audio/scene-S1-80.mp3",
+      "audioStart": 2640,
+      "audioEnd": 5360
     },
     {
       "zh": "这就是自驱力。",
       "en": "that right there is self-drive.",
-      "scene": "S1-80"
+      "scene": "S1-80",
+      "audioFile": "audio/scene-S1-80.mp3",
+      "audioStart": 5360,
+      "audioEnd": 7236
     },
     {
       "zh": "他具备这个实力，",
       "en": "He has what it takes,",
-      "scene": "S1-81"
+      "scene": "S1-81",
+      "audioFile": "audio/scene-S1-81.mp3",
+      "audioStart": 0,
+      "audioEnd": 1520
     },
     {
       "zh": "差的只是需要给他一道门槛、让他自己跨过去。",
       "en": "what's missing is just a bar set for him to step over himself.",
-      "scene": "S1-81"
+      "scene": "S1-81",
+      "audioFile": "audio/scene-S1-81.mp3",
+      "audioStart": 1520,
+      "audioEnd": 5407
     },
     {
       "zh": "不是怕他打游戏，",
       "en": "It's not the games I'm afraid of,",
-      "scene": "S1-61"
+      "scene": "S1-61",
+      "audioFile": "audio/scene-S1-61.mp3",
+      "audioStart": 0,
+      "audioEnd": 1840
     },
     {
       "zh": "是十几岁的脑子还撑不住短视频那种 15 秒一刺激的节奏，",
       "en": "it's that a teenage brain can't hold up to short-video's hit-every-fifteen-seconds rhythm—",
-      "scene": "S1-61"
+      "scene": "S1-61",
+      "audioFile": "audio/scene-S1-61.mp3",
+      "audioStart": 1840,
+      "audioEnd": 6720
     },
     {
       "zh": "不用半年专注力就废了，",
       "en": "half a year of scrolling kills attention,",
-      "scene": "S1-61"
+      "scene": "S1-61",
+      "audioFile": "audio/scene-S1-61.mp3",
+      "audioStart": 6720,
+      "audioEnd": 8960
     },
     {
       "zh": "再想拉回来要花三年。",
       "en": "and three years to claw it back.",
-      "scene": "S1-61"
+      "scene": "S1-61",
+      "audioFile": "audio/scene-S1-61.mp3",
+      "audioStart": 8960,
+      "audioEnd": 11468
     },
     {
       "zh": "这条线我打算守到他高中毕业。",
       "en": "I'm holding this line until he graduates high school.",
-      "scene": "S1-62"
+      "scene": "S1-62",
+      "audioFile": "audio/scene-S1-62.mp3",
+      "audioStart": 0,
+      "audioEnd": 2640
     },
     {
       "zh": "爹妈帮孩子守住前额叶长齐的这十年，",
       "en": "Parents shielding a kid's prefrontal cortex through these ten years,",
-      "scene": "S1-62"
+      "scene": "S1-62",
+      "audioFile": "audio/scene-S1-62.mp3",
+      "audioStart": 2640,
+      "audioEnd": 6640
     },
     {
       "zh": "比给他买什么都值。",
       "en": "is worth more than any gift you'll ever give him.",
-      "scene": "S1-62"
+      "scene": "S1-62",
+      "audioFile": "audio/scene-S1-62.mp3",
+      "audioStart": 6640,
+      "audioEnd": 8202
     },
     {
       "zh": "你担心他考不进重点高中——",
       "en": "You worry he won't get into the top high school—",
-      "scene": "S1-64"
+      "scene": "S1-64",
+      "audioFile": "audio/scene-S1-64.mp3",
+      "audioStart": 0,
+      "audioEnd": 2240
     },
     {
       "zh": "你更该担心的，",
       "en": "what you should worry about more,",
-      "scene": "S1-64"
+      "scene": "S1-64",
+      "audioFile": "audio/scene-S1-64.mp3",
+      "audioStart": 2240,
+      "audioEnd": 3840
     },
     {
       "zh": "是他有没有一副好身体撑过未来十年的学业。",
       "en": "is whether his body can carry him through the next ten years of school.",
-      "scene": "S1-64"
+      "scene": "S1-64",
+      "audioFile": "audio/scene-S1-64.mp3",
+      "audioStart": 3840,
+      "audioEnd": 7784
     },
     {
       "zh": "重点高中考不上还能再考，",
       "en": "Top high school? You can take the test again.",
-      "scene": "S1-65"
+      "scene": "S1-65",
+      "audioFile": "audio/scene-S1-65.mp3",
+      "audioStart": 0,
+      "audioEnd": 2320
     },
     {
       "zh": "专业选错了还能再换，",
       "en": "Wrong major? You can change it.",
-      "scene": "S1-65"
+      "scene": "S1-65",
+      "audioFile": "audio/scene-S1-65.mp3",
+      "audioStart": 2320,
+      "audioEnd": 4560
     },
     {
       "zh": "身体若是再不好？细思极恐。",
       "en": "But if his body breaks down, none of the rest helps.",
-      "scene": "S1-65"
+      "scene": "S1-65",
+      "audioFile": "audio/scene-S1-65.mp3",
+      "audioStart": 4560,
+      "audioEnd": 7471
     },
     {
       "zh": "一个熬到凌晨两点、",
       "en": "A kid up till two a.m. studying,",
-      "scene": "S1-66"
+      "scene": "S1-66",
+      "audioFile": "audio/scene-S1-66.mp3",
+      "audioStart": 0,
+      "audioEnd": 1680
     },
     {
       "zh": "近视八百度、",
       "en": "eight hundred degrees of myopia,",
-      "scene": "S1-66"
+      "scene": "S1-66",
+      "audioFile": "audio/scene-S1-66.mp3",
+      "audioStart": 1680,
+      "audioEnd": 3120
     },
     {
       "zh": "坐十分钟就腰酸背痛的孩子，",
       "en": "a back that aches after ten minutes of sitting—",
-      "scene": "S1-66"
+      "scene": "S1-66",
+      "audioFile": "audio/scene-S1-66.mp3",
+      "audioStart": 3120,
+      "audioEnd": 6080
     },
     {
       "zh": "就算考上好大学，又能做什么。",
       "en": "even if he makes it into a top college, he won't last to graduation.",
-      "scene": "S1-66"
+      "scene": "S1-66",
+      "audioFile": "audio/scene-S1-66.mp3",
+      "audioStart": 6080,
+      "audioEnd": 8908
     },
     {
       "zh": "孩子的健康，永远排在成绩前面。",
       "en": "A child's health always comes before his grades.",
-      "scene": "S1-67"
+      "scene": "S1-67",
+      "audioFile": "audio/scene-S1-67.mp3",
+      "audioStart": 0,
+      "audioEnd": 3360
     },
     {
       "zh": "这不是放纵，是底线。",
       "en": "That's not indulgence—that's the bottom line.",
-      "scene": "S1-67"
+      "scene": "S1-67",
+      "audioFile": "audio/scene-S1-67.mp3",
+      "audioStart": 3360,
+      "audioEnd": 5721
     },
     {
       "zh": "别急。",
       "en": "Don't rush.",
-      "scene": "S1-68"
+      "scene": "S1-68",
+      "audioFile": "audio/scene-S1-68.mp3",
+      "audioStart": 0,
+      "audioEnd": 1149
     },
     {
       "zh": "罗马不是一天建成的，",
       "en": "Rome wasn't built in a day,",
-      "scene": "S1-82"
+      "scene": "S1-82",
+      "audioFile": "audio/scene-S1-82.mp3",
+      "audioStart": 0,
+      "audioEnd": 1881
     },
     {
       "zh": "这事不是一天熬出来的，也就不可能一周修好。",
       "en": "this wasn't built in a day, it can't be repaired in a week.",
-      "scene": "S1-69"
+      "scene": "S1-69",
+      "audioFile": "audio/scene-S1-69.mp3",
+      "audioStart": 0,
+      "audioEnd": 5200
     },
     {
       "zh": "他用了三年学会应付你，",
       "en": "He took three years to learn how to fake it for you,",
-      "scene": "S1-69"
+      "scene": "S1-69",
+      "audioFile": "audio/scene-S1-69.mp3",
+      "audioStart": 5200,
+      "audioEnd": 8320
     },
     {
       "zh": "你也要给自己三年陪他长回来。",
       "en": "give yourself three years to walk him back.",
-      "scene": "S1-69"
+      "scene": "S1-69",
+      "audioFile": "audio/scene-S1-69.mp3",
+      "audioStart": 8320,
+      "audioEnd": 11076
     },
     {
       "zh": "中途你会想发火、想算了，",
       "en": "Along the way you'll want to lose it, want to give up,",
-      "scene": "S1-70"
+      "scene": "S1-70",
+      "audioFile": "audio/scene-S1-70.mp3",
+      "audioStart": 0,
+      "audioEnd": 2640
     },
     {
       "zh": "不忘初心。",
       "en": "keep your original intention in mind.",
-      "scene": "S1-70"
+      "scene": "S1-70",
+      "audioFile": "audio/scene-S1-70.mp3",
+      "audioStart": 2640,
+      "audioEnd": 4023
     },
     {
       "zh": "如果今天看到这条的是孩子——",
       "en": "And if it's a kid watching this today—",
-      "scene": "S1-71"
+      "scene": "S1-71",
+      "audioFile": "audio/scene-S1-71.mp3",
+      "audioStart": 0,
+      "audioEnd": 2508
     },
     {
       "zh": "过去那些挨过的骂、错过的考试、躲掉的作业，",
       "en": "All the scoldings you took, the tests you failed, the homework you ducked,",
-      "scene": "S1-72"
+      "scene": "S1-72",
+      "audioFile": "audio/scene-S1-72.mp3",
+      "audioStart": 0,
+      "audioEnd": 3760
     },
     {
       "zh": "从今天起放下。",
       "en": "let them go from today.",
-      "scene": "S1-72"
+      "scene": "S1-72",
+      "audioFile": "audio/scene-S1-72.mp3",
+      "audioStart": 3760,
+      "audioEnd": 5799
     },
     {
       "zh": "不是要你原谅谁，",
       "en": "It's not about forgiving anyone,",
-      "scene": "S1-73"
+      "scene": "S1-73",
+      "audioFile": "audio/scene-S1-73.mp3",
+      "audioStart": 0,
+      "audioEnd": 1600
     },
     {
       "zh": "是别再让那些东西替你做选择。",
       "en": "it's about not letting them choose for you anymore.",
-      "scene": "S1-73"
+      "scene": "S1-73",
+      "audioFile": "audio/scene-S1-73.mp3",
+      "audioStart": 1600,
+      "audioEnd": 4441
     },
     {
       "zh": "明天可以是新的开始，下周一可以，下个月也可以。",
       "en": "Tomorrow can be a new start, so can next Monday, so can next month.",
-      "scene": "S1-74"
+      "scene": "S1-74",
+      "audioFile": "audio/scene-S1-74.mp3",
+      "audioStart": 0,
+      "audioEnd": 4160
     },
     {
       "zh": "越早开始，你就越早能看见一个不一样的自己。",
       "en": "The earlier you start, the sooner you meet a different version of yourself.",
-      "scene": "S1-74"
+      "scene": "S1-74",
+      "audioFile": "audio/scene-S1-74.mp3",
+      "audioStart": 4160,
+      "audioEnd": 7863
     },
     {
       "zh": "下次想偷懒的那一秒，",
       "en": "The second you feel like slacking off next time,",
-      "scene": "S1-75"
+      "scene": "S1-75",
+      "audioFile": "audio/scene-S1-75.mp3",
+      "audioStart": 0,
+      "audioEnd": 1760
     },
     {
       "zh": "把前面这几分钟讲过的画面调出来——",
       "en": "pull up the scenes from these last few minutes—",
-      "scene": "S1-75"
+      "scene": "S1-75",
+      "audioFile": "audio/scene-S1-75.mp3",
+      "audioStart": 1760,
+      "audioEnd": 4720
     },
     {
       "zh": "如果你不想十年后是那个被选择的人。",
       "en": "if you don't want to be the one ten years from now who only gets chosen.",
-      "scene": "S1-75"
+      "scene": "S1-75",
+      "audioFile": "audio/scene-S1-75.mp3",
+      "audioStart": 4720,
+      "audioEnd": 7967
     },
     {
       "zh": "愿你和他，都能在还来得及的时候，",
       "en": "May you and him, while there's still time,",
-      "scene": "S1-76"
+      "scene": "S1-76",
+      "audioFile": "audio/scene-S1-76.mp3",
+      "audioStart": 0,
+      "audioEnd": 3200
     },
     {
       "zh": "把那扇关了很久的门，一起推开。",
       "en": "push open that long-closed door together.",
-      "scene": "S1-76"
+      "scene": "S1-76",
+      "audioFile": "audio/scene-S1-76.mp3",
+      "audioStart": 3200,
+      "audioEnd": 6348
     }
   ],
   "scenes": {
@@ -2587,28 +3028,7 @@
         "duration": 700
       },
       "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "PULL",
-          "pos": {
-            "x": 61.5,
-            "y": 49
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "一起推开"
-          },
-          "style": {
-            "font": "ZQK Dundun",
-            "size": 72,
-            "color": "#d20404",
-            "preset": "os-callout-red"
-          }
-        }
-      ]
+      "overlays": []
     },
     "S1-77": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。画面正中一张高考准考证剪影，旁边一杆天平秤指针稳稳地立在正中。两侧大量留白，强调 \"最公平\"。",

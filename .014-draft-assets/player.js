@@ -1,10 +1,10 @@
 /* ──────────────────────────────────────────────────────────────────
-   播放引擎（音频驱动版）
-   - 每条 beat 对应一个 audio/NNNN.mp3（由 tts_gen.py 生成）
-   - 字幕推进由 audio 的 'ended' 事件触发，不再用字符数估时
+   播放引擎（音频驱动版，按 scene 整段合成）
+   - 每个 scene 对应一个 audio/scene-<sid>.mp3，含该 scene 所有 beat
+   - 每个 beat 在 episode.json 上带 audioFile / audioStart / audioEnd（ms）
+   - 字幕推进：scripted 用 (audioEnd-audioStart) 时长；实时用 timeupdate 命中 audioEnd
+   - 同 scene 内 beat 不暂停 audio，自然续播；跨 scene 切换 audio 并 seek
    - 节奏滑杆改写 audio.playbackRate
-   - Ken Burns 镜头时长 = 该 scene 全部 beat 音频时长之和（含 rate）
-   - 若某条 audio 加载失败，回退到字符估时，保证片子能播完
    ────────────────────────────────────────────────────────────────── */
 
 (function () {
@@ -154,14 +154,26 @@
     sceneNodes[id] = el;
   });
 
-  // ── 预加载所有 beat 的音频 ─────────────────────────────────────
-  const padWidth = Math.max(4, String(beats.length).length);
-  const audioElements = beats.map((_, i) => {
-    const a = new Audio();
-    a.src = bustedUrl(`${ASSET_ROOT}/audio/${String(i + 1).padStart(padWidth, '0')}.mp3`);
-    a.preload = 'auto';
+  // ── 预加载所有 scene 音频 ───────────────────────────────────────
+  // 按 unique audioFile 去重共享 Audio；beatAudio[i] = { audio, start, end } 指向其上区间
+  const audioByFile = new Map();
+  function _getAudio(file) {
+    let a = audioByFile.get(file);
+    if (!a) {
+      a = new Audio();
+      a.src = bustedUrl(`${ASSET_ROOT}/${file}`);
+      a.preload = 'auto';
+      audioByFile.set(file, a);
+    }
     return a;
-  });
+  }
+  const beatAudio = beats.map((b) => ({
+    audio: b.audioFile ? _getAudio(b.audioFile) : null,
+    start: typeof b.audioStart === 'number' ? b.audioStart : 0,
+    end:   typeof b.audioEnd   === 'number' ? b.audioEnd   : 0,
+  }));
+  // 仍暴露给老调用方/外部脚本 — render.mjs 等 waitForFunction 用
+  const audioElements = Array.from(audioByFile.values());
 
   // ── 当前 beat 状态 ─────────────────────────────────────────────
   let cur = 0;
@@ -175,9 +187,21 @@
   }
 
   function beatMs(i, rate) {
-    const a = audioElements[i];
-    const dur = a && isFinite(a.duration) ? a.duration * 1000 : estimateMs(beats[i].zh);
-    return dur / (rate || 1);
+    const ent = beatAudio[i];
+    const dur = ent ? (ent.end - ent.start) : estimateMs(beats[i].zh);
+    return (dur > 0 ? dur : estimateMs(beats[i].zh)) / (rate || 1);
+  }
+
+  // 进入 beat[i+1] 前是否需要"跨 scene"切换：
+  // 不同 scene、或 audio 元素不同（理论上同 scene 一定同 audio）
+  function _isSceneBoundary(i) {
+    if (i + 1 >= beats.length) return false;
+    return beats[i + 1].scene !== beats[i].scene
+        || beatAudio[i + 1].audio !== beatAudio[i].audio;
+  }
+  // scene 间 80ms 静音，scene 内 beat 之间不停顿（音频天然连续）
+  function _gapAfter(i) {
+    return _isSceneBoundary(i) ? 80 : 0;
   }
 
   function computeSceneRunMs(startIdx) {
@@ -244,8 +268,8 @@
     // 每条 beat 都给 overlays 一次机会：at.match 命中时 overlay 才入场
     if (window.__overlays && window.__overlays.onBeat) {
       // 传 beatMs 让 overlays 按 keyword 字符位置占比算飞入时刻
-      const a = audioElements[i];
-      const beatMsForOverlay = (a && isFinite(a.duration) ? a.duration * 1000 : estimateMs(b.zh));
+      const ent = beatAudio[i];
+      const beatMsForOverlay = ent ? (ent.end - ent.start) : estimateMs(b.zh);
       window.__overlays.onBeat(sceneEl, b, beatMsForOverlay);
     }
 
@@ -268,12 +292,11 @@
     progressInput.value = String(n);
   }
 
-  function silenceOthers(keep) {
-    for (let j = 0; j < audioElements.length; j++) {
-      if (j === keep) continue;
-      const a = audioElements[j];
-      if (!a) continue;
+  function silenceOthers(keepAudio) {
+    for (const a of audioByFile.values()) {
+      if (a === keepAudio) continue;
       a.onended = null;
+      a.ontimeupdate = null;
       if (!a.paused) a.pause();
     }
   }
@@ -282,33 +305,69 @@
     if (!playing) return;
     if (i >= beats.length) { endRun(); return; }
     showBeat(i);
-    silenceOthers(i);
 
-    const audio = audioElements[i];
+    const ent = beatAudio[i];
+    if (!ent || !ent.audio) {
+      // 没音频：用估时兜底推进
+      const rate = parseFloat($('rate').value) || 1;
+      const myToken = ++advanceToken;
+      pendingTimer = setTimeout(() => {
+        if (myToken !== advanceToken || !playing) return;
+        pendingTimer = setTimeout(() => playFrom(i + 1), _gapAfter(i));
+      }, beatMs(i, rate));
+      return;
+    }
+    const audio = ent.audio;
+    silenceOthers(audio);
+
     const rate = parseFloat($('rate').value) || 1;
     const myToken = ++advanceToken;
-
-    audio.onended = null;
-    audio.currentTime = 0;
     audio.playbackRate = rate;
 
-    const goNext = () => {
+    // 进入该 beat 时是否需要 seek：
+    //   - 不在该 beat 区间内（用 50ms 容差）
+    //   - 上一 beat 不是同 audio（跨 scene 切换）或当前 i === 0
+    const startSec = ent.start / 1000;
+    const endSec   = ent.end / 1000;
+    const inRange = isFinite(audio.duration)
+      && audio.currentTime >= startSec - 0.05
+      && audio.currentTime <  endSec - 0.02;
+    const prevSameAudio = i > 0 && beatAudio[i - 1] && beatAudio[i - 1].audio === audio;
+    if (!inRange || !prevSameAudio) {
+      try { audio.currentTime = startSec; } catch (_) {}
+    }
+
+    audio.onended = null;
+    audio.ontimeupdate = null;
+
+    // 推进：timeupdate 命中 endSec（带 20ms 容差）就切下一 beat
+    const advance = () => {
       if (myToken !== advanceToken || !playing) return;
-      pendingTimer = setTimeout(() => playFrom(i + 1), 80);
+      audio.ontimeupdate = null;
+      audio.onended = null;
+      const sameNext = !_isSceneBoundary(i);
+      if (!sameNext && !audio.paused) audio.pause();
+      pendingTimer = setTimeout(() => playFrom(i + 1), _gapAfter(i));
     };
+    audio.ontimeupdate = () => {
+      if (myToken !== advanceToken || !playing) return;
+      if (audio.currentTime >= endSec - 0.02) advance();
+    };
+    // 兜底：万一 timeupdate 漏掉（如文件末尾），onended 也触发
+    audio.onended = advance;
 
-    audio.onended = goNext;
-
-    const p = audio.play();
-    if (p && typeof p.catch === 'function') {
-      p.catch((err) => {
-        console.warn('audio play failed at beat', i + 1, err);
-        if (myToken !== advanceToken || !playing) return;
-        pendingTimer = setTimeout(() => {
+    if (audio.paused) {
+      const p = audio.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch((err) => {
+          console.warn('audio play failed at beat', i + 1, err);
           if (myToken !== advanceToken || !playing) return;
-          playFrom(i + 1);
-        }, beatMs(i, rate));
-      });
+          pendingTimer = setTimeout(() => {
+            if (myToken !== advanceToken || !playing) return;
+            playFrom(i + 1);
+          }, beatMs(i, rate));
+        });
+      }
     }
   }
 
@@ -343,27 +402,8 @@
     enableMotion();
     playing = true;
     { const b = $('playBtn'); b.dataset.state = 'playing'; b.dataset.label = '暂停'; }
-    const audio = audioElements[cur];
-    if (
-      audio &&
-      isFinite(audio.duration) &&
-      audio.currentTime > 0.05 &&
-      audio.currentTime < audio.duration - 0.05
-    ) {
-      const myToken = ++advanceToken;
-      const rate = parseFloat($('rate').value) || 1;
-      audio.playbackRate = rate;
-      audio.onended = () => {
-        if (myToken !== advanceToken || !playing) return;
-        pendingTimer = setTimeout(() => playFrom(cur + 1), 80);
-      };
-      const p = audio.play();
-      if (p && typeof p.catch === 'function') {
-        p.catch((err) => console.warn('audio resume failed', err));
-      }
-    } else {
-      playFrom(cur);
-    }
+    // 不再做 "断点续播 vs 重新播" 的细分：playFrom 内部会自动决定要不要 seek。
+    playFrom(cur);
   }
 
   function pause() {
@@ -371,10 +411,11 @@
     { const b = $('playBtn'); b.dataset.state = 'paused'; b.dataset.label = '播放'; }
     advanceToken++;
     if (pendingTimer) { clearTimeout(pendingTimer); pendingTimer = null; }
-    const a = audioElements[cur];
-    if (a) {
-      a.onended = null;
-      if (!a.paused) a.pause();
+    const ent = beatAudio[cur];
+    if (ent && ent.audio) {
+      ent.audio.onended = null;
+      ent.audio.ontimeupdate = null;
+      if (!ent.audio.paused) ent.audio.pause();
     }
   }
 
@@ -386,7 +427,7 @@
 
   $('restartBtn').addEventListener('click', () => {
     pause();
-    for (const a of audioElements) {
+    for (const a of audioByFile.values()) {
       try { a.currentTime = 0; } catch (_) { /* metadata not yet loaded */ }
     }
     cur = 0;
@@ -396,9 +437,13 @@
   function jumpTo(i) {
     const wasPlaying = playing;
     pause();
-    const a = audioElements[cur];
-    if (a) { try { a.currentTime = 0; } catch (_) {} }
-    showBeat(Math.max(0, Math.min(beats.length - 1, i)));
+    // 跳转：把目标 beat 所在 audio seek 到 audioStart；其他 audio reset
+    const target = Math.max(0, Math.min(beats.length - 1, i));
+    const ent = beatAudio[target];
+    if (ent && ent.audio) {
+      try { ent.audio.currentTime = ent.start / 1000; } catch (_) {}
+    }
+    showBeat(target);
     if (wasPlaying) play();
   }
 
@@ -423,8 +468,8 @@
 
   $('rate').addEventListener('input', () => {
     const r = parseFloat($('rate').value) || 1;
-    const a = audioElements[cur];
-    if (a) a.playbackRate = r;
+    const ent = beatAudio[cur];
+    if (ent && ent.audio) ent.audio.playbackRate = r;
   });
 
   const recFlash = $('recFlash');
@@ -447,7 +492,7 @@
     pause();
     enableMotion();
     cur = 0;
-    for (const a of audioElements) {
+    for (const a of audioByFile.values()) {
       try { a.currentTime = 0; } catch (_) {}
     }
     document.body.classList.add('recording');
@@ -522,7 +567,7 @@
     pause();
     enableMotion();
     cur = 0;
-    for (const a of audioElements) {
+    for (const a of audioByFile.values()) {
       try { a.currentTime = 0; } catch (_) {}
     }
     document.body.classList.add('recording');
@@ -539,12 +584,13 @@
         if (!playing) return;
         if (i >= beats.length) { endRun(); return; }
         showBeat(i);
-        const a = audioElements[i];
-        const durMs = (a && isFinite(a.duration) ? a.duration * 1000 : estimateMs(beats[i].zh)) / rate;
+        const ent = beatAudio[i];
+        const beatDurMs = ent ? (ent.end - ent.start) : 0;
+        const durMs = (beatDurMs > 0 ? beatDurMs : estimateMs(beats[i].zh)) / rate;
         const myToken = ++advanceToken;
         pendingTimer = setTimeout(() => {
           if (myToken !== advanceToken || !playing) return;
-          pendingTimer = setTimeout(() => scriptedNext(i + 1), 80);
+          pendingTimer = setTimeout(() => scriptedNext(i + 1), _gapAfter(i));
         }, durMs);
       }
       scriptedNext(0);
@@ -553,5 +599,5 @@
     }
   }
 
-  window.__player = { play, pause, showBeat, enterRecording, exitRecording, startRecordingPlayback, beats, scenes, sceneNodes, sceneOrder };
+  window.__player = { play, pause, showBeat, enterRecording, exitRecording, startRecordingPlayback, beats, scenes, sceneNodes, sceneOrder, audioElements };
 })();

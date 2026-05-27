@@ -1,0 +1,372 @@
+{
+  "scene": "S1-31",
+  "text": "今天他书写比昨天工整，老师在群里夸他举手积极，这种小到看不见的事，你要不吝赞美之词，回家立刻表扬。",
+  "words": [
+    {
+      "text": "今",
+      "begin_index": 0,
+      "end_index": 1,
+      "begin_time": 80,
+      "end_time": 240
+    },
+    {
+      "text": "天",
+      "begin_index": 1,
+      "end_index": 2,
+      "begin_time": 320,
+      "end_time": 480
+    },
+    {
+      "text": "他",
+      "begin_index": 2,
+      "end_index": 3,
+      "begin_time": 560,
+      "end_time": 720
+    },
+    {
+      "text": "书",
+      "begin_index": 3,
+      "end_index": 4,
+      "begin_time": 720,
+      "end_time": 880
+    },
+    {
+      "text": "写",
+      "begin_index": 4,
+      "end_index": 5,
+      "begin_time": 880,
+      "end_time": 1120
+    },
+    {
+      "text": "比",
+      "begin_index": 5,
+      "end_index": 6,
+      "begin_time": 1200,
+      "end_time": 1360
+    },
+    {
+      "text": "昨",
+      "begin_index": 6,
+      "end_index": 7,
+      "begin_time": 1440,
+      "end_time": 1520
+    },
+    {
+      "text": "天",
+      "begin_index": 7,
+      "end_index": 8,
+      "begin_time": 1600,
+      "end_time": 1680
+    },
+    {
+      "text": "工",
+      "begin_index": 8,
+      "end_index": 9,
+      "begin_time": 1760,
+      "end_time": 1920
+    },
+    {
+      "text": "整",
+      "begin_index": 9,
+      "end_index": 10,
+      "begin_time": 1920,
+      "end_time": 2080
+    },
+    {
+      "text": "，",
+      "begin_index": 10,
+      "end_index": 11,
+      "begin_time": 2080,
+      "end_time": 2480
+    },
+    {
+      "text": "老",
+      "begin_index": 11,
+      "end_index": 12,
+      "begin_time": 2480,
+      "end_time": 2720
+    },
+    {
+      "text": "师",
+      "begin_index": 12,
+      "end_index": 13,
+      "begin_time": 2720,
+      "end_time": 2880
+    },
+    {
+      "text": "在",
+      "begin_index": 13,
+      "end_index": 14,
+      "begin_time": 2880,
+      "end_time": 3040
+    },
+    {
+      "text": "群",
+      "begin_index": 14,
+      "end_index": 15,
+      "begin_time": 3040,
+      "end_time": 3200
+    },
+    {
+      "text": "里",
+      "begin_index": 15,
+      "end_index": 16,
+      "begin_time": 3200,
+      "end_time": 3360
+    },
+    {
+      "text": "夸",
+      "begin_index": 16,
+      "end_index": 17,
+      "begin_time": 3440,
+      "end_time": 3600
+    },
+    {
+      "text": "他",
+      "begin_index": 17,
+      "end_index": 18,
+      "begin_time": 3600,
+      "end_time": 3680
+    },
+    {
+      "text": "举",
+      "begin_index": 18,
+      "end_index": 19,
+      "begin_time": 3760,
+      "end_time": 3840
+    },
+    {
+      "text": "手",
+      "begin_index": 19,
+      "end_index": 20,
+      "begin_time": 3920,
+      "end_time": 4080
+    },
+    {
+      "text": "积",
+      "begin_index": 20,
+      "end_index": 21,
+      "begin_time": 4160,
+      "end_time": 4240
+    },
+    {
+      "text": "极",
+      "begin_index": 21,
+      "end_index": 22,
+      "begin_time": 4320,
+      "end_time": 4480
+    },
+    {
+      "text": "，",
+      "begin_index": 22,
+      "end_index": 23,
+      "begin_time": 4560,
+      "end_time": 4720
+    },
+    {
+      "text": "这",
+      "begin_index": 23,
+      "end_index": 24,
+      "begin_time": 4960,
+      "end_time": 5200
+    },
+    {
+      "text": "种",
+      "begin_index": 24,
+      "end_index": 25,
+      "begin_time": 5280,
+      "end_time": 5440
+    },
+    {
+      "text": "小",
+      "begin_index": 25,
+      "end_index": 26,
+      "begin_time": 5440,
+      "end_time": 5600
+    },
+    {
+      "text": "到",
+      "begin_index": 26,
+      "end_index": 27,
+      "begin_time": 5680,
+      "end_time": 5760
+    },
+    {
+      "text": "看",
+      "begin_index": 27,
+      "end_index": 28,
+      "begin_time": 5840,
+      "end_time": 6000
+    },
+    {
+      "text": "不",
+      "begin_index": 28,
+      "end_index": 29,
+      "begin_time": 6000,
+      "end_time": 6160
+    },
+    {
+      "text": "见",
+      "begin_index": 29,
+      "end_index": 30,
+      "begin_time": 6160,
+      "end_time": 6240
+    },
+    {
+      "text": "的",
+      "begin_index": 30,
+      "end_index": 31,
+      "begin_time": 6320,
+      "end_time": 6480
+    },
+    {
+      "text": "事",
+      "begin_index": 31,
+      "end_index": 32,
+      "begin_time": 6480,
+      "end_time": 6640
+    },
+    {
+      "text": "，",
+      "begin_index": 32,
+      "end_index": 33,
+      "begin_time": 6640,
+      "end_time": 6880
+    },
+    {
+      "text": "你",
+      "begin_index": 33,
+      "end_index": 34,
+      "begin_time": 6880,
+      "end_time": 7200
+    },
+    {
+      "text": "要",
+      "begin_index": 34,
+      "end_index": 35,
+      "begin_time": 7200,
+      "end_time": 7360
+    },
+    {
+      "text": "不",
+      "begin_index": 35,
+      "end_index": 36,
+      "begin_time": 7360,
+      "end_time": 7520
+    },
+    {
+      "text": "吝",
+      "begin_index": 36,
+      "end_index": 37,
+      "begin_time": 7520,
+      "end_time": 7680
+    },
+    {
+      "text": "赞",
+      "begin_index": 37,
+      "end_index": 38,
+      "begin_time": 7680,
+      "end_time": 7840
+    },
+    {
+      "text": "美",
+      "begin_index": 38,
+      "end_index": 39,
+      "begin_time": 7920,
+      "end_time": 8000
+    },
+    {
+      "text": "之",
+      "begin_index": 39,
+      "end_index": 40,
+      "begin_time": 8080,
+      "end_time": 8160
+    },
+    {
+      "text": "词",
+      "begin_index": 40,
+      "end_index": 41,
+      "begin_time": 8240,
+      "end_time": 8400
+    },
+    {
+      "text": "，",
+      "begin_index": 41,
+      "end_index": 42,
+      "begin_time": 8400,
+      "end_time": 8640
+    },
+    {
+      "text": "回",
+      "begin_index": 42,
+      "end_index": 43,
+      "begin_time": 8640,
+      "end_time": 8880
+    },
+    {
+      "text": "家",
+      "begin_index": 43,
+      "end_index": 44,
+      "begin_time": 8960,
+      "end_time": 9120
+    },
+    {
+      "text": "立",
+      "begin_index": 44,
+      "end_index": 45,
+      "begin_time": 9120,
+      "end_time": 9280
+    },
+    {
+      "text": "刻",
+      "begin_index": 45,
+      "end_index": 46,
+      "begin_time": 9360,
+      "end_time": 9520
+    },
+    {
+      "text": "表",
+      "begin_index": 46,
+      "end_index": 47,
+      "begin_time": 9520,
+      "end_time": 9680
+    },
+    {
+      "text": "扬",
+      "begin_index": 47,
+      "end_index": 48,
+      "begin_time": 9680,
+      "end_time": 9840
+    },
+    {
+      "text": "。",
+      "begin_index": 48,
+      "end_index": 49,
+      "begin_time": 9920,
+      "end_time": 10240
+    }
+  ],
+  "perBeat": [
+    {
+      "beat": 51,
+      "audioStart": 0,
+      "audioEnd": 2480,
+      "chars": 11,
+      "wordsFound": 11
+    },
+    {
+      "beat": 52,
+      "audioStart": 2480,
+      "audioEnd": 4960,
+      "chars": 12,
+      "wordsFound": 12
+    },
+    {
+      "beat": 53,
+      "audioStart": 4960,
+      "audioEnd": 10344,
+      "chars": 26,
+      "wordsFound": 26
+    }
+  ]
+}
