@@ -3,14 +3,14 @@
   "__doc__": "暖纸卡片口播视频 per-episode 元数据，唯一真理源。HTML/JS/TTS/图生图全部从这个文件读取；引擎层文件 (player.js / overlays.js / tweaks*.jsx / styles.css / HTML 骨架) 不含任何 per-episode 字段。",
   "meta": {
     "slug": "014-draft",
-    "title": "你不是不想换条路，你是不敢",
+    "title": "不偷懒",
     "brandTitle": "我替你预演",
     "disclaimer": "观点仅供参考　无不良引导",
     "titleOptions": [
-      "你不是不想换条路，你是不敢",
-      "凌晨一点算房贷的人，没资格说\"再撑一下\"",
-      "中年最贵的从来不是钱，是耗进去要不回来的时间",
-      "走错了就掉头——不是再撑、再等、再咬牙"
+      "不偷懒",
+      "你那个七年级的男孩，是不是已经被你骂了七八年了",
+      "孩子的懒，是爷爷宠、妈妈办、爸爸骂出来的",
+      "想他蜕变，先你蜕变"
     ]
   },
   "fonts": [
@@ -327,1837 +327,2257 @@
   },
   "beats": [
     {
-      "zh": "你不是不想换条路，",
-      "en": "It's not that you don't want a different road,",
+      "zh": "你家那个七年级的男孩，",
+      "en": "Your boy in seventh grade,",
       "scene": "S1-01"
     },
     {
-      "zh": "你是不敢。",
-      "en": "you just don't dare.",
+      "zh": "是不是已经被你骂了七八年了？",
+      "en": "have you been yelling at him for seven, eight years now?",
       "scene": "S1-01"
     },
     {
-      "zh": "凌晨一点，",
-      "en": "It's one a.m.,",
+      "zh": "他坐到书桌前一个小时，",
+      "en": "He sits at the desk for an hour,",
       "scene": "S1-02"
     },
     {
-      "zh": "你又一次把手机举在脸上方。",
-      "en": "and once again you're holding the phone above your face.",
+      "zh": "作业本上还是空白。",
+      "en": "the page is still blank.",
       "scene": "S1-02"
     },
     {
-      "zh": "工资到账，",
-      "en": "Your paycheck lands,",
+      "zh": "你催他他写得越来越慢，",
+      "en": "Push him and he writes slower.",
       "scene": "S1-03"
     },
     {
-      "zh": "第一反应不是松一口气，",
-      "en": "and your first reaction isn't relief,",
+      "zh": "你不催他纹丝不动。",
+      "en": "Don't push and he doesn't move at all.",
       "scene": "S1-03"
     },
     {
-      "zh": "是打开计算器，",
-      "en": "it's opening the calculator,",
+      "zh": "你说他懒，",
+      "en": "You call him lazy,",
       "scene": "S1-04"
     },
     {
-      "zh": "算房贷还差几个月。",
-      "en": "counting how many months of mortgage are left.",
+      "zh": "你以为他天生就这样。",
+      "en": "you think he was born this way.",
       "scene": "S1-04"
     },
     {
-      "zh": "算完发现，",
-      "en": "When you're done you realize,",
+      "zh": "不是。",
+      "en": "He wasn't.",
       "scene": "S1-05"
     },
     {
-      "zh": "这份工作你再不情愿，",
-      "en": "no matter how unwilling you are at this job,",
-      "scene": "S1-05"
-    },
-    {
-      "zh": "也得撑下去。",
-      "en": "you have to keep going.",
-      "scene": "S1-05"
-    },
-    {
-      "zh": "二十岁那会儿，",
-      "en": "Back when you were twenty,",
+      "zh": "这种孩子不是生出来的，",
+      "en": "Kids like this aren't born,",
       "scene": "S1-06"
     },
     {
-      "zh": "你觉得时间多得是，",
-      "en": "you thought you had all the time in the world,",
+      "zh": "是被爷爷宠溺、",
+      "en": "they're shaped by a grandpa who spoils,",
       "scene": "S1-06"
     },
     {
-      "zh": "犯错没事，",
-      "en": "mistakes were fine,",
+      "zh": "妈妈包办、",
+      "en": "a mom who does everything for him,",
+      "scene": "S1-06"
+    },
+    {
+      "zh": "爸爸打骂",
+      "en": "and a dad who yells and hits—",
+      "scene": "S1-06"
+    },
+    {
+      "zh": "合力创造出来的。",
+      "en": "all three together make him this way.",
+      "scene": "S1-06"
+    },
+    {
+      "zh": "你替他收过书包，",
+      "en": "You've packed his school bag,",
       "scene": "S1-07"
     },
     {
-      "zh": "回头再来。",
-      "en": "you could always start over.",
+      "zh": "替他记过作业，",
+      "en": "noted down his homework,",
       "scene": "S1-07"
     },
     {
-      "zh": "三十岁那年，",
-      "en": "At thirty,",
+      "zh": "替他定过闹钟，",
+      "en": "set his alarm,",
+      "scene": "S1-07"
+    },
+    {
+      "zh": "替他翻过课本查过题。",
+      "en": "flipped his textbook and looked up answers for him.",
+      "scene": "S1-07"
+    },
+    {
+      "zh": "每一次你说\"我来帮你\"，",
+      "en": "Every time you said 'I'll do it for you,'",
       "scene": "S1-08"
     },
     {
-      "zh": "账单和房贷",
-      "en": "the bills and the mortgage",
+      "zh": "他就少一次\"我自己做\"。",
+      "en": "he lost one chance to do it himself.",
       "scene": "S1-08"
     },
     {
-      "zh": "已经替你做了一半的决定。",
-      "en": "had already made half your decisions for you.",
+      "zh": "你做了一千次，他就少做了一千次。",
+      "en": "You did it a thousand times—he missed a thousand chances.",
       "scene": "S1-08"
     },
     {
-      "zh": "到了四十岁，",
-      "en": "By forty,",
+      "zh": "心理学里有句很冷的话：",
+      "en": "There's a cold line in psychology:",
       "scene": "S1-09"
     },
     {
-      "zh": "你坐在工位上盯着屏幕，",
-      "en": "you sit at your desk staring at the screen,",
+      "zh": "一个人长期被怀疑，",
+      "en": "when someone is doubted for long enough,",
       "scene": "S1-09"
     },
     {
-      "zh": "心里很清楚——",
-      "en": "and you know it in your bones——",
+      "zh": "他就主动放弃自己。",
+      "en": "they give up on themselves.",
+      "scene": "S1-09"
+    },
+    {
+      "zh": "更何况你面前是一个十二三岁的孩子。",
+      "en": "And remember—the person in front of you is just twelve or thirteen.",
       "scene": "S1-10"
     },
     {
-      "zh": "你已经付不起试错的成本了。",
-      "en": "you can't afford the cost of getting it wrong anymore.",
-      "scene": "S1-10"
-    },
-    {
-      "zh": "可越是付不起，",
-      "en": "Yet the more you can't afford it,",
+      "zh": "神经科学早就讲清楚了，",
+      "en": "Neuroscience has been clear on this for years:",
       "scene": "S1-11"
     },
     {
-      "zh": "你越是站在原地不动。",
-      "en": "the more you stand still.",
+      "zh": "人的前额叶——管自控、管计划、管抑制冲动的那块脑子——",
+      "en": "the prefrontal cortex—the part that runs self-control, planning, impulse-braking—",
       "scene": "S1-11"
     },
     {
-      "zh": "你不是没看见身边那些人。",
-      "en": "It's not like you haven't seen the people around you.",
+      "zh": "要到二十五岁才完全长好。",
+      "en": "doesn't fully mature until you're twenty-five.",
+      "scene": "S1-11"
+    },
+    {
+      "zh": "一个初中生的执行能力，",
+      "en": "A middle schooler's executive function,",
       "scene": "S1-12"
     },
     {
-      "zh": "那个天天说要辞职的同事，",
-      "en": "The coworker who says he'll quit every single day,",
+      "zh": "在神经层面相当于成年人的一半。",
+      "en": "at the neural level, is about half an adult's.",
       "scene": "S1-12"
     },
     {
-      "zh": "三年了还在原位置。",
-      "en": "three years on, still in the same seat.",
-      "scene": "S1-12"
-    },
-    {
-      "zh": "那个早就睡不好的发小，",
-      "en": "The childhood friend who long stopped sleeping well,",
+      "zh": "他不是不想自律，",
+      "en": "It's not that he doesn't want to be disciplined—",
       "scene": "S1-13"
     },
     {
-      "zh": "每天熬到两点，",
-      "en": "stays up until two every night,",
+      "zh": "是脑子还没长齐。",
+      "en": "his brain just isn't there yet.",
       "scene": "S1-13"
     },
     {
-      "zh": "第二天照样上班。",
-      "en": "and shows up to work the next morning all the same.",
-      "scene": "S1-13"
-    },
-    {
-      "zh": "那个把大好十年",
-      "en": "The one who burned his best ten years",
+      "zh": "这个年纪的他需要的是被相信、被引导；",
+      "en": "What he needs at this age is to be trusted, to be guided.",
       "scene": "S1-14"
     },
     {
-      "zh": "耗在一个错方向上的人，",
-      "en": "on the wrong direction——",
-      "scene": "S1-14"
-    },
-    {
-      "zh": "你心里有个数，",
-      "en": "you know in your gut,",
+      "zh": "可你给他的，是巴掌、怒吼，",
+      "en": "Instead, what you give him is a slap, a shout,",
       "scene": "S1-15"
     },
     {
-      "zh": "那也可能是你。",
-      "en": "that could be you too.",
+      "zh": "最严重的时候，是一只抬起来的手。",
+      "en": "and at the worst moments, a raised hand.",
       "scene": "S1-15"
     },
     {
-      "zh": "这十年，",
-      "en": "This decade,",
+      "zh": "结果就是，你不吼三遍他不挪一步，",
+      "en": "And so: three shouts and he won't budge,",
       "scene": "S1-16"
     },
     {
-      "zh": "你走的每一步，",
-      "en": "every step you take,",
+      "zh": "你不举手抬一下他不会动笔。",
+      "en": "raise a hand and only then will he pick up the pen.",
       "scene": "S1-16"
     },
     {
-      "zh": "都在替你五十岁以后的自己签字。",
-      "en": "is signing the contract for the you that comes after fifty.",
-      "scene": "S1-16"
-    },
-    {
-      "zh": "你翻来覆去想的，",
-      "en": "What you keep turning over in your head,",
+      "zh": "他对你说的话早就免疫了。",
+      "en": "Your words have stopped landing on him long ago.",
       "scene": "S1-17"
     },
     {
-      "zh": "其实就是几件事。",
-      "en": "is really just a few questions.",
-      "scene": "S1-17"
-    },
-    {
-      "zh": "要靠什么吃饭，",
-      "en": "What will you live on,",
+      "zh": "于是他学会了在你面前装样子。",
+      "en": "So he learned to put on a show in front of you.",
       "scene": "S1-18"
     },
     {
-      "zh": "路要怎么走，",
-      "en": "how do you walk the road,",
-      "scene": "S1-18"
-    },
-    {
-      "zh": "万一走错了又怎么办？",
-      "en": "and what if you take the wrong turn.",
-      "scene": "S1-18"
-    },
-    {
-      "zh": "先说靠什么吃饭。",
-      "en": "Start with what you live on.",
+      "zh": "每天作业糊弄过去交公差，",
+      "en": "Every day's homework is just clocking in,",
       "scene": "S1-19"
     },
     {
-      "zh": "你愿不愿意，",
-      "en": "Are you willing,",
+      "zh": "前一天的错题你不催他就不改；",
+      "en": "yesterday's mistakes don't get touched unless you push.",
       "scene": "S1-19"
     },
     {
-      "zh": "再过十年",
-      "en": "ten years from now,",
+      "zh": "阅读理解他从来不读原文，",
+      "en": "He never actually reads the passage,",
       "scene": "S1-20"
     },
     {
-      "zh": "还是靠这副身子骨换钱。",
-      "en": "to still be trading this body for money.",
+      "zh": "直接翻到题目蒙答案；",
+      "en": "he flips to the questions and guesses.",
       "scene": "S1-20"
     },
     {
-      "zh": "三十五岁以后体力是往下走的，",
-      "en": "After thirty-five, physical strength only goes down,",
+      "zh": "书写更是能写三个字绝不写五个，",
+      "en": "If three characters will do, he won't write five.",
       "scene": "S1-21"
     },
     {
-      "zh": "可你这些年攒下的阅历和判断",
-      "en": "but the experience and judgment you've built up",
-      "scene": "S1-21"
-    },
-    {
-      "zh": "才刚刚开始值钱。",
-      "en": "are only just starting to be worth something.",
-      "scene": "S1-21"
-    },
-    {
-      "zh": "光靠力气的那条路",
-      "en": "The road built on muscle alone",
+      "zh": "老师让默的古诗、要背的字词，",
+      "en": "Poems to recite, words to learn—",
       "scene": "S1-22"
     },
     {
-      "zh": "只会越走越窄，",
-      "en": "only gets narrower the further you walk,",
+      "zh": "全靠当天早上抄一遍混过去。",
+      "en": "all crammed in by copying once on the morning bus.",
       "scene": "S1-22"
     },
     {
-      "zh": "总有一天你干不动了，",
-      "en": "and one day you simply can't keep up,",
+      "zh": "你盯着的是成绩单上那个数字。",
+      "en": "What you're staring at is just that number on the report card.",
       "scene": "S1-23"
     },
     {
-      "zh": "路就把你扔下了。",
-      "en": "and the road throws you off.",
-      "scene": "S1-23"
-    },
-    {
-      "zh": "至于怎么走，",
-      "en": "As for how to walk it,",
+      "zh": "真正在悄悄消失的，",
+      "en": "What's quietly slipping away,",
       "scene": "S1-24"
     },
     {
-      "zh": "不是坐在沙发上想出来的。",
-      "en": "you don't figure that out on the couch.",
+      "zh": "是他将来选自己人生的权利。",
+      "en": "is his future right to choose his own life.",
       "scene": "S1-24"
     },
     {
-      "zh": "是小步走，",
-      "en": "You walk in small steps,",
+      "zh": "现在他偷掉的每一道题、",
+      "en": "Every problem he skipped today,",
       "scene": "S1-25"
     },
     {
-      "zh": "走错了回头，",
-      "en": "turn back when you're wrong,",
+      "zh": "躲掉的每一篇课文、",
+      "en": "every passage he dodged,",
       "scene": "S1-25"
     },
     {
-      "zh": "走对了再往前一点。",
-      "en": "push a bit further when you're right.",
+      "zh": "拖到第二天的每一个早晨，",
+      "en": "every morning he pushed to tomorrow—",
       "scene": "S1-25"
     },
     {
-      "zh": "你之前怕的不是试错，",
-      "en": "What you used to fear wasn't the trial and error,",
+      "zh": "将来都会变成他想跳一个行业跳不动、",
+      "en": "they turn into an industry he can't jump out of,",
       "scene": "S1-26"
     },
     {
-      "zh": "是怕周围人看你失败的眼神。",
-      "en": "it was the eyes around you watching you fail.",
+      "zh": "想离开一个城市离不开、",
+      "en": "a city he can't leave,",
       "scene": "S1-26"
     },
     {
-      "zh": "可那些眼神，",
-      "en": "But those eyes,",
+      "zh": "想换一种活法换不了。",
+      "en": "a life he can't trade in.",
+      "scene": "S1-26"
+    },
+    {
+      "zh": "该读书的年龄你让他偷懒，",
+      "en": "If you let him slack off in the years made for learning,",
       "scene": "S1-27"
     },
     {
-      "zh": "三个月就忘了，",
-      "en": "they forget in three months,",
+      "zh": "他后半辈子做任何事都觉得吃力。",
+      "en": "everything in his next forty years will feel uphill.",
       "scene": "S1-27"
     },
     {
-      "zh": "你浪费的时间",
-      "en": "while the time you wasted",
+      "zh": "苦这几年和苦后半辈子，是两回事。",
+      "en": "Three hard years now, or forty hard years later—they're not the same trade.",
       "scene": "S1-28"
     },
     {
-      "zh": "却永远要不回来。",
-      "en": "you can never take back.",
-      "scene": "S1-28"
-    },
-    {
-      "zh": "那万一走错了——掉头。",
-      "en": "And if you do take the wrong turn—— turn around.",
+      "zh": "想他蜕变，先你蜕变。",
+      "en": "If you want him to change, you change first.",
       "scene": "S1-29"
     },
     {
-      "zh": "不是再撑一下，",
-      "en": "Not hang on a little longer,",
+      "zh": "从今天起把吼声收回去。",
+      "en": "Starting today, put the shouting away.",
       "scene": "S1-30"
     },
     {
-      "zh": "不是再等一等，",
-      "en": "not wait it out a little more,",
-      "scene": "S1-30"
-    },
-    {
-      "zh": "不是再咬咬牙。",
-      "en": "not grit your teeth one more time.",
+      "zh": "今天他书写比昨天工整，",
+      "en": "His handwriting today is neater than yesterday,",
       "scene": "S1-31"
     },
     {
-      "zh": "是掉头。",
-      "en": "Turn around.",
+      "zh": "老师在群里夸他举手积极，",
+      "en": "the teacher said in the group chat that he was active in class—",
       "scene": "S1-31"
     },
     {
-      "zh": "人到中年，",
-      "en": "In middle age,",
+      "zh": "这种小到看不见的事，你别嫌琐碎，回家说出来给他听。",
+      "en": "these tiny things—don't dismiss them, take them home and tell him.",
+      "scene": "S1-31"
+    },
+    {
+      "zh": "一个十几岁的孩子，",
+      "en": "For a kid in his teens,",
       "scene": "S1-32"
     },
     {
-      "zh": "最贵的从来不是钱，",
-      "en": "the most expensive thing has never been money,",
+      "zh": "从他爸嘴里听到一句真心的\"今天这件事你做得不错\"，",
+      "en": "one real 'you did this well today' from his dad,",
       "scene": "S1-32"
     },
     {
-      "zh": "是那段你已经耗进去，",
-      "en": "it's the stretch of time you've already poured in",
+      "zh": "比你骂他一百句都管用。",
+      "en": "is worth a hundred scoldings.",
+      "scene": "S1-32"
+    },
+    {
+      "zh": "包办的手也要收回去。",
+      "en": "The over-helping hands have to come back too.",
       "scene": "S1-33"
     },
     {
-      "zh": "再也要不回来的时间。",
-      "en": "and can never get back.",
-      "scene": "S1-33"
-    },
-    {
-      "zh": "承认走错，",
-      "en": "Admitting you were wrong",
+      "zh": "男孩子在这个年纪你别什么都护着。",
+      "en": "A boy this age—stop protecting him from everything.",
       "scene": "S1-34"
     },
     {
-      "zh": "比死撑下去要勇敢得多。",
-      "en": "takes far more courage than holding on.",
-      "scene": "S1-34"
-    },
-    {
-      "zh": "能掉头的人，",
-      "en": "Only those who can turn around",
+      "zh": "让他出去跟同学疯跑，",
+      "en": "Let him run wild with his friends,",
       "scene": "S1-35"
     },
     {
-      "zh": "才走得到后面。",
-      "en": "make it all the way through.",
+      "zh": "摔个跟头、蹭破点皮没关系；",
+      "en": "let him fall, scrape a knee—it's fine.",
       "scene": "S1-35"
     },
     {
-      "zh": "我见过很多人，",
-      "en": "I've seen many people,",
+      "zh": "坐错一次公交，",
+      "en": "Take the wrong bus once,",
       "scene": "S1-36"
     },
     {
-      "zh": "四十岁还在为一个错决定续命，",
-      "en": "at forty still keeping a wrong decision on life support,",
+      "zh": "买东西被坑一回，",
+      "en": "get ripped off once,",
       "scene": "S1-36"
     },
     {
-      "zh": "理由是“都走到这一步了”。",
-      "en": "and the reason is, “I've already come this far.”",
+      "zh": "跟同桌吵一次嘴，",
+      "en": "have one argument with his deskmate—",
+      "scene": "S1-36"
+    },
+    {
+      "zh": "都是他长本事的机会。",
+      "en": "every one of those is a chance to grow real skills.",
+      "scene": "S1-36"
+    },
+    {
+      "zh": "你越什么都替他兜底，他越长成个豆芽菜；",
+      "en": "The more you cushion everything, the more he grows into a beansprout.",
       "scene": "S1-37"
     },
     {
-      "zh": "可这一步以后还有更长的路，",
-      "en": "But there's a much longer road after this step,",
+      "zh": "你舍得让他野一点，他反而硬得快。",
+      "en": "Loosen the grip, and he toughens up faster.",
+      "scene": "S1-37"
+    },
+    {
+      "zh": "十几岁的男孩子身上没点擦伤、没点小挫折，",
+      "en": "A boy in his teens with no scrapes, no small setbacks—",
       "scene": "S1-38"
     },
     {
-      "zh": "你把脚埋在错的地里，",
-      "en": "and if you bury your feet in the wrong soil,",
+      "zh": "到二十几岁碰上真事的时候才叫慌。",
+      "en": "is the one who actually panics when real things come at twenty-something.",
       "scene": "S1-38"
     },
     {
-      "zh": "它不会自己长出对的花。",
-      "en": "it won't grow the right flowers on its own.",
-      "scene": "S1-38"
-    },
-    {
-      "zh": "你不需要别人替你拍板。",
-      "en": "You don't need someone else to make the call for you.",
+      "zh": "然后做你欠他的那件事——",
+      "en": "Then do the one thing you owe him—",
       "scene": "S1-39"
     },
     {
-      "zh": "你只需要在今晚躺下之前，",
-      "en": "You only need, before you lie down tonight,",
+      "zh": "不是给他布置任务，",
+      "en": "not assigning him a task,",
       "scene": "S1-39"
     },
     {
-      "zh": "问自己一句：",
-      "en": "to ask yourself one thing:",
+      "zh": "是跟他一起做一件事。",
+      "en": "but starting one thing together with him.",
       "scene": "S1-39"
     },
     {
-      "zh": "明天醒来，",
-      "en": "when I wake up tomorrow,",
+      "zh": "我家住十一楼。",
+      "en": "We live on the eleventh floor.",
       "scene": "S1-40"
     },
     {
-      "zh": "我还要不要在这条路上",
-      "en": "do I still want to be on this road,",
-      "scene": "S1-40"
-    },
-    {
-      "zh": "再耗一年？",
-      "en": "for another year.",
-      "scene": "S1-40"
-    },
-    {
-      "zh": "如果答案不是肯定的，",
-      "en": "If the answer isn't yes,",
+      "zh": "有一晚我又没忍住对他吼了，他摔门进房间，",
+      "en": "One night I lost it again, he slammed his door,",
       "scene": "S1-41"
     },
     {
-      "zh": "那就别等下一个十年，",
-      "en": "then don't wait another decade,",
+      "zh": "我坐在客厅一个人发了半天的呆。",
+      "en": "and I sat alone in the living room for a long time.",
       "scene": "S1-41"
     },
     {
-      "zh": "再来后悔今晚的沉默。",
-      "en": "to regret your silence tonight.",
-      "scene": "S1-41"
+      "zh": "第二天我没再吼他，",
+      "en": "The next day I didn't shout.",
+      "scene": "S1-42"
+    },
+    {
+      "zh": "我走到他房门口跟他说：",
+      "en": "I walked to his door and said:",
+      "scene": "S1-42"
+    },
+    {
+      "zh": "\"咱爷俩一起做件事。每天爬三趟楼，我陪你，你也陪我。\"",
+      "en": "'Let's do something together. Three flights up every day. I'll go with you, you go with me.'",
+      "scene": "S1-42"
+    },
+    {
+      "zh": "我没把它说成是给他的功课，",
+      "en": "I never framed it as homework for him,",
+      "scene": "S1-43"
+    },
+    {
+      "zh": "是我们俩一起开始的事。",
+      "en": "it was something we started together.",
+      "scene": "S1-43"
+    },
+    {
+      "zh": "早上一趟、放学一趟、晚上一趟。",
+      "en": "Once in the morning, once after school, once at night.",
+      "scene": "S1-44"
+    },
+    {
+      "zh": "一个小细节我们一直坚持：只往上爬，下楼坐电梯。",
+      "en": "One small rule we kept: only walk up, take the elevator down.",
+      "scene": "S1-45"
+    },
+    {
+      "zh": "下楼时膝盖承受的冲击是上楼的三倍多，",
+      "en": "Going down, your knees take more than three times the impact of going up,",
+      "scene": "S1-46"
+    },
+    {
+      "zh": "跑步的人都知道下山伤膝；",
+      "en": "any runner knows downhill wrecks knees.",
+      "scene": "S1-46"
+    },
+    {
+      "zh": "上去用劲，下来给膝盖松绑。",
+      "en": "Push going up, give the knees a break coming down.",
+      "scene": "S1-46"
+    },
+    {
+      "zh": "第一周我俩都喘到一句完整的话都说不出来，",
+      "en": "First week, neither of us could finish a sentence between breaths,",
+      "scene": "S1-47"
+    },
+    {
+      "zh": "膝盖第二天疼得下楼都要扶墙。",
+      "en": "knees so sore the next day we had to brace against the wall going down.",
+      "scene": "S1-47"
+    },
+    {
+      "zh": "一个月之后能边爬边聊几句白天的事，",
+      "en": "A month later we could chat along the way,",
+      "scene": "S1-48"
+    },
+    {
+      "zh": "三楼到七楼那段他突然跟我讲了一件他在学校被同学说过的话——",
+      "en": "and somewhere between the third and seventh floor he told me something a classmate said at school—",
+      "scene": "S1-48"
+    },
+    {
+      "zh": "这种话以前他打死也不会跟我说。",
+      "en": "the kind of thing he would never have told me before.",
+      "scene": "S1-48"
+    },
+    {
+      "zh": "三个月之后我们俩晚饭吃完不约而同往楼梯间走，",
+      "en": "Three months in, after dinner we'd both naturally head to the stairwell,",
+      "scene": "S1-49"
+    },
+    {
+      "zh": "他自己拿好水。",
+      "en": "he'd grab a bottle of water himself.",
+      "scene": "S1-49"
+    },
+    {
+      "zh": "我以前那只抬起来要打他的手，",
+      "en": "The hand I used to raise to hit him,",
+      "scene": "S1-50"
+    },
+    {
+      "zh": "现在牵着他一起爬。",
+      "en": "now holds his hand on the way up.",
+      "scene": "S1-50"
+    },
+    {
+      "zh": "爬到八楼，谁也讲不出整句，只能听见呼吸；",
+      "en": "By the eighth floor, neither of us can finish a sentence—you just hear breathing.",
+      "scene": "S1-51"
+    },
+    {
+      "zh": "原本想顶的嘴、想吵的架，到十一楼都算了。",
+      "en": "Whatever I wanted to snap at, whatever fight he wanted to pick—by the eleventh floor, none of it mattered.",
+      "scene": "S1-51"
+    },
+    {
+      "zh": "这种共同坚持下来的成就感，",
+      "en": "The sense of accomplishment you build together,",
+      "scene": "S1-52"
+    },
+    {
+      "zh": "是骂十年都骂不出来的。",
+      "en": "no ten years of scolding could ever give you.",
+      "scene": "S1-52"
+    },
+    {
+      "zh": "还有一件事我们家在做——",
+      "en": "There's one more thing we do at home—",
+      "scene": "S1-53"
+    },
+    {
+      "zh": "别再把他一个人关在书房里\"学习\"。",
+      "en": "stop locking him alone in the study to 'study'.",
+      "scene": "S1-53"
+    },
+    {
+      "zh": "我把他叫到餐桌上，",
+      "en": "I called him out to the dining table,",
+      "scene": "S1-54"
+    },
+    {
+      "zh": "他在这头写作业，",
+      "en": "he sits on this side doing his homework,",
+      "scene": "S1-54"
+    },
+    {
+      "zh": "我在那头摊开他的字帖一笔一笔练，",
+      "en": "On my side I lay out his calligraphy book and practice stroke by stroke,",
+      "scene": "S1-55"
+    },
+    {
+      "zh": "捧着他的《朝花夕拾》《骆驼祥子》一页一页读，",
+      "en": "I read his Morning Flowers Plucked at Dusk and Camel Xiangzi page by page,",
+      "scene": "S1-55"
+    },
+    {
+      "zh": "我们俩一起动笔。",
+      "en": "we both move our pens together.",
+      "scene": "S1-55"
+    },
+    {
+      "zh": "他抬头能看见我也在写、也在皱眉、也在喝口水歇一下——",
+      "en": "When he looks up he sees me writing too, frowning too, taking a sip of water too—",
+      "scene": "S1-56"
+    },
+    {
+      "zh": "不是被人盯着写，是被人陪着写。",
+      "en": "not being watched as he writes, being accompanied.",
+      "scene": "S1-56"
+    },
+    {
+      "zh": "这种安静比你坐在他身后骂他半个钟头管用得多。",
+      "en": "This kind of quiet beats half an hour of scolding behind his back.",
+      "scene": "S1-57"
+    },
+    {
+      "zh": "一个孩子愿意在父母身边写完一道题，",
+      "en": "A child willing to finish one problem at his parents' side,",
+      "scene": "S1-58"
+    },
+    {
+      "zh": "比他自己关在屋里熬一晚都强。",
+      "en": "is worth more than him grinding alone in his room all night.",
+      "scene": "S1-58"
+    },
+    {
+      "zh": "还有一件事我跟当爸的你说一声——",
+      "en": "One more thing, dad to dad—",
+      "scene": "S1-59"
+    },
+    {
+      "zh": "电子产品要严管。",
+      "en": "be strict about screens.",
+      "scene": "S1-59"
+    },
+    {
+      "zh": "我家在他刚上初中那年就立了规矩：",
+      "en": "The year he started middle school we set a rule:",
+      "scene": "S1-60"
+    },
+    {
+      "zh": "手机不给他，",
+      "en": "no phone of his own,",
+      "scene": "S1-60"
+    },
+    {
+      "zh": "平板登我和他妈的账号，",
+      "en": "the iPad runs on our accounts,",
+      "scene": "S1-60"
+    },
+    {
+      "zh": "每天屏幕时间合起来不超过半小时；",
+      "en": "total screen time capped at thirty minutes a day,",
+      "scene": "S1-60"
+    },
+    {
+      "zh": "电视一周只开一次，作业写完再看一集。",
+      "en": "TV once a week, only after homework, one episode.",
+      "scene": "S1-60"
+    },
+    {
+      "zh": "不是怕他打游戏，",
+      "en": "It's not the games I'm afraid of,",
+      "scene": "S1-61"
+    },
+    {
+      "zh": "是十几岁的脑子还撑不住短视频那种十五秒一刺激的节奏，",
+      "en": "it's that a teenage brain can't hold up to short-video's hit-every-fifteen-seconds rhythm—",
+      "scene": "S1-61"
+    },
+    {
+      "zh": "刷半年专注力就废了，再想拉回来要花三年。",
+      "en": "half a year of scrolling kills attention, and three years to claw it back.",
+      "scene": "S1-61"
+    },
+    {
+      "zh": "这条规矩我打算守到他高中毕业。",
+      "en": "I'm holding this rule until he graduates high school.",
+      "scene": "S1-62"
+    },
+    {
+      "zh": "爹妈帮孩子守住前额叶长齐的这十年，",
+      "en": "Parents shielding a kid's prefrontal cortex through these ten years,",
+      "scene": "S1-62"
+    },
+    {
+      "zh": "比给他买什么都值。",
+      "en": "is worth more than any gift you'll ever give him.",
+      "scene": "S1-62"
+    },
+    {
+      "zh": "我跟你说更狠的一句话。",
+      "en": "Let me say something even sharper.",
+      "scene": "S1-63"
+    },
+    {
+      "zh": "你担心他考不进重点高中——",
+      "en": "You worry he won't get into the top high school—",
+      "scene": "S1-64"
+    },
+    {
+      "zh": "你更该担心的，",
+      "en": "what you should worry about more,",
+      "scene": "S1-64"
+    },
+    {
+      "zh": "是他有没有一副好身体撑过未来二十年的考试。",
+      "en": "is whether his body can carry him through the next twenty years of tests.",
+      "scene": "S1-64"
+    },
+    {
+      "zh": "重点高中考不上还能再考，",
+      "en": "Top high school? You can take the test again.",
+      "scene": "S1-65"
+    },
+    {
+      "zh": "专业选错了还能再换，",
+      "en": "Wrong major? You can change it.",
+      "scene": "S1-65"
+    },
+    {
+      "zh": "城市待不下还能再走；",
+      "en": "City doesn't work? You can move.",
+      "scene": "S1-65"
+    },
+    {
+      "zh": "身体一旦废了，什么都白搭。",
+      "en": "But once his body's broken, none of the rest helps.",
+      "scene": "S1-65"
+    },
+    {
+      "zh": "一个学到凌晨两点、",
+      "en": "A kid up till two a.m. studying,",
+      "scene": "S1-66"
+    },
+    {
+      "zh": "近视八百度、",
+      "en": "eight hundred degrees of myopia,",
+      "scene": "S1-66"
+    },
+    {
+      "zh": "坐十分钟就腰疼的孩子，",
+      "en": "a back that aches after ten minutes of sitting—",
+      "scene": "S1-66"
+    },
+    {
+      "zh": "就算考上好大学，也撑不到毕业。",
+      "en": "even if he makes it into a top college, he won't last to graduation.",
+      "scene": "S1-66"
+    },
+    {
+      "zh": "孩子的健康，永远排在成绩前面。",
+      "en": "A child's health always comes before his grades.",
+      "scene": "S1-67"
+    },
+    {
+      "zh": "这不是放纵，是底线。",
+      "en": "That's not indulgence—that's the bottom line.",
+      "scene": "S1-67"
+    },
+    {
+      "zh": "别急。",
+      "en": "Don't rush.",
+      "scene": "S1-68"
+    },
+    {
+      "zh": "这事不是一天熬出来的，也就不可能一周修好。",
+      "en": "This wasn't built in a day, it can't be repaired in a week.",
+      "scene": "S1-69"
+    },
+    {
+      "zh": "他用了三年学会应付你，",
+      "en": "He took three years to learn how to fake it for you,",
+      "scene": "S1-69"
+    },
+    {
+      "zh": "你也要给自己三年陪他长回来。",
+      "en": "give yourself three years to walk him back.",
+      "scene": "S1-69"
+    },
+    {
+      "zh": "中途你会想发火、想算了，",
+      "en": "Along the way you'll want to lose it, want to give up,",
+      "scene": "S1-70"
+    },
+    {
+      "zh": "记住一开始为什么要蜕变就行。",
+      "en": "just remember why you started.",
+      "scene": "S1-70"
+    },
+    {
+      "zh": "如果今天看到这条的是孩子——",
+      "en": "And if it's a kid watching this today—",
+      "scene": "S1-71"
+    },
+    {
+      "zh": "过去那些挨过的骂、错过的考试、躲掉的作业，",
+      "en": "All the scoldings you took, the tests you failed, the homework you ducked,",
+      "scene": "S1-72"
+    },
+    {
+      "zh": "从今天起放下。",
+      "en": "let them go from today.",
+      "scene": "S1-72"
+    },
+    {
+      "zh": "不是要你原谅谁，",
+      "en": "It's not about forgiving anyone,",
+      "scene": "S1-73"
+    },
+    {
+      "zh": "是别再让那些东西替你做选择。",
+      "en": "it's about not letting them choose for you anymore.",
+      "scene": "S1-73"
+    },
+    {
+      "zh": "明天可以是新开始，下周一可以，下个月可以，下学期也可以；",
+      "en": "Tomorrow can be a new start, so can next Monday, next month, next term—",
+      "scene": "S1-74"
+    },
+    {
+      "zh": "越早开始，你越早看见一个不一样的自己。",
+      "en": "the earlier you start, the sooner you meet a different version of yourself.",
+      "scene": "S1-74"
+    },
+    {
+      "zh": "下次想偷懒的那一秒，",
+      "en": "The second you feel like slacking off next time,",
+      "scene": "S1-75"
+    },
+    {
+      "zh": "把前面这几分钟讲过的画面调出来——",
+      "en": "pull up the scenes from these last few minutes—",
+      "scene": "S1-75"
+    },
+    {
+      "zh": "你不想十年后是那个挑工作时被工作挑、想走的城市留不下的人。",
+      "en": "you don't want to be the one in ten years who can't pick a job, can't leave a city.",
+      "scene": "S1-75"
+    },
+    {
+      "zh": "愿你和你的孩子，都能在还来得及的时候，",
+      "en": "May you and your kid, while there's still time,",
+      "scene": "S1-76"
+    },
+    {
+      "zh": "把那扇关了很久的门，一起推开。",
+      "en": "push open that door together—the one that's been closed for too long.",
+      "scene": "S1-76"
     }
   ],
   "scenes": {
     "S1-01": {
-      "prompt": "扁平插画。米黄纸质底，一个黑色剪影站在十字路口正中央，前方两条路在远处分岔成 Y 字，地平线低，天空大面积留白。颜色克制：剪影黑、路面深灰、底色米黄。视觉重心偏下，画面上半部分大块留白方便贴文字。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个戴黑框眼镜的中年父亲背影站在画面左侧，半俯身怒视，右上半空一个低头咬嘴唇的初中男孩剪影。视觉重心偏左，右上大块留白。",
       "label": "",
       "motion": {
-        "enter": "slide-down",
+        "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "DARE",
+          "text": "七八年",
           "pos": {
-            "x": 50,
-            "y": 38.5
-          },
-          "style": {
-            "font": "ZS Shiguang",
-            "size": 70,
-            "weight": 700,
-            "color": "#cd1313",
-            "rotation": -3,
-            "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-callout"
+            "x": 78.0,
+            "y": 26.0
           },
           "motion": {
-            "enter": "ink-bleed",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "你是不敢。"
-          }
-        }
-      ],
-      "imageFit": "contain"
-    },
-    "S1-02": {
-      "prompt": "扁平插画。深米黄夜色底，仰视镜头：一只手机举在脸的上方，屏幕泛冷蓝光，光打在下颌和颧骨上，脸的轮廓只剩一道剪影。主体在画面中下偏右，左上角大量留白。整体调子压低、冷色。",
-      "label": "",
-      "motion": {
-        "enter": "slide-left",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "01:00 AM",
-          "pos": {
-            "x": 34,
-            "y": 14.5
-          },
-          "style": {
-            "font": "Inter",
-            "size": 84,
-            "weight": 700,
-            "color": "#9ecae6",
-            "rotation": 0,
-            "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "typewriter",
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "凌晨一点"
+            "match": "七八年"
+          }
+        }
+      ]
+    },
+    "S1-02": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个少年坐在书桌前的剪影，手里捏着一支笔垂着，作业本一片空白，台灯把影子拉得很长。视觉重心在书桌，上半留白。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "一个小时",
+          "pos": {
+            "x": 22.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "一个小时"
           }
         }
       ]
     },
     "S1-03": {
-      "prompt": "扁平插画。米黄底色，画面中央偏右一只紧握着的手机，屏幕里泛出冷绿色微光（像银行到账提示，但不画任何文字数字），握手机的手腕青筋微凸表达紧张。背景留白，左下角是没被点亮的台灯轮廓。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父亲背影在男孩旁边催促，一只手指着作业本，男孩头垂得更低，笔速更慢。画面中央两人剪影，背景留白。",
       "label": "",
       "motion": {
         "enter": "fade",
         "duration": 700
       },
-      "overlays": [
-        {
-          "text": "到账",
-          "pos": {
-            "x": 56.5,
-            "y": 47
-          },
-          "style": {
-            "preset": "os-marker",
-            "rotation": -14,
-            "color": "#e4e5d7"
-          },
-          "motion": {
-            "enter": "stamp",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "第一"
-          }
-        }
-      ]
+      "imageFit": "contain"
     },
     "S1-04": {
-      "prompt": "扁平插画。米黄底色，俯视镜头：桌面上一只老式按键计算器，旁边一沓纸边角微卷，纸面留白不写字。计算器和纸都偏画面下半部，上方大面积留白。整体调子冷峻、克制。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父亲一个人在画面前景皱眉抱臂，眼神冷淡向远处看；男孩剪影虚化在后景沙发上瘫着。视觉重心在父亲表情。",
       "label": "",
       "motion": {
-        "enter": "wipe-down",
+        "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "房贷合同",
+          "text": "懒",
           "pos": {
-            "x": 62.5,
-            "y": 57.5
-          },
-          "style": {
-            "font": "ZS Fangsong",
-            "size": 40,
-            "weight": 900,
-            "color": "#222",
-            "rotation": 8,
-            "letterSpacing": 0.05,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
+            "x": 50.0,
+            "y": 30.0
           },
           "motion": {
-            "enter": "fly-in",
-            "duration": 900,
-            "delay": 400
+            "duration": 700,
+            "delay": 200
           },
           "at": {
-            "match": "计算器"
+            "match": "你说他懒"
           }
         }
       ]
     },
     "S1-05": {
-      "prompt": "扁平插画。米黄底色，背影构图：一个穿衬衫的中年男人坐在椅子上，背微弓，双肩压得很低，头微垂。主体偏画面中央偏下，背景留白。整体姿态写“承重”。颜色低饱和：衬衫灰蓝、皮肤暖灰。",
-      "label": "",
-      "motion": {
-        "enter": "wipe-left",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "撑下去",
-          "pos": {
-            "x": 49.5,
-            "y": 20.5
-          },
-          "style": "os-handwrite",
-          "motion": {
-            "enter": "shimmer-sweep",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "撑下去"
-          }
-        }
-      ]
-    },
-    "S1-06": {
-      "prompt": "扁平插画。米黄底色，一扇大窗户敞开，窗外是大片晴朗的浅蓝天空和远山，阳光斜斜地从右上方打进来，地面有一道金黄光斑。视觉重心偏右上，画面整体明亮、开阔。",
-      "label": "",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      },
-      "overlays": [
-        {
-          "text": "20",
-          "pos": {
-            "x": 36.5,
-            "y": 32.5
-          },
-          "style": {
-            "font": "Inter",
-            "size": 42,
-            "weight": 500,
-            "color": "#222",
-            "rotation": 0,
-            "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
-          },
-          "motion": {
-            "enter": "fade",
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "二十岁"
-          }
-        }
-      ]
-    },
-    "S1-07": {
-      "prompt": "扁平插画。米黄底色，画面中央是一张被揉皱后又勉强展开的稿纸，旁边一支铅笔横置。纸上没有任何文字。色调温柔：稿纸米白、铅笔木色、底色米黄。视觉重心居中，四角留白。",
-      "label": "",
-      "motion": {
-        "enter": "mask-grid",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "重来",
-          "pos": {
-            "x": 50.5,
-            "y": 47
-          },
-          "style": {
-            "preset": "os-typewriter",
-            "weight": 700,
-            "font": "Mao Zedong",
-            "size": 60
-          },
-          "motion": {
-            "enter": "blur-pulse",
-            "duration": 500,
-            "delay": 400
-          },
-          "at": {
-            "match": "回头再来"
-          }
-        },
-        {
-          "text": "新文字",
-          "pos": {
-            "x": 44.5,
-            "y": 31
-          }
-        }
-      ]
-    },
-    "S1-08": {
-      "prompt": "扁平插画。米黄底色，一摞厚重的文件夹+信封堆在桌面上，把桌面压出弧度。文件没有任何字。主体偏画面左下，右上方大面积留白。颜色：文件夹深褐和墨绿混色，桌面木纹米色。",
-      "label": "",
-      "motion": {
-        "enter": "slide-up",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "30",
-          "pos": {
-            "x": 51,
-            "y": 80.5
-          },
-          "style": {
-            "font": "Inter",
-            "size": 45,
-            "weight": 500,
-            "color": "#222",
-            "rotation": -18,
-            "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
-          },
-          "motion": {
-            "enter": "fly-in",
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "三十岁"
-          }
-        }
-      ]
-    },
-    "S1-09": {
-      "prompt": "扁平插画。米黄底色但整体压暗，工位侧视图：一个穿西装的剪影坐在屏幕前，肩颈紧绷，屏幕背面对观众（不显示任何字）。屏光勾出剪影的轮廓。主体偏右，左侧留白。冷蓝屏光 + 暖灰皮肤。",
-      "label": "",
-      "motion": {
-        "enter": "glitch",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "40",
-          "pos": {
-            "x": 62.5,
-            "y": 19
-          },
-          "style": {
-            "font": "Inter",
-            "size": 45,
-            "weight": 500,
-            "color": "#222",
-            "rotation": 0,
-            "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
-          },
-          "motion": {
-            "enter": "fade",
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "四十岁"
-          }
-        }
-      ]
-    },
-    "S1-10": {
-      "prompt": "扁平插画。米黄底色，侧脸特写：眉头微锁，目光望向画面右下，嘴角紧抿。脸偏画面左侧，右侧留白。色调克制：皮肤暖灰、阴影深棕。",
-      "label": "",
-      "motion": {
-        "enter": "flip-h",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "不敢",
-          "pos": {
-            "x": 52.5,
-            "y": 73.5
-          },
-          "style": "os-circle-mark",
-          "motion": {
-            "enter": "fold-down",
-            "duration": 700,
-            "delay": 600
-          },
-          "at": {
-            "match": "已经"
-          }
-        }
-      ]
-    },
-    "S1-11": {
-      "prompt": "扁平插画。米黄底色，俯视镜头：地面上一双静止的皮鞋，鞋面磨损，鞋尖朝前。鞋后地面没有脚印，鞋前一段虚线箭头指向远方。主体居中偏下，上半部分留白。",
-      "label": "",
-      "motion": {
-        "enter": "slide-right",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "原地",
-          "pos": {
-            "x": 50,
-            "y": 38.5
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 96,
-            "weight": 400,
-            "color": "var(--accent)",
-            "rotation": 3,
-            "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "ink-bleed",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "站在原地"
-          }
-        }
-      ]
-    },
-    "S1-12": {
-      "prompt": "扁平插画。米黄底色，工位侧视图：一个穿衬衫的背影坐在椅子上，姿势僵硬、对着屏幕，桌面上堆满长期占用的痕迹——好几只半空的马克杯、外卖盒、皱巴巴的便签。工位居中偏左，右侧大面积留白。色调：桌面木色、衬衫灰蓝。",
-      "label": "",
-      "motion": {
-        "enter": "wipe-up",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "stay",
-          "pos": {
-            "x": 41,
-            "y": 42
-          },
-          "style": "os-marker",
-          "motion": {
-            "enter": "rise-glow",
-            "duration": 700,
-            "delay": 400
-          },
-          "at": {
-            "match": "同事"
-          }
-        }
-      ]
-    },
-    "S1-13": {
-      "prompt": "扁平插画。米黄底色但整体压暗，俯视镜头：床上半坐起来的一个人，屏幕的冷蓝光打在脸上，毯子堆在腿边。主体居中偏左，右上方留白。色调：屏光冷蓝、阴影深褐。",
-      "label": "",
-      "motion": {
-        "enter": "slide-up",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "02:00 AM",
-          "pos": {
-            "x": 66.5,
-            "y": 14.5
-          },
-          "style": {
-            "font": "Inter",
-            "size": 80,
-            "weight": 700,
-            "color": "#496779",
-            "rotation": 0,
-            "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "typewriter",
-            "duration": 700,
-            "delay": 400
-          },
-          "at": {
-            "match": "两点"
-          }
-        }
-      ]
-    },
-    "S1-14": {
-      "prompt": "扁平插画。米黄底色，地平线很低的远景：一条单调笔直的公路从画面下方延伸到地平线远处，路的尽头没有任何建筑、只有空旷。视觉重心居中偏下，上方大面积天空米黄。",
-      "label": "",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "10 YEARS",
-          "pos": {
-            "x": 71,
-            "y": 72.5
-          },
-          "style": {
-            "font": "Inter",
-            "size": 20,
-            "weight": 700,
-            "color": "#2159ca",
-            "rotation": -2,
-            "letterSpacing": 0.05,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "unfold",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "大好"
-          }
-        },
-        {
-          "text": "10",
-          "pos": {
-            "x": 29.5,
-            "y": 71.5
-          },
-          "style": {
-            "preset": "os-callout",
-            "size": 20,
-            "color": "#601010"
-          },
-          "at": {
-            "match": "大好"
-          }
-        }
-      ]
-    },
-    "S1-15": {
-      "prompt": "扁平插画。米黄底色，一面立式镜子放在画面左侧，镜中映出的人影和镜外的人影是同一个轮廓，但方向相反。主体偏左，右侧留白。色调克制：镜框深棕、人影暖灰。",
-      "label": "",
-      "motion": {
-        "enter": "wipe-right",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "YOU!",
-          "pos": {
-            "x": 62,
-            "y": 49
-          },
-          "style": {
-            "preset": "os-callout",
-            "color": "#d92020",
-            "size": 80
-          },
-          "motion": {
-            "enter": "fade",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "你心里"
-          }
-        }
-      ]
-    },
-    "S1-16": {
-      "prompt": "扁平插画。米黄底色，特写：一支钢笔的笔尖将落未落，纸面留白不写任何字，墨水在笔尖凝成一滴未滴下的墨珠。主体偏画面中央偏右，左侧大量留白。",
-      "label": "",
-      "motion": {
-        "enter": "zoom-out",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "your name",
-          "pos": {
-            "x": 50,
-            "y": 77.5
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 100,
-            "weight": 400,
-            "color": "#222",
-            "rotation": -3,
-            "letterSpacing": 0.07,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-handwrite"
-          },
-          "motion": {
-            "enter": "handwrite",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "都在替你"
-          }
-        }
-      ]
-    },
-    "S1-17": {
-      "prompt": "扁平插画。米黄底色但压暗，俯视镜头：床上一床被子被翻得乱糟糟，枕头歪在一侧，主体居中偏下。整体调子昏黄、不安。",
-      "label": "",
-      "motion": {
-        "enter": "push-right",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "工作、收入、房贷",
-          "pos": {
-            "x": 49.5,
-            "y": 24
-          },
-          "style": {
-            "preset": "os-handwrite",
-            "color": "#f1e4e4"
-          },
-          "motion": {
-            "enter": "handwrite",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "翻来覆去"
-          }
-        }
-      ]
-    },
-    "S1-18": {
-      "prompt": "扁平插画。米黄底色，远景：脚下的小路在中景处分叉成三条，向左、向中、向右铺开，三条路在远处都看不见尽头。主体居中，上半部分天空留白。",
-      "label": "",
-      "motion": {
-        "enter": "push-left",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "迷茫",
-          "pos": {
-            "x": 49.5,
-            "y": 23.5
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 90,
-            "weight": 700,
-            "color": "#e13d3d",
-            "rotation": 0,
-            "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-circle-mark"
-          },
-          "motion": {
-            "enter": "slide-clip",
-            "duration": 700,
-            "delay": 400
-          },
-          "at": {
-            "match": "要"
-          }
-        },
-        {
-          "text": "3",
-          "pos": {
-            "x": 63.5,
-            "y": 62
-          },
-          "at": {
-            "match": "万一"
-          }
-        },
-        {
-          "text": "1",
-          "pos": {
-            "x": 33.5,
-            "y": 55.5
-          },
-          "style": "os-stamp",
-          "at": {
-            "match": "吃饭"
-          }
-        },
-        {
-          "text": "2",
-          "pos": {
-            "x": 49.5,
-            "y": 44.5
-          },
-          "style": "os-stamp",
-          "at": {
-            "match": "路要"
-          }
-        }
-      ]
-    },
-    "S1-19": {
-      "prompt": "扁平插画。米黄底色，俯视镜头：两只摊开向上的手心，手心干净没拿东西，手腕处衣袖卷起。主体偏画面右下，左上方大面积留白。色调：皮肤暖灰、衬衫米白。",
-      "label": "",
-      "motion": {
-        "enter": "zoom-in",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "HOW?",
-          "pos": {
-            "x": 56,
-            "y": 26.5
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 108,
-            "weight": 400,
-            "color": "var(--accent)",
-            "rotation": -2,
-            "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "fade",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "什么"
-          }
-        }
-      ]
-    },
-    "S1-20": {
-      "prompt": "扁平插画。米黄底色，远景：一个弯腰搬运重物的人影，背影构图，重物的形状没有具体细节，剪影感强。主体居中偏下，整体调子沉重。颜色：剪影深棕、底色米黄。",
-      "label": "",
-      "motion": {
-        "enter": "flip-v",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "卖力气",
-          "pos": {
-            "x": 50,
-            "y": 39.5
-          },
-          "style": "os-marker",
-          "motion": {
-            "enter": "blur-pulse",
-            "duration": 500,
-            "delay": 200
-          },
-          "at": {
-            "match": "还是"
-          }
-        }
-      ]
-    },
-    "S1-21": {
-      "prompt": "扁平插画。米黄底色，并置构图：左侧一只磨损的老旧工具箱半开着，右侧一卷未展开的新图纸卷得紧紧的。两者中间是一条隐形的分界。色调：工具箱深褐、图纸米白。",
-      "label": "",
-      "motion": {
-        "enter": "slide-down",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "值钱",
-          "pos": {
-            "x": 37.5,
-            "y": 64
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 40,
-            "weight": 400,
-            "color": "var(--accent)",
-            "rotation": -11,
-            "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
-          },
-          "motion": {
-            "enter": "stamp",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "才刚"
-          }
-        }
-      ]
-    },
-    "S1-22": {
-      "prompt": "扁平插画。米黄底色，强透视：一条小巷向远方迅速收窄，两侧墙体高大，尽头几乎只剩一道竖缝。主体居中，整体调子压抑。色调：墙体深灰褐、底光米黄。",
-      "label": "",
-      "motion": {
-        "enter": "slide-left",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "越走越窄",
-          "pos": {
-            "x": 51,
-            "y": 86
-          },
-          "style": {
-            "font": "ZS Fangsong",
-            "size": 48,
-            "weight": 700,
-            "color": "#a99e9e",
-            "rotation": 0,
-            "letterSpacing": 0.05,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "fly-in",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "那条路"
-          }
-        }
-      ]
-    },
-    "S1-23": {
-      "prompt": "扁平插画。米黄底色，前景一双站定不动的皮鞋占据画面下方，远景一队人影正背对镜头往地平线方向走远，前后景距离感强。主体偏画面左侧，右上方留白。色调：站定的脚深棕、远去队伍剪影暖灰、底色米黄。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一句沉默的留白。画面只有一个孤独的小男孩剪影站在大片米黄空白里，没有大人，没有书桌。",
       "label": "",
       "motion": {
         "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "掉队",
+          "text": "不是",
           "pos": {
-            "x": 46.5,
-            "y": 57.5
-          },
-          "style": {
-            "preset": "os-marker",
-            "size": 60,
-            "rotation": -4
+            "x": 50.0,
+            "y": 45.0
           },
           "motion": {
-            "enter": "fold-down",
             "duration": 700,
-            "delay": 600
+            "delay": 200
           },
           "at": {
-            "match": "路"
+            "match": "不是"
+          }
+        }
+      ]
+    },
+    "S1-06": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。三个剪影围着中间一个小男孩：左边是抱孩子喂饭的爷爷，中间是背后递书包的妈妈，右边是举起手要打的爸爸。三方姿态向中间小男孩收拢。底部留白。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "宠溺",
+          "pos": {
+            "x": 18.0,
+            "y": 70.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "爷爷宠溺"
+          }
+        },
+        {
+          "text": "包办",
+          "pos": {
+            "x": 50.0,
+            "y": 78.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "妈妈包办"
+          }
+        },
+        {
+          "text": "打骂",
+          "pos": {
+            "x": 82.0,
+            "y": 70.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "爸爸打骂"
+          }
+        }
+      ]
+    },
+    "S1-07": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一双成年人的手在帮孩子收拾书包，旁边一个少年坐在床上看着自己的手发呆。书包、闹钟、课本散落一地。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-08": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。天平两端：左盘堆满父母代劳的手，右盘空了下来，只有一只孩子的小手悬着不知道往哪放。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "1000 : 1000",
+          "pos": {
+            "x": 50.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "一千次"
+          }
+        }
+      ]
+    },
+    "S1-09": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一面破裂的镜子里，一个少年看着自己的倒影低下头，镜面裂纹从眼睛位置向外延伸。背景大面积留白。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "放弃自己",
+          "pos": {
+            "x": 50.0,
+            "y": 78.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "放弃自己"
+          }
+        }
+      ]
+    },
+    "S1-10": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个十二三岁少年的侧脸特写剪影，背景米黄。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-11": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个透视的人脑剪影，前额部位画一道未完成的虚线轮廓，旁边一条数轴标注从 0 到 25。学术感、克制。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "25 岁",
+          "pos": {
+            "x": 78.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "二十五岁"
+          }
+        }
+      ]
+    },
+    "S1-12": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个初中生的剪影站在一个成年人剪影旁边，初中生只有成年人一半高度的灯光打在地上的影子。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "一半",
+          "pos": {
+            "x": 50.0,
+            "y": 82.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "一半"
+          }
+        }
+      ]
+    },
+    "S1-13": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个少年坐在地上抱着头，旁边一本翻开的书页风吹起来。画面安静。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-14": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一只大人的手轻轻搭在少年的肩上，少年抬头看向远处，光线从右上方落下。温和有方向感。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-15": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。前景一只举起的男人粗糙的手剪影遮住半边画面，后景一个小男孩缩着肩膀闭着眼睛。冷色背景。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "抬起的手",
+          "pos": {
+            "x": 28.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "一只抬起来的手"
+          }
+        }
+      ]
+    },
+    "S1-16": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个少年坐在沙发上不动，背景父亲张嘴吼着，吼声化作三个气泡飘在头顶，少年闭着耳朵看手机以外的方向。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-17": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。少年的耳朵特写剪影，外面飘着模糊的吼声波纹，耳朵周围画一圈隔音罩。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "免疫",
+          "pos": {
+            "x": 75.0,
+            "y": 32.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "免疫"
+          }
+        }
+      ]
+    },
+    "S1-18": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。少年的剪影背着双手，脸上挂着一个夸张的笑面具，身后是低着头的真实表情。两个状态前后叠合。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "装样子",
+          "pos": {
+            "x": 50.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "装样子"
+          }
+        }
+      ]
+    },
+    "S1-19": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一摞作业本松松垮垮堆在桌上，最上面一本翻开，字迹潦草，红笔批改的错题旁边一片空白没有改动。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-20": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一份阅读理解试卷，正文段落整片虚化模糊，少年的手只在下方题目处停留，笔尖在选项 A B C D 之间游移。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-21": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一行字帖：原本要写五个字，只写了三个字就停笔，剩下两格空着。旁边一本古诗默写本崭新没翻开。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "3 字",
+          "pos": {
+            "x": 28.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "三个字"
+          }
+        },
+        {
+          "text": "5 字",
+          "pos": {
+            "x": 72.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "绝不写五个"
+          }
+        }
+      ]
+    },
+    "S1-22": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。清晨厨房餐桌一角，少年趴着草草抄一本古诗，米饭和水杯在旁边。窗外刚亮。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-23": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。成绩单特写：一个数字被放大居中，父亲的手指压在那个数字上。整张纸边缘虚化。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "成绩单",
+          "pos": {
+            "x": 82.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "成绩单"
           }
         }
       ]
     },
     "S1-24": {
-      "prompt": "扁平插画。米黄底色，画面右侧一张老式布艺沙发，沙发上斜躺着一个人，眼睛望向天花板。主体偏右，左侧大面积留白。色调：沙发米褐、抱枕暗红。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一扇正在缓缓关上的门，门后是远处一个小小的少年背影望着越变越窄的光。",
       "label": "",
       "motion": {
-        "enter": "wipe-down",
+        "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "HOW？",
+          "text": "选择权",
           "pos": {
-            "x": 53,
-            "y": 24.5
+            "x": 22.0,
+            "y": 80.0
           },
-          "style": "os-handwrite",
           "motion": {
-            "enter": "fade",
-            "duration": 900,
+            "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "怎么"
+            "match": "选自己人生的权利"
           }
         }
       ]
     },
     "S1-25": {
-      "prompt": "扁平插画。米黄底色，俯视镜头：一只皮鞋的尖端正小心试探地落在一块石板上，下一块石板还在远处。主体居中偏下，整体留白。色调：石板冷灰、鞋暖棕。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一面墙上贴着三张被划掉的纸：题目、课文、闹钟。地上散落更多被丢弃的纸片。",
       "label": "",
       "motion": {
-        "enter": "wipe-left",
+        "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain"
+    },
+    "S1-26": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。三条岔路的远景剪影：一条通往工厂烟囱、一条通往陌生城市天际线、一条只是黑暗，少年站在路口动弹不得。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-27": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个中年人背影在很重的行李下弯腰前行，地面拉得很长。背景米黄。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-28": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个时间轴：左边短短一段标着 \"3 yrs\"，右边一段很长很长延伸到画面外。两段对比。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "小步走",
+          "text": "3 年",
           "pos": {
-            "x": 50.5,
-            "y": 39.5
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 92,
-            "weight": 400,
-            "color": "var(--accent)",
-            "rotation": 2,
-            "letterSpacing": 0.07,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "x": 22.0,
+            "y": 50.0
           },
           "motion": {
-            "enter": "typewriter",
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "小步"
+            "match": "苦这几年"
           }
-        }
-      ]
-    },
-    "S1-26": {
-      "prompt": "扁平插画。米黄底色，画面中央一个人正面剪影，背景围着一圈模糊的、只能看见眼睛的人影，眼睛朝中央剪影望来。主体居中。色调：剪影深棕、底色米黄。",
-      "label": "",
-      "motion": {
-        "enter": "ink-bleed",
-        "duration": 900
-      },
-      "overlays": [
+        },
         {
-          "text": "LOSER",
+          "text": "后半辈子",
           "pos": {
-            "x": 50.5,
-            "y": 22
-          },
-          "style": {
-            "font": "ZS Fangsong",
-            "size": 80,
-            "weight": 900,
-            "color": "#715b5b",
-            "rotation": 2,
-            "letterSpacing": 0.06,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
+            "x": 78.0,
+            "y": 50.0
           },
           "motion": {
-            "enter": "fade",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "周围"
-          }
-        }
-      ]
-    },
-    "S1-27": {
-      "prompt": "扁平插画。米黄底色，一阵风把一摞便签纸吹散到空中，纸片旋转着向画面外飞去。主体居中偏右，左侧留白。色调：便签纸米白、风的方向感强。",
-      "label": "",
-      "motion": {
-        "enter": "mask-grid",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "FORGET",
-          "pos": {
-            "x": 56.5,
-            "y": 48.5
-          },
-          "style": {
-            "preset": "os-handwrite",
-            "font": "XY Kaiti",
-            "rotation": -10
-          },
-          "motion": {
-            "enter": "handwrite",
             "duration": 700,
-            "delay": 400
+            "delay": 200
           },
           "at": {
-            "match": "三个月"
-          }
-        }
-      ]
-    },
-    "S1-28": {
-      "prompt": "扁平插画。米黄底色，一只玻璃沙漏放在桌面中央，上半部分的沙子已经快漏完，下半部分堆得很满。主体居中。色调：沙漏铜框、沙金黄、桌面深棕。",
-      "label": "",
-      "motion": {
-        "enter": "slide-up",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "NO REFUND",
-          "pos": {
-            "x": 50.5,
-            "y": 87.5
-          },
-          "style": {
-            "preset": "os-callout-red",
-            "color": "#e5cccc"
-          },
-          "motion": {
-            "enter": "stamp",
-            "duration": 900,
-            "delay": 600
-          },
-          "at": {
-            "match": "要不回来"
+            "match": "苦后半辈子"
           }
         }
       ]
     },
     "S1-29": {
-      "prompt": "扁平插画。米黄底色，画面中央一个粗壮的 U 型箭头路标，箭头方向 180 度回转。路标立在荒野上，地平线低。色调：路标深棕、底色米黄、天空浅米。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一面镜子里映出一个父亲自己审视自己的脸。镜外站着一个等待的少年。视觉重心在镜子。",
       "label": "",
       "motion": {
-        "enter": "glitch",
+        "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "U-TURN",
+          "text": "先你蜕变",
           "pos": {
-            "x": 51.5,
-            "y": 73
-          },
-          "style": {
-            "font": "Inter",
-            "size": 104,
-            "weight": 700,
-            "color": "var(--accent)",
-            "rotation": -5,
-            "letterSpacing": 0.06,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "x": 50.0,
+            "y": 80.0
           },
           "motion": {
-            "enter": "stamp",
-            "duration": 900,
-            "delay": 400
+            "duration": 700,
+            "delay": 200
           },
           "at": {
-            "match": "掉头"
+            "match": "先你蜕变"
           }
         }
       ]
     },
     "S1-30": {
-      "prompt": "扁平插画。米黄底色，特写：一只攥紧的拳头在画面中央慢慢松开，指节因为用力还泛白。主体居中。色调：皮肤暖灰、阴影深褐。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个父亲抿着嘴把张开的口慢慢闭上，背景的吼声波纹被一只手抹掉。安静。",
       "label": "",
       "motion": {
-        "enter": "flip-h",
+        "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain"
+    },
+    "S1-31": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。手机微信群消息截图风格：老师发了一条消息，旁边一个父亲在认真读。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-32": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。餐桌前父亲低头跟少年说话，少年抬头眼神里有点意外的光。两人之间一道暖光。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "CONTINUE",
+          "text": "做得不错",
           "pos": {
-            "x": 49.5,
-            "y": 82
-          },
-          "style": {
-            "font": "ZS Fangsong",
-            "size": 84,
-            "weight": 700,
-            "color": "#442c2c",
-            "rotation": 0,
-            "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "x": 72.0,
+            "y": 25.0
           },
           "motion": {
-            "enter": "blur-pulse",
-            "duration": 500,
+            "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "再撑"
-          }
-        }
-      ]
-    },
-    "S1-31": {
-      "prompt": "扁平插画。米黄底色，全身剪影：一个人正在转身，半个身体朝向原路、半个身体朝向新路，脚步定格在转身的瞬间。主体居中偏左，右侧留白。色调：剪影深棕。",
-      "label": "",
-      "motion": {
-        "enter": "slide-right",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "BACK",
-          "pos": {
-            "x": 30,
-            "y": 23.5
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 60,
-            "weight": 400,
-            "color": "var(--accent)",
-            "rotation": -4,
-            "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
-          },
-          "motion": {
-            "enter": "stamp",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "是掉头"
-          }
-        }
-      ]
-    },
-    "S1-32": {
-      "prompt": "扁平插画。米黄底色，桌面上一只旧皮夹翻开着，里面没有钞票，只夹着几张褪色的旧票根，票根上没有任何字。主体居中。色调：皮夹深棕、票根米黄、桌面木色。",
-      "label": "",
-      "motion": {
-        "enter": "wipe-up",
-        "duration": 700
-      },
-      "overlays": [
-        {
-          "text": "不是钱",
-          "pos": {
-            "x": 50,
-            "y": 30
-          },
-          "style": {
-            "font": "ZS Fangsong",
-            "size": 96,
-            "weight": 700,
-            "color": "#d93f3f",
-            "rotation": 0,
-            "letterSpacing": 0.05,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "unfold",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "最贵的"
+            "match": "做得不错"
           }
         }
       ]
     },
     "S1-33": {
-      "prompt": "扁平插画。米黄底色，特写：一只手指尝试翻动一本日记本，但前半本的纸页已经被胶水粘成厚厚一块，再也翻不回去；翻不动的那块纸页边缘泛黄、卷曲。主体居中偏右，左侧留白。色调：日记本米褐、胶水痕迹深棕、手暖灰。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一双父母的手原本紧紧抱着一个少年的肩膀，现在松开了，少年向前迈了一步。",
       "label": "",
       "motion": {
-        "enter": "ink-bleed",
+        "enter": "fade",
         "duration": 700
       },
-      "overlays": [
-        {
-          "text": "时间",
-          "pos": {
-            "x": 66,
-            "y": 65
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 60,
-            "weight": 400,
-            "color": "var(--accent)",
-            "rotation": 16,
-            "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
-          },
-          "motion": {
-            "enter": "stamp",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "耗进去"
-          }
-        }
-      ]
+      "imageFit": "contain"
     },
     "S1-34": {
-      "prompt": "扁平插画。米黄底色，全身剪影：一个人抬头挺胸地站着，脚跟微微离地、即将迈步。主体偏画面左下。色调：剪影深棕、底色米黄。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个少年正要伸手出去做点什么，旁边父亲的手悬在半空选择不去阻拦。背景留白。",
       "label": "",
       "motion": {
-        "enter": "ink-bleed",
+        "enter": "fade",
         "duration": 700
       },
-      "overlays": [
-        {
-          "text": "勇敢",
-          "pos": {
-            "x": 44.5,
-            "y": 43
-          },
-          "style": "os-marker",
-          "motion": {
-            "enter": "typewriter",
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "承认走错"
-          }
-        }
-      ]
+      "imageFit": "contain"
     },
     "S1-35": {
-      "prompt": "扁平插画。米黄底色，远景：地平线远处一座小山的山顶被一道斜射的暖光打亮，山脚下隐约有一条小路通往山顶。视觉重心偏右上，左下方留白。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。三五个少年在野地里追跑打闹，其中一个摔倒在草地上笑得满身泥。",
       "label": "",
       "motion": {
-        "enter": "wipe-right",
+        "enter": "fade",
         "duration": 700
       },
-      "overlays": [
-        {
-          "text": "arrival",
-          "pos": {
-            "x": 65,
-            "y": 20.5
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 100,
-            "weight": 400,
-            "color": "var(--accent)",
-            "rotation": -2,
-            "letterSpacing": 0.07,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
-          },
-          "motion": {
-            "enter": "fade",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "才走"
-          }
-        }
-      ]
+      "imageFit": "contain"
     },
     "S1-36": {
-      "prompt": "扁平插画。米黄底色，画面右侧一把破旧的雨伞被一圈又一圈的灰色胶带反复缠绕粘补，伞骨从破洞里露出来，伞面颜色褪得差不多了。主体偏右，左侧留白。色调：伞面褪色灰蓝、胶带暗银、底色米黄。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。公交车站台一个少年困惑地看路线图，旁边一个小贩在递东西收钱，少年眉头紧皱在算账。",
       "label": "",
       "motion": {
-        "enter": "zoom-out",
+        "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain"
+    },
+    "S1-37": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。对比构图：左边一根细瘦的豆芽菜被挂在玻璃罩里，右边一棵歪斜但坚硬的小树扎在野地里风吹日晒。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "有的人……",
+          "text": "豆芽菜",
           "pos": {
-            "x": 35,
-            "y": 29
-          },
-          "style": {
-            "font": "ZS Fangsong",
-            "size": 46,
-            "weight": 700,
-            "color": "#222",
-            "rotation": 0,
-            "letterSpacing": 0.04,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)"
+            "x": 22.0,
+            "y": 25.0
           },
           "motion": {
-            "enter": "blur-pulse",
-            "duration": 500,
+            "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "很多人"
+            "match": "豆芽菜"
           }
-        }
-      ]
-    },
-    "S1-37": {
-      "prompt": "扁平插画。米黄底色，回头视角：脚下一条长长的来路从画面下方延伸到地平线远处，路上有清晰的脚印朝着观众这一侧走来。主体居中。色调：路面深褐、脚印更深。",
-      "label": "",
-      "motion": {
-        "enter": "push-right",
-        "duration": 700
-      },
-      "overlays": [
+        },
         {
-          "text": "SUNK COST",
+          "text": "硬得快",
           "pos": {
-            "x": 49.5,
-            "y": 14.5
+            "x": 78.0,
+            "y": 25.0
           },
-          "style": "os-callout-red",
           "motion": {
-            "enter": "fold-down",
             "duration": 700,
-            "delay": 600
+            "delay": 200
           },
           "at": {
-            "match": "都走到这一步了"
+            "match": "硬得快"
           }
         }
       ]
     },
     "S1-38": {
-      "prompt": "扁平插画。米黄底色，特写：一片干裂的褐色土地上冒出一根枯黑的细枝，没有花朵也没有叶子。主体居中偏下。色调：土地深褐、枯枝近黑。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个二十几岁的青年第一次走进社会场合，僵硬地不知道把手放哪里，旁人忙着各自的事。背景偏冷。",
       "label": "",
       "motion": {
-        "enter": "push-left",
+        "enter": "fade",
         "duration": 700
       },
-      "overlays": [
-        {
-          "text": "ERROR",
-          "pos": {
-            "x": 50.5,
-            "y": 15.5
-          },
-          "style": {
-            "font": "ZS Fangsong",
-            "size": 60,
-            "weight": 900,
-            "color": "#c22929",
-            "rotation": 2,
-            "letterSpacing": 0.05,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
-          },
-          "motion": {
-            "enter": "fade",
-            "duration": 900,
-            "delay": 400
-          },
-          "at": {
-            "match": "你把脚"
-          }
-        }
-      ]
+      "imageFit": "contain"
     },
     "S1-39": {
-      "prompt": "扁平插画。米黄底色，立式镜中一张正面的脸正在凝视镜外的人，镜外只看到后脑勺剪影。主体偏右，左侧留白。色调：镜框深棕、皮肤暖灰。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父亲在画面前景，弯腰靠在膝盖上，眼神严肃。后面是一扇虚化的关着的房门。",
       "label": "",
       "motion": {
-        "enter": "zoom-in",
+        "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "拍板",
+          "text": "一起做",
           "pos": {
-            "x": 37.5,
-            "y": 31.5
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 96,
-            "weight": 700,
-            "color": "#222",
-            "rotation": -3,
-            "letterSpacing": 0.07,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "textDecoration": "line-through",
-            "preset": "os-marker"
+            "x": 78.0,
+            "y": 80.0
           },
           "motion": {
-            "enter": "ink-bleed",
-            "duration": 900,
-            "delay": 400
+            "duration": 700,
+            "delay": 200
           },
           "at": {
-            "match": "问自己"
+            "match": "跟他一起做一件事"
           }
         }
       ]
     },
     "S1-40": {
-      "prompt": "扁平插画。米黄底色，特写：一只老式机械闹钟放在床头柜上，圆形表盘大面积留白、没有任何数字刻度，只剩两根细长指针。主体居中。色调：闹钟金属冷灰、柜面木色、底色米黄。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一栋高层住宅楼外景，电梯井和楼梯井并排，画面右下角一个 11F 标记。底色米黄。",
       "label": "",
       "motion": {
-        "enter": "flip-v",
+        "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "1 year",
+          "text": "11 F",
           "pos": {
-            "x": 50,
-            "y": 55
-          },
-          "style": {
-            "preset": "os-callout",
-            "color": "#d81313"
+            "x": 82.0,
+            "y": 50.0
           },
           "motion": {
-            "enter": "fly-in",
-            "duration": 900,
-            "delay": 400
+            "duration": 700,
+            "delay": 200
           },
           "at": {
-            "match": "再耗一年"
+            "match": "十一楼"
           }
         }
       ]
     },
     "S1-41": {
-      "prompt": "扁平插画。米黄底色，大片日历纸正被风从画面左侧吹向右侧，纸页空白不印任何数字。主体覆盖画面上半部和左下方，右下角刻意留出一块干净的留白方便贴文字。色调：纸米白、阴影深米。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。客厅一角，父亲一个人坐在沙发上抱着头，远处一扇紧闭的房门。安静、孤独。",
       "label": "",
       "motion": {
-        "enter": "slide-down",
+        "enter": "fade",
         "duration": 700
       },
+      "imageFit": "contain"
+    },
+    "S1-42": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。第二天清晨，父亲站在儿子房门外，手抬到一半敲门。光线柔和。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
       "overlays": [
         {
-          "text": "十年",
+          "text": "一起做件事",
           "pos": {
-            "x": 39.5,
-            "y": 39
-          },
-          "style": {
-            "font": "XY Kaiti",
-            "size": 58,
-            "weight": 400,
-            "color": "var(--accent)",
-            "rotation": 1,
-            "letterSpacing": 0.08,
-            "shadow": "3px 5px 0 rgba(0,0,0,.14)",
-            "preset": "os-stamp"
+            "x": 50.0,
+            "y": 22.0
           },
           "motion": {
-            "enter": "stamp",
-            "duration": 900,
-            "delay": 400
+            "duration": 700,
+            "delay": 200
           },
           "at": {
-            "match": "下一个十年"
+            "match": "咱爷俩一起做件事"
+          }
+        }
+      ]
+    },
+    "S1-43": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父亲和少年并肩剪影，两人都穿着随便的家居服站在楼道口，神情松弛。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-44": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一栋楼的剖面图：早上、放学、晚上三道阶梯依次往上的箭头标记。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "× 3",
+          "pos": {
+            "x": 82.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "早上一趟"
+          }
+        }
+      ]
+    },
+    "S1-45": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。楼梯井剖面：向上的路是一条粗黑箭头，向下的电梯井画一个小小电梯。父子两人并肩往上爬。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "↑ 楼梯",
+          "pos": {
+            "x": 22.0,
+            "y": 28.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "只往上爬"
+          }
+        },
+        {
+          "text": "↓ 电梯",
+          "pos": {
+            "x": 78.0,
+            "y": 28.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "下楼坐电梯"
+          }
+        }
+      ]
+    },
+    "S1-46": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一张膝盖侧面解剖图：上楼时关节受力箭头小，下楼时受力箭头大三倍，旁边一个跑步者的剪影。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "× 3",
+          "pos": {
+            "x": 78.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "三倍多"
+          }
+        }
+      ]
+    },
+    "S1-47": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父子俩在一段楼梯上喘气，背靠墙坐着，汗水珠在剪影边缘。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-48": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父子俩并肩走在楼梯中段，少年正在说话，父亲侧耳听，光线温和。三楼到七楼标记隐约。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-49": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。厨房洗完碗的餐桌旁，父子两人不约而同放下毛巾走向楼梯间，少年顺手拿了瓶水。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-50": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一只大手原本握成拳头举起，画面下一秒变成松开手指牵着一只少年的小手。两手对比构图。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "抬手",
+          "pos": {
+            "x": 22.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "抬起来要打他的手"
+          }
+        },
+        {
+          "text": "牵手",
+          "pos": {
+            "x": 78.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "牵着他一起爬"
+          }
+        }
+      ]
+    },
+    "S1-51": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。楼梯井 8 楼标牌，两人剪影靠在栏杆上喘气，画面安静。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "8 F",
+          "pos": {
+            "x": 22.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "爬到八楼"
+          }
+        }
+      ]
+    },
+    "S1-52": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个奖杯造型的成就感图标，旁边一行写满 \"骂、骂、骂\" 的小字被划掉。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-53": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一扇紧闭的书房门，门缝里透出冷光，门外父亲犹豫不前。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-54": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。餐桌全景：父亲坐在一头，少年坐在另一头，中间一个小盆栽。两人都低头各写各的，灯光暖。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-55": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父亲一头的桌面特写：一本字帖摊开、一本《朝花夕拾》压在旁边、一本《骆驼祥子》立着。父亲的手握笔在字帖上一笔一笔写。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "朝花夕拾",
+          "pos": {
+            "x": 22.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "朝花夕拾"
+          }
+        },
+        {
+          "text": "骆驼祥子",
+          "pos": {
+            "x": 78.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "骆驼祥子"
+          }
+        }
+      ]
+    },
+    "S1-56": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。少年抬头看一眼对面认真写字皱眉的父亲，眼神变了。视觉重心在两人之间的视线连线上。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "陪着写",
+          "pos": {
+            "x": 78.0,
+            "y": 78.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "被人陪着写"
+          }
+        }
+      ]
+    },
+    "S1-57": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。对比构图：左边一个父亲在孩子身后翘脚监督板着脸；右边一个父亲坐对面也在低头写字两人平等。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-58": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。餐桌上一杯热茶冒着热气，父子两人各做各的事但同框。背景柔和。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-59": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一台手机和一台平板被一只手收进抽屉锁上，少年远远看着。底色米黄。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "严管",
+          "pos": {
+            "x": 78.0,
+            "y": 28.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "严管"
+          }
+        }
+      ]
+    },
+    "S1-60": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一张家规清单贴在冰箱门上：手机 ✗ / 平板 父母账号 / 屏幕 30 min / 电视 1 次/周。每项配一个小图标。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "30 min",
+          "pos": {
+            "x": 50.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "不超过半小时"
+          }
+        }
+      ]
+    },
+    "S1-61": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一颗少年的大脑切面图，一束 15 秒短视频的闪光波纹从屏幕射进脑中，前额叶部位被冲击得发亮。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "15 sec",
+          "pos": {
+            "x": 22.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "十五秒一刺激"
+          }
+        }
+      ]
+    },
+    "S1-62": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个挂在墙上的日历从初一翻到高三毕业，每一页都圈着 \"屏幕严管中\" 的红字。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-63": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一句话独占画面：左侧极简留白，右侧父亲严肃侧脸。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-64": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。天平两端：左盘上是一张录取通知书，右盘上是一副健康的脊柱和一颗心脏图标。右盘比左盘沉。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-65": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。三件物品依次画一条横向时间线：重点高中、专业、城市，每个都画一个回头箭头表示可以重来。最后一格是脊柱图标，被红 X 标记不可逆。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-66": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。凌晨两点的钟、一副厚到反光的眼镜、一只按着腰的手——三个画面并列，配米黄底。冷色调。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "02:00",
+          "pos": {
+            "x": 22.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "凌晨两点"
+          }
+        },
+        {
+          "text": "800°",
+          "pos": {
+            "x": 78.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "近视八百度"
+          }
+        }
+      ]
+    },
+    "S1-67": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一条横线，孩子的笑脸在线上方，成绩单在线下方。线条粗黑明显。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "底线",
+          "pos": {
+            "x": 50.0,
+            "y": 80.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "底线"
+          }
+        }
+      ]
+    },
+    "S1-68": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一句独白：画面留白极多，中心一个静坐的成年人剪影。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "别急",
+          "pos": {
+            "x": 50.0,
+            "y": 45.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "别急"
+          }
+        }
+      ]
+    },
+    "S1-69": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一棵小树苗在画面中央，旁边两条时间线一条标 \"3 yrs 应付\"，一条标 \"3 yrs 长回来\" 颜色对照。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "3 年",
+          "pos": {
+            "x": 78.0,
+            "y": 78.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "三年陪他长回来"
+          }
+        }
+      ]
+    },
+    "S1-70": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父亲低头握紧拳头默念，闭着眼睛。背景一支没点燃的火苗即将熄灭又被守住。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-71": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。镜头切换：一个少年戴着耳机看着屏幕，神情认真。视觉重心在少年。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "孩子",
+          "pos": {
+            "x": 78.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "孩子"
+          }
+        }
+      ]
+    },
+    "S1-72": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。少年把一摞试卷、错题本、被骂的回忆碎片折成纸船放进水里。让它们漂走。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-73": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。少年的手轻轻松开过去的影子，前面有一条新的路在远方延伸。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-74": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。日历上四个日期被分别圈起来：明天、下周一、下个月、下学期。每个日期上方都有一只少年的小脚迈出去。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "越早越好",
+          "pos": {
+            "x": 50.0,
+            "y": 85.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "越早开始"
+          }
+        }
+      ]
+    },
+    "S1-75": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。未来的一个 28 岁青年在一间办公室低头，对面老板背影正在审视他，青年低着眼。冷色。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain"
+    },
+    "S1-76": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一扇厚重的木门半开着，父子两人的手都搭在门把手上轻轻一起推。光从门缝里漏进来。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "一起推开",
+          "pos": {
+            "x": 50.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "一起推开"
           }
         }
       ]
