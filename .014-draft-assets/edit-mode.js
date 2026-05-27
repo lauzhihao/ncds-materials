@@ -138,7 +138,7 @@
     /* 关键：正常播放时 .overlay-layer 是 pointer-events:none，事件穿过去。
        编辑模式让 layer 仍透明但每个 overlay 自己接收事件；
        同时强制 opacity:1，覆盖未播放时的 opacity:0 入场起点。 */
-    body.edit-mode .scene-overlay {
+    body.edit-mode .scene-overlay:not(.em-replay) {
       pointer-events: auto !important;
       opacity: 1 !important;
       animation: none !important;
@@ -146,6 +146,14 @@
       outline: 1px dashed rgba(0,120,255,.35);
       outline-offset: 2px;
       touch-action: none;
+    }
+    /* .em-replay: 给被预览的单个 overlay 临时解除上面 :not 的 override,
+       让 motion class (mo-ov-*/oa-*) 在 edit 模式下也能跑入场动效 */
+    body.edit-mode .scene-overlay.em-replay {
+      pointer-events: auto !important;
+      cursor: grab;
+      outline: 2px solid rgba(10,132,255,.7);
+      outline-offset: 2px;
     }
     body.edit-mode .scene-overlay:hover { outline: 2px solid rgba(0,120,255,.7); }
     /* hover 图片容器时给手型，提示这块也是可点击/可操作区域 */
@@ -321,7 +329,11 @@
         || (patch.style && typeof patch.style === 'object' && 'preset' in patch.style)
       )
     );
-    if (styleSwapsClass) {
+    // motion class 也是 renderInto 时挂的, updateLive 不动它. 改 enter/from 必须重渲
+    // 整 scene, 否则面板预览看不到新动效, 且新 from 不会落到 oa-fly-XXX class 上.
+    const motionSwapsClass = 'motion' in patch && patch.motion && typeof patch.motion === 'object'
+      && ('enter' in patch.motion || 'from' in patch.motion);
+    if (styleSwapsClass || motionSwapsClass) {
       renderSceneEdit(selection.sceneId);
     } else {
       window.__overlays.updateLive(sceneElOf(selection.sceneId), selection.index, patch);
@@ -329,6 +341,47 @@
     }
     notify();
     scheduleAutoSave();
+  }
+
+  // 入场动效预览: edit-mode + body:not(.motion-enabled) 两层 CSS 都把 animation 置 none.
+  // inline style 带 !important 用 setProperty('animation-name', ..., 'important')
+  // 是唯一比 author !important 优先级更高的方式. 动画播完移除 em-replay + 清 inline.
+  // 注意 mo-ov-* / oa-* class 名跟 @keyframes 同名, 直接拿 class 当 animation-name.
+  function previewMotion(sceneId, index) {
+    if (!active) return;
+    const sceneEl = sceneElOf(sceneId);
+    if (!sceneEl) return;
+    const el = sceneEl.querySelector(
+      ':scope > .overlay-layer > .scene-overlay[data-overlay-index="' + index + '"]'
+    );
+    if (!el) return;
+    let animName = null;
+    for (const cls of el.classList) {
+      if (cls.startsWith('mo-ov-') || cls.startsWith('oa-')) { animName = cls; break; }
+    }
+    if (!animName) return; // 没 motion class 没法 preview
+    const merged = mergedOverlay(sceneId, index);
+    const m = merged.motion || {};
+    const dur = m.duration || 700;
+    const delay = m.delay || 0;
+    el.classList.add('em-replay');
+    el.style.setProperty('animation-name', 'none', 'important');
+    void el.offsetWidth;            // 强制 reflow 让动画从 0 开始
+    el.style.setProperty('animation-name', animName, 'important');
+    el.style.setProperty('animation-duration', dur + 'ms', 'important');
+    el.style.setProperty('animation-delay', delay + 'ms', 'important');
+    el.style.setProperty('animation-fill-mode', 'forwards', 'important');
+    el.style.setProperty('animation-iteration-count', '1', 'important');
+    if (el._previewTimer) clearTimeout(el._previewTimer);
+    el._previewTimer = setTimeout(() => {
+      el.classList.remove('em-replay');
+      el.style.removeProperty('animation-name');
+      el.style.removeProperty('animation-duration');
+      el.style.removeProperty('animation-delay');
+      el.style.removeProperty('animation-fill-mode');
+      el.style.removeProperty('animation-iteration-count');
+      el._previewTimer = null;
+    }, delay + dur + 80);
   }
 
   // auto-save：每次 apply 后 300ms debounce 触发 save()。仅 edit-server 可达时生效。
@@ -717,6 +770,7 @@
     select,
     selectScene,
     deleteOverlay,
+    previewMotion,
     getFocusMode: () => focusMode,
     deselect: () => select(null),
     apply,

@@ -156,8 +156,9 @@
         motionClass = o.animation;
       }
       if (!motionClass) motionClass = pick(ANIMS, seedBase + '#a');
-      // edit 模式不挂入场动效，避免每次切场景都重放一遍
-      if (!edit) classNames.push(motionClass);
+      // motion class 总是挂上, 让 edit 模式下用 .em-replay 预览能拿到 animation-name.
+      // 静默由 CSS 'body.edit-mode .scene-overlay:not(.em-replay) { animation: none !important }' 保证.
+      classNames.push(motionClass);
 
       const el = document.createElement('div');
       el.className = classNames.join(' ');

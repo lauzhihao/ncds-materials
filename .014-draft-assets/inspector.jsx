@@ -392,6 +392,11 @@
       // enter 切到非 fly-in 时清掉 from，避免冗余字段
       if ('enter' in part && part.enter !== 'fly-in') delete next.from;
       EM.apply({ motion: next });
+      // 改了入场动效就在面板里立刻预览一次, 让用户能看到效果
+      if (selected && EM.previewMotion) {
+        // apply 内部可能 renderSceneEdit, 等一帧再 preview, 确保新 el 就位
+        requestAnimationFrame(() => EM.previewMotion(selected.sceneId, selected.index));
+      }
     }
 
     return (
@@ -455,7 +460,7 @@
           <TweakSlider label="delay ms" value={motionDelay} min={0} max={3000} step={50}
             onChange={(v) => patchMotion({ delay: Number(v) })} />
           <div style={{ fontSize: 10, color: 'rgba(41,38,27,.5)', lineHeight: 1.5 }}>
-            编辑模式下入场动效不预览（避免来回闪）。退出编辑（再按 E）回到播放就能看见。
+            改 enter / from / duration / delay 会立刻在面板里重放一次入场动画做预览。
           </div>
         </TweakSection>
 
