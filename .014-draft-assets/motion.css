@@ -278,8 +278,11 @@
 .scene.active.mo-img-wobble    .image-stage { animation-name: mo-img-wobble; animation-timing-function: ease-in-out; }
 .scene.active.mo-img-breathe   .image-stage { animation-name: mo-img-breathe; animation-timing-function: ease-in-out; animation-duration: 5200ms; }
 
-/* 动效守门：未启用时禁掉内层 keyframes，首帧静默 */
-body:not(.motion-enabled) .scene.active[class*="mo-img-"] .image-stage {
+/* 动效守门：未启用时禁掉内层 keyframes，首帧静默。
+   编辑模式（body.edit-mode）下豁免：用户摆 overlay 时需要看到镜头实际推/拉，
+   才能判断 overlay 在画面某个区域（相框/手部/物件）上的位置是否对齐。
+   其他守门规则（mo-scene-* 入场、字幕 cap-enter-* 等）不豁免，避免编辑时频繁干扰。 */
+body:not(.motion-enabled):not(.edit-mode) .scene.active[class*="mo-img-"] .image-stage {
   animation: none !important;
 }
 
