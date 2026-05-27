@@ -406,8 +406,10 @@ body.recording .controls { display: none; }
 /* 录制模式下隐藏所有"编辑器残留"，保证视频不漏 UI */
 body.recording .twk-panel { display: none !important; }       /* React Tweaks 面板 */
 body.recording .scene .placeholder { display: none; }         /* player.js 渲染的 ph-id + ph-prompt 提示 */
-/* 图已填充时也隐藏 placeholder 提示文字（image-slot 在 src 加载完成后置 data-filled） */
-.scene image-slot[data-filled] + .placeholder { display: none; }
+/* 图已填充时也隐藏 placeholder 提示文字（image-slot 在 src 加载完成后置 data-filled）。
+   用 :has 而非 + 兄弟选择器，因为 image-slot 被包在 light DOM 的 .image-stage
+   里（mo-img-* keyframe 的载体），跟 .placeholder 已经不是直接相邻。 */
+.scene:has(image-slot[data-filled]) .placeholder { display: none; }
 body.recording image-slot::part(ring) { display: none; }      /* image-slot 拖拽指示环 */
 body.recording image-slot::part(empty) { display: none; }     /* image-slot 空状态：图标 + placeholder= 文字 */
 
