@@ -433,12 +433,15 @@
   function onPointerDown(e) {
     if (!active) return;
     if (e.button !== 0) return;
-    const el = e.currentTarget;
-    const sceneId = el.dataset.sceneId;
-    const index = Number(el.dataset.overlayIndex);
+    const downEl = e.currentTarget;
+    const sceneId = downEl.dataset.sceneId;
+    const index = Number(downEl.dataset.overlayIndex);
     const sceneEl = sceneElOf(sceneId);
     if (!sceneEl) return;
     select(sceneId, index);
+    // select() 切 scene 时会 renderSceneEdit -> renderInto，原 downEl 已脱离 DOM，
+    // 必须用 select 后挂在 selection 上的新节点做 pointer capture。
+    const el = (selection && selection.el && selection.el.isConnected) ? selection.el : downEl;
     const m = mergedOverlay(sceneId, index);
     const startPosX = (m.pos && m.pos.x != null) ? m.pos.x : (m.xPct != null ? m.xPct : 50);
     const startPosY = (m.pos && m.pos.y != null) ? m.pos.y : (m.yPct != null ? m.yPct : 50);
@@ -448,7 +451,7 @@
       sceneRect: sceneEl.getBoundingClientRect(),
       sceneId, index, el, moved: false,
     };
-    el.setPointerCapture(e.pointerId);
+    if (el.isConnected) el.setPointerCapture(e.pointerId);
     e.preventDefault();
     e.stopPropagation();
     window.addEventListener('pointermove', onPointerMove);
