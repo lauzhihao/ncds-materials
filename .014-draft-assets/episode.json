@@ -332,7 +332,7 @@
       "scene": "S1-01"
     },
     {
-      "zh": "是不是已经被你骂了七八年了？",
+      "zh": "是不是已经被你骂了好多年了？",
       "en": "have you been yelling at him for seven, eight years now?",
       "scene": "S1-01"
     },
@@ -367,11 +367,6 @@
       "scene": "S1-05"
     },
     {
-      "zh": "这种孩子不是天生的，",
-      "en": "Kids like this aren't born,",
-      "scene": "S1-06"
-    },
-    {
       "zh": "是被爷爷宠溺、",
       "en": "they're shaped by a grandpa who spoils,",
       "scene": "S1-06"
@@ -382,7 +377,7 @@
       "scene": "S1-06"
     },
     {
-      "zh": "爸爸打骂",
+      "zh": "爸爸“修理”",
       "en": "and a dad who yells and hits—",
       "scene": "S1-06"
     },
@@ -427,7 +422,7 @@
       "scene": "S1-11"
     },
     {
-      "zh": "人的前额叶——管自控、管计划、管抑制冲动的那块脑子——",
+      "zh": "人的前额叶——他大脑中负责自控、计划与抑制冲动的那块区域——",
       "en": "the prefrontal cortex—the part that runs self-control, planning, impulse-braking—",
       "scene": "S1-11"
     },
@@ -477,7 +472,7 @@
       "scene": "S1-16"
     },
     {
-      "zh": "你不举手抬一下他不写一笔。",
+      "zh": "你不举手抬一下他不动一笔。",
       "en": "and don't raise a hand and he won't write a single stroke.",
       "scene": "S1-16"
     },
@@ -892,7 +887,7 @@
       "scene": "S1-81"
     },
     {
-      "zh": "差的只是有没有人在前面给他压一道门槛、让他自己跨过去。",
+      "zh": "差的只是有没有人给他压一道门槛、让他自己跨过去。",
       "en": "what's missing is someone in front to set a bar for him to step over himself.",
       "scene": "S1-81"
     },
@@ -957,12 +952,12 @@
       "scene": "S1-65"
     },
     {
-      "zh": "身体若是再不行，什么都白搭。",
+      "zh": "身体若是再不好？细思极恐。",
       "en": "But if his body breaks down, none of the rest helps.",
       "scene": "S1-65"
     },
     {
-      "zh": "一个学到凌晨两点、",
+      "zh": "一个熬到凌晨两点、",
       "en": "A kid up till two a.m. studying,",
       "scene": "S1-66"
     },
@@ -977,7 +972,7 @@
       "scene": "S1-66"
     },
     {
-      "zh": "就算考上好大学，也撑不到毕业。",
+      "zh": "就算考上好大学，又能做什么。",
       "en": "even if he makes it into a top college, he won't last to graduation.",
       "scene": "S1-66"
     },
@@ -1098,7 +1093,7 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "七八年",
+          "text": "好多年",
           "pos": {
             "x": 78.0,
             "y": 26.0
@@ -1108,7 +1103,7 @@
             "delay": 200
           },
           "at": {
-            "match": "七八年"
+            "match": "好多年"
           }
         }
       ]
@@ -1210,7 +1205,7 @@
           }
         },
         {
-          "text": "打骂",
+          "text": "“修理”",
           "pos": {
             "x": 82.0,
             "y": 70.0
@@ -1220,7 +1215,7 @@
             "delay": 200
           },
           "at": {
-            "match": "爸爸打骂"
+            "match": "爸爸“修理”"
           }
         }
       ]
