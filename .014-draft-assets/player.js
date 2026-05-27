@@ -105,6 +105,34 @@
   const band = $('band');
 
   const sceneNodes = {};
+  // 计算并挂上 image-stage 用的 mo-img-* class（先清旧再加新；用于 init 和
+   // inspector 改 motion.image 后的实时刷新）。chapter 类 scene 不挂图片动效。
+  function applyImageKen(el, def, idx) {
+    const toRemove = [];
+    for (const c of el.classList) {
+      if (c.indexOf('mo-img-') === 0) toRemove.push(c);
+    }
+    for (const c of toRemove) el.classList.remove(c);
+    if (def.type === 'chapter') return;
+    const ki = (def.motion && def.motion.image) ? def.motion.image : null;
+    let kenClass = null;
+    if (typeof ki === 'string' && ki !== 'auto' && ki !== 'none') {
+      kenClass = (ki.indexOf('mo-img-') === 0) ? ki : ('mo-img-' + ki);
+    } else if (ki !== 'none') {
+      kenClass = _pick(IMG_KENS, 'ken:' + el.dataset.sceneId + ':' + idx);
+    }
+    if (kenClass) el.classList.add(kenClass);
+  }
+  // 重应用 mo-scene-* 入场 class（先清旧 mo-scene-* 再 applySceneMotion）
+  function applySceneMotionFresh(el, def) {
+    const toRemove = [];
+    for (const c of el.classList) {
+      if (c.indexOf('mo-scene-') === 0) toRemove.push(c);
+    }
+    for (const c of toRemove) el.classList.remove(c);
+    applySceneMotion(el, def && def.motion);
+  }
+
   sceneOrder.forEach((id, i) => {
     const def = scenes[id] || { prompt: '(未定义)' };
     const el = document.createElement('div');
@@ -112,23 +140,11 @@
     el.dataset.sceneId = id;
     const src = picSrcFor(id);
 
-    // motion class（场景过渡）
-    applySceneMotion(el, def.motion);
-
-    // 图片内层 Ken Burns / Pan / Parallax：仅图片型 scene 应用，
-    // 章节卡走 chapter-card 渲染、没有 image-slot，所以不挂。
-    // 优先 episode.json scenes[id].motion.image（去前缀写法可省略 'mo-img-'），
-    // 缺省走确定性 hash 在 IMG_KENS 池里轮换 ⇒ 同一稿子录制结果稳定。
-    if (def.type !== 'chapter') {
-      let kenClass = null;
-      const ki = (def.motion && def.motion.image) ? def.motion.image : null;
-      if (typeof ki === 'string' && ki !== 'auto') {
-        kenClass = (ki.indexOf('mo-img-') === 0) ? ki : ('mo-img-' + ki);
-      } else if (ki !== 'none') {
-        kenClass = _pick(IMG_KENS, 'ken:' + id + ':' + i);
-      }
-      if (kenClass) el.classList.add(kenClass);
-    }
+    // motion class（场景过渡 + 图片 Ken Burns）。优先 episode.json
+    // scenes[id].motion.{enter,image}，缺省按 hash 从 IMG_KENS 池轮换以保
+    // 录制可复现。
+    applySceneMotionFresh(el, def);
+    applyImageKen(el, def, i);
 
     if (def.type === 'chapter') {
       // 章节卡纯 CSS 渲染，不挂 image-slot 也不显示 placeholder；
@@ -606,5 +622,21 @@
     }
   }
 
-  window.__player = { play, pause, showBeat, enterRecording, exitRecording, startRecordingPlayback, beats, scenes, sceneNodes, sceneOrder, audioElements };
+  // 给 inspector 改 motion.{enter,image} 后即时刷 sceneEl 的 mo-* class +
+   // toggle active 触发 keyframe restart（编辑模式下 .image-stage 守门已豁免）。
+  function refreshSceneMotion(sceneId) {
+    const def = scenes[sceneId];
+    const el = sceneNodes[sceneId];
+    if (!def || !el) return;
+    const idx = sceneOrder.indexOf(sceneId);
+    applySceneMotionFresh(el, def);
+    applyImageKen(el, def, idx);
+    if (el.classList.contains('active')) {
+      el.classList.remove('active');
+      void el.offsetWidth;
+      el.classList.add('active');
+    }
+  }
+
+  window.__player = { play, pause, showBeat, enterRecording, exitRecording, startRecordingPlayback, refreshSceneMotion, beats, scenes, sceneNodes, sceneOrder, audioElements };
 })();

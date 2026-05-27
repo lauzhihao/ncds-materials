@@ -260,6 +260,11 @@
     }
     cur[parts[parts.length - 1]] = value;
     fireLocal(); // 让 SceneFields 重渲，否则受控 input 改不了
+    // motion.* 改完立即把 sceneEl 上的 mo-scene-* / mo-img-* class 重应用 +
+    // toggle active 触发 keyframe restart，免得用户改了池子才发现要刷新页面
+    if (field.indexOf('motion.') === 0 && window.__player && window.__player.refreshSceneMotion) {
+      window.__player.refreshSceneMotion(sceneId);
+    }
     if (!window.__editServerOk) return;
     _scenePending['scenes.' + sceneId + '.' + field] = value;
     if (_sceneTimer) clearTimeout(_sceneTimer);
