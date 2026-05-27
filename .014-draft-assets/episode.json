@@ -3,14 +3,14 @@
   "__doc__": "暖纸卡片口播视频 per-episode 元数据，唯一真理源。HTML/JS/TTS/图生图全部从这个文件读取；引擎层文件 (player.js / overlays.js / tweaks*.jsx / styles.css / HTML 骨架) 不含任何 per-episode 字段。",
   "meta": {
     "slug": "014-draft",
-    "title": "想他蜕变，先你蜕变",
+    "title": "想他蜕变，得你先蜕变",
     "brandTitle": "我替你预演",
     "disclaimer": "观点仅供参考　无不良引导",
     "titleOptions": [
       "不偷懒",
       "你那个七年级的男孩，是不是已经被你骂了七八年了",
       "孩子的懒，是爷爷宠、妈妈办、爸爸骂出来的",
-      "想他蜕变，先你蜕变"
+      "想他蜕变，得你先蜕变"
     ]
   },
   "fonts": [
@@ -337,24 +337,19 @@
       "scene": "S1-01"
     },
     {
-      "zh": "他坐到书桌前一个小时，",
-      "en": "He sits at the desk for an hour,",
+      "zh": "不愿意阅读，",
+      "en": "Won't read,",
       "scene": "S1-02"
     },
     {
-      "zh": "作业本上还是空白。",
-      "en": "the page is still blank.",
+      "zh": "不愿意背诵，",
+      "en": "won't recite,",
       "scene": "S1-02"
     },
     {
-      "zh": "你催他他写得越来越慢，",
-      "en": "Push him and he writes slower.",
-      "scene": "S1-03"
-    },
-    {
-      "zh": "你不催他纹丝不动。",
-      "en": "Don't push and he doesn't move at all.",
-      "scene": "S1-03"
+      "zh": "更不愿意书写。",
+      "en": "and definitely won't write.",
+      "scene": "S1-02"
     },
     {
       "zh": "你说他懒，",
@@ -362,8 +357,8 @@
       "scene": "S1-04"
     },
     {
-      "zh": "你以为他天生就这样。",
-      "en": "you think he was born this way.",
+      "zh": "你以为他天生就这样吗？",
+      "en": "you think he was born this way?",
       "scene": "S1-04"
     },
     {
@@ -372,7 +367,7 @@
       "scene": "S1-05"
     },
     {
-      "zh": "这种孩子不是生出来的，",
+      "zh": "这种孩子不是天生的，",
       "en": "Kids like this aren't born,",
       "scene": "S1-06"
     },
@@ -397,43 +392,18 @@
       "scene": "S1-06"
     },
     {
-      "zh": "你替他收过书包，",
-      "en": "You've packed his school bag,",
-      "scene": "S1-07"
-    },
-    {
-      "zh": "替他记过作业，",
-      "en": "noted down his homework,",
-      "scene": "S1-07"
-    },
-    {
-      "zh": "替他定过闹钟，",
-      "en": "set his alarm,",
-      "scene": "S1-07"
-    },
-    {
-      "zh": "替他翻过课本查过题。",
-      "en": "flipped his textbook and looked up answers for him.",
-      "scene": "S1-07"
-    },
-    {
-      "zh": "每一次你说\"我来帮你\"，",
+      "zh": "每一次你说“我来帮你”，",
       "en": "Every time you said 'I'll do it for you,'",
       "scene": "S1-08"
     },
     {
-      "zh": "他就少一次\"我自己做\"。",
+      "zh": "他就少一次“我自己做”。",
       "en": "he lost one chance to do it himself.",
       "scene": "S1-08"
     },
     {
-      "zh": "你做了一千次，他就少做了一千次。",
-      "en": "You did it a thousand times—he missed a thousand chances.",
-      "scene": "S1-08"
-    },
-    {
-      "zh": "心理学里有句很冷的话：",
-      "en": "There's a cold line in psychology:",
+      "zh": "心理学里有个理论：",
+      "en": "There's a theory in psychology:",
       "scene": "S1-09"
     },
     {
@@ -492,13 +462,13 @@
       "scene": "S1-14"
     },
     {
-      "zh": "可你给他的，是巴掌、怒吼，",
-      "en": "Instead, what you give him is a slap, a shout,",
+      "zh": "可你给他的，是埋怨、是怒吼，",
+      "en": "Instead, what you give him is complaint, shouting,",
       "scene": "S1-15"
     },
     {
-      "zh": "最严重的时候，是一只抬起来的手。",
-      "en": "and at the worst moments, a raised hand.",
+      "zh": "最严重的时候，是你抬起来的手。",
+      "en": "and at the worst moments, your raised hand.",
       "scene": "S1-15"
     },
     {
@@ -507,8 +477,8 @@
       "scene": "S1-16"
     },
     {
-      "zh": "你不举手抬一下他不会动笔。",
-      "en": "raise a hand and only then will he pick up the pen.",
+      "zh": "你不举手抬一下他写一笔。",
+      "en": "raise a hand and only then will he write a single stroke.",
       "scene": "S1-16"
     },
     {
@@ -532,7 +502,7 @@
       "scene": "S1-19"
     },
     {
-      "zh": "阅读理解他从来不读原文，",
+      "zh": "阅读理解从来不读原文，",
       "en": "He never actually reads the passage,",
       "scene": "S1-20"
     },
@@ -542,24 +512,34 @@
       "scene": "S1-20"
     },
     {
-      "zh": "书写更是能写三个字绝不写五个，",
-      "en": "If three characters will do, he won't write five.",
+      "zh": "能写五言律诗的绝不写七言绝句，",
+      "en": "If a five-character poem will do, he won't write a seven-character one,",
       "scene": "S1-21"
     },
     {
-      "zh": "老师让默的古诗、要背的字词，",
-      "en": "Poems to recite, words to learn—",
+      "zh": "试卷上的阅读理解更是多一个字都不写。",
+      "en": "and on a reading-comprehension test he won't write a single extra character.",
       "scene": "S1-22"
     },
     {
-      "zh": "全靠当天早上抄一遍混过去。",
-      "en": "all crammed in by copying once on the morning bus.",
-      "scene": "S1-22"
-    },
-    {
-      "zh": "你盯着的是成绩单上那个数字。",
-      "en": "What you're staring at is just that number on the report card.",
+      "zh": "过程投入不够，",
+      "en": "Not enough effort in the process—",
       "scene": "S1-23"
+    },
+    {
+      "zh": "考试结果全靠运气吗？",
+      "en": "and the test results are just luck?",
+      "scene": "S1-23"
+    },
+    {
+      "zh": "别跟我说成绩不重要，",
+      "en": "Don't tell me grades don't matter.",
+      "scene": "S1-77"
+    },
+    {
+      "zh": "当下教育制度最公平的就是我们的高考成绩。",
+      "en": "The fairest thing in our current education system is the gaokao score.",
+      "scene": "S1-77"
     },
     {
       "zh": "真正在悄悄消失的，",
@@ -587,43 +567,38 @@
       "scene": "S1-25"
     },
     {
-      "zh": "将来都会变成他想跳一个行业跳不动、",
-      "en": "they turn into an industry he can't jump out of,",
+      "zh": "将来都会让他举步维艰。",
+      "en": "later on, every step will become an uphill battle.",
       "scene": "S1-26"
     },
     {
-      "zh": "想离开一个城市离不开、",
-      "en": "a city he can't leave,",
-      "scene": "S1-26"
-    },
-    {
-      "zh": "想换一种活法换不了。",
-      "en": "a life he can't trade in.",
-      "scene": "S1-26"
-    },
-    {
-      "zh": "该读书的年龄你让他偷懒，",
-      "en": "If you let him slack off in the years made for learning,",
+      "zh": "该读书的年龄放纵他偷懒，",
+      "en": "Let him slack off in the years made for learning,",
       "scene": "S1-27"
     },
     {
-      "zh": "他后半辈子做任何事都觉得吃力。",
-      "en": "everything in his next forty years will feel uphill.",
+      "zh": "他后半生将会寸步难行。",
+      "en": "and the rest of his life he won't be able to move an inch.",
       "scene": "S1-27"
     },
     {
-      "zh": "苦这几年和苦后半辈子，是两回事。",
-      "en": "Three hard years now, or forty hard years later—they're not the same trade.",
+      "zh": "是苦这几年和苦后半辈子，",
+      "en": "Three hard years now, or forty hard years later—",
       "scene": "S1-28"
     },
     {
-      "zh": "想他蜕变，先你蜕变。",
-      "en": "If you want him to change, you change first.",
+      "zh": "我相信各位家长都知道选哪个。",
+      "en": "I trust every parent knows which to pick.",
+      "scene": "S1-28"
+    },
+    {
+      "zh": "想让他蜕变，得你先蜕变。",
+      "en": "If you want him to transform, you transform first.",
       "scene": "S1-29"
     },
     {
-      "zh": "从今天起把吼声收回去。",
-      "en": "Starting today, put the shouting away.",
+      "zh": "从今天起把吼声咽回去。",
+      "en": "Starting today, swallow the shouting back down.",
       "scene": "S1-30"
     },
     {
@@ -647,7 +622,7 @@
       "scene": "S1-32"
     },
     {
-      "zh": "从他爸嘴里听到一句真心的\"今天这件事你做得不错\"，",
+      "zh": "从爸爸嘴里听到一句真心的“今天这件事你做得不错”，",
       "en": "one real 'you did this well today' from his dad,",
       "scene": "S1-32"
     },
@@ -662,18 +637,13 @@
       "scene": "S1-33"
     },
     {
-      "zh": "男孩子在这个年纪你别什么都护着。",
+      "zh": "男孩子在这个年纪你别什么都护着，",
       "en": "A boy this age—stop protecting him from everything.",
       "scene": "S1-34"
     },
     {
-      "zh": "让他出去跟同学疯跑，",
-      "en": "Let him run wild with his friends,",
-      "scene": "S1-35"
-    },
-    {
       "zh": "摔个跟头、蹭破点皮没关系；",
-      "en": "let him fall, scrape a knee—it's fine.",
+      "en": "Let him fall, scrape a knee—it's fine.",
       "scene": "S1-35"
     },
     {
@@ -713,7 +683,7 @@
     },
     {
       "zh": "到二十几岁碰上真事的时候才叫慌。",
-      "en": "is the one who actually panics when real things come at twenty-something.",
+      "en": "is the one who panics when real things come at twenty-something.",
       "scene": "S1-38"
     },
     {
@@ -722,13 +692,13 @@
       "scene": "S1-39"
     },
     {
-      "zh": "不是给他布置任务，",
-      "en": "not assigning him a task,",
+      "zh": "不再给他布置任务，",
+      "en": "stop assigning him tasks,",
       "scene": "S1-39"
     },
     {
-      "zh": "是跟他一起做一件事。",
-      "en": "but starting one thing together with him.",
+      "zh": "而是跟他一起做一件有成就的事。",
+      "en": "and start one thing together with him—something that means something.",
       "scene": "S1-39"
     },
     {
@@ -737,38 +707,18 @@
       "scene": "S1-40"
     },
     {
-      "zh": "有一晚我又没忍住对他吼了，他摔门进房间，",
-      "en": "One night I lost it again, he slammed his door,",
-      "scene": "S1-41"
-    },
-    {
-      "zh": "我坐在客厅一个人发了半天的呆。",
-      "en": "and I sat alone in the living room for a long time.",
-      "scene": "S1-41"
-    },
-    {
-      "zh": "第二天我没再吼他，",
-      "en": "The next day I didn't shout.",
+      "zh": "我跟他商量：“要不然你陪我一块儿，咱俩去爬楼吧。”",
+      "en": "I asked him: 'How about you keep me company—let's climb the stairs together.'",
       "scene": "S1-42"
     },
     {
-      "zh": "我走到他房门口跟他说：",
-      "en": "I walked to his door and said:",
-      "scene": "S1-42"
-    },
-    {
-      "zh": "\"咱爷俩一起做件事。每天爬三趟楼，我陪你，你也陪我。\"",
-      "en": "'Let's do something together. Three flights up every day. I'll go with you, you go with me.'",
-      "scene": "S1-42"
-    },
-    {
-      "zh": "我没把它说成是给他的功课，",
+      "zh": "我没把这事说成是给他布置的功课，",
       "en": "I never framed it as homework for him,",
       "scene": "S1-43"
     },
     {
-      "zh": "是我们俩一起开始的事。",
-      "en": "it was something we started together.",
+      "zh": "是我俩一起开始的一件事。",
+      "en": "it was something the two of us started together.",
       "scene": "S1-43"
     },
     {
@@ -777,83 +727,73 @@
       "scene": "S1-44"
     },
     {
-      "zh": "一个小细节我们一直坚持：只往上爬，下楼坐电梯。",
-      "en": "One small rule we kept: only walk up, take the elevator down.",
+      "zh": "不过我们只往上爬，下楼坐电梯——",
+      "en": "But we only walk up—we take the elevator down—",
       "scene": "S1-45"
     },
     {
-      "zh": "下楼时膝盖承受的冲击是上楼的三倍多，",
-      "en": "Going down, your knees take more than three times the impact of going up,",
+      "zh": "下楼时膝盖承受的冲击是上楼的三倍多；",
+      "en": "going down, your knees take more than three times the impact of going up.",
       "scene": "S1-46"
     },
     {
-      "zh": "跑步的人都知道下山伤膝；",
-      "en": "any runner knows downhill wrecks knees.",
-      "scene": "S1-46"
+      "zh": "我们不是吃完晚饭爬，",
+      "en": "We don't climb after dinner,",
+      "scene": "S1-78"
     },
     {
-      "zh": "上去用劲，下来给膝盖松绑。",
-      "en": "Push going up, give the knees a break coming down.",
-      "scene": "S1-46"
+      "zh": "而是饭前空腹开始。",
+      "en": "we start before dinner, on an empty stomach.",
+      "scene": "S1-78"
     },
     {
-      "zh": "第一周我俩都喘到一句完整的话都说不出来，",
-      "en": "First week, neither of us could finish a sentence between breaths,",
+      "zh": "第一周只听到我俩的粗喘，",
+      "en": "The first week, all you'd hear was the two of us gasping,",
       "scene": "S1-47"
     },
     {
-      "zh": "膝盖第二天疼得下楼都要扶墙。",
-      "en": "knees so sore the next day we had to brace against the wall going down.",
+      "zh": "第二天腿和肚皮疼，膝盖倒不疼。",
+      "en": "next day our legs and bellies ached—but not the knees.",
       "scene": "S1-47"
     },
     {
-      "zh": "一个月之后能边爬边聊几句白天的事，",
-      "en": "A month later we could chat along the way,",
+      "zh": "一个月之后，能边爬边聊几句白天的事；",
+      "en": "A month in, we could chat along the way about the day,",
       "scene": "S1-48"
     },
     {
-      "zh": "三楼到七楼那段他突然跟我讲了一件他在学校被同学说过的话——",
-      "en": "and somewhere between the third and seventh floor he told me something a classmate said at school—",
+      "zh": "三楼到七楼那段，他突然跟我讲起同学在学校里说他的一句话——",
+      "en": "somewhere between the third and seventh floor he told me something a classmate said at school—",
       "scene": "S1-48"
     },
     {
-      "zh": "这种话以前他打死也不会跟我说。",
+      "zh": "这种话他以前打死也不会跟我说。",
       "en": "the kind of thing he would never have told me before.",
       "scene": "S1-48"
     },
     {
-      "zh": "三个月之后我们俩晚饭吃完不约而同往楼梯间走，",
-      "en": "Three months in, after dinner we'd both naturally head to the stairwell,",
+      "zh": "三个月下来，我俩都瘦了十几斤。",
+      "en": "Three months in, we'd each dropped over ten pounds.",
       "scene": "S1-49"
     },
     {
-      "zh": "他自己拿好水。",
-      "en": "he'd grab a bottle of water himself.",
-      "scene": "S1-49"
+      "zh": "有一个强壮的身体，比学习成绩更重要。",
+      "en": "A strong body matters more than any grade.",
+      "scene": "S1-79"
     },
     {
-      "zh": "我以前那只抬起来要打他的手，",
-      "en": "The hand I used to raise to hit him,",
-      "scene": "S1-50"
-    },
-    {
-      "zh": "现在牵着他一起爬。",
-      "en": "now holds his hand on the way up.",
-      "scene": "S1-50"
-    },
-    {
-      "zh": "爬到八楼，谁也讲不出整句，只能听见呼吸；",
-      "en": "By the eighth floor, neither of us can finish a sentence—you just hear breathing.",
+      "zh": "爬到八楼，谁也讲不出整句，只听见两个人的呼吸；",
+      "en": "By the eighth floor, neither of us can finish a sentence—you just hear our breathing.",
       "scene": "S1-51"
     },
     {
-      "zh": "原本想顶的嘴、想吵的架，到十一楼都算了。",
+      "zh": "原本想顶的嘴、想吵的架，到十一楼也都算了。",
       "en": "Whatever I wanted to snap at, whatever fight he wanted to pick—by the eleventh floor, none of it mattered.",
       "scene": "S1-51"
     },
     {
-      "zh": "这种共同坚持下来的成就感，",
-      "en": "The sense of accomplishment you build together,",
+      "zh": "这种一块儿坚持下来的成就感，",
+      "en": "The sense of accomplishment you build side by side,",
       "scene": "S1-52"
     },
     {
@@ -862,38 +802,28 @@
       "scene": "S1-52"
     },
     {
-      "zh": "还有一件事我们家在做——",
-      "en": "There's one more thing we do at home—",
+      "zh": "现在他也不再把自己关在房间里“学习”，",
+      "en": "Now he no longer locks himself in his room to 'study'—",
       "scene": "S1-53"
     },
     {
-      "zh": "别再把他一个人关在书房里\"学习\"。",
-      "en": "stop locking him alone in the study to 'study'.",
-      "scene": "S1-53"
-    },
-    {
-      "zh": "我把他叫到餐桌上，",
-      "en": "I called him out to the dining table,",
+      "zh": "我们一起在餐桌上，",
+      "en": "we sit at the dining table together,",
       "scene": "S1-54"
     },
     {
-      "zh": "他在这头写作业，",
-      "en": "he sits on this side doing his homework,",
+      "zh": "他写作业，",
+      "en": "he does his homework,",
       "scene": "S1-54"
     },
     {
-      "zh": "我在那头摊开他的字帖一笔一笔练，",
-      "en": "On my side I lay out his calligraphy book and practice stroke by stroke,",
+      "zh": "我写他的字帖练字；",
+      "en": "I practice on his calligraphy book stroke by stroke;",
       "scene": "S1-55"
     },
     {
-      "zh": "捧着他的《朝花夕拾》《骆驼祥子》一页一页读，",
-      "en": "I read his Morning Flowers Plucked at Dusk and Camel Xiangzi page by page,",
-      "scene": "S1-55"
-    },
-    {
-      "zh": "我们俩一起动笔。",
-      "en": "we both move our pens together.",
+      "zh": "练累了就翻开他的《朝花夕拾》《骆驼祥子》一页一页读。",
+      "en": "when my hand gets tired I pick up his Morning Flowers Plucked at Dusk and Camel Xiangzi and read a page at a time.",
       "scene": "S1-55"
     },
     {
@@ -907,7 +837,7 @@
       "scene": "S1-56"
     },
     {
-      "zh": "这种安静比你坐在他身后骂他半个钟头管用得多。",
+      "zh": "这种安静，比你坐在他身后骂他半个钟头管用得多。",
       "en": "This kind of quiet beats half an hour of scolding behind his back.",
       "scene": "S1-57"
     },
@@ -922,39 +852,49 @@
       "scene": "S1-58"
     },
     {
-      "zh": "还有一件事我跟当爸的你说一声——",
-      "en": "One more thing, dad to dad—",
+      "zh": "再就是要注意：电子产品要严管。",
+      "en": "One more thing to watch: be strict about screens.",
       "scene": "S1-59"
     },
     {
-      "zh": "电子产品要严管。",
-      "en": "be strict about screens.",
-      "scene": "S1-59"
-    },
-    {
-      "zh": "我家在他刚上初中那年就立了规矩：",
-      "en": "The year he started middle school we set a rule:",
+      "zh": "今年寒假，他每次找我要 Switch 之前，",
+      "en": "This past winter break, every time he wanted the Switch,",
       "scene": "S1-60"
     },
     {
-      "zh": "手机不给他，",
-      "en": "no phone of his own,",
+      "zh": "都得先背诵十二首诗，",
+      "en": "he had to first recite twelve poems,",
       "scene": "S1-60"
     },
     {
-      "zh": "平板登我和他妈的账号，",
-      "en": "the iPad runs on our accounts,",
+      "zh": "包括《木兰诗》全文。",
+      "en": "the full Ballad of Mulan included.",
       "scene": "S1-60"
     },
     {
-      "zh": "每天屏幕时间合起来不超过半小时；",
-      "en": "total screen time capped at thirty minutes a day,",
-      "scene": "S1-60"
+      "zh": "整个寒假下来你会发现，",
+      "en": "By the end of the break you realize:",
+      "scene": "S1-80"
     },
     {
-      "zh": "电视一周只开一次，作业写完再看一集。",
-      "en": "TV once a week, only after homework, one episode.",
-      "scene": "S1-60"
+      "zh": "他不是做不到，只是想不想做——",
+      "en": "it's not that he can't do it, it's just whether he wants to—",
+      "scene": "S1-80"
+    },
+    {
+      "zh": "这就是自驱力。",
+      "en": "that right there is self-drive.",
+      "scene": "S1-80"
+    },
+    {
+      "zh": "他具备这个实力，",
+      "en": "He has what it takes,",
+      "scene": "S1-81"
+    },
+    {
+      "zh": "差的只是有没有人在前面给他压一道门槛、让他自己跨过去。",
+      "en": "what's missing is someone in front to set a bar for him to step over himself.",
+      "scene": "S1-81"
     },
     {
       "zh": "不是怕他打游戏，",
@@ -962,18 +902,23 @@
       "scene": "S1-61"
     },
     {
-      "zh": "是十几岁的脑子还撑不住短视频那种十五秒一刺激的节奏，",
+      "zh": "是十几岁的脑子还撑不住短视频那种 15 秒一刺激的节奏，",
       "en": "it's that a teenage brain can't hold up to short-video's hit-every-fifteen-seconds rhythm—",
       "scene": "S1-61"
     },
     {
-      "zh": "刷半年专注力就废了，再想拉回来要花三年。",
-      "en": "half a year of scrolling kills attention, and three years to claw it back.",
+      "zh": "不用半年专注力就废了，",
+      "en": "half a year of scrolling kills attention,",
       "scene": "S1-61"
     },
     {
-      "zh": "这条规矩我打算守到他高中毕业。",
-      "en": "I'm holding this rule until he graduates high school.",
+      "zh": "再想拉回来要花三年。",
+      "en": "and three years to claw it back.",
+      "scene": "S1-61"
+    },
+    {
+      "zh": "这条线我打算守到他高中毕业。",
+      "en": "I'm holding this line until he graduates high school.",
       "scene": "S1-62"
     },
     {
@@ -987,11 +932,6 @@
       "scene": "S1-62"
     },
     {
-      "zh": "我跟你说更狠的一句话。",
-      "en": "Let me say something even sharper.",
-      "scene": "S1-63"
-    },
-    {
       "zh": "你担心他考不进重点高中——",
       "en": "You worry he won't get into the top high school—",
       "scene": "S1-64"
@@ -1002,8 +942,8 @@
       "scene": "S1-64"
     },
     {
-      "zh": "是他有没有一副好身体撑过未来二十年的考试。",
-      "en": "is whether his body can carry him through the next twenty years of tests.",
+      "zh": "是他有没有一副好身体撑过未来十年的学业。",
+      "en": "is whether his body can carry him through the next ten years of school.",
       "scene": "S1-64"
     },
     {
@@ -1017,13 +957,8 @@
       "scene": "S1-65"
     },
     {
-      "zh": "城市待不下还能再走；",
-      "en": "City doesn't work? You can move.",
-      "scene": "S1-65"
-    },
-    {
-      "zh": "身体一旦废了，什么都白搭。",
-      "en": "But once his body's broken, none of the rest helps.",
+      "zh": "身体若是再不行，什么都白搭。",
+      "en": "But if his body breaks down, none of the rest helps.",
       "scene": "S1-65"
     },
     {
@@ -1037,7 +972,7 @@
       "scene": "S1-66"
     },
     {
-      "zh": "坐十分钟就腰疼的孩子，",
+      "zh": "坐十分钟就腰酸背痛的孩子，",
       "en": "a back that aches after ten minutes of sitting—",
       "scene": "S1-66"
     },
@@ -1062,8 +997,13 @@
       "scene": "S1-68"
     },
     {
+      "zh": "罗马不是一天建成的，",
+      "en": "Rome wasn't built in a day,",
+      "scene": "S1-82"
+    },
+    {
       "zh": "这事不是一天熬出来的，也就不可能一周修好。",
-      "en": "This wasn't built in a day, it can't be repaired in a week.",
+      "en": "this wasn't built in a day, it can't be repaired in a week.",
       "scene": "S1-69"
     },
     {
@@ -1112,13 +1052,13 @@
       "scene": "S1-73"
     },
     {
-      "zh": "明天可以是新开始，下周一可以，下个月可以，下学期也可以；",
-      "en": "Tomorrow can be a new start, so can next Monday, next month, next term—",
+      "zh": "明天可以是新的开始，下周一可以，下个月也可以。",
+      "en": "Tomorrow can be a new start, so can next Monday, so can next month.",
       "scene": "S1-74"
     },
     {
-      "zh": "越早开始，你越早看见一个不一样的自己。",
-      "en": "the earlier you start, the sooner you meet a different version of yourself.",
+      "zh": "越早开始，你就越早能看见一个不一样的自己。",
+      "en": "The earlier you start, the sooner you meet a different version of yourself.",
       "scene": "S1-74"
     },
     {
@@ -1132,18 +1072,18 @@
       "scene": "S1-75"
     },
     {
-      "zh": "你不想十年后是那个挑工作时被工作挑、想走的城市留不下的人。",
-      "en": "you don't want to be the one in ten years who can't pick a job, can't leave a city.",
+      "zh": "如果你不想十年后是那个被选择的人。",
+      "en": "if you don't want to be the one ten years from now who only gets chosen.",
       "scene": "S1-75"
     },
     {
-      "zh": "愿你和你的孩子，都能在还来得及的时候，",
-      "en": "May you and your kid, while there's still time,",
+      "zh": "愿你和他，都能在还来得及的时候，",
+      "en": "May you and him, while there's still time,",
       "scene": "S1-76"
     },
     {
       "zh": "把那扇关了很久的门，一起推开。",
-      "en": "push open that door together—the one that's been closed for too long.",
+      "en": "push open that long-closed door together.",
       "scene": "S1-76"
     }
   ],
@@ -1174,32 +1114,7 @@
       ]
     },
     "S1-02": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个少年坐在书桌前的剪影，手里捏着一支笔垂着，作业本一片空白，台灯把影子拉得很长。视觉重心在书桌，上半留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "一个小时",
-          "pos": {
-            "x": 22.0,
-            "y": 22.0
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "一个小时"
-          }
-        }
-      ]
-    },
-    "S1-03": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父亲背影在男孩旁边催促，一只手指着作业本，男孩头垂得更低，笔速更慢。画面中央两人剪影，背景留白。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。少年坐在书桌前推开一本翻开的书，旁边一支笔横着躺着没拿，作业本和字帖叠在一旁，眼神看向窗外。视觉重心在书桌，上半留白。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1310,15 +1225,6 @@
         }
       ]
     },
-    "S1-07": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一双成年人的手在帮孩子收拾书包，旁边一个少年坐在床上看着自己的手发呆。书包、闹钟、课本散落一地。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700
-      },
-      "imageFit": "contain"
-    },
     "S1-08": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。天平两端：左盘堆满父母代劳的手，右盘空了下来，只有一只孩子的小手悬着不知道往哪放。",
       "label": "",
@@ -1326,23 +1232,7 @@
         "enter": "fade",
         "duration": 700
       },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "1000 : 1000",
-          "pos": {
-            "x": 50.0,
-            "y": 22.0
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "一千次"
-          }
-        }
-      ]
+      "imageFit": "contain"
     },
     "S1-09": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一面破裂的镜子里，一个少年看着自己的倒影低下头，镜面裂纹从眼睛位置向外延伸。背景大面积留白。",
@@ -1466,7 +1356,7 @@
             "delay": 200
           },
           "at": {
-            "match": "一只抬起来的手"
+            "match": "你抬起来的手"
           }
         }
       ]
@@ -1549,7 +1439,7 @@
       "imageFit": "contain"
     },
     "S1-21": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一行字帖：原本要写五个字，只写了三个字就停笔，剩下两格空着。旁边一本古诗默写本崭新没翻开。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一格作文格上方写着 \"五言律诗\"、下方写着 \"七言绝句\"，少年的笔停在五言那一行，七言那行整片空着。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1558,7 +1448,7 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "3 字",
+          "text": "五言",
           "pos": {
             "x": 28.0,
             "y": 22.0
@@ -1568,11 +1458,11 @@
             "delay": 200
           },
           "at": {
-            "match": "三个字"
+            "match": "五言律诗"
           }
         },
         {
-          "text": "5 字",
+          "text": "七言",
           "pos": {
             "x": 72.0,
             "y": 22.0
@@ -1582,22 +1472,13 @@
             "delay": 200
           },
           "at": {
-            "match": "绝不写五个"
+            "match": "七言绝句"
           }
         }
       ]
     },
     "S1-22": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。清晨厨房餐桌一角，少年趴着草草抄一本古诗，米饭和水杯在旁边。窗外刚亮。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700
-      },
-      "imageFit": "contain"
-    },
-    "S1-23": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。成绩单特写：一个数字被放大居中，父亲的手指压在那个数字上。整张纸边缘虚化。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一张语文试卷阅读理解题，下方答题区一片空白，少年的手把笔搁在边上，懒得多写一个字。空白区域被一个红色虚线框圈出。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1606,9 +1487,34 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "成绩单",
+          "text": "多 1 字都不写",
           "pos": {
-            "x": 82.0,
+            "x": 50.0,
+            "y": 78.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "多一个字都不写"
+          }
+        }
+      ]
+    },
+    "S1-23": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一颗骰子悬在空中，下方一张白卷写着考试结果待填，少年闭着眼摊手。背景米黄。视觉重心在骰子。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "靠运气？",
+          "pos": {
+            "x": 78.0,
             "y": 22.0
           },
           "motion": {
@@ -1616,7 +1522,7 @@
             "delay": 200
           },
           "at": {
-            "match": "成绩单"
+            "match": "全靠运气"
           }
         }
       ]
@@ -1656,13 +1562,29 @@
       "imageFit": "contain"
     },
     "S1-26": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。三条岔路的远景剪影：一条通往工厂烟囱、一条通往陌生城市天际线、一条只是黑暗，少年站在路口动弹不得。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个中年人弯腰拄着拐杖艰难地往前迈一步，地面布满裂缝和铁链拽着脚踝。画面冷峻。",
       "label": "",
       "motion": {
         "enter": "fade",
         "duration": 700
       },
-      "imageFit": "contain"
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "举步维艰",
+          "pos": {
+            "x": 50.0,
+            "y": 78.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "举步维艰"
+          }
+        }
+      ]
     },
     "S1-27": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个中年人背影在很重的行李下弯腰前行，地面拉得很长。背景米黄。",
@@ -1722,7 +1644,7 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "先你蜕变",
+          "text": "你先蜕变",
           "pos": {
             "x": 50.0,
             "y": 80.0
@@ -1732,7 +1654,7 @@
             "delay": 200
           },
           "at": {
-            "match": "先你蜕变"
+            "match": "得你先蜕变"
           }
         }
       ]
@@ -1884,7 +1806,7 @@
             "delay": 200
           },
           "at": {
-            "match": "跟他一起做一件事"
+            "match": "做一件有成就的事"
           }
         }
       ]
@@ -1914,17 +1836,8 @@
         }
       ]
     },
-    "S1-41": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。客厅一角，父亲一个人坐在沙发上抱着头，远处一扇紧闭的房门。安静、孤独。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700
-      },
-      "imageFit": "contain"
-    },
     "S1-42": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。第二天清晨，父亲站在儿子房门外，手抬到一半敲门。光线柔和。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。客厅一角，父亲坐在沙发边上侧身轻声跟少年商量，少年坐在另一头听着，两人之间没有居高临下。氛围平等放松。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1933,7 +1846,7 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "一起做件事",
+          "text": "陪我爬楼",
           "pos": {
             "x": 50.0,
             "y": 22.0
@@ -1943,7 +1856,7 @@
             "delay": 200
           },
           "at": {
-            "match": "咱爷俩一起做件事"
+            "match": "咱俩去爬楼"
           }
         }
       ]
@@ -2065,16 +1978,7 @@
       "imageFit": "contain"
     },
     "S1-49": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。厨房洗完碗的餐桌旁，父子两人不约而同放下毛巾走向楼梯间，少年顺手拿了瓶水。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700
-      },
-      "imageFit": "contain"
-    },
-    "S1-50": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一只大手原本握成拳头举起，画面下一秒变成松开手指牵着一只少年的小手。两手对比构图。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父子两人站在体重秤前回头看镜头，身形比之前细长一圈，旁边一面镜子映出他们三个月前的轮廓做对比。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -2083,7 +1987,7 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "抬手",
+          "text": "-10 斤",
           "pos": {
             "x": 22.0,
             "y": 25.0
@@ -2093,21 +1997,7 @@
             "delay": 200
           },
           "at": {
-            "match": "抬起来要打他的手"
-          }
-        },
-        {
-          "text": "牵手",
-          "pos": {
-            "x": 78.0,
-            "y": 25.0
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "牵着他一起爬"
+            "match": "瘦了十几斤"
           }
         }
       ]
@@ -2147,7 +2037,7 @@
       "imageFit": "contain"
     },
     "S1-53": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一扇紧闭的书房门，门缝里透出冷光，门外父亲犹豫不前。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一扇半开的房门，少年正端着课本走出来，门内的书桌孤零零亮着灯。氛围温和。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -2272,7 +2162,7 @@
       ]
     },
     "S1-60": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一张家规清单贴在冰箱门上：手机 ✗ / 平板 父母账号 / 屏幕 30 min / 电视 1 次/周。每项配一个小图标。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一台 Switch 游戏机被一只大手轻按在桌面上，旁边十二个小方格里写着排好的诗题目位（留空），其中一个方格特别突出写着 \"木兰诗\"。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -2281,17 +2171,31 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "30 min",
+          "text": "Switch",
           "pos": {
-            "x": 50.0,
-            "y": 22.0
+            "x": 22.0,
+            "y": 25.0
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "不超过半小时"
+            "match": "Switch"
+          }
+        },
+        {
+          "text": "12 首",
+          "pos": {
+            "x": 78.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "十二首诗"
           }
         }
       ]
@@ -2316,22 +2220,13 @@
             "delay": 200
           },
           "at": {
-            "match": "十五秒一刺激"
+            "match": "15 秒一刺激"
           }
         }
       ]
     },
     "S1-62": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个挂在墙上的日历从初一翻到高三毕业，每一页都圈着 \"屏幕严管中\" 的红字。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700
-      },
-      "imageFit": "contain"
-    },
-    "S1-63": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一句话独占画面：左侧极简留白，右侧父亲严肃侧脸。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -2349,7 +2244,7 @@
       "imageFit": "contain"
     },
     "S1-65": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。三件物品依次画一条横向时间线：重点高中、专业、城市，每个都画一个回头箭头表示可以重来。最后一格是脊柱图标，被红 X 标记不可逆。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。三件物品依次画一条横向时间线：重点高中、专业，每个都画一个回头箭头表示可以重来。最后一格是脊柱图标，被红 X 标记不可逆。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -2524,7 +2419,7 @@
       "imageFit": "contain"
     },
     "S1-74": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。日历上四个日期被分别圈起来：明天、下周一、下个月、下学期。每个日期上方都有一只少年的小脚迈出去。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。日历上三个日期被分别圈起来：明天、下周一、下个月。每个日期上方都有一只少年的小脚迈出去。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -2578,6 +2473,156 @@
           },
           "at": {
             "match": "一起推开"
+          }
+        }
+      ]
+    },
+    "S1-77": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。画面正中一张高考准考证剪影，旁边一杆天平秤指针稳稳地立在正中。两侧大量留白，强调 \"最公平\"。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "高考",
+          "pos": {
+            "x": 50.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "高考成绩"
+          }
+        }
+      ]
+    },
+    "S1-78": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。对比构图：左边一张被打了红 X 的餐桌（碗筷已收），右边楼梯口父子两人空腹整装待发。中间一个朝下的箭头标 \"饭前\"。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "饭前",
+          "pos": {
+            "x": 78.0,
+            "y": 25.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "饭前空腹"
+          }
+        }
+      ]
+    },
+    "S1-79": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个少年挺直腰板站在画面中央，胸口位置画一颗简洁的心脏 + 跳动线。背景一摞被压在脚下的成绩单。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "身体 > 成绩",
+          "pos": {
+            "x": 50.0,
+            "y": 22.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "比学习成绩更重要"
+          }
+        }
+      ]
+    },
+    "S1-80": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个少年坐在书桌前对着摊开的诗集背诵，桌角放着一台 Switch 游戏机被一只手轻轻按住等他先背完。画面温和不对抗。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "自驱力",
+          "pos": {
+            "x": 78.0,
+            "y": 78.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "自驱力"
+          }
+        }
+      ]
+    },
+    "S1-81": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父亲在前景蹲下身放下一道矮矮的横向门槛，少年从后面抬起脚正要自己跨过去。父亲不伸手扶，只是看着。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "压门槛",
+          "pos": {
+            "x": 22.0,
+            "y": 78.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "压一道门槛"
+          }
+        }
+      ]
+    },
+    "S1-82": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。罗马斗兽场的轮廓剪影在画面中央，下面用极简笔触画一条被打断的时间线，旁边数字 1 day 被打 X。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "≠ 1 day",
+          "pos": {
+            "x": 78.0,
+            "y": 78.0
+          },
+          "motion": {
+            "duration": 700,
+            "delay": 200
+          },
+          "at": {
+            "match": "罗马不是一天"
           }
         }
       ]
