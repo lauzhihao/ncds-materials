@@ -35,8 +35,14 @@
    ────────────────────────────────────────────────────────────────── */
 (function () {
   const STYLES = [
+    // 第一批：风格基础款
     'os-tag-pill', 'os-stamp', 'os-marker', 'os-handwrite',
     'os-typewriter', 'os-callout', 'os-callout-red', 'os-circle-mark',
+    // 第二批：印章/标签 + 题字 + 高光 + 气泡（styles.css "第二批 preset"）
+    'os-stamp-blue', 'os-sticker-yellow', 'os-bookmark', 'os-tag-square',
+    'os-seal-square', 'os-brush-title', 'os-title-stamp',
+    'os-neon', 'os-outline-glow', 'os-highlight-yellow',
+    'os-quote-pull', 'os-bubble',
   ];
 
   // 老库 (oa-*) + motion.css 新库 (mo-ov-*) 全部入池；
@@ -81,20 +87,23 @@
     return STYLE_INLINE_KEYS.some(k => s[k] != null);
   }
 
+  // 写 --os-* CSS 变量（而不是直接 el.style.fontFamily=）。preset class 里
+  // 也是 --os-* 列表 + base .scene-overlay 用 var() 引用。这样 inline 覆盖单字段
+  // 不会清掉 preset 的 padding/background 等结构性视觉。
   function applyStyleObject(el, s) {
-    if (s.font)         el.style.fontFamily = '"' + s.font + '", "Noto Sans SC", sans-serif';
-    if (s.size != null) el.style.fontSize = s.size + 'px';
-    if (s.weight)       el.style.fontWeight = s.weight;
-    if (s.color)        el.style.color = s.color;
-    if (s.letterSpacing != null) el.style.letterSpacing = s.letterSpacing + 'em';
-    if (s.shadow)       el.style.textShadow = s.shadow;
-    if (s.padding)      el.style.padding = s.padding;
-    if (s.background)   el.style.background = s.background;
-    if (s.border)       el.style.border = s.border;
-    if (s.borderRadius != null) el.style.borderRadius = s.borderRadius + 'px';
-    if (s.textDecoration) el.style.textDecoration = s.textDecoration;
-    if (s.fontStyle) el.style.fontStyle = s.fontStyle;
-    if (s.whiteSpace) el.style.whiteSpace = s.whiteSpace;  // 支持 pre-line 让 text 里的 \n 渲染换行
+    if (s.font)         el.style.setProperty('--os-font', '"' + s.font + '", "Noto Sans SC", sans-serif');
+    if (s.size != null) el.style.setProperty('--os-size', s.size + 'px');
+    if (s.weight)       el.style.setProperty('--os-weight', String(s.weight));
+    if (s.color)        el.style.setProperty('--os-color', s.color);
+    if (s.letterSpacing != null) el.style.setProperty('--os-letter-spacing', s.letterSpacing + 'em');
+    if (s.shadow)       el.style.setProperty('--os-text-shadow', s.shadow);
+    if (s.padding)      el.style.setProperty('--os-padding', s.padding);
+    if (s.background)   el.style.setProperty('--os-bg', s.background);
+    if (s.border)       el.style.setProperty('--os-border', s.border);
+    if (s.borderRadius != null) el.style.setProperty('--os-border-radius', s.borderRadius + 'px');
+    if (s.textDecoration) el.style.setProperty('--os-text-decoration', s.textDecoration);
+    if (s.fontStyle)    el.style.setProperty('--os-font-style', s.fontStyle);
+    if (s.whiteSpace)   el.style.setProperty('--os-white-space', s.whiteSpace);
     if (s.rotation != null) el.style.setProperty('--os-rotate', s.rotation + 'deg');
   }
 

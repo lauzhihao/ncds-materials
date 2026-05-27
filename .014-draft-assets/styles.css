@@ -498,11 +498,29 @@ body:not(.motion-enabled) .scene.active .scene-overlay[class*="mo-ov-iris"] {
   z-index: 4;
 }
 
+/* overlay 样式系统：base 把所有"可被 inline 覆盖的样式字段"全部 var() 化，
+   preset class 只重设 --os-* 变量、不直接写 property。这样：
+     - inline style（applyStyleObject 写 --os-font/--os-color 等）只覆盖单个变量，
+       preset 的 padding / background / border 等结构性视觉保持不变。
+     - 改字体后不再"清掉预设其他样式"。
+     - 加新 preset 只需写一行 --os-* 列表，模板统一。 */
 .scene-overlay {
   position: absolute;
   transform: translate(-50%, -50%) rotate(var(--os-rotate, 0deg));
-  color: var(--ink);
-  white-space: nowrap;
+  font-family: var(--os-font, "Noto Sans SC", "PingFang SC", sans-serif);
+  font-weight: var(--os-weight, normal);
+  font-size: var(--os-size, 48px);
+  font-style: var(--os-font-style, normal);
+  color: var(--os-color, var(--ink));
+  letter-spacing: var(--os-letter-spacing, normal);
+  text-shadow: var(--os-text-shadow, none);
+  text-decoration: var(--os-text-decoration, none);
+  background: var(--os-bg, transparent);
+  padding: var(--os-padding, 0);
+  border: var(--os-border, none);
+  border-radius: var(--os-border-radius, 0);
+  box-shadow: var(--os-box-shadow, none);
+  white-space: var(--os-white-space, nowrap);
   user-select: none;
   opacity: 0;
   will-change: transform, opacity;
@@ -515,91 +533,94 @@ body:not(.motion-enabled) .scene.active .scene-overlay[class*="mo-ov-iris"] {
   animation-timing-function: cubic-bezier(.22, .85, .36, 1);
 }
 
-/* ─── 字体字号风格（os-*） ──────────────────────────────────────── */
+/* ─── 字体字号风格（os-*）─ 全部走 --os-* 变量模板 ───────────────
+   规则：preset 只重设 --os-* 变量，不直接写 font-family / color 等 property。
+   base .scene-overlay 已 var() 引用所有 --os-*。inline style（applyStyleObject）
+   覆盖单个变量时不破坏 preset 其他视觉。新加 preset 抄一份变量列表即可。 */
 
 /* 小号白底圆角徽章：黑墨衬线字 */
 .os-tag-pill {
-  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
-  font-weight: 700;
-  font-size: var(--os-size, 40px);
-  background: var(--card);
-  padding: 10px 26px;
-  border-radius: 999px;
-  box-shadow: inset 0 0 0 2px var(--ink), 0 8px 18px -10px rgba(0, 0, 0, .35);
+  --os-font: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --os-weight: 700;
+  --os-size: 40px;
+  --os-bg: var(--card);
+  --os-padding: 10px 26px;
+  --os-border-radius: 999px;
+  --os-box-shadow: inset 0 0 0 2px var(--ink), 0 8px 18px -10px rgba(0, 0, 0, .35);
 }
 
 /* 红色印章：粗红边 + 红字 + 微旋转 */
 .os-stamp {
   --os-rotate: -3deg;
-  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
-  font-weight: 900;
-  font-size: var(--os-size, 46px);
-  color: var(--accent);
-  padding: 10px 26px;
-  border: 4px solid var(--accent);
-  border-radius: 6px;
-  background: rgba(251, 246, 232, .55);
-  letter-spacing: .06em;
+  --os-font: "Noto Sans SC", "PingFang SC", sans-serif;
+  --os-weight: 900;
+  --os-size: 46px;
+  --os-color: var(--accent);
+  --os-padding: 10px 26px;
+  --os-border: 4px solid var(--accent);
+  --os-border-radius: 6px;
+  --os-bg: rgba(251, 246, 232, .55);
+  --os-letter-spacing: .06em;
 }
 
 /* 黑字 + 黄色 marker 划重点条 */
 .os-marker {
-  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
-  font-weight: 800;
-  font-size: var(--os-size, 48px);
-  color: var(--ink);
-  padding: 2px 8px;
-  background: linear-gradient(transparent 55%, var(--accent-soft) 55% 92%, transparent 92%);
+  --os-font: "Noto Sans SC", "PingFang SC", sans-serif;
+  --os-weight: 800;
+  --os-size: 48px;
+  --os-color: var(--ink);
+  --os-padding: 2px 8px;
+  --os-bg: linear-gradient(transparent 55%, var(--accent-soft) 55% 92%, transparent 92%);
 }
 
 /* 手写卡片：衬线斜体 + 轻微倾斜 */
 .os-handwrite {
   --os-rotate: -3deg;
-  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
-  font-weight: 500;
-  font-style: italic;
-  font-size: var(--os-size, 52px);
-  color: var(--ink-soft);
+  --os-font: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --os-weight: 500;
+  --os-font-style: italic;
+  --os-size: 52px;
+  --os-color: var(--ink-soft);
 }
 
 /* 等宽便利贴：黄底 + 灰墨 monospace */
 .os-typewriter {
   --os-rotate: 2deg;
-  font-family: "JetBrains Mono", "SF Mono", "Menlo", monospace;
-  font-weight: 500;
-  font-size: var(--os-size, 34px);
-  color: var(--ink);
-  padding: 12px 22px;
-  background: #f4eed8;
-  box-shadow: 0 8px 18px -10px rgba(0, 0, 0, .25), inset 0 0 0 1px rgba(28, 26, 22, .08);
-  letter-spacing: .04em;
+  --os-font: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+  --os-weight: 500;
+  --os-size: 34px;
+  --os-color: var(--ink);
+  --os-padding: 12px 22px;
+  --os-bg: #f4eed8;
+  --os-box-shadow: 0 8px 18px -10px rgba(0, 0, 0, .25), inset 0 0 0 1px rgba(28, 26, 22, .08);
+  --os-letter-spacing: .04em;
 }
 
-/* 大号衬线 + 细下划线 (下划线用 currentColor, 跟随 inline style 改的 color) */
+/* 大号衬线 + 细下划线（下划线用 currentColor 跟随 --os-color） */
 .os-callout {
-  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
-  font-weight: 700;
-  font-size: var(--os-size, 60px);
-  color: var(--ink);
+  --os-font: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --os-weight: 700;
+  --os-size: 60px;
+  --os-color: var(--ink);
   padding-bottom: 8px;
   border-bottom: 3px solid currentColor;
 }
 
 /* 同上，红墨水版 */
 .os-callout-red {
-  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
-  font-weight: 700;
-  font-size: var(--os-size, 60px);
-  color: var(--accent);
+  --os-font: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --os-weight: 700;
+  --os-size: 60px;
+  --os-color: var(--accent);
 }
 
-/* 红色 marker 圈出（手绘感椭圆） */
+/* 红色 marker 圈出（手绘感椭圆，::before 是装饰层 hard-code，不入变量模板） */
 .os-circle-mark {
-  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
-  font-weight: 700;
-  font-size: var(--os-size, 48px);
-  color: var(--ink);
-  padding: 12px 28px;
+  --os-font: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --os-weight: 700;
+  --os-size: 48px;
+  --os-color: var(--ink);
+  --os-padding: 12px 28px;
 }
 .os-circle-mark::before {
   content: "";
@@ -608,6 +629,183 @@ body:not(.motion-enabled) .scene.active .scene-overlay[class*="mo-ov-iris"] {
   border: 4px solid var(--accent);
   border-radius: 50%;
   transform: rotate(-4deg);
+  pointer-events: none;
+}
+
+/* ─── 第二批 preset（印章/题字/高光/气泡，全部走 --os-* 模板）─────── */
+
+/* 蓝墨印章：跟 os-stamp 红色对位 */
+.os-stamp-blue {
+  --os-rotate: -3deg;
+  --os-font: "Noto Sans SC", "PingFang SC", sans-serif;
+  --os-weight: 900;
+  --os-size: 46px;
+  --os-color: #1f3a93;
+  --os-padding: 10px 26px;
+  --os-border: 4px solid #1f3a93;
+  --os-border-radius: 6px;
+  --os-bg: rgba(251, 246, 232, .55);
+  --os-letter-spacing: .06em;
+}
+
+/* 黄色便利贴：纯黄底 + 黑字 + 厚阴影，常用作旁注/补充 */
+.os-sticker-yellow {
+  --os-rotate: -2deg;
+  --os-font: "Noto Sans SC", "PingFang SC", sans-serif;
+  --os-weight: 700;
+  --os-size: 36px;
+  --os-color: var(--ink);
+  --os-bg: #ffe66b;
+  --os-padding: 16px 26px;
+  --os-box-shadow: 0 12px 20px -12px rgba(0,0,0,.4), 0 2px 4px rgba(0,0,0,.08);
+}
+
+/* 书签：左侧三角尖角 + 红边白底，挂"章节名/序号"语义 */
+.os-bookmark {
+  --os-font: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --os-weight: 700;
+  --os-size: 38px;
+  --os-color: var(--accent);
+  --os-bg: var(--card);
+  --os-padding: 8px 26px 8px 36px;
+  --os-border: 2px solid var(--accent);
+  --os-border-radius: 0 6px 6px 0;
+}
+.os-bookmark::before {
+  content: "";
+  position: absolute;
+  left: -2px; top: 50%;
+  width: 0; height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 14px solid var(--accent);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* 方形深色吊牌：黑底 + 暖白字，做"标签 / 关键词"语义 */
+.os-tag-square {
+  --os-font: "Noto Sans SC", sans-serif;
+  --os-weight: 600;
+  --os-size: 32px;
+  --os-color: #fbf6e8;
+  --os-bg: #1c1a16;
+  --os-padding: 10px 22px;
+  --os-letter-spacing: .12em;
+}
+
+/* 篆刻方形红印：白字红底 + 内描边，落款语义 */
+.os-seal-square {
+  --os-rotate: -2deg;
+  --os-font: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --os-weight: 900;
+  --os-size: 36px;
+  --os-color: #fbf6e8;
+  --os-bg: var(--accent);
+  --os-padding: 14px 18px;
+  --os-letter-spacing: .12em;
+  --os-box-shadow: inset 0 0 0 3px #fbf6e8;
+}
+
+/* 毛笔题款：超大粗衬线 + 微浮起阴影 */
+.os-brush-title {
+  --os-font: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  --os-weight: 900;
+  --os-size: 80px;
+  --os-color: var(--ink);
+  --os-letter-spacing: .04em;
+  --os-text-shadow: 0 4px 0 rgba(0,0,0,.06);
+}
+
+/* 落款方印：小号正方红框，配合 brush-title 用 */
+.os-title-stamp {
+  --os-rotate: -1deg;
+  --os-font: "Noto Serif SC", serif;
+  --os-weight: 800;
+  --os-size: 28px;
+  --os-color: var(--accent);
+  --os-padding: 6px 14px;
+  --os-border: 2px solid var(--accent);
+  --os-letter-spacing: .15em;
+}
+
+/* 霓虹粉光：多层 text-shadow 散光，黑底 */
+.os-neon {
+  --os-font: "Noto Sans SC", sans-serif;
+  --os-weight: 900;
+  --os-size: 52px;
+  --os-color: #ffe9f4;
+  --os-bg: rgba(20,18,15,.85);
+  --os-padding: 12px 24px;
+  --os-border-radius: 4px;
+  --os-text-shadow: 0 0 6px #ff5fb0, 0 0 12px #ff5fb0, 0 0 24px #ff2d92;
+  --os-letter-spacing: .04em;
+}
+
+/* 描边发光：白字 + 红 4 向描边 + 红外发光 */
+.os-outline-glow {
+  --os-font: "Noto Sans SC", sans-serif;
+  --os-weight: 900;
+  --os-size: 64px;
+  --os-color: #fbf6e8;
+  --os-text-shadow:
+    -2px -2px 0 var(--accent), 2px -2px 0 var(--accent),
+    -2px 2px 0 var(--accent), 2px 2px 0 var(--accent),
+    0 0 18px rgba(193, 57, 43, .55);
+}
+
+/* 全黄底高亮：比 os-marker 的渐变条更直接 */
+.os-highlight-yellow {
+  --os-font: "Noto Sans SC", sans-serif;
+  --os-weight: 800;
+  --os-size: 46px;
+  --os-color: var(--ink);
+  --os-bg: #ffe66b;
+  --os-padding: 4px 14px;
+  --os-border-radius: 4px;
+}
+
+/* 大引号金句：::before 挂一个超大红色开引号 */
+.os-quote-pull {
+  --os-font: "Noto Serif SC", serif;
+  --os-weight: 600;
+  --os-size: 52px;
+  --os-color: var(--ink);
+  --os-padding: 8px 0 8px 50px;
+  --os-letter-spacing: .02em;
+}
+.os-quote-pull::before {
+  content: "\201C";
+  position: absolute;
+  left: -10px; top: -30px;
+  font-family: "Georgia", "Source Han Serif SC", serif;
+  font-size: 120px;
+  color: var(--accent);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* 对话气泡：圆角矩形 + 底尾尖角 */
+.os-bubble {
+  --os-font: "Noto Sans SC", sans-serif;
+  --os-weight: 600;
+  --os-size: 36px;
+  --os-color: var(--ink);
+  --os-bg: var(--card);
+  --os-padding: 14px 24px;
+  --os-border-radius: 18px;
+  --os-box-shadow: 0 6px 14px -8px rgba(0,0,0,.25);
+}
+.os-bubble::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: -10px;
+  width: 0; height: 0;
+  border-top: 12px solid var(--card);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 3px 2px rgba(0,0,0,.15));
   pointer-events: none;
 }
 
