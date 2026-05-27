@@ -171,9 +171,20 @@ body.ken-burns .scene {
   pointer-events: auto;
 }
 
-.scene image-slot {
+/* image-stage 是 light DOM wrapper（mo-img-* keyframe 挂这里，不是 ::part），
+   占原本 image-slot 92%/88% 的位置 + absolute 居中 + base translate(-50%,-50%)
+   让 keyframe 公式（含 translate(-50%,-50%)）能正确叠加。image-slot 自己撑满
+   wrapper。 */
+.scene .image-stage {
+  position: absolute;
+  left: 50%; top: 50%;
   width: 92%;
   height: 88%;
+  transform: translate(-50%, -50%);
+}
+.scene .image-stage image-slot {
+  width: 100%;
+  height: 100%;
   display: block;
 }
 

@@ -216,7 +216,11 @@
 .scene.active .scene-overlay.mo-ov-unfold      { animation-name: mo-ov-unfold;          animation-timing-function: cubic-bezier(.16, 1, .3, 1); }
 
 /* ─── 图片内层 Ken Burns / Pan / Parallax ─────────────────────────────
-   作用在 image-slot::part(image)（shadow DOM 暴露的内层 <img>）。
+   作用在 .image-stage（light DOM wrapper，包 image-slot）。
+   注意：原本挂在 image-slot::part(image) 上，但 chrome 对跨 shadow DOM 的
+   ::part + animation 不真正启动 animation 实例（computed style 有 animation-name
+   但 getAnimations() 空、transform 全程不变），所以图片完全不动。挂到 light DOM
+   wrapper 上规避这一点。
    与外层 .scene { transform: scale(1.06) } 叠加，所以这里 scale 取 1.0~1.12
    区间避免画面过度放大。每个 scene 仅在首次激活时触发，跨多 beat 持续慢推。
    ───────────────────────────────────────────────────────────────── */
@@ -254,7 +258,7 @@
   50%      { transform: translate(-50%, -50%) scale(1.10); filter: brightness(1.04); }
 }
 
-.scene.active image-slot::part(image) {
+.scene.active .image-stage {
   animation-duration: var(--motion-img-duration);
   animation-timing-function: var(--motion-img-easing);
   animation-delay: var(--motion-img-delay);
@@ -262,20 +266,20 @@
   will-change: transform, filter;
 }
 
-.scene.active.mo-img-zoom-in   image-slot::part(image) { animation-name: mo-img-zoom-in; }
-.scene.active.mo-img-zoom-out  image-slot::part(image) { animation-name: mo-img-zoom-out; }
-.scene.active.mo-img-pan-l     image-slot::part(image) { animation-name: mo-img-pan-l; }
-.scene.active.mo-img-pan-r     image-slot::part(image) { animation-name: mo-img-pan-r; }
-.scene.active.mo-img-pan-u     image-slot::part(image) { animation-name: mo-img-pan-u; }
-.scene.active.mo-img-pan-d     image-slot::part(image) { animation-name: mo-img-pan-d; }
-.scene.active.mo-img-diag-br   image-slot::part(image) { animation-name: mo-img-diag-br; }
-.scene.active.mo-img-diag-tl   image-slot::part(image) { animation-name: mo-img-diag-tl; }
-.scene.active.mo-img-parallax  image-slot::part(image) { animation-name: mo-img-parallax; }
-.scene.active.mo-img-wobble    image-slot::part(image) { animation-name: mo-img-wobble; animation-timing-function: ease-in-out; }
-.scene.active.mo-img-breathe   image-slot::part(image) { animation-name: mo-img-breathe; animation-timing-function: ease-in-out; animation-duration: 5200ms; }
+.scene.active.mo-img-zoom-in   .image-stage { animation-name: mo-img-zoom-in; }
+.scene.active.mo-img-zoom-out  .image-stage { animation-name: mo-img-zoom-out; }
+.scene.active.mo-img-pan-l     .image-stage { animation-name: mo-img-pan-l; }
+.scene.active.mo-img-pan-r     .image-stage { animation-name: mo-img-pan-r; }
+.scene.active.mo-img-pan-u     .image-stage { animation-name: mo-img-pan-u; }
+.scene.active.mo-img-pan-d     .image-stage { animation-name: mo-img-pan-d; }
+.scene.active.mo-img-diag-br   .image-stage { animation-name: mo-img-diag-br; }
+.scene.active.mo-img-diag-tl   .image-stage { animation-name: mo-img-diag-tl; }
+.scene.active.mo-img-parallax  .image-stage { animation-name: mo-img-parallax; }
+.scene.active.mo-img-wobble    .image-stage { animation-name: mo-img-wobble; animation-timing-function: ease-in-out; }
+.scene.active.mo-img-breathe   .image-stage { animation-name: mo-img-breathe; animation-timing-function: ease-in-out; animation-duration: 5200ms; }
 
 /* 动效守门：未启用时禁掉内层 keyframes，首帧静默 */
-body:not(.motion-enabled) .scene.active[class*="mo-img-"] image-slot::part(image) {
+body:not(.motion-enabled) .scene.active[class*="mo-img-"] .image-stage {
   animation: none !important;
 }
 

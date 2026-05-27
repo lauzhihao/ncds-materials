@@ -143,8 +143,15 @@
         '</div>';
     } else {
       const fit = (def.imageFit === 'cover' || def.imageFit === 'fill') ? def.imageFit : 'contain';
+      // image-stage：light DOM wrapper，专门承载 mo-img-* keyframe。
+      // 原本规则挂在 image-slot::part(image)（shadow DOM 内的 img）—— chrome 对
+      // 跨 shadow DOM 的 ::part + animation 不真正启动 animation 实例：computed
+      // style 里能看到 animation-name，但 img.getAnimations() 是空、transform 全程
+      // 不变。挂到 light DOM wrapper 上就 work。
       el.innerHTML =
-        '<image-slot id="slot-' + id + '" src="' + src + '" fit="' + fit + '" placeholder="拖入此场景的图（详见左侧）"></image-slot>' +
+        '<div class="image-stage">' +
+        '  <image-slot id="slot-' + id + '" src="' + src + '" fit="' + fit + '" placeholder="拖入此场景的图（详见左侧）"></image-slot>' +
+        '</div>' +
         '<div class="placeholder">' +
         '  <div class="ph-id">' + id + '</div>' +
         '  <div class="ph-prompt">' + (def.prompt || '') + '</div>' +
