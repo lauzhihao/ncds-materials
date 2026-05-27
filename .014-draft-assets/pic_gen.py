@@ -6,6 +6,7 @@
 - 落地：pictures/<scene-id>.webp（player.js 的 picSrcFor 直接读 sceneId）
 - 幂等：目标 webp 存在则跳过；--force 强制重生
 - 章节封面 ch1-ch5 跳过不生成（player.js 里走 CSS chapter-card 渲染）
+- 并发：默认 5 个线程并行调用 gpt-image-2；`--jobs N` / `-j N` / `PIC_JOBS=N` 覆盖
 
 依赖：本机 Pillow（pip install Pillow），环境变量 GPT_IMAGE2_BASE_URL / GPT_IMAGE2_API_KEY，
 以及本机 ~/.codex/skills/gpt-image/scripts/gpt_image_gen.py。
@@ -16,6 +17,7 @@ import shutil
 import subprocess
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -108,10 +110,26 @@ def generate_one(scene: dict, *, slug: str, no_text_hint: str, size: str, qualit
     return "ok"
 
 
+def parse_jobs(argv: list[str]) -> tuple[int, list[str]]:
+    """提取 --jobs N / -j N，返回 (jobs, 剩余 argv)。"""
+    jobs = int(os.environ.get("PIC_JOBS") or 5)
+    rest: list[str] = []
+    i = 0
+    while i < len(argv):
+        a = argv[i]
+        if a in ("--jobs", "-j") and i + 1 < len(argv):
+            jobs = int(argv[i + 1]); i += 2; continue
+        if a.startswith("--jobs="):
+            jobs = int(a.split("=", 1)[1]); i += 1; continue
+        rest.append(a); i += 1
+    return max(1, jobs), rest
+
+
 def main() -> int:
     PIC_DIR.mkdir(exist_ok=True)
-    force = "--force" in sys.argv[1:]
-    only = [a for a in sys.argv[1:] if not a.startswith("--")]
+    jobs, rest = parse_jobs(sys.argv[1:])
+    force = "--force" in rest
+    only = [a for a in rest if not a.startswith("--")]
 
     episode = load_episode()
     slug = (episode.get("meta") or {}).get("slug") or "episode"
@@ -125,21 +143,32 @@ def main() -> int:
         scenes = [s for s in scenes if s["id"] in only]
         print(f"only scenes: {[s['id'] for s in scenes]}")
 
-    total_eligible = sum(1 for s in scenes if not s["is_chapter"])
-    print(f"target: {total_eligible} scenes ({size} {quality})")
+    eligible = [s for s in scenes if not s["is_chapter"]]
+    print(f"target: {len(eligible)} scenes ({size} {quality}) · jobs={jobs}")
 
     ok = sk = fail = 0
-    for s in scenes:
-        if s["is_chapter"]:
-            continue
-        result = generate_one(s, slug=slug, no_text_hint=no_text_hint, size=size, quality=quality, force=force)
-        if result == "ok":
-            ok += 1
-        elif result == "skipped":
-            sk += 1
-        else:
-            fail += 1
-        time.sleep(0.5)
+    with ThreadPoolExecutor(max_workers=jobs) as pool:
+        futures = {
+            pool.submit(
+                generate_one, s,
+                slug=slug, no_text_hint=no_text_hint,
+                size=size, quality=quality, force=force,
+            ): s for s in eligible
+        }
+        for fut in as_completed(futures):
+            try:
+                result = fut.result()
+            except Exception as e:
+                sid = futures[fut]["id"]
+                print(f"  ! [{sid}] worker crashed: {e}", file=sys.stderr)
+                fail += 1
+                continue
+            if result == "ok":
+                ok += 1
+            elif result == "skipped":
+                sk += 1
+            else:
+                fail += 1
 
     print(f"\ndone. ok={ok} skipped={sk} failed={fail}")
     return 0 if fail == 0 else 3
