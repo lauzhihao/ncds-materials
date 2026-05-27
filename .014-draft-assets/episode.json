@@ -1072,17 +1072,17 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "好多年",
+          "text": "YEARS",
           "pos": {
-            "x": 78.0,
-            "y": 26.0
+            "x": 54.5,
+            "y": 25.5
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "好多年"
+            "match": "是不是"
           }
         }
       ]
@@ -1108,8 +1108,8 @@
         {
           "text": "懒",
           "pos": {
-            "x": 50.0,
-            "y": 30.0
+            "x": 39.5,
+            "y": 24.5
           },
           "motion": {
             "duration": 700,
@@ -1117,6 +1117,12 @@
           },
           "at": {
             "match": "你说他懒"
+          },
+          "style": {
+            "font": "Fengsao",
+            "preset": "os-stamp",
+            "rotation": 0,
+            "size": 72
           }
         }
       ]
@@ -1133,43 +1139,53 @@
         {
           "text": "宠溺",
           "pos": {
-            "x": 18.0,
-            "y": 70.0
+            "x": 31.5,
+            "y": 74.5
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "stamp"
           },
           "at": {
-            "match": "爷爷宠溺"
-          }
+            "match": "爷爷"
+          },
+          "style": "os-stamp"
         },
         {
           "text": "包办",
           "pos": {
-            "x": 50.0,
-            "y": 78.0
+            "x": 48.5,
+            "y": 74.5
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "stamp"
           },
           "at": {
-            "match": "妈妈包办"
-          }
+            "match": "妈妈"
+          },
+          "style": "os-stamp"
         },
         {
           "text": "“修理”",
           "pos": {
-            "x": 82.0,
-            "y": 70.0
+            "x": 66.5,
+            "y": 74
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "stamp"
           },
           "at": {
-            "match": "爸爸“修理”"
+            "match": "爸爸"
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "preset": "os-stamp",
+            "color": "#c81414"
           }
         }
       ]
@@ -1193,18 +1209,20 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "放弃自己",
+          "text": "GIVE UP",
           "pos": {
-            "x": 50.0,
-            "y": 78.0
+            "x": 33.5,
+            "y": 29
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "stamp"
           },
           "at": {
             "match": "放弃自己"
-          }
+          },
+          "style": "os-stamp"
         }
       ]
     },
@@ -1229,15 +1247,15 @@
         {
           "text": "25 岁",
           "pos": {
-            "x": 78.0,
-            "y": 25.0
+            "x": 52,
+            "y": 29
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "二十五岁"
+            "match": "要到"
           }
         }
       ]
@@ -1252,10 +1270,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "一半",
+          "text": "Half",
           "pos": {
-            "x": 50.0,
-            "y": 82.0
+            "x": 29.5,
+            "y": 20
           },
           "motion": {
             "duration": 700,
@@ -1263,6 +1281,11 @@
           },
           "at": {
             "match": "一半"
+          },
+          "style": {
+            "rotation": 5,
+            "preset": "os-marker",
+            "color": "#db1f1f"
           }
         }
       ]
@@ -1295,17 +1318,23 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "抬起的手",
+          "text": "BOOM",
           "pos": {
-            "x": 28.0,
-            "y": 22.0
+            "x": 47.5,
+            "y": 37
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "zoom-pop"
           },
           "at": {
             "match": "你抬起来的手"
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "preset": "os-callout",
+            "color": "#d21414"
           }
         }
       ]
@@ -1329,18 +1358,20 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "免疫",
+          "text": "×",
           "pos": {
-            "x": 75.0,
-            "y": 32.0
+            "x": 52,
+            "y": 51.5
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "stamp"
           },
           "at": {
-            "match": "免疫"
-          }
+            "match": "早就"
+          },
+          "style": "os-stamp"
         }
       ]
     },
@@ -1356,15 +1387,47 @@
         {
           "text": "装样子",
           "pos": {
-            "x": 50.0,
-            "y": 25.0
+            "x": 32.5,
+            "y": 73.5
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "fade"
           },
           "at": {
-            "match": "装样子"
+            "match": "学会"
+          },
+          "style": {
+            "color": "#e51f1f",
+            "preset": "os-callout",
+            "rotation": 14,
+            "size": 40
+          }
+        },
+        {
+          "text": "SHOW",
+          "pos": {
+            "x": 69.5,
+            "y": 33
+          },
+          "style": "os-marker",
+          "at": {
+            "match": "于是"
+          }
+        },
+        {
+          "text": "ART",
+          "pos": {
+            "x": 68.5,
+            "y": 70
+          },
+          "style": {
+            "preset": "os-marker",
+            "color": "#908e8e"
+          },
+          "at": {
+            "match": "在你"
           }
         }
       ]
@@ -1399,29 +1462,38 @@
         {
           "text": "五言",
           "pos": {
-            "x": 28.0,
-            "y": 22.0
+            "x": 58,
+            "y": 45.5
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "五言律诗"
+            "match": "五言"
+          },
+          "style": {
+            "font": "Mao Zedong",
+            "preset": "os-callout-red"
           }
         },
         {
           "text": "七言",
           "pos": {
-            "x": 72.0,
-            "y": 22.0
+            "x": 47.5,
+            "y": 46
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "七言绝句"
+            "match": "七言"
+          },
+          "style": {
+            "font": "Mao Zedong",
+            "size": null,
+            "preset": "os-callout-red"
           }
         }
       ]
@@ -1436,17 +1508,22 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "多 1 字都不写",
+          "text": "不写",
           "pos": {
-            "x": 50.0,
-            "y": 78.0
+            "x": 49,
+            "y": 80
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "多一个字都不写"
+            "match": "阅读理解"
+          },
+          "style": {
+            "preset": "os-circle-mark",
+            "font": "PP Katong",
+            "color": "#bf4040"
           }
         }
       ]
@@ -1461,17 +1538,23 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "靠运气？",
+          "text": "赌一把？",
           "pos": {
-            "x": 78.0,
-            "y": 22.0
+            "x": 51,
+            "y": 73.5
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "slide-clip"
           },
           "at": {
-            "match": "全靠运气"
+            "match": "结果"
+          },
+          "style": {
+            "font": "ZQK Dundun",
+            "size": 60,
+            "color": "#c61515"
           }
         }
       ]
@@ -1484,22 +1567,7 @@
         "duration": 700
       },
       "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "选择权",
-          "pos": {
-            "x": 22.0,
-            "y": 80.0
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "选自己人生的权利"
-          }
-        }
-      ]
+      "overlays": []
     },
     "S1-25": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一面墙上贴着三张被划掉的纸：题目、课文、闹钟。地上散落更多被丢弃的纸片。",
@@ -1520,10 +1588,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "举步维艰",
+          "text": "Hard",
           "pos": {
-            "x": 50.0,
-            "y": 78.0
+            "x": 45,
+            "y": 20
           },
           "motion": {
             "duration": 700,
@@ -1531,6 +1599,11 @@
           },
           "at": {
             "match": "举步维艰"
+          },
+          "style": {
+            "preset": "os-callout",
+            "color": "#c11f1f",
+            "font": "ZQK Shuaihei"
           }
         }
       ]
@@ -1556,30 +1629,34 @@
         {
           "text": "3 年",
           "pos": {
-            "x": 22.0,
-            "y": 50.0
+            "x": 28.5,
+            "y": 69.5
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "stamp"
           },
           "at": {
             "match": "苦这几年"
-          }
+          },
+          "style": "os-stamp"
         },
         {
-          "text": "后半辈子",
+          "text": "后半生",
           "pos": {
-            "x": 78.0,
-            "y": 50.0
+            "x": 58.5,
+            "y": 49
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "stamp"
           },
           "at": {
-            "match": "苦后半辈子"
-          }
+            "match": "苦后"
+          },
+          "style": "os-stamp"
         }
       ]
     },
@@ -1593,17 +1670,17 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "你先蜕变",
+          "text": "You First",
           "pos": {
-            "x": 50.0,
-            "y": 80.0
+            "x": 46.5,
+            "y": 20.5
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "得你先蜕变"
+            "match": "他蜕变"
           }
         }
       ]
@@ -1638,15 +1715,19 @@
         {
           "text": "做得不错",
           "pos": {
-            "x": 72.0,
-            "y": 25.0
+            "x": 59.5,
+            "y": 34
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "做得不错"
+            "match": "真心的"
+          },
+          "style": {
+            "preset": "os-typewriter",
+            "font": "XY Kaiti"
           }
         }
       ]
@@ -1699,22 +1780,26 @@
         {
           "text": "豆芽菜",
           "pos": {
-            "x": 22.0,
-            "y": 25.0
+            "x": 35,
+            "y": 45
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "豆芽菜"
+            "match": "长成"
+          },
+          "style": {
+            "font": "ZQK Shuma",
+            "size": 50
           }
         },
         {
-          "text": "硬得快",
+          "text": "硬",
           "pos": {
-            "x": 78.0,
-            "y": 25.0
+            "x": 72.5,
+            "y": 76.5
           },
           "motion": {
             "duration": 700,
@@ -1745,10 +1830,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "一起做",
+          "text": "together",
           "pos": {
-            "x": 78.0,
-            "y": 80.0
+            "x": 32,
+            "y": 38.5
           },
           "motion": {
             "duration": 700,
@@ -1756,6 +1841,11 @@
           },
           "at": {
             "match": "做一件有成就的事"
+          },
+          "style": {
+            "font": "Mao Zedong",
+            "color": "#6b4747",
+            "preset": "os-typewriter"
           }
         }
       ]
@@ -1772,8 +1862,8 @@
         {
           "text": "11 F",
           "pos": {
-            "x": 82.0,
-            "y": 50.0
+            "x": 66.5,
+            "y": 31.5
           },
           "motion": {
             "duration": 700,
@@ -1795,17 +1885,21 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "陪我爬楼",
+          "text": "陪我",
           "pos": {
-            "x": 50.0,
-            "y": 22.0
+            "x": 48.5,
+            "y": 25
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "咱俩去爬楼"
+            "match": "要不然"
+          },
+          "style": {
+            "preset": "os-typewriter",
+            "font": "PP Keai"
           }
         }
       ]
@@ -1831,15 +1925,21 @@
         {
           "text": "× 3",
           "pos": {
-            "x": 82.0,
-            "y": 25.0
+            "x": 73.5,
+            "y": 26.5
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "bounce"
           },
           "at": {
-            "match": "早上一趟"
+            "match": "早上"
+          },
+          "style": {
+            "preset": "os-circle-mark",
+            "color": "#d91c1c",
+            "font": "XY Kaiti"
           }
         }
       ]
@@ -1854,31 +1954,21 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "↑ 楼梯",
+          "text": "楼梯",
           "pos": {
-            "x": 22.0,
-            "y": 28.0
+            "x": 51.5,
+            "y": 19.5
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "只往上爬"
-          }
-        },
-        {
-          "text": "↓ 电梯",
-          "pos": {
-            "x": 78.0,
-            "y": 28.0
+            "match": "不过"
           },
-          "motion": {
-            "duration": 700,
-            "delay": 200
-          },
-          "at": {
-            "match": "下楼坐电梯"
+          "style": {
+            "font": "ZQK Lengku",
+            "preset": "os-typewriter"
           }
         }
       ]
@@ -1895,15 +1985,19 @@
         {
           "text": "× 3",
           "pos": {
-            "x": 78.0,
-            "y": 25.0
+            "x": 66.5,
+            "y": 82
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "三倍多"
+            "match": "冲击"
+          },
+          "style": {
+            "preset": "os-callout",
+            "font": "ZQK Keai"
           }
         }
       ]
@@ -1936,17 +2030,22 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "-10 斤",
+          "text": "瘦",
           "pos": {
-            "x": 22.0,
-            "y": 25.0
+            "x": 72.5,
+            "y": 33
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "瘦了十几斤"
+            "match": "我俩"
+          },
+          "style": {
+            "preset": "os-callout",
+            "font": "ZS Moran",
+            "size": 70
           }
         }
       ]
@@ -1963,8 +2062,8 @@
         {
           "text": "8 F",
           "pos": {
-            "x": 22.0,
-            "y": 25.0
+            "x": 68.5,
+            "y": 57
           },
           "motion": {
             "duration": 700,
@@ -2015,29 +2114,41 @@
         {
           "text": "朝花夕拾",
           "pos": {
-            "x": 22.0,
-            "y": 22.0
+            "x": 37,
+            "y": 28.5
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "朝花夕拾"
+            "match": "翻开"
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "rotation": -5,
+            "size": 30,
+            "color": "#d61f1f"
           }
         },
         {
           "text": "骆驼祥子",
           "pos": {
-            "x": 78.0,
-            "y": 22.0
+            "x": 32,
+            "y": 64
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "骆驼祥子"
+            "match": "骆驼"
+          },
+          "style": {
+            "color": "#cf1717",
+            "font": "XY Kaiti",
+            "rotation": 11,
+            "size": 30
           }
         }
       ]
@@ -2052,10 +2163,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "陪着写",
+          "text": "together",
           "pos": {
-            "x": 78.0,
-            "y": 78.0
+            "x": 51.5,
+            "y": 25
           },
           "motion": {
             "duration": 700,
@@ -2063,6 +2174,10 @@
           },
           "at": {
             "match": "被人陪着写"
+          },
+          "style": {
+            "size": 40,
+            "preset": "os-callout"
           }
         }
       ]
@@ -2097,16 +2212,18 @@
         {
           "text": "严管",
           "pos": {
-            "x": 78.0,
-            "y": 28.0
+            "x": 57.5,
+            "y": 34.5
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "stamp"
           },
           "at": {
-            "match": "严管"
-          }
+            "match": "电子"
+          },
+          "style": "os-stamp"
         }
       ]
     },
@@ -2122,8 +2239,8 @@
         {
           "text": "Switch",
           "pos": {
-            "x": 22.0,
-            "y": 25.0
+            "x": 50,
+            "y": 78
           },
           "motion": {
             "duration": 700,
@@ -2136,8 +2253,8 @@
         {
           "text": "12 首",
           "pos": {
-            "x": 78.0,
-            "y": 25.0
+            "x": 53,
+            "y": 27
           },
           "motion": {
             "duration": 700,
@@ -2161,8 +2278,8 @@
         {
           "text": "15 sec",
           "pos": {
-            "x": 22.0,
-            "y": 25.0
+            "x": 35.5,
+            "y": 21.5
           },
           "motion": {
             "duration": 700,
@@ -2170,6 +2287,11 @@
           },
           "at": {
             "match": "15 秒一刺激"
+          },
+          "style": {
+            "size": 40,
+            "preset": "os-callout-red",
+            "rotation": 3
           }
         }
       ]
@@ -2213,8 +2335,8 @@
         {
           "text": "02:00",
           "pos": {
-            "x": 22.0,
-            "y": 25.0
+            "x": 31,
+            "y": 57
           },
           "motion": {
             "duration": 700,
@@ -2222,13 +2344,17 @@
           },
           "at": {
             "match": "凌晨两点"
+          },
+          "style": {
+            "size": 40,
+            "preset": "os-marker"
           }
         },
         {
           "text": "800°",
           "pos": {
-            "x": 78.0,
-            "y": 25.0
+            "x": 50,
+            "y": 36.5
           },
           "motion": {
             "duration": 700,
@@ -2236,7 +2362,8 @@
           },
           "at": {
             "match": "近视八百度"
-          }
+          },
+          "style": "os-callout-red"
         }
       ]
     },
@@ -2252,8 +2379,8 @@
         {
           "text": "底线",
           "pos": {
-            "x": 50.0,
-            "y": 80.0
+            "x": 70,
+            "y": 55.5
           },
           "motion": {
             "duration": 700,
@@ -2275,7 +2402,7 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "别急",
+          "text": "DON'T WORRY",
           "pos": {
             "x": 50.0,
             "y": 45.0
@@ -2286,7 +2413,8 @@
           },
           "at": {
             "match": "别急"
-          }
+          },
+          "style": "os-typewriter"
         }
       ]
     },
@@ -2300,10 +2428,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "3 年",
+          "text": "三年",
           "pos": {
-            "x": 78.0,
-            "y": 78.0
+            "x": 74,
+            "y": 75.5
           },
           "motion": {
             "duration": 700,
@@ -2311,6 +2439,22 @@
           },
           "at": {
             "match": "三年陪他长回来"
+          },
+          "style": {
+            "font": "ZQK Qiaoke",
+            "size": 40,
+            "preset": "os-marker"
+          }
+        },
+        {
+          "text": "一天",
+          "pos": {
+            "x": 25.5,
+            "y": 40
+          },
+          "style": {
+            "preset": "os-marker",
+            "font": "ZQK Dundun"
           }
         }
       ]
@@ -2334,10 +2478,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "孩子",
+          "text": "HI",
           "pos": {
-            "x": 78.0,
-            "y": 25.0
+            "x": 63.5,
+            "y": 22
           },
           "motion": {
             "duration": 700,
@@ -2345,7 +2489,8 @@
           },
           "at": {
             "match": "孩子"
-          }
+          },
+          "style": "os-marker"
         }
       ]
     },
@@ -2379,8 +2524,8 @@
         {
           "text": "越早越好",
           "pos": {
-            "x": 50.0,
-            "y": 85.0
+            "x": 49.5,
+            "y": 86
           },
           "motion": {
             "duration": 700,
@@ -2388,6 +2533,39 @@
           },
           "at": {
             "match": "越早开始"
+          },
+          "style": "os-marker"
+        },
+        {
+          "text": "明天",
+          "pos": {
+            "x": 32,
+            "y": 57.5
+          },
+          "at": {
+            "match": "明天"
+          }
+        },
+        {
+          "text": "下周一",
+          "pos": {
+            "x": 49,
+            "y": 57.5
+          },
+          "style": "os-circle-mark",
+          "at": {
+            "match": "下周"
+          }
+        },
+        {
+          "text": "下个月",
+          "pos": {
+            "x": 66.5,
+            "y": 57
+          },
+          "style": "os-circle-mark",
+          "at": {
+            "match": "下个月"
           }
         }
       ]
@@ -2411,10 +2589,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "一起推开",
+          "text": "PULL",
           "pos": {
-            "x": 50.0,
-            "y": 22.0
+            "x": 61.5,
+            "y": 49
           },
           "motion": {
             "duration": 700,
@@ -2422,6 +2600,12 @@
           },
           "at": {
             "match": "一起推开"
+          },
+          "style": {
+            "font": "ZQK Dundun",
+            "size": 72,
+            "color": "#d20404",
+            "preset": "os-callout-red"
           }
         }
       ]
@@ -2463,12 +2647,13 @@
         {
           "text": "饭前",
           "pos": {
-            "x": 78.0,
-            "y": 25.0
+            "x": 50,
+            "y": 84.5
           },
           "motion": {
             "duration": 700,
-            "delay": 200
+            "delay": 200,
+            "enter": "stamp"
           },
           "at": {
             "match": "饭前空腹"
@@ -2488,8 +2673,8 @@
         {
           "text": "身体 > 成绩",
           "pos": {
-            "x": 50.0,
-            "y": 22.0
+            "x": 62,
+            "y": 19.5
           },
           "motion": {
             "duration": 700,
@@ -2497,6 +2682,10 @@
           },
           "at": {
             "match": "比学习成绩更重要"
+          },
+          "style": {
+            "preset": "os-tag-pill",
+            "font": "ZQK Dundun"
           }
         }
       ]
@@ -2511,10 +2700,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "自驱力",
+          "text": "SELF",
           "pos": {
-            "x": 78.0,
-            "y": 78.0
+            "x": 63,
+            "y": 28
           },
           "motion": {
             "duration": 700,
@@ -2522,7 +2711,8 @@
           },
           "at": {
             "match": "自驱力"
-          }
+          },
+          "style": "os-marker"
         }
       ]
     },
@@ -2536,17 +2726,23 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "给门槛",
+          "text": "门槛",
           "pos": {
-            "x": 22.0,
-            "y": 78.0
+            "x": 52.5,
+            "y": 87
           },
           "motion": {
             "duration": 700,
             "delay": 200
           },
           "at": {
-            "match": "需要给他一道门槛"
+            "match": "需要"
+          },
+          "style": {
+            "font": "ZQK Youhuabi",
+            "size": 60,
+            "textDecoration": "none",
+            "preset": "os-callout"
           }
         }
       ]
@@ -2563,8 +2759,8 @@
         {
           "text": "≠ 1 day",
           "pos": {
-            "x": 78.0,
-            "y": 78.0
+            "x": 58,
+            "y": 29
           },
           "motion": {
             "duration": 700,
