@@ -525,6 +525,43 @@ body:not(.motion-enabled) .scene.active .scene-overlay[class*="mo-ov-iris"] {
   opacity: 0;
   will-change: transform, opacity;
 }
+.scene-overlay.has-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.scene-overlay.has-icon.icon-right {
+  flex-direction: row;
+}
+.scene-overlay.has-icon.icon-top {
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.scene-overlay .overlay-icon {
+  width: var(--ov-icon-size, 1.05em);
+  height: var(--ov-icon-size, 1.05em);
+  min-width: var(--ov-icon-size, 1.05em);
+  color: var(--ov-icon-color, currentColor);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,.14));
+}
+.scene-overlay .overlay-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.scene-overlay .overlay-label {
+  display: inline-block;
+}
 
 .scene.active .scene-overlay {
   animation-delay: var(--oa-delay, 0ms);

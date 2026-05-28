@@ -11,7 +11,8 @@
        delay, rotate, size }
 
    新对象格式：
-     { text,
+     { text, icon?: "home"|"coins"|... , iconPos?: "left"|"right"|"top",
+       iconSize?: 44, iconColor?: "#c1392b",
        pos:   { x, y },
        style: { font, size, weight, color, rotation, letterSpacing,
                 shadow, padding, background, border, borderRadius },
@@ -61,6 +62,67 @@
     'mo-ov-fold-down', 'mo-ov-blur-pulse', 'mo-ov-rise-glow',
     'mo-ov-shimmer-sweep',
   ];
+
+  // 轻量内建 SVG icon 库：避免把整段 <svg> 塞进 episode.json。
+  // 统一用 currentColor 着色；overlay 自身 color 会同步带到 icon。
+  const ICONS = {
+    coins: '<svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="6.5" ry="2.5" fill="currentColor" fill-opacity=".22"/><path d="M5.5 6v8c0 1.4 2.9 2.5 6.5 2.5s6.5-1.1 6.5-2.5V6"/><path d="M5.5 10c0 1.4 2.9 2.5 6.5 2.5s6.5-1.1 6.5-2.5"/><path d="M5.5 14c0 1.4 2.9 2.5 6.5 2.5s6.5-1.1 6.5-2.5"/><ellipse cx="12" cy="6" rx="6.5" ry="2.5"/></svg>',
+    home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg>',
+    chat: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18l-3 3v-5.5A7.5 7.5 0 0 1 10.5 8h5A5.5 5.5 0 0 1 21 13.5v0A5.5 5.5 0 0 1 15.5 19H6z"/><path d="M8 12h8"/><path d="M8 15h5"/></svg>',
+    family: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="2.5"/><circle cx="6.5" cy="9" r="2"/><circle cx="17.5" cy="9" r="2"/><path d="M8.5 18v-2a3.5 3.5 0 0 1 7 0v2"/><path d="M3.5 18v-1a3 3 0 0 1 3-3h1.5"/><path d="M20.5 18v-1a3 3 0 0 0-3-3H16"/></svg>',
+    elder: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="5.5" r="2.2"/><path d="M11 8v5.5"/><path d="M11 10.5l-3 3"/><path d="M11 11l3.5 2.5"/><path d="M11 13.5l-2 6"/><path d="M11.5 14l2.5 5.5"/><path d="M17.5 10v10"/><path d="M17.5 10l2.5 1.2"/><path d="M17.5 14.5H15"/></svg>',
+    child: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6" r="2.3"/><path d="M12 8.5v4.5"/><path d="M12 10.5l-3-1.8"/><path d="M12 10.5l3-1.8"/><path d="M12 13l-2.2 5.5"/><path d="M12 13l2.2 5.5"/></svg>',
+    scroll: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5.5A2.5 2.5 0 0 1 9.5 3H18v15.5A2.5 2.5 0 0 1 15.5 21H7"/><path d="M7 5.5A2.5 2.5 0 0 0 4.5 8v10.5A2.5 2.5 0 0 0 7 21a2.5 2.5 0 0 0 2.5-2.5"/><path d="M9.5 8H15"/><path d="M9.5 11.5H15"/></svg>',
+    balance: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v14"/><path d="M8 7h8"/><path d="M6 20h12"/><path d="M8 7l-3 5h6l-3-5z"/><path d="M16 7l-3 5h6l-3-5z"/></svg>',
+    meal: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h16"/><path d="M6.5 13a5.5 5.5 0 0 1 11 0"/><path d="M8 17h8"/><path d="M18 5v8"/><path d="M15.5 5v3.5"/><path d="M20.5 5v3.5"/></svg>',
+    brain: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5a3 3 0 0 0-5 2.3 2.8 2.8 0 0 0 0 5.4A3.2 3.2 0 0 0 8 18.5h2V5.5z"/><path d="M14.5 5.5a3 3 0 0 1 5 2.3 2.8 2.8 0 0 1 0 5.4A3.2 3.2 0 0 1 16 18.5h-2V5.5z"/><path d="M10 9H8"/><path d="M10 13H7.5"/><path d="M14 9h2"/><path d="M14 13h2.5"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.5 14.5A7.5 7.5 0 0 1 9.5 5.5a8.5 8.5 0 1 0 9 9z"/></svg>',
+    pulse: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-4l3.5 8l2.5-5H21"/></svg>',
+    storm: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h9a4.5 4.5 0 1 0-.8-8.9A6 6 0 0 0 4.5 11"/><path d="M11 13l-1 3h2l-1 4l4-5h-2l1-2z"/></svg>',
+    spark: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6z"/><path d="M18.5 3.5l.8 2.2l2.2.8l-2.2.8l-.8 2.2l-.8-2.2l-2.2-.8l2.2-.8z"/><path d="M5 15.5l.9 2.4l2.4.9l-2.4.9L5 22l-.9-2.3l-2.3-.9l2.3-.9z"/></svg>',
+    shield: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-2.7 7.9-7 10c-4.3-2.1-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2l4-4"/></svg>',
+    flame: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 3s1 3-1.5 5.5S9 12 9 14.5A4.5 4.5 0 0 0 18 15c0-4-4.5-5.5-4.5-12z"/><path d="M11.5 14.5c0 1.7 1.1 2.8 2.5 2.8s2.5-1.1 2.5-2.8c0-1.5-1-2.6-2-3.6c.1 1.3-.7 1.9-1.5 2.5c-.4-.7-.5-1.4-.4-2c-.8.7-1.1 1.6-1.1 3.1z"/></svg>',
+    lotus: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c0-3.5 2-5.8 4-7c.8 2.8.4 6.1-1.8 8.6"/><path d="M12 12c0-3.5-2-5.8-4-7c-.8 2.8-.4 6.1 1.8 8.6"/><path d="M12 12c2.5-2.3 5.6-2.7 8.2-2.2c-1.5 3-4.3 5-8.2 5.2"/><path d="M12 12c-2.5-2.3-5.6-2.7-8.2-2.2c1.5 3 4.3 5 8.2 5.2"/><path d="M8 19h8"/></svg>',
+    heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-10.1A4.4 4.4 0 0 1 9.5 5c1.4 0 2.4.7 2.5 1c.1-.3 1.1-1 2.5-1A4.4 4.4 0 0 1 19 9.9C19 15.7 12 20 12 20z"/></svg>',
+    sun: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2.4"/><path d="M12 18.8v2.4"/><path d="M21.2 12h-2.4"/><path d="M5.2 12H2.8"/><path d="M18.5 5.5l-1.7 1.7"/><path d="M7.2 16.8l-1.7 1.7"/><path d="M18.5 18.5l-1.7-1.7"/><path d="M7.2 7.2L5.5 5.5"/></svg>',
+    path: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c4-6 10-6 14-14"/><path d="M6 5h13"/><path d="M5 19h14"/></svg>',
+    smile: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M8.5 14c1 1.6 2.1 2.3 3.5 2.3s2.5-.7 3.5-2.3"/></svg>'
+  };
+
+  function setOverlayText(el, text) {
+    const label = el.querySelector(':scope > .overlay-label');
+    if (label) label.textContent = text || '';
+    else el.textContent = text || '';
+  }
+
+  function applyOverlayContent(el, o) {
+    if (!o || !o.icon || !ICONS[o.icon]) {
+      setOverlayText(el, o && o.text);
+      return;
+    }
+    el.classList.add('has-icon');
+    const pos = (o.iconPos === 'right' || o.iconPos === 'top') ? o.iconPos : 'left';
+    if (pos === 'right') el.classList.add('icon-right');
+    if (pos === 'top') el.classList.add('icon-top');
+
+    const icon = document.createElement('span');
+    icon.className = 'overlay-icon';
+    if (o.iconSize != null) icon.style.setProperty('--ov-icon-size', o.iconSize + 'px');
+    if (o.iconColor) icon.style.setProperty('--ov-icon-color', o.iconColor);
+    icon.innerHTML = ICONS[o.icon];
+
+    const label = document.createElement('span');
+    label.className = 'overlay-label';
+    label.textContent = o.text || '';
+
+    if (pos === 'right') {
+      el.appendChild(label);
+      el.appendChild(icon);
+    } else {
+      el.appendChild(icon);
+      el.appendChild(label);
+    }
+  }
 
   // motion.enter → CSS class 映射
   // oa-* 是 styles.css 已有的老库；mo-ov-* 是 motion.css 新库
@@ -171,11 +233,11 @@
 
       const el = document.createElement('div');
       el.className = classNames.join(' ');
-      el.textContent = o.text || '';
       el.style.left = x + '%';
       el.style.top  = y + '%';
       el.dataset.sceneId = sceneId;
       el.dataset.overlayIndex = String(i);
+      applyOverlayContent(el, o);
 
       // 新 style 对象 → inline（preset 字段会被 applyStyleObject 忽略，只写已知 key）
       if (hasStyleKeys(o.style)) applyStyleObject(el, o.style);
@@ -293,7 +355,7 @@
     const startDelay = Math.max(0, Number(cfg.startDelay || 0));
 
     let remaining = t.total;
-    el.textContent = t.format(remaining);
+    setOverlayText(el, t.format(remaining));
 
     setTimeout(() => {
       if (!el.isConnected) return;
@@ -301,7 +363,7 @@
       const id = setInterval(() => {
         if (!el.isConnected) { clearInterval(id); return; }
         remaining = Math.max(0, remaining - 1);
-        el.textContent = t.format(remaining);
+        setOverlayText(el, t.format(remaining));
         n += 1;
         if (n >= ticks || remaining <= 0) clearInterval(id);
       }, interval);
@@ -324,7 +386,7 @@
       if (patch.pos.x != null) el.style.left = patch.pos.x + '%';
       if (patch.pos.y != null) el.style.top  = patch.pos.y + '%';
     }
-    if (patch.text != null) el.textContent = patch.text;
+    if (patch.text != null) setOverlayText(el, patch.text);
     if (patch.style && typeof patch.style === 'object') applyStyleObject(el, patch.style);
   }
 

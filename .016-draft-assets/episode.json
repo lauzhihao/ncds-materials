@@ -283,10 +283,51 @@
       "imageFit": "contain",
       "overlays": [
         {
+          "text": "不穷 💰",
+          "icon": "coins",
+          "pos": {
+            "x": 23,
+            "y": 25
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 120,
+            "enter": "bounce"
+          },
+          "at": {
+            "match": "不穷"
+          },
+          "style": {
+            "preset": "os-tag-square",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "越过越顺 🌿",
+          "icon": "home",
+          "pos": {
+            "x": 77,
+            "y": 35
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 180,
+            "enter": "drift-in"
+          },
+          "at": {
+            "match": "越过越顺"
+          },
+          "style": {
+            "preset": "os-bubble",
+            "font": "XY Kaiti"
+          }
+        },
+        {
           "text": "家和万事兴",
+          "icon": "spark",
           "pos": {
             "x": 50,
-            "y": 20
+            "y": 18
           },
           "motion": {
             "duration": 900,
@@ -311,7 +352,69 @@
         "duration": 700,
         "image": "zoom-in"
       },
-      "imageFit": "contain"
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "鸡汤？",
+          "icon": "chat",
+          "pos": {
+            "x": 24,
+            "y": 24
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 80,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "鸡汤"
+          },
+          "style": {
+            "preset": "os-sticker-yellow",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "上有老下有小",
+          "icon": "family",
+          "pos": {
+            "x": 50,
+            "y": 73
+          },
+          "motion": {
+            "duration": 880,
+            "delay": 200,
+            "enter": "unfold"
+          },
+          "at": {
+            "match": "上有老下有小"
+          },
+          "style": {
+            "preset": "os-bookmark",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "好好说话 🙂",
+          "icon": "chat",
+          "pos": {
+            "x": 76,
+            "y": 30
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 160,
+            "enter": "rise-glow"
+          },
+          "at": {
+            "match": "好好说话"
+          },
+          "style": {
+            "preset": "os-marker",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
     },
     "S2-03": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。古风场景：一位老者与皇帝剪影相对而立，老者手中只展开一张纸卷，纸卷中央留出大面积空白用于暗示“忍”字。背景隐约是九世同堂的大家庭轮廓。重心在传统典故的庄重感。",
@@ -324,7 +427,28 @@
       "imageFit": "contain",
       "overlays": [
         {
+          "text": "和字最重",
+          "icon": "scroll",
+          "pos": {
+            "x": 25,
+            "y": 22
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 100,
+            "enter": "fold-down"
+          },
+          "at": {
+            "match": "和”看得"
+          },
+          "style": {
+            "preset": "os-tag-pill",
+            "font": "XY Kaiti"
+          }
+        },
+        {
           "text": "九世同堂",
+          "icon": "family",
           "pos": {
             "x": 72,
             "y": 24
@@ -344,6 +468,7 @@
         },
         {
           "text": "忍",
+          "icon": "scroll",
           "pos": {
             "x": 46,
             "y": 44
@@ -371,7 +496,69 @@
         "duration": 700,
         "image": "diag-tl"
       },
-      "imageFit": "contain"
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "不是硬忍",
+          "icon": "shield",
+          "pos": {
+            "x": 23,
+            "y": 23
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 90,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "委曲求全"
+          },
+          "style": {
+            "preset": "os-sticker-yellow",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "先收一收",
+          "icon": "storm",
+          "pos": {
+            "x": 76,
+            "y": 30
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 120,
+            "enter": "bounce"
+          },
+          "at": {
+            "match": "先收一收"
+          },
+          "style": {
+            "preset": "os-marker",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "留体面",
+          "icon": "spark",
+          "pos": {
+            "x": 51,
+            "y": 73
+          },
+          "motion": {
+            "duration": 850,
+            "delay": 220,
+            "enter": "rise-glow"
+          },
+          "at": {
+            "match": "留体面"
+          },
+          "style": {
+            "preset": "os-bookmark",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
     },
     "S2-05": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。一个屋檐下，中央夫妻关系紧绷，上方老人坐在椅子上神情担忧，下方孩子缩在角落观察，构成三层叠压关系。画面气氛压抑。重心在“一对夫妻，牵动三代人”。",
@@ -384,10 +571,51 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "鸡飞狗跳",
+          "text": "一旦失和",
+          "icon": "storm",
           "pos": {
-            "x": 72,
-            "y": 26
+            "x": 24,
+            "y": 22
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 100,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "失和"
+          },
+          "style": {
+            "preset": "os-stamp-blue",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "提心吊胆",
+          "icon": "elder",
+          "pos": {
+            "x": 74,
+            "y": 24
+          },
+          "motion": {
+            "duration": 780,
+            "delay": 140,
+            "enter": "drift-in"
+          },
+          "at": {
+            "match": "提心吊胆"
+          },
+          "style": {
+            "preset": "os-bubble",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "鸡飞狗跳",
+          "icon": "family",
+          "pos": {
+            "x": 52,
+            "y": 74
           },
           "motion": {
             "duration": 800,
@@ -412,7 +640,69 @@
         "duration": 700,
         "image": "pan-l"
       },
-      "imageFit": "contain"
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "吵一架 ⚠️",
+          "icon": "storm",
+          "pos": {
+            "x": 22,
+            "y": 24
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 80,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "吵一架"
+          },
+          "style": {
+            "preset": "os-tag-square",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "安全感",
+          "icon": "shield",
+          "pos": {
+            "x": 76,
+            "y": 26
+          },
+          "motion": {
+            "duration": 780,
+            "delay": 140,
+            "enter": "rise-glow"
+          },
+          "at": {
+            "match": "安全感"
+          },
+          "style": {
+            "preset": "os-marker",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "战战兢兢",
+          "icon": "meal",
+          "pos": {
+            "x": 51,
+            "y": 74
+          },
+          "motion": {
+            "duration": 840,
+            "delay": 200,
+            "enter": "bounce"
+          },
+          "at": {
+            "match": "战战兢兢"
+          },
+          "style": {
+            "preset": "os-bookmark",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
     },
     "S2-07": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。一个成年人黑着脸站在房间中心，周围向外扩散一圈圈紧绷波纹，老人和孩子都被这股波纹波及。构图极简，强调情绪像空气一样弥漫全屋。",
@@ -422,7 +712,69 @@
         "duration": 700,
         "image": "pan-u"
       },
-      "imageFit": "contain"
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "情绪会传染",
+          "icon": "storm",
+          "pos": {
+            "x": 28,
+            "y": 22
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 90,
+            "enter": "fold-down"
+          },
+          "at": {
+            "match": "情绪会传染"
+          },
+          "style": {
+            "preset": "os-callout-red",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "全屋绷紧",
+          "icon": "pulse",
+          "pos": {
+            "x": 76,
+            "y": 28
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 120,
+            "enter": "blur-pulse"
+          },
+          "at": {
+            "match": "绷紧"
+          },
+          "style": {
+            "preset": "os-tag-square",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "焦虑 / 暴躁",
+          "icon": "brain",
+          "pos": {
+            "x": 52,
+            "y": 74
+          },
+          "motion": {
+            "duration": 840,
+            "delay": 220,
+            "enter": "shake-attention"
+          },
+          "at": {
+            "match": "焦虑"
+          },
+          "style": {
+            "preset": "os-sticker-yellow",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
     },
     "S2-08": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。前景中年夫妻和老人互动的姿态被镜像复制到底部，一个孩子正学着大人的动作与表情。构图像影子临摹，强调孩子复制大人的处理方式。重心在“上行下效”。",
@@ -435,10 +787,51 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "上行下效",
+          "text": "不是听你说",
+          "icon": "chat",
           "pos": {
-            "x": 70,
-            "y": 22
+            "x": 24,
+            "y": 23
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 80,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "不是你说什么"
+          },
+          "style": {
+            "preset": "os-sticker-yellow",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "是看你怎么做",
+          "icon": "spark",
+          "pos": {
+            "x": 77,
+            "y": 25
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 140,
+            "enter": "shimmer-sweep"
+          },
+          "at": {
+            "match": "怎么处理冲突"
+          },
+          "style": {
+            "preset": "os-marker",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "上行下效",
+          "icon": "path",
+          "pos": {
+            "x": 53,
+            "y": 74
           },
           "motion": {
             "duration": 800,
@@ -466,7 +859,48 @@
       "imageFit": "contain",
       "overlays": [
         {
+          "text": "冷战 🧊",
+          "icon": "storm",
+          "pos": {
+            "x": 23,
+            "y": 23
+          },
+          "motion": {
+            "duration": 740,
+            "delay": 80,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "冷战争吵"
+          },
+          "style": {
+            "preset": "os-tag-square",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "睡眠会乱",
+          "icon": "moon",
+          "pos": {
+            "x": 75,
+            "y": 24
+          },
+          "motion": {
+            "duration": 780,
+            "delay": 120,
+            "enter": "drift-in"
+          },
+          "at": {
+            "match": "睡眠会乱"
+          },
+          "style": {
+            "preset": "os-bubble",
+            "font": "XY Kaiti"
+          }
+        },
+        {
           "text": "皮质醇",
+          "icon": "pulse",
           "pos": {
             "x": 52,
             "y": 34
@@ -494,7 +928,69 @@
         "duration": 700,
         "image": "diag-br"
       },
-      "imageFit": "contain"
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "不是败给穷",
+          "icon": "coins",
+          "pos": {
+            "x": 24,
+            "y": 24
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 80,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "贫穷"
+          },
+          "style": {
+            "preset": "os-sticker-yellow",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "败给内耗",
+          "icon": "storm",
+          "pos": {
+            "x": 76,
+            "y": 28
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 130,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "内耗"
+          },
+          "style": {
+            "preset": "os-stamp",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "福气外推",
+          "icon": "home",
+          "pos": {
+            "x": 53,
+            "y": 73
+          },
+          "motion": {
+            "duration": 840,
+            "delay": 220,
+            "enter": "drift-in"
+          },
+          "at": {
+            "match": "福气"
+          },
+          "style": {
+            "preset": "os-bookmark",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
     },
     "S2-11": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。左右分屏：左边屋内乌云压顶、门被重重摔上；右边屋里灯光温暖、饭桌简单却有人微笑。强调“怨气压屋”和“和气养家”的玄学反差。重心在气场变化。",
@@ -507,7 +1003,28 @@
       "imageFit": "contain",
       "overlays": [
         {
+          "text": "怨气压屋",
+          "icon": "home",
+          "pos": {
+            "x": 24,
+            "y": 23
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 80,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "怨气"
+          },
+          "style": {
+            "preset": "os-stamp-blue",
+            "font": "XY Kaiti"
+          }
+        },
+        {
           "text": "和气聚财",
+          "icon": "coins",
           "pos": {
             "x": 69,
             "y": 25
@@ -524,6 +1041,26 @@
             "preset": "os-bookmark",
             "font": "XY Kaiti"
           }
+        },
+        {
+          "text": "粗茶淡饭也养福",
+          "icon": "meal",
+          "pos": {
+            "x": 55,
+            "y": 74
+          },
+          "motion": {
+            "duration": 860,
+            "delay": 220,
+            "enter": "rise-glow"
+          },
+          "at": {
+            "match": "粗茶淡饭"
+          },
+          "style": {
+            "preset": "os-bubble",
+            "font": "XY Kaiti"
+          }
         }
       ]
     },
@@ -535,7 +1072,70 @@
         "duration": 700,
         "image": "zoom-in"
       },
-      "imageFit": "contain"
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "老人安心",
+          "icon": "elder",
+          "pos": {
+            "x": 24,
+            "y": 24
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 90,
+            "enter": "drift-in"
+          },
+          "at": {
+            "match": "安心"
+          },
+          "style": {
+            "preset": "os-bubble",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "孩子有底气",
+          "icon": "child",
+          "pos": {
+            "x": 76,
+            "y": 24
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 120,
+            "enter": "rise-glow"
+          },
+          "at": {
+            "match": "底气"
+          },
+          "style": {
+            "preset": "os-marker",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "续命能量 ⚡",
+          "icon": "spark",
+          "pos": {
+            "x": 52,
+            "y": 74
+          },
+          "motion": {
+            "duration": 860,
+            "delay": 220,
+            "enter": "rise-glow"
+          },
+          "at": {
+            "match": "续命能量"
+          },
+          "style": {
+            "preset": "os-outline-glow",
+            "font": "XY Kaiti",
+            "size": 48
+          }
+        }
+      ]
     },
     "S2-13": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。夜色里两个中年人刚从外面回家，肩膀沉重、手里拎着公文包和菜袋，门内却没有暖意，空气像冰一样把两人隔开。重心在“白天扛压力，晚上还要内耗”的疲惫感。",
@@ -545,7 +1145,69 @@
         "duration": 700,
         "image": "pan-d"
       },
-      "imageFit": "contain"
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "白天扛压力",
+          "icon": "balance",
+          "pos": {
+            "x": 24,
+            "y": 24
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 80,
+            "enter": "fold-down"
+          },
+          "at": {
+            "match": "扛压力"
+          },
+          "style": {
+            "preset": "os-bookmark",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "针尖对麦芒",
+          "icon": "storm",
+          "pos": {
+            "x": 76,
+            "y": 24
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 130,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "针尖对麦芒"
+          },
+          "style": {
+            "preset": "os-stamp",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "家会变冷",
+          "icon": "home",
+          "pos": {
+            "x": 51,
+            "y": 74
+          },
+          "motion": {
+            "duration": 840,
+            "delay": 200,
+            "enter": "drift-in"
+          },
+          "at": {
+            "match": "越来越冷"
+          },
+          "style": {
+            "preset": "os-bubble",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
     },
     "S2-14": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。两个人围坐在桌边商量事情，桌上放着账本和日历，手势平稳，没有指责动作；身后的旧账纸团被放进角落。重心在“对事不对人”和“商量”。",
@@ -555,7 +1217,69 @@
         "duration": 700,
         "image": "zoom-out"
       },
-      "imageFit": "contain"
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "对事不对人",
+          "icon": "balance",
+          "pos": {
+            "x": 24,
+            "y": 24
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 80,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "对事不对人"
+          },
+          "style": {
+            "preset": "os-marker",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "不翻旧账",
+          "icon": "scroll",
+          "pos": {
+            "x": 76,
+            "y": 26
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 120,
+            "enter": "fold-down"
+          },
+          "at": {
+            "match": "不翻旧账"
+          },
+          "style": {
+            "preset": "os-tag-square",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "顾全大局",
+          "icon": "home",
+          "pos": {
+            "x": 51,
+            "y": 74
+          },
+          "motion": {
+            "duration": 840,
+            "delay": 220,
+            "enter": "rise-glow"
+          },
+          "at": {
+            "match": "顾全大局"
+          },
+          "style": {
+            "preset": "os-bookmark",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
     },
     "S2-15": {
       "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。中年夫妻并肩走在前面，老人安稳坐在窗边，孩子迎着光奔跑，三代人的状态都被前方的和睦带动起来。构图向上、向前。重心在“夫妻和睦，三代向阳”。",
@@ -568,7 +1292,28 @@
       "imageFit": "contain",
       "overlays": [
         {
+          "text": "同心同德 🤝",
+          "icon": "heart",
+          "pos": {
+            "x": 24,
+            "y": 24
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 120,
+            "enter": "drift-in"
+          },
+          "at": {
+            "match": "同心同德"
+          },
+          "style": {
+            "preset": "os-bubble",
+            "font": "XY Kaiti"
+          }
+        },
+        {
           "text": "相敬如宾",
+          "icon": "heart",
           "pos": {
             "x": 70,
             "y": 23
@@ -585,6 +1330,27 @@
             "preset": "os-marker",
             "font": "XY Kaiti"
           }
+        },
+        {
+          "text": "越来越旺 ☀️",
+          "icon": "sun",
+          "pos": {
+            "x": 52,
+            "y": 74
+          },
+          "motion": {
+            "duration": 860,
+            "delay": 220,
+            "enter": "rise-glow"
+          },
+          "at": {
+            "match": "越来越旺"
+          },
+          "style": {
+            "preset": "os-outline-glow",
+            "font": "XY Kaiti",
+            "size": 46
+          }
         }
       ]
     },
@@ -599,7 +1365,49 @@
       "imageFit": "contain",
       "overlays": [
         {
+          "text": "为什么？",
+          "icon": "chat",
+          "iconPos": "top",
+          "pos": {
+            "x": 22,
+            "y": 22
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 80,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "为什么"
+          },
+          "style": {
+            "preset": "os-sticker-yellow",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "秩序 情绪 运气 前程",
+          "icon": "spark",
+          "iconPos": "top",
+          "pos": {
+            "x": 50,
+            "y": 74
+          },
+          "motion": {
+            "duration": 920,
+            "delay": 180,
+            "enter": "unfold"
+          },
+          "at": {
+            "match": "秩序"
+          },
+          "style": {
+            "preset": "os-typewriter"
+          }
+        },
+        {
           "text": "人间烟火",
+          "icon": "meal",
           "pos": {
             "x": 66,
             "y": 30
@@ -630,7 +1438,48 @@
       "imageFit": "contain",
       "overlays": [
         {
+          "text": "不一定暴富",
+          "icon": "coins",
+          "pos": {
+            "x": 24,
+            "y": 24
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 80,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "大富大贵"
+          },
+          "style": {
+            "preset": "os-tag-square",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "少走弯路",
+          "icon": "path",
+          "pos": {
+            "x": 76,
+            "y": 26
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 120,
+            "enter": "drift-in"
+          },
+          "at": {
+            "match": "少走弯路"
+          },
+          "style": {
+            "preset": "os-bookmark",
+            "font": "XY Kaiti"
+          }
+        },
+        {
           "text": "细水长流",
+          "icon": "lotus",
           "pos": {
             "x": 67,
             "y": 25
