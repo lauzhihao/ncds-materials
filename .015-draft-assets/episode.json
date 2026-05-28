@@ -326,103 +326,208 @@
   },
   "beats": [
     {
-      "zh": "孩子十岁那年，拿我的信用卡，在一款手游里充了一万多。",
-      "en": "When my kid was ten, he ran up over ten grand in a mobile game—on my credit card.",
+      "zh": "孩子十岁那年，拿我的信用卡，",
+      "en": "When my kid was ten, he took my credit card,",
       "scene": "S1-01"
     },
     {
-      "zh": "直到收到账单我俩才发现，当场气炸，上去就是一顿“男女混双”。",
-      "en": "We only found out when the bill came—and we both lost it on him.",
+      "zh": "在一款手游里充了一万多。",
+      "en": "and ran up over ten grand in a mobile game.",
       "scene": "S1-01"
     },
     {
-      "zh": "可冷静下来，我问了自己一句：这抽卡的瘾，到底是跟谁学的？",
-      "en": "But once I calmed down, I asked myself: where did this habit come from?",
+      "zh": "直到收到账单我俩才发现，",
+      "en": "We only found out when the bill came—",
+      "scene": "S1-01"
+    },
+    {
+      "zh": "当场气炸，上去就是一顿“男女混双”。",
+      "en": "and we both let him have it.",
+      "scene": "S1-01"
+    },
+    {
+      "zh": "可冷静下来，我问了自己一句：",
+      "en": "But once I calmed down, I asked myself:",
       "scene": "S1-02"
     },
     {
-      "zh": "那几年，我天天抱着手机氪原神，光抽卡就充了好几千；",
-      "en": "Back then, I was glued to my phone, dropping thousands on gacha pulls;",
+      "zh": "这抽卡的瘾，到底是跟谁学的？",
+      "en": "where did this habit even come from?",
+      "scene": "S1-02"
+    },
+    {
+      "zh": "那几年，我天天抱着手机氪原神，",
+      "en": "Back then, I was glued to my phone, whaling on gacha,",
+      "scene": "S1-03"
+    },
+    {
+      "zh": "光抽卡就充了好几千；",
+      "en": "thousands of yuan just on pulls;",
       "scene": "S1-03"
     },
     {
       "zh": "累了，就刷抖音看小姐姐跳舞。",
-      "en": "and when I was tired, I scrolled videos of girls dancing.",
+      "en": "and when I was tired, I scrolled girls dancing.",
       "scene": "S1-03"
     },
     {
-      "zh": "他妈妈也没闲着，不是追剧，就是抱着手机逛购物车。",
-      "en": "His mom was no better—either binging shows or filling her cart.",
+      "zh": "他妈妈也没闲着，",
+      "en": "His mom was no better—",
       "scene": "S1-03"
     },
     {
-      "zh": "一家三口坐一块儿，三块屏幕三道光，谁也不看谁。",
-      "en": "Three of us in one room, three glowing screens, no one looking at anyone.",
+      "zh": "不是追剧，就是抱着手机逛购物车。",
+      "en": "binging dramas or filling her shopping cart.",
+      "scene": "S1-03"
+    },
+    {
+      "zh": "一家三口坐一块儿，",
+      "en": "Three of us in one room,",
       "scene": "S1-04"
     },
     {
-      "zh": "孩子那一万多，不过是把我充进去的那几千，照着描了一遍。",
-      "en": "His ten grand was just my few thousand—traced over again.",
+      "zh": "三块屏幕三道光，谁也不看谁。",
+      "en": "three glowing screens, no one looking at anyone.",
       "scene": "S1-04"
     },
     {
-      "zh": "老话难听，可句句在理——上梁不正下梁歪。",
-      "en": "An old saying, harsh but true: a crooked top beam bends the one below.",
+      "zh": "孩子那一万多，",
+      "en": "His ten grand—",
+      "scene": "S1-04"
+    },
+    {
+      "zh": "不过是把我充的那几千，照着描了一遍。",
+      "en": "just my few thousand, traced over again.",
+      "scene": "S1-04"
+    },
+    {
+      "zh": "老话难听，可句句在理——",
+      "en": "An old saying, harsh but true:",
       "scene": "S1-05"
     },
     {
-      "zh": "你想要个什么样的孩子，先看看自己立成了什么样。",
-      "en": "Want to know what your child will be? Look at what you've become.",
+      "zh": "上梁不正，下梁歪。",
+      "en": "a crooked top beam bends the one below.",
       "scene": "S1-05"
     },
     {
-      "zh": "你是不是也这样：一边吼他“别玩手机好好学”，一边自己刷到半夜？",
-      "en": "Sound familiar? Yelling “put the phone down and study,” while you scroll till midnight?",
+      "zh": "你想要个什么样的孩子，",
+      "en": "Want to know what your child will be?",
+      "scene": "S1-05"
+    },
+    {
+      "zh": "先看看自己立成了什么样。",
+      "en": "Look at what you've become.",
+      "scene": "S1-05"
+    },
+    {
+      "zh": "你是不是也这样：",
+      "en": "Sound familiar?",
       "scene": "S1-06"
     },
     {
-      "zh": "这叫言行不一，孩子最先看穿的，就是这个。",
-      "en": "That's a double standard—and it's the first thing a kid sees through.",
+      "zh": "一边吼他“别玩手机好好学”，",
+      "en": "Yelling “put the phone down and study,”",
       "scene": "S1-06"
     },
     {
-      "zh": "孩子不是听你说什么长大的，是看你做什么长大的。",
-      "en": "Kids don't grow up on what you say—they grow up on what you do.",
+      "zh": "一边自己刷到半夜？",
+      "en": "while you scroll till midnight?",
+      "scene": "S1-06"
+    },
+    {
+      "zh": "这叫言行不一，",
+      "en": "That's a double standard,",
+      "scene": "S1-06"
+    },
+    {
+      "zh": "孩子最先看穿的，就是这个。",
+      "en": "the first thing a kid sees through.",
+      "scene": "S1-06"
+    },
+    {
+      "zh": "孩子不是听你说什么长大的，",
+      "en": "Kids don't grow up on what you say,",
       "scene": "S1-07"
     },
     {
-      "zh": "你天天耳濡目染塞给他的是屏幕，却怪他放不下屏幕——这不公平。",
-      "en": "You steep him in screens every day, then blame him for it. That's not fair.",
+      "zh": "是看你做什么长大的。",
+      "en": "they grow up on what you do.",
       "scene": "S1-07"
     },
     {
-      "zh": "尤其是男孩子——他就是父亲的小时候。",
-      "en": "A boy, especially, is his father's childhood lived again.",
+      "zh": "你天天耳濡目染塞给他的是屏幕，",
+      "en": "You steep him in screens every day,",
+      "scene": "S1-07"
+    },
+    {
+      "zh": "却怪他放不下屏幕——这不公平。",
+      "en": "then blame him for not letting go. Not fair.",
+      "scene": "S1-07"
+    },
+    {
+      "zh": "尤其是男孩子——",
+      "en": "A boy, especially—",
       "scene": "S1-08"
     },
     {
-      "zh": "当爹的今天活成什么样，儿子明天多半就长成什么样。",
-      "en": "However the father lives today, the son likely becomes tomorrow.",
+      "zh": "他就是父亲的小时候。",
+      "en": "he is his father's childhood lived again.",
       "scene": "S1-08"
     },
     {
-      "zh": "我知道，不少家长这会儿在想：那我给他买台学习机？报个自律班？换个能管控的手机？",
-      "en": "I know what some parents are thinking: buy a study tablet? A self-discipline class? A locked-down phone?",
+      "zh": "当爹的今天活成什么样，",
+      "en": "However the father lives today,",
+      "scene": "S1-08"
+    },
+    {
+      "zh": "儿子明天多半就长成什么样。",
+      "en": "the son likely becomes tomorrow.",
+      "scene": "S1-08"
+    },
+    {
+      "zh": "我知道，不少家长这会儿在想：",
+      "en": "I know what some parents are thinking:",
       "scene": "S1-09"
     },
     {
-      "zh": "我劝你把钱包收起来。这叫舍本逐末。",
-      "en": "Put your wallet away. That's chasing the leaf and missing the root.",
+      "zh": "那我给他买台学习机？",
+      "en": "buy him a study tablet?",
+      "scene": "S1-09"
+    },
+    {
+      "zh": "报个自律班？换个能管控的手机？",
+      "en": "A discipline class? A locked-down phone?",
+      "scene": "S1-09"
+    },
+    {
+      "zh": "我劝你把钱包收起来。",
+      "en": "Put your wallet away.",
       "scene": "S1-10"
     },
     {
-      "zh": "一台学习机，管不住一个天天看着爸妈刷手机的孩子。",
-      "en": "No tablet can rein in a kid who watches his parents scroll all day.",
+      "zh": "这叫舍本逐末。",
+      "en": "That's chasing the leaf, missing the root.",
       "scene": "S1-10"
     },
     {
-      "zh": "记住一句话：孩子是一张白纸，执笔的人是你。",
-      "en": "Remember this: the child is a blank sheet, and you hold the pen.",
+      "zh": "一台学习机，",
+      "en": "No tablet",
+      "scene": "S1-10"
+    },
+    {
+      "zh": "管不住一个天天看着爸妈刷手机的孩子。",
+      "en": "can rein in a kid who watches you scroll all day.",
+      "scene": "S1-10"
+    },
+    {
+      "zh": "记住一句话：",
+      "en": "Remember this:",
+      "scene": "S1-11"
+    },
+    {
+      "zh": "孩子是一张白纸，执笔的人是你。",
+      "en": "the child is a blank sheet; you hold the pen.",
       "scene": "S1-11"
     },
     {
@@ -441,154 +546,269 @@
       "scene": "S1-12"
     },
     {
-      "zh": "别整那些复杂的。从今天起，只改一件事——",
-      "en": "Skip the complicated stuff. From today, change just one thing—",
+      "zh": "别整那些复杂的。",
+      "en": "Skip the complicated stuff.",
       "scene": "S1-13"
     },
     {
-      "zh": "孩子放学回家，你的第一个动作：放下手机，离开电脑。",
-      "en": "When he gets home, your first move: put down the phone, step away from the screen.",
+      "zh": "从今天起，只改一件事——",
+      "en": "From today, change just one thing—",
       "scene": "S1-13"
     },
     {
-      "zh": "然后陪他一起，做一件不花一分钱的事：",
-      "en": "Then do one free thing together, side by side:",
+      "zh": "孩子放学回家，你的第一个动作：",
+      "en": "when he gets home, your first move:",
+      "scene": "S1-13"
+    },
+    {
+      "zh": "放下手机，离开电脑。",
+      "en": "put down the phone, leave the screen.",
+      "scene": "S1-13"
+    },
+    {
+      "zh": "然后陪他一起，",
+      "en": "Then, side by side,",
       "scene": "S1-14"
     },
     {
-      "zh": "一起做平板支撑，一起练引体向上，一起做几个俯卧撑。",
-      "en": "planks together, pull-ups together, a few push-ups together.",
+      "zh": "做一件不花一分钱的事：",
+      "en": "do one thing that costs nothing:",
       "scene": "S1-14"
     },
     {
-      "zh": "不用买装备，不用报班。家里那块地板、小区里那根单杠，就够了。",
-      "en": "No gear, no classes. The floor at home and a bar downstairs are enough.",
+      "zh": "一起做平板支撑，一起练引体向上，",
+      "en": "planks together, pull-ups together,",
+      "scene": "S1-14"
+    },
+    {
+      "zh": "一起做几个俯卧撑。",
+      "en": "a few push-ups together.",
+      "scene": "S1-14"
+    },
+    {
+      "zh": "不用买装备，不用报班。",
+      "en": "No gear, no classes.",
+      "scene": "S1-15"
+    },
+    {
+      "zh": "家里那块地板、小区那根单杠，就够了。",
+      "en": "The floor at home, a bar downstairs—enough.",
       "scene": "S1-15"
     },
     {
       "zh": "越简单的事，越容易持之以恒。",
-      "en": "The simpler the thing, the easier it is to keep up.",
+      "en": "The simpler it is, the easier to keep up.",
       "scene": "S1-15"
     },
     {
-      "zh": "你可能会问：为啥非得是流汗的事？打把游戏、买点东西，不也开心吗？",
-      "en": "You might ask: why must it be sweat? Isn't a game or a little shopping fun too?",
+      "zh": "你可能会问：为啥非得是流汗的事？",
+      "en": "You might ask: why must it be sweat?",
       "scene": "S1-16"
     },
     {
-      "zh": "因为刷手机、买买买给你的，是转瞬即逝的多巴胺——",
-      "en": "Because scrolling and shopping give you dopamine—gone in a flash—",
+      "zh": "打把游戏、买点东西，不也开心吗？",
+      "en": "Isn't a game or some shopping fun too?",
+      "scene": "S1-16"
+    },
+    {
+      "zh": "因为刷手机、买买买给你的，",
+      "en": "Because scrolling and shopping give you",
       "scene": "S1-17"
     },
     {
-      "zh": "来得快，去得也快，越刺激，越空。",
-      "en": "quick to come, quick to go; the bigger the hit, the emptier after.",
+      "zh": "是转瞬即逝的多巴胺——",
+      "en": "dopamine—gone in a flash—",
       "scene": "S1-17"
     },
     {
-      "zh": "而陪他咬牙撑完最后一组，看他从全身发抖到能稳稳多撑十秒，",
-      "en": "But grinding out that last set with him, watching him go from shaking to holding ten more seconds—",
+      "zh": "来得快，去得也快，越刺激越空。",
+      "en": "quick to come, quick to go, emptier after.",
+      "scene": "S1-17"
+    },
+    {
+      "zh": "而陪他咬牙撑完最后一组，",
+      "en": "But grinding out that last set with him,",
       "scene": "S1-18"
     },
     {
-      "zh": "给的是内啡肽——来得慢，却细水长流，扎扎实实。",
-      "en": "that's endorphins—slow to arrive, but steady and lasting.",
+      "zh": "看他从全身发抖到能多撑十秒，",
+      "en": "watching him hold ten more seconds,",
+      "scene": "S1-18"
+    },
+    {
+      "zh": "给的是内啡肽——",
+      "en": "that's endorphins—",
+      "scene": "S1-18"
+    },
+    {
+      "zh": "来得慢，却细水长流，扎扎实实。",
+      "en": "slow to arrive, but steady and lasting.",
       "scene": "S1-18"
     },
     {
       "zh": "我们想给孩子的，从来不是那一下的爽，",
-      "en": "What we want to give a child was never that one quick high,",
+      "en": "What we want to give was never that quick high,",
       "scene": "S1-19"
     },
     {
       "zh": "是能撑他走一辈子的那股长劲儿。",
-      "en": "but the long-burning strength to carry him a lifetime.",
+      "en": "but strength to carry him a lifetime.",
       "scene": "S1-19"
     },
     {
       "zh": "一起流过汗的人，话才打得开。",
-      "en": "People who've sweated together open up to each other.",
+      "en": "People who've sweated together open up.",
       "scene": "S1-20"
     },
     {
-      "zh": "练到瘫在地板上一起喘气的时候，那些平时憋着的心里话，反倒冒出来了。",
-      "en": "Sprawled on the floor catching our breath, the things he'd bottled up finally came out.",
+      "zh": "练到瘫在地板上一起喘气的时候，",
+      "en": "Sprawled on the floor catching our breath,",
       "scene": "S1-20"
     },
     {
-      "zh": "原本想顶的嘴、想吵的架，撑完两组平板支撑，也就烟消云散了。",
-      "en": "The back-talk and the brewing fight just melt away after two sets of planks.",
+      "zh": "那些平时憋着的心里话，反倒冒出来了。",
+      "en": "the things he'd bottled up finally came out.",
+      "scene": "S1-20"
+    },
+    {
+      "zh": "原本想顶的嘴、想吵的架，",
+      "en": "The back-talk, the brewing fight—",
       "scene": "S1-21"
     },
     {
-      "zh": "这种一块儿熬下来的成就感，是你吼他十年都吼不出来的。",
-      "en": "The pride of pushing through together—ten years of yelling could never produce it.",
+      "zh": "撑完两组平板支撑，也就烟消云散了。",
+      "en": "two sets of planks and it melts away.",
+      "scene": "S1-21"
+    },
+    {
+      "zh": "这种一块儿熬下来的成就感，",
+      "en": "The pride of pushing through together—",
       "scene": "S1-22"
     },
     {
-      "zh": "别急。你刷了十年手机，他也跟着看了十年，不可能一礼拜就扭过来。",
-      "en": "Don't rush. You scrolled for ten years, he watched for ten—a week won't undo it.",
+      "zh": "是你吼他十年都吼不出来的。",
+      "en": "ten years of yelling could never make it.",
+      "scene": "S1-22"
+    },
+    {
+      "zh": "别急。你刷了十年手机，",
+      "en": "Don't rush. You scrolled for ten years,",
       "scene": "S1-23"
     },
     {
-      "zh": "你先放下手机，先迈出那一步，他会慢慢跟上——",
-      "en": "Put your phone down first, take that first step, and he'll slowly follow—",
+      "zh": "他也跟着看了十年，",
+      "en": "he watched for ten,",
+      "scene": "S1-23"
+    },
+    {
+      "zh": "不可能一礼拜就扭过来。",
+      "en": "a week won't undo it.",
+      "scene": "S1-23"
+    },
+    {
+      "zh": "你先放下手机，先迈出那一步，",
+      "en": "Put your phone down, take that first step,",
+      "scene": "S1-24"
+    },
+    {
+      "zh": "他会慢慢跟上——",
+      "en": "and he'll slowly follow—",
       "scene": "S1-24"
     },
     {
       "zh": "上行下效，从来都会传染。",
-      "en": "what those above do, those below copy; it's contagious.",
+      "en": "what you do above, he copies below.",
       "scene": "S1-24"
     },
     {
-      "zh": "中间你一定会犯懒，会想“就刷一会儿”。",
-      "en": "You'll get lazy along the way, telling yourself “just a quick scroll.”",
+      "zh": "中间你一定会犯懒，",
+      "en": "You'll get lazy along the way,",
       "scene": "S1-25"
     },
     {
-      "zh": "记住：你低头的样子，他全看在眼里。",
-      "en": "Remember: the way you bow your head to the screen, he sees all of it.",
+      "zh": "会想“就刷一会儿”。",
+      "en": "telling yourself “just a quick scroll.”",
       "scene": "S1-25"
     },
     {
-      "zh": "如果今天刷到这条的是孩子——也许你爸妈，做得并不够好。",
-      "en": "If it's a kid watching this—maybe your parents didn't do well enough.",
+      "zh": "记住：你低头的样子，",
+      "en": "Remember: the way you bow to the screen,",
+      "scene": "S1-25"
+    },
+    {
+      "zh": "他全看在眼里。",
+      "en": "he sees all of it.",
+      "scene": "S1-25"
+    },
+    {
+      "zh": "如果今天刷到这条的是孩子——",
+      "en": "If it's a kid watching this—",
       "scene": "S1-26"
     },
     {
-      "zh": "但你不必等他们变，你可以先成为家里那个，先放下手机的人。",
-      "en": "But you needn't wait for them. You can be the first to put the phone down.",
+      "zh": "也许你爸妈，做得并不够好。",
+      "en": "maybe your parents didn't do well enough.",
       "scene": "S1-26"
     },
     {
-      "zh": "改变一个家，从来可以从任何一个人开始。",
-      "en": "Changing a family can always start with any single person.",
+      "zh": "但你不必等他们变，",
+      "en": "But you needn't wait for them.",
+      "scene": "S1-26"
+    },
+    {
+      "zh": "你可以先成为家里那个，",
+      "en": "You can be the one in your family",
+      "scene": "S1-26"
+    },
+    {
+      "zh": "先放下手机的人。",
+      "en": "who puts the phone down first.",
+      "scene": "S1-26"
+    },
+    {
+      "zh": "改变一个家，",
+      "en": "Changing a family",
       "scene": "S1-27"
     },
     {
-      "zh": "所以，别再给孩子上“政治课”了，改上“体育课”吧。",
-      "en": "So stop lecturing your kid—take him to “gym class” instead.",
+      "zh": "从来可以从任何一个人开始。",
+      "en": "can always start with one person.",
+      "scene": "S1-27"
+    },
+    {
+      "zh": "所以，别再给孩子上“政治课”了，",
+      "en": "So stop lecturing your kid—",
       "scene": "S1-28"
     },
     {
-      "zh": "你想让他成为什么样的人，自己先身体力行，活成那个样子。",
-      "en": "Whoever you want him to be, live it out yourself first.",
+      "zh": "改上“体育课”吧。",
+      "en": "take him to “gym class” instead.",
       "scene": "S1-28"
     },
     {
-      "zh": "那张白纸还在，笔，也还在你手里。",
-      "en": "The blank sheet is still here, and the pen is still in your hand.",
+      "zh": "你想让他成为什么样的人，",
+      "en": "Whoever you want him to be,",
+      "scene": "S1-28"
+    },
+    {
+      "zh": "自己先身体力行，活成那个样子。",
+      "en": "live it out yourself first.",
+      "scene": "S1-28"
+    },
+    {
+      "zh": "那张白纸还在，笔也还在你手里。",
+      "en": "The blank sheet remains; the pen is still yours.",
       "scene": "S1-29"
     },
     {
       "zh": "从今晚陪他流的第一身汗开始，重新画。",
-      "en": "Start redrawing—tonight, with the first sweat you break together.",
+      "en": "Start redrawing tonight—with the first sweat you share.",
       "scene": "S1-29"
     }
   ],
   "scenes": {
     "S1-01": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个十岁男孩剪影缩在沙发角落，双手攥着一台发光的手机；前景一张信用卡和一长条账单，账单上的数字与文字处全部留白。父母两个剪影立在后景，姿态愤怒。视觉重心在账单和孩子，上方留白。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个十岁男孩剪影缩在沙发角落，双手攥着发光手机；前景一张信用卡和一长条账单，账单上数字与文字处全部留白。父母两个剪影立在后景，姿态愤怒。视觉重心在账单和孩子，上方留白。",
       "label": "",
       "motion": {
         "enter": "fade",
