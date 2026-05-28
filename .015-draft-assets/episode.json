@@ -3,7 +3,7 @@
   "__doc__": "暖纸卡片口播视频 per-episode 元数据，唯一真理源。HTML/JS/TTS/图生图全部从这个文件读取；引擎层文件 (player.js / overlays.js / tweaks*.jsx / styles.css / HTML 骨架) 不含任何 per-episode 字段。",
   "meta": {
     "slug": "015-draft",
-    "title": "别再上“政治课”，改上“体育课”",
+    "title": "如何终结大型双标现场？",
     "disclaimer": "观点仅供参考　无不良引导",
     "titleOptions": [
       "孩子是张白纸，执笔的人是你",
