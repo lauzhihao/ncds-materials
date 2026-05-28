@@ -22,3 +22,10 @@ package-lock.json
 # 注: fonts/xy-kaiti/Regular.woff2 和 fonts/zs-fangsong/Regular.woff2 在加这条之前
 # 已经 git tracked, 这里 ignore 不影响它们 — 如要彻底 untrack 用 `git rm --cached`.
 fonts/**/*.woff2
+
+# Claude Code 个人本地设置（机器相关，不进 git）
+.claude/settings.local.json
+
+# Python 字节码
+__pycache__/
+*.pyc
