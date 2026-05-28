@@ -704,20 +704,9 @@ body:not(.motion-enabled) .scene.active .scene-overlay[class*="mo-ov-iris"] {
   --os-size: 38px;
   --os-color: var(--accent);
   --os-bg: var(--card);
-  --os-padding: 8px 26px 8px 36px;
+  --os-padding: 8px 26px;
   --os-border: 2px solid var(--accent);
-  --os-border-radius: 0 6px 6px 0;
-}
-.os-bookmark::before {
-  content: "";
-  position: absolute;
-  left: -2px; top: 50%;
-  width: 0; height: 0;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-right: 14px solid var(--accent);
-  transform: translateY(-50%);
-  pointer-events: none;
+  --os-border-radius: 6px;
 }
 
 /* 方形深色吊牌：黑底 + 暖白字，做"标签 / 关键词"语义 */
@@ -944,3 +933,47 @@ body:not(.motion-enabled) .subtitle-en[class*="cap-enter-"] {
 }
 
 body.tts-missing .tts-notice { display: block; }
+
+/* ── 否定样式：无边框，文字上覆盖一个大红叉 ✗ ──────────────────── */
+.os-negate {
+  --os-bg: transparent;
+  --os-border: none;
+  --os-padding: 4px 18px;
+  --os-color: #6b6457;
+  --os-weight: 800;
+}
+.os-negate::before,
+.os-negate::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 134%; height: 9px;
+  background: var(--accent);
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .28);
+  pointer-events: none;
+}
+.os-negate::before { transform: translate(-50%, -50%) rotate(45deg); }
+.os-negate::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+
+/* ── 下划线绘入：文字下方红线 scaleX 0→1（入场后 0.34s 起笔）─────── */
+.os-underline {
+  --os-bg: transparent;
+  --os-border: none;
+  --os-padding: 2px 6px 16px;
+  --os-weight: 800;
+  --os-color: var(--ink);
+}
+.os-underline::after {
+  content: "";
+  position: absolute;
+  left: 6%; right: 6%; bottom: 2px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 4px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: ov-underline-draw .55s cubic-bezier(.2, .7, .2, 1) .34s forwards;
+  pointer-events: none;
+}
+@keyframes ov-underline-draw { to { transform: scaleX(1); } }

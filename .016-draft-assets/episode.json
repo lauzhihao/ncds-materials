@@ -3,10 +3,10 @@
   "__doc__": "016 主题改为“为什么说家和万事兴？”。内容围绕抖音口播结构组织：开头钩子 -> 传统典故 -> 科学解释 -> 玄学解释 -> 中年夫妻处境 -> 扣题收束。",
   "meta": {
     "slug": "016-draft",
-    "title": "为什么说家和万事兴？",
+    "title": "家和万事兴",
     "disclaimer": "观点仅供参考　无不良引导",
     "titleOptions": [
-      "为什么说家和万事兴？",
+      "家和万事兴",
       "一个家最好的风水，是夫妻和睦",
       "上有老下有小，和气才是最大的本事",
       "中年夫妻再苦，也别把家过成战场"
@@ -39,7 +39,7 @@
   "visual": {
     "palette": "paper",
     "kenBurns": true,
-    "showSubtitleEn": false,
+    "showSubtitleEn": true,
     "capZhSize": 60,
     "capEnSize": 40
   },
@@ -67,208 +67,259 @@
   },
   "beats": [
     {
-      "zh": "你有没有发现，有的家明明不穷，日子却越过越乱？",
-      "scene": "S2-01"
+      "zh": "你有没有发现，有的家庭明明不缺钱，日子却越过越乱？",
+      "scene": "S2-01",
+      "en": "Some homes aren't broke, yet life keeps fraying."
     },
     {
       "zh": "有的家条件一般，反而越过越顺？",
-      "scene": "S2-01"
+      "scene": "S2-01",
+      "en": "while plainer ones somehow keep getting smoother?"
     },
     {
       "zh": "差别往往不是钱，而是这五个字：家和万事兴。",
-      "scene": "S2-01"
+      "scene": "S2-01",
+      "en": "The gap isn't money — it's home harmony."
     },
     {
       "zh": "很多人把这话当鸡汤，",
-      "scene": "S2-02"
+      "scene": "S2-02",
+      "en": "People call that a cliché,"
     },
     {
       "zh": "可人到中年，上有老下有小你就懂了，",
-      "scene": "S2-02"
+      "scene": "S2-02",
+      "en": "but in midlife, you finally understand —"
     },
     {
       "zh": "一个家最大的本事，就是夫妻还能好好说话。",
-      "scene": "S2-02"
+      "scene": "S2-02",
+      "en": "a home's strength is a couple still talking kindly."
     },
     {
       "zh": "古人为什么把“和”看得这么重？",
-      "scene": "S2-03"
+      "scene": "S2-03",
+      "en": "Why did the ancients prize harmony so?"
     },
     {
       "zh": "唐代张公艺九世同堂，皇帝问秘诀，",
-      "scene": "S2-03"
+      "scene": "S2-03",
+      "en": "One elder kept nine generations under one roof."
     },
     {
       "zh": "他没有长篇大论，只写了一个字：忍。",
-      "scene": "S2-03"
+      "scene": "S2-03",
+      "en": "His secret was a single word: forbear."
     },
     {
       "zh": "但这个忍，不是委曲求全，不是把气憋进身体，",
-      "scene": "S2-04"
+      "scene": "S2-04",
+      "en": "To forbear isn't to swallow your anger,"
     },
     {
       "zh": "而是火气上头时先收一收，",
-      "scene": "S2-04"
+      "scene": "S2-04",
+      "en": "it's easing off when your temper flares,"
     },
     {
       "zh": "给彼此留体面，给全家留退路。",
-      "scene": "S2-04"
+      "scene": "S2-04",
+      "en": "leaving dignity, and a way out for all."
     },
     {
       "zh": "因为中年夫妻一旦失和，",
-      "scene": "S2-05"
+      "scene": "S2-05",
+      "en": "Once a midlife couple falls out,"
     },
     {
       "zh": "上面是老人提心吊胆，",
-      "scene": "S2-05"
+      "scene": "S2-05",
+      "en": "the elders live on edge,"
     },
     {
       "zh": "下面是孩子耳濡目染，家里很快就鸡飞狗跳。",
-      "scene": "S2-05"
+      "scene": "S2-05",
+      "en": "the kids absorb it, and home turns to chaos."
     },
     {
       "zh": "你以为只是吵一架，",
-      "scene": "S2-06"
+      "scene": "S2-06",
+      "en": "You think it's just one quarrel,"
     },
     {
-      "zh": "其实老人担心身体，孩子担心安全感，",
-      "scene": "S2-06"
+      "zh": "其实老人心情糟糕，孩子没有安全感，",
+      "scene": "S2-06",
+      "en": "but elders feel low and kids feel unsafe,"
     },
     {
-      "zh": "连一顿饭、一场觉、一次回家都变得战战兢兢。",
-      "scene": "S2-06"
+      "zh": "连吃饭睡觉都变得战战兢兢，时间久了孩子都不愿回家。",
+      "scene": "S2-06",
+      "en": "even meals and sleep grow tense — kids avoid home."
     },
     {
       "zh": "科学上早就解释过，",
-      "scene": "S2-07"
+      "scene": "S2-07",
+      "en": "Science explained this long ago:"
     },
     {
       "zh": "家庭里的情绪会传染，一个人黑脸，全屋神经都会绷紧，",
-      "scene": "S2-07"
+      "scene": "S2-07",
+      "en": "moods spread — one sour face tightens the house,"
     },
     {
-      "zh": "长期处在这种环境里，孩子更容易焦虑、退缩，也更容易暴躁、顶嘴。",
-      "scene": "S2-07"
+      "zh": "长期待在这种环境，孩子更容易焦虑、暴躁。",
+      "scene": "S2-07",
+      "en": "live in that and kids grow anxious, short-tempered."
     },
     {
       "zh": "更关键的是，孩子学的从来不是你说什么，",
-      "scene": "S2-08"
+      "scene": "S2-08",
+      "en": "Kids don't learn from what you say,"
     },
     {
-      "zh": "而是你怎么对伴侣，怎么对老人，怎么处理冲突，",
-      "scene": "S2-08"
+      "zh": "而是你怎么对家人，怎么对老人，怎么处理冲突，",
+      "scene": "S2-08",
+      "en": "but from how you treat family and conflict —"
     },
     {
       "zh": "这就叫上行下效，也是最深的耳濡目染。",
-      "scene": "S2-08"
+      "scene": "S2-08",
+      "en": "that's leading by example — the deepest lesson."
     },
     {
       "zh": "从身体反应看，夫妻天天冷战争吵，",
-      "scene": "S2-09"
+      "scene": "S2-09",
+      "en": "When a couple bickers and stonewalls daily,"
     },
     {
       "zh": "睡眠会乱，火气会大，长期紧张时皮质醇也会居高不下，",
-      "scene": "S2-09"
+      "scene": "S2-09",
+      "en": "sleep frays, tempers rise, stress runs high,"
     },
     {
       "zh": "人一累，判断就容易失准，话越来越硬，事越办越拧。",
-      "scene": "S2-09"
+      "scene": "S2-09",
+      "en": "worn out, judgment slips and words harden."
     },
     {
       "zh": "所以很多家庭不是败给贫穷，",
-      "scene": "S2-10"
+      "scene": "S2-10",
+      "en": "Many families aren't beaten by poverty,"
     },
     {
       "zh": "是败给内耗，",
-      "scene": "S2-10"
+      "scene": "S2-10",
+      "en": "but by infighting,"
     },
     {
       "zh": "一边拼命挣钱，一边互相伤人，一边把福气往门外推。",
-      "scene": "S2-10"
+      "scene": "S2-10",
+      "en": "earning hard while pushing their luck out the door."
     },
     {
-      "zh": "玄学里也讲，和气聚财，戾气散福，",
-      "scene": "S2-11"
+      "zh": "传统文化认为，和气聚财，戾气散福，",
+      "scene": "S2-11",
+      "en": "Harmony draws wealth; spite drains fortune,"
     },
     {
       "zh": "一个家天天摔门拍桌，再好的风水也压不住怨气，",
-      "scene": "S2-11"
+      "scene": "S2-11",
+      "en": "no feng shui saves a home of slammed doors,"
     },
     {
       "zh": "一个家常年好声好气，粗茶淡饭也能养出福报。",
-      "scene": "S2-11"
+      "scene": "S2-11",
+      "en": "kind words breed blessings on the plainest meals."
     },
     {
       "zh": "别觉得家和只是面子工程，",
-      "scene": "S2-12"
+      "scene": "S2-12",
+      "en": "Harmony isn't just for show —"
     },
     {
       "zh": "对老人来说，那是安心；对孩子来说，那是底气；",
-      "scene": "S2-12"
+      "scene": "S2-12",
+      "en": "to elders it's peace, to kids it's confidence,"
     },
     {
       "zh": "对夫妻自己来说，那是熬过中年的续命能量。",
-      "scene": "S2-12"
+      "scene": "S2-12",
+      "en": "to the couple, the fuel to outlast midlife."
     },
     {
       "zh": "尤其是中年夫妻，白天在外面扛压力，",
-      "scene": "S2-13"
+      "scene": "S2-13",
+      "en": "By day you carry the pressure outside;"
     },
     {
       "zh": "晚上回家如果还是针尖对麦芒，",
-      "scene": "S2-13"
+      "scene": "S2-13",
+      "en": "if home at night is still a battlefield,"
     },
     {
       "zh": "人会越来越累，家也会越来越冷。",
-      "scene": "S2-13"
+      "scene": "S2-13",
+      "en": "you grow wearier, and home grows colder."
     },
     {
       "zh": "真正的家和，不是谁永远赢，",
-      "scene": "S2-14"
+      "scene": "S2-14",
+      "en": "Real harmony isn't about who wins,"
     },
     {
       "zh": "而是遇事先对事不对人，先商量不翻旧账，",
-      "scene": "S2-14"
+      "scene": "S2-14",
+      "en": "it's facing the issue, not raking up the past,"
     },
     {
       "zh": "先顾全大局，再解决问题。",
-      "scene": "S2-14"
+      "scene": "S2-14",
+      "en": "big picture first, then fix the problem."
     },
     {
       "zh": "该让的时候让一步，叫相敬如宾，",
-      "scene": "S2-15"
+      "scene": "S2-15",
+      "en": "Yield when you should — that's respect,"
     },
     {
       "zh": "该暖的时候暖一句，叫同心同德，",
-      "scene": "S2-15"
+      "scene": "S2-15",
+      "en": "warm up when you should — that's one heart,"
     },
     {
       "zh": "夫妻和睦，老人安稳，孩子向阳，这个家才会越来越旺。",
-      "scene": "S2-15"
+      "scene": "S2-15",
+      "en": "spouses aligned, kids thriving — a home rises."
     },
     {
       "zh": "所以为什么说家和万事兴？",
-      "scene": "S2-16"
+      "scene": "S2-16",
+      "en": "So why does a harmonious home thrive?"
     },
     {
-      "zh": "因为和，不只是气氛，它是一个家的秩序、情绪、运气和前程，",
-      "scene": "S2-16"
+      "zh": "因为和，是一个家的秩序、运气和前程，",
+      "scene": "S2-16",
+      "en": "Harmony is a home's order, luck, and future,"
     },
     {
-      "zh": "房子再大，吵出来的都像牢笼；饭菜再淡，笑着吃下去才是人间烟火。",
-      "scene": "S2-16"
+      "zh": "房子再大，吵着过像牢笼；笑着吃饭才是人间烟火。",
+      "scene": "S2-16",
+      "en": "a quarrelsome house is a cage; smiles make a home."
     },
     {
       "zh": "家和，不一定让你立刻大富大贵，",
-      "scene": "S2-17"
+      "scene": "S2-17",
+      "en": "Harmony won't make you rich overnight,"
     },
     {
       "zh": "但一定能让你少走弯路，少生闲气，少败福报，",
-      "scene": "S2-17"
+      "scene": "S2-17",
+      "en": "but it spares you detours and wasted blessings,"
     },
     {
       "zh": "把一地鸡毛的日子，慢慢过成细水长流。<END>",
-      "scene": "S2-17"
+      "scene": "S2-17",
+      "en": "turning a messy life into a calm, lasting stream."
     }
   ],
   "scenes": {
@@ -283,8 +334,7 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "不穷 💰",
-          "icon": "coins",
+          "text": "不缺钱 💰",
           "pos": {
             "x": 23,
             "y": 25
@@ -295,16 +345,16 @@
             "enter": "bounce"
           },
           "at": {
-            "match": "不穷"
+            "match": "不缺钱"
           },
           "style": {
             "preset": "os-tag-square",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "越过越顺 🌿",
-          "icon": "home",
           "pos": {
             "x": 77,
             "y": 35
@@ -319,12 +369,12 @@
           },
           "style": {
             "preset": "os-bubble",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "家和万事兴",
-          "icon": "spark",
           "pos": {
             "x": 50,
             "y": 18
@@ -339,7 +389,8 @@
           },
           "style": {
             "preset": "os-stamp",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -356,7 +407,6 @@
       "overlays": [
         {
           "text": "鸡汤？",
-          "icon": "chat",
           "pos": {
             "x": 24,
             "y": 24
@@ -371,12 +421,12 @@
           },
           "style": {
             "preset": "os-sticker-yellow",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "上有老下有小",
-          "icon": "family",
           "pos": {
             "x": 50,
             "y": 73
@@ -391,12 +441,12 @@
           },
           "style": {
             "preset": "os-bookmark",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "好好说话 🙂",
-          "icon": "chat",
           "pos": {
             "x": 76,
             "y": 30
@@ -410,8 +460,9 @@
             "match": "好好说话"
           },
           "style": {
-            "preset": "os-marker",
-            "font": "XY Kaiti"
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -427,8 +478,7 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "和字最重",
-          "icon": "scroll",
+          "text": "和",
           "pos": {
             "x": 25,
             "y": 22
@@ -442,13 +492,16 @@
             "match": "和”看得"
           },
           "style": {
-            "preset": "os-tag-pill",
+            "preset": "os-seal-square",
+            "size": 76,
+            "color": "#ffffff",
+            "background": "#c0392b",
+            "border": "4px solid #a93226",
             "font": "XY Kaiti"
           }
         },
         {
           "text": "九世同堂",
-          "icon": "family",
           "pos": {
             "x": 72,
             "y": 24
@@ -463,12 +516,12 @@
           },
           "style": {
             "preset": "os-bubble",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "忍",
-          "icon": "scroll",
           "pos": {
             "x": 46,
             "y": 44
@@ -482,8 +535,9 @@
             "match": "一个字"
           },
           "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti"
+            "preset": "os-title-stamp",
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -499,51 +553,50 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "不是硬忍",
-          "icon": "shield",
+          "text": "委曲求全",
           "pos": {
-            "x": 23,
-            "y": 23
+            "x": 26,
+            "y": 22
           },
           "motion": {
             "duration": 760,
             "delay": 90,
-            "enter": "tilt-in"
+            "enter": "fade"
           },
           "at": {
-            "match": "委曲求全"
+            "match": "不是"
           },
           "style": {
-            "preset": "os-sticker-yellow",
+            "preset": "os-negate",
+            "size": 46,
             "font": "XY Kaiti"
           }
         },
         {
-          "text": "先收一收",
-          "icon": "storm",
+          "text": "上头",
           "pos": {
-            "x": 76,
-            "y": 30
+            "x": 60,
+            "y": 48
           },
           "motion": {
             "duration": 760,
             "delay": 120,
-            "enter": "bounce"
+            "enter": "fade"
           },
           "at": {
-            "match": "先收一收"
+            "match": "上头"
           },
           "style": {
-            "preset": "os-marker",
+            "preset": "os-negate",
+            "size": 46,
             "font": "XY Kaiti"
           }
         },
         {
-          "text": "留体面",
-          "icon": "spark",
+          "text": "体面 🙂",
           "pos": {
-            "x": 51,
-            "y": 73
+            "x": 74,
+            "y": 74
           },
           "motion": {
             "duration": 850,
@@ -554,8 +607,9 @@
             "match": "留体面"
           },
           "style": {
-            "preset": "os-bookmark",
-            "font": "XY Kaiti"
+            "preset": "os-stamp",
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -572,30 +626,29 @@
       "overlays": [
         {
           "text": "一旦失和",
-          "icon": "storm",
           "pos": {
-            "x": 24,
+            "x": 74,
             "y": 22
           },
           "motion": {
             "duration": 760,
             "delay": 100,
-            "enter": "stamp"
+            "enter": "fade"
           },
           "at": {
-            "match": "失和"
+            "match": "一旦"
           },
           "style": {
-            "preset": "os-stamp-blue",
+            "preset": "os-underline",
+            "size": 48,
             "font": "XY Kaiti"
           }
         },
         {
-          "text": "提心吊胆",
-          "icon": "elder",
+          "text": "提心吊胆 😟",
           "pos": {
-            "x": 74,
-            "y": 24
+            "x": 40,
+            "y": 48
           },
           "motion": {
             "duration": 780,
@@ -607,14 +660,14 @@
           },
           "style": {
             "preset": "os-bubble",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "鸡飞狗跳",
-          "icon": "family",
           "pos": {
-            "x": 52,
+            "x": 26,
             "y": 74
           },
           "motion": {
@@ -626,8 +679,9 @@
             "match": "鸡飞狗跳"
           },
           "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti"
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -643,11 +697,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "吵一架 ⚠️",
-          "icon": "storm",
+          "text": "吵架 ⚠️",
           "pos": {
-            "x": 22,
-            "y": 24
+            "x": 50,
+            "y": 20
           },
           "motion": {
             "duration": 760,
@@ -659,15 +712,15 @@
           },
           "style": {
             "preset": "os-tag-square",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
-          "text": "安全感",
-          "icon": "shield",
+          "text": "没安全感",
           "pos": {
-            "x": 76,
-            "y": 26
+            "x": 28,
+            "y": 72
           },
           "motion": {
             "duration": 780,
@@ -679,15 +732,15 @@
           },
           "style": {
             "preset": "os-marker",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "战战兢兢",
-          "icon": "meal",
           "pos": {
-            "x": 51,
-            "y": 74
+            "x": 74,
+            "y": 72
           },
           "motion": {
             "duration": 840,
@@ -698,8 +751,9 @@
             "match": "战战兢兢"
           },
           "style": {
-            "preset": "os-bookmark",
-            "font": "XY Kaiti"
+            "preset": "os-title-stamp",
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -716,9 +770,8 @@
       "overlays": [
         {
           "text": "情绪会传染",
-          "icon": "storm",
           "pos": {
-            "x": 28,
+            "x": 26,
             "y": 22
           },
           "motion": {
@@ -730,16 +783,16 @@
             "match": "情绪会传染"
           },
           "style": {
-            "preset": "os-callout-red",
-            "font": "XY Kaiti"
+            "preset": "os-stamp",
+            "font": "XY Kaiti",
+            "size": 60
           }
         },
         {
           "text": "全屋绷紧",
-          "icon": "pulse",
           "pos": {
-            "x": 76,
-            "y": 28
+            "x": 74,
+            "y": 42
           },
           "motion": {
             "duration": 760,
@@ -751,14 +804,14 @@
           },
           "style": {
             "preset": "os-tag-square",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "焦虑 / 暴躁",
-          "icon": "brain",
           "pos": {
-            "x": 52,
+            "x": 50,
             "y": 74
           },
           "motion": {
@@ -771,7 +824,8 @@
           },
           "style": {
             "preset": "os-sticker-yellow",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         }
       ]
@@ -788,10 +842,9 @@
       "overlays": [
         {
           "text": "不是听你说",
-          "icon": "chat",
           "pos": {
-            "x": 24,
-            "y": 23
+            "x": 26,
+            "y": 22
           },
           "motion": {
             "duration": 760,
@@ -803,15 +856,15 @@
           },
           "style": {
             "preset": "os-sticker-yellow",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "是看你怎么做",
-          "icon": "spark",
           "pos": {
-            "x": 77,
-            "y": 25
+            "x": 60,
+            "y": 48
           },
           "motion": {
             "duration": 800,
@@ -823,14 +876,14 @@
           },
           "style": {
             "preset": "os-marker",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "上行下效",
-          "icon": "path",
           "pos": {
-            "x": 53,
+            "x": 74,
             "y": 74
           },
           "motion": {
@@ -842,8 +895,9 @@
             "match": "上行下效"
           },
           "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti"
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -860,7 +914,6 @@
       "overlays": [
         {
           "text": "冷战 🧊",
-          "icon": "storm",
           "pos": {
             "x": 23,
             "y": 23
@@ -875,12 +928,12 @@
           },
           "style": {
             "preset": "os-tag-square",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "睡眠会乱",
-          "icon": "moon",
           "pos": {
             "x": 75,
             "y": 24
@@ -895,12 +948,12 @@
           },
           "style": {
             "preset": "os-bubble",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "皮质醇",
-          "icon": "pulse",
           "pos": {
             "x": 52,
             "y": 34
@@ -914,8 +967,9 @@
             "match": "皮质醇"
           },
           "style": {
-            "preset": "os-outline-glow",
-            "font": "XY Kaiti"
+            "preset": "os-title-stamp",
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -931,11 +985,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "不是败给穷",
-          "icon": "coins",
+          "text": "NOT POOR",
           "pos": {
-            "x": 24,
-            "y": 24
+            "x": 74,
+            "y": 22
           },
           "motion": {
             "duration": 760,
@@ -947,15 +1000,14 @@
           },
           "style": {
             "preset": "os-sticker-yellow",
-            "font": "XY Kaiti"
+            "size": 40
           }
         },
         {
-          "text": "败给内耗",
-          "icon": "storm",
+          "text": "内耗",
           "pos": {
-            "x": 76,
-            "y": 28
+            "x": 40,
+            "y": 48
           },
           "motion": {
             "duration": 800,
@@ -967,15 +1019,15 @@
           },
           "style": {
             "preset": "os-stamp",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 60
           }
         },
         {
           "text": "福气外推",
-          "icon": "home",
           "pos": {
-            "x": 53,
-            "y": 73
+            "x": 26,
+            "y": 74
           },
           "motion": {
             "duration": 840,
@@ -987,7 +1039,8 @@
           },
           "style": {
             "preset": "os-bookmark",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         }
       ]
@@ -1004,10 +1057,9 @@
       "overlays": [
         {
           "text": "怨气压屋",
-          "icon": "home",
           "pos": {
-            "x": 24,
-            "y": 23
+            "x": 50,
+            "y": 20
           },
           "motion": {
             "duration": 760,
@@ -1018,16 +1070,16 @@
             "match": "怨气"
           },
           "style": {
-            "preset": "os-stamp-blue",
-            "font": "XY Kaiti"
+            "preset": "os-sticker-yellow",
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "和气聚财",
-          "icon": "coins",
           "pos": {
-            "x": 69,
-            "y": 25
+            "x": 28,
+            "y": 72
           },
           "motion": {
             "duration": 850,
@@ -1038,27 +1090,28 @@
             "match": "和气聚财"
           },
           "style": {
-            "preset": "os-bookmark",
-            "font": "XY Kaiti"
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 60
           }
         },
         {
-          "text": "粗茶淡饭也养福",
-          "icon": "meal",
+          "text": "福",
           "pos": {
-            "x": 55,
-            "y": 74
+            "x": 74,
+            "y": 72
           },
           "motion": {
             "duration": 860,
             "delay": 220,
-            "enter": "rise-glow"
+            "enter": "stamp"
           },
           "at": {
             "match": "粗茶淡饭"
           },
           "style": {
-            "preset": "os-bubble",
+            "preset": "os-seal-square",
+            "size": 60,
             "font": "XY Kaiti"
           }
         }
@@ -1076,10 +1129,9 @@
       "overlays": [
         {
           "text": "老人安心",
-          "icon": "elder",
           "pos": {
-            "x": 24,
-            "y": 24
+            "x": 26,
+            "y": 22
           },
           "motion": {
             "duration": 760,
@@ -1091,15 +1143,15 @@
           },
           "style": {
             "preset": "os-bubble",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "孩子有底气",
-          "icon": "child",
           "pos": {
-            "x": 76,
-            "y": 24
+            "x": 74,
+            "y": 42
           },
           "motion": {
             "duration": 760,
@@ -1111,14 +1163,14 @@
           },
           "style": {
             "preset": "os-marker",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "续命能量 ⚡",
-          "icon": "spark",
           "pos": {
-            "x": 52,
+            "x": 50,
             "y": 74
           },
           "motion": {
@@ -1130,9 +1182,9 @@
             "match": "续命能量"
           },
           "style": {
-            "preset": "os-outline-glow",
+            "preset": "os-title-stamp",
             "font": "XY Kaiti",
-            "size": 48
+            "size": 60
           }
         }
       ]
@@ -1149,10 +1201,9 @@
       "overlays": [
         {
           "text": "白天扛压力",
-          "icon": "balance",
           "pos": {
-            "x": 24,
-            "y": 24
+            "x": 26,
+            "y": 22
           },
           "motion": {
             "duration": 760,
@@ -1164,15 +1215,15 @@
           },
           "style": {
             "preset": "os-bookmark",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "针尖对麦芒",
-          "icon": "storm",
           "pos": {
-            "x": 76,
-            "y": 24
+            "x": 60,
+            "y": 48
           },
           "motion": {
             "duration": 800,
@@ -1183,15 +1234,15 @@
             "match": "针尖对麦芒"
           },
           "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti"
+            "preset": "os-marker",
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "家会变冷",
-          "icon": "home",
           "pos": {
-            "x": 51,
+            "x": 74,
             "y": 74
           },
           "motion": {
@@ -1200,11 +1251,12 @@
             "enter": "drift-in"
           },
           "at": {
-            "match": "越来越冷"
+            "match": "家也会"
           },
           "style": {
-            "preset": "os-bubble",
-            "font": "XY Kaiti"
+            "preset": "os-stamp",
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -1221,10 +1273,9 @@
       "overlays": [
         {
           "text": "对事不对人",
-          "icon": "balance",
           "pos": {
-            "x": 24,
-            "y": 24
+            "x": 74,
+            "y": 22
           },
           "motion": {
             "duration": 760,
@@ -1235,16 +1286,16 @@
             "match": "对事不对人"
           },
           "style": {
-            "preset": "os-marker",
-            "font": "XY Kaiti"
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 60
           }
         },
         {
           "text": "不翻旧账",
-          "icon": "scroll",
           "pos": {
-            "x": 76,
-            "y": 26
+            "x": 40,
+            "y": 48
           },
           "motion": {
             "duration": 760,
@@ -1256,14 +1307,14 @@
           },
           "style": {
             "preset": "os-tag-square",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "顾全大局",
-          "icon": "home",
           "pos": {
-            "x": 51,
+            "x": 26,
             "y": 74
           },
           "motion": {
@@ -1276,7 +1327,8 @@
           },
           "style": {
             "preset": "os-bookmark",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         }
       ]
@@ -1293,10 +1345,9 @@
       "overlays": [
         {
           "text": "同心同德 🤝",
-          "icon": "heart",
           "pos": {
-            "x": 24,
-            "y": 24
+            "x": 50,
+            "y": 20
           },
           "motion": {
             "duration": 800,
@@ -1308,15 +1359,15 @@
           },
           "style": {
             "preset": "os-bubble",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "相敬如宾",
-          "icon": "heart",
           "pos": {
-            "x": 70,
-            "y": 23
+            "x": 28,
+            "y": 72
           },
           "motion": {
             "duration": 800,
@@ -1328,15 +1379,15 @@
           },
           "style": {
             "preset": "os-marker",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "越来越旺 ☀️",
-          "icon": "sun",
           "pos": {
-            "x": 52,
-            "y": 74
+            "x": 74,
+            "y": 72
           },
           "motion": {
             "duration": 860,
@@ -1347,9 +1398,9 @@
             "match": "越来越旺"
           },
           "style": {
-            "preset": "os-outline-glow",
+            "preset": "os-title-stamp",
             "font": "XY Kaiti",
-            "size": 46
+            "size": 60
           }
         }
       ]
@@ -1366,8 +1417,6 @@
       "overlays": [
         {
           "text": "为什么？",
-          "icon": "chat",
-          "iconPos": "top",
           "pos": {
             "x": 22,
             "y": 22
@@ -1382,13 +1431,12 @@
           },
           "style": {
             "preset": "os-sticker-yellow",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "秩序 情绪 运气 前程",
-          "icon": "spark",
-          "iconPos": "top",
           "pos": {
             "x": 50,
             "y": 74
@@ -1402,12 +1450,12 @@
             "match": "秩序"
           },
           "style": {
-            "preset": "os-typewriter"
+            "preset": "os-typewriter",
+            "size": 40
           }
         },
         {
           "text": "人间烟火",
-          "icon": "meal",
           "pos": {
             "x": 66,
             "y": 30
@@ -1421,8 +1469,9 @@
             "match": "人间烟火"
           },
           "style": {
-            "preset": "os-bubble",
-            "font": "XY Kaiti"
+            "preset": "os-stamp",
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -1439,9 +1488,8 @@
       "overlays": [
         {
           "text": "不一定暴富",
-          "icon": "coins",
           "pos": {
-            "x": 24,
+            "x": 26,
             "y": 24
           },
           "motion": {
@@ -1454,15 +1502,15 @@
           },
           "style": {
             "preset": "os-tag-square",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "少走弯路",
-          "icon": "path",
           "pos": {
-            "x": 76,
-            "y": 26
+            "x": 74,
+            "y": 30
           },
           "motion": {
             "duration": 800,
@@ -1474,15 +1522,15 @@
           },
           "style": {
             "preset": "os-bookmark",
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 40
           }
         },
         {
           "text": "细水长流",
-          "icon": "lotus",
           "pos": {
-            "x": 67,
-            "y": 25
+            "x": 50,
+            "y": 72
           },
           "motion": {
             "duration": 850,
@@ -1490,11 +1538,12 @@
             "enter": "handwrite"
           },
           "at": {
-            "match": "细水长流"
+            "match": "慢慢过成"
           },
           "style": {
-            "preset": "os-circle-mark",
-            "font": "XY Kaiti"
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
