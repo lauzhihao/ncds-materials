@@ -1,0 +1,15 @@
+{
+  "output": {
+    "audio": {
+      "data": "",
+      "expires_at": 1779988218,
+      "id": "audio_0bee441a-0391-90d1-a3b4-29bed6fab6df",
+      "url": "http://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/prod/cosyvoice-v3-flash/20260528/1248603079361085/0bee441a-0391-90d1-a3b4-29bed6fab6df.mp3?Expires=1779988218&OSSAccessKeyId=LTAI5tGzqbGcEmE58b221XQy&Signature=WshGg0I5eXtXep4UYxYnYMulhGg%3D"
+    },
+    "finish_reason": "stop"
+  },
+  "usage": {
+    "characters": 35
+  },
+  "request_id": "0bee441a-0391-90d1-a3b4-29bed6fab6df"
+}

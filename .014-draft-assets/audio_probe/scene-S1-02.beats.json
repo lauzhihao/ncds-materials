@@ -1,0 +1,41 @@
+[
+  {
+    "beat": 2,
+    "zh": "不愿意阅读，",
+    "char_range": [
+      0,
+      6
+    ],
+    "words_found": 6,
+    "audioStart": 80,
+    "audioEnd": 1200,
+    "first_char": "不",
+    "last_char": "，"
+  },
+  {
+    "beat": 3,
+    "zh": "不愿意背诵，",
+    "char_range": [
+      6,
+      12
+    ],
+    "words_found": 6,
+    "audioStart": 1200,
+    "audioEnd": 2560,
+    "first_char": "不",
+    "last_char": "，"
+  },
+  {
+    "beat": 4,
+    "zh": "更不愿意书写。",
+    "char_range": [
+      12,
+      19
+    ],
+    "words_found": 6,
+    "audioStart": 2640,
+    "audioEnd": 4080,
+    "first_char": "更",
+    "last_char": "写"
+  }
+]
