@@ -328,467 +328,746 @@
     {
       "zh": "孩子十岁那年，背着我们用我的信用卡，",
       "en": "When my kid was ten, he used my credit card behind our backs,",
-      "scene": "S1-01"
+      "scene": "S1-01",
+      "audioFile": "audio/scene-S1-01.mp3",
+      "audioStart": 0,
+      "audioEnd": 3040
     },
     {
       "zh": "在某手游里偷偷充了一万多。",
       "en": "and secretly ran up over ten grand in some mobile game.",
-      "scene": "S1-01"
+      "scene": "S1-01",
+      "audioFile": "audio/scene-S1-01.mp3",
+      "audioStart": 3040,
+      "audioEnd": 5440
     },
     {
       "zh": "直到还款日看到账单才被我们发现，",
       "en": "We only caught it on the due date, when the statement showed up—",
-      "scene": "S1-01"
+      "scene": "S1-01",
+      "audioFile": "audio/scene-S1-01.mp3",
+      "audioStart": 5440,
+      "audioEnd": 8516
     },
     {
       "zh": "当场气炸，直接就是一顿“男女混双”。",
       "en": "and we both let him have it.",
-      "scene": "S1-01b"
+      "scene": "S1-01b",
+      "audioFile": "audio/scene-S1-01b.mp3",
+      "audioStart": 0,
+      "audioEnd": 4127
     },
     {
       "zh": "可冷静下来，我问了自己一句：",
       "en": "But once I calmed down, I asked myself:",
-      "scene": "S1-02"
+      "scene": "S1-02",
+      "audioFile": "audio/scene-S1-02.mp3",
+      "audioStart": 0,
+      "audioEnd": 2880
     },
     {
       "zh": "小小年纪就氪手游，这到底是怎么回事？",
       "en": "whaling on mobile games this young—how did this happen?",
-      "scene": "S1-02"
+      "scene": "S1-02",
+      "audioFile": "audio/scene-S1-02.mp3",
+      "audioStart": 2880,
+      "audioEnd": 6269
     },
     {
       "zh": "原来，是那几年我经常氪原神，",
       "en": "Turns out, those were the years I kept whaling on gacha,",
-      "scene": "S1-03"
+      "scene": "S1-03",
+      "audioFile": "audio/scene-S1-03.mp3",
+      "audioStart": 0,
+      "audioEnd": 2960
     },
     {
       "zh": "一充就是几百块；",
       "en": "a few hundred yuan every time I topped up;",
-      "scene": "S1-03"
+      "scene": "S1-03",
+      "audioFile": "audio/scene-S1-03.mp3",
+      "audioStart": 2960,
+      "audioEnd": 4480
     },
     {
       "zh": "要不然，就刷抖音看小姐姐跳舞。",
       "en": "or else, scrolling girls dancing on the feed.",
-      "scene": "S1-03"
+      "scene": "S1-03",
+      "audioFile": "audio/scene-S1-03.mp3",
+      "audioStart": 4480,
+      "audioEnd": 7784
     },
     {
       "zh": "他妈妈也没闲着，",
       "en": "His mom was no better—",
-      "scene": "S1-03b"
+      "scene": "S1-03b",
+      "audioFile": "audio/scene-S1-03b.mp3",
+      "audioStart": 0,
+      "audioEnd": 1520
     },
     {
       "zh": "不是追剧，就是抱着手机刷购物 App。",
       "en": "binging dramas or scrolling shopping apps.",
-      "scene": "S1-03b"
+      "scene": "S1-03b",
+      "audioFile": "audio/scene-S1-03b.mp3",
+      "audioStart": 1520,
+      "audioEnd": 4911
     },
     {
       "zh": "一家三口坐一块儿，",
       "en": "Three of us in one room,",
-      "scene": "S1-04"
+      "scene": "S1-04",
+      "audioFile": "audio/scene-S1-04.mp3",
+      "audioStart": 0,
+      "audioEnd": 1520
     },
     {
       "zh": "三块屏幕三道光，谁也不看谁。",
       "en": "three glowing screens, no one looking at anyone.",
-      "scene": "S1-04"
+      "scene": "S1-04",
+      "audioFile": "audio/scene-S1-04.mp3",
+      "audioStart": 1520,
+      "audioEnd": 4441
     },
     {
       "zh": "孩子那一万多，",
       "en": "His ten grand—",
-      "scene": "S1-04b"
+      "scene": "S1-04b",
+      "audioFile": "audio/scene-S1-04b.mp3",
+      "audioStart": 0,
+      "audioEnd": 1280
     },
     {
       "zh": "不过是把我充的那几千，照着描了一遍。",
       "en": "just my few thousand, traced over again.",
-      "scene": "S1-04b"
+      "scene": "S1-04b",
+      "audioFile": "audio/scene-S1-04b.mp3",
+      "audioStart": 1280,
+      "audioEnd": 4833
     },
     {
       "zh": "老话难听，可句句在理——",
       "en": "An old saying, harsh but true:",
-      "scene": "S1-05"
+      "scene": "S1-05",
+      "audioFile": "audio/scene-S1-05.mp3",
+      "audioStart": 0,
+      "audioEnd": 5680
     },
     {
       "zh": "上梁不正下梁歪。",
       "en": "a crooked top beam bends the one below.",
-      "scene": "S1-05"
+      "scene": "S1-05",
+      "audioFile": "audio/scene-S1-05.mp3",
+      "audioStart": 5680,
+      "audioEnd": 7158
     },
     {
       "zh": "你想要个什么样的孩子，",
       "en": "Want to know what your child will be?",
-      "scene": "S1-05b"
+      "scene": "S1-05b",
+      "audioFile": "audio/scene-S1-05b.mp3",
+      "audioStart": 0,
+      "audioEnd": 1840
     },
     {
       "zh": "先看看自己立成了什么样。",
       "en": "Look at what you've become.",
-      "scene": "S1-05b"
+      "scene": "S1-05b",
+      "audioFile": "audio/scene-S1-05b.mp3",
+      "audioStart": 1840,
+      "audioEnd": 4284
     },
     {
       "zh": "你是不是也这样：",
       "en": "Sound familiar?",
-      "scene": "S1-06"
+      "scene": "S1-06",
+      "audioFile": "audio/scene-S1-06.mp3",
+      "audioStart": 0,
+      "audioEnd": 1680
     },
     {
       "zh": "一边吼他“别玩手机好好学”，",
       "en": "Yelling “put the phone down and study,”",
-      "scene": "S1-06"
+      "scene": "S1-06",
+      "audioFile": "audio/scene-S1-06.mp3",
+      "audioStart": 1680,
+      "audioEnd": 4480
     },
     {
       "zh": "一边自己刷到半夜？",
       "en": "while you scroll till midnight?",
-      "scene": "S1-06"
+      "scene": "S1-06",
+      "audioFile": "audio/scene-S1-06.mp3",
+      "audioStart": 4480,
+      "audioEnd": 6922
     },
     {
       "zh": "这叫说一套做一套，妥妥的大型双标现场。",
       "en": "Say one thing, do another—a textbook double standard.",
-      "scene": "S1-06b"
+      "scene": "S1-06b",
+      "audioFile": "audio/scene-S1-06b.mp3",
+      "audioStart": 0,
+      "audioEnd": 4400
     },
     {
       "zh": "孩子最先看穿的，就是这个。",
       "en": "the first thing a kid sees through.",
-      "scene": "S1-06b"
+      "scene": "S1-06b",
+      "audioFile": "audio/scene-S1-06b.mp3",
+      "audioStart": 4400,
+      "audioEnd": 6766
     },
     {
       "zh": "孩子不是听你说什么长大的，",
       "en": "Kids don't grow up on what you say,",
-      "scene": "S1-07"
+      "scene": "S1-07",
+      "audioFile": "audio/scene-S1-07.mp3",
+      "audioStart": 0,
+      "audioEnd": 2240
     },
     {
       "zh": "是看你做什么长大的。",
       "en": "they grow up on what you do.",
-      "scene": "S1-07"
+      "scene": "S1-07",
+      "audioFile": "audio/scene-S1-07.mp3",
+      "audioStart": 2240,
+      "audioEnd": 4127
     },
     {
       "zh": "你天天耳濡目染塞给他的是游戏、是短视频，",
       "en": "You steep him in games and short videos every day,",
-      "scene": "S1-07b"
+      "scene": "S1-07b",
+      "audioFile": "audio/scene-S1-07b.mp3",
+      "audioStart": 0,
+      "audioEnd": 3920
     },
     {
       "zh": "却想让他变成人中龙凤。",
       "en": "yet want him to grow into someone extraordinary.",
-      "scene": "S1-07b"
+      "scene": "S1-07b",
+      "audioFile": "audio/scene-S1-07b.mp3",
+      "audioStart": 3920,
+      "audioEnd": 6348
     },
     {
       "zh": "尤其是男孩子——",
       "en": "A boy, especially—",
-      "scene": "S1-08"
+      "scene": "S1-08",
+      "audioFile": "audio/scene-S1-08.mp3",
+      "audioStart": 0,
+      "audioEnd": 1600
     },
     {
       "zh": "他就是父亲的小时候。",
       "en": "he is his father's childhood lived again.",
-      "scene": "S1-08"
+      "scene": "S1-08",
+      "audioFile": "audio/scene-S1-08.mp3",
+      "audioStart": 1600,
+      "audioEnd": 3474
     },
     {
       "zh": "当爹的今天活成什么样，",
       "en": "However the father lives today,",
-      "scene": "S1-08b"
+      "scene": "S1-08b",
+      "audioFile": "audio/scene-S1-08b.mp3",
+      "audioStart": 0,
+      "audioEnd": 3760
     },
     {
       "zh": "儿子明天多半就长成什么样。",
       "en": "the son likely becomes tomorrow.",
-      "scene": "S1-08b"
+      "scene": "S1-08b",
+      "audioFile": "audio/scene-S1-08b.mp3",
+      "audioStart": 3760,
+      "audioEnd": 6191
     },
     {
       "zh": "我知道，不少家长这会儿在想：",
       "en": "I know what some parents are thinking:",
-      "scene": "S1-09"
+      "scene": "S1-09",
+      "audioFile": "audio/scene-S1-09.mp3",
+      "audioStart": 0,
+      "audioEnd": 3200
     },
     {
       "zh": "那我给他买台学习机？",
       "en": "buy him a study tablet?",
-      "scene": "S1-09"
+      "scene": "S1-09",
+      "audioFile": "audio/scene-S1-09.mp3",
+      "audioStart": 3200,
+      "audioEnd": 6080
     },
     {
       "zh": "报个自律班？换个能管控的手机？",
       "en": "A discipline class? A locked-down phone?",
-      "scene": "S1-09"
+      "scene": "S1-09",
+      "audioFile": "audio/scene-S1-09.mp3",
+      "audioStart": 6080,
+      "audioEnd": 10109
     },
     {
       "zh": "我劝你把钱包收起来。",
       "en": "Put your wallet away.",
-      "scene": "S1-10"
+      "scene": "S1-10",
+      "audioFile": "audio/scene-S1-10.mp3",
+      "audioStart": 0,
+      "audioEnd": 1760
     },
     {
       "zh": "这叫舍本逐末。",
       "en": "That's chasing the leaf, missing the root.",
-      "scene": "S1-10"
+      "scene": "S1-10",
+      "audioFile": "audio/scene-S1-10.mp3",
+      "audioStart": 1760,
+      "audioEnd": 3631
     },
     {
       "zh": "一台学习机，",
       "en": "No tablet",
-      "scene": "S1-10b"
+      "scene": "S1-10b",
+      "audioFile": "audio/scene-S1-10b.mp3",
+      "audioStart": 0,
+      "audioEnd": 1200
     },
     {
       "zh": "管不住一个天天看着爸妈刷手机的孩子。",
       "en": "can rein in a kid who watches you scroll all day.",
-      "scene": "S1-10b"
+      "scene": "S1-10b",
+      "audioFile": "audio/scene-S1-10b.mp3",
+      "audioStart": 1200,
+      "audioEnd": 5146
     },
     {
       "zh": "记住一句话：",
       "en": "Remember this:",
-      "scene": "S1-11"
+      "scene": "S1-11",
+      "audioFile": "audio/scene-S1-11.mp3",
+      "audioStart": 0,
+      "audioEnd": 2480
     },
     {
       "zh": "孩子是一张白纸，执笔的人是你。",
       "en": "the child is a blank sheet; you hold the pen.",
-      "scene": "S1-11"
+      "scene": "S1-11",
+      "audioFile": "audio/scene-S1-11.mp3",
+      "audioStart": 2480,
+      "audioEnd": 6480
     },
     {
       "zh": "你画成什么样，他就长成什么样。",
       "en": "Whatever you draw is what he becomes.",
-      "scene": "S1-11"
+      "scene": "S1-11",
+      "audioFile": "audio/scene-S1-11.mp3",
+      "audioStart": 6480,
+      "audioEnd": 9953
     },
     {
       "zh": "所以要改的，从来不是那张纸。",
       "en": "So what needs fixing was never the paper.",
-      "scene": "S1-12"
+      "scene": "S1-12",
+      "audioFile": "audio/scene-S1-12.mp3",
+      "audioStart": 0,
+      "audioEnd": 2880
     },
     {
       "zh": "是握笔的那只手——是你自己。",
       "en": "It's the hand that holds the pen—it's you.",
-      "scene": "S1-12"
+      "scene": "S1-12",
+      "audioFile": "audio/scene-S1-12.mp3",
+      "audioStart": 2880,
+      "audioEnd": 5564
     },
     {
       "zh": "别整那些复杂的。",
       "en": "Skip the complicated stuff.",
-      "scene": "S1-13a"
+      "scene": "S1-13a",
+      "audioFile": "audio/scene-S1-13a.mp3",
+      "audioStart": 0,
+      "audioEnd": 1600
     },
     {
       "zh": "从今天起，只改一件事——",
       "en": "From today, change just one thing—",
-      "scene": "S1-13a"
+      "scene": "S1-13a",
+      "audioFile": "audio/scene-S1-13a.mp3",
+      "audioStart": 1600,
+      "audioEnd": 4023
     },
     {
       "zh": "孩子放学回家，",
       "en": "When he gets home,",
-      "scene": "S1-13"
+      "scene": "S1-13",
+      "audioFile": "audio/scene-S1-13.mp3",
+      "audioStart": 0,
+      "audioEnd": 1280
     },
     {
       "zh": "你就抓紧放下手机，离开电脑。",
       "en": "drop the phone and step away from the screen, right away.",
-      "scene": "S1-13"
+      "scene": "S1-13",
+      "audioFile": "audio/scene-S1-13.mp3",
+      "audioStart": 1280,
+      "audioEnd": 4206
     },
     {
       "zh": "然后陪他一起，",
       "en": "Then, side by side,",
-      "scene": "S1-14a"
+      "scene": "S1-14a",
+      "audioFile": "audio/scene-S1-14a.mp3",
+      "audioStart": 0,
+      "audioEnd": 1360
     },
     {
       "zh": "做点不花钱的事：",
       "en": "do something that costs nothing:",
-      "scene": "S1-14a"
+      "scene": "S1-14a",
+      "audioFile": "audio/scene-S1-14a.mp3",
+      "audioStart": 1360,
+      "audioEnd": 2926
     },
     {
       "zh": "一起做平板支撑，一起练引体向上，",
       "en": "planks together, pull-ups together,",
-      "scene": "S1-14"
+      "scene": "S1-14",
+      "audioFile": "audio/scene-S1-14.mp3",
+      "audioStart": 0,
+      "audioEnd": 3200
     },
     {
       "zh": "一起做几个俯卧撑。",
       "en": "a few push-ups together.",
-      "scene": "S1-14"
+      "scene": "S1-14",
+      "audioFile": "audio/scene-S1-14.mp3",
+      "audioStart": 3200,
+      "audioEnd": 5486
     },
     {
       "zh": "不用买装备，不用报班。",
       "en": "No gear, no classes.",
-      "scene": "S1-15"
+      "scene": "S1-15",
+      "audioFile": "audio/scene-S1-15.mp3",
+      "audioStart": 0,
+      "audioEnd": 2160
     },
     {
       "zh": "家里那块地板、小区那根单杠，就够了。",
       "en": "The floor at home, a bar downstairs—enough.",
-      "scene": "S1-15"
+      "scene": "S1-15",
+      "audioFile": "audio/scene-S1-15.mp3",
+      "audioStart": 2160,
+      "audioEnd": 5760
     },
     {
       "zh": "越简单的事，越容易持之以恒。",
       "en": "The simpler it is, the easier to keep up.",
-      "scene": "S1-15"
+      "scene": "S1-15",
+      "audioFile": "audio/scene-S1-15.mp3",
+      "audioStart": 5760,
+      "audioEnd": 8516
     },
     {
       "zh": "你可能会问：为啥非得是流汗的事？",
       "en": "You might ask: why must it be sweat?",
-      "scene": "S1-16"
+      "scene": "S1-16",
+      "audioFile": "audio/scene-S1-16.mp3",
+      "audioStart": 0,
+      "audioEnd": 3120
     },
     {
       "zh": "打把游戏、买点东西，不也开心吗？",
       "en": "Isn't a game or some shopping fun too?",
-      "scene": "S1-16"
+      "scene": "S1-16",
+      "audioFile": "audio/scene-S1-16.mp3",
+      "audioStart": 3120,
+      "audioEnd": 6426
     },
     {
       "zh": "因为刷手机、买买买给你的，",
       "en": "Because scrolling and shopping give you",
-      "scene": "S1-17"
+      "scene": "S1-17",
+      "audioFile": "audio/scene-S1-17.mp3",
+      "audioStart": 0,
+      "audioEnd": 2640
     },
     {
       "zh": "是转瞬即逝的多巴胺——",
       "en": "dopamine—gone in a flash—",
-      "scene": "S1-17"
+      "scene": "S1-17",
+      "audioFile": "audio/scene-S1-17.mp3",
+      "audioStart": 2640,
+      "audioEnd": 4480
     },
     {
       "zh": "来得快，去得也快，越刺激越空。",
       "en": "quick to come, quick to go, emptier after.",
-      "scene": "S1-17"
+      "scene": "S1-17",
+      "audioFile": "audio/scene-S1-17.mp3",
+      "audioStart": 4480,
+      "audioEnd": 8438
     },
     {
       "zh": "而陪他咬牙撑完最后一组，",
       "en": "But grinding out that last set with him,",
-      "scene": "S1-18"
+      "scene": "S1-18",
+      "audioFile": "audio/scene-S1-18.mp3",
+      "audioStart": 0,
+      "audioEnd": 2320
     },
     {
       "zh": "看他从撑不住，到能坚持三分钟，",
       "en": "watching him go from barely holding on to a full three minutes,",
-      "scene": "S1-18"
+      "scene": "S1-18",
+      "audioFile": "audio/scene-S1-18.mp3",
+      "audioStart": 2320,
+      "audioEnd": 5642
     },
     {
       "zh": "给的是内啡肽——",
       "en": "that's endorphins—",
-      "scene": "S1-18b"
+      "scene": "S1-18b",
+      "audioFile": "audio/scene-S1-18b.mp3",
+      "audioStart": 0,
+      "audioEnd": 1600
     },
     {
       "zh": "来得慢，却细水长流，扎扎实实。",
       "en": "slow to arrive, but steady and lasting.",
-      "scene": "S1-18b"
+      "scene": "S1-18b",
+      "audioFile": "audio/scene-S1-18b.mp3",
+      "audioStart": 1600,
+      "audioEnd": 5303
     },
     {
       "zh": "我们想给孩子的，从来不是那一下的爽，",
       "en": "What we want to give was never that quick high,",
-      "scene": "S1-19"
+      "scene": "S1-19",
+      "audioFile": "audio/scene-S1-19.mp3",
+      "audioStart": 0,
+      "audioEnd": 3600
     },
     {
       "zh": "是能撑他走一辈子的那股长劲儿。",
       "en": "but strength to carry him a lifetime.",
-      "scene": "S1-19"
+      "scene": "S1-19",
+      "audioFile": "audio/scene-S1-19.mp3",
+      "audioStart": 3600,
+      "audioEnd": 6583
     },
     {
       "zh": "一起流过汗的人，话才打得开。",
       "en": "People who've sweated together open up.",
-      "scene": "S1-20"
+      "scene": "S1-20",
+      "audioFile": "audio/scene-S1-20.mp3",
+      "audioStart": 0,
+      "audioEnd": 2640
     },
     {
       "zh": "练到瘫在地板上一起喘气的时候，",
       "en": "Sprawled on the floor catching our breath,",
-      "scene": "S1-20"
+      "scene": "S1-20",
+      "audioFile": "audio/scene-S1-20.mp3",
+      "audioStart": 2640,
+      "audioEnd": 5200
     },
     {
       "zh": "那些平时憋着的心里话，反倒冒出来了。",
       "en": "the things he'd bottled up finally came out.",
-      "scene": "S1-20"
+      "scene": "S1-20",
+      "audioFile": "audio/scene-S1-20.mp3",
+      "audioStart": 5200,
+      "audioEnd": 8829
     },
     {
       "zh": "原本想顶的嘴、想吵的架，",
       "en": "The back-talk, the brewing fight—",
-      "scene": "S1-21"
+      "scene": "S1-21",
+      "audioFile": "audio/scene-S1-21.mp3",
+      "audioStart": 0,
+      "audioEnd": 2560
     },
     {
       "zh": "撑完两组平板支撑，也就烟消云散了。",
       "en": "two sets of planks and it melts away.",
-      "scene": "S1-21"
+      "scene": "S1-21",
+      "audioFile": "audio/scene-S1-21.mp3",
+      "audioStart": 2560,
+      "audioEnd": 5956
     },
     {
       "zh": "这种一块儿熬下来的成就感，",
       "en": "The pride of pushing through together—",
-      "scene": "S1-22"
+      "scene": "S1-22",
+      "audioFile": "audio/scene-S1-22.mp3",
+      "audioStart": 0,
+      "audioEnd": 2160
     },
     {
       "zh": "是你花再多钱，也买不来的。",
       "en": "and no amount of money could ever buy it.",
-      "scene": "S1-22"
+      "scene": "S1-22",
+      "audioFile": "audio/scene-S1-22.mp3",
+      "audioStart": 2160,
+      "audioEnd": 4676
     },
     {
       "zh": "别急。你刷了十年手机，",
       "en": "Don't rush. You scrolled for ten years,",
-      "scene": "S1-23"
+      "scene": "S1-23",
+      "audioFile": "audio/scene-S1-23.mp3",
+      "audioStart": 0,
+      "audioEnd": 2240
     },
     {
       "zh": "他也跟着看了十年，",
       "en": "he watched for ten,",
-      "scene": "S1-23"
+      "scene": "S1-23",
+      "audioFile": "audio/scene-S1-23.mp3",
+      "audioStart": 2240,
+      "audioEnd": 4320
     },
     {
       "zh": "不可能一礼拜就扭过来。",
       "en": "a week won't undo it.",
-      "scene": "S1-23"
+      "scene": "S1-23",
+      "audioFile": "audio/scene-S1-23.mp3",
+      "audioStart": 4320,
+      "audioEnd": 6034
     },
     {
       "zh": "你先放下手机，先迈出那一步，",
       "en": "Put your phone down, take that first step,",
-      "scene": "S1-24"
+      "scene": "S1-24",
+      "audioFile": "audio/scene-S1-24.mp3",
+      "audioStart": 0,
+      "audioEnd": 2640
     },
     {
       "zh": "他会慢慢跟上——",
       "en": "and he'll slowly follow—",
-      "scene": "S1-24"
+      "scene": "S1-24",
+      "audioFile": "audio/scene-S1-24.mp3",
+      "audioStart": 2640,
+      "audioEnd": 4960
     },
     {
       "zh": "上行下效，坏毛病是会传染的。",
       "en": "what you do above, he copies below—bad habits spread.",
-      "scene": "S1-24"
+      "scene": "S1-24",
+      "audioFile": "audio/scene-S1-24.mp3",
+      "audioStart": 4960,
+      "audioEnd": 7706
     },
     {
       "zh": "中间你一定会犯懒，",
       "en": "You'll get lazy along the way,",
-      "scene": "S1-25a"
+      "scene": "S1-25a",
+      "audioFile": "audio/scene-S1-25a.mp3",
+      "audioStart": 0,
+      "audioEnd": 1600
     },
     {
       "zh": "会想“就刷一会儿”。",
       "en": "telling yourself “just a quick scroll.”",
-      "scene": "S1-25a"
+      "scene": "S1-25a",
+      "audioFile": "audio/scene-S1-25a.mp3",
+      "audioStart": 1600,
+      "audioEnd": 5799
     },
     {
       "zh": "记住：你低头的样子，",
       "en": "Remember: the way you bow to the screen,",
-      "scene": "S1-25"
+      "scene": "S1-25",
+      "audioFile": "audio/scene-S1-25.mp3",
+      "audioStart": 0,
+      "audioEnd": 1440
     },
     {
       "zh": "他全看在眼里。",
       "en": "he sees all of it.",
-      "scene": "S1-25"
+      "scene": "S1-25",
+      "audioFile": "audio/scene-S1-25.mp3",
+      "audioStart": 1440,
+      "audioEnd": 2847
     },
     {
       "zh": "你可以先成为家里那个，",
       "en": "You can be the one in your family",
-      "scene": "S1-26"
+      "scene": "S1-26",
+      "audioFile": "audio/scene-S1-26.mp3",
+      "audioStart": 0,
+      "audioEnd": 2160
     },
     {
       "zh": "先放下手机的人。",
       "en": "who puts the phone down first.",
-      "scene": "S1-26"
+      "scene": "S1-26",
+      "audioFile": "audio/scene-S1-26.mp3",
+      "audioStart": 2160,
+      "audioEnd": 3788
     },
     {
       "zh": "改变一个家，",
       "en": "Changing a family",
-      "scene": "S1-27"
+      "scene": "S1-27",
+      "audioFile": "audio/scene-S1-27.mp3",
+      "audioStart": 0,
+      "audioEnd": 1600
     },
     {
       "zh": "从来可以从任何一个人开始。",
       "en": "can always start with one person.",
-      "scene": "S1-27"
+      "scene": "S1-27",
+      "audioFile": "audio/scene-S1-27.mp3",
+      "audioStart": 1600,
+      "audioEnd": 4127
     },
     {
       "zh": "所以，别再给孩子上“政治课”了，",
       "en": "So stop lecturing your kid—",
-      "scene": "S1-28"
+      "scene": "S1-28",
+      "audioFile": "audio/scene-S1-28.mp3",
+      "audioStart": 0,
+      "audioEnd": 2560
     },
     {
       "zh": "陪他一起上“体育课”吧。",
       "en": "take “gym class” with him instead.",
-      "scene": "S1-28"
+      "scene": "S1-28",
+      "audioFile": "audio/scene-S1-28.mp3",
+      "audioStart": 2560,
+      "audioEnd": 4127
     },
     {
       "zh": "你想让他成为什么样的人，",
       "en": "Whoever you want him to be,",
-      "scene": "S1-28b"
+      "scene": "S1-28b",
+      "audioFile": "audio/scene-S1-28b.mp3",
+      "audioStart": 0,
+      "audioEnd": 2080
     },
     {
       "zh": "自己先身体力行，活成那个样子。",
       "en": "live it out yourself first.",
-      "scene": "S1-28b"
+      "scene": "S1-28b",
+      "audioFile": "audio/scene-S1-28b.mp3",
+      "audioStart": 2080,
+      "audioEnd": 5068
     },
     {
       "zh": "那张白纸还在，笔也还在你手里。",
       "en": "The blank sheet remains; the pen is still yours.",
-      "scene": "S1-29"
+      "scene": "S1-29",
+      "audioFile": "audio/scene-S1-29.mp3",
+      "audioStart": 0,
+      "audioEnd": 5280
     },
     {
       "zh": "从今晚陪他流的第一身汗开始，重新画。",
       "en": "Start redrawing tonight—with the first sweat you share.",
-      "scene": "S1-29"
+      "scene": "S1-29",
+      "audioFile": "audio/scene-S1-29.mp3",
+      "audioStart": 5280,
+      "audioEnd": 9639
     }
   ],
   "scenes": {

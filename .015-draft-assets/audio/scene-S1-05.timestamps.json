@@ -1,0 +1,155 @@
+{
+  "scene": "S1-05",
+  "text": "老话难听，可句句在理——上梁不正下梁歪。",
+  "words": [
+    {
+      "text": "老",
+      "begin_index": 0,
+      "end_index": 1,
+      "begin_time": 80,
+      "end_time": 240
+    },
+    {
+      "text": "话",
+      "begin_index": 1,
+      "end_index": 2,
+      "begin_time": 320,
+      "end_time": 400
+    },
+    {
+      "text": "难",
+      "begin_index": 2,
+      "end_index": 3,
+      "begin_time": 480,
+      "end_time": 640
+    },
+    {
+      "text": "听",
+      "begin_index": 3,
+      "end_index": 4,
+      "begin_time": 640,
+      "end_time": 800
+    },
+    {
+      "text": "，",
+      "begin_index": 4,
+      "end_index": 5,
+      "begin_time": 800,
+      "end_time": 960
+    },
+    {
+      "text": "可",
+      "begin_index": 5,
+      "end_index": 6,
+      "begin_time": 960,
+      "end_time": 1360
+    },
+    {
+      "text": "句",
+      "begin_index": 6,
+      "end_index": 7,
+      "begin_time": 1440,
+      "end_time": 1600
+    },
+    {
+      "text": "句",
+      "begin_index": 7,
+      "end_index": 8,
+      "begin_time": 1680,
+      "end_time": 1760
+    },
+    {
+      "text": "在",
+      "begin_index": 8,
+      "end_index": 9,
+      "begin_time": 1760,
+      "end_time": 1920
+    },
+    {
+      "text": "理",
+      "begin_index": 9,
+      "end_index": 10,
+      "begin_time": 2000,
+      "end_time": 2160
+    },
+    {
+      "text": "——",
+      "begin_index": 10,
+      "end_index": 11,
+      "begin_time": 2160,
+      "end_time": 2240
+    },
+    {
+      "text": "上",
+      "begin_index": 11,
+      "end_index": 12,
+      "begin_time": 4000,
+      "end_time": 5600
+    },
+    {
+      "text": "梁",
+      "begin_index": 12,
+      "end_index": 13,
+      "begin_time": 5680,
+      "end_time": 5840
+    },
+    {
+      "text": "不",
+      "begin_index": 13,
+      "end_index": 14,
+      "begin_time": 5840,
+      "end_time": 6000
+    },
+    {
+      "text": "正",
+      "begin_index": 14,
+      "end_index": 15,
+      "begin_time": 6000,
+      "end_time": 6160
+    },
+    {
+      "text": "下",
+      "begin_index": 15,
+      "end_index": 16,
+      "begin_time": 6160,
+      "end_time": 6320
+    },
+    {
+      "text": "梁",
+      "begin_index": 16,
+      "end_index": 17,
+      "begin_time": 6400,
+      "end_time": 6480
+    },
+    {
+      "text": "歪",
+      "begin_index": 17,
+      "end_index": 18,
+      "begin_time": 6480,
+      "end_time": 6640
+    },
+    {
+      "text": "。",
+      "begin_index": 18,
+      "end_index": 19,
+      "begin_time": 6720,
+      "end_time": 7040
+    }
+  ],
+  "perBeat": [
+    {
+      "beat": 15,
+      "audioStart": 0,
+      "audioEnd": 5680,
+      "chars": 12,
+      "wordsFound": 12
+    },
+    {
+      "beat": 16,
+      "audioStart": 5680,
+      "audioEnd": 7158,
+      "chars": 8,
+      "wordsFound": 7
+    }
+  ]
+}
