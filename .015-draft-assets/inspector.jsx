@@ -404,23 +404,29 @@
       else EM.apply({ at: Object.assign({}, m.at || {}, { match: matchVal }) });
     }
 
+    // 在面板里重放一次选中 overlay 的入场动效做预览。
+    // apply 内部可能 renderSceneEdit, 等一帧再 preview, 确保新 el 就位。
+    function replayMotion() {
+      if (selected && EM.previewMotion) {
+        requestAnimationFrame(() => EM.previewMotion(selected.sceneId, selected.index));
+      }
+    }
+
     function patchMotion(part) {
       const next = Object.assign({}, motion, part);
       // enter 切到非 fly-in 时清掉 from，避免冗余字段
       if ('enter' in part && part.enter !== 'fly-in') delete next.from;
       EM.apply({ motion: next });
       // 改了入场动效就在面板里立刻预览一次, 让用户能看到效果
-      if (selected && EM.previewMotion) {
-        // apply 内部可能 renderSceneEdit, 等一帧再 preview, 确保新 el 就位
-        requestAnimationFrame(() => EM.previewMotion(selected.sceneId, selected.index));
-      }
+      replayMotion();
     }
 
     return (
       <React.Fragment>
         <TweakSection label={`Overlay #${selected.index}`}>
           <TweakText label="文本" value={m.text || ''}
-            onChange={(v) => EM.apply({ text: v })} />
+            onChange={(v) => EM.apply({ text: v })}
+            onBlur={() => replayMotion()} />
           <TweakNumber label="x %" value={pos.x} min={0} max={100} step={0.5}
             onChange={(v) => EM.apply({ pos: { x: round1(v), y: pos.y } })} />
           <TweakNumber label="y %" value={pos.y} min={0} max={100} step={0.5}

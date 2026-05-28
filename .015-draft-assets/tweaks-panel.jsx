@@ -442,11 +442,12 @@ function TweakSelect({ label, value, options, onChange }) {
   );
 }
 
-function TweakText({ label, value, placeholder, onChange }) {
+function TweakText({ label, value, placeholder, onChange, onBlur }) {
   return (
     <TweakRow label={label}>
       <input className="twk-field" type="text" value={value} placeholder={placeholder}
-             onChange={(e) => onChange(e.target.value)} />
+             onChange={(e) => onChange(e.target.value)}
+             onBlur={onBlur ? (e) => onBlur(e.target.value) : undefined} />
     </TweakRow>
   );
 }

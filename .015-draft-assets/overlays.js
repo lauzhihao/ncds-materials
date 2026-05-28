@@ -206,6 +206,7 @@
       if (!edit && o.at && o.at.match) {
         el.dataset.atMatch = String(o.at.match);
         el.dataset.atDelay = String(o.at.delay || 0);
+        el.dataset.motionDur = String((o.motion && o.motion.duration) || 700);
         el.dataset.pendingMotion = motionClass;
         el.classList.remove(motionClass);
         if (o.countdown && o.countdown.from != null) {
@@ -238,10 +239,17 @@
       // 自动 delay：(关键词起始位置 / 字符总数) × beat 时长 - lead（提前量，看着像同步起飞）
       // 再叠加显式 at.delay 做微调
       const explicit = Number(el.dataset.atDelay || 0);
-      const lead = 200;
       let autoDelay = 0;
       if (beatMs && beat.zh.length > 0) {
+        // lead：提前约「一个字」的时长起飞（floor 200ms），看着像读到关键词就同步飞入
+        const lead = Math.max(200, beatMs / beat.zh.length);
         autoDelay = Math.max(0, (kpos / beat.zh.length) * beatMs - lead);
+        // 关键词落在句尾时，按比例算出的 delay 会贴着 beat 结束，入场动效还没放完
+        // 就切场 → overlay「没机会出现」。封顶：保证动效跑完后至少留 dwell 停留，
+        // 再不济也压在本 beat 内播完。
+        const animDur = Number(el.dataset.motionDur || 700);
+        const cap = Math.max(0, beatMs - animDur - 550);
+        if (autoDelay > cap) autoDelay = cap;
       }
       const delay = Math.round(autoDelay + explicit);
       const motionClass = el.dataset.pendingMotion;
