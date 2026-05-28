@@ -9,6 +9,7 @@ package-lock.json
 .012-not-fooled-assets/output/
 .013-draft-assets/output/
 .014-draft-assets/output/
+.015-draft-assets/output/
 
 # 字体原材料：从 ziti666.cn 下载的 zip + 解压 TTF，本地保留作 subset 来源；
 # 只把按 010 字符集 subset 后的 woff2 (fonts/<slug>/Weight.woff2) 进 git
