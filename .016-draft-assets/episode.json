@@ -1,15 +1,15 @@
 {
   "__schema__": "ncds-paper-card-talk/v1",
-  "__doc__": "暖纸卡片口播视频 per-episode 元数据，唯一真理源。HTML/JS/TTS/图生图全部从这个文件读取；引擎层文件 (player.js / overlays.js / tweaks*.jsx / styles.css / HTML 骨架) 不含任何 per-episode 字段。",
+  "__doc__": "016 主题改为“为什么说家和万事兴？”。内容围绕抖音口播结构组织：开头钩子 -> 传统典故 -> 科学解释 -> 玄学解释 -> 中年夫妻处境 -> 扣题收束。",
   "meta": {
     "slug": "016-draft",
-    "title": "如何终结大型双标现场？",
+    "title": "为什么说家和万事兴？",
     "disclaimer": "观点仅供参考　无不良引导",
     "titleOptions": [
-      "孩子是张白纸，执笔的人是你",
-      "上梁不正，下梁歪",
-      "你刷手机的样子，就是他十年后的样子",
-      "孩子用我的卡偷充一万多，错的却是我"
+      "为什么说家和万事兴？",
+      "一个家最好的风水，是夫妻和睦",
+      "上有老下有小，和气才是最大的本事",
+      "中年夫妻再苦，也别把家过成战场"
     ]
   },
   "fonts": [
@@ -30,266 +30,7 @@
       "display": "swap"
     },
     {
-      "family": "Mao Zedong",
-      "src": "/fonts/mao-zedong/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "Fengsao",
-      "src": "/fonts/fengsao/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "Huangyou",
-      "src": "/fonts/huangyou/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "Huanxi Shouzha",
-      "src": "/fonts/huanxi-shouzha/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "PP Fangfang",
-      "src": "/fonts/pp-fangfang/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "PP Katong",
-      "src": "/fonts/pp-katong/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "PP Keai",
-      "src": "/fonts/pp-keai/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "PP Naila",
-      "src": "/fonts/pp-naila/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "PP Riji",
-      "src": "/fonts/pp-riji/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "PP Shouxie",
-      "src": "/fonts/pp-shouxie/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "PP Xiaogou",
-      "src": "/fonts/pp-xiaogou/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "XK Naila",
-      "src": "/fonts/xk-naila/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Dundun",
-      "src": "/fonts/zqk-dundun/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Guaiguai",
-      "src": "/fonts/zqk-guaiguai/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Jingsu",
-      "src": "/fonts/zqk-jingsu/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Jingya",
-      "src": "/fonts/zqk-jingya/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Keai",
-      "src": "/fonts/zqk-keai/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Lengku",
-      "src": "/fonts/zqk-lengku/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Naihei",
-      "src": "/fonts/zqk-naihei/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Nainai",
-      "src": "/fonts/zqk-nainai/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Qiaoke",
-      "src": "/fonts/zqk-qiaoke/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Shouhui",
-      "src": "/fonts/zqk-shouhui/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Shuaihei",
-      "src": "/fonts/zqk-shuaihei/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Shuma",
-      "src": "/fonts/zqk-shuma/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Yayun",
-      "src": "/fonts/zqk-yayun/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Youhuabi",
-      "src": "/fonts/zqk-youhuabi/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Zhiya",
-      "src": "/fonts/zqk-zhiya/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZQK Ziyou",
-      "src": "/fonts/zqk-ziyou/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZS Cukai",
-      "src": "/fonts/zs-cukai/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZS Moran",
-      "src": "/fonts/zs-moran/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZS Qingkai",
-      "src": "/fonts/zs-qingkai/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
-      "family": "ZS Shiguang",
-      "src": "/fonts/zs-shiguang/Regular.woff2",
-      "weight": 400,
-      "style": "normal",
-      "format": "woff2",
-      "display": "swap"
-    },
-    {
       "family": "Noto Sans SC"
-    },
-    {
-      "family": "Noto Serif SC"
     },
     {
       "family": "Inter"
@@ -298,7 +39,7 @@
   "visual": {
     "palette": "paper",
     "kenBurns": true,
-    "showSubtitleEn": true,
+    "showSubtitleEn": false,
     "capZhSize": 60,
     "capEnSize": 40
   },
@@ -308,7 +49,7 @@
   },
   "audio": {
     "tts": {
-      "__doc__": "tts_gen.py 调 DashScope CosyVoice 合成音频时使用的参数",
+      "__doc__": "如需重生 TTS，可继续使用现有 tts_gen.py 配置",
       "engine": "dashscope-cosyvoice",
       "model": "cosyvoice-v3-flash",
       "voice": "longtian_v3",
@@ -318,7 +59,7 @@
     }
   },
   "image": {
-    "__doc__": "pic_gen.py 调 gpt-image-2 的参数：noTextHint 会追加到每条 scene.prompt 末尾，用作通用负面提示",
+    "__doc__": "如需重生图片，可继续使用现有 pic_gen.py 配置",
     "engine": "gpt-image-2",
     "size": "1536x1024",
     "quality": "auto",
@@ -326,1069 +67,234 @@
   },
   "beats": [
     {
-      "zh": "孩子十岁那年，背着我们用我的信用卡，",
-      "en": "When my kid was ten, he used my credit card behind our backs,",
-      "scene": "S1-01",
-      "audioFile": "audio/scene-S1-01.mp3",
-      "audioStart": 0,
-      "audioEnd": 3040
-    },
-    {
-      "zh": "在某手游里偷偷充了一万多。",
-      "en": "and secretly ran up over ten grand in some mobile game.",
-      "scene": "S1-01",
-      "audioFile": "audio/scene-S1-01.mp3",
-      "audioStart": 3040,
-      "audioEnd": 5440
-    },
-    {
-      "zh": "直到还款日看到账单才被我们发现，",
-      "en": "We only caught it on the due date, when the statement showed up—",
-      "scene": "S1-01",
-      "audioFile": "audio/scene-S1-01.mp3",
-      "audioStart": 5440,
-      "audioEnd": 8516
-    },
-    {
-      "zh": "当场气炸，直接就是一顿“男女混双”。",
-      "en": "and we both let him have it.",
-      "scene": "S1-01b",
-      "audioFile": "audio/scene-S1-01b.mp3",
-      "audioStart": 0,
-      "audioEnd": 4127
-    },
-    {
-      "zh": "可冷静下来，我问了自己一句：",
-      "en": "But once I calmed down, I asked myself:",
-      "scene": "S1-02",
-      "audioFile": "audio/scene-S1-02.mp3",
-      "audioStart": 0,
-      "audioEnd": 2880
-    },
-    {
-      "zh": "小小年纪就氪手游，这到底是怎么回事？",
-      "en": "whaling on mobile games this young—how did this happen?",
-      "scene": "S1-02",
-      "audioFile": "audio/scene-S1-02.mp3",
-      "audioStart": 2880,
-      "audioEnd": 6269
-    },
-    {
-      "zh": "原来，是那几年我经常氪原神，",
-      "en": "Turns out, those were the years I kept whaling on gacha,",
-      "scene": "S1-03",
-      "audioFile": "audio/scene-S1-03.mp3",
-      "audioStart": 0,
-      "audioEnd": 2960
-    },
-    {
-      "zh": "一充就是几百块；",
-      "en": "a few hundred yuan every time I topped up;",
-      "scene": "S1-03",
-      "audioFile": "audio/scene-S1-03.mp3",
-      "audioStart": 2960,
-      "audioEnd": 4480
-    },
-    {
-      "zh": "要不然，就刷抖音看小姐姐跳舞。",
-      "en": "or else, scrolling girls dancing on the feed.",
-      "scene": "S1-03",
-      "audioFile": "audio/scene-S1-03.mp3",
-      "audioStart": 4480,
-      "audioEnd": 7784
-    },
-    {
-      "zh": "他妈妈也没闲着，",
-      "en": "His mom was no better—",
-      "scene": "S1-03b",
-      "audioFile": "audio/scene-S1-03b.mp3",
-      "audioStart": 0,
-      "audioEnd": 1520
-    },
-    {
-      "zh": "不是追剧，就是抱着手机刷购物 App。",
-      "en": "binging dramas or scrolling shopping apps.",
-      "scene": "S1-03b",
-      "audioFile": "audio/scene-S1-03b.mp3",
-      "audioStart": 1520,
-      "audioEnd": 4911
-    },
-    {
-      "zh": "一家三口坐一块儿，",
-      "en": "Three of us in one room,",
-      "scene": "S1-04",
-      "audioFile": "audio/scene-S1-04.mp3",
-      "audioStart": 0,
-      "audioEnd": 1520
-    },
-    {
-      "zh": "三块屏幕三道光，谁也不看谁。",
-      "en": "three glowing screens, no one looking at anyone.",
-      "scene": "S1-04",
-      "audioFile": "audio/scene-S1-04.mp3",
-      "audioStart": 1520,
-      "audioEnd": 4441
+      "zh": "你有没有发现，有的家明明不穷，日子却越过越乱？",
+      "scene": "S2-01"
     },
     {
-      "zh": "孩子那一万多，",
-      "en": "His ten grand—",
-      "scene": "S1-04b",
-      "audioFile": "audio/scene-S1-04b.mp3",
-      "audioStart": 0,
-      "audioEnd": 1280
+      "zh": "有的家条件一般，反而越过越顺？",
+      "scene": "S2-01"
     },
     {
-      "zh": "不过是把我充的那几千，照着描了一遍。",
-      "en": "just my few thousand, traced over again.",
-      "scene": "S1-04b",
-      "audioFile": "audio/scene-S1-04b.mp3",
-      "audioStart": 1280,
-      "audioEnd": 4833
+      "zh": "差别往往不是钱，而是这五个字：家和万事兴。",
+      "scene": "S2-01"
     },
     {
-      "zh": "老话难听，可句句在理——",
-      "en": "An old saying, harsh but true:",
-      "scene": "S1-05",
-      "audioFile": "audio/scene-S1-05.mp3",
-      "audioStart": 0,
-      "audioEnd": 5680
+      "zh": "很多人把这话当鸡汤，",
+      "scene": "S2-02"
     },
     {
-      "zh": "上梁不正下梁歪。",
-      "en": "a crooked top beam bends the one below.",
-      "scene": "S1-05",
-      "audioFile": "audio/scene-S1-05.mp3",
-      "audioStart": 5680,
-      "audioEnd": 7158
+      "zh": "可人到中年，上有老下有小你就懂了，",
+      "scene": "S2-02"
     },
     {
-      "zh": "你想要个什么样的孩子，",
-      "en": "Want to know what your child will be?",
-      "scene": "S1-05b",
-      "audioFile": "audio/scene-S1-05b.mp3",
-      "audioStart": 0,
-      "audioEnd": 1840
+      "zh": "一个家最大的本事，就是夫妻还能好好说话。",
+      "scene": "S2-02"
     },
     {
-      "zh": "先看看自己立成了什么样。",
-      "en": "Look at what you've become.",
-      "scene": "S1-05b",
-      "audioFile": "audio/scene-S1-05b.mp3",
-      "audioStart": 1840,
-      "audioEnd": 4284
+      "zh": "古人为什么把“和”看得这么重？",
+      "scene": "S2-03"
     },
     {
-      "zh": "你是不是也这样：",
-      "en": "Sound familiar?",
-      "scene": "S1-06",
-      "audioFile": "audio/scene-S1-06.mp3",
-      "audioStart": 0,
-      "audioEnd": 1680
+      "zh": "唐代张公艺九世同堂，皇帝问秘诀，",
+      "scene": "S2-03"
     },
     {
-      "zh": "一边吼他“别玩手机好好学”，",
-      "en": "Yelling “put the phone down and study,”",
-      "scene": "S1-06",
-      "audioFile": "audio/scene-S1-06.mp3",
-      "audioStart": 1680,
-      "audioEnd": 4480
+      "zh": "他没有长篇大论，只写了一个字：忍。",
+      "scene": "S2-03"
     },
     {
-      "zh": "一边自己刷到半夜？",
-      "en": "while you scroll till midnight?",
-      "scene": "S1-06",
-      "audioFile": "audio/scene-S1-06.mp3",
-      "audioStart": 4480,
-      "audioEnd": 6922
+      "zh": "但这个忍，不是委曲求全，不是把气憋进身体，",
+      "scene": "S2-04"
     },
     {
-      "zh": "这叫说一套做一套，妥妥的大型双标现场。",
-      "en": "Say one thing, do another—a textbook double standard.",
-      "scene": "S1-06b",
-      "audioFile": "audio/scene-S1-06b.mp3",
-      "audioStart": 0,
-      "audioEnd": 4400
+      "zh": "而是火气上头时先收一收，",
+      "scene": "S2-04"
     },
     {
-      "zh": "孩子最先看穿的，就是这个。",
-      "en": "the first thing a kid sees through.",
-      "scene": "S1-06b",
-      "audioFile": "audio/scene-S1-06b.mp3",
-      "audioStart": 4400,
-      "audioEnd": 6766
+      "zh": "给彼此留体面，给全家留退路。",
+      "scene": "S2-04"
     },
     {
-      "zh": "孩子不是听你说什么长大的，",
-      "en": "Kids don't grow up on what you say,",
-      "scene": "S1-07",
-      "audioFile": "audio/scene-S1-07.mp3",
-      "audioStart": 0,
-      "audioEnd": 2240
+      "zh": "因为中年夫妻一旦失和，",
+      "scene": "S2-05"
     },
     {
-      "zh": "是看你做什么长大的。",
-      "en": "they grow up on what you do.",
-      "scene": "S1-07",
-      "audioFile": "audio/scene-S1-07.mp3",
-      "audioStart": 2240,
-      "audioEnd": 4127
+      "zh": "上面是老人提心吊胆，",
+      "scene": "S2-05"
     },
     {
-      "zh": "你天天耳濡目染塞给他的是游戏、是短视频，",
-      "en": "You steep him in games and short videos every day,",
-      "scene": "S1-07b",
-      "audioFile": "audio/scene-S1-07b.mp3",
-      "audioStart": 0,
-      "audioEnd": 3920
+      "zh": "下面是孩子耳濡目染，家里很快就鸡飞狗跳。",
+      "scene": "S2-05"
     },
     {
-      "zh": "却想让他变成人中龙凤。",
-      "en": "yet want him to grow into someone extraordinary.",
-      "scene": "S1-07b",
-      "audioFile": "audio/scene-S1-07b.mp3",
-      "audioStart": 3920,
-      "audioEnd": 6348
+      "zh": "你以为只是吵一架，",
+      "scene": "S2-06"
     },
     {
-      "zh": "尤其是男孩子——",
-      "en": "A boy, especially—",
-      "scene": "S1-08",
-      "audioFile": "audio/scene-S1-08.mp3",
-      "audioStart": 0,
-      "audioEnd": 1600
+      "zh": "其实老人担心身体，孩子担心安全感，",
+      "scene": "S2-06"
     },
     {
-      "zh": "他就是父亲的小时候。",
-      "en": "he is his father's childhood lived again.",
-      "scene": "S1-08",
-      "audioFile": "audio/scene-S1-08.mp3",
-      "audioStart": 1600,
-      "audioEnd": 3474
+      "zh": "连一顿饭、一场觉、一次回家都变得战战兢兢。",
+      "scene": "S2-06"
     },
     {
-      "zh": "当爹的今天活成什么样，",
-      "en": "However the father lives today,",
-      "scene": "S1-08b",
-      "audioFile": "audio/scene-S1-08b.mp3",
-      "audioStart": 0,
-      "audioEnd": 3760
+      "zh": "科学上早就解释过，",
+      "scene": "S2-07"
     },
     {
-      "zh": "儿子明天多半就长成什么样。",
-      "en": "the son likely becomes tomorrow.",
-      "scene": "S1-08b",
-      "audioFile": "audio/scene-S1-08b.mp3",
-      "audioStart": 3760,
-      "audioEnd": 6191
+      "zh": "家庭里的情绪会传染，一个人黑脸，全屋神经都会绷紧，",
+      "scene": "S2-07"
     },
     {
-      "zh": "我知道，不少家长这会儿在想：",
-      "en": "I know what some parents are thinking:",
-      "scene": "S1-09",
-      "audioFile": "audio/scene-S1-09.mp3",
-      "audioStart": 0,
-      "audioEnd": 3200
+      "zh": "长期处在这种环境里，孩子更容易焦虑、退缩，也更容易暴躁、顶嘴。",
+      "scene": "S2-07"
     },
     {
-      "zh": "那我给他买台学习机？",
-      "en": "buy him a study tablet?",
-      "scene": "S1-09",
-      "audioFile": "audio/scene-S1-09.mp3",
-      "audioStart": 3200,
-      "audioEnd": 6080
+      "zh": "更关键的是，孩子学的从来不是你说什么，",
+      "scene": "S2-08"
     },
     {
-      "zh": "报个自律班？换个能管控的手机？",
-      "en": "A discipline class? A locked-down phone?",
-      "scene": "S1-09",
-      "audioFile": "audio/scene-S1-09.mp3",
-      "audioStart": 6080,
-      "audioEnd": 10109
+      "zh": "而是你怎么对伴侣，怎么对老人，怎么处理冲突，",
+      "scene": "S2-08"
     },
     {
-      "zh": "我劝你把钱包收起来。",
-      "en": "Put your wallet away.",
-      "scene": "S1-10",
-      "audioFile": "audio/scene-S1-10.mp3",
-      "audioStart": 0,
-      "audioEnd": 1760
+      "zh": "这就叫上行下效，也是最深的耳濡目染。",
+      "scene": "S2-08"
     },
     {
-      "zh": "这叫舍本逐末。",
-      "en": "That's chasing the leaf, missing the root.",
-      "scene": "S1-10",
-      "audioFile": "audio/scene-S1-10.mp3",
-      "audioStart": 1760,
-      "audioEnd": 3631
+      "zh": "从身体反应看，夫妻天天冷战争吵，",
+      "scene": "S2-09"
     },
     {
-      "zh": "一台学习机，",
-      "en": "No tablet",
-      "scene": "S1-10b",
-      "audioFile": "audio/scene-S1-10b.mp3",
-      "audioStart": 0,
-      "audioEnd": 1200
+      "zh": "睡眠会乱，火气会大，长期紧张时皮质醇也会居高不下，",
+      "scene": "S2-09"
     },
     {
-      "zh": "管不住一个天天看着爸妈刷手机的孩子。",
-      "en": "can rein in a kid who watches you scroll all day.",
-      "scene": "S1-10b",
-      "audioFile": "audio/scene-S1-10b.mp3",
-      "audioStart": 1200,
-      "audioEnd": 5146
+      "zh": "人一累，判断就容易失准，话越来越硬，事越办越拧。",
+      "scene": "S2-09"
     },
     {
-      "zh": "记住一句话：",
-      "en": "Remember this:",
-      "scene": "S1-11",
-      "audioFile": "audio/scene-S1-11.mp3",
-      "audioStart": 0,
-      "audioEnd": 2480
+      "zh": "所以很多家庭不是败给贫穷，",
+      "scene": "S2-10"
     },
     {
-      "zh": "孩子是一张白纸，执笔的人是你。",
-      "en": "the child is a blank sheet; you hold the pen.",
-      "scene": "S1-11",
-      "audioFile": "audio/scene-S1-11.mp3",
-      "audioStart": 2480,
-      "audioEnd": 6480
+      "zh": "是败给内耗，",
+      "scene": "S2-10"
     },
     {
-      "zh": "你画成什么样，他就长成什么样。",
-      "en": "Whatever you draw is what he becomes.",
-      "scene": "S1-11",
-      "audioFile": "audio/scene-S1-11.mp3",
-      "audioStart": 6480,
-      "audioEnd": 9953
+      "zh": "一边拼命挣钱，一边互相伤人，一边把福气往门外推。",
+      "scene": "S2-10"
     },
     {
-      "zh": "所以要改的，从来不是那张纸。",
-      "en": "So what needs fixing was never the paper.",
-      "scene": "S1-12",
-      "audioFile": "audio/scene-S1-12.mp3",
-      "audioStart": 0,
-      "audioEnd": 2880
+      "zh": "玄学里也讲，和气聚财，戾气散福，",
+      "scene": "S2-11"
     },
     {
-      "zh": "是握笔的那只手——是你自己。",
-      "en": "It's the hand that holds the pen—it's you.",
-      "scene": "S1-12",
-      "audioFile": "audio/scene-S1-12.mp3",
-      "audioStart": 2880,
-      "audioEnd": 5564
+      "zh": "一个家天天摔门拍桌，再好的风水也压不住怨气，",
+      "scene": "S2-11"
     },
     {
-      "zh": "别整那些复杂的。",
-      "en": "Skip the complicated stuff.",
-      "scene": "S1-13a",
-      "audioFile": "audio/scene-S1-13a.mp3",
-      "audioStart": 0,
-      "audioEnd": 1600
+      "zh": "一个家常年好声好气，粗茶淡饭也能养出福报。",
+      "scene": "S2-11"
     },
     {
-      "zh": "从今天起，只改一件事——",
-      "en": "From today, change just one thing—",
-      "scene": "S1-13a",
-      "audioFile": "audio/scene-S1-13a.mp3",
-      "audioStart": 1600,
-      "audioEnd": 4023
+      "zh": "别觉得家和只是面子工程，",
+      "scene": "S2-12"
     },
     {
-      "zh": "孩子放学回家，",
-      "en": "When he gets home,",
-      "scene": "S1-13",
-      "audioFile": "audio/scene-S1-13.mp3",
-      "audioStart": 0,
-      "audioEnd": 1280
+      "zh": "对老人来说，那是安心；对孩子来说，那是底气；",
+      "scene": "S2-12"
     },
     {
-      "zh": "你就抓紧放下手机，离开电脑。",
-      "en": "drop the phone and step away from the screen, right away.",
-      "scene": "S1-13",
-      "audioFile": "audio/scene-S1-13.mp3",
-      "audioStart": 1280,
-      "audioEnd": 4206
+      "zh": "对夫妻自己来说，那是熬过中年的续命能量。",
+      "scene": "S2-12"
     },
     {
-      "zh": "然后陪他一起，",
-      "en": "Then, side by side,",
-      "scene": "S1-14a",
-      "audioFile": "audio/scene-S1-14a.mp3",
-      "audioStart": 0,
-      "audioEnd": 1360
+      "zh": "尤其是中年夫妻，白天在外面扛压力，",
+      "scene": "S2-13"
     },
     {
-      "zh": "做点不花钱的事：",
-      "en": "do something that costs nothing:",
-      "scene": "S1-14a",
-      "audioFile": "audio/scene-S1-14a.mp3",
-      "audioStart": 1360,
-      "audioEnd": 2926
+      "zh": "晚上回家如果还是针尖对麦芒，",
+      "scene": "S2-13"
     },
     {
-      "zh": "一起做平板支撑，一起练引体向上，",
-      "en": "planks together, pull-ups together,",
-      "scene": "S1-14",
-      "audioFile": "audio/scene-S1-14.mp3",
-      "audioStart": 0,
-      "audioEnd": 3200
+      "zh": "人会越来越累，家也会越来越冷。",
+      "scene": "S2-13"
     },
     {
-      "zh": "一起做几个俯卧撑。",
-      "en": "a few push-ups together.",
-      "scene": "S1-14",
-      "audioFile": "audio/scene-S1-14.mp3",
-      "audioStart": 3200,
-      "audioEnd": 5486
+      "zh": "真正的家和，不是谁永远赢，",
+      "scene": "S2-14"
     },
     {
-      "zh": "不用买装备，不用报班。",
-      "en": "No gear, no classes.",
-      "scene": "S1-15",
-      "audioFile": "audio/scene-S1-15.mp3",
-      "audioStart": 0,
-      "audioEnd": 2160
+      "zh": "而是遇事先对事不对人，先商量不翻旧账，",
+      "scene": "S2-14"
     },
     {
-      "zh": "家里那块地板、小区那根单杠，就够了。",
-      "en": "The floor at home, a bar downstairs—enough.",
-      "scene": "S1-15",
-      "audioFile": "audio/scene-S1-15.mp3",
-      "audioStart": 2160,
-      "audioEnd": 5760
+      "zh": "先顾全大局，再解决问题。",
+      "scene": "S2-14"
     },
     {
-      "zh": "越简单的事，越容易持之以恒。",
-      "en": "The simpler it is, the easier to keep up.",
-      "scene": "S1-15",
-      "audioFile": "audio/scene-S1-15.mp3",
-      "audioStart": 5760,
-      "audioEnd": 8516
+      "zh": "该让的时候让一步，叫相敬如宾，",
+      "scene": "S2-15"
     },
     {
-      "zh": "你可能会问：为啥非得是流汗的事？",
-      "en": "You might ask: why must it be sweat?",
-      "scene": "S1-16",
-      "audioFile": "audio/scene-S1-16.mp3",
-      "audioStart": 0,
-      "audioEnd": 3120
+      "zh": "该暖的时候暖一句，叫同心同德，",
+      "scene": "S2-15"
     },
     {
-      "zh": "打把游戏、买点东西，不也开心吗？",
-      "en": "Isn't a game or some shopping fun too?",
-      "scene": "S1-16",
-      "audioFile": "audio/scene-S1-16.mp3",
-      "audioStart": 3120,
-      "audioEnd": 6426
+      "zh": "夫妻和睦，老人安稳，孩子向阳，这个家才会越来越旺。",
+      "scene": "S2-15"
     },
     {
-      "zh": "因为刷手机、买买买给你的，",
-      "en": "Because scrolling and shopping give you",
-      "scene": "S1-17",
-      "audioFile": "audio/scene-S1-17.mp3",
-      "audioStart": 0,
-      "audioEnd": 2640
+      "zh": "所以为什么说家和万事兴？",
+      "scene": "S2-16"
     },
     {
-      "zh": "是转瞬即逝的多巴胺——",
-      "en": "dopamine—gone in a flash—",
-      "scene": "S1-17",
-      "audioFile": "audio/scene-S1-17.mp3",
-      "audioStart": 2640,
-      "audioEnd": 4480
+      "zh": "因为和，不只是气氛，它是一个家的秩序、情绪、运气和前程，",
+      "scene": "S2-16"
     },
     {
-      "zh": "来得快，去得也快，越刺激越空。",
-      "en": "quick to come, quick to go, emptier after.",
-      "scene": "S1-17",
-      "audioFile": "audio/scene-S1-17.mp3",
-      "audioStart": 4480,
-      "audioEnd": 8438
+      "zh": "房子再大，吵出来的都像牢笼；饭菜再淡，笑着吃下去才是人间烟火。",
+      "scene": "S2-16"
     },
     {
-      "zh": "而陪他咬牙撑完最后一组，",
-      "en": "But grinding out that last set with him,",
-      "scene": "S1-18",
-      "audioFile": "audio/scene-S1-18.mp3",
-      "audioStart": 0,
-      "audioEnd": 2320
+      "zh": "家和，不一定让你立刻大富大贵，",
+      "scene": "S2-17"
     },
     {
-      "zh": "看他从撑不住，到能坚持三分钟，",
-      "en": "watching him go from barely holding on to a full three minutes,",
-      "scene": "S1-18",
-      "audioFile": "audio/scene-S1-18.mp3",
-      "audioStart": 2320,
-      "audioEnd": 5642
+      "zh": "但一定能让你少走弯路，少生闲气，少败福报，",
+      "scene": "S2-17"
     },
     {
-      "zh": "给的是内啡肽——",
-      "en": "that's endorphins—",
-      "scene": "S1-18b",
-      "audioFile": "audio/scene-S1-18b.mp3",
-      "audioStart": 0,
-      "audioEnd": 1600
-    },
-    {
-      "zh": "来得慢，却细水长流，扎扎实实。",
-      "en": "slow to arrive, but steady and lasting.",
-      "scene": "S1-18b",
-      "audioFile": "audio/scene-S1-18b.mp3",
-      "audioStart": 1600,
-      "audioEnd": 5303
-    },
-    {
-      "zh": "我们想给孩子的，从来不是那一下的爽，",
-      "en": "What we want to give was never that quick high,",
-      "scene": "S1-19",
-      "audioFile": "audio/scene-S1-19.mp3",
-      "audioStart": 0,
-      "audioEnd": 3600
-    },
-    {
-      "zh": "是能撑他走一辈子的那股长劲儿。",
-      "en": "but strength to carry him a lifetime.",
-      "scene": "S1-19",
-      "audioFile": "audio/scene-S1-19.mp3",
-      "audioStart": 3600,
-      "audioEnd": 6583
-    },
-    {
-      "zh": "一起流过汗的人，话才打得开。",
-      "en": "People who've sweated together open up.",
-      "scene": "S1-20",
-      "audioFile": "audio/scene-S1-20.mp3",
-      "audioStart": 0,
-      "audioEnd": 2640
-    },
-    {
-      "zh": "练到瘫在地板上一起喘气的时候，",
-      "en": "Sprawled on the floor catching our breath,",
-      "scene": "S1-20",
-      "audioFile": "audio/scene-S1-20.mp3",
-      "audioStart": 2640,
-      "audioEnd": 5200
-    },
-    {
-      "zh": "那些平时憋着的心里话，反倒冒出来了。",
-      "en": "the things he'd bottled up finally came out.",
-      "scene": "S1-20",
-      "audioFile": "audio/scene-S1-20.mp3",
-      "audioStart": 5200,
-      "audioEnd": 8829
-    },
-    {
-      "zh": "原本想顶的嘴、想吵的架，",
-      "en": "The back-talk, the brewing fight—",
-      "scene": "S1-21",
-      "audioFile": "audio/scene-S1-21.mp3",
-      "audioStart": 0,
-      "audioEnd": 2560
-    },
-    {
-      "zh": "撑完两组平板支撑，也就烟消云散了。",
-      "en": "two sets of planks and it melts away.",
-      "scene": "S1-21",
-      "audioFile": "audio/scene-S1-21.mp3",
-      "audioStart": 2560,
-      "audioEnd": 5956
-    },
-    {
-      "zh": "这种一块儿熬下来的成就感，",
-      "en": "The pride of pushing through together—",
-      "scene": "S1-22",
-      "audioFile": "audio/scene-S1-22.mp3",
-      "audioStart": 0,
-      "audioEnd": 2160
-    },
-    {
-      "zh": "是你花再多钱，也买不来的。",
-      "en": "and no amount of money could ever buy it.",
-      "scene": "S1-22",
-      "audioFile": "audio/scene-S1-22.mp3",
-      "audioStart": 2160,
-      "audioEnd": 4676
-    },
-    {
-      "zh": "别急。你刷了十年手机，",
-      "en": "Don't rush. You scrolled for ten years,",
-      "scene": "S1-23",
-      "audioFile": "audio/scene-S1-23.mp3",
-      "audioStart": 0,
-      "audioEnd": 2240
-    },
-    {
-      "zh": "他也跟着看了十年，",
-      "en": "he watched for ten,",
-      "scene": "S1-23",
-      "audioFile": "audio/scene-S1-23.mp3",
-      "audioStart": 2240,
-      "audioEnd": 4320
-    },
-    {
-      "zh": "不可能一礼拜就扭过来。",
-      "en": "a week won't undo it.",
-      "scene": "S1-23",
-      "audioFile": "audio/scene-S1-23.mp3",
-      "audioStart": 4320,
-      "audioEnd": 6034
-    },
-    {
-      "zh": "你先放下手机，先迈出那一步，",
-      "en": "Put your phone down, take that first step,",
-      "scene": "S1-24",
-      "audioFile": "audio/scene-S1-24.mp3",
-      "audioStart": 0,
-      "audioEnd": 2640
-    },
-    {
-      "zh": "他会慢慢跟上——",
-      "en": "and he'll slowly follow—",
-      "scene": "S1-24",
-      "audioFile": "audio/scene-S1-24.mp3",
-      "audioStart": 2640,
-      "audioEnd": 4960
-    },
-    {
-      "zh": "上行下效，坏毛病是会传染的。",
-      "en": "what you do above, he copies below—bad habits spread.",
-      "scene": "S1-24",
-      "audioFile": "audio/scene-S1-24.mp3",
-      "audioStart": 4960,
-      "audioEnd": 7706
-    },
-    {
-      "zh": "中间你一定会犯懒，",
-      "en": "You'll get lazy along the way,",
-      "scene": "S1-25a",
-      "audioFile": "audio/scene-S1-25a.mp3",
-      "audioStart": 0,
-      "audioEnd": 1600
-    },
-    {
-      "zh": "会想“就刷一会儿”。",
-      "en": "telling yourself “just a quick scroll.”",
-      "scene": "S1-25a",
-      "audioFile": "audio/scene-S1-25a.mp3",
-      "audioStart": 1600,
-      "audioEnd": 5799
-    },
-    {
-      "zh": "记住：你低头的样子，",
-      "en": "Remember: the way you bow to the screen,",
-      "scene": "S1-25",
-      "audioFile": "audio/scene-S1-25.mp3",
-      "audioStart": 0,
-      "audioEnd": 1440
-    },
-    {
-      "zh": "他全看在眼里。",
-      "en": "he sees all of it.",
-      "scene": "S1-25",
-      "audioFile": "audio/scene-S1-25.mp3",
-      "audioStart": 1440,
-      "audioEnd": 2847
-    },
-    {
-      "zh": "你可以先成为家里那个，",
-      "en": "You can be the one in your family",
-      "scene": "S1-26",
-      "audioFile": "audio/scene-S1-26.mp3",
-      "audioStart": 0,
-      "audioEnd": 2160
-    },
-    {
-      "zh": "先放下手机的人。",
-      "en": "who puts the phone down first.",
-      "scene": "S1-26",
-      "audioFile": "audio/scene-S1-26.mp3",
-      "audioStart": 2160,
-      "audioEnd": 3788
-    },
-    {
-      "zh": "改变一个家，",
-      "en": "Changing a family",
-      "scene": "S1-27",
-      "audioFile": "audio/scene-S1-27.mp3",
-      "audioStart": 0,
-      "audioEnd": 1600
-    },
-    {
-      "zh": "从来可以从任何一个人开始。",
-      "en": "can always start with one person.",
-      "scene": "S1-27",
-      "audioFile": "audio/scene-S1-27.mp3",
-      "audioStart": 1600,
-      "audioEnd": 4127
-    },
-    {
-      "zh": "所以，别再给孩子上“政治课”了，",
-      "en": "So stop lecturing your kid—",
-      "scene": "S1-28",
-      "audioFile": "audio/scene-S1-28.mp3",
-      "audioStart": 0,
-      "audioEnd": 2560
-    },
-    {
-      "zh": "陪他一起上“体育课”吧。",
-      "en": "take “gym class” with him instead.",
-      "scene": "S1-28",
-      "audioFile": "audio/scene-S1-28.mp3",
-      "audioStart": 2560,
-      "audioEnd": 4127
-    },
-    {
-      "zh": "你想让他成为什么样的人，",
-      "en": "Whoever you want him to be,",
-      "scene": "S1-28b",
-      "audioFile": "audio/scene-S1-28b.mp3",
-      "audioStart": 0,
-      "audioEnd": 2080
-    },
-    {
-      "zh": "自己先身体力行，活成那个样子。",
-      "en": "live it out yourself first.",
-      "scene": "S1-28b",
-      "audioFile": "audio/scene-S1-28b.mp3",
-      "audioStart": 2080,
-      "audioEnd": 5068
-    },
-    {
-      "zh": "那张白纸还在，笔也还在你手里。",
-      "en": "The blank sheet remains; the pen is still yours.",
-      "scene": "S1-29",
-      "audioFile": "audio/scene-S1-29.mp3",
-      "audioStart": 0,
-      "audioEnd": 5280
-    },
-    {
-      "zh": "从今晚陪他流的第一身汗开始，重新画。",
-      "en": "Start redrawing tonight—with the first sweat you share.",
-      "scene": "S1-29",
-      "audioFile": "audio/scene-S1-29.mp3",
-      "audioStart": 5280,
-      "audioEnd": 9639
+      "zh": "把一地鸡毛的日子，慢慢过成细水长流。<END>",
+      "scene": "S2-17"
     }
   ],
   "scenes": {
-    "S1-01": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个十岁男孩剪影缩在沙发角落，双手攥着发光手机；前景一张信用卡和一长条账单，账单上数字与文字处全部留白。父母两个剪影立在后景，神情震惊、凝重。视觉重心在账单和孩子，上方留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain"
-    },
-    "S1-01b": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。前景父母两个剪影并排、身体前倾、双臂张开，姿态愤怒地朝下训斥；一个孩子小剪影缩在画面角落低着头。重心在父母愤怒的姿态与缩起的孩子，四周留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "男女混双",
-          "pos": {
-            "x": 60,
-            "y": 46.5
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200,
-            "enter": "shake-attention"
-          },
-          "at": {
-            "match": "气炸"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-02": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。男孩剪影居中坐着低头，头顶上方一个由留白勾出的大问号；问号的开口朝向画面角落里两个各自低头刷发光手机的父母剪影，暗示答案就在父母身上。构图极简，四周大量留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-out"
-      },
-      "imageFit": "contain"
-    },
-    "S1-03": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父亲剪影瘫在沙发上举着一台发光手机，周围漂浮抽卡卡牌与竖屏短视频的小方框剪影。重心在父亲与手机冷光，上方留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain"
-    },
-    "S1-03b": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。母亲剪影靠在沙发一头低头看发光手机，手机旁漂浮购物袋与电视剧画框的小方框剪影。重心在母亲与购物、追剧的符号，四周留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain"
-    },
-    "S1-04": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一家三口并排坐在沙发上，各自低头盯着一块发光手机，三道冷光打在脸上，三个人的视线各朝各的屏幕、互不交汇，谁也不看谁。底部留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-out"
-      },
-      "imageFit": "contain"
-    },
-    "S1-04b": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一张描红纸：纸上淡淡打底一个大人的轮廓，一个孩子剪影正握笔照着描红、一笔笔重描出一模一样的形状。重心在照着临摹复制的动作。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "diag-br"
-      },
-      "imageFit": "contain"
-    },
-    "S1-05": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一座房屋骨架的象征画面：顶上的横梁明显歪斜，底下的梁被带得跟着倾斜；上梁上隐约一个大人剪影，下梁上一个小孩剪影。极简象征，大量留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-out"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "上梁不正",
-          "pos": {
-            "x": 52.5,
-            "y": 24.5
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200,
-            "enter": "drop-in"
-          },
-          "at": {
-            "match": "在理"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti"
-          }
-        },
-        {
-          "text": "下梁歪",
-          "pos": {
-            "x": 42.5,
-            "y": 59.5
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 350,
-            "enter": "drift-in"
-          },
-          "at": {
-            "match": "不正"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-05b": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个大人剪影站在一面大镜子前端详自己，镜中映出的轮廓里隐隐透出一个孩子的形状。重心在照镜自省，四周留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "breathe"
-      },
-      "imageFit": "contain"
-    },
-    "S1-06": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一面镜子：镜中一个大人一手指着前方训斥，另一只手背在身后、藏着一台发光的手机。镜面构图，重心在那只藏手机的手。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "双标",
-          "pos": {
-            "x": 76,
-            "y": 27.5
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200,
-            "enter": "stamp"
-          },
-          "at": {
-            "match": "刷到半夜"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-06b": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个孩子剪影的半身，目光（头的朝向）平静地望向前方、仿佛把一切看穿；前方一个大人言行不一的小剪影。重心在孩子洞察的目光。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "说一套做一套",
-          "pos": {
-            "x": 71,
-            "y": 13.5
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200,
-            "enter": "typewriter"
-          },
-          "at": {
-            "match": "说一套做一套"
-          },
-          "style": {
-            "preset": "os-marker",
-            "font": "XY Kaiti"
-          }
-        },
-        {
-          "text": "双标",
-          "pos": {
-            "x": 45,
-            "y": 11.5
-          },
-          "style": {
-            "preset": "os-bubble",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-07": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。前景一个大人剪影低头看发光手机，地面的影子里一个缩小的孩子剪影做着一模一样的低头姿势。重心在影子复制的对应关系。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-d"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "做",
-          "pos": {
-            "x": 45.5,
-            "y": 41.5
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200,
-            "enter": "handwrite"
-          },
-          "at": {
-            "match": "看你做什么"
-          },
-          "style": {
-            "preset": "os-circle-mark",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-07b": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个大人剪影一手把一块块发光屏幕塞给身旁被屏幕环绕的孩子，另一只手却高高指向半空中一颗由留白勾出的星（望子成龙的高期待）；孩子被屏幕拖住、够不到那高处的星。重心在“又塞屏幕、又苛求他出众”的矛盾。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "wobble"
-      },
-      "imageFit": "contain"
-    },
-    "S1-08": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个父亲剪影与一个小男孩剪影并肩站立，姿态、动作一模一样，父亲略大、孩子略小，像同一个人的两个年龄叠在一起。大量留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "breathe"
-      },
-      "imageFit": "contain"
-    },
-    "S1-08b": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。画面分左右：左边一个大人此刻的剪影姿态，右边一个孩子长大后相同的姿态，中间一条由左指向右的箭头。重心在今天的你传给明天的他。",
+    "S2-01": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。左右分屏对比：左边一家人虽然衣着体面却神情紧绷、屋内凌乱；右边一家人条件朴素却围桌而坐、气氛安稳。重心在“有钱却乱”和“普通却顺”的反差。",
       "label": "",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "pan-r"
       },
-      "imageFit": "contain"
-    },
-    "S1-09": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。孩子面前堆着一台学习机、几张培训班传单和一部新手机，孩子却面无表情、眼神飘向别处。重心在那堆“花钱买的东西”。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-out"
-      },
-      "imageFit": "contain"
-    },
-    "S1-10": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一架天平：一端高高堆着一摞钞票和一台学习机、沉沉压到底，另一端空荡荡却高高翘起。重心全在这架明显失衡的天平上，一个孩子小剪影站在天平旁仰头看着，四周大量留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-d"
-      },
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "舍本逐末",
+          "text": "家和万事兴",
           "pos": {
-            "x": 54.5,
-            "y": 58.5
+            "x": 50,
+            "y": 20
           },
           "motion": {
-            "duration": 700,
+            "duration": 900,
             "delay": 200,
             "enter": "stamp"
           },
           "at": {
-            "match": "这叫"
+            "match": "家和万事兴"
           },
           "style": {
             "preset": "os-stamp",
@@ -1397,8 +303,109 @@
         }
       ]
     },
-    "S1-10b": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一台学习机剪影孤零零摆在桌上、屏幕发着冷光，一个孩子剪影背对着它、毫无兴趣地走开。重心在那台被冷落、没人搭理的学习机。四周留白。",
+    "S2-02": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。中年夫妻站在画面中央，背后是一边拄杖的老人、一边背书包的孩子，形成典型“上有老下有小”的夹层结构。夫妻之间没有争吵动作，但彼此正努力对视、准备开口。重心在中年家庭的承压感。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-in"
+      },
+      "imageFit": "contain"
+    },
+    "S2-03": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。古风场景：一位老者与皇帝剪影相对而立，老者手中只展开一张纸卷，纸卷中央留出大面积空白用于暗示“忍”字。背景隐约是九世同堂的大家庭轮廓。重心在传统典故的庄重感。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-out"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "九世同堂",
+          "pos": {
+            "x": 72,
+            "y": 24
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 200,
+            "enter": "drift-in"
+          },
+          "at": {
+            "match": "九世同堂"
+          },
+          "style": {
+            "preset": "os-bubble",
+            "font": "XY Kaiti"
+          }
+        },
+        {
+          "text": "忍",
+          "pos": {
+            "x": 46,
+            "y": 44
+          },
+          "motion": {
+            "duration": 900,
+            "delay": 320,
+            "enter": "drop-in"
+          },
+          "at": {
+            "match": "一个字"
+          },
+          "style": {
+            "preset": "os-stamp",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
+    },
+    "S2-04": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。两位中年伴侣面对面站立，中间一股尖锐的冲突线条正在被一只手轻轻按住，像把出鞘的刀重新收入鞘中。重心在“先收一收”的克制动作，而不是激烈争吵。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "diag-tl"
+      },
+      "imageFit": "contain"
+    },
+    "S2-05": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。一个屋檐下，中央夫妻关系紧绷，上方老人坐在椅子上神情担忧，下方孩子缩在角落观察，构成三层叠压关系。画面气氛压抑。重心在“一对夫妻，牵动三代人”。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-in"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "鸡飞狗跳",
+          "pos": {
+            "x": 72,
+            "y": 26
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 220,
+            "enter": "shake-attention"
+          },
+          "at": {
+            "match": "鸡飞狗跳"
+          },
+          "style": {
+            "preset": "os-stamp",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
+    },
+    "S2-06": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。餐桌上的一顿晚饭，四个人都在场，却各自紧绷沉默；老人低头，孩子抱臂，夫妻面向相反方向。饭桌像一条看不见的分界线。重心在“家里有人，却没有松弛感”。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1407,284 +414,8 @@
       },
       "imageFit": "contain"
     },
-    "S1-11": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一张大白纸铺满画面，一只握着毛笔的大人的手正在落笔，纸上渐渐显出一个孩子的轮廓。重心在笔尖与显形的轮廓。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "你",
-          "pos": {
-            "x": 71.5,
-            "y": 85
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200,
-            "enter": "elastic-pop"
-          },
-          "at": {
-            "match": "执笔的人"
-          },
-          "style": {
-            "preset": "os-circle-mark",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-12": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。特写一只握着毛笔的大人的手，背景虚化的白纸。重心全在这只手上。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "breathe"
-      },
-      "imageFit": "contain"
-    },
-    "S1-13a": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。极简画面：一只手伸向纷乱的诸多小图标与事项，最终只圈出其中一个。重心在从众多里只挑出一件事，大量留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain"
-    },
-    "S1-13": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个大人剪影把发光手机扣在桌上、从电脑前起身，转身面向刚进门、背着书包的孩子。重心在“放下与转身”的动作上。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-out"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "放下",
-          "pos": {
-            "x": 27.5,
-            "y": 45
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200,
-            "enter": "drop-in"
-          },
-          "at": {
-            "match": "放下"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-14a": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个大人剪影向身旁的孩子剪影伸出手、做出一起来的邀请姿态，两人之间留白。重心在邀请与回应的动作。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain"
-    },
-    "S1-14": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父亲与儿子两个剪影并排，一起做平板支撑、一旁是单杠上引体向上的姿态。动作一致，氛围较暖。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-out"
-      },
-      "imageFit": "contain"
-    },
-    "S1-15": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。极简静物：一块空地板，旁边一根小区里的单杠，朴素无装饰。大量留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-r"
-      },
-      "imageFit": "contain"
-    },
-    "S1-16": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。画面一分为二：一边是游戏手柄与购物袋剪影，一边是哑铃与汗珠剪影，中间一个犹豫的问号。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-out"
-      },
-      "imageFit": "contain"
-    },
-    "S1-17": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一串气泡从下往上升起，最顶端那颗正好破裂、化为乌有。象征转瞬即逝的快感——升得快、破得也快。冷色、空旷、大量留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-u"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "多巴胺",
-          "pos": {
-            "x": 39.5,
-            "y": 44.5
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200,
-            "enter": "blur-pulse"
-          },
-          "at": {
-            "match": "转瞬即逝"
-          },
-          "style": {
-            "preset": "os-outline-glow",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-18": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父子俩在地板上一起做平板支撑，满头是汗、咬牙坚持，撑住最后一组的进行时，神情吃力却没放弃。暖光。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain"
-    },
-    "S1-18b": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一条缓缓上升、绵长的曲线向远处延伸，旁边父子两个剪影并肩。象征慢热、细水长流的踏实，大量留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-u"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "内啡肽",
-          "pos": {
-            "x": 48,
-            "y": 48.5
-          },
-          "motion": {
-            "duration": 1100,
-            "delay": 200,
-            "enter": "rise-glow"
-          },
-          "at": {
-            "match": "给的是"
-          },
-          "style": {
-            "preset": "os-outline-glow",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-19": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一条很长、向远处延伸的路，父亲与孩子两个剪影并肩往前走。重心在长路与背影。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-r"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "长劲儿",
-          "pos": {
-            "x": 48,
-            "y": 40
-          },
-          "motion": {
-            "duration": 1000,
-            "delay": 200,
-            "enter": "letter-spread"
-          },
-          "at": {
-            "match": "是能"
-          },
-          "style": {
-            "preset": "os-marker",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-20": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父子俩并排瘫坐在地板上喘气，一个侧过头跟另一个说话。亲近、放松。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "breathe"
-      },
-      "imageFit": "contain"
-    },
-    "S1-21": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一团代表争吵的乌云正在散开，露出后面清朗的留白。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-out"
-      },
-      "imageFit": "contain"
-    },
-    "S1-22": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。父子俩完成训练后对视、轻轻击掌的剪影。重心在两人之间的连接。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "买不来",
-          "pos": {
-            "x": 56.5,
-            "y": 30.5
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200,
-            "enter": "stamp"
-          },
-          "at": {
-            "match": "再多钱"
-          },
-          "style": {
-            "preset": "os-bookmark",
-            "font": "XY Kaiti"
-          }
-        }
-      ]
-    },
-    "S1-23": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一本日历的纸页正被一页页翻过，旁边一条蜿蜒向上的长路。象征需要时间。",
+    "S2-07": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。一个成年人黑着脸站在房间中心，周围向外扩散一圈圈紧绷波纹，老人和孩子都被这股波纹波及。构图极简，强调情绪像空气一样弥漫全屋。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1693,13 +424,13 @@
       },
       "imageFit": "contain"
     },
-    "S1-24": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。前景一个大人剪影迈出一步，身后一个孩子剪影踩着同样的步子跟上。脚步呼应。",
+    "S2-08": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。前景中年夫妻和老人互动的姿态被镜像复制到底部，一个孩子正学着大人的动作与表情。构图像影子临摹，强调孩子复制大人的处理方式。重心在“上行下效”。",
       "label": "",
       "motion": {
         "enter": "fade",
         "duration": 700,
-        "image": "pan-r"
+        "image": "zoom-out"
       },
       "imageFit": "contain",
       "overlays": [
@@ -1710,8 +441,8 @@
             "y": 22
           },
           "motion": {
-            "duration": 700,
-            "delay": 200,
+            "duration": 800,
+            "delay": 220,
             "enter": "tilt-in"
           },
           "at": {
@@ -1724,69 +455,49 @@
         }
       ]
     },
-    "S1-25a": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个大人剪影的手正犹豫地伸向桌上一台发光手机，身体半转、似要松懈。重心在伸手又犹豫的瞬间，四周留白。",
+    "S2-09": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。中年夫妻背对背坐着，头顶悬浮紊乱月亮、火焰和一条不断抬高的曲线，暗示失眠、火气和皮质醇升高。画面理性冷静，带一点科普海报感。重心在持续紧张对身体的消耗。",
       "label": "",
       "motion": {
         "enter": "fade",
         "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain"
-    },
-    "S1-25": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个大人偷偷低头摸出手机，门缝后面一双孩子的眼睛正静静看着。重心在那双眼睛。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
+        "image": "breathe"
       },
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "全看在眼里",
+          "text": "皮质醇",
           "pos": {
-            "x": 57.5,
-            "y": 27
+            "x": 52,
+            "y": 34
           },
           "motion": {
-            "duration": 700,
+            "duration": 900,
             "delay": 200,
-            "enter": "ink-bleed"
+            "enter": "rise-glow"
           },
           "at": {
-            "match": "他"
+            "match": "皮质醇"
           },
           "style": {
-            "preset": "os-bubble",
+            "preset": "os-outline-glow",
             "font": "XY Kaiti"
           }
         }
       ]
     },
-    "S1-26": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个孩子单独的剪影，主动把发光手机扣在桌上、抬起头。重心在“主动”的姿态。",
+    "S2-10": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。一个人拼命往家里搬钱袋，另一边屋里却从门缝和裂口不断漏出光和碎片，象征一边挣钱一边内耗。重心在“不是没赚到，而是留不住”。",
       "label": "",
       "motion": {
         "enter": "fade",
         "duration": 700,
-        "image": "pan-u"
+        "image": "diag-br"
       },
       "imageFit": "contain"
     },
-    "S1-27": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一束光从窗户斜照进略显昏暗的房间，照亮地板上的一小片。希望感。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "diag-tl"
-      },
-      "imageFit": "contain"
-    },
-    "S1-28": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一块黑板上密密麻麻的说教文字被一道大叉划掉（文字处留白，只示意被划掉），旁边换成父子俩一起做平板支撑的剪影。",
+    "S2-11": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。左右分屏：左边屋内乌云压顶、门被重重摔上；右边屋里灯光温暖、饭桌简单却有人微笑。强调“怨气压屋”和“和气养家”的玄学反差。重心在气场变化。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1796,58 +507,48 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "政治课",
+          "text": "和气聚财",
           "pos": {
-            "x": 36.5,
-            "y": 38
+            "x": 69,
+            "y": 25
           },
           "motion": {
-            "duration": 700,
+            "duration": 850,
             "delay": 200,
             "enter": "stamp"
           },
           "at": {
-            "match": "孩子上"
+            "match": "和气聚财"
           },
           "style": {
-            "preset": "os-stamp",
+            "preset": "os-bookmark",
             "font": "XY Kaiti"
-          }
-        },
-        {
-          "text": "体育课",
-          "pos": {
-            "x": 63.5,
-            "y": 34.5
-          },
-          "motion": {
-            "duration": 700,
-            "delay": 200,
-            "enter": "bounce"
-          },
-          "at": {
-            "match": "陪他"
-          },
-          "style": {
-            "preset": "os-circle-mark",
-            "font": "XY Kaiti",
-            "color": "#633636"
           }
         }
       ]
     },
-    "S1-28b": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一个大人剪影率先做出一个挺拔、积极的动作（起身、迈步），身旁孩子剪影正照着学、跟随同样的动作。重心在你先做到、他跟着成为。",
+    "S2-12": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。一个稳固的屋檐下，老人安坐、孩子挺直站立、夫妻并肩而立，三代人各自状态舒展，像同一座屋里不同位置的支点。重心在“安心、底气、能量”三层含义。",
       "label": "",
       "motion": {
         "enter": "fade",
         "duration": 700,
-        "image": "pan-u"
+        "image": "zoom-in"
       },
       "imageFit": "contain"
     },
-    "S1-29": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白基调，颜色克制（剪影黑、深灰、米黄）。一张白纸与一只握笔的大人的手，窗外透进一片温暖的光。收束、留余韵。",
+    "S2-13": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。夜色里两个中年人刚从外面回家，肩膀沉重、手里拎着公文包和菜袋，门内却没有暖意，空气像冰一样把两人隔开。重心在“白天扛压力，晚上还要内耗”的疲惫感。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "pan-d"
+      },
+      "imageFit": "contain"
+    },
+    "S2-14": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。两个人围坐在桌边商量事情，桌上放着账本和日历，手势平稳，没有指责动作；身后的旧账纸团被放进角落。重心在“对事不对人”和“商量”。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1855,7 +556,99 @@
         "image": "zoom-out"
       },
       "imageFit": "contain"
+    },
+    "S2-15": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。中年夫妻并肩走在前面，老人安稳坐在窗边，孩子迎着光奔跑，三代人的状态都被前方的和睦带动起来。构图向上、向前。重心在“夫妻和睦，三代向阳”。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "pan-u"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "相敬如宾",
+          "pos": {
+            "x": 70,
+            "y": 23
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 200,
+            "enter": "letter-spread"
+          },
+          "at": {
+            "match": "相敬如宾"
+          },
+          "style": {
+            "preset": "os-marker",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
+    },
+    "S2-16": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。屋子里一家人围桌吃饭、轻微交谈，窗外夜色安静，屋内光线柔和。房子不夸张，但氛围像真正的人间烟火。重心在“家不是建筑，是气氛”。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "breathe"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "人间烟火",
+          "pos": {
+            "x": 66,
+            "y": 30
+          },
+          "motion": {
+            "duration": 850,
+            "delay": 200,
+            "enter": "ink-bleed"
+          },
+          "at": {
+            "match": "人间烟火"
+          },
+          "style": {
+            "preset": "os-bubble",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
+    },
+    "S2-17": {
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。前景是散落一地的鸡毛与生活碎片，向远处逐渐化成一条平静延伸的河流；一家三口的背影走在河边，画面收束温和。重心在“一地鸡毛变成细水长流”的结尾余韵。",
+      "label": "",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "pan-r"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "细水长流",
+          "pos": {
+            "x": 67,
+            "y": 25
+          },
+          "motion": {
+            "duration": 850,
+            "delay": 220,
+            "enter": "handwrite"
+          },
+          "at": {
+            "match": "细水长流"
+          },
+          "style": {
+            "preset": "os-circle-mark",
+            "font": "XY Kaiti"
+          }
+        }
+      ]
     }
-  },
-  "__fontsDoc__": "自定义字体：把 .woff2 文件放进 .{slug}-assets/fonts/ 子目录，在 fonts[] 数组里声明 { family, src, weight, style, format, display }，bootstrap.js 会自动生成 @font-face；chapter.style.numFont / chapter.style.subtitleFont / overlay.style.font 直接引用 family 名即可"
+  }
 }

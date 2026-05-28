@@ -1,12 +1,12 @@
 {
   "id": "016-draft",
   "name": "Paper Card Talk",
-  "title": "暖纸卡片口播 · 别再上算法的当",
+  "title": "暖纸卡片口播 · 为什么说家和万事兴？",
   "entry": "016-draft.html",
   "style": ".016-draft-assets/styles.css",
   "script": ".016-draft-assets/player.js",
   "assets": ".016-draft-assets/",
-  "description": "1920×1080 暖纸卡片风口播短片模板：顶部品牌标题 + 中央分镜卡片 + 底部双语字幕带。BEATS 字幕节拍数据驱动播放推进，SCENES 提供分镜底图；图位走 <image-slot> 拖拽填充并通过 .image-slots.state.json sidecar 持久化。React + Babel 注入的 Tweaks 面板可改标题、配色（暖纸 / 鼠尾草 / 灰蓝 / 黑白报刊）、字号、节奏、字幕带样式。音轨由用户在剪映里另接 TTS / 真人 / 文本朗读。",
+  "description": "1920×1080 暖纸卡片风口播短片模板：顶部品牌标题 + 中央分镜卡片 + 底部字幕带。016 当前主题重写为“为什么说家和万事兴？”，结构覆盖开头钩子、传统典故、科学解释、玄学解释、中年夫妻处境与扣题收束。BEATS 字幕节拍数据驱动播放推进，SCENES 提供分镜底图；图位走 <image-slot> 拖拽填充并通过 .image-slots.state.json sidecar 持久化。",
   "version": "1.0.0",
   "features": [
     "1920×1080 等比缩放舞台，黑边 letterbox 居中",
