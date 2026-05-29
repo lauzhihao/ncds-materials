@@ -29,7 +29,7 @@ import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(HERE, '..');
-// slug 从所在资源目录名推出（.016-draft-assets → 016-draft），复制开新素材时本文件无需改
+// slug 从所在资源目录名推出（.017-draft-assets → 017-draft），复制开新素材时本文件无需改
 const SLUG = path.basename(HERE).replace(/^\./, '').replace(/-assets$/, '');
 const AUDIO_DIR = path.join(HERE, 'audio');
 const OUTPUT_DIR = path.join(HERE, 'output');
@@ -89,12 +89,12 @@ async function buildAudioTrack() {
   // 是第一字幕，没 leading 空白 → audio 也不再需要 intro silence。
   log(`audio: ${files.length} scene mp3s + ${GAP_MS}ms gaps + ${ENDING_MS}ms tail silence`);
 
-  const silenceGap = '/tmp/016-silence-gap.mp3';
-  const silenceTail = '/tmp/016-silence-tail.mp3';
+  const silenceGap = `/tmp/${SLUG}-silence-gap.mp3`;
+  const silenceTail = `/tmp/${SLUG}-silence-tail.mp3`;
   await makeSilence(GAP_MS / 1000, silenceGap);
   await makeSilence(ENDING_MS / 1000, silenceTail);
 
-  const concatList = '/tmp/016-concat.txt';
+  const concatList = `/tmp/${SLUG}-concat.txt`;
   const lines = [];
   for (let i = 0; i < files.length; i++) {
     lines.push(`file '${path.join(HERE, files[i])}'`);
