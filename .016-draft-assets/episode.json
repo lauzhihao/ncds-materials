@@ -69,262 +69,415 @@
     {
       "zh": "你有没有发现，有的家庭明明不缺钱，日子却越过越乱？",
       "scene": "S2-01",
-      "en": "Some homes aren't broke, yet life keeps fraying."
+      "en": "Some homes aren't broke, yet life keeps fraying.",
+      "audioFile": "audio/scene-S2-01.mp3",
+      "audioStart": 0,
+      "audioEnd": 4640
     },
     {
       "zh": "有的家条件一般，反而越过越顺？",
       "scene": "S2-01",
-      "en": "while plainer ones somehow keep getting smoother?"
+      "en": "while plainer ones somehow keep getting smoother?",
+      "audioFile": "audio/scene-S2-01.mp3",
+      "audioStart": 4640,
+      "audioEnd": 7760
     },
     {
       "zh": "差别往往不是钱，而是这五个字：家和万事兴。",
       "scene": "S2-01",
-      "en": "The gap isn't money — it's home harmony."
+      "en": "The gap isn't money — it's home harmony.",
+      "audioFile": "audio/scene-S2-01.mp3",
+      "audioStart": 7760,
+      "audioEnd": 12513
     },
     {
       "zh": "很多人把这话当鸡汤，",
       "scene": "S2-02",
-      "en": "People call that a cliché,"
+      "en": "People call that a cliché,",
+      "audioFile": "audio/scene-S2-02.mp3",
+      "audioStart": 0,
+      "audioEnd": 1760
     },
     {
       "zh": "可人到中年，上有老下有小你就懂了，",
       "scene": "S2-02",
-      "en": "but in midlife, you finally understand —"
+      "en": "but in midlife, you finally understand —",
+      "audioFile": "audio/scene-S2-02.mp3",
+      "audioStart": 1760,
+      "audioEnd": 6240
     },
     {
       "zh": "一个家最大的本事，就是夫妻还能好好说话。",
       "scene": "S2-02",
-      "en": "a home's strength is a couple still talking kindly."
+      "en": "a home's strength is a couple still talking kindly.",
+      "audioFile": "audio/scene-S2-02.mp3",
+      "audioStart": 6240,
+      "audioEnd": 10344
     },
     {
       "zh": "古人为什么把“和”看得这么重？",
       "scene": "S2-03",
-      "en": "Why did the ancients prize harmony so?"
+      "en": "Why did the ancients prize harmony so?",
+      "audioFile": "audio/scene-S2-03.mp3",
+      "audioStart": 0,
+      "audioEnd": 3120
     },
     {
       "zh": "唐代张公艺九世同堂，皇帝问秘诀，",
       "scene": "S2-03",
-      "en": "One elder kept nine generations under one roof."
+      "en": "One elder kept nine generations under one roof.",
+      "audioFile": "audio/scene-S2-03.mp3",
+      "audioStart": 3120,
+      "audioEnd": 6960
     },
     {
       "zh": "他没有长篇大论，只写了一个字：忍。",
       "scene": "S2-03",
-      "en": "His secret was a single word: forbear."
+      "en": "His secret was a single word: forbear.",
+      "audioFile": "audio/scene-S2-03.mp3",
+      "audioStart": 6960,
+      "audioEnd": 11233
     },
     {
       "zh": "但这个忍，不是委曲求全，不是把气憋进身体，",
       "scene": "S2-04",
-      "en": "To forbear isn't to swallow your anger,"
+      "en": "To forbear isn't to swallow your anger,",
+      "audioFile": "audio/scene-S2-04.mp3",
+      "audioStart": 0,
+      "audioEnd": 5360
     },
     {
       "zh": "而是火气上头时先收一收，",
       "scene": "S2-04",
-      "en": "it's easing off when your temper flares,"
+      "en": "it's easing off when your temper flares,",
+      "audioFile": "audio/scene-S2-04.mp3",
+      "audioStart": 5360,
+      "audioEnd": 8080
     },
     {
       "zh": "给彼此留体面，给全家留退路。",
       "scene": "S2-04",
-      "en": "leaving dignity, and a way out for all."
+      "en": "leaving dignity, and a way out for all.",
+      "audioFile": "audio/scene-S2-04.mp3",
+      "audioStart": 8080,
+      "audioEnd": 12199
     },
     {
       "zh": "因为中年夫妻一旦失和，",
       "scene": "S2-05",
-      "en": "Once a midlife couple falls out,"
+      "en": "Once a midlife couple falls out,",
+      "audioFile": "audio/scene-S2-05.mp3",
+      "audioStart": 0,
+      "audioEnd": 2320
     },
     {
       "zh": "上面是老人提心吊胆，",
       "scene": "S2-05",
-      "en": "the elders live on edge,"
+      "en": "the elders live on edge,",
+      "audioFile": "audio/scene-S2-05.mp3",
+      "audioStart": 2320,
+      "audioEnd": 4400
     },
     {
       "zh": "下面是孩子耳濡目染，家里很快就鸡飞狗跳。",
       "scene": "S2-05",
-      "en": "the kids absorb it, and home turns to chaos."
+      "en": "the kids absorb it, and home turns to chaos.",
+      "audioFile": "audio/scene-S2-05.mp3",
+      "audioStart": 4400,
+      "audioEnd": 8908
     },
     {
       "zh": "你以为只是吵一架，",
       "scene": "S2-06",
-      "en": "You think it's just one quarrel,"
+      "en": "You think it's just one quarrel,",
+      "audioFile": "audio/scene-S2-06.mp3",
+      "audioStart": 0,
+      "audioEnd": 1920
     },
     {
       "zh": "其实老人心情糟糕，孩子没有安全感，",
       "scene": "S2-06",
-      "en": "but elders feel low and kids feel unsafe,"
+      "en": "but elders feel low and kids feel unsafe,",
+      "audioFile": "audio/scene-S2-06.mp3",
+      "audioStart": 1920,
+      "audioEnd": 5520
     },
     {
       "zh": "连吃饭睡觉都变得战战兢兢，时间久了孩子都不愿回家。",
       "scene": "S2-06",
-      "en": "even meals and sleep grow tense — kids avoid home."
+      "en": "even meals and sleep grow tense — kids avoid home.",
+      "audioFile": "audio/scene-S2-06.mp3",
+      "audioStart": 5520,
+      "audioEnd": 11468
     },
     {
       "zh": "科学上早就解释过，",
       "scene": "S2-07",
-      "en": "Science explained this long ago:"
+      "en": "Science explained this long ago:",
+      "audioFile": "audio/scene-S2-07.mp3",
+      "audioStart": 0,
+      "audioEnd": 2160
     },
     {
       "zh": "家庭里的情绪会传染，一个人黑脸，全屋神经都会绷紧，",
       "scene": "S2-07",
-      "en": "moods spread — one sour face tightens the house,"
+      "en": "moods spread — one sour face tightens the house,",
+      "audioFile": "audio/scene-S2-07.mp3",
+      "audioStart": 2160,
+      "audioEnd": 7440
     },
     {
       "zh": "长期待在这种环境，孩子更容易焦虑、暴躁。",
       "scene": "S2-07",
-      "en": "live in that and kids grow anxious, short-tempered."
+      "en": "live in that and kids grow anxious, short-tempered.",
+      "audioFile": "audio/scene-S2-07.mp3",
+      "audioStart": 7440,
+      "audioEnd": 11807
     },
     {
       "zh": "更关键的是，孩子学的从来不是你说什么，",
       "scene": "S2-08",
-      "en": "Kids don't learn from what you say,"
+      "en": "Kids don't learn from what you say,",
+      "audioFile": "audio/scene-S2-08.mp3",
+      "audioStart": 0,
+      "audioEnd": 3920
     },
     {
       "zh": "而是你怎么对家人，怎么对老人，怎么处理冲突，",
       "scene": "S2-08",
-      "en": "but from how you treat family and conflict —"
+      "en": "but from how you treat family and conflict —",
+      "audioFile": "audio/scene-S2-08.mp3",
+      "audioStart": 3920,
+      "audioEnd": 7920
     },
     {
       "zh": "这就叫上行下效，也是最深的耳濡目染。",
       "scene": "S2-08",
-      "en": "that's leading by example — the deepest lesson."
+      "en": "that's leading by example — the deepest lesson.",
+      "audioFile": "audio/scene-S2-08.mp3",
+      "audioStart": 7920,
+      "audioEnd": 12356
     },
     {
       "zh": "从身体反应看，夫妻天天冷战争吵，",
       "scene": "S2-09",
-      "en": "When a couple bickers and stonewalls daily,"
+      "en": "When a couple bickers and stonewalls daily,",
+      "audioFile": "audio/scene-S2-09.mp3",
+      "audioStart": 0,
+      "audioEnd": 3520
     },
     {
       "zh": "睡眠会乱，火气会大，长期紧张时皮质醇也会居高不下，",
       "scene": "S2-09",
-      "en": "sleep frays, tempers rise, stress runs high,"
+      "en": "sleep frays, tempers rise, stress runs high,",
+      "audioFile": "audio/scene-S2-09.mp3",
+      "audioStart": 3520,
+      "audioEnd": 8800
     },
     {
       "zh": "人一累，判断就容易失准，话越来越硬，事越办越拧。",
       "scene": "S2-09",
-      "en": "worn out, judgment slips and words harden."
+      "en": "worn out, judgment slips and words harden.",
+      "audioFile": "audio/scene-S2-09.mp3",
+      "audioStart": 8800,
+      "audioEnd": 14106
     },
     {
       "zh": "所以很多家庭不是败给贫穷，",
       "scene": "S2-10",
-      "en": "Many families aren't beaten by poverty,"
+      "en": "Many families aren't beaten by poverty,",
+      "audioFile": "audio/scene-S2-10.mp3",
+      "audioStart": 0,
+      "audioEnd": 2880
     },
     {
       "zh": "是败给内耗，",
       "scene": "S2-10",
-      "en": "but by infighting,"
+      "en": "but by infighting,",
+      "audioFile": "audio/scene-S2-10.mp3",
+      "audioStart": 2880,
+      "audioEnd": 4400
     },
     {
       "zh": "一边拼命挣钱，一边互相伤人，一边把福气往门外推。",
       "scene": "S2-10",
-      "en": "earning hard while pushing their luck out the door."
+      "en": "earning hard while pushing their luck out the door.",
+      "audioFile": "audio/scene-S2-10.mp3",
+      "audioStart": 4400,
+      "audioEnd": 9326
     },
     {
       "zh": "传统文化认为，和气聚财，戾气散福，",
       "scene": "S2-11",
-      "en": "Harmony draws wealth; spite drains fortune,"
+      "en": "Harmony draws wealth; spite drains fortune,",
+      "audioFile": "audio/scene-S2-11.mp3",
+      "audioStart": 0,
+      "audioEnd": 3840
     },
     {
       "zh": "一个家天天摔门拍桌，再好的风水也压不住怨气，",
       "scene": "S2-11",
-      "en": "no feng shui saves a home of slammed doors,"
+      "en": "no feng shui saves a home of slammed doors,",
+      "audioFile": "audio/scene-S2-11.mp3",
+      "audioStart": 3840,
+      "audioEnd": 8480
     },
     {
       "zh": "一个家常年好声好气，粗茶淡饭也能养出福报。",
       "scene": "S2-11",
-      "en": "kind words breed blessings on the plainest meals."
+      "en": "kind words breed blessings on the plainest meals.",
+      "audioFile": "audio/scene-S2-11.mp3",
+      "audioStart": 8480,
+      "audioEnd": 13244
     },
     {
       "zh": "别觉得家和只是面子工程，",
       "scene": "S2-12",
-      "en": "Harmony isn't just for show —"
+      "en": "Harmony isn't just for show —",
+      "audioFile": "audio/scene-S2-12.mp3",
+      "audioStart": 0,
+      "audioEnd": 2160
     },
     {
       "zh": "对老人来说，那是安心；对孩子来说，那是底气；",
       "scene": "S2-12",
-      "en": "to elders it's peace, to kids it's confidence,"
+      "en": "to elders it's peace, to kids it's confidence,",
+      "audioFile": "audio/scene-S2-12.mp3",
+      "audioStart": 2160,
+      "audioEnd": 6640
     },
     {
       "zh": "对夫妻自己来说，那是熬过中年的续命能量。",
       "scene": "S2-12",
-      "en": "to the couple, the fuel to outlast midlife."
+      "en": "to the couple, the fuel to outlast midlife.",
+      "audioFile": "audio/scene-S2-12.mp3",
+      "audioStart": 6640,
+      "audioEnd": 10606
     },
     {
       "zh": "尤其是中年夫妻，白天在外面扛压力，",
       "scene": "S2-13",
-      "en": "By day you carry the pressure outside;"
+      "en": "By day you carry the pressure outside;",
+      "audioFile": "audio/scene-S2-13.mp3",
+      "audioStart": 0,
+      "audioEnd": 3360
     },
     {
       "zh": "晚上回家如果还是针尖对麦芒，",
       "scene": "S2-13",
-      "en": "if home at night is still a battlefield,"
+      "en": "if home at night is still a battlefield,",
+      "audioFile": "audio/scene-S2-13.mp3",
+      "audioStart": 3360,
+      "audioEnd": 5840
     },
     {
       "zh": "人会越来越累，家也会越来越冷。",
       "scene": "S2-13",
-      "en": "you grow wearier, and home grows colder."
+      "en": "you grow wearier, and home grows colder.",
+      "audioFile": "audio/scene-S2-13.mp3",
+      "audioStart": 5840,
+      "audioEnd": 8829
     },
     {
       "zh": "真正的家和，不是谁永远赢，",
       "scene": "S2-14",
-      "en": "Real harmony isn't about who wins,"
+      "en": "Real harmony isn't about who wins,",
+      "audioFile": "audio/scene-S2-14.mp3",
+      "audioStart": 0,
+      "audioEnd": 2560
     },
     {
       "zh": "而是遇事先对事不对人，先商量不翻旧账，",
       "scene": "S2-14",
-      "en": "it's facing the issue, not raking up the past,"
+      "en": "it's facing the issue, not raking up the past,",
+      "audioFile": "audio/scene-S2-14.mp3",
+      "audioStart": 2560,
+      "audioEnd": 6960
     },
     {
       "zh": "先顾全大局，再解决问题。",
       "scene": "S2-14",
-      "en": "big picture first, then fix the problem."
+      "en": "big picture first, then fix the problem.",
+      "audioFile": "audio/scene-S2-14.mp3",
+      "audioStart": 6960,
+      "audioEnd": 9796
     },
     {
       "zh": "该让的时候让一步，叫相敬如宾，",
       "scene": "S2-15",
-      "en": "Yield when you should — that's respect,"
+      "en": "Yield when you should — that's respect,",
+      "audioFile": "audio/scene-S2-15.mp3",
+      "audioStart": 0,
+      "audioEnd": 3120
     },
     {
       "zh": "该暖的时候暖一句，叫同心同德，",
       "scene": "S2-15",
-      "en": "warm up when you should — that's one heart,"
+      "en": "warm up when you should — that's one heart,",
+      "audioFile": "audio/scene-S2-15.mp3",
+      "audioStart": 3120,
+      "audioEnd": 6320
     },
     {
       "zh": "夫妻和睦，老人安稳，孩子向阳，这个家才会越来越旺。",
       "scene": "S2-15",
-      "en": "spouses aligned, kids thriving — a home rises."
+      "en": "spouses aligned, kids thriving — a home rises.",
+      "audioFile": "audio/scene-S2-15.mp3",
+      "audioStart": 6320,
+      "audioEnd": 12199
     },
     {
       "zh": "所以为什么说家和万事兴？",
       "scene": "S2-16",
-      "en": "So why does a harmonious home thrive?"
+      "en": "So why does a harmonious home thrive?",
+      "audioFile": "audio/scene-S2-16.mp3",
+      "audioStart": 0,
+      "audioEnd": 2960
     },
     {
       "zh": "因为和，是一个家的秩序、运气和前程，",
       "scene": "S2-16",
-      "en": "Harmony is a home's order, luck, and future,"
+      "en": "Harmony is a home's order, luck, and future,",
+      "audioFile": "audio/scene-S2-16.mp3",
+      "audioStart": 2960,
+      "audioEnd": 7200
     },
     {
       "zh": "房子再大，吵着过像牢笼；笑着吃饭才是人间烟火。",
       "scene": "S2-16",
-      "en": "a quarrelsome house is a cage; smiles make a home."
+      "en": "a quarrelsome house is a cage; smiles make a home.",
+      "audioFile": "audio/scene-S2-16.mp3",
+      "audioStart": 7200,
+      "audioEnd": 12513
     },
     {
       "zh": "家和，不一定让你立刻大富大贵，",
       "scene": "S2-17",
-      "en": "Harmony won't make you rich overnight,"
+      "en": "Harmony won't make you rich overnight,",
+      "audioFile": "audio/scene-S2-17.mp3",
+      "audioStart": 0,
+      "audioEnd": 2800
     },
     {
       "zh": "但一定能让你少走弯路，少生闲气，少败福报，",
       "scene": "S2-17",
-      "en": "but it spares you detours and wasted blessings,"
+      "en": "but it spares you detours and wasted blessings,",
+      "audioFile": "audio/scene-S2-17.mp3",
+      "audioStart": 2800,
+      "audioEnd": 6880
     },
     {
       "zh": "把一地鸡毛的日子，慢慢过成细水长流。<END>",
       "scene": "S2-17",
-      "en": "turning a messy life into a calm, lasting stream."
+      "en": "turning a messy life into a calm, lasting stream.",
+      "audioFile": "audio/scene-S2-17.mp3",
+      "audioStart": 6880,
+      "audioEnd": 10841
     }
   ],
   "scenes": {
     "S2-01": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。左右分屏对比：左边一家人虽然衣着体面却神情紧绷、屋内凌乱；右边一家人条件朴素却围桌而坐、气氛安稳。重心在“有钱却乱”和“普通却顺”的反差。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。左右分屏对比：左边一家人虽然衣着体面，身姿却各自背对、屋内凌乱；右边一家人条件朴素，却在客厅里并肩说笑、气氛松弛安稳。重心在“有钱却乱”和“普通却顺”的反差。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -688,7 +841,7 @@
       ]
     },
     "S2-08": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。前景中年夫妻和老人互动的姿态被镜像复制到底部，一个孩子正学着大人的动作与表情。构图像影子临摹，强调孩子复制大人的处理方式。重心在“上行下效”。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。画面聚焦一个孩子的近景，他正一板一眼地模仿大人处理冲突的姿态——叉腰、抬手指向前方、肩膀绷紧；身后用淡淡的成年人剪影暗示被模仿的对象。重心在“孩子复制大人的处理方式（上行下效）”。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -760,7 +913,7 @@
       ]
     },
     "S2-09": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。中年夫妻背对背坐着，头顶悬浮紊乱月亮、火焰和一条不断抬高的曲线，暗示失眠、火气和皮质醇升高。画面理性冷静，带一点科普海报感。重心在持续紧张对身体的消耗。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。中年夫妻背对背坐着，头顶悬浮紊乱月亮、火焰和一条不断抬高的曲线，暗示失眠、火气和皮质醇升高。画面理性、冷静、克制。重心在持续紧张对身体的消耗。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1040,7 +1193,7 @@
       ]
     },
     "S2-14": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。两个人围坐在桌边商量事情，桌上放着账本和日历，手势平稳，没有指责动作；身后的旧账纸团被放进角落。重心在“对事不对人”和“商量”。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。两个人并肩坐在沙发上低头商量事情，中间摊开一本账本和一份日历，手势平稳，没有指责动作；身后的旧账纸团被放进角落。重心在“对事不对人”和“商量”。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1072,7 +1225,7 @@
       ]
     },
     "S2-15": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。中年夫妻并肩走在前面，老人安稳坐在窗边，孩子迎着光奔跑，三代人的状态都被前方的和睦带动起来。构图向上、向前。重心在“夫妻和睦，三代向阳”。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。前景中年夫妻有一个温暖的小互动——一人侧身让出半步、另一人伸手轻搭对方肩膀；身后老人安稳坐在窗边，孩子迎着光奔跑，三代人的状态都被这份和睦带动起来。构图向上、向前。重心在“该让则让、该暖则暖，夫妻和睦，三代向阳”。",
       "label": "",
       "motion": {
         "enter": "fade",
@@ -1124,7 +1277,7 @@
       ]
     },
     "S2-16": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。屋子里一家人围桌吃饭、轻微交谈，窗外夜色安静，屋内光线柔和。房子不夸张，但氛围像真正的人间烟火。重心在“家不是建筑，是气氛”。",
+      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。主体是暖光下围桌吃饭、轻声说笑的一家人；与之并置，远处隐约是一座空旷高大却冷清无人的大房子轮廓作反衬，暗示“房子再大、吵着过也像牢笼”。窗外夜色安静，屋内光线柔和。重心在“家不是建筑，是气氛——笑着吃饭才是人间烟火”。",
       "label": "",
       "motion": {
         "enter": "fade",

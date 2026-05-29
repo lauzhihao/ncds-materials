@@ -1,0 +1,400 @@
+{
+  "scene": "S2-16",
+  "text": "所以为什么说家和万事兴？因为和，是一个家的秩序、运气和前程，房子再大，吵着过像牢笼；笑着吃饭才是人间烟火。",
+  "words": [
+    {
+      "text": "所",
+      "begin_index": 0,
+      "end_index": 1,
+      "begin_time": 160,
+      "end_time": 320
+    },
+    {
+      "text": "以",
+      "begin_index": 1,
+      "end_index": 2,
+      "begin_time": 400,
+      "end_time": 480
+    },
+    {
+      "text": "为",
+      "begin_index": 2,
+      "end_index": 3,
+      "begin_time": 560,
+      "end_time": 1040
+    },
+    {
+      "text": "什",
+      "begin_index": 3,
+      "end_index": 4,
+      "begin_time": 1040,
+      "end_time": 1200
+    },
+    {
+      "text": "么",
+      "begin_index": 4,
+      "end_index": 5,
+      "begin_time": 1200,
+      "end_time": 1280
+    },
+    {
+      "text": "说",
+      "begin_index": 5,
+      "end_index": 6,
+      "begin_time": 1360,
+      "end_time": 1440
+    },
+    {
+      "text": "家",
+      "begin_index": 6,
+      "end_index": 7,
+      "begin_time": 1520,
+      "end_time": 1680
+    },
+    {
+      "text": "和",
+      "begin_index": 7,
+      "end_index": 8,
+      "begin_time": 1680,
+      "end_time": 1840
+    },
+    {
+      "text": "万",
+      "begin_index": 8,
+      "end_index": 9,
+      "begin_time": 1840,
+      "end_time": 2000
+    },
+    {
+      "text": "事",
+      "begin_index": 9,
+      "end_index": 10,
+      "begin_time": 2000,
+      "end_time": 2160
+    },
+    {
+      "text": "兴",
+      "begin_index": 10,
+      "end_index": 11,
+      "begin_time": 2160,
+      "end_time": 2320
+    },
+    {
+      "text": "？",
+      "begin_index": 11,
+      "end_index": 12,
+      "begin_time": 2320,
+      "end_time": 2960
+    },
+    {
+      "text": "因",
+      "begin_index": 12,
+      "end_index": 13,
+      "begin_time": 2960,
+      "end_time": 3280
+    },
+    {
+      "text": "为",
+      "begin_index": 13,
+      "end_index": 14,
+      "begin_time": 3360,
+      "end_time": 3440
+    },
+    {
+      "text": "和",
+      "begin_index": 14,
+      "end_index": 15,
+      "begin_time": 3440,
+      "end_time": 3680
+    },
+    {
+      "text": "，",
+      "begin_index": 15,
+      "end_index": 16,
+      "begin_time": 3680,
+      "end_time": 3840
+    },
+    {
+      "text": "是",
+      "begin_index": 16,
+      "end_index": 17,
+      "begin_time": 3840,
+      "end_time": 4240
+    },
+    {
+      "text": "一",
+      "begin_index": 17,
+      "end_index": 18,
+      "begin_time": 4320,
+      "end_time": 4400
+    },
+    {
+      "text": "个",
+      "begin_index": 18,
+      "end_index": 19,
+      "begin_time": 4400,
+      "end_time": 4560
+    },
+    {
+      "text": "家",
+      "begin_index": 19,
+      "end_index": 20,
+      "begin_time": 4560,
+      "end_time": 4640
+    },
+    {
+      "text": "的",
+      "begin_index": 20,
+      "end_index": 21,
+      "begin_time": 4720,
+      "end_time": 4800
+    },
+    {
+      "text": "秩",
+      "begin_index": 21,
+      "end_index": 22,
+      "begin_time": 4880,
+      "end_time": 4960
+    },
+    {
+      "text": "序",
+      "begin_index": 22,
+      "end_index": 23,
+      "begin_time": 5040,
+      "end_time": 5200
+    },
+    {
+      "text": "、",
+      "begin_index": 23,
+      "end_index": 24,
+      "begin_time": 5200,
+      "end_time": 5360
+    },
+    {
+      "text": "运",
+      "begin_index": 24,
+      "end_index": 25,
+      "begin_time": 5360,
+      "end_time": 5520
+    },
+    {
+      "text": "气",
+      "begin_index": 25,
+      "end_index": 26,
+      "begin_time": 5600,
+      "end_time": 5760
+    },
+    {
+      "text": "和",
+      "begin_index": 26,
+      "end_index": 27,
+      "begin_time": 5840,
+      "end_time": 5920
+    },
+    {
+      "text": "前",
+      "begin_index": 27,
+      "end_index": 28,
+      "begin_time": 6000,
+      "end_time": 6080
+    },
+    {
+      "text": "程",
+      "begin_index": 28,
+      "end_index": 29,
+      "begin_time": 6160,
+      "end_time": 6320
+    },
+    {
+      "text": "，",
+      "begin_index": 29,
+      "end_index": 30,
+      "begin_time": 6320,
+      "end_time": 7200
+    },
+    {
+      "text": "房",
+      "begin_index": 30,
+      "end_index": 31,
+      "begin_time": 7200,
+      "end_time": 7520
+    },
+    {
+      "text": "子",
+      "begin_index": 31,
+      "end_index": 32,
+      "begin_time": 7600,
+      "end_time": 7760
+    },
+    {
+      "text": "再",
+      "begin_index": 32,
+      "end_index": 33,
+      "begin_time": 7760,
+      "end_time": 7840
+    },
+    {
+      "text": "大",
+      "begin_index": 33,
+      "end_index": 34,
+      "begin_time": 7920,
+      "end_time": 8080
+    },
+    {
+      "text": "，",
+      "begin_index": 34,
+      "end_index": 35,
+      "begin_time": 8080,
+      "end_time": 8320
+    },
+    {
+      "text": "吵",
+      "begin_index": 35,
+      "end_index": 36,
+      "begin_time": 8320,
+      "end_time": 8720
+    },
+    {
+      "text": "着",
+      "begin_index": 36,
+      "end_index": 37,
+      "begin_time": 8800,
+      "end_time": 8880
+    },
+    {
+      "text": "过",
+      "begin_index": 37,
+      "end_index": 38,
+      "begin_time": 8880,
+      "end_time": 9040
+    },
+    {
+      "text": "像",
+      "begin_index": 38,
+      "end_index": 39,
+      "begin_time": 9040,
+      "end_time": 9200
+    },
+    {
+      "text": "牢",
+      "begin_index": 39,
+      "end_index": 40,
+      "begin_time": 9200,
+      "end_time": 9360
+    },
+    {
+      "text": "笼",
+      "begin_index": 40,
+      "end_index": 41,
+      "begin_time": 9360,
+      "end_time": 9520
+    },
+    {
+      "text": "；",
+      "begin_index": 41,
+      "end_index": 42,
+      "begin_time": 9600,
+      "end_time": 9760
+    },
+    {
+      "text": "笑",
+      "begin_index": 42,
+      "end_index": 43,
+      "begin_time": 9920,
+      "end_time": 10240
+    },
+    {
+      "text": "着",
+      "begin_index": 43,
+      "end_index": 44,
+      "begin_time": 10320,
+      "end_time": 10400
+    },
+    {
+      "text": "吃",
+      "begin_index": 44,
+      "end_index": 45,
+      "begin_time": 10480,
+      "end_time": 10560
+    },
+    {
+      "text": "饭",
+      "begin_index": 45,
+      "end_index": 46,
+      "begin_time": 10640,
+      "end_time": 10720
+    },
+    {
+      "text": "才",
+      "begin_index": 46,
+      "end_index": 47,
+      "begin_time": 10880,
+      "end_time": 11280
+    },
+    {
+      "text": "是",
+      "begin_index": 47,
+      "end_index": 48,
+      "begin_time": 11280,
+      "end_time": 11360
+    },
+    {
+      "text": "人",
+      "begin_index": 48,
+      "end_index": 49,
+      "begin_time": 11440,
+      "end_time": 11520
+    },
+    {
+      "text": "间",
+      "begin_index": 49,
+      "end_index": 50,
+      "begin_time": 11600,
+      "end_time": 11760
+    },
+    {
+      "text": "烟",
+      "begin_index": 50,
+      "end_index": 51,
+      "begin_time": 11840,
+      "end_time": 11920
+    },
+    {
+      "text": "火",
+      "begin_index": 51,
+      "end_index": 52,
+      "begin_time": 12000,
+      "end_time": 12160
+    },
+    {
+      "text": "。",
+      "begin_index": 52,
+      "end_index": 53,
+      "begin_time": 12240,
+      "end_time": 12400
+    }
+  ],
+  "perBeat": [
+    {
+      "beat": 45,
+      "audioStart": 0,
+      "audioEnd": 2960,
+      "chars": 12,
+      "wordsFound": 12
+    },
+    {
+      "beat": 46,
+      "audioStart": 2960,
+      "audioEnd": 7200,
+      "chars": 18,
+      "wordsFound": 18
+    },
+    {
+      "beat": 47,
+      "audioStart": 7200,
+      "audioEnd": 12513,
+      "chars": 23,
+      "wordsFound": 23
+    }
+  ]
+}
