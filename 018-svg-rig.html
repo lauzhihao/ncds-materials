@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVG 骨骼小人动画系统 · 018</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href=".018-svg-rig-assets/styles.css">
+</head>
+<body>
+
+<header class="app-header">
+  <h1>SVG 骨骼小人动画系统</h1>
+  <span class="sub">固定骨骼 · 角色库 · 动作模板库 · Agent 输出 JSON 即组装成片</span>
+  <span class="badge">018 · MVP</span>
+</header>
+
+<section class="workbench">
+
+  <!-- 左：控制面板 -->
+  <aside>
+    <div class="panel">
+      <h2>① 选角色</h2>
+      <div class="char-grid" id="charGrid"></div>
+    </div>
+
+    <div class="panel">
+      <h2>② 叠动作（可多选）</h2>
+      <div class="motion-list" id="motionList"></div>
+
+      <div class="control-row">
+        <label>速度</label>
+        <input type="range" id="speed" min="0.4" max="1.8" step="0.05" value="1">
+        <span class="val" id="speedVal">1.00×</span>
+      </div>
+      <div class="control-row">
+        <label>幅度</label>
+        <input type="range" id="intensity" min="0.4" max="1.6" step="0.05" value="1">
+        <span class="val" id="intensityVal">1.00×</span>
+      </div>
+      <div class="btn-row">
+        <button class="btn primary" id="playBtn">⏸ 暂停</button>
+        <button class="btn" id="resetBtn">↺ 重置</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 右：预览 + JSON 契约 -->
+  <div class="stage-col">
+    <div class="stage">
+      <div class="stage-toolbar">
+        <label class="toggle"><input type="checkbox" id="jointsToggle"> 显示关节锚点</label>
+      </div>
+      <div class="ground"></div>
+      <div class="preview-rig" id="previewRig"></div>
+    </div>
+
+    <div class="json-panel">
+      <h2>③ 这套选择对应的 Agent JSON（renderScene 的入参）</h2>
+      <pre id="jsonOut"></pre>
+    </div>
+  </div>
+</section>
+
+<section class="scenes-section">
+  <h2>Agent JSON → 成片场景</h2>
+  <p>下面每张卡片都是一段结构化 JSON 经 <code>RigSystem.renderScene()</code> 组装出来的 16:9 版式，角色在版式里真正动起来。</p>
+  <div class="scene-grid" id="sceneGrid"></div>
+</section>
+
+<!-- 数据层 → 引擎 → 页面控制器 → 启动（boot 注入字体并调用 App.init） -->
+<script src=".018-svg-rig-assets/rig-spec.js"></script>
+<script src=".018-svg-rig-assets/characters.js"></script>
+<script src=".018-svg-rig-assets/motions.js"></script>
+<script src=".018-svg-rig-assets/scenes.js"></script>
+<script src=".018-svg-rig-assets/rig.js"></script>
+<script src=".018-svg-rig-assets/app.js"></script>
+<script src=".018-svg-rig-assets/boot.js"></script>
+
+</body>
+</html>
