@@ -11,6 +11,7 @@
 | `rig-spec.js` | **唯一真源**：画布 `300×380` + 每根骨头的关节锚点坐标（绝对用户单位）。其余文件全部以此为准。 |
 | `characters.js` | 角色库。每个角色 = 内联 SVG，可动部件包在 `<g class="bone NAME">`，全部画在同一套骨骼上。 |
 | `motions.js` | 动作模板库。每个动作 = 一组 WAAPI 轨道 `{bone, keyframes, options}`。 |
+| `sequences.js` | 套路 / 连贯动作库。每个套路 = 一串有名字的招式（pose 序列），如八极拳八大招。 |
 | `scenes.js` | 示例场景配置 = Agent 应输出的 JSON。 |
 | `rig.js` | `RigSystem` 引擎：build / mount / play / **renderScene(jsonConfig)**。可复用核心。 |
 | `app.js` | Playground 页面控制器（演示壳，非核心）。 |
@@ -45,11 +46,26 @@ RigSystem.renderScene({
 
 旋转中心用 `transform-box: view-box` + 绝对用户单位 `transform-origin`，rotate 永远绕真实关节转，不受肢体绘制方向影响 —— 比 `fill-box + 百分比` 稳。
 
+**二段肢体（肘 / 膝关节）**：需要关节细节的角色（如「武者」）用嵌套骨头：前臂 `arm-l-lower` 嵌在上臂 `arm-l-upper` 里，小腿 `leg-l-lower` 嵌在大腿 `leg-l-upper` 里。SVG 子元素共享父坐标系 + 各骨头按 view-box 绝对锚点旋转 → 正向运动学（FK）：上段转动带着下段走，下段再绕肘/膝单独转，关节始终连接。二段骨头标 `segmented:true`；单段角色仍用 `arm-l`/`leg-l`，互不影响。
+
+## 套路 / 连贯动作
+
+`motions.js` 是单一循环叠加层；`sequences.js` 是「连贯动作」——一串有名字的招式按时序衔接：
+
+```js
+RigSystem.playSequence(handle, 'baji8', { speed: 1, loop: true });
+// 返回 controller：.currentMove() 报当前第几招（用于实时显示招式名），
+// .pause()/.play()/.setSpeed()/.cancel()。
+```
+
+引擎把每根骨头在各招的目标 `pose` 串成一条带 offset 的 keyframe 轨道，整体播放并在结尾收势归预备。套路只用到二段肢体骨头，需配合「武者」这类二段角色。内置 `baji8` = 八极拳八大招。
+
 ## 扩展
 
 - **加角色**：在 `characters.js` 加一条，`svg` 里的 `<g class="bone …">` 只用规范里的骨头名，几何画在对应关节附近即可。所有现有动作立即可用。
 - **加动作**：在 `motions.js` 加一条，`tracks[].bone` 只引用规范骨头名，`keyframes` 用 `transform` 字符串。所有现有角色立即可用。
-- **加关节（如肘/膝二段肢体）**：在 `rig-spec.js` 的 `BONES` 注册新名 + 锚点（建议 `optional: true`），再在需要的角色/动作里引用。
+- **加关节（如肘/膝二段肢体）**：在 `rig-spec.js` 的 `BONES` 注册新名 + 锚点（建议 `optional: true`），再在需要的角色/动作里引用。角色 SVG 里把下段骨头 `<g>` 嵌进上段骨头 `<g>` 即可获得 FK。
+- **加套路**：在 `sequences.js` 加一条 `{id, name, moves:[{name, desc, duration, easing, pose:{bone:'transform'}}]}`，pose 写相对预备式的偏移，未写到的骨头自动保持上一招姿态。
 
 ## 本地预览
 

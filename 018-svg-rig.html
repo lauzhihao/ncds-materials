@@ -47,6 +47,12 @@
         <button class="btn" id="resetBtn">↺ 重置</button>
       </div>
     </div>
+
+    <div class="panel" id="seqPanel">
+      <h2>③ 套路 · 连贯动作</h2>
+      <div class="seq-pick" id="seqPick"></div>
+      <ol class="move-list" id="moveList"></ol>
+    </div>
   </aside>
 
   <!-- 右：预览 + JSON 契约 -->
@@ -57,6 +63,10 @@
       </div>
       <div class="ground"></div>
       <div class="preview-rig" id="previewRig"></div>
+      <div class="move-caption" id="moveCaption" hidden>
+        <div class="mc-name" id="mcName"></div>
+        <div class="mc-desc" id="mcDesc"></div>
+      </div>
     </div>
 
     <div class="json-panel">
@@ -77,6 +87,7 @@
 <script src=".018-svg-rig-assets/characters.js"></script>
 <script src=".018-svg-rig-assets/motions.js"></script>
 <script src=".018-svg-rig-assets/scenes.js"></script>
+<script src=".018-svg-rig-assets/sequences.js"></script>
 <script src=".018-svg-rig-assets/rig.js"></script>
 <script src=".018-svg-rig-assets/app.js"></script>
 <script src=".018-svg-rig-assets/boot.js"></script>

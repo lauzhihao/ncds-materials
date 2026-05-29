@@ -12,6 +12,9 @@
     showJoints: false,
     preview: null,    // 当前预览 handle
     paused: false,
+    seqMode: false,   // 套路模式
+    seqCtrl: null,
+    rafId: 0,
   };
 
   // ---------- 角色 chips ----------
@@ -73,8 +76,89 @@
     handle.el.appendChild(g);
   }
 
+  // ---------- 套路 / 连贯动作 ----------
+  function buildSeqPanel() {
+    const pick = $('#seqPick');
+    pick.innerHTML = '';
+    RigSystem.listSequences().forEach((seq) => {
+      const btn = document.createElement('button');
+      btn.className = 'seq-btn';
+      btn.innerHTML = '▶ 演练「' + seq.name + '」<span class="small">' + seq.desc + '</span>';
+      btn.addEventListener('click', () => startSequence(seq.id));
+      pick.appendChild(btn);
+    });
+    const first = RigSystem.listSequences()[0];
+    if (first) renderMoveList(first); // 未播放时也先把招式列表展示出来
+  }
+
+  function renderMoveList(seq) {
+    const ol = $('#moveList');
+    ol.innerHTML = '';
+    if (!seq) return;
+    seq.moves.forEach((m) => {
+      const li = document.createElement('li');
+      li.className = 'move-li';
+      li.innerHTML = '<div class="ml-name">' + m.name + '</div><div class="ml-desc">' + m.desc + '</div>';
+      ol.appendChild(li);
+    });
+  }
+
+  function startSequence(seqId) {
+    stopSeqLoop();
+    const seq = RigSystem.listSequences().find((s) => s.id === seqId);
+    // 套路需要二段肢体角色：强制切到武者
+    state.character = 'wushu';
+    document.querySelectorAll('.char-chip').forEach((el) =>
+      el.classList.toggle('active', el.dataset.id === 'wushu'));
+    const box = $('#previewRig');
+    if (state.preview) state.preview.__anims.forEach((a) => a.cancel());
+    box.innerHTML = '';
+    state.preview = RigSystem.mount(box, 'wushu');
+    state.seqCtrl = RigSystem.playSequence(state.preview, seqId, { speed: state.speed });
+    state.seqMode = true; state.paused = false;
+    $('#playBtn').textContent = '⏸ 暂停';
+    $('#moveCaption').hidden = false;
+    applyJoints(state.preview);
+    renderMoveList(seq);
+    updateJson();
+    runSeqLoop();
+  }
+
+  function runSeqLoop() {
+    const items = document.querySelectorAll('#moveList .move-li');
+    let last = -2;
+    const tick = () => {
+      if (!state.seqMode || !state.seqCtrl) return;
+      const idx = state.seqCtrl.currentMove();
+      if (idx !== last) {
+        last = idx;
+        items.forEach((el, i) => el.classList.toggle('active', i === idx));
+        const m = idx >= 0 ? state.seqCtrl.moves[idx] : null;
+        $('#mcName').textContent = m ? m.name : '收势 · 预备式';
+        $('#mcDesc').textContent = m ? m.desc : '起落归于跨立';
+      }
+      state.rafId = requestAnimationFrame(tick);
+    };
+    state.rafId = requestAnimationFrame(tick);
+  }
+
+  function stopSeqLoop() {
+    if (state.rafId) cancelAnimationFrame(state.rafId);
+    state.rafId = 0;
+  }
+
+  // 退出套路模式（用户回到普通选角色 / 动作时调用）
+  function exitSequence() {
+    if (!state.seqMode) return;
+    stopSeqLoop();
+    state.seqMode = false; state.seqCtrl = null;
+    $('#moveCaption').hidden = true;
+    document.querySelectorAll('#moveList .move-li').forEach((el) => el.classList.remove('active'));
+  }
+
   // ---------- 预览 ----------
   function renderPreview() {
+    exitSequence();
     const box = $('#previewRig');
     if (state.preview) state.preview.__anims.forEach((a) => a.cancel()); // 换角色前取消旧无限动画，防泄漏
     box.innerHTML = '';
@@ -88,6 +172,15 @@
 
   // ---------- JSON 契约面板 ----------
   function currentConfig() {
+    if (state.seqMode && state.seqCtrl) {
+      return {
+        mode: 'sequence',
+        character: 'wushu',
+        sequence: state.seqCtrl.sequence.id,
+        speed: +state.speed,
+        moves: state.seqCtrl.moves.map((m) => m.name),
+      };
+    }
     const c = RigSystem.listCharacters().find((x) => x.id === state.character);
     return {
       character: state.character,
@@ -113,6 +206,7 @@
 
   // 重新挂动作（不重建角色 SVG，比 renderPreview 更轻；用于改动作/幅度）
   function replay() {
+    exitSequence();
     if (!state.preview) return;
     RigSystem.play(state.preview, [...state.motions], { speed: state.speed, intensity: state.intensity });
     state.paused = false; $('#playBtn').textContent = '⏸ 暂停';
@@ -178,6 +272,7 @@
   function init() {
     buildCharChips();
     buildMotionList();
+    buildSeqPanel();
     bindControls();
     renderPreview();
     buildScenes();

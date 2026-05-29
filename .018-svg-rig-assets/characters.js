@@ -78,6 +78,49 @@
         </g>
         <g class="bone head"><circle class="solid" cx="150" cy="62" r="35"/></g>`,
     },
+    wushu: {
+      id: 'wushu',
+      name: '武者',
+      desc: '二段肢体（肘 + 膝关节），默认跨立预备式。用于八极拳「八大招」连贯套路。',
+      bones: [
+        'root', 'head', 'torso',
+        'arm-l-upper', 'arm-l-lower', 'arm-r-upper', 'arm-r-lower',
+        'leg-l-upper', 'leg-l-lower', 'leg-r-upper', 'leg-r-lower',
+      ],
+      // 跨立预备式：两脚开立、膝微屈，双臂自然下垂略带肘弯，握拳。
+      // 嵌套：前臂在上臂内、小腿在大腿内 → 上段转动带下段（正向运动学）。
+      svg: `
+        <g class="bone leg-l-upper">
+          <path class="limb leg" d="M135 212 L124 280"/>
+          <g class="bone leg-l-lower"><path class="limb leg" d="M124 280 L116 348"/></g>
+        </g>
+        <g class="bone leg-r-upper">
+          <path class="limb leg" d="M165 212 L176 280"/>
+          <g class="bone leg-r-lower"><path class="limb leg" d="M176 280 L184 348"/></g>
+        </g>
+        <g class="bone torso">
+          <rect class="solid" x="122" y="96" width="56" height="122" rx="27"/>
+          <rect class="sash" x="120" y="188" width="60" height="13" rx="6"/>
+        </g>
+        <g class="bone arm-l-upper">
+          <path class="limb" d="M123 122 L112 168"/>
+          <g class="bone arm-l-lower">
+            <path class="limb" d="M112 168 L108 208"/>
+            <circle class="fist" cx="108" cy="210" r="13"/>
+          </g>
+        </g>
+        <g class="bone arm-r-upper">
+          <path class="limb" d="M177 122 L188 168"/>
+          <g class="bone arm-r-lower">
+            <path class="limb" d="M188 168 L192 208"/>
+            <circle class="fist" cx="192" cy="210" r="13"/>
+          </g>
+        </g>
+        <g class="bone head">
+          <circle class="solid" cx="150" cy="62" r="35"/>
+          <rect class="band" x="113" y="44" width="74" height="11" rx="5"/>
+        </g>`,
+    },
   };
 
   window.RIG_CHARACTERS = C;

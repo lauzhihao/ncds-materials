@@ -21,11 +21,24 @@
     root:    { pivot: [150, 200], role: '整体（位移 / 跳跃 / 缩放）' },
     head:    { pivot: [150, 98],  role: '头（点头 / 摇头，绕脖子转）' },
     torso:   { pivot: [150, 212], role: '躯干（呼吸 / 前后倾，绕胯转）' },
-    'arm-l': { pivot: [123, 122], role: '左臂（绕左肩转）' },
-    'arm-r': { pivot: [177, 122], role: '右臂（绕右肩转）' },
-    'leg-l': { pivot: [135, 212], role: '左腿（绕左胯转）' },
-    'leg-r': { pivot: [165, 212], role: '右腿（绕右胯转）' },
-    // —— 可选骨头：只有部分角色有 ——
+    'arm-l': { pivot: [123, 122], role: '左臂 · 单段（绕左肩转）' },
+    'arm-r': { pivot: [177, 122], role: '右臂 · 单段（绕右肩转）' },
+    'leg-l': { pivot: [135, 212], role: '左腿 · 单段（绕左胯转）' },
+    'leg-r': { pivot: [165, 212], role: '右腿 · 单段（绕右胯转）' },
+
+    // —— 二段肢体：上臂/大腿为父，前臂/小腿嵌套为子，构成肘/膝关节 ——
+    // 嵌套结构 + 绝对关节锚点 = 正向运动学：上臂转动带着前臂走，前臂再绕肘单独转。
+    // 只有「武者」这类需要肘膝的角色用它们；单段角色仍用上面的 arm-l/leg-l。
+    'arm-l-upper': { pivot: [123, 122], role: '左上臂（绕左肩）', optional: true, segmented: true },
+    'arm-l-lower': { pivot: [112, 168], role: '左前臂（绕左肘）', optional: true, segmented: true },
+    'arm-r-upper': { pivot: [177, 122], role: '右上臂（绕右肩）', optional: true, segmented: true },
+    'arm-r-lower': { pivot: [188, 168], role: '右前臂（绕右肘）', optional: true, segmented: true },
+    'leg-l-upper': { pivot: [135, 212], role: '左大腿（绕左胯）', optional: true, segmented: true },
+    'leg-l-lower': { pivot: [124, 280], role: '左小腿（绕左膝）', optional: true, segmented: true },
+    'leg-r-upper': { pivot: [165, 212], role: '右大腿（绕右胯）', optional: true, segmented: true },
+    'leg-r-lower': { pivot: [176, 280], role: '右小腿（绕右膝）', optional: true, segmented: true },
+
+    // —— 其它可选骨头 ——
     prop:    { pivot: [232, 150], role: '道具（手持物 / 吊饰，可摇摆）', optional: true },
     bubble:  { pivot: [150, 60],  role: '气泡 / 想法（浮动）', optional: true },
   };
@@ -43,5 +56,10 @@
     VIEWBOX, WIDTH, HEIGHT, BONES, BONE_NAMES, originFor,
     // 推荐 Agent 输出场景时引用的骨头子集（核心 6 + root），覆盖绝大多数动作。
     CORE_BONES: ['root', 'head', 'torso', 'arm-l', 'arm-r', 'leg-l', 'leg-r'],
+    // 二段肢体骨头（肘/膝），供武术等需要关节细节的角色与套路使用。
+    SEGMENTED_BONES: [
+      'arm-l-upper', 'arm-l-lower', 'arm-r-upper', 'arm-r-lower',
+      'leg-l-upper', 'leg-l-lower', 'leg-r-upper', 'leg-r-lower',
+    ],
   };
 })();

@@ -6,22 +6,24 @@
   "style": ".018-svg-rig-assets/styles.css",
   "script": ".018-svg-rig-assets/rig.js",
   "assets": ".018-svg-rig-assets/",
-  "description": "可组合的 SVG 动画角色系统 MVP：固定骨骼规范（rig-spec）+ 内联 SVG 角色库（characters）+ Web Animations API 动作模板库（motions），由 RigSystem 引擎（rig.js）按结构化 JSON 场景（scenes）组装成会动的 16:9 版式卡片。配套 Playground 可选角色、叠加动作、调速度/幅度，并实时展示 Agent 应输出的 JSON 契约。核心思路源自把静态 SVG 升级为内联 DOM + 可识别分组骨头，让 Agent 只做选择而非创作底层动画。",
-  "version": "1.0.0",
+  "description": "可组合的 SVG 动画角色系统：固定骨骼规范（rig-spec，含单段 + 肘/膝二段肢体）+ 内联 SVG 角色库（characters）+ Web Animations API 动作模板库（motions）+ 连贯套路库（sequences），由 RigSystem 引擎（rig.js）按结构化 JSON 场景（scenes）组装成会动的 16:9 版式卡片，并能把多招串成连贯动作演练。配套 Playground 可选角色、叠加动作、播放套路（实时报招式名）、调速度/幅度，并实时展示 Agent 应输出的 JSON 契约。核心思路：把静态 SVG 升级为内联 DOM + 可识别分组骨头，让 Agent 只做选择而非创作底层动画。",
+  "version": "1.1.0",
   "features": [
     "固定骨骼规范：统一画布 300×380 + 绝对用户单位关节锚点，rotate 永远绕真实关节转",
-    "角色库 4 款黑色剪影（站立 / 欢呼 / 思考 / 讲解），共用骨骼 → 任意角色 × 任意动作可组合",
-    "动作模板库 13 个（呼吸/举手/挥手/点头/摇头/走/跳/指向/鼓掌/思索/气泡/道具/前倾），WAAPI 驱动",
-    "可叠加多动作、整体调速（playbackRate）、按 intensity 等比缩放幅度",
+    "二段肢体（肘 + 膝关节）：嵌套骨骼 + 正向运动学，上段转动带下段、下段再绕关节单独转",
+    "角色库 5 款黑色剪影（站立 / 欢呼 / 思考 / 讲解 / 武者），共用骨骼 → 任意角色 × 任意动作可组合",
+    "动作模板库 13 个（WAAPI 驱动），可叠加、整体调速、按 intensity 等比缩放幅度",
+    "连贯套路：八极拳「八大招」八招串成一条连续动画，循环演练、实时显示当前招式名与释义",
     "RigSystem.renderScene(jsonConfig) 把 Agent 输出的 JSON 直接渲染成 16:9 版式卡片",
     "版式用 container query 单位（cqw）分辨率无关，paper / dark 双主题",
-    "Playground：选角色 + 勾动作 + 速度/幅度滑杆 + 关节锚点叠加 + 实时 JSON 契约展示"
+    "Playground：选角色 + 勾动作 + 套路演练 + 速度/幅度滑杆 + 关节锚点叠加 + 实时 JSON 契约"
   ],
   "scripts": [
     ".018-svg-rig-assets/rig-spec.js",
     ".018-svg-rig-assets/characters.js",
     ".018-svg-rig-assets/motions.js",
     ".018-svg-rig-assets/scenes.js",
+    ".018-svg-rig-assets/sequences.js",
     ".018-svg-rig-assets/rig.js",
     ".018-svg-rig-assets/app.js",
     ".018-svg-rig-assets/boot.js"

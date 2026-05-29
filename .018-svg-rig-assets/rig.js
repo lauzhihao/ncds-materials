@@ -152,10 +152,70 @@
     return { el: scene, handle, controller };
   }
 
+  // —— 套路 / 连贯动作：把多招串成一条连续动画 ——
+  // 每根骨头 = 一条按 offset 排布的 keyframe 轨道（rest → 各招 pose → rest）。
+  // 返回的 controller.currentMove() 报出当前是第几招，供 UI 实时显示招式名。
+  function playSequence(handle, seqId, opts) {
+    opts = opts || {};
+    const seq = (window.RIG_SEQUENCES || {})[seqId];
+    if (!seq) throw new Error('RigSystem: unknown sequence "' + seqId + '"');
+    const speed = opts.speed == null ? 1 : opts.speed;
+    const loop = opts.loop !== false;
+    const moves = seq.moves;
+    const returnDur = seq.returnDuration == null ? 800 : seq.returnDuration;
+
+    const durs = moves.map((m) => m.duration || 800);
+    const total = durs.reduce((a, b) => a + b, 0) + returnDur;
+    const ends = []; let acc = 0;
+    durs.forEach((d) => { acc += d; ends.push(acc / total); });
+
+    const bonesUsed = new Set();
+    moves.forEach((m) => Object.keys(m.pose || {}).forEach((b) => bonesUsed.add(b)));
+
+    handle.__anims.forEach((a) => a.cancel());
+    handle.__anims = [];
+    const missing = new Set();
+
+    bonesUsed.forEach((bone) => {
+      const el = handle.bones[bone];
+      if (!el) { missing.add(bone); return; }
+      const frames = [{ offset: 0, transform: 'rotate(0deg)', easing: moves[0].easing || 'ease-in-out' }];
+      let cur = 'rotate(0deg)';
+      moves.forEach((m, i) => {
+        if (m.pose && m.pose[bone] != null) cur = m.pose[bone];      // 未写到的骨头：保持上一招姿态
+        const nextEasing = (moves[i + 1] && moves[i + 1].easing) || m.easing || 'ease-in-out';
+        frames.push({ offset: ends[i], transform: cur, easing: nextEasing });
+      });
+      frames.push({ offset: 1, transform: 'rotate(0deg)' });          // 收势归预备
+      const anim = el.animate(frames, { duration: total, iterations: loop ? Infinity : 1, fill: 'both' });
+      anim.playbackRate = speed;
+      handle.__anims.push(anim);
+    });
+
+    const ctrl = {
+      get animations() { return handle.__anims; },
+      sequence: seq, moves, total, missingBones: [...missing],
+      pause() { handle.__anims.forEach((a) => a.pause()); return ctrl; },
+      play() { handle.__anims.forEach((a) => a.play()); return ctrl; },
+      cancel() { handle.__anims.forEach((a) => a.cancel()); handle.__anims = []; return ctrl; },
+      setSpeed(s) { handle.__anims.forEach((a) => { a.playbackRate = s; }); return ctrl; },
+      // 由领头动画的 currentTime 推出当前招式索引（处于收势尾段返回 -1）
+      currentMove() {
+        const a = handle.__anims[0];
+        if (!a || a.currentTime == null) return -1;
+        const off = ((a.currentTime % total) + total) % total / total;
+        for (let i = 0; i < ends.length; i++) if (off <= ends[i]) return i;
+        return -1;
+      },
+    };
+    return ctrl;
+  }
+
   window.RigSystem = {
-    build, mount, play, renderScene, scaleTransform,
+    build, mount, play, playSequence, renderScene, scaleTransform,
     listCharacters: () => window.RIG_CHARACTER_LIST,
     listMotions: () => window.RIG_MOTION_LIST,
+    listSequences: () => window.RIG_SEQUENCE_LIST || [],
     spec: SPEC,
   };
 })();
