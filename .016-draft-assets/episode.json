@@ -334,18 +334,18 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "不缺钱 💰",
+          "text": "有钱 ≠ 顺",
           "pos": {
-            "x": 23,
-            "y": 25
+            "x": 26,
+            "y": 22
           },
           "motion": {
             "duration": 760,
-            "delay": 120,
-            "enter": "bounce"
+            "delay": 100,
+            "enter": "tilt-in"
           },
           "at": {
-            "match": "不缺钱"
+            "match": "越过越乱"
           },
           "style": {
             "preset": "os-tag-square",
@@ -354,41 +354,21 @@
           }
         },
         {
-          "text": "越过越顺 🌿",
-          "pos": {
-            "x": 77,
-            "y": 35
-          },
-          "motion": {
-            "duration": 820,
-            "delay": 180,
-            "enter": "drift-in"
-          },
-          "at": {
-            "match": "越过越顺"
-          },
-          "style": {
-            "preset": "os-bubble",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "家和万事兴",
+          "text": "家和萬事興",
           "pos": {
             "x": 50,
-            "y": 18
+            "y": 50
           },
           "motion": {
-            "duration": 900,
-            "delay": 200,
+            "duration": 860,
+            "delay": 180,
             "enter": "stamp"
           },
           "at": {
             "match": "家和万事兴"
           },
           "style": {
-            "preset": "os-stamp",
+            "preset": "os-brush-title",
             "font": "XY Kaiti",
             "size": 60
           }
@@ -406,63 +386,43 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "鸡汤？",
+          "text": "当鸡汤？",
           "pos": {
-            "x": 24,
+            "x": 26,
             "y": 24
           },
           "motion": {
             "duration": 760,
-            "delay": 80,
+            "delay": 100,
             "enter": "tilt-in"
           },
           "at": {
-            "match": "鸡汤"
+            "match": "当鸡汤"
           },
           "style": {
-            "preset": "os-sticker-yellow",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
             "size": 40
           }
         },
         {
-          "text": "上有老下有小",
+          "text": "夹心层",
           "pos": {
-            "x": 50,
-            "y": 73
+            "x": 72,
+            "y": 40
           },
           "motion": {
-            "duration": 880,
-            "delay": 200,
-            "enter": "unfold"
+            "duration": 800,
+            "delay": 140,
+            "enter": "fold-down"
           },
           "at": {
             "match": "上有老下有小"
           },
           "style": {
-            "preset": "os-bookmark",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
             "size": 40
-          }
-        },
-        {
-          "text": "好好说话 🙂",
-          "pos": {
-            "x": 76,
-            "y": 30
-          },
-          "motion": {
-            "duration": 820,
-            "delay": 160,
-            "enter": "rise-glow"
-          },
-          "at": {
-            "match": "好好说话"
-          },
-          "style": {
-            "preset": "os-brush-title",
-            "font": "XY Kaiti",
-            "size": 60
           }
         }
       ]
@@ -480,64 +440,41 @@
         {
           "text": "和",
           "pos": {
-            "x": 25,
-            "y": 22
+            "x": 28,
+            "y": 42
           },
           "motion": {
-            "duration": 760,
-            "delay": 100,
-            "enter": "fold-down"
+            "duration": 860,
+            "delay": 180,
+            "enter": "stamp"
           },
           "at": {
-            "match": "和”看得"
+            "match": "这么重"
           },
           "style": {
             "preset": "os-seal-square",
-            "size": 76,
-            "color": "#ffffff",
-            "background": "#c0392b",
-            "border": "4px solid #a93226",
-            "font": "XY Kaiti"
-          }
-        },
-        {
-          "text": "九世同堂",
-          "pos": {
-            "x": 72,
-            "y": 24
-          },
-          "motion": {
-            "duration": 800,
-            "delay": 200,
-            "enter": "drift-in"
-          },
-          "at": {
-            "match": "九世同堂"
-          },
-          "style": {
-            "preset": "os-bubble",
             "font": "XY Kaiti",
-            "size": 40
+            "size": 72
           }
         },
         {
           "text": "忍",
           "pos": {
-            "x": 46,
-            "y": 44
+            "x": 50,
+            "y": 46
           },
           "motion": {
-            "duration": 900,
-            "delay": 320,
-            "enter": "drop-in"
+            "duration": 860,
+            "delay": 180,
+            "enter": "stamp"
           },
           "at": {
-            "match": "一个字"
+            "match": "忍"
           },
           "style": {
-            "preset": "os-title-stamp",
+            "preset": "os-stamp",
             "font": "XY Kaiti",
-            "size": 60
+            "size": 64
           }
         }
       ]
@@ -555,8 +492,8 @@
         {
           "text": "委曲求全",
           "pos": {
-            "x": 26,
-            "y": 22
+            "x": 28,
+            "y": 24
           },
           "motion": {
             "duration": 760,
@@ -564,52 +501,32 @@
             "enter": "fade"
           },
           "at": {
-            "match": "不是"
+            "match": "委曲求全"
           },
           "style": {
             "preset": "os-negate",
-            "size": 46,
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 46
           }
         },
         {
-          "text": "上头",
+          "text": "先收一收 ✋",
           "pos": {
-            "x": 60,
-            "y": 48
+            "x": 72,
+            "y": 44
           },
           "motion": {
             "duration": 760,
-            "delay": 120,
-            "enter": "fade"
+            "delay": 100,
+            "enter": "tilt-in"
           },
           "at": {
-            "match": "上头"
+            "match": "先收一收"
           },
           "style": {
-            "preset": "os-negate",
-            "size": 46,
-            "font": "XY Kaiti"
-          }
-        },
-        {
-          "text": "体面 🙂",
-          "pos": {
-            "x": 74,
-            "y": 74
-          },
-          "motion": {
-            "duration": 850,
-            "delay": 220,
-            "enter": "rise-glow"
-          },
-          "at": {
-            "match": "留体面"
-          },
-          "style": {
-            "preset": "os-stamp",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
-            "size": 60
+            "size": 44
           }
         }
       ]
@@ -625,41 +542,21 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "一旦失和",
+          "text": "失和的代价 ↓",
           "pos": {
-            "x": 74,
-            "y": 22
+            "x": 50,
+            "y": 20
           },
           "motion": {
             "duration": 760,
             "delay": 100,
-            "enter": "fade"
+            "enter": "tilt-in"
           },
           "at": {
-            "match": "一旦"
+            "match": "一旦失和"
           },
           "style": {
-            "preset": "os-underline",
-            "size": 48,
-            "font": "XY Kaiti"
-          }
-        },
-        {
-          "text": "提心吊胆 😟",
-          "pos": {
-            "x": 40,
-            "y": 48
-          },
-          "motion": {
-            "duration": 780,
-            "delay": 140,
-            "enter": "drift-in"
-          },
-          "at": {
-            "match": "提心吊胆"
-          },
-          "style": {
-            "preset": "os-bubble",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
             "size": 40
           }
@@ -667,21 +564,21 @@
         {
           "text": "鸡飞狗跳",
           "pos": {
-            "x": 26,
-            "y": 74
+            "x": 50,
+            "y": 50
           },
           "motion": {
-            "duration": 800,
-            "delay": 220,
+            "duration": 820,
+            "delay": 180,
             "enter": "shake-attention"
           },
           "at": {
             "match": "鸡飞狗跳"
           },
           "style": {
-            "preset": "os-brush-title",
+            "preset": "os-stamp",
             "font": "XY Kaiti",
-            "size": 60
+            "size": 56
           }
         }
       ]
@@ -697,14 +594,14 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "吵架 ⚠️",
+          "text": "只是吵架？⚠️",
           "pos": {
             "x": 50,
             "y": 20
           },
           "motion": {
             "duration": 760,
-            "delay": 80,
+            "delay": 100,
             "enter": "tilt-in"
           },
           "at": {
@@ -717,43 +614,23 @@
           }
         },
         {
-          "text": "没安全感",
+          "text": "孩子不愿回家 🚪",
           "pos": {
-            "x": 28,
-            "y": 72
+            "x": 50,
+            "y": 48
           },
           "motion": {
-            "duration": 780,
+            "duration": 800,
             "delay": 140,
-            "enter": "rise-glow"
+            "enter": "fold-down"
           },
           "at": {
-            "match": "安全感"
+            "match": "不愿回家"
           },
           "style": {
-            "preset": "os-marker",
+            "preset": "os-stamp",
             "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "战战兢兢",
-          "pos": {
-            "x": 74,
-            "y": 72
-          },
-          "motion": {
-            "duration": 840,
-            "delay": 200,
-            "enter": "bounce"
-          },
-          "at": {
-            "match": "战战兢兢"
-          },
-          "style": {
-            "preset": "os-title-stamp",
-            "font": "XY Kaiti",
-            "size": 60
+            "size": 48
           }
         }
       ]
@@ -769,38 +646,18 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "情绪会传染",
+          "text": "一人黑脸 → 全屋绷紧",
           "pos": {
-            "x": 26,
+            "x": 50,
             "y": 22
           },
           "motion": {
-            "duration": 820,
-            "delay": 90,
+            "duration": 800,
+            "delay": 140,
             "enter": "fold-down"
           },
           "at": {
-            "match": "情绪会传染"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti",
-            "size": 60
-          }
-        },
-        {
-          "text": "全屋绷紧",
-          "pos": {
-            "x": 74,
-            "y": 42
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 120,
-            "enter": "blur-pulse"
-          },
-          "at": {
-            "match": "绷紧"
+            "match": "全屋神经都会绷紧"
           },
           "style": {
             "preset": "os-tag-square",
@@ -812,20 +669,20 @@
           "text": "焦虑 / 暴躁",
           "pos": {
             "x": 50,
-            "y": 74
+            "y": 50
           },
           "motion": {
-            "duration": 840,
-            "delay": 220,
+            "duration": 820,
+            "delay": 180,
             "enter": "shake-attention"
           },
           "at": {
-            "match": "焦虑"
+            "match": "焦虑、暴躁"
           },
           "style": {
-            "preset": "os-sticker-yellow",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
-            "size": 40
+            "size": 44
           }
         }
       ]
@@ -848,14 +705,14 @@
           },
           "motion": {
             "duration": 760,
-            "delay": 80,
+            "delay": 100,
             "enter": "tilt-in"
           },
           "at": {
             "match": "不是你说什么"
           },
           "style": {
-            "preset": "os-sticker-yellow",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
             "size": 40
           }
@@ -863,19 +720,19 @@
         {
           "text": "是看你怎么做",
           "pos": {
-            "x": 60,
-            "y": 48
+            "x": 74,
+            "y": 40
           },
           "motion": {
-            "duration": 800,
-            "delay": 140,
-            "enter": "shimmer-sweep"
+            "duration": 760,
+            "delay": 100,
+            "enter": "tilt-in"
           },
           "at": {
-            "match": "怎么处理冲突"
+            "match": "怎么对家人"
           },
           "style": {
-            "preset": "os-marker",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
             "size": 40
           }
@@ -883,21 +740,21 @@
         {
           "text": "上行下效",
           "pos": {
-            "x": 74,
-            "y": 74
+            "x": 50,
+            "y": 52
           },
           "motion": {
-            "duration": 800,
-            "delay": 220,
-            "enter": "tilt-in"
+            "duration": 860,
+            "delay": 180,
+            "enter": "stamp"
           },
           "at": {
-            "match": "上行下效"
+            "match": "叫上行下效"
           },
           "style": {
-            "preset": "os-brush-title",
+            "preset": "os-stamp",
             "font": "XY Kaiti",
-            "size": 60
+            "size": 56
           }
         }
       ]
@@ -915,16 +772,16 @@
         {
           "text": "冷战 🧊",
           "pos": {
-            "x": 23,
-            "y": 23
+            "x": 26,
+            "y": 22
           },
           "motion": {
-            "duration": 740,
-            "delay": 80,
+            "duration": 760,
+            "delay": 100,
             "enter": "tilt-in"
           },
           "at": {
-            "match": "冷战争吵"
+            "match": "天天冷战"
           },
           "style": {
             "preset": "os-tag-square",
@@ -933,33 +790,13 @@
           }
         },
         {
-          "text": "睡眠会乱",
+          "text": "皮质醇 ↑ 压力激素",
           "pos": {
-            "x": 75,
-            "y": 24
+            "x": 70,
+            "y": 48
           },
           "motion": {
-            "duration": 780,
-            "delay": 120,
-            "enter": "drift-in"
-          },
-          "at": {
-            "match": "睡眠会乱"
-          },
-          "style": {
-            "preset": "os-bubble",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "皮质醇",
-          "pos": {
-            "x": 52,
-            "y": 34
-          },
-          "motion": {
-            "duration": 900,
+            "duration": 840,
             "delay": 200,
             "enter": "rise-glow"
           },
@@ -967,9 +804,9 @@
             "match": "皮质醇"
           },
           "style": {
-            "preset": "os-title-stamp",
+            "preset": "os-stamp",
             "font": "XY Kaiti",
-            "size": 60
+            "size": 44
           }
         }
       ]
@@ -985,61 +822,61 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "NOT POOR",
+          "text": "贫穷",
           "pos": {
-            "x": 74,
-            "y": 22
+            "x": 28,
+            "y": 24
           },
           "motion": {
             "duration": 760,
-            "delay": 80,
-            "enter": "tilt-in"
+            "delay": 90,
+            "enter": "fade"
           },
           "at": {
-            "match": "贫穷"
+            "match": "败给贫穷"
           },
           "style": {
-            "preset": "os-sticker-yellow",
+            "preset": "os-negate",
             "font": "XY Kaiti",
-            "size": 40
+            "size": 44
           }
         },
         {
           "text": "内耗",
           "pos": {
-            "x": 40,
-            "y": 48
+            "x": 72,
+            "y": 40
           },
           "motion": {
-            "duration": 800,
-            "delay": 130,
+            "duration": 860,
+            "delay": 180,
             "enter": "stamp"
           },
           "at": {
-            "match": "内耗"
+            "match": "是败给内耗"
           },
           "style": {
             "preset": "os-stamp",
             "font": "XY Kaiti",
-            "size": 60
+            "size": 52
           }
         },
         {
-          "text": "福气外推",
+          "text": "挣钱 ↑ 福气 ↓",
           "pos": {
-            "x": 26,
-            "y": 74
+            "x": 50,
+            "y": 54
           },
           "motion": {
-            "duration": 840,
-            "delay": 220,
-            "enter": "drift-in"
+            "duration": 760,
+            "delay": 100,
+            "enter": "tilt-in"
           },
           "at": {
-            "match": "福气"
+            "match": "往门外推"
           },
           "style": {
-            "preset": "os-bookmark",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
             "size": 40
           }
@@ -1059,61 +896,41 @@
         {
           "text": "怨气压屋",
           "pos": {
-            "x": 50,
-            "y": 20
+            "x": 28,
+            "y": 44
           },
           "motion": {
             "duration": 760,
-            "delay": 80,
+            "delay": 100,
             "enter": "tilt-in"
           },
           "at": {
-            "match": "怨气"
+            "match": "压不住怨气"
           },
           "style": {
-            "preset": "os-sticker-yellow",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
             "size": 40
           }
         },
         {
-          "text": "和气聚财",
-          "pos": {
-            "x": 28,
-            "y": 72
-          },
-          "motion": {
-            "duration": 850,
-            "delay": 200,
-            "enter": "stamp"
-          },
-          "at": {
-            "match": "和气聚财"
-          },
-          "style": {
-            "preset": "os-brush-title",
-            "font": "XY Kaiti",
-            "size": 60
-          }
-        },
-        {
           "text": "福",
           "pos": {
-            "x": 74,
-            "y": 72
+            "x": 72,
+            "y": 50
           },
           "motion": {
             "duration": 860,
-            "delay": 220,
+            "delay": 180,
             "enter": "stamp"
           },
           "at": {
-            "match": "粗茶淡饭"
+            "match": "养出福报"
           },
           "style": {
             "preset": "os-seal-square",
-            "size": 60,
-            "font": "XY Kaiti"
+            "font": "XY Kaiti",
+            "size": 60
           }
         }
       ]
@@ -1129,63 +946,43 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "老人安心",
+          "text": "老人安心 · 孩子有底气",
           "pos": {
-            "x": 26,
+            "x": 50,
             "y": 22
           },
           "motion": {
-            "duration": 760,
-            "delay": 90,
-            "enter": "drift-in"
+            "duration": 800,
+            "delay": 140,
+            "enter": "fold-down"
           },
           "at": {
-            "match": "安心"
+            "match": "那是底气"
           },
           "style": {
-            "preset": "os-bubble",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
-            "size": 40
+            "size": 36
           }
         },
         {
-          "text": "孩子有底气",
-          "pos": {
-            "x": 74,
-            "y": 42
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 120,
-            "enter": "rise-glow"
-          },
-          "at": {
-            "match": "底气"
-          },
-          "style": {
-            "preset": "os-marker",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "续命能量 ⚡",
+          "text": "中年续航 ⚡",
           "pos": {
             "x": 50,
-            "y": 74
+            "y": 50
           },
           "motion": {
-            "duration": 860,
-            "delay": 220,
+            "duration": 840,
+            "delay": 200,
             "enter": "rise-glow"
           },
           "at": {
             "match": "续命能量"
           },
           "style": {
-            "preset": "os-title-stamp",
+            "preset": "os-stamp",
             "font": "XY Kaiti",
-            "size": 60
+            "size": 48
           }
         }
       ]
@@ -1207,57 +1004,37 @@
             "y": 22
           },
           "motion": {
-            "duration": 760,
-            "delay": 80,
+            "duration": 800,
+            "delay": 140,
             "enter": "fold-down"
           },
           "at": {
             "match": "扛压力"
           },
           "style": {
-            "preset": "os-bookmark",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
             "size": 40
           }
         },
         {
-          "text": "针尖对麦芒",
+          "text": "人累 · 家冷",
           "pos": {
-            "x": 60,
+            "x": 72,
             "y": 48
           },
           "motion": {
             "duration": 800,
-            "delay": 130,
-            "enter": "stamp"
+            "delay": 140,
+            "enter": "fold-down"
           },
           "at": {
-            "match": "针尖对麦芒"
-          },
-          "style": {
-            "preset": "os-marker",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "家会变冷",
-          "pos": {
-            "x": 74,
-            "y": 74
-          },
-          "motion": {
-            "duration": 840,
-            "delay": 200,
-            "enter": "drift-in"
-          },
-          "at": {
-            "match": "家也会"
+            "match": "越来越冷"
           },
           "style": {
             "preset": "os-stamp",
             "font": "XY Kaiti",
-            "size": 60
+            "size": 46
           }
         }
       ]
@@ -1273,61 +1050,21 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "对事不对人",
+          "text": "就事论事 不翻旧账",
           "pos": {
-            "x": 74,
-            "y": 22
+            "x": 50,
+            "y": 28
           },
           "motion": {
             "duration": 760,
-            "delay": 80,
+            "delay": 100,
             "enter": "tilt-in"
-          },
-          "at": {
-            "match": "对事不对人"
-          },
-          "style": {
-            "preset": "os-brush-title",
-            "font": "XY Kaiti",
-            "size": 60
-          }
-        },
-        {
-          "text": "不翻旧账",
-          "pos": {
-            "x": 40,
-            "y": 48
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 120,
-            "enter": "fold-down"
           },
           "at": {
             "match": "不翻旧账"
           },
           "style": {
             "preset": "os-tag-square",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "顾全大局",
-          "pos": {
-            "x": 26,
-            "y": 74
-          },
-          "motion": {
-            "duration": 840,
-            "delay": 220,
-            "enter": "rise-glow"
-          },
-          "at": {
-            "match": "顾全大局"
-          },
-          "style": {
-            "preset": "os-bookmark",
             "font": "XY Kaiti",
             "size": 40
           }
@@ -1345,63 +1082,43 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "同心同德 🤝",
-          "pos": {
-            "x": 50,
-            "y": 20
-          },
-          "motion": {
-            "duration": 800,
-            "delay": 120,
-            "enter": "drift-in"
-          },
-          "at": {
-            "match": "同心同德"
-          },
-          "style": {
-            "preset": "os-bubble",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "相敬如宾",
+          "text": "礼让 ≠ 软弱",
           "pos": {
             "x": 28,
-            "y": 72
+            "y": 24
           },
           "motion": {
-            "duration": 800,
-            "delay": 200,
-            "enter": "letter-spread"
+            "duration": 760,
+            "delay": 100,
+            "enter": "tilt-in"
           },
           "at": {
             "match": "相敬如宾"
           },
           "style": {
-            "preset": "os-marker",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
-            "size": 40
+            "size": 38
           }
         },
         {
           "text": "越来越旺 ☀️",
           "pos": {
-            "x": 74,
-            "y": 72
+            "x": 50,
+            "y": 50
           },
           "motion": {
-            "duration": 860,
-            "delay": 220,
+            "duration": 840,
+            "delay": 200,
             "enter": "rise-glow"
           },
           "at": {
             "match": "越来越旺"
           },
           "style": {
-            "preset": "os-title-stamp",
+            "preset": "os-stamp",
             "font": "XY Kaiti",
-            "size": 60
+            "size": 52
           }
         }
       ]
@@ -1417,50 +1134,30 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "为什么？",
-          "pos": {
-            "x": 22,
-            "y": 22
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 80,
-            "enter": "tilt-in"
-          },
-          "at": {
-            "match": "为什么"
-          },
-          "style": {
-            "preset": "os-sticker-yellow",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "秩序 情绪 运气 前程",
+          "text": "秩序 · 运气 · 前程",
           "pos": {
             "x": 50,
-            "y": 74
+            "y": 24
           },
           "motion": {
-            "duration": 920,
-            "delay": 180,
-            "enter": "unfold"
+            "duration": 800,
+            "delay": 140,
+            "enter": "fold-down"
           },
           "at": {
-            "match": "秩序"
+            "match": "秩序、运气和前程"
           },
           "style": {
-            "preset": "os-typewriter",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
-            "size": 40
+            "size": 36
           }
         },
         {
           "text": "人间烟火",
           "pos": {
-            "x": 66,
-            "y": 30
+            "x": 62,
+            "y": 44
           },
           "motion": {
             "duration": 850,
@@ -1473,7 +1170,7 @@
           "style": {
             "preset": "os-stamp",
             "font": "XY Kaiti",
-            "size": 60
+            "size": 54
           }
         }
       ]
@@ -1489,14 +1186,14 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "不一定暴富",
+          "text": "不一定暴富 💸",
           "pos": {
             "x": 26,
             "y": 24
           },
           "motion": {
             "duration": 760,
-            "delay": 80,
+            "delay": 100,
             "enter": "tilt-in"
           },
           "at": {
@@ -1509,38 +1206,38 @@
           }
         },
         {
-          "text": "少走弯路",
+          "text": "少弯路 · 少闲气 · 少败福",
           "pos": {
             "x": 74,
-            "y": 30
+            "y": 42
           },
           "motion": {
             "duration": 800,
-            "delay": 120,
-            "enter": "drift-in"
+            "delay": 140,
+            "enter": "fold-down"
           },
           "at": {
-            "match": "少走弯路"
+            "match": "少败福报"
           },
           "style": {
-            "preset": "os-bookmark",
+            "preset": "os-tag-square",
             "font": "XY Kaiti",
-            "size": 40
+            "size": 32
           }
         },
         {
           "text": "细水长流",
           "pos": {
             "x": 50,
-            "y": 72
+            "y": 52
           },
           "motion": {
-            "duration": 850,
+            "duration": 900,
             "delay": 220,
             "enter": "handwrite"
           },
           "at": {
-            "match": "慢慢过成"
+            "match": "细水长流"
           },
           "style": {
             "preset": "os-brush-title",
