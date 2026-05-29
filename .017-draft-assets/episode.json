@@ -1,6 +1,6 @@
 {
   "__schema__": "ncds-paper-card-talk/v1",
-  "__doc__": "017 主题改为“迎风笃行”。先按诗性短章方式试装文案，重点验证篇幅、节奏与字幕卡片承载是否合适。",
+  "__doc__": "017 主题“迎风笃行”：诗性短章试装版，工整对仗体。11 个 scene / 33 条 beat，融合「迎风笃行」与「年近不惑」两段意象，主旨为对奔波者的鼓励。仅用于验证篇幅、节奏与字幕卡片承载，暂无音频。",
   "meta": {
     "slug": "017-draft",
     "title": "迎风笃行",
@@ -69,92 +69,167 @@
     {
       "zh": "尘途多倦，世事多艰，",
       "scene": "S2-01",
-      "en": "Dusty roads tire us; the world is seldom easy."
+      "en": "Dusty roads weary us, and the world is seldom kind,"
     },
     {
       "zh": "奔波朝夕，前路漫漫。",
       "scene": "S2-01",
-      "en": "We rush from dawn to dusk, with a long road ahead."
+      "en": "we rush from dawn to dusk, the road still long ahead."
     },
     {
-      "zh": "人世几番辗转，早已尝过冷暖悲欢。",
+      "zh": "行囊未卸，脚步未歇，风雨兼程，初心不灭。",
       "scene": "S2-01",
-      "en": "After many turns in life, we have tasted both cold and warmth."
+      "en": "Pack still on our backs, feet never resting — through wind and rain, the first heart never fades."
+    },
+    {
+      "zh": "人世几番辗转，",
+      "scene": "S2-02",
+      "en": "Through life's many turnings,"
+    },
+    {
+      "zh": "早已尝尽冷暖悲欢。",
+      "scene": "S2-02",
+      "en": "we have long tasted every cold and warmth, every grief and joy."
+    },
+    {
+      "zh": "也曾跌倒，也曾隐忍，把泪悄悄咽下，再咬牙向前。",
+      "scene": "S2-02",
+      "en": "We have fallen, we have borne it — swallowing our tears in silence, then pressing on once more."
     },
     {
       "zh": "上念亲恩常记，",
-      "scene": "S2-02",
-      "en": "Above us stays the grace of our parents."
+      "scene": "S2-03",
+      "en": "Above, we keep our parents' kindness in mind,"
     },
     {
-      "zh": "下思稚子相牵。",
-      "scene": "S2-02",
-      "en": "Below us are the small hands that still hold us close."
+      "zh": "是父母期盼的双眼。",
+      "scene": "S2-03",
+      "en": "those waiting, hopeful eyes."
     },
     {
-      "zh": "所以朝来躬身奔走，夜伴清灯自安。",
-      "scene": "S2-02",
-      "en": "So by day we labor on, and by night we sit quietly by the lamp."
+      "zh": "一声叮咛，一盏热饭，便是归途里最暖的牵绊。",
+      "scene": "S2-03",
+      "en": "A word of care, a warm bowl of rice — the warmest tie on the road back home."
+    },
+    {
+      "zh": "下思稚子相牵，",
+      "scene": "S2-04",
+      "en": "Below, the little ones hold us close,"
+    },
+    {
+      "zh": "是儿女依赖的笑颜。",
+      "scene": "S2-04",
+      "en": "those trusting, smiling faces."
+    },
+    {
+      "zh": "小手攥着衣角，便攥住了你全部的勇敢。",
+      "scene": "S2-04",
+      "en": "A small hand grips your hem, and grips with it all of your courage."
+    },
+    {
+      "zh": "朝来躬身奔走，晨起朝阳相伴；",
+      "scene": "S2-05",
+      "en": "By day we bow and toil, the morning sun our company;"
+    },
+    {
+      "zh": "暮归星光作陪，夜伴清灯自安。",
+      "scene": "S2-05",
+      "en": "by dusk the stars walk with us, and a quiet lamp brings calm."
+    },
+    {
+      "zh": "把疲惫叠进肩头，把焦灼藏在笑颜。",
+      "scene": "S2-05",
+      "en": "We fold the weariness into our shoulders, and hide the anxiety behind a smile."
     },
     {
       "zh": "有些疲惫，不必说出口；",
-      "scene": "S2-03",
-      "en": "Some weariness needs no telling."
+      "scene": "S2-06",
+      "en": "Some weariness need not be spoken;"
     },
     {
       "zh": "有些艰难，也不必逢人细谈。",
-      "scene": "S2-03",
-      "en": "Some hardship need not be explained to everyone."
+      "scene": "S2-06",
+      "en": "some hardship need not be told to all."
     },
     {
-      "zh": "只因初心未改。",
-      "scene": "S2-03",
-      "en": "Because the first intention has not changed."
+      "zh": "你只是把辛酸悄悄收起，把脊背挺得更端。",
+      "scene": "S2-06",
+      "en": "You simply tuck the bitterness away, and hold your back a little straighter."
     },
     {
-      "zh": "心里仍有要去的远山，",
-      "scene": "S2-04",
-      "en": "There is still a distant ridge the heart must reach."
+      "zh": "你可知年近不惑，",
+      "scene": "S2-07",
+      "en": "Do you know that, nearing forty,"
+    },
+    {
+      "zh": "胸中仍有热血沸腾的瞬间。",
+      "scene": "S2-07",
+      "en": "there are still moments when the blood runs hot in your chest."
+    },
+    {
+      "zh": "初心未改，志气未减，要去的远山，从未走远。",
+      "scene": "S2-07",
+      "en": "The first heart unchanged, the spirit undimmed — the distant peak you seek has never moved away."
     },
     {
       "zh": "纵然步履匆匆，",
-      "scene": "S2-04",
-      "en": "Though the steps remain hurried,"
+      "scene": "S2-08",
+      "en": "Though our steps are hurried,"
     },
     {
-      "zh": "也该向着光亮，一程一程地赶。",
-      "scene": "S2-04",
-      "en": "we should still move toward the light, one stretch at a time."
+      "zh": "也愿向着光亮，一程一程地赶。",
+      "scene": "S2-08",
+      "en": "still we move toward the light, one stretch and then the next."
+    },
+    {
+      "zh": "握最坚韧的信念，打最硬的仗，从不轻言败北。",
+      "scene": "S2-08",
+      "en": "Holding the firmest faith, fighting the hardest fight, never lightly speaking of defeat."
     },
     {
       "zh": "幸有人间烟火为伴，",
-      "scene": "S2-05",
-      "en": "Thankfully, the warmth of ordinary life keeps us company."
+      "scene": "S2-09",
+      "en": "Thankfully the warmth of ordinary life walks beside us,"
     },
     {
       "zh": "柴米灯火，亦能宽慰风霜。",
-      "scene": "S2-05",
-      "en": "Daily meals and lamplight can soften the frost of life."
+      "scene": "S2-09",
+      "en": "daily meals and lamplight soothe the frost of the road."
     },
     {
       "zh": "平凡日子，也自有向前的力量。",
-      "scene": "S2-05",
-      "en": "Even plain days carry their own power to keep going."
+      "scene": "S2-09",
+      "en": "Even plain days hold their own power to carry us forward."
     },
     {
       "zh": "愿你不言放弃，也敢迎风而立；",
-      "scene": "S2-06",
-      "en": "May you not speak of giving up, and still dare to face the wind."
+      "scene": "S2-10",
+      "en": "May you never speak of giving up, and dare to stand against the wind;"
     },
     {
       "zh": "把万般辛苦，慢慢酿成心安。",
-      "scene": "S2-06",
-      "en": "May all hardship slowly ripen into peace within."
+      "scene": "S2-10",
+      "en": "may all your hardship slowly ferment into peace within."
     },
     {
-      "zh": "纵前路仍远，也当昂首扬帆，逐光而攀。<END>",
-      "scene": "S2-06",
-      "en": "Though the road is still long, lift your sail and climb toward the light."
+      "zh": "把走过的荆棘，都熬成脚下的坦途。",
+      "scene": "S2-10",
+      "en": "May every thorn you have crossed become smooth road beneath your feet."
+    },
+    {
+      "zh": "纵前路仍远，亦当昂首扬帆，",
+      "scene": "S2-11",
+      "en": "Though the road runs far, still lift your head and raise your sail,"
+    },
+    {
+      "zh": "逐光而攀，步履不乱。",
+      "scene": "S2-11",
+      "en": "chase the light and climb, your steps unshaken."
+    },
+    {
+      "zh": "终有一日，活成自己的英雄模样。<END>",
+      "scene": "S2-11",
+      "en": "And one day you will live into the very hero you were meant to be."
     }
   ],
   "scenes": {
@@ -170,8 +245,8 @@
       "overlays": []
     },
     "S2-02": {
-      "prompt": "扁平插画。一个成年人立于画面中段，身后隐约有年长父母的温和轮廓，前方有孩童牵手回望，整体克制含蓄，突出“上念亲恩，下思稚子”的双重牵挂。",
-      "label": "所念所系",
+      "prompt": "扁平插画。纸本质感，暖灰与墨色为主。一位行路者立于岁月长路上，身后是已走过的崎岖与风雨痕迹，神情平静而坚韧，强调“几番辗转、尝尽冷暖”的阅历感。",
+      "label": "几度冷暖",
       "motion": {
         "enter": "fade",
         "duration": 700,
@@ -181,8 +256,8 @@
       "overlays": []
     },
     "S2-03": {
-      "prompt": "扁平插画。白日奔忙与夜晚清灯并置：一侧是匆忙工作的身影，一侧是夜深时桌前独坐的背影。画面安静，不煽情，表达“不言疲惫，不改初心”。",
-      "label": "不言疲惫",
+      "prompt": "扁平插画。画面上方隐现年迈父母温和关切的轮廓与双眼，下方一个成年人抬头回望，含蓄克制，突出“上念亲恩、归途有牵挂”。",
+      "label": "上念亲恩",
       "motion": {
         "enter": "fade",
         "duration": 700,
@@ -192,8 +267,8 @@
       "overlays": []
     },
     "S2-04": {
-      "prompt": "扁平插画。层层远山在风中显现，一位行路者沿山路向上，衣角微扬，天边有收敛而坚定的亮光。重点是“远山在前，仍愿赶路”的意象。",
-      "label": "心向远山",
+      "prompt": "扁平插画。一个孩子伸出小手牵住大人的衣角，大人低头温柔回应，画面温暖安静，强调“下有稚子相牵、为之而勇敢”。",
+      "label": "下思稚子",
       "motion": {
         "enter": "fade",
         "duration": 700,
@@ -203,8 +278,8 @@
       "overlays": []
     },
     "S2-05": {
-      "prompt": "扁平插画。傍晚小城街巷与窗内灯火，饭桌蒸汽、归家路灯、平凡屋檐构成温暖日常。不要繁杂人物表情，强调“人间烟火”对奔波者的抚慰。",
-      "label": "烟火为伴",
+      "prompt": "扁平插画。上下并置：清晨朝阳下匆匆出门的背影，与暮色星光中归家的身影，表达“朝奔暮归、晨昏不息”的日常奔波。",
+      "label": "朝奔暮归",
       "motion": {
         "enter": "fade",
         "duration": 700,
@@ -214,8 +289,8 @@
       "overlays": []
     },
     "S2-06": {
-      "prompt": "扁平插画。开阔风面上，一只象征性的轻舟或行者逆风向前，姿态昂扬，远处有破云而出的光。整体收束到“迎风笃行、逐光而攀”的主题。",
-      "label": "逐光而攀",
+      "prompt": "扁平插画。一个人独自挺直脊背走在路上，把疲惫与辛酸收在身后看不见处，画面克制安静，强调“不言疲惫、默默担当”。",
+      "label": "不言疲惫",
       "motion": {
         "enter": "fade",
         "duration": 700,
@@ -225,619 +300,59 @@
       "overlays": []
     },
     "S2-07": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。一个成年人黑着脸站在房间中心，周围向外扩散一圈圈紧绷波纹，老人和孩子都被这股波纹波及。构图极简，强调情绪像空气一样弥漫全屋。",
-      "label": "",
+      "prompt": "扁平插画。一个年近中年的身影，胸口或眼中有一束不灭的微光火苗，姿态依旧挺拔，强调“年近不惑、热血未冷、志气未减”。",
+      "label": "热血未冷",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "pan-u"
       },
       "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "一人黑脸 → 全屋绷紧",
-          "pos": {
-            "x": 32.5,
-            "y": 11.5
-          },
-          "motion": {
-            "duration": 800,
-            "delay": 140,
-            "enter": "fold-down"
-          },
-          "at": {
-            "match": "全屋神经都会绷紧"
-          },
-          "style": {
-            "preset": "os-tag-square",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "焦虑 / 暴躁",
-          "pos": {
-            "x": 49.5,
-            "y": 82
-          },
-          "motion": {
-            "duration": 820,
-            "delay": 180,
-            "enter": "shake-attention"
-          },
-          "at": {
-            "match": "焦虑、暴躁"
-          },
-          "style": {
-            "preset": "os-tag-square",
-            "font": "XY Kaiti",
-            "size": 44
-          }
-        }
-      ]
+      "overlays": []
     },
     "S2-08": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。画面聚焦一个孩子的近景，他正一板一眼地模仿大人处理冲突的姿态——叉腰、抬手指向前方、肩膀绷紧；身后用淡淡的成年人剪影暗示被模仿的对象。重心在“孩子复制大人的处理方式（上行下效）”。",
-      "label": "",
+      "prompt": "扁平插画。层层远山在前，一位行路者沿山路向上、衣角微扬，天边有收敛而坚定的亮光，重点“远山在前、仍愿一程程赶路”。",
+      "label": "心向远山",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "zoom-out"
       },
       "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "不是听你说",
-          "pos": {
-            "x": 30.5,
-            "y": 16
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 100,
-            "enter": "tilt-in"
-          },
-          "at": {
-            "match": "不是你说什么"
-          },
-          "style": {
-            "preset": "os-tag-square",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "是看你怎么做",
-          "pos": {
-            "x": 48.5,
-            "y": 16
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 100,
-            "enter": "tilt-in"
-          },
-          "at": {
-            "match": "怎么对家人"
-          },
-          "style": {
-            "preset": "os-tag-square",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "上行下效",
-          "pos": {
-            "x": 68,
-            "y": 66.5
-          },
-          "motion": {
-            "duration": 860,
-            "delay": 180,
-            "enter": "stamp"
-          },
-          "at": {
-            "match": "叫上行下效"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti",
-            "size": 56
-          }
-        }
-      ]
+      "overlays": []
     },
     "S2-09": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。中年夫妻背对背坐着，头顶悬浮紊乱月亮、火焰和一条不断抬高的曲线，暗示失眠、火气和皮质醇升高。画面理性、冷静、克制。重心在持续紧张对身体的消耗。",
-      "label": "",
+      "prompt": "扁平插画。傍晚小城街巷与窗内灯火，饭桌蒸汽、归家路灯、平凡屋檐构成温暖日常，强调“人间烟火”对奔波者的抚慰。",
+      "label": "烟火为伴",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "breathe"
       },
       "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "冷战 🧊",
-          "pos": {
-            "x": 30.5,
-            "y": 70
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 100,
-            "enter": "tilt-in"
-          },
-          "at": {
-            "match": "天天冷战"
-          },
-          "style": {
-            "preset": "os-tag-pill",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "皮质醇 ↑ 压力激素",
-          "pos": {
-            "x": 49,
-            "y": 23.5
-          },
-          "motion": {
-            "duration": 840,
-            "delay": 200,
-            "enter": "rise-glow"
-          },
-          "at": {
-            "match": "皮质醇"
-          },
-          "style": {
-            "preset": "os-bubble",
-            "font": "XY Kaiti",
-            "size": 44
-          }
-        }
-      ]
+      "overlays": []
     },
     "S2-10": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。一个人拼命往家里搬钱袋，另一边屋里却从门缝和裂口不断漏出光和碎片，象征一边挣钱一边内耗。重心在“不是没赚到，而是留不住”。",
-      "label": "",
+      "prompt": "扁平插画。行者脚下的荆棘小路逐渐化为平坦坦途，远处天色转亮，象征“把万般辛苦熬成脚下坦途、酿成心安”。",
+      "label": "酿苦为安",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "diag-br"
       },
       "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "贫穷",
-          "pos": {
-            "x": 22.5,
-            "y": 25
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 90,
-            "enter": "fade"
-          },
-          "at": {
-            "match": "败给贫穷"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti",
-            "size": 44
-          }
-        },
-        {
-          "text": "内耗",
-          "pos": {
-            "x": 35,
-            "y": 24.5
-          },
-          "motion": {
-            "duration": 860,
-            "delay": 180,
-            "enter": "stamp"
-          },
-          "at": {
-            "match": "是败给内耗"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti",
-            "size": 44
-          }
-        },
-        {
-          "text": "挣钱 ↑ 福气 ↓",
-          "pos": {
-            "x": 40,
-            "y": 88.5
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 100,
-            "enter": "tilt-in"
-          },
-          "at": {
-            "match": "往门外推"
-          },
-          "style": {
-            "preset": "os-bookmark",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        }
-      ]
+      "overlays": []
     },
     "S2-11": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。左右分屏：左边屋内乌云压顶、门被重重摔上；右边屋里灯光温暖、饭桌简单却有人微笑。强调“怨气压屋”和“和气养家”的玄学反差。重心在气场变化。",
-      "label": "",
+      "prompt": "扁平插画。开阔风面上一位行者或一叶轻舟逆风昂扬向前，远处破云而出的光，收束到“迎风笃行、逐光而攀、活成英雄模样”的主题。",
+      "label": "逐光而攀",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "pan-r"
       },
       "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "怨气压屋",
-          "pos": {
-            "x": 44.5,
-            "y": 35
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 100,
-            "enter": "tilt-in"
-          },
-          "at": {
-            "match": "压不住怨气"
-          },
-          "style": {
-            "preset": "os-title-stamp",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "福",
-          "pos": {
-            "x": 65.5,
-            "y": 49.5
-          },
-          "motion": {
-            "duration": 860,
-            "delay": 180,
-            "enter": "stamp"
-          },
-          "at": {
-            "match": "养出福报"
-          },
-          "style": {
-            "preset": "os-seal-square",
-            "font": "XY Kaiti",
-            "size": 60
-          }
-        }
-      ]
-    },
-    "S2-12": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。一个稳固的屋檐下，老人安坐、孩子挺直站立、夫妻并肩而立，三代人各自状态舒展，像同一座屋里不同位置的支点。重心在“安心、底气、能量”三层含义。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "老人安心 · 孩子有底气",
-          "pos": {
-            "x": 32,
-            "y": 9.5
-          },
-          "motion": {
-            "duration": 800,
-            "delay": 140,
-            "enter": "fold-down"
-          },
-          "at": {
-            "match": "那是底气"
-          },
-          "style": {
-            "preset": "os-quote-pull",
-            "font": "XY Kaiti",
-            "size": 36
-          }
-        },
-        {
-          "text": "中年续航 ⚡",
-          "pos": {
-            "x": 45.5,
-            "y": 44.5
-          },
-          "motion": {
-            "duration": 840,
-            "delay": 200,
-            "enter": "rise-glow"
-          },
-          "at": {
-            "match": "续命能量"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti",
-            "size": 48
-          }
-        }
-      ]
-    },
-    "S2-13": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。夜色里两个中年人刚从外面回家，肩膀沉重、手里拎着公文包和菜袋，门内却没有暖意，空气像冰一样把两人隔开。重心在“白天扛压力，晚上还要内耗”的疲惫感。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-d"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "白天扛压力",
-          "pos": {
-            "x": 47.5,
-            "y": 14.5
-          },
-          "motion": {
-            "duration": 800,
-            "delay": 140,
-            "enter": "fold-down"
-          },
-          "at": {
-            "match": "扛压力"
-          },
-          "style": {
-            "preset": "os-typewriter",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        },
-        {
-          "text": "人累 · 家冷",
-          "pos": {
-            "x": 48,
-            "y": 45
-          },
-          "motion": {
-            "duration": 800,
-            "delay": 140,
-            "enter": "fold-down"
-          },
-          "at": {
-            "match": "越来越冷"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti",
-            "size": 46
-          }
-        }
-      ]
-    },
-    "S2-14": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。两个人并肩坐在沙发上低头商量事情，中间摊开一本账本和一份日历，手势平稳，没有指责动作；身后的旧账纸团被放进角落。重心在“对事不对人”和“商量”。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-out"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "就事论事 不翻旧账",
-          "pos": {
-            "x": 49.5,
-            "y": 18
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 100,
-            "enter": "tilt-in"
-          },
-          "at": {
-            "match": "不翻旧账"
-          },
-          "style": {
-            "preset": "os-outline-glow",
-            "font": "XY Kaiti",
-            "size": 40
-          }
-        }
-      ]
-    },
-    "S2-15": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。前景中年夫妻有一个温暖的小互动——一人侧身让出半步、另一人伸手轻搭对方肩膀；身后老人安稳坐在窗边，孩子迎着光奔跑，三代人的状态都被这份和睦带动起来。构图向上、向前。重心在“该让则让、该暖则暖，夫妻和睦，三代向阳”。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-u"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "礼让 ≠ 软弱",
-          "pos": {
-            "x": 57.5,
-            "y": 89
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 100,
-            "enter": "tilt-in"
-          },
-          "at": {
-            "match": "相敬如宾"
-          },
-          "style": {
-            "preset": "os-callout",
-            "font": "XY Kaiti",
-            "size": 38,
-            "color": "#d81818"
-          }
-        },
-        {
-          "text": "越来越旺 ☀️",
-          "pos": {
-            "x": 50,
-            "y": 16.5
-          },
-          "motion": {
-            "duration": 840,
-            "delay": 200,
-            "enter": "rise-glow"
-          },
-          "at": {
-            "match": "越来越旺"
-          },
-          "style": {
-            "preset": "os-stamp",
-            "font": "XY Kaiti",
-            "size": 52
-          }
-        }
-      ]
-    },
-    "S2-16": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。主体是暖光下围桌吃饭、轻声说笑的一家人；与之并置，远处隐约是一座空旷高大却冷清无人的大房子轮廓作反衬，暗示“房子再大、吵着过也像牢笼”。窗外夜色安静，屋内光线柔和。重心在“家不是建筑，是气氛——笑着吃饭才是人间烟火”。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "breathe"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "秩序 · 运气 · 前程",
-          "pos": {
-            "x": 62,
-            "y": 11.5
-          },
-          "motion": {
-            "duration": 800,
-            "delay": 140,
-            "enter": "fold-down"
-          },
-          "at": {
-            "match": "秩序、运气和前程"
-          },
-          "style": {
-            "preset": "os-callout-red",
-            "font": "XY Kaiti",
-            "size": 36
-          }
-        },
-        {
-          "text": "人间烟火",
-          "pos": {
-            "x": 67,
-            "y": 83
-          },
-          "motion": {
-            "duration": 850,
-            "delay": 200,
-            "enter": "ink-bleed"
-          },
-          "at": {
-            "match": "人间烟火"
-          },
-          "style": {
-            "preset": "os-outline-glow",
-            "font": "XY Kaiti",
-            "size": 54
-          }
-        }
-      ]
-    },
-    "S2-17": {
-      "prompt": "扁平插画。米黄纸质底，黑色剪影 + 灰白暖灰基调。前景是散落一地的鸡毛与生活碎片，向远处逐渐化成一条平静延伸的河流；一家三口的背影走在河边，画面收束温和。重心在“一地鸡毛变成细水长流”的结尾余韵。",
-      "label": "",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-r"
-      },
-      "imageFit": "contain",
-      "overlays": [
-        {
-          "text": "不一定暴富 💸",
-          "pos": {
-            "x": 31.5,
-            "y": 40
-          },
-          "motion": {
-            "duration": 760,
-            "delay": 100,
-            "enter": "tilt-in"
-          },
-          "at": {
-            "match": "大富大贵"
-          },
-          "style": {
-            "preset": "os-highlight-yellow",
-            "font": "XY Kaiti",
-            "size": 40,
-            "color": "#bb1616"
-          }
-        },
-        {
-          "text": "少弯路 · 少闲气 · 少败福",
-          "pos": {
-            "x": 58.5,
-            "y": 11
-          },
-          "motion": {
-            "duration": 800,
-            "delay": 140,
-            "enter": "fold-down"
-          },
-          "at": {
-            "match": "少败福报"
-          },
-          "style": {
-            "preset": "os-title-stamp",
-            "font": "XY Kaiti",
-            "size": 32
-          }
-        },
-        {
-          "text": "细水长流",
-          "pos": {
-            "x": 54.5,
-            "y": 44
-          },
-          "motion": {
-            "duration": 900,
-            "delay": 220,
-            "enter": "handwrite"
-          },
-          "at": {
-            "match": "细水长流"
-          },
-          "style": {
-            "preset": "os-brush-title",
-            "font": "XY Kaiti",
-            "size": 60,
-            "color": "#d21414"
-          }
-        }
-      ]
+      "overlays": []
     }
   }
 }
