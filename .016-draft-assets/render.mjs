@@ -1,4 +1,4 @@
-/* 离线渲染：把 012 跑成 1920×1080 30fps MP4，音频从 audio/*.mp3 合成接进去。
+/* 离线渲染：把当前素材跑成 1920×1080 30fps MP4，音频从 audio/*.mp3 合成接进去。
  *
  * 流程：
  *   1. 起一个 python http.server 让 chrome 能拿到完整页面
@@ -10,9 +10,9 @@
  *   7. ffmpeg 把视频和音频合到最终 mp4
  *
  * 用法（仓库根目录）：
- *   node .016-draft-assets/render.mjs
+ *   node .<slug>-assets/render.mjs
  *
- * 输出：.016-draft-assets/output/016-draft.mp4
+ * 输出：.<slug>-assets/output/<slug>.mp4
  *
  * 需要：
  *   - /usr/bin/google-chrome
@@ -29,15 +29,16 @@ import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(HERE, '..');
+// slug 从所在资源目录名推出（.016-draft-assets → 016-draft），复制开新素材时本文件无需改
+const SLUG = path.basename(HERE).replace(/^\./, '').replace(/-assets$/, '');
 const AUDIO_DIR = path.join(HERE, 'audio');
 const OUTPUT_DIR = path.join(HERE, 'output');
-const OUTPUT_MP4 = path.join(OUTPUT_DIR, '016-draft.mp4');
-const TMP_VIDEO = '/tmp/016-render-silent.mp4';
-const TMP_AUDIO = '/tmp/016-render-audio.mp3';
+const OUTPUT_MP4 = path.join(OUTPUT_DIR, `${SLUG}.mp4`);
+const TMP_VIDEO = `/tmp/${SLUG}-render-silent.mp4`;
+const TMP_AUDIO = `/tmp/${SLUG}-render-audio.mp3`;
 const HTTP_PORT = 8765;
-const URL_012 = `http://127.0.0.1:${HTTP_PORT}/016-draft.html`;
+const URL_LOCAL = `http://127.0.0.1:${HTTP_PORT}/${SLUG}.html`;
 const FPS = 30;
-const INTRO_MS = 300;   // recorder 起来到 startRecordingPlayback 之间的空白纸面段
 const GAP_MS = 80;      // beat 之间的"喘息"间隔，必须跟 player.js 里的 setTimeout 一致
 const ENDING_MS = 1500; // body.ending 持续时间，跟 player.js 一致
 
@@ -146,7 +147,7 @@ async function main() {
   try {
     const page = await browser.newPage();
     log('loading page');
-    await page.goto(URL_012, { waitUntil: 'networkidle0', timeout: 30000 });
+    await page.goto(URL_LOCAL, { waitUntil: 'networkidle0', timeout: 30000 });
     // 等所有 audio 元素 readyState >= 1（metadata loaded），player 才能算 Ken Burns 时长
     await page.waitForFunction(
       () =>

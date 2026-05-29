@@ -1000,6 +1000,7 @@
           },
           "style": {
             "preset": "os-sticker-yellow",
+            "font": "XY Kaiti",
             "size": 40
           }
         },
@@ -1451,6 +1452,7 @@
           },
           "style": {
             "preset": "os-typewriter",
+            "font": "XY Kaiti",
             "size": 40
           }
         },
