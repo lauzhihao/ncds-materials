@@ -36,7 +36,7 @@ const OUTPUT_DIR = path.join(HERE, 'output');
 const OUTPUT_MP4 = path.join(OUTPUT_DIR, `${SLUG}.mp4`);
 const TMP_VIDEO = `/tmp/${SLUG}-render-silent.mp4`;
 const TMP_AUDIO = `/tmp/${SLUG}-render-audio.mp3`;
-const HTTP_PORT = 8765;
+const HTTP_PORT = Number(process.env.RENDER_PORT) || 8765;
 const URL_LOCAL = `http://127.0.0.1:${HTTP_PORT}/${SLUG}.html`;
 const FPS = 30;
 const GAP_MS = 80;      // beat 之间的"喘息"间隔，必须跟 player.js 里的 setTimeout 一致
@@ -131,7 +131,7 @@ async function main() {
 
   log('launching headless chrome');
   const browser = await puppeteer.launch({
-    executablePath: '/usr/bin/google-chrome',
+    executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome',
     headless: 'new',
     protocolTimeout: 15 * 60 * 1000, // 整片 ~6:15，默认 180s 不够 waitForFunction 蹲到尾
     args: [
@@ -160,6 +160,25 @@ async function main() {
       { timeout: 15000 }
     );
     await sleep(1200);
+
+    // 字体预热：XY Kaiti / ZS Fangsong 是 display:swap 的大体积中文 woff2（4MB / 7MB），
+    // 懒加载——不预热的话录制一开始才触发下载，前几秒字幕是 fallback 字体，加载完成
+    // 瞬间 swap 成终态字体，录进视频就是肉眼可见的字体跳变 + 重排卡顿。这里在开录前
+    // 强制把所有声明了 src 的字体下载 + 解析完，document.fonts.ready 兜底等所有 pending
+    // 加载结束，确保正式录制全程都是终态字体。
+    log('preheating fonts (force-load before recording)');
+    const fontStatus = await page.evaluate(async () => {
+      if (!document.fonts) return [];
+      // 强制加载页面所有已声明的 font-face（自定义大 woff2 + 系统/分片字体一并预热），
+      // 再等 document.fonts.ready，确保正式录制时不会有任何字体在半路 swap。
+      await Promise.allSettled(Array.from(document.fonts).map((f) => f.load().catch(() => {})));
+      await document.fonts.ready;
+      // document.fonts 里同一 family 常有几百个分片 face，去重后再报告
+      const seen = new Set();
+      for (const f of document.fonts) seen.add(`${f.family}:${f.status}`);
+      return [...seen];
+    });
+    log('fonts ready: ' + (fontStatus.join(', ') || '(none declared)'));
 
     // 录前先把 UI 抹掉（控件 / Tweaks 面板 / image-slot ring）。
     log('hiding UI');
