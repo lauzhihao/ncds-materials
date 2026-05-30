@@ -3,8 +3,8 @@
   "__doc__": "017 主题重写为「不拖延」：抖音科普口播。结构=危害钩子(具体事例:痛失大单/拖延就医)→科学解释(情绪逃避/大脑躲痛/现时偏误)→2 个可落地妙招(五分钟启动+借 AI 起头 / 番茄钟隔绝干扰)→鼓励收束(别自责)。11 个 scene / 28 条 beat，每 scene 2-3 句；引用心理学研究以标签 overlay 标注出处。图片提示词全部按新主题重写，旧 S2-* 预览图与新 scene id 不匹配，需删图重跑 pic_gen.py。",
   "meta": {
     "slug": "017-draft",
-    "title": "不拖延",
-    "disclaimer": "科普向内容　不构成医疗建议",
+    "title": "拖延症有哪些危害？",
+    "disclaimer": "观点仅供参考　无不良引导",
     "titleOptions": [
       "不拖延",
       "拖延不是懒，是大脑在躲开「疼」",
@@ -89,7 +89,7 @@
     {
       "zh": "一笔谈了半年的长期合作，几十万的单子，就这样飞了。",
       "scene": "S1-02",
-      "en": "Half a year of partnership, a deal worth hundreds of thousands — gone, just like that."
+      "en": "Six months of talks, a six-figure deal — gone, just like that."
     },
     {
       "zh": "体检单上写着「建议复查」，你想着「过阵子再说」，",
@@ -109,7 +109,7 @@
     {
       "zh": "心理学家早就说过：拖延，根本不是时间管理的问题，",
       "scene": "S1-04",
-      "en": "Psychologists said it long ago: procrastination isn't a time-management problem at all,"
+      "en": "Psychologists said it long ago: procrastination isn't about time management,"
     },
     {
       "zh": "而是情绪管理的问题。",
@@ -194,12 +194,12 @@
     {
       "zh": "把手机翻面、放到够不着的地方，铃一响，就奖励自己歇会儿。",
       "scene": "S1-10",
-      "en": "flip your phone over, put it out of reach, and when it rings, reward yourself with a break."
+      "en": "flip your phone face-down, out of reach; when it rings, take a break."
     },
     {
       "zh": "别为已经拖掉的时间懊恼——自责只会喂大焦虑，焦虑又会喂大拖延。",
       "scene": "S1-11",
-      "en": "Don't agonize over the time already lost — self-blame only feeds anxiety, and anxiety feeds more delay."
+      "en": "Don't dwell on lost time — blame feeds anxiety, and anxiety feeds delay."
     },
     {
       "zh": "执行力不是天赋，是一次次「先开始」攒出来的。",
