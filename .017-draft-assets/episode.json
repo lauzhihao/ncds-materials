@@ -1,15 +1,15 @@
 {
   "__schema__": "ncds-paper-card-talk/v1",
-  "__doc__": "017 主题“迎风笃行”：诗性短章试装版，工整对仗体。11 个 scene / 33 条 beat，融合「迎风笃行」与「年近不惑」两段意象，主旨为对奔波者的鼓励。仅用于验证篇幅、节奏与字幕卡片承载，暂无音频。",
+  "__doc__": "017 主题重写为「不拖延」：抖音科普口播。结构=危害钩子(具体事例)→科学解释(情绪逃避/大脑躲痛/现时偏误)→2 个可落地小妙招(五分钟启动法 + 自我宽恕)→鼓励收束。10 个 scene / 25 条 beat，每 scene 2-3 句；引用心理学研究以标签 overlay 标注出处。图片提示词全部按新主题重写，旧 S2-* 预览图与新 scene id 不匹配，需删图重跑 pic_gen.py。",
   "meta": {
     "slug": "017-draft",
-    "title": "迎风笃行",
-    "disclaimer": "诗性短章试装版　仅用于节奏预览",
+    "title": "不拖延",
+    "disclaimer": "科普向内容　不构成医疗建议",
     "titleOptions": [
-      "迎风笃行",
-      "尘途多倦，亦要逐光而攀",
-      "奔波朝夕，不失初心",
-      "人间烟火为伴，前路仍可奔赴"
+      "不拖延",
+      "拖延不是懒，是大脑在躲开「疼」",
+      "治拖延，从「只做五分钟」开始",
+      "别再为拖延，狠狠责备自己"
     ]
   },
   "fonts": [
@@ -67,292 +67,321 @@
   },
   "beats": [
     {
-      "zh": "尘途多倦，世事多艰，",
-      "scene": "S2-01",
-      "en": "Dusty roads weary us, and the world is seldom kind,"
+      "zh": "明明半小时就能写完的东西，你却拖到了凌晨。",
+      "scene": "S1-01",
+      "en": "Something you could finish in half an hour, you put off until the dead of night."
     },
     {
-      "zh": "奔波朝夕，前路漫漫。",
-      "scene": "S2-01",
-      "en": "we rush from dawn to dusk, the road still long ahead."
+      "zh": "不是你不会做，而是一直在等一个「更好的状态」。",
+      "scene": "S1-01",
+      "en": "It's not that you can't do it — you're waiting for a 'better mood' that never comes."
     },
     {
-      "zh": "行囊未卸，脚步未歇，风雨兼程，初心不灭。",
-      "scene": "S2-01",
-      "en": "Pack still on our backs, feet never resting — through wind and rain, the first heart never fades."
+      "zh": "同事小林，把方案拖到交付当天才动笔，",
+      "scene": "S1-02",
+      "en": "A colleague put off the proposal until the day it was due,"
     },
     {
-      "zh": "人世几番辗转，",
-      "scene": "S2-02",
-      "en": "Through life's many turnings,"
+      "zh": "通宵赶工，却漏看了客户最在意的那条，整单返工。",
+      "scene": "S1-02",
+      "en": "pulled an all-nighter, missed the client's key point, and had to redo it all."
     },
     {
-      "zh": "早已尝尽冷暖悲欢。",
-      "scene": "S2-02",
-      "en": "we have long tasted every cold and warmth, every grief and joy."
+      "zh": "体检单上写着「建议复查」，你想着「过阵子再说」，",
+      "scene": "S1-03",
+      "en": "The check-up form said 'follow-up advised,' and you thought 'later,'"
     },
     {
-      "zh": "也曾跌倒，也曾隐忍，把泪悄悄咽下，再咬牙向前。",
-      "scene": "S2-02",
-      "en": "We have fallen, we have borne it — swallowing our tears in silence, then pressing on once more."
+      "zh": "一拖就是半年。有些事，拖掉的不只是时间。",
+      "scene": "S1-03",
+      "en": "and half a year slipped by. Some things, delaying them costs more than time."
     },
     {
-      "zh": "上念亲恩常记，",
-      "scene": "S2-03",
-      "en": "Above, we keep our parents' kindness in mind,"
+      "zh": "但先别急着骂自己懒。",
+      "scene": "S1-04",
+      "en": "But don't rush to call yourself lazy."
     },
     {
-      "zh": "是父母期盼的双眼。",
-      "scene": "S2-03",
-      "en": "those waiting, hopeful eyes."
+      "zh": "心理学发现，拖延从来不是时间管理的问题，",
+      "scene": "S1-04",
+      "en": "Psychology has found procrastination was never a time-management problem,"
     },
     {
-      "zh": "一声叮咛，一盏热饭，便是归途里最暖的牵绊。",
-      "scene": "S2-03",
-      "en": "A word of care, a warm bowl of rice — the warmest tie on the road back home."
+      "zh": "而是情绪管理的问题。",
+      "scene": "S1-04",
+      "en": "but an emotion-management one."
     },
     {
-      "zh": "下思稚子相牵，",
-      "scene": "S2-04",
-      "en": "Below, the little ones hold us close,"
+      "zh": "研究者西罗斯与皮切尔指出：",
+      "scene": "S1-05",
+      "en": "Researchers Sirois and Pychyl point out:"
     },
     {
-      "zh": "是儿女依赖的笑颜。",
-      "scene": "S2-04",
-      "en": "those trusting, smiling faces."
+      "zh": "拖延，是用逃避眼前的坏情绪，去换未来更大的麻烦。",
+      "scene": "S1-05",
+      "en": "procrastination trades away one bad feeling now for far bigger trouble later."
     },
     {
-      "zh": "小手攥着衣角，便攥住了你全部的勇敢。",
-      "scene": "S2-04",
-      "en": "A small hand grips your hem, and grips with it all of your courage."
+      "zh": "脑成像研究还发现，一想到讨厌的任务，",
+      "scene": "S1-06",
+      "en": "Brain-imaging studies show that the moment we picture a dreaded task,"
     },
     {
-      "zh": "朝来躬身奔走，晨起朝阳相伴；",
-      "scene": "S2-05",
-      "en": "By day we bow and toil, the morning sun our company;"
+      "zh": "大脑里处理「疼痛」的区域就会亮起来。",
+      "scene": "S1-06",
+      "en": "the brain's pain-processing regions light up."
     },
     {
-      "zh": "暮归星光作陪，夜伴清灯自安。",
-      "scene": "S2-05",
-      "en": "by dusk the stars walk with us, and a quiet lamp brings calm."
+      "zh": "拖延，其实是大脑在本能地「躲开疼」。",
+      "scene": "S1-06",
+      "en": "Procrastination is really the brain instinctively dodging pain."
     },
     {
-      "zh": "把疲惫叠进肩头，把焦灼藏在笑颜。",
-      "scene": "S2-05",
-      "en": "We fold the weariness into our shoulders, and hide the anxiety behind a smile."
+      "zh": "更麻烦的是「现时偏误」：",
+      "scene": "S1-07",
+      "en": "Worse still is what's called 'present bias':"
     },
     {
-      "zh": "有些疲惫，不必说出口；",
-      "scene": "S2-06",
-      "en": "Some weariness need not be spoken;"
+      "zh": "我们总是高估眼前的舒服，低估未来的代价。",
+      "scene": "S1-07",
+      "en": "we keep overrating today's comfort and underrating tomorrow's cost."
     },
     {
-      "zh": "有些艰难，也不必逢人细谈。",
-      "scene": "S2-06",
-      "en": "some hardship need not be told to all."
+      "zh": "那怎么办？第一招：只先做五分钟。",
+      "scene": "S1-08",
+      "en": "So what do we do? Tip one: just start for five minutes."
     },
     {
-      "zh": "你只是把辛酸悄悄收起，把脊背挺得更端。",
-      "scene": "S2-06",
-      "en": "You simply tuck the bitterness away, and hold your back a little straighter."
+      "zh": "不求做完，只求开始——把「写报告」缩小成「打开文档、敲下第一行」。",
+      "scene": "S1-08",
+      "en": "Not to finish, just to begin — shrink 'write the report' into 'open the file, type one line.'"
     },
     {
-      "zh": "你可知年近不惑，",
-      "scene": "S2-07",
-      "en": "Do you know that, nearing forty,"
+      "zh": "最难的从来不是坚持，而是启动。",
+      "scene": "S1-08",
+      "en": "The hardest part was never persisting — it's getting started."
     },
     {
-      "zh": "胸中仍有热血沸腾的瞬间。",
-      "scene": "S2-07",
-      "en": "there are still moments when the blood runs hot in your chest."
+      "zh": "第二招：别再为拖延，狠狠责备自己。",
+      "scene": "S1-09",
+      "en": "Tip two: stop beating yourself up over having procrastinated."
     },
     {
-      "zh": "初心未改，志气未减，要去的远山，从未走远。",
-      "scene": "S2-07",
-      "en": "The first heart unchanged, the spirit undimmed — the distant peak you seek has never moved away."
+      "zh": "有研究发现，考前原谅了自己拖延的学生，",
+      "scene": "S1-09",
+      "en": "One study found that students who forgave their own procrastination before an exam"
     },
     {
-      "zh": "纵然步履匆匆，",
-      "scene": "S2-08",
-      "en": "Though our steps are hurried,"
+      "zh": "下一次反而拖得更少。",
+      "scene": "S1-09",
+      "en": "actually put things off less the next time."
     },
     {
-      "zh": "也愿向着光亮，一程一程地赶。",
-      "scene": "S2-08",
-      "en": "still we move toward the light, one stretch and then the next."
+      "zh": "自责只会喂大焦虑，而焦虑又会喂大拖延。",
+      "scene": "S1-10",
+      "en": "Self-blame only feeds anxiety, and anxiety only feeds more delay."
     },
     {
-      "zh": "握最坚韧的信念，打最硬的仗，从不轻言败北。",
-      "scene": "S2-08",
-      "en": "Holding the firmest faith, fighting the hardest fight, never lightly speaking of defeat."
+      "zh": "执行力不是天赋，是一次次「先开始」攒出来的。",
+      "scene": "S1-10",
+      "en": "Drive isn't a gift — it's built up from starting, again and again."
     },
     {
-      "zh": "幸有人间烟火为伴，",
-      "scene": "S2-09",
-      "en": "Thankfully the warmth of ordinary life walks beside us,"
-    },
-    {
-      "zh": "柴米灯火，亦能宽慰风霜。",
-      "scene": "S2-09",
-      "en": "daily meals and lamplight soothe the frost of the road."
-    },
-    {
-      "zh": "平凡日子，也自有向前的力量。",
-      "scene": "S2-09",
-      "en": "Even plain days hold their own power to carry us forward."
-    },
-    {
-      "zh": "愿你不言放弃，也敢迎风而立；",
-      "scene": "S2-10",
-      "en": "May you never speak of giving up, and dare to stand against the wind;"
-    },
-    {
-      "zh": "把万般辛苦，慢慢酿成心安。",
-      "scene": "S2-10",
-      "en": "may all your hardship slowly ferment into peace within."
-    },
-    {
-      "zh": "把走过的荆棘，都熬成脚下的坦途。",
-      "scene": "S2-10",
-      "en": "May every thorn you have crossed become smooth road beneath your feet."
-    },
-    {
-      "zh": "纵前路仍远，亦当昂首扬帆，",
-      "scene": "S2-11",
-      "en": "Though the road runs far, still lift your head and raise your sail,"
-    },
-    {
-      "zh": "逐光而攀，步履不乱。",
-      "scene": "S2-11",
-      "en": "chase the light and climb, your steps unshaken."
-    },
-    {
-      "zh": "终有一日，活成自己的英雄模样。<END>",
-      "scene": "S2-11",
-      "en": "And one day you will live into the very hero you were meant to be."
+      "zh": "你不必等到准备好，现在，就动一下。<END>",
+      "scene": "S1-10",
+      "en": "You don't have to wait until you're ready. Right now — just make one move."
     }
   ],
   "scenes": {
-    "S2-01": {
-      "prompt": "扁平插画。纸本质感，暖灰与墨色为主。清晨与黄昏交叠的城市道路上，一个普通赶路人背影向前，肩头略显疲惫，远处道路层层延伸，强调“尘途多倦、前路漫漫”的生命质感。",
-      "label": "尘途漫漫",
+    "S1-01": {
+      "prompt": "扁平插画，纸本质感，暖灰与墨色为主。深夜书桌前，一个人对着发亮的空白屏幕发呆，窗外是凌晨的城市与一弯月，桌上散落咖啡杯，强调「明明很快能做完、却拖到深夜」的疲惫与焦灼。",
+      "label": "拖到凌晨",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "pan-r"
       },
       "imageFit": "contain",
-      "overlays": []
+      "overlays": [
+        {
+          "text": "再等等…",
+          "pos": { "x": 30, "y": 22 },
+          "motion": { "duration": 760, "delay": 120, "enter": "tilt-in" },
+          "at": { "match": "更好的状态" },
+          "style": { "preset": "os-handwrite", "font": "XY Kaiti", "size": 42 }
+        }
+      ]
     },
-    "S2-02": {
-      "prompt": "扁平插画。纸本质感，暖灰与墨色为主。一位行路者立于岁月长路上，身后是已走过的崎岖与风雨痕迹，神情平静而坚韧，强调“几番辗转、尝尽冷暖”的阅历感。",
-      "label": "几度冷暖",
+    "S1-02": {
+      "prompt": "扁平插画，纸本质感，暖灰与墨色。办公室里一个人趴在堆满文件的桌上通宵赶工，旁边的方案被红笔大片标注退回，神情懊恼，台灯亮着，窗外天色将明，强调「拖到最后一刻、漏掉关键、整单返工」。",
+      "label": "整单返工",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "zoom-in"
       },
       "imageFit": "contain",
-      "overlays": []
+      "overlays": [
+        {
+          "text": "全部重来",
+          "pos": { "x": 72, "y": 24 },
+          "motion": { "duration": 820, "delay": 160, "enter": "stamp" },
+          "at": { "match": "整单返工" },
+          "style": { "preset": "os-stamp", "font": "XY Kaiti", "size": 48, "color": "#ce0909", "rotation": -8 }
+        }
+      ]
     },
-    "S2-03": {
-      "prompt": "扁平插画。画面上方隐现年迈父母温和关切的轮廓与双眼，下方一个成年人抬头回望，含蓄克制，突出“上念亲恩、归途有牵挂”。",
-      "label": "上念亲恩",
+    "S1-03": {
+      "prompt": "扁平插画，纸本质感，暖灰。一张被随手压在桌角、日渐落灰的体检单，旁边日历一页页翻过，主人公背影犹豫地看了一眼却转身离开，强调「想着过阵子再说、一拖就是半年」。",
+      "label": "一拖半年",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "zoom-out"
       },
       "imageFit": "contain",
-      "overlays": []
+      "overlays": [
+        {
+          "text": "过阵子再说",
+          "pos": { "x": 31, "y": 24 },
+          "motion": { "duration": 760, "delay": 120, "enter": "fade" },
+          "at": { "match": "过阵子再说" },
+          "style": { "preset": "os-circle-mark", "font": "XY Kaiti", "size": 40 }
+        }
+      ]
     },
-    "S2-04": {
-      "prompt": "扁平插画。一个孩子伸出小手牵住大人的衣角，大人低头温柔回应，画面温暖安静，强调“下有稚子相牵、为之而勇敢”。",
-      "label": "下思稚子",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "diag-tl"
-      },
-      "imageFit": "contain",
-      "overlays": []
-    },
-    "S2-05": {
-      "prompt": "扁平插画。上下并置：清晨朝阳下匆匆出门的背影，与暮色星光中归家的身影，表达“朝奔暮归、晨昏不息”的日常奔波。",
-      "label": "朝奔暮归",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-in"
-      },
-      "imageFit": "contain",
-      "overlays": []
-    },
-    "S2-06": {
-      "prompt": "扁平插画。一个人独自挺直脊背走在路上，把疲惫与辛酸收在身后看不见处，画面克制安静，强调“不言疲惫、默默担当”。",
-      "label": "不言疲惫",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-l"
-      },
-      "imageFit": "contain",
-      "overlays": []
-    },
-    "S2-07": {
-      "prompt": "扁平插画。一个年近中年的身影，胸口或眼中有一束不灭的微光火苗，姿态依旧挺拔，强调“年近不惑、热血未冷、志气未减”。",
-      "label": "热血未冷",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "pan-u"
-      },
-      "imageFit": "contain",
-      "overlays": []
-    },
-    "S2-08": {
-      "prompt": "扁平插画。层层远山在前，一位行路者沿山路向上、衣角微扬，天边有收敛而坚定的亮光，重点“远山在前、仍愿一程程赶路”。",
-      "label": "心向远山",
-      "motion": {
-        "enter": "fade",
-        "duration": 700,
-        "image": "zoom-out"
-      },
-      "imageFit": "contain",
-      "overlays": []
-    },
-    "S2-09": {
-      "prompt": "扁平插画。傍晚小城街巷与窗内灯火，饭桌蒸汽、归家路灯、平凡屋檐构成温暖日常，强调“人间烟火”对奔波者的抚慰。",
-      "label": "烟火为伴",
+    "S1-04": {
+      "prompt": "扁平插画，纸本质感。一个人垂头坐着，头顶悬着象征自责的乌云，旁边却有一只温和的手轻轻搭上肩膀，氛围由压抑转向被理解，强调「拖延不是懒、而是情绪」。",
+      "label": "不是懒",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "breathe"
       },
       "imageFit": "contain",
-      "overlays": []
+      "overlays": [
+        {
+          "text": "不是懒　是情绪",
+          "pos": { "x": 50, "y": 23 },
+          "motion": { "duration": 820, "delay": 140, "enter": "zoom-in" },
+          "at": { "match": "情绪管理" },
+          "style": { "preset": "os-highlight-yellow", "font": "XY Kaiti", "size": 46 }
+        }
+      ]
     },
-    "S2-10": {
-      "prompt": "扁平插画。行者脚下的荆棘小路逐渐化为平坦坦途，远处天色转亮，象征“把万般辛苦熬成脚下坦途、酿成心安”。",
-      "label": "酿苦为安",
+    "S1-05": {
+      "prompt": "扁平插画，纸本质感。一架天平，一端是当下小小的轻松云朵，另一端是未来沉重的大石块，一个人正把砝码偏向眼前那端，隐喻「逃避眼前坏情绪、换来未来更大麻烦」。",
+      "label": "情绪逃避",
       "motion": {
         "enter": "fade",
         "duration": 700,
-        "image": "diag-br"
+        "image": "pan-l"
       },
       "imageFit": "contain",
-      "overlays": []
+      "overlays": [
+        {
+          "text": "Sirois & Pychyl · 2013",
+          "pos": { "x": 74, "y": 17 },
+          "motion": { "duration": 720, "delay": 200, "enter": "fade" },
+          "at": { "match": "西罗斯与皮切尔" },
+          "style": { "preset": "os-tag-square", "font": "Inter", "size": 26 }
+        }
+      ]
     },
-    "S2-11": {
-      "prompt": "扁平插画。开阔风面上一位行者或一叶轻舟逆风昂扬向前，远处破云而出的光，收束到“迎风笃行、逐光而攀、活成英雄模样”的主题。",
-      "label": "逐光而攀",
+    "S1-06": {
+      "prompt": "扁平插画，纸本质感。一个侧面头部剖面，大脑内部某个区域被暖红色光点亮，像被触碰到痛点，旁边漂浮着代表讨厌任务的小图标（文件、闹钟），强调「一想到任务、大脑的疼痛区域就亮起」。",
+      "label": "大脑躲痛",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-in"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "大脑在躲痛",
+          "pos": { "x": 70, "y": 26 },
+          "motion": { "duration": 800, "delay": 160, "enter": "tilt-in" },
+          "at": { "match": "躲开疼" },
+          "style": { "preset": "os-callout-red", "font": "XY Kaiti", "size": 42 }
+        }
+      ]
+    },
+    "S1-07": {
+      "prompt": "扁平插画，纸本质感。近处放大一颗诱人的、糖果般的「此刻舒适」，远处缩得很小的山峰代表「未来代价」，透视刻意夸张，强调「高估眼前舒服、低估未来代价」。",
+      "label": "现时偏误",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "diag-tl"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "Present Bias",
+          "pos": { "x": 73, "y": 19 },
+          "motion": { "duration": 720, "delay": 160, "enter": "fade" },
+          "at": { "match": "现时偏误" },
+          "style": { "preset": "os-tag-pill", "font": "Inter", "size": 28 }
+        }
+      ]
+    },
+    "S1-08": {
+      "prompt": "扁平插画，纸本质感，色调转明亮。一个人伸手翻开本子、写下第一行字，旁边一只小沙漏只剩五分钟的沙，门槛被画成一道很矮的小台阶，强调「只先做五分钟、把启动门槛降到最低」。",
+      "label": "五分钟启动",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "pan-u"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "只做 5 分钟",
+          "pos": { "x": 30, "y": 22 },
+          "motion": { "duration": 860, "delay": 140, "enter": "stamp" },
+          "at": { "match": "五分钟" },
+          "style": { "preset": "os-brush-title", "font": "XY Kaiti", "size": 52, "color": "#1f6f4a" }
+        }
+      ]
+    },
+    "S1-09": {
+      "prompt": "扁平插画，纸本质感，温暖。一个人对着镜子里的自己轻轻点头微笑、像在和过去和解，身后撕碎的「自责」纸团落地，强调「原谅自己的拖延、下次反而做得更好」。",
+      "label": "自我宽恕",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-out"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "Wohl et al. · 2010",
+          "pos": { "x": 74, "y": 17 },
+          "motion": { "duration": 720, "delay": 200, "enter": "fade" },
+          "at": { "match": "原谅了自己" },
+          "style": { "preset": "os-tag-square", "font": "Inter", "size": 26 }
+        }
+      ]
+    },
+    "S1-10": {
+      "prompt": "扁平插画，纸本质感，晨光色调。一个人迈出坚定的第一步，脚下一连串脚印由模糊渐渐变清晰，前方天色渐亮、道路开阔，强调「执行力是一次次先开始攒出来的、现在就动一下」。",
+      "label": "现在就动",
       "motion": {
         "enter": "fade",
         "duration": 700,
         "image": "pan-r"
       },
       "imageFit": "contain",
-      "overlays": []
+      "overlays": [
+        {
+          "text": "先　开　始",
+          "pos": { "x": 50, "y": 23 },
+          "motion": { "duration": 880, "delay": 160, "enter": "stamp" },
+          "at": { "match": "先开始" },
+          "style": { "preset": "os-brush-title", "font": "XY Kaiti", "size": 54, "color": "#ce0909" }
+        }
+      ]
     }
   }
 }

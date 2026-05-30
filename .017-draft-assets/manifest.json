@@ -1,12 +1,12 @@
 {
   "id": "017-draft",
   "name": "Paper Card Talk",
-  "title": "暖纸卡片口播 · 为什么说家和万事兴？",
+  "title": "暖纸卡片口播 · 不拖延",
   "entry": "017-draft.html",
   "style": ".017-draft-assets/styles.css",
   "script": ".017-draft-assets/player.js",
   "assets": ".017-draft-assets/",
-  "description": "1920×1080 暖纸卡片风口播短片模板：顶部品牌标题 + 中央分镜卡片 + 底部字幕带。017 当前主题重写为“为什么说家和万事兴？”，结构覆盖开头钩子、传统典故、科学解释、玄学解释、中年夫妻处境与扣题收束。BEATS 字幕节拍数据驱动播放推进，SCENES 提供分镜底图；图位走 <image-slot> 拖拽填充并通过 .image-slots.state.json sidecar 持久化。",
+  "description": "1920×1080 暖纸卡片风口播短片模板：顶部品牌标题 + 中央分镜卡片 + 底部字幕带。017 当前主题重写为“不拖延”，结构覆盖危害钩子（具体事例）、科学解释（情绪逃避/大脑躲痛/现时偏误）、两个可落地小妙招（五分钟启动法+自我宽恕）与鼓励收束。BEATS 字幕节拍数据驱动播放推进，SCENES 提供分镜底图；图位走 <image-slot> 拖拽填充并通过 .image-slots.state.json sidecar 持久化。",
   "version": "1.0.0",
   "features": [
     "1920×1080 等比缩放舞台，黑边 letterbox 居中",
