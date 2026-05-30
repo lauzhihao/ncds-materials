@@ -87,9 +87,9 @@
       "en": "pulled an all-nighter, and still missed the one point the client cared about most."
     },
     {
-      "zh": "丢的不只是这一单，是谈了半年的长期合作，和本该到手的几十万。",
+      "zh": "一笔谈了半年的长期合作，几十万的单子，就这样飞了。",
       "scene": "S1-02",
-      "en": "What he lost wasn't just one order — it was half a year of partnership, and the hundreds of thousands that should have been his."
+      "en": "Half a year of partnership, a deal worth hundreds of thousands — gone, just like that."
     },
     {
       "zh": "体检单上写着「建议复查」，你想着「过阵子再说」，",
@@ -102,9 +102,9 @@
       "en": "and half a year slipped by. Some things, delaying them costs more than time."
     },
     {
-      "zh": "但先别急着骂自己懒。",
+      "zh": "但先别急着责怪自己。",
       "scene": "S1-04",
-      "en": "But don't rush to call yourself lazy."
+      "en": "But don't be so quick to blame yourself."
     },
     {
       "zh": "心理学家早就说过：拖延，根本不是时间管理的问题，",
@@ -157,9 +157,14 @@
       "en": "So what do we do? Tip one: just start for five minutes."
     },
     {
-      "zh": "不求做完，只求开始——最难的，从来不是坚持，而是启动。",
+      "zh": "不求做完——",
       "scene": "S1-08",
-      "en": "Not to finish, just to begin — the hardest part is never persisting, it's getting started."
+      "en": "Not to finish it —"
+    },
+    {
+      "zh": "只求开始。先动起来，状态自己会跟上。",
+      "scene": "S1-08",
+      "en": "just to begin. Once you're moving, the mood catches up on its own."
     },
     {
       "zh": "比如写报告，别再对着空白文档干耗。",
