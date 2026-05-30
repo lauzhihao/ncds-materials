@@ -585,6 +585,9 @@
   } catch (_) { /* ignore */ }
   showBeat(startBeat);
 
+  // Web 字体晚到会改变字宽：就绪后对当前 beat 再跑一次 fitBand，避免首屏英文被裁。
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { fitBand(); });
+
   function startRecordingPlayback(opts) {
     opts = opts || {};
     pause();
