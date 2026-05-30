@@ -1,6 +1,6 @@
 {
   "__schema__": "ncds-paper-card-talk/v1",
-  "__doc__": "017 主题重写为「不拖延」：抖音科普口播。结构=危害钩子(具体事例)→科学解释(情绪逃避/大脑躲痛/现时偏误)→2 个可落地小妙招(五分钟启动法 + 自我宽恕)→鼓励收束。10 个 scene / 25 条 beat，每 scene 2-3 句；引用心理学研究以标签 overlay 标注出处。图片提示词全部按新主题重写，旧 S2-* 预览图与新 scene id 不匹配，需删图重跑 pic_gen.py。",
+  "__doc__": "017 主题重写为「不拖延」：抖音科普口播。结构=危害钩子(具体事例:痛失大单/拖延就医)→科学解释(情绪逃避/大脑躲痛/现时偏误)→2 个可落地妙招(五分钟启动+借 AI 起头 / 番茄钟隔绝干扰)→鼓励收束(别自责)。11 个 scene / 28 条 beat，每 scene 2-3 句；引用心理学研究以标签 overlay 标注出处。图片提示词全部按新主题重写，旧 S2-* 预览图与新 scene id 不匹配，需删图重跑 pic_gen.py。",
   "meta": {
     "slug": "017-draft",
     "title": "不拖延",
@@ -82,9 +82,14 @@
       "en": "A colleague put off the proposal until the day it was due,"
     },
     {
-      "zh": "通宵赶工，却漏看了客户最在意的那条，整单返工。",
+      "zh": "通宵赶工，还是漏掉了客户最在意的那一条。",
       "scene": "S1-02",
-      "en": "pulled an all-nighter, missed the client's key point, and had to redo it all."
+      "en": "pulled an all-nighter, and still missed the one point the client cared about most."
+    },
+    {
+      "zh": "丢的不只是这一单，是谈了半年的长期合作，和本该到手的几十万。",
+      "scene": "S1-02",
+      "en": "What he lost wasn't just one order — it was half a year of partnership, and the hundreds of thousands that should have been his."
     },
     {
       "zh": "体检单上写着「建议复查」，你想着「过阵子再说」，",
@@ -102,14 +107,14 @@
       "en": "But don't rush to call yourself lazy."
     },
     {
-      "zh": "心理学发现，拖延从来不是时间管理的问题，",
+      "zh": "心理学家早就说过：拖延，根本不是时间管理的问题，",
       "scene": "S1-04",
-      "en": "Psychology has found procrastination was never a time-management problem,"
+      "en": "Psychologists said it long ago: procrastination isn't a time-management problem at all,"
     },
     {
       "zh": "而是情绪管理的问题。",
       "scene": "S1-04",
-      "en": "but an emotion-management one."
+      "en": "it's an emotion-management one."
     },
     {
       "zh": "研究者西罗斯与皮切尔指出：",
@@ -122,14 +127,14 @@
       "en": "procrastination trades away one bad feeling now for far bigger trouble later."
     },
     {
-      "zh": "脑成像研究还发现，一想到讨厌的任务，",
+      "zh": "去给大脑做个扫描你会看到，一想到讨厌的任务，",
       "scene": "S1-06",
-      "en": "Brain-imaging studies show that the moment we picture a dreaded task,"
+      "en": "Scan the brain and you'll see: the moment we picture a dreaded task,"
     },
     {
-      "zh": "大脑里处理「疼痛」的区域就会亮起来。",
+      "zh": "大脑里处理「疼痛」的区域，就会真的亮起来。",
       "scene": "S1-06",
-      "en": "the brain's pain-processing regions light up."
+      "en": "the regions that handle 'pain' genuinely light up."
     },
     {
       "zh": "拖延，其实是大脑在本能地「躲开疼」。",
@@ -152,43 +157,53 @@
       "en": "So what do we do? Tip one: just start for five minutes."
     },
     {
-      "zh": "不求做完，只求开始——把「写报告」缩小成「打开文档、敲下第一行」。",
+      "zh": "不求做完，只求开始——最难的，从来不是坚持，而是启动。",
       "scene": "S1-08",
-      "en": "Not to finish, just to begin — shrink 'write the report' into 'open the file, type one line.'"
+      "en": "Not to finish, just to begin — the hardest part is never persisting, it's getting started."
     },
     {
-      "zh": "最难的从来不是坚持，而是启动。",
-      "scene": "S1-08",
-      "en": "The hardest part was never persisting — it's getting started."
-    },
-    {
-      "zh": "第二招：别再为拖延，狠狠责备自己。",
+      "zh": "比如写报告，别再对着空白文档干耗。",
       "scene": "S1-09",
-      "en": "Tip two: stop beating yourself up over having procrastinated."
+      "en": "Take writing a report — stop staring at the blank page."
     },
     {
-      "zh": "有研究发现，考前原谅了自己拖延的学生，",
+      "zh": "打开豆包，跟它说一句「帮我搭个报告框架」，",
       "scene": "S1-09",
-      "en": "One study found that students who forgave their own procrastination before an exam"
+      "en": "Open Doubao and just say, 'draft me a report outline,'"
     },
     {
-      "zh": "下一次反而拖得更少。",
+      "zh": "AI 时代，比起做到完美，更重要的是让想法先落地。",
       "scene": "S1-09",
-      "en": "actually put things off less the next time."
+      "en": "In the age of AI, getting the idea moving matters more than getting it perfect."
     },
     {
-      "zh": "自责只会喂大焦虑，而焦虑又会喂大拖延。",
+      "zh": "第二招：给拖延装一个开关——番茄钟。",
       "scene": "S1-10",
-      "en": "Self-blame only feeds anxiety, and anxiety only feeds more delay."
+      "en": "Tip two: give procrastination an off-switch — the Pomodoro timer."
+    },
+    {
+      "zh": "定个 25 分钟的闹钟，这段时间里只做这一件事，",
+      "scene": "S1-10",
+      "en": "Set a 25-minute alarm, and for those minutes do this one thing only,"
+    },
+    {
+      "zh": "把手机翻面、放到够不着的地方，铃一响，就奖励自己歇会儿。",
+      "scene": "S1-10",
+      "en": "flip your phone over, put it out of reach, and when it rings, reward yourself with a break."
+    },
+    {
+      "zh": "别为已经拖掉的时间懊恼——自责只会喂大焦虑，焦虑又会喂大拖延。",
+      "scene": "S1-11",
+      "en": "Don't agonize over the time already lost — self-blame only feeds anxiety, and anxiety feeds more delay."
     },
     {
       "zh": "执行力不是天赋，是一次次「先开始」攒出来的。",
-      "scene": "S1-10",
+      "scene": "S1-11",
       "en": "Drive isn't a gift — it's built up from starting, again and again."
     },
     {
       "zh": "你不必等到准备好，现在，就动一下。<END>",
-      "scene": "S1-10",
+      "scene": "S1-11",
       "en": "You don't have to wait until you're ready. Right now — just make one move."
     }
   ],
@@ -213,8 +228,8 @@
       ]
     },
     "S1-02": {
-      "prompt": "扁平插画，纸本质感，暖灰与墨色。办公室里一个人趴在堆满文件的桌上通宵赶工，旁边的方案被红笔大片标注退回，神情懊恼，台灯亮着，窗外天色将明，强调「拖到最后一刻、漏掉关键、整单返工」。",
-      "label": "整单返工",
+      "prompt": "扁平插画，纸本质感，暖灰与墨色。左侧一个人趴在堆满文件的桌上通宵赶工、台灯亮着、窗外天色将明；右侧客户握手的画面被一道裂痕断开、一份合同被推回，神情懊恼，强调「拖到最后漏掉关键、痛失长期合作、经济损失」。",
+      "label": "痛失大单",
       "motion": {
         "enter": "fade",
         "duration": 700,
@@ -223,10 +238,10 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "全部重来",
+          "text": "大单飞了",
           "pos": { "x": 72, "y": 24 },
           "motion": { "duration": 820, "delay": 160, "enter": "stamp" },
-          "at": { "match": "整单返工" },
+          "at": { "match": "几十万" },
           "style": { "preset": "os-stamp", "font": "XY Kaiti", "size": 48, "color": "#ce0909", "rotation": -8 }
         }
       ]
@@ -346,8 +361,27 @@
       ]
     },
     "S1-09": {
-      "prompt": "扁平插画，纸本质感，温暖。一个人对着镜子里的自己轻轻点头微笑、像在和过去和解，身后撕碎的「自责」纸团落地，强调「原谅自己的拖延、下次反而做得更好」。",
-      "label": "自我宽恕",
+      "prompt": "扁平插画，纸本质感，色调明亮。一个人对着电脑上的 AI 对话窗口，窗口里浮现出一张张自动排好的提纲卡片（卡片内一律留白、不含任何文字），人物表情从对着空白文档发愁、转为豁然轻松，桌面整洁，强调「让 AI 帮你迈出第一步、想法快速落地」。",
+      "label": "借 AI 起头",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "diag-br"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "让 AI 起个头",
+          "pos": { "x": 70, "y": 24 },
+          "motion": { "duration": 820, "delay": 160, "enter": "tilt-in" },
+          "at": { "match": "豆包" },
+          "style": { "preset": "os-highlight-yellow", "font": "XY Kaiti", "size": 44 }
+        }
+      ]
+    },
+    "S1-10": {
+      "prompt": "扁平插画，纸本质感。桌上一个番茄形状的计时器正在走，旁边手机被翻面扣着、推到够不着的角落，一个人神情专注地只做面前一件事，光线聚拢在桌面，强调「定 25 分钟、只做一件事、隔绝干扰」。",
+      "label": "番茄钟",
       "motion": {
         "enter": "fade",
         "duration": 700,
@@ -356,15 +390,15 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "Wohl et al. · 2010",
-          "pos": { "x": 74, "y": 17 },
-          "motion": { "duration": 720, "delay": 200, "enter": "fade" },
-          "at": { "match": "原谅了自己" },
-          "style": { "preset": "os-tag-square", "font": "Inter", "size": 26 }
+          "text": "番茄钟 · 25′",
+          "pos": { "x": 71, "y": 22 },
+          "motion": { "duration": 860, "delay": 150, "enter": "stamp" },
+          "at": { "match": "25 分钟" },
+          "style": { "preset": "os-stamp-blue", "font": "XY Kaiti", "size": 46 }
         }
       ]
     },
-    "S1-10": {
+    "S1-11": {
       "prompt": "扁平插画，纸本质感，晨光色调。一个人迈出坚定的第一步，脚下一连串脚印由模糊渐渐变清晰，前方天色渐亮、道路开阔，强调「执行力是一次次先开始攒出来的、现在就动一下」。",
       "label": "现在就动",
       "motion": {
