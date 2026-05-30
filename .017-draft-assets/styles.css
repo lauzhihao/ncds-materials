@@ -274,6 +274,7 @@ body.ken-burns .scene {
   width: 100%;
   line-height: 1.2;
   transition: opacity .25s ease;
+  white-space: nowrap;   /* 中英文都单行，超宽由 fitBand() 自动缩字号，绝不换行 */
 }
 
 .subtitle-zh {
@@ -297,7 +298,6 @@ body.ken-burns .scene {
   font-size: var(--type-cap-en);
   color: var(--band-sub);
   letter-spacing: .01em;
-  white-space: nowrap;   /* 单行，超宽交给 fitBand() 自动缩字号，绝不换行 */
 }
 
 .beat-fade-out .subtitle-zh,
