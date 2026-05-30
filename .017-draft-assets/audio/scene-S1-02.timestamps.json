@@ -1,0 +1,463 @@
+{
+  "scene": "S1-02",
+  "text": "同事小林，把方案拖到交付当天才动笔，通宵赶工，还是漏掉了客户最在意的那一条。一笔谈了半年的长期合作，几十万的单子，就这样飞了。",
+  "words": [
+    {
+      "text": "同",
+      "begin_index": 0,
+      "end_index": 1,
+      "begin_time": 80,
+      "end_time": 240
+    },
+    {
+      "text": "事",
+      "begin_index": 1,
+      "end_index": 2,
+      "begin_time": 320,
+      "end_time": 480
+    },
+    {
+      "text": "小",
+      "begin_index": 2,
+      "end_index": 3,
+      "begin_time": 560,
+      "end_time": 720
+    },
+    {
+      "text": "林",
+      "begin_index": 3,
+      "end_index": 4,
+      "begin_time": 800,
+      "end_time": 960
+    },
+    {
+      "text": "，",
+      "begin_index": 4,
+      "end_index": 5,
+      "begin_time": 960,
+      "end_time": 1200
+    },
+    {
+      "text": "把",
+      "begin_index": 5,
+      "end_index": 6,
+      "begin_time": 1200,
+      "end_time": 1440
+    },
+    {
+      "text": "方",
+      "begin_index": 6,
+      "end_index": 7,
+      "begin_time": 1520,
+      "end_time": 1680
+    },
+    {
+      "text": "案",
+      "begin_index": 7,
+      "end_index": 8,
+      "begin_time": 1680,
+      "end_time": 1840
+    },
+    {
+      "text": "拖",
+      "begin_index": 8,
+      "end_index": 9,
+      "begin_time": 1920,
+      "end_time": 2080
+    },
+    {
+      "text": "到",
+      "begin_index": 9,
+      "end_index": 10,
+      "begin_time": 2080,
+      "end_time": 2240
+    },
+    {
+      "text": "交",
+      "begin_index": 10,
+      "end_index": 11,
+      "begin_time": 2240,
+      "end_time": 2480
+    },
+    {
+      "text": "付",
+      "begin_index": 11,
+      "end_index": 12,
+      "begin_time": 2480,
+      "end_time": 2640
+    },
+    {
+      "text": "当",
+      "begin_index": 12,
+      "end_index": 13,
+      "begin_time": 2640,
+      "end_time": 2800
+    },
+    {
+      "text": "天",
+      "begin_index": 13,
+      "end_index": 14,
+      "begin_time": 2800,
+      "end_time": 3040
+    },
+    {
+      "text": "才",
+      "begin_index": 14,
+      "end_index": 15,
+      "begin_time": 3120,
+      "end_time": 3280
+    },
+    {
+      "text": "动",
+      "begin_index": 15,
+      "end_index": 16,
+      "begin_time": 3280,
+      "end_time": 3440
+    },
+    {
+      "text": "笔",
+      "begin_index": 16,
+      "end_index": 17,
+      "begin_time": 3440,
+      "end_time": 3600
+    },
+    {
+      "text": "，",
+      "begin_index": 17,
+      "end_index": 18,
+      "begin_time": 3600,
+      "end_time": 4400
+    },
+    {
+      "text": "通",
+      "begin_index": 18,
+      "end_index": 19,
+      "begin_time": 4400,
+      "end_time": 4560
+    },
+    {
+      "text": "宵",
+      "begin_index": 19,
+      "end_index": 20,
+      "begin_time": 4640,
+      "end_time": 4800
+    },
+    {
+      "text": "赶",
+      "begin_index": 20,
+      "end_index": 21,
+      "begin_time": 4880,
+      "end_time": 5040
+    },
+    {
+      "text": "工",
+      "begin_index": 21,
+      "end_index": 22,
+      "begin_time": 5040,
+      "end_time": 5280
+    },
+    {
+      "text": "，",
+      "begin_index": 22,
+      "end_index": 23,
+      "begin_time": 5280,
+      "end_time": 5440
+    },
+    {
+      "text": "还",
+      "begin_index": 23,
+      "end_index": 24,
+      "begin_time": 5440,
+      "end_time": 5680
+    },
+    {
+      "text": "是",
+      "begin_index": 24,
+      "end_index": 25,
+      "begin_time": 5680,
+      "end_time": 5840
+    },
+    {
+      "text": "漏",
+      "begin_index": 25,
+      "end_index": 26,
+      "begin_time": 5920,
+      "end_time": 6000
+    },
+    {
+      "text": "掉",
+      "begin_index": 26,
+      "end_index": 27,
+      "begin_time": 6080,
+      "end_time": 6240
+    },
+    {
+      "text": "了",
+      "begin_index": 27,
+      "end_index": 28,
+      "begin_time": 6240,
+      "end_time": 6320
+    },
+    {
+      "text": "客",
+      "begin_index": 28,
+      "end_index": 29,
+      "begin_time": 6400,
+      "end_time": 6480
+    },
+    {
+      "text": "户",
+      "begin_index": 29,
+      "end_index": 30,
+      "begin_time": 6560,
+      "end_time": 6720
+    },
+    {
+      "text": "最",
+      "begin_index": 30,
+      "end_index": 31,
+      "begin_time": 6720,
+      "end_time": 6880
+    },
+    {
+      "text": "在",
+      "begin_index": 31,
+      "end_index": 32,
+      "begin_time": 6960,
+      "end_time": 7120
+    },
+    {
+      "text": "意",
+      "begin_index": 32,
+      "end_index": 33,
+      "begin_time": 7120,
+      "end_time": 7280
+    },
+    {
+      "text": "的",
+      "begin_index": 33,
+      "end_index": 34,
+      "begin_time": 7280,
+      "end_time": 7440
+    },
+    {
+      "text": "那",
+      "begin_index": 34,
+      "end_index": 35,
+      "begin_time": 7440,
+      "end_time": 7600
+    },
+    {
+      "text": "一",
+      "begin_index": 35,
+      "end_index": 36,
+      "begin_time": 7600,
+      "end_time": 7680
+    },
+    {
+      "text": "条",
+      "begin_index": 36,
+      "end_index": 37,
+      "begin_time": 7760,
+      "end_time": 7840
+    },
+    {
+      "text": "。",
+      "begin_index": 37,
+      "end_index": 38,
+      "begin_time": 7920,
+      "end_time": 8080
+    },
+    {
+      "text": "一",
+      "begin_index": 38,
+      "end_index": 39,
+      "begin_time": 8960,
+      "end_time": 9280
+    },
+    {
+      "text": "笔",
+      "begin_index": 39,
+      "end_index": 40,
+      "begin_time": 9360,
+      "end_time": 9520
+    },
+    {
+      "text": "谈",
+      "begin_index": 40,
+      "end_index": 41,
+      "begin_time": 9600,
+      "end_time": 9680
+    },
+    {
+      "text": "了",
+      "begin_index": 41,
+      "end_index": 42,
+      "begin_time": 9760,
+      "end_time": 9840
+    },
+    {
+      "text": "半",
+      "begin_index": 42,
+      "end_index": 43,
+      "begin_time": 9920,
+      "end_time": 10000
+    },
+    {
+      "text": "年",
+      "begin_index": 43,
+      "end_index": 44,
+      "begin_time": 10080,
+      "end_time": 10160
+    },
+    {
+      "text": "的",
+      "begin_index": 44,
+      "end_index": 45,
+      "begin_time": 10240,
+      "end_time": 10320
+    },
+    {
+      "text": "长",
+      "begin_index": 45,
+      "end_index": 46,
+      "begin_time": 10320,
+      "end_time": 10480
+    },
+    {
+      "text": "期",
+      "begin_index": 46,
+      "end_index": 47,
+      "begin_time": 10480,
+      "end_time": 10640
+    },
+    {
+      "text": "合",
+      "begin_index": 47,
+      "end_index": 48,
+      "begin_time": 10720,
+      "end_time": 10880
+    },
+    {
+      "text": "作",
+      "begin_index": 48,
+      "end_index": 49,
+      "begin_time": 10880,
+      "end_time": 11040
+    },
+    {
+      "text": "，",
+      "begin_index": 49,
+      "end_index": 50,
+      "begin_time": 11040,
+      "end_time": 11280
+    },
+    {
+      "text": "几",
+      "begin_index": 50,
+      "end_index": 51,
+      "begin_time": 11280,
+      "end_time": 11520
+    },
+    {
+      "text": "十",
+      "begin_index": 51,
+      "end_index": 52,
+      "begin_time": 11600,
+      "end_time": 11760
+    },
+    {
+      "text": "万",
+      "begin_index": 52,
+      "end_index": 53,
+      "begin_time": 11760,
+      "end_time": 11920
+    },
+    {
+      "text": "的",
+      "begin_index": 53,
+      "end_index": 54,
+      "begin_time": 11920,
+      "end_time": 12000
+    },
+    {
+      "text": "单",
+      "begin_index": 54,
+      "end_index": 55,
+      "begin_time": 12000,
+      "end_time": 12160
+    },
+    {
+      "text": "子",
+      "begin_index": 55,
+      "end_index": 56,
+      "begin_time": 12160,
+      "end_time": 12320
+    },
+    {
+      "text": "，",
+      "begin_index": 56,
+      "end_index": 57,
+      "begin_time": 12320,
+      "end_time": 12400
+    },
+    {
+      "text": "就",
+      "begin_index": 57,
+      "end_index": 58,
+      "begin_time": 12400,
+      "end_time": 12800
+    },
+    {
+      "text": "这",
+      "begin_index": 58,
+      "end_index": 59,
+      "begin_time": 12880,
+      "end_time": 12960
+    },
+    {
+      "text": "样",
+      "begin_index": 59,
+      "end_index": 60,
+      "begin_time": 12960,
+      "end_time": 13120
+    },
+    {
+      "text": "飞",
+      "begin_index": 60,
+      "end_index": 61,
+      "begin_time": 13120,
+      "end_time": 13280
+    },
+    {
+      "text": "了",
+      "begin_index": 61,
+      "end_index": 62,
+      "begin_time": 13280,
+      "end_time": 13440
+    }
+  ],
+  "perBeat": [
+    {
+      "beat": 2,
+      "audioStart": 0,
+      "audioEnd": 4400,
+      "chars": 18,
+      "wordsFound": 18
+    },
+    {
+      "beat": 3,
+      "audioStart": 4400,
+      "audioEnd": 8960,
+      "chars": 20,
+      "wordsFound": 20
+    },
+    {
+      "beat": 4,
+      "audioStart": 8960,
+      "audioEnd": 13793,
+      "chars": 25,
+      "wordsFound": 24
+    }
+  ]
+}

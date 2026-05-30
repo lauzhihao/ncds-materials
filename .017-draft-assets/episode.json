@@ -69,147 +69,234 @@
     {
       "zh": "明明半小时就能写完的东西，你却拖到了凌晨。",
       "scene": "S1-01",
-      "en": "Something you could finish in half an hour, you put off until the dead of night."
+      "en": "Something you could finish in half an hour, you put off until the dead of night.",
+      "audioFile": "audio/scene-S1-01.mp3",
+      "audioStart": 0,
+      "audioEnd": 5120
     },
     {
       "zh": "不是你不会做，而是一直在等一个「更好的状态」。",
       "scene": "S1-01",
-      "en": "It's not that you can't do it — you're waiting for a 'better mood' that never comes."
+      "en": "It's not that you can't do it — you're waiting for a 'better mood' that never comes.",
+      "audioFile": "audio/scene-S1-01.mp3",
+      "audioStart": 5120,
+      "audioEnd": 10841
     },
     {
       "zh": "同事小林，把方案拖到交付当天才动笔，",
       "scene": "S1-02",
-      "en": "A colleague put off the proposal until the day it was due,"
+      "en": "A colleague put off the proposal until the day it was due,",
+      "audioFile": "audio/scene-S1-02.mp3",
+      "audioStart": 0,
+      "audioEnd": 4400
     },
     {
       "zh": "通宵赶工，还是漏掉了客户最在意的那一条。",
       "scene": "S1-02",
-      "en": "pulled an all-nighter, and still missed the one point the client cared about most."
+      "en": "pulled an all-nighter, and still missed the one point the client cared about most.",
+      "audioFile": "audio/scene-S1-02.mp3",
+      "audioStart": 4400,
+      "audioEnd": 8960
     },
     {
       "zh": "一笔谈了半年的长期合作，几十万的单子，就这样飞了。",
       "scene": "S1-02",
-      "en": "Six months of talks, a six-figure deal — gone, just like that."
+      "en": "Six months of talks, a six-figure deal — gone, just like that.",
+      "audioFile": "audio/scene-S1-02.mp3",
+      "audioStart": 8960,
+      "audioEnd": 13793
     },
     {
       "zh": "体检单上写着「建议复查」，你想着「过阵子再说」，",
       "scene": "S1-03",
-      "en": "The check-up form said 'follow-up advised,' and you thought 'later,'"
+      "en": "The check-up form said 'follow-up advised,' and you thought 'later,'",
+      "audioFile": "audio/scene-S1-03.mp3",
+      "audioStart": 0,
+      "audioEnd": 5120
     },
     {
       "zh": "一拖就是半年。有些事，拖掉的不只是时间。",
       "scene": "S1-03",
-      "en": "and half a year slipped by. Some things, delaying them costs more than time."
+      "en": "and half a year slipped by. Some things, delaying them costs more than time.",
+      "audioFile": "audio/scene-S1-03.mp3",
+      "audioStart": 5120,
+      "audioEnd": 9796
     },
     {
       "zh": "但先别急着责怪自己。",
       "scene": "S1-04",
-      "en": "But don't be so quick to blame yourself."
+      "en": "But don't be so quick to blame yourself.",
+      "audioFile": "audio/scene-S1-04.mp3",
+      "audioStart": 0,
+      "audioEnd": 2880
     },
     {
       "zh": "心理学家早就说过：拖延，根本不是时间管理的问题，",
       "scene": "S1-04",
-      "en": "Psychologists said it long ago: procrastination isn't about time management,"
+      "en": "Psychologists said it long ago: procrastination isn't about time management,",
+      "audioFile": "audio/scene-S1-04.mp3",
+      "audioStart": 2880,
+      "audioEnd": 7520
     },
     {
       "zh": "而是情绪管理的问题。",
       "scene": "S1-04",
-      "en": "it's an emotion-management one."
+      "en": "it's an emotion-management one.",
+      "audioFile": "audio/scene-S1-04.mp3",
+      "audioStart": 7520,
+      "audioEnd": 9718
     },
     {
       "zh": "研究者西罗斯与皮切尔指出：",
       "scene": "S1-05",
-      "en": "Researchers Sirois and Pychyl point out:"
+      "en": "Researchers Sirois and Pychyl point out:",
+      "audioFile": "audio/scene-S1-05.mp3",
+      "audioStart": 0,
+      "audioEnd": 2960
     },
     {
       "zh": "拖延，是用逃避眼前的坏情绪，去换未来更大的麻烦。",
       "scene": "S1-05",
-      "en": "procrastination trades away one bad feeling now for far bigger trouble later."
+      "en": "procrastination trades away one bad feeling now for far bigger trouble later.",
+      "audioFile": "audio/scene-S1-05.mp3",
+      "audioStart": 2960,
+      "audioEnd": 8046
     },
     {
       "zh": "去给大脑做个扫描你会看到，一想到讨厌的任务，",
       "scene": "S1-06",
-      "en": "Scan the brain and you'll see: the moment we picture a dreaded task,"
+      "en": "Scan the brain and you'll see: the moment we picture a dreaded task,",
+      "audioFile": "audio/scene-S1-06.mp3",
+      "audioStart": 0,
+      "audioEnd": 4640
     },
     {
       "zh": "大脑里处理「疼痛」的区域，就会真的亮起来。",
       "scene": "S1-06",
-      "en": "the regions that handle 'pain' genuinely light up."
+      "en": "the regions that handle 'pain' genuinely light up.",
+      "audioFile": "audio/scene-S1-06.mp3",
+      "audioStart": 4640,
+      "audioEnd": 9360
     },
     {
       "zh": "拖延，其实是大脑在本能地「躲开疼」。",
       "scene": "S1-06",
-      "en": "Procrastination is really the brain instinctively dodging pain."
+      "en": "Procrastination is really the brain instinctively dodging pain.",
+      "audioFile": "audio/scene-S1-06.mp3",
+      "audioStart": 9360,
+      "audioEnd": 13244
     },
     {
       "zh": "更麻烦的是「现时偏误」：",
       "scene": "S1-07",
-      "en": "Worse still is what's called 'present bias':"
+      "en": "Worse still is what's called 'present bias':",
+      "audioFile": "audio/scene-S1-07.mp3",
+      "audioStart": 0,
+      "audioEnd": 4000
     },
     {
       "zh": "我们总是高估眼前的舒服，低估未来的代价。",
       "scene": "S1-07",
-      "en": "we keep overrating today's comfort and underrating tomorrow's cost."
+      "en": "we keep overrating today's comfort and underrating tomorrow's cost.",
+      "audioFile": "audio/scene-S1-07.mp3",
+      "audioStart": 4000,
+      "audioEnd": 7967
     },
     {
       "zh": "那怎么办？第一招：只先做五分钟。",
       "scene": "S1-08",
-      "en": "So what do we do? Tip one: just start for five minutes."
+      "en": "So what do we do? Tip one: just start for five minutes.",
+      "audioFile": "audio/scene-S1-08.mp3",
+      "audioStart": 0,
+      "audioEnd": 3200
     },
     {
       "zh": "不求做完——",
       "scene": "S1-08",
-      "en": "Not to finish it —"
+      "en": "Not to finish it —",
+      "audioFile": "audio/scene-S1-08.mp3",
+      "audioStart": 3200,
+      "audioEnd": 3920
     },
     {
       "zh": "只求开始。先动起来，状态自己会跟上。",
       "scene": "S1-08",
-      "en": "just to begin. Once you're moving, the mood catches up on its own."
+      "en": "just to begin. Once you're moving, the mood catches up on its own.",
+      "audioFile": "audio/scene-S1-08.mp3",
+      "audioStart": 3920,
+      "audioEnd": 7706
     },
     {
       "zh": "比如写报告，别再对着空白文档干耗。",
       "scene": "S1-09",
-      "en": "Take writing a report — stop staring at the blank page."
+      "en": "Take writing a report — stop staring at the blank page.",
+      "audioFile": "audio/scene-S1-09.mp3",
+      "audioStart": 0,
+      "audioEnd": 3840
     },
     {
       "zh": "打开豆包，跟它说一句「帮我搭个报告框架」，",
       "scene": "S1-09",
-      "en": "Open Doubao and just say, 'draft me a report outline,'"
+      "en": "Open Doubao and just say, 'draft me a report outline,'",
+      "audioFile": "audio/scene-S1-09.mp3",
+      "audioStart": 3840,
+      "audioEnd": 9600
     },
     {
       "zh": "AI 时代，比起做到完美，更重要的是让想法先落地。",
       "scene": "S1-09",
-      "en": "In the age of AI, getting the idea moving matters more than getting it perfect."
+      "en": "In the age of AI, getting the idea moving matters more than getting it perfect.",
+      "audioFile": "audio/scene-S1-09.mp3",
+      "audioStart": 9600,
+      "audioEnd": 15151
     },
     {
       "zh": "第二招：给拖延装一个开关——番茄钟。",
       "scene": "S1-10",
-      "en": "Tip two: give procrastination an off-switch — the Pomodoro timer."
+      "en": "Tip two: give procrastination an off-switch — the Pomodoro timer.",
+      "audioFile": "audio/scene-S1-10.mp3",
+      "audioStart": 0,
+      "audioEnd": 6240
     },
     {
       "zh": "定个 25 分钟的闹钟，这段时间里只做这一件事，",
       "scene": "S1-10",
-      "en": "Set a 25-minute alarm, and for those minutes do this one thing only,"
+      "en": "Set a 25-minute alarm, and for those minutes do this one thing only,",
+      "audioFile": "audio/scene-S1-10.mp3",
+      "audioStart": 6240,
+      "audioEnd": 10800
     },
     {
       "zh": "把手机翻面、放到够不着的地方，铃一响，就奖励自己歇会儿。",
       "scene": "S1-10",
-      "en": "flip your phone face-down, out of reach; when it rings, take a break."
+      "en": "flip your phone face-down, out of reach; when it rings, take a break.",
+      "audioFile": "audio/scene-S1-10.mp3",
+      "audioStart": 10800,
+      "audioEnd": 18991
     },
     {
       "zh": "别为已经拖掉的时间懊恼——自责只会喂大焦虑，焦虑又会喂大拖延。",
       "scene": "S1-11",
-      "en": "Don't dwell on lost time — blame feeds anxiety, and anxiety feeds delay."
+      "en": "Don't dwell on lost time — blame feeds anxiety, and anxiety feeds delay.",
+      "audioFile": "audio/scene-S1-11.mp3",
+      "audioStart": 0,
+      "audioEnd": 6400
     },
     {
       "zh": "执行力不是天赋，是一次次「先开始」攒出来的。",
       "scene": "S1-11",
-      "en": "Drive isn't a gift — it's built up from starting, again and again."
+      "en": "Drive isn't a gift — it's built up from starting, again and again.",
+      "audioFile": "audio/scene-S1-11.mp3",
+      "audioStart": 6400,
+      "audioEnd": 10320
     },
     {
       "zh": "你不必等到准备好，现在，就动一下。<END>",
       "scene": "S1-11",
-      "en": "You don't have to wait until you're ready. Right now — just make one move."
+      "en": "You don't have to wait until you're ready. Right now — just make one move.",
+      "audioFile": "audio/scene-S1-11.mp3",
+      "audioStart": 10320,
+      "audioEnd": 13949
     }
   ],
   "scenes": {
@@ -225,10 +312,23 @@
       "overlays": [
         {
           "text": "再等等…",
-          "pos": { "x": 30, "y": 22 },
-          "motion": { "duration": 760, "delay": 120, "enter": "tilt-in" },
-          "at": { "match": "更好的状态" },
-          "style": { "preset": "os-handwrite", "font": "XY Kaiti", "size": 42 }
+          "pos": {
+            "x": 30,
+            "y": 22
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 120,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "更好的状态"
+          },
+          "style": {
+            "preset": "os-handwrite",
+            "font": "XY Kaiti",
+            "size": 42
+          }
         }
       ]
     },
@@ -244,10 +344,25 @@
       "overlays": [
         {
           "text": "大单飞了",
-          "pos": { "x": 72, "y": 24 },
-          "motion": { "duration": 820, "delay": 160, "enter": "stamp" },
-          "at": { "match": "几十万" },
-          "style": { "preset": "os-stamp", "font": "XY Kaiti", "size": 48, "color": "#ce0909", "rotation": -8 }
+          "pos": {
+            "x": 72,
+            "y": 24
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 160,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "几十万"
+          },
+          "style": {
+            "preset": "os-stamp",
+            "font": "XY Kaiti",
+            "size": 48,
+            "color": "#ce0909",
+            "rotation": -8
+          }
         }
       ]
     },
@@ -263,10 +378,23 @@
       "overlays": [
         {
           "text": "过阵子再说",
-          "pos": { "x": 31, "y": 24 },
-          "motion": { "duration": 760, "delay": 120, "enter": "fade" },
-          "at": { "match": "过阵子再说" },
-          "style": { "preset": "os-circle-mark", "font": "XY Kaiti", "size": 40 }
+          "pos": {
+            "x": 31,
+            "y": 24
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 120,
+            "enter": "fade"
+          },
+          "at": {
+            "match": "过阵子再说"
+          },
+          "style": {
+            "preset": "os-circle-mark",
+            "font": "XY Kaiti",
+            "size": 40
+          }
         }
       ]
     },
@@ -282,10 +410,23 @@
       "overlays": [
         {
           "text": "不是懒　是情绪",
-          "pos": { "x": 50, "y": 23 },
-          "motion": { "duration": 820, "delay": 140, "enter": "zoom-in" },
-          "at": { "match": "情绪管理" },
-          "style": { "preset": "os-highlight-yellow", "font": "XY Kaiti", "size": 46 }
+          "pos": {
+            "x": 50,
+            "y": 23
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 140,
+            "enter": "zoom-in"
+          },
+          "at": {
+            "match": "情绪管理"
+          },
+          "style": {
+            "preset": "os-highlight-yellow",
+            "font": "XY Kaiti",
+            "size": 46
+          }
         }
       ]
     },
@@ -301,10 +442,23 @@
       "overlays": [
         {
           "text": "Sirois & Pychyl · 2013",
-          "pos": { "x": 74, "y": 17 },
-          "motion": { "duration": 720, "delay": 200, "enter": "fade" },
-          "at": { "match": "西罗斯与皮切尔" },
-          "style": { "preset": "os-tag-square", "font": "Inter", "size": 26 }
+          "pos": {
+            "x": 74,
+            "y": 17
+          },
+          "motion": {
+            "duration": 720,
+            "delay": 200,
+            "enter": "fade"
+          },
+          "at": {
+            "match": "西罗斯与皮切尔"
+          },
+          "style": {
+            "preset": "os-tag-square",
+            "font": "Inter",
+            "size": 26
+          }
         }
       ]
     },
@@ -320,10 +474,23 @@
       "overlays": [
         {
           "text": "大脑在躲痛",
-          "pos": { "x": 70, "y": 26 },
-          "motion": { "duration": 800, "delay": 160, "enter": "tilt-in" },
-          "at": { "match": "躲开疼" },
-          "style": { "preset": "os-callout-red", "font": "XY Kaiti", "size": 42 }
+          "pos": {
+            "x": 70,
+            "y": 26
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 160,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "躲开疼"
+          },
+          "style": {
+            "preset": "os-callout-red",
+            "font": "XY Kaiti",
+            "size": 42
+          }
         }
       ]
     },
@@ -339,10 +506,23 @@
       "overlays": [
         {
           "text": "Present Bias",
-          "pos": { "x": 73, "y": 19 },
-          "motion": { "duration": 720, "delay": 160, "enter": "fade" },
-          "at": { "match": "现时偏误" },
-          "style": { "preset": "os-tag-pill", "font": "Inter", "size": 28 }
+          "pos": {
+            "x": 73,
+            "y": 19
+          },
+          "motion": {
+            "duration": 720,
+            "delay": 160,
+            "enter": "fade"
+          },
+          "at": {
+            "match": "现时偏误"
+          },
+          "style": {
+            "preset": "os-tag-pill",
+            "font": "Inter",
+            "size": 28
+          }
         }
       ]
     },
@@ -358,10 +538,24 @@
       "overlays": [
         {
           "text": "只做 5 分钟",
-          "pos": { "x": 30, "y": 22 },
-          "motion": { "duration": 860, "delay": 140, "enter": "stamp" },
-          "at": { "match": "五分钟" },
-          "style": { "preset": "os-brush-title", "font": "XY Kaiti", "size": 52, "color": "#1f6f4a" }
+          "pos": {
+            "x": 30,
+            "y": 22
+          },
+          "motion": {
+            "duration": 860,
+            "delay": 140,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "五分钟"
+          },
+          "style": {
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 52,
+            "color": "#1f6f4a"
+          }
         }
       ]
     },
@@ -377,10 +571,23 @@
       "overlays": [
         {
           "text": "让 AI 起个头",
-          "pos": { "x": 70, "y": 24 },
-          "motion": { "duration": 820, "delay": 160, "enter": "tilt-in" },
-          "at": { "match": "豆包" },
-          "style": { "preset": "os-highlight-yellow", "font": "XY Kaiti", "size": 44 }
+          "pos": {
+            "x": 70,
+            "y": 24
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 160,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "豆包"
+          },
+          "style": {
+            "preset": "os-highlight-yellow",
+            "font": "XY Kaiti",
+            "size": 44
+          }
         }
       ]
     },
@@ -396,10 +603,23 @@
       "overlays": [
         {
           "text": "番茄钟 · 25′",
-          "pos": { "x": 71, "y": 22 },
-          "motion": { "duration": 860, "delay": 150, "enter": "stamp" },
-          "at": { "match": "25 分钟" },
-          "style": { "preset": "os-stamp-blue", "font": "XY Kaiti", "size": 46 }
+          "pos": {
+            "x": 71,
+            "y": 22
+          },
+          "motion": {
+            "duration": 860,
+            "delay": 150,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "25 分钟"
+          },
+          "style": {
+            "preset": "os-stamp-blue",
+            "font": "XY Kaiti",
+            "size": 46
+          }
         }
       ]
     },
@@ -415,10 +635,24 @@
       "overlays": [
         {
           "text": "先　开　始",
-          "pos": { "x": 50, "y": 23 },
-          "motion": { "duration": 880, "delay": 160, "enter": "stamp" },
-          "at": { "match": "先开始" },
-          "style": { "preset": "os-brush-title", "font": "XY Kaiti", "size": 54, "color": "#ce0909" }
+          "pos": {
+            "x": 50,
+            "y": 23
+          },
+          "motion": {
+            "duration": 880,
+            "delay": 160,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "先开始"
+          },
+          "style": {
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 54,
+            "color": "#ce0909"
+          }
         }
       ]
     }
