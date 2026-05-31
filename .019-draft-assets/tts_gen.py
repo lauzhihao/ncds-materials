@@ -233,7 +233,14 @@ def group_by_scene(ep):
     order = []
     for i, b in enumerate(ep["beats"]):
         sid = b.get("scene")
-        zh = b.get("zh", "").replace("<END>", "")  # 结束标记不参与 TTS 合成
+        # 只清理用于 TTS 合成的文本（字幕 / episode.json 原文不受影响）：
+        # cosyvoice 会给部分符号赋短促发音 → 杂音（破折号最明显，引号/冒号次之）。
+        # 破折号、冒号 → 逗号停顿；引号直接删除；逗号/句号/问号本身是静音停顿，保留。
+        zh = (b.get("zh", "")
+              .replace("<END>", "")
+              .replace("——", "，").replace("—", "，")
+              .replace("「", "").replace("」", "")
+              .replace("：", "，"))
         if not sid or not zh:
             continue
         if sid not in seen:

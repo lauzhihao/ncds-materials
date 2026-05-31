@@ -1,6 +1,6 @@
 {
   "scene": "S1-02",
-  "text": "你回想一下，是不是脏活累活，第一个被想起的总是你？同事一句「这你最拿手」你就接了，老板画的饼你信了一次又一次。你以为自己是团队核心，可你一提离职，他们三天就能找到下一个「你」。",
+  "text": "你回想一下，是不是脏活累活，第一个被想起的总是你？同事一句这你最拿手你就接了，老板画的饼你信了一次又一次。你以为自己是团队核心，可你一提离职，他们三天就能找到下一个你。",
   "words": [
     {
       "text": "你",
@@ -35,590 +35,569 @@
       "begin_index": 4,
       "end_index": 5,
       "begin_time": 800,
-      "end_time": 960
+      "end_time": 880
     },
     {
       "text": "，",
       "begin_index": 5,
       "end_index": 6,
-      "begin_time": 960,
-      "end_time": 1280
+      "begin_time": 880,
+      "end_time": 3920
     },
     {
       "text": "是",
       "begin_index": 6,
       "end_index": 7,
-      "begin_time": 1280,
-      "end_time": 1520
+      "begin_time": 3920,
+      "end_time": 4240
     },
     {
       "text": "不",
       "begin_index": 7,
       "end_index": 8,
-      "begin_time": 1520,
-      "end_time": 1680
+      "begin_time": 4240,
+      "end_time": 4320
     },
     {
       "text": "是",
       "begin_index": 8,
       "end_index": 9,
-      "begin_time": 1680,
-      "end_time": 1760
+      "begin_time": 4320,
+      "end_time": 4480
     },
     {
       "text": "脏",
       "begin_index": 9,
       "end_index": 10,
-      "begin_time": 1760,
-      "end_time": 1920
+      "begin_time": 4480,
+      "end_time": 4640
     },
     {
       "text": "活",
       "begin_index": 10,
       "end_index": 11,
-      "begin_time": 2000,
-      "end_time": 2160
+      "begin_time": 4720,
+      "end_time": 4880
     },
     {
       "text": "累",
       "begin_index": 11,
       "end_index": 12,
-      "begin_time": 2160,
-      "end_time": 2320
+      "begin_time": 4960,
+      "end_time": 5120
     },
     {
       "text": "活",
       "begin_index": 12,
       "end_index": 13,
-      "begin_time": 2320,
-      "end_time": 2480
+      "begin_time": 5120,
+      "end_time": 5280
     },
     {
       "text": "，",
       "begin_index": 13,
       "end_index": 14,
-      "begin_time": 2480,
-      "end_time": 2800
+      "begin_time": 5280,
+      "end_time": 5600
     },
     {
       "text": "第",
       "begin_index": 14,
       "end_index": 15,
-      "begin_time": 2800,
-      "end_time": 3040
+      "begin_time": 5600,
+      "end_time": 6000
     },
     {
       "text": "一",
       "begin_index": 15,
       "end_index": 16,
-      "begin_time": 3040,
-      "end_time": 3200
+      "begin_time": 6000,
+      "end_time": 6080
     },
     {
       "text": "个",
       "begin_index": 16,
       "end_index": 17,
-      "begin_time": 3200,
-      "end_time": 3280
+      "begin_time": 6160,
+      "end_time": 6240
     },
     {
       "text": "被",
       "begin_index": 17,
       "end_index": 18,
-      "begin_time": 3280,
-      "end_time": 3440
+      "begin_time": 6240,
+      "end_time": 6400
     },
     {
       "text": "想",
       "begin_index": 18,
       "end_index": 19,
-      "begin_time": 3440,
-      "end_time": 3600
+      "begin_time": 6400,
+      "end_time": 6560
     },
     {
       "text": "起",
       "begin_index": 19,
       "end_index": 20,
-      "begin_time": 3600,
-      "end_time": 3760
+      "begin_time": 6560,
+      "end_time": 6720
     },
     {
       "text": "的",
       "begin_index": 20,
       "end_index": 21,
-      "begin_time": 3760,
-      "end_time": 3840
+      "begin_time": 6720,
+      "end_time": 6800
     },
     {
       "text": "总",
       "begin_index": 21,
       "end_index": 22,
-      "begin_time": 3920,
-      "end_time": 4000
+      "begin_time": 6880,
+      "end_time": 6960
     },
     {
       "text": "是",
       "begin_index": 22,
       "end_index": 23,
-      "begin_time": 4000,
-      "end_time": 4160
+      "begin_time": 7040,
+      "end_time": 7200
     },
     {
       "text": "你",
       "begin_index": 23,
       "end_index": 24,
-      "begin_time": 4160,
-      "end_time": 4320
+      "begin_time": 7200,
+      "end_time": 7280
     },
     {
       "text": "？",
       "begin_index": 24,
       "end_index": 25,
-      "begin_time": 4400,
-      "end_time": 4480
+      "begin_time": 7280,
+      "end_time": 9120
     },
     {
       "text": "同",
       "begin_index": 25,
       "end_index": 26,
-      "begin_time": 4720,
-      "end_time": 5200
+      "begin_time": 9120,
+      "end_time": 9440
     },
     {
       "text": "事",
       "begin_index": 26,
       "end_index": 27,
-      "begin_time": 5280,
-      "end_time": 5440
+      "begin_time": 9600,
+      "end_time": 9760
     },
     {
       "text": "一",
       "begin_index": 27,
       "end_index": 28,
-      "begin_time": 5440,
-      "end_time": 5520
+      "begin_time": 9840,
+      "end_time": 9920
     },
     {
       "text": "句",
       "begin_index": 28,
       "end_index": 29,
-      "begin_time": 5520,
-      "end_time": 5680
-    },
-    {
-      "text": "「",
-      "begin_index": 29,
-      "end_index": 30,
-      "begin_time": 5680,
-      "end_time": 5920
+      "begin_time": 10000,
+      "end_time": 10160
     },
     {
       "text": "这",
-      "begin_index": 30,
-      "end_index": 31,
-      "begin_time": 5920,
-      "end_time": 6240
+      "begin_index": 29,
+      "end_index": 30,
+      "begin_time": 10400,
+      "end_time": 11680
     },
     {
       "text": "你",
-      "begin_index": 31,
-      "end_index": 32,
-      "begin_time": 6320,
-      "end_time": 6480
+      "begin_index": 30,
+      "end_index": 31,
+      "begin_time": 11760,
+      "end_time": 11840
     },
     {
       "text": "最",
-      "begin_index": 32,
-      "end_index": 33,
-      "begin_time": 6480,
-      "end_time": 6640
+      "begin_index": 31,
+      "end_index": 32,
+      "begin_time": 11920,
+      "end_time": 12000
     },
     {
       "text": "拿",
-      "begin_index": 33,
-      "end_index": 34,
-      "begin_time": 6640,
-      "end_time": 6800
+      "begin_index": 32,
+      "end_index": 33,
+      "begin_time": 12080,
+      "end_time": 12240
     },
     {
       "text": "手",
-      "begin_index": 34,
-      "end_index": 35,
-      "begin_time": 6800,
-      "end_time": 6960
-    },
-    {
-      "text": "」",
-      "begin_index": 35,
-      "end_index": 36,
-      "begin_time": 6960,
-      "end_time": 7120
+      "begin_index": 33,
+      "end_index": 34,
+      "begin_time": 12240,
+      "end_time": 12400
     },
     {
       "text": "你",
-      "begin_index": 36,
-      "end_index": 37,
-      "begin_time": 7120,
-      "end_time": 7360
+      "begin_index": 34,
+      "end_index": 35,
+      "begin_time": 12480,
+      "end_time": 12560
     },
     {
       "text": "就",
-      "begin_index": 37,
-      "end_index": 38,
-      "begin_time": 7360,
-      "end_time": 7520
+      "begin_index": 35,
+      "end_index": 36,
+      "begin_time": 12560,
+      "end_time": 12720
     },
     {
       "text": "接",
-      "begin_index": 38,
-      "end_index": 39,
-      "begin_time": 7520,
-      "end_time": 7680
+      "begin_index": 36,
+      "end_index": 37,
+      "begin_time": 12720,
+      "end_time": 12880
     },
     {
       "text": "了",
-      "begin_index": 39,
-      "end_index": 40,
-      "begin_time": 7760,
-      "end_time": 7840
+      "begin_index": 37,
+      "end_index": 38,
+      "begin_time": 12960,
+      "end_time": 13040
     },
     {
       "text": "老",
-      "begin_index": 40,
-      "end_index": 41,
-      "begin_time": 8444,
-      "end_time": 8604
+      "begin_index": 38,
+      "end_index": 39,
+      "begin_time": 13732,
+      "end_time": 13892
     },
     {
       "text": "板",
-      "begin_index": 41,
-      "end_index": 42,
-      "begin_time": 8684,
-      "end_time": 8764
+      "begin_index": 39,
+      "end_index": 40,
+      "begin_time": 13972,
+      "end_time": 14052
     },
     {
       "text": "画",
-      "begin_index": 42,
-      "end_index": 43,
-      "begin_time": 8844,
-      "end_time": 9004
+      "begin_index": 40,
+      "end_index": 41,
+      "begin_time": 14132,
+      "end_time": 14292
     },
     {
       "text": "的",
-      "begin_index": 43,
-      "end_index": 44,
-      "begin_time": 9004,
-      "end_time": 9164
+      "begin_index": 41,
+      "end_index": 42,
+      "begin_time": 14292,
+      "end_time": 14372
     },
     {
       "text": "饼",
-      "begin_index": 44,
-      "end_index": 45,
-      "begin_time": 9164,
-      "end_time": 9324
+      "begin_index": 42,
+      "end_index": 43,
+      "begin_time": 14372,
+      "end_time": 14612
     },
     {
       "text": "你",
-      "begin_index": 45,
-      "end_index": 46,
-      "begin_time": 9324,
-      "end_time": 9484
+      "begin_index": 43,
+      "end_index": 44,
+      "begin_time": 14612,
+      "end_time": 14692
     },
     {
       "text": "信",
-      "begin_index": 46,
-      "end_index": 47,
-      "begin_time": 9484,
-      "end_time": 9644
+      "begin_index": 44,
+      "end_index": 45,
+      "begin_time": 14772,
+      "end_time": 14932
     },
     {
       "text": "了",
-      "begin_index": 47,
-      "end_index": 48,
-      "begin_time": 9724,
-      "end_time": 9884
+      "begin_index": 45,
+      "end_index": 46,
+      "begin_time": 14932,
+      "end_time": 15012
     },
     {
       "text": "一",
-      "begin_index": 48,
-      "end_index": 49,
-      "begin_time": 9884,
-      "end_time": 9964
+      "begin_index": 46,
+      "end_index": 47,
+      "begin_time": 15012,
+      "end_time": 15172
     },
     {
       "text": "次",
-      "begin_index": 49,
-      "end_index": 50,
-      "begin_time": 10044,
-      "end_time": 10204
+      "begin_index": 47,
+      "end_index": 48,
+      "begin_time": 15172,
+      "end_time": 15252
     },
     {
       "text": "又",
-      "begin_index": 50,
-      "end_index": 51,
-      "begin_time": 10204,
-      "end_time": 10364
+      "begin_index": 48,
+      "end_index": 49,
+      "begin_time": 15332,
+      "end_time": 15412
     },
     {
       "text": "一",
-      "begin_index": 51,
-      "end_index": 52,
-      "begin_time": 10444,
-      "end_time": 10524
+      "begin_index": 49,
+      "end_index": 50,
+      "begin_time": 15492,
+      "end_time": 15572
     },
     {
       "text": "次",
-      "begin_index": 52,
-      "end_index": 53,
-      "begin_time": 10604,
-      "end_time": 10764
+      "begin_index": 50,
+      "end_index": 51,
+      "begin_time": 15652,
+      "end_time": 15732
     },
     {
       "text": "。",
-      "begin_index": 53,
-      "end_index": 54,
-      "begin_time": 10764,
-      "end_time": 12684
+      "begin_index": 51,
+      "end_index": 52,
+      "begin_time": 15732,
+      "end_time": 16532
     },
     {
       "text": "你",
-      "begin_index": 54,
-      "end_index": 55,
-      "begin_time": 12684,
-      "end_time": 12924
+      "begin_index": 52,
+      "end_index": 53,
+      "begin_time": 16532,
+      "end_time": 16852
     },
     {
       "text": "以",
-      "begin_index": 55,
-      "end_index": 56,
-      "begin_time": 12924,
-      "end_time": 13084
+      "begin_index": 53,
+      "end_index": 54,
+      "begin_time": 16852,
+      "end_time": 17012
     },
     {
       "text": "为",
-      "begin_index": 56,
-      "end_index": 57,
-      "begin_time": 13084,
-      "end_time": 13164
+      "begin_index": 54,
+      "end_index": 55,
+      "begin_time": 17012,
+      "end_time": 17172
     },
     {
       "text": "自",
-      "begin_index": 57,
-      "end_index": 58,
-      "begin_time": 13164,
-      "end_time": 13244
+      "begin_index": 55,
+      "end_index": 56,
+      "begin_time": 17172,
+      "end_time": 17332
     },
     {
       "text": "己",
-      "begin_index": 58,
-      "end_index": 59,
-      "begin_time": 13324,
-      "end_time": 13404
+      "begin_index": 56,
+      "end_index": 57,
+      "begin_time": 17332,
+      "end_time": 17492
     },
     {
       "text": "是",
-      "begin_index": 59,
-      "end_index": 60,
-      "begin_time": 13404,
-      "end_time": 13564
+      "begin_index": 57,
+      "end_index": 58,
+      "begin_time": 17492,
+      "end_time": 17572
     },
     {
       "text": "团",
-      "begin_index": 60,
-      "end_index": 61,
-      "begin_time": 13564,
-      "end_time": 13724
+      "begin_index": 58,
+      "end_index": 59,
+      "begin_time": 17652,
+      "end_time": 17732
     },
     {
       "text": "队",
-      "begin_index": 61,
-      "end_index": 62,
-      "begin_time": 13724,
-      "end_time": 13884
+      "begin_index": 59,
+      "end_index": 60,
+      "begin_time": 17812,
+      "end_time": 17892
     },
     {
       "text": "核",
-      "begin_index": 62,
-      "end_index": 63,
-      "begin_time": 13884,
-      "end_time": 14044
+      "begin_index": 60,
+      "end_index": 61,
+      "begin_time": 17972,
+      "end_time": 18052
     },
     {
       "text": "心",
-      "begin_index": 63,
-      "end_index": 64,
-      "begin_time": 14124,
-      "end_time": 14204
+      "begin_index": 61,
+      "end_index": 62,
+      "begin_time": 18052,
+      "end_time": 18212
     },
     {
       "text": "，",
-      "begin_index": 64,
-      "end_index": 65,
-      "begin_time": 14284,
-      "end_time": 14444
+      "begin_index": 62,
+      "end_index": 63,
+      "begin_time": 18292,
+      "end_time": 18452
     },
     {
       "text": "可",
-      "begin_index": 65,
-      "end_index": 66,
-      "begin_time": 14684,
-      "end_time": 15004
+      "begin_index": 63,
+      "end_index": 64,
+      "begin_time": 18532,
+      "end_time": 19012
     },
     {
       "text": "你",
-      "begin_index": 66,
-      "end_index": 67,
-      "begin_time": 15004,
-      "end_time": 15164
+      "begin_index": 64,
+      "end_index": 65,
+      "begin_time": 19092,
+      "end_time": 19172
     },
     {
       "text": "一",
-      "begin_index": 67,
-      "end_index": 68,
-      "begin_time": 15164,
-      "end_time": 15324
+      "begin_index": 65,
+      "end_index": 66,
+      "begin_time": 19172,
+      "end_time": 19332
     },
     {
       "text": "提",
-      "begin_index": 68,
-      "end_index": 69,
-      "begin_time": 15324,
-      "end_time": 15484
+      "begin_index": 66,
+      "end_index": 67,
+      "begin_time": 19332,
+      "end_time": 19492
     },
     {
       "text": "离",
-      "begin_index": 69,
-      "end_index": 70,
-      "begin_time": 15484,
-      "end_time": 15644
+      "begin_index": 67,
+      "end_index": 68,
+      "begin_time": 19492,
+      "end_time": 19652
     },
     {
       "text": "职",
-      "begin_index": 70,
-      "end_index": 71,
-      "begin_time": 15644,
-      "end_time": 15804
+      "begin_index": 68,
+      "end_index": 69,
+      "begin_time": 19652,
+      "end_time": 19812
     },
     {
       "text": "，",
-      "begin_index": 71,
-      "end_index": 72,
-      "begin_time": 15964,
-      "end_time": 16044
+      "begin_index": 69,
+      "end_index": 70,
+      "begin_time": 19972,
+      "end_time": 20052
     },
     {
       "text": "他",
-      "begin_index": 72,
-      "end_index": 73,
-      "begin_time": 16044,
-      "end_time": 16364
+      "begin_index": 70,
+      "end_index": 71,
+      "begin_time": 20052,
+      "end_time": 20372
     },
     {
       "text": "们",
-      "begin_index": 73,
-      "end_index": 74,
-      "begin_time": 16364,
-      "end_time": 16444
+      "begin_index": 71,
+      "end_index": 72,
+      "begin_time": 20372,
+      "end_time": 20452
     },
     {
       "text": "三",
-      "begin_index": 74,
-      "end_index": 75,
-      "begin_time": 16524,
-      "end_time": 16684
+      "begin_index": 72,
+      "end_index": 73,
+      "begin_time": 20532,
+      "end_time": 20692
     },
     {
       "text": "天",
-      "begin_index": 75,
-      "end_index": 76,
-      "begin_time": 16684,
-      "end_time": 16844
+      "begin_index": 73,
+      "end_index": 74,
+      "begin_time": 20692,
+      "end_time": 20932
     },
     {
       "text": "就",
-      "begin_index": 76,
-      "end_index": 77,
-      "begin_time": 16924,
-      "end_time": 17084
+      "begin_index": 74,
+      "end_index": 75,
+      "begin_time": 21012,
+      "end_time": 21092
     },
     {
       "text": "能",
-      "begin_index": 77,
-      "end_index": 78,
-      "begin_time": 17084,
-      "end_time": 17164
+      "begin_index": 75,
+      "end_index": 76,
+      "begin_time": 21092,
+      "end_time": 21172
     },
     {
       "text": "找",
-      "begin_index": 78,
-      "end_index": 79,
-      "begin_time": 17164,
-      "end_time": 17324
+      "begin_index": 76,
+      "end_index": 77,
+      "begin_time": 21252,
+      "end_time": 21332
     },
     {
       "text": "到",
-      "begin_index": 79,
-      "end_index": 80,
-      "begin_time": 17404,
-      "end_time": 17484
+      "begin_index": 77,
+      "end_index": 78,
+      "begin_time": 21332,
+      "end_time": 21492
     },
     {
       "text": "下",
-      "begin_index": 80,
-      "end_index": 81,
-      "begin_time": 17484,
-      "end_time": 17644
+      "begin_index": 78,
+      "end_index": 79,
+      "begin_time": 21492,
+      "end_time": 21572
     },
     {
       "text": "一",
-      "begin_index": 81,
-      "end_index": 82,
-      "begin_time": 17724,
-      "end_time": 17804
+      "begin_index": 79,
+      "end_index": 80,
+      "begin_time": 21652,
+      "end_time": 21732
     },
     {
       "text": "个",
-      "begin_index": 82,
-      "end_index": 83,
-      "begin_time": 17804,
-      "end_time": 17884
-    },
-    {
-      "text": "「",
-      "begin_index": 83,
-      "end_index": 84,
-      "begin_time": 17884,
-      "end_time": 17964
+      "begin_index": 80,
+      "end_index": 81,
+      "begin_time": 21732,
+      "end_time": 21892
     },
     {
       "text": "你",
-      "begin_index": 84,
-      "end_index": 85,
-      "begin_time": 17964,
-      "end_time": 18044
+      "begin_index": 81,
+      "end_index": 82,
+      "begin_time": 21892,
+      "end_time": 21972
     }
   ],
   "perBeat": [
     {
       "beat": 3,
       "audioStart": 0,
-      "audioEnd": 4720,
+      "audioEnd": 9120,
       "chars": 25,
       "wordsFound": 25
     },
     {
       "beat": 4,
-      "audioStart": 4720,
-      "audioEnd": 12924,
-      "chars": 30,
-      "wordsFound": 30
+      "audioStart": 9120,
+      "audioEnd": 16852,
+      "chars": 28,
+      "wordsFound": 28
     },
     {
       "beat": 5,
-      "audioStart": 12924,
-      "audioEnd": 18495,
-      "chars": 33,
-      "wordsFound": 30
+      "audioStart": 16852,
+      "audioEnd": 22335,
+      "chars": 31,
+      "wordsFound": 29
     }
   ]
 }

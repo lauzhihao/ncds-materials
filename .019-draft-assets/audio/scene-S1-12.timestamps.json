@@ -1,6 +1,6 @@
 {
   "scene": "S1-12",
-  "text": "职场从来不是比谁更努力，而是比谁更清醒。同样一副棋盘，有人是被摆布的棋子，有人是落子的人，差的，不过是那一念之间的觉醒。从今天起，别再问「我该做什么」，要问「这一步，对我有什么好处」。",
+  "text": "职场从来不是比谁更努力，而是比谁更清醒。同样一副棋盘，有人是被摆布的棋子，有人是落子的人，差的，不过是那一念之间的觉醒。从今天起，别再问我该做什么，要问这一步，对我有什么好处。",
   "words": [
     {
       "text": "职",
@@ -420,210 +420,189 @@
       "begin_index": 59,
       "end_index": 60,
       "begin_time": 12609,
-      "end_time": 12769
+      "end_time": 12849
     },
     {
       "text": "今",
       "begin_index": 60,
       "end_index": 61,
       "begin_time": 12849,
-      "end_time": 12929
+      "end_time": 13009
     },
     {
       "text": "天",
       "begin_index": 61,
       "end_index": 62,
-      "begin_time": 13009,
-      "end_time": 13089
+      "begin_time": 13089,
+      "end_time": 13249
     },
     {
       "text": "起",
       "begin_index": 62,
       "end_index": 63,
-      "begin_time": 13169,
-      "end_time": 13329
+      "begin_time": 13329,
+      "end_time": 13489
     },
     {
       "text": "，",
       "begin_index": 63,
       "end_index": 64,
-      "begin_time": 13329,
-      "end_time": 13569
+      "begin_time": 13489,
+      "end_time": 13729
     },
     {
       "text": "别",
       "begin_index": 64,
       "end_index": 65,
-      "begin_time": 13569,
-      "end_time": 13729
+      "begin_time": 13729,
+      "end_time": 13889
     },
     {
       "text": "再",
       "begin_index": 65,
       "end_index": 66,
-      "begin_time": 13809,
-      "end_time": 13889
+      "begin_time": 13889,
+      "end_time": 14049
     },
     {
       "text": "问",
       "begin_index": 66,
       "end_index": 67,
-      "begin_time": 13889,
-      "end_time": 13969
-    },
-    {
-      "text": "「",
-      "begin_index": 67,
-      "end_index": 68,
-      "begin_time": 13969,
-      "end_time": 14049
-    },
-    {
-      "text": "我",
-      "begin_index": 68,
-      "end_index": 69,
-      "begin_time": 14049,
-      "end_time": 14209
-    },
-    {
-      "text": "该",
-      "begin_index": 69,
-      "end_index": 70,
-      "begin_time": 14209,
+      "begin_time": 14129,
       "end_time": 14289
     },
     {
-      "text": "做",
-      "begin_index": 70,
-      "end_index": 71,
-      "begin_time": 14369,
+      "text": "我",
+      "begin_index": 67,
+      "end_index": 68,
+      "begin_time": 14289,
+      "end_time": 14449
+    },
+    {
+      "text": "该",
+      "begin_index": 68,
+      "end_index": 69,
+      "begin_time": 14449,
       "end_time": 14529
     },
     {
-      "text": "什",
-      "begin_index": 71,
-      "end_index": 72,
+      "text": "做",
+      "begin_index": 69,
+      "end_index": 70,
       "begin_time": 14609,
       "end_time": 14689
     },
     {
-      "text": "么",
-      "begin_index": 72,
-      "end_index": 73,
-      "begin_time": 14689,
-      "end_time": 14822
+      "text": "什",
+      "begin_index": 70,
+      "end_index": 71,
+      "begin_time": 14769,
+      "end_time": 14849
     },
     {
-      "text": "」",
-      "begin_index": 73,
-      "end_index": 74,
-      "begin_time": 14822,
-      "end_time": 14955
+      "text": "么",
+      "begin_index": 71,
+      "end_index": 72,
+      "begin_time": 14849,
+      "end_time": 15009
     },
     {
       "text": "，",
-      "begin_index": 74,
-      "end_index": 75,
-      "begin_time": 14955,
-      "end_time": 15088
+      "begin_index": 72,
+      "end_index": 73,
+      "begin_time": 15009,
+      "end_time": 15089
     },
     {
       "text": "要",
-      "begin_index": 75,
-      "end_index": 76,
-      "begin_time": 15089,
-      "end_time": 15329
-    },
-    {
-      "text": "问",
-      "begin_index": 76,
-      "end_index": 77,
-      "begin_time": 15409,
-      "end_time": 15489
-    },
-    {
-      "text": "「",
-      "begin_index": 77,
-      "end_index": 78,
-      "begin_time": 15489,
-      "end_time": 15569
-    },
-    {
-      "text": "这",
-      "begin_index": 78,
-      "end_index": 79,
-      "begin_time": 15569,
-      "end_time": 15649
-    },
-    {
-      "text": "一",
-      "begin_index": 79,
-      "end_index": 80,
-      "begin_time": 15649,
+      "begin_index": 73,
+      "end_index": 74,
+      "begin_time": 15329,
       "end_time": 15729
     },
     {
-      "text": "步",
-      "begin_index": 80,
-      "end_index": 81,
+      "text": "问",
+      "begin_index": 74,
+      "end_index": 75,
       "begin_time": 15809,
-      "end_time": 15889
+      "end_time": 15969
     },
     {
-      "text": "，",
-      "begin_index": 81,
-      "end_index": 82,
-      "begin_time": 15889,
-      "end_time": 16129
+      "text": "这",
+      "begin_index": 75,
+      "end_index": 76,
+      "begin_time": 16209,
+      "end_time": 16529
     },
     {
-      "text": "对",
-      "begin_index": 82,
-      "end_index": 83,
-      "begin_time": 16129,
-      "end_time": 16209
-    },
-    {
-      "text": "我",
-      "begin_index": 83,
-      "end_index": 84,
-      "begin_time": 16289,
-      "end_time": 16369
-    },
-    {
-      "text": "有",
-      "begin_index": 84,
-      "end_index": 85,
-      "begin_time": 16369,
-      "end_time": 16449
-    },
-    {
-      "text": "什",
-      "begin_index": 85,
-      "end_index": 86,
+      "text": "一",
+      "begin_index": 76,
+      "end_index": 77,
       "begin_time": 16529,
-      "end_time": 16609
-    },
-    {
-      "text": "么",
-      "begin_index": 86,
-      "end_index": 87,
-      "begin_time": 16609,
       "end_time": 16689
     },
     {
-      "text": "好",
-      "begin_index": 87,
-      "end_index": 88,
+      "text": "步",
+      "begin_index": 77,
+      "end_index": 78,
       "begin_time": 16689,
       "end_time": 16849
     },
     {
-      "text": "处",
-      "begin_index": 88,
-      "end_index": 89,
+      "text": "，",
+      "begin_index": 78,
+      "end_index": 79,
+      "begin_time": 16849,
+      "end_time": 16929
+    },
+    {
+      "text": "对",
+      "begin_index": 79,
+      "end_index": 80,
       "begin_time": 16929,
-      "end_time": 17089
+      "end_time": 17329
+    },
+    {
+      "text": "我",
+      "begin_index": 80,
+      "end_index": 81,
+      "begin_time": 17329,
+      "end_time": 17489
+    },
+    {
+      "text": "有",
+      "begin_index": 81,
+      "end_index": 82,
+      "begin_time": 17489,
+      "end_time": 17649
+    },
+    {
+      "text": "什",
+      "begin_index": 82,
+      "end_index": 83,
+      "begin_time": 17649,
+      "end_time": 17809
+    },
+    {
+      "text": "么",
+      "begin_index": 83,
+      "end_index": 84,
+      "begin_time": 17809,
+      "end_time": 17889
+    },
+    {
+      "text": "好",
+      "begin_index": 84,
+      "end_index": 85,
+      "begin_time": 17889,
+      "end_time": 18049
+    },
+    {
+      "text": "处",
+      "begin_index": 85,
+      "end_index": 86,
+      "begin_time": 18049,
+      "end_time": 18289
     }
   ],
   "perBeat": [
@@ -644,9 +623,9 @@
     {
       "beat": 26,
       "audioStart": 12849,
-      "audioEnd": 17450,
-      "chars": 32,
-      "wordsFound": 29
+      "audioEnd": 18651,
+      "chars": 28,
+      "wordsFound": 26
     }
   ]
 }

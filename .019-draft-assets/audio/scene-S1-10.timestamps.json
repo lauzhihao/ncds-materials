@@ -1,6 +1,6 @@
 {
   "scene": "S1-10",
-  "text": "别再让自己谁都能换——你要把勤奋换成筹码。可替代的劳动不值钱，动不了的价值，才是你真正的护城河。",
+  "text": "别再让自己谁都能换，你要把勤奋换成筹码。可替代的劳动不值钱，动不了的价值，才是你真正的护城河。",
   "words": [
     {
       "text": "别",
@@ -49,7 +49,7 @@
       "begin_index": 6,
       "end_index": 7,
       "begin_time": 1040,
-      "end_time": 1200
+      "end_time": 1120
     },
     {
       "text": "能",
@@ -66,286 +66,286 @@
       "end_time": 1440
     },
     {
-      "text": "—",
+      "text": "，",
       "begin_index": 9,
       "end_index": 10,
       "begin_time": 1440,
-      "end_time": 1560
-    },
-    {
-      "text": "—",
-      "begin_index": 10,
-      "end_index": 11,
-      "begin_time": 1560,
-      "end_time": 1680
+      "end_time": 1600
     },
     {
       "text": "你",
-      "begin_index": 11,
-      "end_index": 12,
-      "begin_time": 1680,
-      "end_time": 2080
-    },
-    {
-      "text": "要",
-      "begin_index": 12,
-      "end_index": 13,
-      "begin_time": 2080,
+      "begin_index": 10,
+      "end_index": 11,
+      "begin_time": 1600,
       "end_time": 2240
     },
     {
-      "text": "把",
-      "begin_index": 13,
-      "end_index": 14,
+      "text": "要",
+      "begin_index": 11,
+      "end_index": 12,
       "begin_time": 2240,
       "end_time": 2320
     },
     {
-      "text": "勤",
-      "begin_index": 14,
-      "end_index": 15,
+      "text": "把",
+      "begin_index": 12,
+      "end_index": 13,
       "begin_time": 2400,
-      "end_time": 2560
+      "end_time": 2480
+    },
+    {
+      "text": "勤",
+      "begin_index": 13,
+      "end_index": 14,
+      "begin_time": 2560,
+      "end_time": 2640
     },
     {
       "text": "奋",
-      "begin_index": 15,
-      "end_index": 16,
-      "begin_time": 2560,
-      "end_time": 2720
+      "begin_index": 14,
+      "end_index": 15,
+      "begin_time": 2720,
+      "end_time": 2880
     },
     {
       "text": "换",
-      "begin_index": 16,
-      "end_index": 17,
-      "begin_time": 2800,
-      "end_time": 2960
-    },
-    {
-      "text": "成",
-      "begin_index": 17,
-      "end_index": 18,
-      "begin_time": 3040,
+      "begin_index": 15,
+      "end_index": 16,
+      "begin_time": 2960,
       "end_time": 3120
     },
     {
-      "text": "筹",
-      "begin_index": 18,
-      "end_index": 19,
+      "text": "成",
+      "begin_index": 16,
+      "end_index": 17,
       "begin_time": 3120,
-      "end_time": 3360
+      "end_time": 3280
+    },
+    {
+      "text": "筹",
+      "begin_index": 17,
+      "end_index": 18,
+      "begin_time": 3280,
+      "end_time": 3440
     },
     {
       "text": "码",
-      "begin_index": 19,
-      "end_index": 20,
-      "begin_time": 3360,
-      "end_time": 3520
+      "begin_index": 18,
+      "end_index": 19,
+      "begin_time": 3520,
+      "end_time": 3600
     },
     {
       "text": "。",
-      "begin_index": 20,
-      "end_index": 21,
-      "begin_time": 3520,
-      "end_time": 3920
+      "begin_index": 19,
+      "end_index": 20,
+      "begin_time": 3600,
+      "end_time": 4160
     },
     {
       "text": "可",
-      "begin_index": 21,
-      "end_index": 22,
-      "begin_time": 3920,
-      "end_time": 4080
-    },
-    {
-      "text": "替",
-      "begin_index": 22,
-      "end_index": 23,
+      "begin_index": 20,
+      "end_index": 21,
       "begin_time": 4160,
-      "end_time": 4320
-    },
-    {
-      "text": "代",
-      "begin_index": 23,
-      "end_index": 24,
-      "begin_time": 4320,
-      "end_time": 4480
-    },
-    {
-      "text": "的",
-      "begin_index": 24,
-      "end_index": 25,
-      "begin_time": 4480,
       "end_time": 4560
     },
     {
-      "text": "劳",
-      "begin_index": 25,
-      "end_index": 26,
+      "text": "替",
+      "begin_index": 21,
+      "end_index": 22,
       "begin_time": 4560,
       "end_time": 4720
     },
     {
-      "text": "动",
-      "begin_index": 26,
-      "end_index": 27,
-      "begin_time": 4720,
+      "text": "代",
+      "begin_index": 22,
+      "end_index": 23,
+      "begin_time": 4800,
       "end_time": 4880
     },
     {
-      "text": "不",
-      "begin_index": 27,
-      "end_index": 28,
+      "text": "的",
+      "begin_index": 23,
+      "end_index": 24,
       "begin_time": 4880,
-      "end_time": 4960
+      "end_time": 5040
     },
     {
-      "text": "值",
-      "begin_index": 28,
-      "end_index": 29,
+      "text": "劳",
+      "begin_index": 24,
+      "end_index": 25,
       "begin_time": 5040,
       "end_time": 5200
     },
     {
-      "text": "钱",
-      "begin_index": 29,
-      "end_index": 30,
-      "begin_time": 5200,
-      "end_time": 5400
-    },
-    {
-      "text": "，",
-      "begin_index": 30,
-      "end_index": 31,
-      "begin_time": 5400,
-      "end_time": 5600
-    },
-    {
       "text": "动",
-      "begin_index": 31,
-      "end_index": 32,
-      "begin_time": 5600,
-      "end_time": 5840
+      "begin_index": 25,
+      "end_index": 26,
+      "begin_time": 5200,
+      "end_time": 5280
     },
     {
       "text": "不",
-      "begin_index": 32,
-      "end_index": 33,
-      "begin_time": 5840,
-      "end_time": 6000
-    },
-    {
-      "text": "了",
-      "begin_index": 33,
-      "end_index": 34,
-      "begin_time": 6000,
-      "end_time": 6160
-    },
-    {
-      "text": "的",
-      "begin_index": 34,
-      "end_index": 35,
-      "begin_time": 6160,
-      "end_time": 6240
-    },
-    {
-      "text": "价",
-      "begin_index": 35,
-      "end_index": 36,
-      "begin_time": 6240,
-      "end_time": 6480
+      "begin_index": 26,
+      "end_index": 27,
+      "begin_time": 5360,
+      "end_time": 5440
     },
     {
       "text": "值",
-      "begin_index": 36,
-      "end_index": 37,
-      "begin_time": 6480,
-      "end_time": 6640
+      "begin_index": 27,
+      "end_index": 28,
+      "begin_time": 5520,
+      "end_time": 5680
+    },
+    {
+      "text": "钱",
+      "begin_index": 28,
+      "end_index": 29,
+      "begin_time": 5680,
+      "end_time": 5760
     },
     {
       "text": "，",
-      "begin_index": 37,
-      "end_index": 38,
-      "begin_time": 6640,
+      "begin_index": 29,
+      "end_index": 30,
+      "begin_time": 5760,
+      "end_time": 6240
+    },
+    {
+      "text": "动",
+      "begin_index": 30,
+      "end_index": 31,
+      "begin_time": 6240,
+      "end_time": 6640
+    },
+    {
+      "text": "不",
+      "begin_index": 31,
+      "end_index": 32,
+      "begin_time": 6720,
       "end_time": 6800
     },
     {
-      "text": "才",
-      "begin_index": 38,
-      "end_index": 39,
+      "text": "了",
+      "begin_index": 32,
+      "end_index": 33,
       "begin_time": 6800,
+      "end_time": 6960
+    },
+    {
+      "text": "的",
+      "begin_index": 33,
+      "end_index": 34,
+      "begin_time": 6960,
       "end_time": 7040
     },
     {
-      "text": "是",
-      "begin_index": 39,
-      "end_index": 40,
+      "text": "价",
+      "begin_index": 34,
+      "end_index": 35,
       "begin_time": 7040,
       "end_time": 7200
     },
     {
-      "text": "你",
-      "begin_index": 40,
-      "end_index": 41,
-      "begin_time": 7200,
+      "text": "值",
+      "begin_index": 35,
+      "end_index": 36,
+      "begin_time": 7280,
       "end_time": 7360
     },
     {
-      "text": "真",
-      "begin_index": 41,
-      "end_index": 42,
+      "text": "，",
+      "begin_index": 36,
+      "end_index": 37,
       "begin_time": 7360,
-      "end_time": 7520
+      "end_time": 7600
     },
     {
-      "text": "正",
-      "begin_index": 42,
-      "end_index": 43,
-      "begin_time": 7520,
-      "end_time": 7680
-    },
-    {
-      "text": "的",
-      "begin_index": 43,
-      "end_index": 44,
-      "begin_time": 7680,
+      "text": "才",
+      "begin_index": 37,
+      "end_index": 38,
+      "begin_time": 7600,
       "end_time": 7840
     },
     {
-      "text": "护",
-      "begin_index": 44,
-      "end_index": 45,
+      "text": "是",
+      "begin_index": 38,
+      "end_index": 39,
       "begin_time": 7840,
-      "end_time": 7920
+      "end_time": 8000
     },
     {
-      "text": "城",
-      "begin_index": 45,
-      "end_index": 46,
+      "text": "你",
+      "begin_index": 39,
+      "end_index": 40,
       "begin_time": 8000,
       "end_time": 8080
     },
     {
+      "text": "真",
+      "begin_index": 40,
+      "end_index": 41,
+      "begin_time": 8160,
+      "end_time": 8240
+    },
+    {
+      "text": "正",
+      "begin_index": 41,
+      "end_index": 42,
+      "begin_time": 8320,
+      "end_time": 8480
+    },
+    {
+      "text": "的",
+      "begin_index": 42,
+      "end_index": 43,
+      "begin_time": 8480,
+      "end_time": 8560
+    },
+    {
+      "text": "护",
+      "begin_index": 43,
+      "end_index": 44,
+      "begin_time": 8560,
+      "end_time": 8720
+    },
+    {
+      "text": "城",
+      "begin_index": 44,
+      "end_index": 45,
+      "begin_time": 8720,
+      "end_time": 8800
+    },
+    {
       "text": "河",
+      "begin_index": 45,
+      "end_index": 46,
+      "begin_time": 8880,
+      "end_time": 9040
+    },
+    {
+      "text": "。",
       "begin_index": 46,
       "end_index": 47,
-      "begin_time": 8160,
-      "end_time": 8320
+      "begin_time": 9040,
+      "end_time": 9280
     }
   ],
   "perBeat": [
     {
       "beat": 20,
       "audioStart": 0,
-      "audioEnd": 3920,
-      "chars": 21,
-      "wordsFound": 21
+      "audioEnd": 4160,
+      "chars": 20,
+      "wordsFound": 20
     },
     {
       "beat": 21,
-      "audioStart": 3920,
-      "audioEnd": 8673,
+      "audioStart": 4160,
+      "audioEnd": 9404,
       "chars": 27,
-      "wordsFound": 26
+      "wordsFound": 27
     }
   ]
 }

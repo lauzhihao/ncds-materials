@@ -1,6 +1,6 @@
 {
   "scene": "S1-07",
-  "text": "那怎么破？很简单——刚才那三条，反过来做就行。",
+  "text": "那怎么破？很简单，刚才那三条，反过来做就行。",
   "words": [
     {
       "text": "那",
@@ -27,8 +27,8 @@
       "text": "破",
       "begin_index": 3,
       "end_index": 4,
-      "begin_time": 480,
-      "end_time": 720
+      "begin_time": 560,
+      "end_time": 640
     },
     {
       "text": "？",
@@ -41,121 +41,121 @@
       "text": "很",
       "begin_index": 5,
       "end_index": 6,
-      "begin_time": 1840,
-      "end_time": 2080
+      "begin_time": 1280,
+      "end_time": 1520
     },
     {
       "text": "简",
       "begin_index": 6,
       "end_index": 7,
-      "begin_time": 2160,
-      "end_time": 2320
+      "begin_time": 1520,
+      "end_time": 1680
     },
     {
       "text": "单",
       "begin_index": 7,
       "end_index": 8,
-      "begin_time": 2320,
-      "end_time": 2480
+      "begin_time": 1760,
+      "end_time": 1920
     },
     {
-      "text": "——",
+      "text": "，",
       "begin_index": 8,
       "end_index": 9,
-      "begin_time": 2560,
-      "end_time": 2720
+      "begin_time": 1920,
+      "end_time": 2080
     },
     {
       "text": "刚",
       "begin_index": 9,
       "end_index": 10,
-      "begin_time": 2720,
-      "end_time": 3200
+      "begin_time": 2320,
+      "end_time": 2480
     },
     {
       "text": "才",
       "begin_index": 10,
       "end_index": 11,
-      "begin_time": 3280,
-      "end_time": 3440
+      "begin_time": 2560,
+      "end_time": 2720
     },
     {
       "text": "那",
       "begin_index": 11,
       "end_index": 12,
-      "begin_time": 3440,
-      "end_time": 3600
+      "begin_time": 2720,
+      "end_time": 2880
     },
     {
       "text": "三",
       "begin_index": 12,
       "end_index": 13,
-      "begin_time": 3600,
-      "end_time": 3760
+      "begin_time": 2880,
+      "end_time": 3040
     },
     {
       "text": "条",
       "begin_index": 13,
       "end_index": 14,
-      "begin_time": 3760,
-      "end_time": 3920
+      "begin_time": 3040,
+      "end_time": 3200
     },
     {
       "text": "，",
       "begin_index": 14,
       "end_index": 15,
-      "begin_time": 3920,
-      "end_time": 4320
+      "begin_time": 3200,
+      "end_time": 3360
     },
     {
       "text": "反",
       "begin_index": 15,
       "end_index": 16,
-      "begin_time": 4320,
-      "end_time": 4800
+      "begin_time": 3360,
+      "end_time": 3680
     },
     {
       "text": "过",
       "begin_index": 16,
       "end_index": 17,
-      "begin_time": 4880,
-      "end_time": 5040
+      "begin_time": 3760,
+      "end_time": 3840
     },
     {
       "text": "来",
       "begin_index": 17,
       "end_index": 18,
-      "begin_time": 5040,
-      "end_time": 5120
+      "begin_time": 3840,
+      "end_time": 3920
     },
     {
       "text": "做",
       "begin_index": 18,
       "end_index": 19,
-      "begin_time": 5120,
-      "end_time": 5280
+      "begin_time": 4000,
+      "end_time": 4080
     },
     {
       "text": "就",
       "begin_index": 19,
       "end_index": 20,
-      "begin_time": 5280,
-      "end_time": 5440
+      "begin_time": 4160,
+      "end_time": 4240
     },
     {
       "text": "行",
       "begin_index": 20,
       "end_index": 21,
-      "begin_time": 5440,
-      "end_time": 5600
+      "begin_time": 4240,
+      "end_time": 4400
     }
   ],
   "perBeat": [
     {
       "beat": 15,
       "audioStart": 0,
-      "audioEnd": 5956,
-      "chars": 23,
+      "audioEnd": 4833,
+      "chars": 22,
       "wordsFound": 21
     }
   ]

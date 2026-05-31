@@ -72,23 +72,23 @@
       "en": "Have you noticed? The one who does the most work is rarely the one who comes out on top.",
       "audioFile": "audio/scene-S1-01.mp3",
       "audioStart": 0,
-      "audioEnd": 5840
+      "audioEnd": 6720
     },
     {
       "zh": "不是你不够努力——",
       "scene": "S1-01",
       "en": "It's not that you don't work hard enough —",
       "audioFile": "audio/scene-S1-01.mp3",
-      "audioStart": 5840,
-      "audioEnd": 7200
+      "audioStart": 6720,
+      "audioEnd": 8080
     },
     {
       "zh": "而是在别人眼里，你从来就不是玩家，你只是一颗好用的棋子。",
       "scene": "S1-01",
       "en": "it's that in their eyes you were never a player — just a useful pawn.",
       "audioFile": "audio/scene-S1-01.mp3",
-      "audioStart": 7200,
-      "audioEnd": 12591
+      "audioStart": 8080,
+      "audioEnd": 15151
     },
     {
       "zh": "你回想一下，是不是脏活累活，第一个被想起的总是你？",
@@ -96,23 +96,23 @@
       "en": "Think back — whenever there's grunt work, aren't you always the first one they think of?",
       "audioFile": "audio/scene-S1-02.mp3",
       "audioStart": 0,
-      "audioEnd": 4720
+      "audioEnd": 9120
     },
     {
       "zh": "同事一句「这你最拿手」你就接了，老板画的饼你信了一次又一次。",
       "scene": "S1-02",
       "en": "A coworker says 'you're best at this,' so you take it; the boss sells a dream, and you buy it again and again.",
       "audioFile": "audio/scene-S1-02.mp3",
-      "audioStart": 4720,
-      "audioEnd": 12924
+      "audioStart": 9120,
+      "audioEnd": 16852
     },
     {
       "zh": "你以为自己是团队核心，可你一提离职，他们三天就能找到下一个「你」。",
       "scene": "S1-02",
       "en": "You think you're the team's core, but the day you quit, they'll find your replacement in three days.",
       "audioFile": "audio/scene-S1-02.mp3",
-      "audioStart": 12924,
-      "audioEnd": 18495
+      "audioStart": 16852,
+      "audioEnd": 22335
     },
     {
       "zh": "你把「被需要」当成了「被重视」，",
@@ -120,15 +120,15 @@
       "en": "You mistook 'being needed' for 'being valued,'",
       "audioFile": "audio/scene-S1-03.mp3",
       "audioStart": 0,
-      "audioEnd": 2720
+      "audioEnd": 2480
     },
     {
       "zh": "却没发现：你越好用，就越没人舍得让你升上去。",
       "scene": "S1-03",
       "en": "never realizing: the more useful you are, the less anyone wants to promote you.",
       "audioFile": "audio/scene-S1-03.mp3",
-      "audioStart": 2720,
-      "audioEnd": 7236
+      "audioStart": 2480,
+      "audioEnd": 7549
     },
     {
       "zh": "说点扎心的——你为什么会沦为一颗棋子？",
@@ -136,15 +136,15 @@
       "en": "Here's the hard truth — why did you end up a pawn in the first place?",
       "audioFile": "audio/scene-S1-04.mp3",
       "audioStart": 0,
-      "audioEnd": 3280
+      "audioEnd": 3600
     },
     {
       "zh": "说穿了，就败在两个字上：好用。",
       "scene": "S1-04",
       "en": "It comes down to two words: too useful.",
       "audioFile": "audio/scene-S1-04.mp3",
-      "audioStart": 3280,
-      "audioEnd": 6426
+      "audioStart": 3600,
+      "audioEnd": 6583
     },
     {
       "zh": "你太好说话：边界感为零，谁都能差遣你，谁都不必为你负责。",
@@ -152,23 +152,23 @@
       "en": "Too agreeable: no boundaries, anyone can order you around, and no one owes you anything.",
       "audioFile": "audio/scene-S1-05.mp3",
       "audioStart": 0,
-      "audioEnd": 6720
+      "audioEnd": 6480
     },
     {
       "zh": "你太爱埋头：只盯着任务做没做完，从不抬头看这盘棋的利益怎么分。",
       "scene": "S1-05",
       "en": "Too heads-down: you only watch whether tasks get done, never how the spoils get split.",
       "audioFile": "audio/scene-S1-05.mp3",
-      "audioStart": 6720,
-      "audioEnd": 15729
+      "audioStart": 6480,
+      "audioEnd": 12240
     },
     {
       "zh": "你太可替代：换个人也照样能干的活，凭什么单独给你涨？",
       "scene": "S1-05",
       "en": "Too replaceable: if anyone could do your job, why would they pay you more?",
       "audioFile": "audio/scene-S1-05.mp3",
-      "audioStart": 15729,
-      "audioEnd": 22335
+      "audioStart": 12240,
+      "audioEnd": 17946
     },
     {
       "zh": "棋子的本质，是你的行动别人决定，价值别人定义，去留别人安排。",
@@ -192,7 +192,7 @@
       "en": "So how do you break out? Simple — take those three and do the exact opposite.",
       "audioFile": "audio/scene-S1-07.mp3",
       "audioStart": 0,
-      "audioEnd": 5956
+      "audioEnd": 4833
     },
     {
       "zh": "别再太好说话——你要永远手握选择权。",
@@ -200,15 +200,15 @@
       "en": "Stop being so agreeable — always keep your options open.",
       "audioFile": "audio/scene-S1-08.mp3",
       "audioStart": 0,
-      "audioEnd": 4080
+      "audioEnd": 3680
     },
     {
       "zh": "一个随时能走人的人，才有底气说「不」，才有跟老板谈条件的资格。",
       "scene": "S1-08",
       "en": "Only someone ready to walk has the nerve to say no, and the standing to negotiate.",
       "audioFile": "audio/scene-S1-08.mp3",
-      "audioStart": 4080,
-      "audioEnd": 10762
+      "audioStart": 3680,
+      "audioEnd": 9639
     },
     {
       "zh": "别再只顾埋头——你要学会向上看。",
@@ -216,15 +216,15 @@
       "en": "Stop keeping your head down — learn to look up.",
       "audioFile": "audio/scene-S1-09.mp3",
       "audioStart": 0,
-      "audioEnd": 3440
+      "audioEnd": 4720
     },
     {
       "zh": "先抬眼看清：谁在下棋？利益怎么分？你又站在哪？",
       "scene": "S1-09",
       "en": "Look up and see clearly: who's playing? how are the gains split? and where do you stand?",
       "audioFile": "audio/scene-S1-09.mp3",
-      "audioStart": 3440,
-      "audioEnd": 9326
+      "audioStart": 4720,
+      "audioEnd": 12826
     },
     {
       "zh": "别再让自己谁都能换——你要把勤奋换成筹码。",
@@ -232,15 +232,15 @@
       "en": "Stop letting anyone replace you — turn your diligence into leverage.",
       "audioFile": "audio/scene-S1-10.mp3",
       "audioStart": 0,
-      "audioEnd": 3920
+      "audioEnd": 4160
     },
     {
       "zh": "可替代的劳动不值钱，动不了的价值，才是你真正的护城河。",
       "scene": "S1-10",
       "en": "Replaceable labor is cheap; value they can't remove is your real moat.",
       "audioFile": "audio/scene-S1-10.mp3",
-      "audioStart": 3920,
-      "audioEnd": 8673
+      "audioStart": 4160,
+      "audioEnd": 9404
     },
     {
       "zh": "记住：棋子盯着脚下的格子，执棋人盯着整张棋盘。",
@@ -248,15 +248,15 @@
       "en": "Remember: a pawn watches its own square; the player watches the whole board.",
       "audioFile": "audio/scene-S1-11.mp3",
       "audioStart": 0,
-      "audioEnd": 6400
+      "audioEnd": 6080
     },
     {
       "zh": "真正的高手从不靠感动自己——他们让结果说话，让自己变得动不得。",
       "scene": "S1-11",
       "en": "Real players never run on self-pity — they let results speak, and make themselves impossible to move.",
       "audioFile": "audio/scene-S1-11.mp3",
-      "audioStart": 6400,
-      "audioEnd": 13871
+      "audioStart": 6080,
+      "audioEnd": 12826
     },
     {
       "zh": "职场从来不是比谁更努力，而是比谁更清醒。",
@@ -280,7 +280,7 @@
       "en": "From today, stop asking 'what should I do,' and ask 'what's in this move for me.'",
       "audioFile": "audio/scene-S1-12.mp3",
       "audioStart": 12849,
-      "audioEnd": 17450
+      "audioEnd": 18651
     },
     {
       "zh": "愿你走过半生，归来不再是任人摆布的棋子，",
@@ -431,7 +431,7 @@
       ]
     },
     "S1-05": {
-      "prompt": "扁平插画，纸本质感，暖灰与墨色。画面中下部：一颗棋子被三根绳索分别朝左、朝下、朝左下三个方向死死拽住、动弹不得，每根绳的另一端各拴着一块完全空白的小牌子（牌子内部留白、无任何文字）。焦点在被绳索缚住的棋子。画面右上角保持大片纯色留白、不放主体，留给文字。强调「沦为棋子的三个原因」。",
+      "prompt": "扁平插画，纸本质感，暖灰与墨色。画面右侧偏中：一颗棋子被绳索层层缠住、动弹不得；从棋子引出三根绳，各拴着一块完全空白的标签牌（牌内留白、无任何文字），三块牌子在画面左侧由上到下垂直排开。焦点在被缚的棋子。画面右上方保持纯色留白。强调「沦为棋子的三个原因」。",
       "label": "三宗罪",
       "motion": {
         "enter": "fade",
@@ -441,23 +441,63 @@
       "imageFit": "contain",
       "overlays": [
         {
-          "text": "随时被换掉",
+          "text": "太好说话",
           "pos": {
-            "x": 69,
-            "y": 22
+            "x": 23,
+            "y": 24
           },
           "motion": {
-            "duration": 800,
-            "delay": 160,
-            "enter": "tilt-in"
+            "duration": 600,
+            "delay": 0,
+            "enter": "fade"
+          },
+          "at": {
+            "match": "好说话"
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 28,
+            "color": "#2b2b2b"
+          }
+        },
+        {
+          "text": "太爱埋头",
+          "pos": {
+            "x": 21,
+            "y": 48
+          },
+          "motion": {
+            "duration": 600,
+            "delay": 0,
+            "enter": "fade"
+          },
+          "at": {
+            "match": "爱埋头"
+          },
+          "style": {
+            "font": "XY Kaiti",
+            "size": 28,
+            "color": "#2b2b2b"
+          }
+        },
+        {
+          "text": "太可替代",
+          "pos": {
+            "x": 25,
+            "y": 70
+          },
+          "motion": {
+            "duration": 600,
+            "delay": 0,
+            "enter": "fade"
           },
           "at": {
             "match": "可替代"
           },
           "style": {
-            "preset": "os-callout-red",
             "font": "XY Kaiti",
-            "size": 42
+            "size": 28,
+            "color": "#2b2b2b"
           }
         }
       ]

@@ -1,6 +1,6 @@
 {
   "scene": "S1-04",
-  "text": "说点扎心的——你为什么会沦为一颗棋子？说穿了，就败在两个字上：好用。",
+  "text": "说点扎心的，你为什么会沦为一颗棋子？说穿了，就败在两个字上，好用。",
   "words": [
     {
       "text": "说",
@@ -35,219 +35,219 @@
       "begin_index": 4,
       "end_index": 5,
       "begin_time": 880,
-      "end_time": 960
-    },
-    {
-      "text": "—",
-      "begin_index": 5,
-      "end_index": 6,
-      "begin_time": 960,
       "end_time": 1040
     },
     {
-      "text": "—",
-      "begin_index": 6,
-      "end_index": 7,
+      "text": "，",
+      "begin_index": 5,
+      "end_index": 6,
       "begin_time": 1040,
-      "end_time": 1120
+      "end_time": 1360
     },
     {
       "text": "你",
-      "begin_index": 7,
-      "end_index": 8,
-      "begin_time": 1120,
-      "end_time": 1520
+      "begin_index": 6,
+      "end_index": 7,
+      "begin_time": 1360,
+      "end_time": 1600
     },
     {
       "text": "为",
-      "begin_index": 8,
-      "end_index": 9,
-      "begin_time": 1520,
-      "end_time": 1680
+      "begin_index": 7,
+      "end_index": 8,
+      "begin_time": 1600,
+      "end_time": 1760
     },
     {
       "text": "什",
-      "begin_index": 9,
-      "end_index": 10,
-      "begin_time": 1680,
-      "end_time": 1840
-    },
-    {
-      "text": "么",
-      "begin_index": 10,
-      "end_index": 11,
-      "begin_time": 1840,
+      "begin_index": 8,
+      "end_index": 9,
+      "begin_time": 1760,
       "end_time": 1920
     },
     {
-      "text": "会",
-      "begin_index": 11,
-      "end_index": 12,
+      "text": "么",
+      "begin_index": 9,
+      "end_index": 10,
       "begin_time": 1920,
-      "end_time": 2000
+      "end_time": 2080
     },
     {
-      "text": "沦",
-      "begin_index": 12,
-      "end_index": 13,
+      "text": "会",
+      "begin_index": 10,
+      "end_index": 11,
       "begin_time": 2080,
       "end_time": 2160
     },
     {
-      "text": "为",
-      "begin_index": 13,
-      "end_index": 14,
-      "begin_time": 2160,
-      "end_time": 2240
-    },
-    {
-      "text": "一",
-      "begin_index": 14,
-      "end_index": 15,
+      "text": "沦",
+      "begin_index": 11,
+      "end_index": 12,
       "begin_time": 2240,
-      "end_time": 2400
+      "end_time": 2320
     },
     {
-      "text": "颗",
-      "begin_index": 15,
-      "end_index": 16,
+      "text": "为",
+      "begin_index": 12,
+      "end_index": 13,
       "begin_time": 2400,
       "end_time": 2480
     },
     {
-      "text": "棋",
-      "begin_index": 16,
-      "end_index": 17,
+      "text": "一",
+      "begin_index": 13,
+      "end_index": 14,
       "begin_time": 2560,
-      "end_time": 2720
+      "end_time": 2640
     },
     {
-      "text": "子",
-      "begin_index": 17,
-      "end_index": 18,
-      "begin_time": 2800,
+      "text": "颗",
+      "begin_index": 14,
+      "end_index": 15,
+      "begin_time": 2720,
+      "end_time": 2800
+    },
+    {
+      "text": "棋",
+      "begin_index": 15,
+      "end_index": 16,
+      "begin_time": 2880,
       "end_time": 2960
     },
     {
-      "text": "？",
-      "begin_index": 18,
-      "end_index": 19,
-      "begin_time": 2960,
-      "end_time": 3280
+      "text": "子",
+      "begin_index": 16,
+      "end_index": 17,
+      "begin_time": 3040,
+      "end_time": 3200
     },
     {
-      "text": "说",
-      "begin_index": 19,
-      "end_index": 20,
-      "begin_time": 3280,
+      "text": "？",
+      "begin_index": 17,
+      "end_index": 18,
+      "begin_time": 3360,
       "end_time": 3520
     },
     {
+      "text": "说",
+      "begin_index": 18,
+      "end_index": 19,
+      "begin_time": 3600,
+      "end_time": 3840
+    },
+    {
       "text": "穿",
-      "begin_index": 20,
-      "end_index": 21,
-      "begin_time": 3520,
-      "end_time": 3760
-    },
-    {
-      "text": "了",
-      "begin_index": 21,
-      "end_index": 22,
-      "begin_time": 3760,
-      "end_time": 3920
-    },
-    {
-      "text": "，",
-      "begin_index": 22,
-      "end_index": 23,
-      "begin_time": 3920,
+      "begin_index": 19,
+      "end_index": 20,
+      "begin_time": 3840,
       "end_time": 4000
     },
     {
-      "text": "就",
-      "begin_index": 23,
-      "end_index": 24,
-      "begin_time": 4000,
+      "text": "了",
+      "begin_index": 20,
+      "end_index": 21,
+      "begin_time": 4080,
+      "end_time": 4160
+    },
+    {
+      "text": "，",
+      "begin_index": 21,
+      "end_index": 22,
+      "begin_time": 4160,
       "end_time": 4320
     },
     {
-      "text": "败",
-      "begin_index": 24,
-      "end_index": 25,
+      "text": "就",
+      "begin_index": 22,
+      "end_index": 23,
       "begin_time": 4320,
-      "end_time": 4480
+      "end_time": 4400
     },
     {
-      "text": "在",
-      "begin_index": 25,
-      "end_index": 26,
+      "text": "败",
+      "begin_index": 23,
+      "end_index": 24,
       "begin_time": 4480,
       "end_time": 4560
     },
     {
-      "text": "两",
-      "begin_index": 26,
-      "end_index": 27,
+      "text": "在",
+      "begin_index": 24,
+      "end_index": 25,
       "begin_time": 4640,
       "end_time": 4720
     },
     {
-      "text": "个",
-      "begin_index": 27,
-      "end_index": 28,
+      "text": "两",
+      "begin_index": 25,
+      "end_index": 26,
       "begin_time": 4800,
       "end_time": 4880
     },
     {
-      "text": "字",
-      "begin_index": 28,
-      "end_index": 29,
-      "begin_time": 4880,
+      "text": "个",
+      "begin_index": 26,
+      "end_index": 27,
+      "begin_time": 4960,
       "end_time": 5040
     },
     {
-      "text": "上",
-      "begin_index": 29,
-      "end_index": 30,
+      "text": "字",
+      "begin_index": 27,
+      "end_index": 28,
       "begin_time": 5040,
       "end_time": 5200
     },
     {
-      "text": "：",
-      "begin_index": 30,
-      "end_index": 31,
-      "begin_time": 5200,
+      "text": "上",
+      "begin_index": 28,
+      "end_index": 29,
+      "begin_time": 5280,
       "end_time": 5440
     },
     {
-      "text": "好",
-      "begin_index": 31,
-      "end_index": 32,
+      "text": "，",
+      "begin_index": 29,
+      "end_index": 30,
       "begin_time": 5440,
-      "end_time": 5760
+      "end_time": 5520
+    },
+    {
+      "text": "好",
+      "begin_index": 30,
+      "end_index": 31,
+      "begin_time": 5520,
+      "end_time": 5920
     },
     {
       "text": "用",
+      "begin_index": 31,
+      "end_index": 32,
+      "begin_time": 6000,
+      "end_time": 6160
+    },
+    {
+      "text": "。",
       "begin_index": 32,
       "end_index": 33,
-      "begin_time": 5840,
-      "end_time": 6000
+      "begin_time": 6160,
+      "end_time": 6480
     }
   ],
   "perBeat": [
     {
       "beat": 8,
       "audioStart": 0,
-      "audioEnd": 3280,
-      "chars": 19,
-      "wordsFound": 19
+      "audioEnd": 3600,
+      "chars": 18,
+      "wordsFound": 18
     },
     {
       "beat": 9,
-      "audioStart": 3280,
-      "audioEnd": 6426,
+      "audioStart": 3600,
+      "audioEnd": 6583,
       "chars": 15,
-      "wordsFound": 14
+      "wordsFound": 15
     }
   ]
 }
