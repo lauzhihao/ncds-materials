@@ -233,7 +233,7 @@ def group_by_scene(ep):
     order = []
     for i, b in enumerate(ep["beats"]):
         sid = b.get("scene")
-        zh = b.get("zh", "")
+        zh = b.get("zh", "").replace("<END>", "")  # 结束标记不参与 TTS 合成
         if not sid or not zh:
             continue
         if sid not in seen:
