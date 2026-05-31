@@ -1,0 +1,639 @@
+{
+  "__schema__": "ncds-paper-card-talk/v1",
+  "__doc__": "019 主题重写为「职场破局：做执棋人，不做棋子」：抖音职场口播。结构=钩子(干得最多≠混得最好/你只是好用的棋子)→痛点共鸣(脏活总想到你/被需要≠被重视/越好用越升不上去)→深度分析(沦为棋子的三个原因:太好说话/太爱埋头/太可替代 + 棋子本质:行动价值去留都被别人决定)→破局(反过来逐一挣脱:手握选择权/学会向上看/把勤奋换成筹码 + 执棋人盯整盘棋)→升华(比谁更清醒/一念觉醒/落子无悔)。13 个 scene / 29 条 beat，每 scene 1-3 句；画面沿用纸本插画风、以国际象棋意象承接主题。scenes[].prompt 已与 overlay 位置协同：每格把主体压向一侧、明确留出纯色空白安全区，overlay 中心点(pos)落在该留白区、避免压住图片主体。旧 S1-* 拖延症预览图与新画面不匹配，需删图重跑 pic_gen.py。",
+  "meta": {
+    "slug": "019-draft",
+    "title": "做执棋人，不做棋子",
+    "disclaimer": "观点仅供参考　无不良引导",
+    "titleOptions": [
+      "做执棋人，不做棋子",
+      "你不是不够努力，只是被当成了棋子",
+      "职场里最好用的人，往往升得最慢",
+      "看懂这盘棋，你就不再是棋子"
+    ]
+  },
+  "fonts": [
+    {
+      "family": "XY Kaiti",
+      "src": "/fonts/xy-kaiti/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "ZS Fangsong",
+      "src": "/fonts/zs-fangsong/Regular.woff2",
+      "weight": 400,
+      "style": "normal",
+      "format": "woff2",
+      "display": "swap"
+    },
+    {
+      "family": "Noto Sans SC"
+    },
+    {
+      "family": "Inter"
+    }
+  ],
+  "visual": {
+    "palette": "paper",
+    "kenBurns": true,
+    "showSubtitleEn": true,
+    "capZhSize": 60,
+    "capEnSize": 40
+  },
+  "playback": {
+    "__doc__": "浏览器内字幕推进 / 音频 playbackRate 的运行时速度",
+    "rate": 0.95
+  },
+  "audio": {
+    "tts": {
+      "__doc__": "如需重生 TTS，可继续使用现有 tts_gen.py 配置",
+      "engine": "dashscope-cosyvoice",
+      "model": "cosyvoice-v3-flash",
+      "voice": "longtian_v3",
+      "sampleRate": 22050,
+      "format": "mp3",
+      "rate": 1.1
+    }
+  },
+  "image": {
+    "__doc__": "如需重生图片，可继续使用现有 pic_gen.py 配置",
+    "engine": "gpt-image-2",
+    "size": "1536x1024",
+    "quality": "auto",
+    "noTextHint": "严格要求：整张图绝对不能出现任何中文字、汉字、英文字母、阿拉伯数字或者标点。所有标签、标牌、招牌、徽章、吊牌内部必须完全空白（留出贴标签的位置），不要画任何文字或文字纹理。"
+  },
+  "beats": [
+    {
+      "zh": "你有没有发现，公司里活干得最多的人，往往不是混得最好的那个？",
+      "scene": "S1-01",
+      "en": "Have you noticed? The one who does the most work is rarely the one who comes out on top."
+    },
+    {
+      "zh": "不是你不够努力——",
+      "scene": "S1-01",
+      "en": "It's not that you don't work hard enough —"
+    },
+    {
+      "zh": "而是在别人眼里，你从来就不是玩家，你只是一颗好用的棋子。",
+      "scene": "S1-01",
+      "en": "it's that in their eyes you were never a player — just a useful pawn."
+    },
+    {
+      "zh": "你回想一下，是不是脏活累活，第一个被想起的总是你？",
+      "scene": "S1-02",
+      "en": "Think back — whenever there's grunt work, aren't you always the first one they think of?"
+    },
+    {
+      "zh": "同事一句「这你最拿手」你就接了，老板画的饼你信了一次又一次。",
+      "scene": "S1-02",
+      "en": "A coworker says 'you're best at this,' so you take it; the boss sells a dream, and you buy it again and again."
+    },
+    {
+      "zh": "你以为自己是团队核心，可你一提离职，他们三天就能找到下一个「你」。",
+      "scene": "S1-02",
+      "en": "You think you're the team's core, but the day you quit, they'll find your replacement in three days."
+    },
+    {
+      "zh": "你把「被需要」当成了「被重视」，",
+      "scene": "S1-03",
+      "en": "You mistook 'being needed' for 'being valued,'"
+    },
+    {
+      "zh": "却没发现：你越好用，就越没人舍得让你升上去。",
+      "scene": "S1-03",
+      "en": "never realizing: the more useful you are, the less anyone wants to promote you."
+    },
+    {
+      "zh": "说点扎心的——你为什么会沦为一颗棋子？",
+      "scene": "S1-04",
+      "en": "Here's the hard truth — why did you end up a pawn in the first place?"
+    },
+    {
+      "zh": "说穿了，就败在两个字上：好用。",
+      "scene": "S1-04",
+      "en": "It comes down to two words: too useful."
+    },
+    {
+      "zh": "你太好说话：边界感为零，谁都能差遣你，谁都不必为你负责。",
+      "scene": "S1-05",
+      "en": "Too agreeable: no boundaries, anyone can order you around, and no one owes you anything."
+    },
+    {
+      "zh": "你太爱埋头：只盯着任务做没做完，从不抬头看这盘棋的利益怎么分。",
+      "scene": "S1-05",
+      "en": "Too heads-down: you only watch whether tasks get done, never how the spoils get split."
+    },
+    {
+      "zh": "你太可替代：换个人也照样能干的活，凭什么单独给你涨？",
+      "scene": "S1-05",
+      "en": "Too replaceable: if anyone could do your job, why would they pay you more?"
+    },
+    {
+      "zh": "棋子的本质，是你的行动别人决定，价值别人定义，去留别人安排。",
+      "scene": "S1-06",
+      "en": "A pawn's nature: others decide your moves, define your worth, and choose when you leave."
+    },
+    {
+      "zh": "你在棋盘上拼到流血，却不知道这盘棋，到底为谁而下。",
+      "scene": "S1-06",
+      "en": "You bleed on the board, never knowing who the game is really being played for."
+    },
+    {
+      "zh": "那怎么破？很简单——刚才那三条，反过来做就行。",
+      "scene": "S1-07",
+      "en": "So how do you break out? Simple — take those three and do the exact opposite."
+    },
+    {
+      "zh": "别再太好说话——你要永远手握选择权。",
+      "scene": "S1-08",
+      "en": "Stop being so agreeable — always keep your options open."
+    },
+    {
+      "zh": "一个随时能走人的人，才有底气说「不」，才有跟老板谈条件的资格。",
+      "scene": "S1-08",
+      "en": "Only someone ready to walk has the nerve to say no, and the standing to negotiate."
+    },
+    {
+      "zh": "别再只顾埋头——你要学会向上看。",
+      "scene": "S1-09",
+      "en": "Stop keeping your head down — learn to look up."
+    },
+    {
+      "zh": "先抬眼看清：谁在下棋？利益怎么分？你又站在哪？",
+      "scene": "S1-09",
+      "en": "Look up and see clearly: who's playing? how are the gains split? and where do you stand?"
+    },
+    {
+      "zh": "别再让自己谁都能换——你要把勤奋换成筹码。",
+      "scene": "S1-10",
+      "en": "Stop letting anyone replace you — turn your diligence into leverage."
+    },
+    {
+      "zh": "可替代的劳动不值钱，动不了的价值，才是你真正的护城河。",
+      "scene": "S1-10",
+      "en": "Replaceable labor is cheap; value they can't remove is your real moat."
+    },
+    {
+      "zh": "记住：棋子盯着脚下的格子，执棋人盯着整张棋盘。",
+      "scene": "S1-11",
+      "en": "Remember: a pawn watches its own square; the player watches the whole board."
+    },
+    {
+      "zh": "真正的高手从不靠感动自己——他们让结果说话，让自己变得动不得。",
+      "scene": "S1-11",
+      "en": "Real players never run on self-pity — they let results speak, and make themselves impossible to move."
+    },
+    {
+      "zh": "职场从来不是比谁更努力，而是比谁更清醒。",
+      "scene": "S1-12",
+      "en": "Work was never about who tries hardest, but about who sees clearest."
+    },
+    {
+      "zh": "同样一副棋盘，有人是被摆布的棋子，有人是落子的人，差的，不过是那一念之间的觉醒。",
+      "scene": "S1-12",
+      "en": "Same board: some are pawns being moved, some are the hand that moves them — the gap is a single awakening."
+    },
+    {
+      "zh": "从今天起，别再问「我该做什么」，要问「这一步，对我有什么好处」。",
+      "scene": "S1-12",
+      "en": "From today, stop asking 'what should I do,' and ask 'what's in this move for me.'"
+    },
+    {
+      "zh": "愿你走过半生，归来不再是任人摆布的棋子，",
+      "scene": "S1-13",
+      "en": "May you come back, after all these years, no longer a pawn at others' mercy,"
+    },
+    {
+      "zh": "而是那个，落子无悔的执棋人。<END>",
+      "scene": "S1-13",
+      "en": "but the one who places every piece without regret."
+    }
+  ],
+  "scenes": {
+    "S1-01": {
+      "prompt": "扁平插画，纸本质感，暖灰与墨色。画面下半部左右对比：左下角一个职场人被堆成小山的文件淹没、伏案不起；右下方一个西装笔挺的同事踩着高出许多的台阶、双手插兜轻松登顶，二者高低悬殊，焦点落在两人位置的落差上。画面上方三分之一保持大片纯色留白、不放任何主体，留给标题文字。强调「活干得最多的人，反而站在最低的位置」。",
+      "label": "最累≠最好",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "pan-r"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "只是颗棋子",
+          "pos": {
+            "x": 50,
+            "y": 16
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 160,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "好用的棋子"
+          },
+          "style": {
+            "preset": "os-stamp",
+            "font": "XY Kaiti",
+            "size": 46,
+            "color": "#ce0909",
+            "rotation": -8
+          }
+        }
+      ]
+    },
+    "S1-02": {
+      "prompt": "扁平插画，纸本质感，暖灰与墨色。一个人蜷在画面右下角、被成堆的文件、扫帚、纸箱团团围住、埋头苦干，一只巨大的手从右上方又推来一摞新活；背景右侧几个同事端着咖啡悠闲旁观。焦点在被杂活包围的人。画面左上角留出大片纯色空白、不放任何元素，留给文字。强调「脏活累活第一个想到的总是你」。",
+      "label": "总是你",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-in"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "又是我…",
+          "pos": {
+            "x": 28,
+            "y": 20
+          },
+          "motion": {
+            "duration": 760,
+            "delay": 120,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "总是你"
+          },
+          "style": {
+            "preset": "os-handwrite",
+            "font": "XY Kaiti",
+            "size": 42
+          }
+        }
+      ]
+    },
+    "S1-03": {
+      "prompt": "扁平插画，纸本质感，暖灰与墨色。画面中下部：一颗被擦得锃亮、头顶小光环的棋子被一只大手稳稳按在原地的方格里动弹不得；它上方通往更高一层的台阶只用简洁线条勾出、空荡无人。焦点在按住棋子的手。画面右上角保持纯色留白、不放主体，留给文字。强调「越好用，越没人舍得让你升上去」。",
+      "label": "越好用越升不上去",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-out"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "舍不得放你走",
+          "pos": {
+            "x": 68,
+            "y": 20
+          },
+          "motion": {
+            "duration": 780,
+            "delay": 140,
+            "enter": "fade"
+          },
+          "at": {
+            "match": "升上去"
+          },
+          "style": {
+            "preset": "os-circle-mark",
+            "font": "XY Kaiti",
+            "size": 40
+          }
+        }
+      ]
+    },
+    "S1-04": {
+      "prompt": "扁平插画，纸本质感，暖灰与墨色。画面中部偏下：左边一个人侧身站着伸手触碰镜面，右边镜中映出的倒影却是一颗棋子，人与镜像左右相对。焦点在镜面交界处。画面上方三分之一留出大片纯色空白、不放任何主体，留给标题文字。强调「你为什么会沦为一颗棋子」。",
+      "label": "为什么是你",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "breathe"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "好用",
+          "pos": {
+            "x": 50,
+            "y": 16
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 160,
+            "enter": "zoom-in"
+          },
+          "at": {
+            "match": "好用"
+          },
+          "style": {
+            "preset": "os-highlight-yellow",
+            "font": "XY Kaiti",
+            "size": 50
+          }
+        }
+      ]
+    },
+    "S1-05": {
+      "prompt": "扁平插画，纸本质感，暖灰与墨色。画面中下部：一颗棋子被三根绳索分别朝左、朝下、朝左下三个方向死死拽住、动弹不得，每根绳的另一端各拴着一块完全空白的小牌子（牌子内部留白、无任何文字）。焦点在被绳索缚住的棋子。画面右上角保持大片纯色留白、不放主体，留给文字。强调「沦为棋子的三个原因」。",
+      "label": "三宗罪",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "pan-l"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "随时被换掉",
+          "pos": {
+            "x": 69,
+            "y": 22
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 160,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "可替代"
+          },
+          "style": {
+            "preset": "os-callout-red",
+            "font": "XY Kaiti",
+            "size": 42
+          }
+        }
+      ]
+    },
+    "S1-06": {
+      "prompt": "扁平插画，纸本质感，暖灰与墨色。画面上半部：一只从天而降的大手捏着一颗棋子、把它从棋盘上拎起悬在半空，棋子孤立无依；画面下半部是一张铺开的大棋盘，笼罩在朦胧的灰色迷雾里、空旷模糊。焦点在被拎起的棋子。画面左下方的迷雾区保持空白、不放清晰主体，留给文字。强调「行动与去留全被别人决定，不知为谁而战」。",
+      "label": "为谁而下",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-in"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "为谁而下？",
+          "pos": {
+            "x": 30,
+            "y": 78
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 150,
+            "enter": "fade"
+          },
+          "at": {
+            "match": "为谁而下"
+          },
+          "style": {
+            "preset": "os-handwrite",
+            "font": "XY Kaiti",
+            "size": 44
+          }
+        }
+      ]
+    },
+    "S1-07": {
+      "prompt": "扁平插画，纸本质感，色调由暗转明亮。画面中下部：一颗原本被三根绳索拴住的棋子，此刻绳结正被一只手逐根解开、松脱垂落，棋子开始挺身站起。焦点在正在解开的绳结。画面上方三分之一保持纯色留白、不放主体，留给标题文字。承接前一幕的束缚，强调「把捆住你的三条，反过来逐一解开」。",
+      "label": "反过来破",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "pan-u"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "反过来",
+          "pos": {
+            "x": 50,
+            "y": 16
+          },
+          "motion": {
+            "duration": 840,
+            "delay": 150,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "反过来"
+          },
+          "style": {
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 50,
+            "color": "#1f6f4a"
+          }
+        }
+      ]
+    },
+    "S1-08": {
+      "prompt": "扁平插画，纸本质感，色调明亮。画面左中：一个人一手还搭在办公桌上、一脚已从容迈向右侧一扇敞开的大门，门外是开阔明亮的天地。人物朝向右方门外，焦点在跨出门槛的脚步。画面左上角保持大片纯色留白、不放主体，留给文字。强调「随时能走人，才有谈判的底气」。",
+      "label": "手握选择权",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "diag-br"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "敢说不",
+          "pos": {
+            "x": 28,
+            "y": 20
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 160,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "走人"
+          },
+          "style": {
+            "preset": "os-stamp",
+            "font": "XY Kaiti",
+            "size": 46,
+            "color": "#ce0909",
+            "rotation": -6
+          }
+        }
+      ]
+    },
+    "S1-09": {
+      "prompt": "扁平插画，纸本质感，色调明亮。画面左下角：一个原本蹲在棋盘格子里的人猛然抬起头，身体顺着一条向上的对角线、目光越过棋盘投向上方；上方中央一只大手正悬在棋局之上。焦点在抬头者的视线方向。画面右上角保持纯色留白、不放主体，留给文字。强调「从只盯脚下格子到看清整盘棋」。",
+      "label": "学会向上看",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-in"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "谁在下棋？",
+          "pos": {
+            "x": 70,
+            "y": 24
+          },
+          "motion": {
+            "duration": 800,
+            "delay": 150,
+            "enter": "tilt-in"
+          },
+          "at": {
+            "match": "谁在下棋"
+          },
+          "style": {
+            "preset": "os-callout-red",
+            "font": "XY Kaiti",
+            "size": 44
+          }
+        }
+      ]
+    },
+    "S1-10": {
+      "prompt": "扁平插画，纸本质感，色调明亮。画面中下部一架天平：左端高高堆起一大摞廉价、重复的汗水苦力却轻飘飘，右端只放一小块闪着光的关键齿轮却把天平稳稳压沉。焦点在天平倾斜的对比上。画面右上角保持大片纯色留白、不放主体，留给文字。强调「不可替代的价值，才是真正的护城河」。",
+      "label": "把勤奋换筹码",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "pan-l"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "护城河",
+          "pos": {
+            "x": 70,
+            "y": 20
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 160,
+            "enter": "zoom-in"
+          },
+          "at": {
+            "match": "护城河"
+          },
+          "style": {
+            "preset": "os-highlight-yellow",
+            "font": "XY Kaiti",
+            "size": 46
+          }
+        }
+      ]
+    },
+    "S1-11": {
+      "prompt": "扁平插画，纸本质感，色调沉稳大气。画面右侧：一只沉稳的大手悬在棋盘上方俯瞰全局、指尖正夹着一枚棋子从容下落，整张棋盘尽收手中。焦点在即将落子的指尖。画面左上方保持大片纯色留白、不放主体，留给文字。强调「执棋人盯着整张棋盘」。",
+      "label": "执棋人",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-in"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "盯着整盘棋",
+          "pos": {
+            "x": 30,
+            "y": 20
+          },
+          "motion": {
+            "duration": 840,
+            "delay": 160,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "整张棋盘"
+          },
+          "style": {
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 50
+          }
+        }
+      ]
+    },
+    "S1-12": {
+      "prompt": "扁平插画，纸本质感。画面下半部左右对照：左边一个人蜷缩低头、缩成一颗任人摆布的棋子，右边同一个人挺直脊背、化身从容落子的执棋人，中间一道竖直的光带把两者隔开。焦点在中间的明暗分界。画面上方三分之一保持纯色留白、不放主体，留给标题文字。强调「棋子与执棋人，只差一念之间的觉醒」。",
+      "label": "一念觉醒",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "breathe"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "一念之间",
+          "pos": {
+            "x": 50,
+            "y": 15
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 160,
+            "enter": "zoom-in"
+          },
+          "at": {
+            "match": "一念之间"
+          },
+          "style": {
+            "preset": "os-highlight-yellow",
+            "font": "XY Kaiti",
+            "size": 48
+          }
+        }
+      ]
+    },
+    "S1-13": {
+      "prompt": "扁平插画，纸本质感，晨光色调。画面中部偏下：一个人挺拔地立在棋盘前，从容落下手中一子，神情笃定释然，身后天色渐亮、道路向远方开阔延伸。焦点在落子的手与笃定的身姿。画面上方的天空保持大片纯色留白、不放主体，留给标题文字，与开篇首尾呼应。强调「归来已是落子无悔的执棋人」。",
+      "label": "落子无悔",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "pan-r"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "落子无悔",
+          "pos": {
+            "x": 50,
+            "y": 16
+          },
+          "motion": {
+            "duration": 880,
+            "delay": 160,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "落子无悔"
+          },
+          "style": {
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 52,
+            "color": "#ce0909"
+          }
+        }
+      ]
+    }
+  }
+}
