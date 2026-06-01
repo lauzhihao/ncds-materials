@@ -13,7 +13,7 @@
   * { box-sizing: border-box; }
   body {
     margin: 0; min-height: 100vh;
-    background: #e6dfd0;                 /* 暖纸底，贴近真实使用场景 */
+    background: #e6dfd0;
     background-image:
       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .10 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
     display: flex; flex-direction: column; gap: 56px;
@@ -27,36 +27,44 @@
   }
   .tip b { color: #1c1a16; }
 
-  /* ===== os-intro-card（与 styles.css 的 preset 同一套：笔刷色块 + 手写多行）=====
-     笔刷形状由 ::before 的 SVG mask 裁出，色块颜色走 --card-fill（真实 preset 里是
-     --os-bg，episode.json 里 style.background 可换色）；文字在本体之上，不被 mask 裁。*/
+  /* ===== 笔刷介绍卡：纯色块 + SVG 噪声 filter 把边缘推成毛糙笔刷边 =====
+     ::before 是色块（颜色 --card-fill），filter:url(#brush) 用 feTurbulence
+     生成噪声、feDisplacementMap 把矩形边缘位移成不规则毛边；文字在本体之上、
+     不被 filter 影响。多行用 white-space:pre-line。*/
   .intro-card {
     position: relative; display: inline-block; isolation: isolate;
     font-family: "XY Kaiti", "KaiTi", "STKaiti", serif;
     font-weight: 500; font-size: 40px; color: #fbf6e8;
     letter-spacing: .04em; line-height: 1.62;
     text-align: left; white-space: pre-line;
-    padding: 30px 64px 34px 46px;
-    transform: rotate(-2deg);
+    padding: 32px 70px 36px 52px;
+    transform: rotate(-1.5deg);
     --card-fill: #2f8fd8;
     animation: fly-in-right .72s cubic-bezier(.2,.8,.3,1) both;
   }
   .intro-card::before {
-    content: ""; position: absolute; inset: 0; z-index: -1;
+    content: ""; position: absolute; inset: -2px -16px; z-index: -1;
     background: var(--card-fill);
-    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 190' preserveAspectRatio='none'><path d='M4,54C90,36,180,48,270,42C380,34,470,50,560,42C600,38,624,46,636,58L618,70L638,82L616,94L636,106L612,120C600,150,460,140,350,150C240,160,120,150,44,150C24,149,10,140,6,118Z' fill='%23000'/></svg>") center / 100% 100% no-repeat;
-            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 190' preserveAspectRatio='none'><path d='M4,54C90,36,180,48,270,42C380,34,470,50,560,42C600,38,624,46,636,58L618,70L638,82L616,94L636,106L612,120C600,150,460,140,350,150C240,160,120,150,44,150C24,149,10,140,6,118Z' fill='%23000'/></svg>") center / 100% 100% no-repeat;
+    filter: url(#brush);
   }
   @keyframes fly-in-right {
-    from { opacity: 0; transform: translateX(90px) rotate(-2deg); }
-    to   { opacity: 1; transform: translateX(0)    rotate(-2deg); }
+    from { opacity: 0; transform: translateX(90px) rotate(-1.5deg); }
+    to   { opacity: 1; transform: translateX(0)    rotate(-1.5deg); }
   }
 </style>
 </head>
 <body>
+  <!-- 笔刷边缘 filter：低频横向大波 + 较高频纵向碎边，位移出毛糙油漆边 -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="brush" x="-14%" y="-70%" width="128%" height="240%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.04" numOctaves="3" seed="8" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="34" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
   <div class="tip">
     <b>os-intro-card · 笔刷介绍卡</b>　预览（点页面任意处重播「从右飞入」）<br>
-    下面三张是同一个 preset：颜色由 <code>--card-fill</code>（真实里是 <code>style.background</code>）控制，文字多行、字号可调。
+    边缘改用 SVG 噪声 filter 推成毛刷边；颜色由 <code>--card-fill</code> 控制，文字多行、字号可调。
   </div>
 
   <div class="intro-card">姓名：凌妙妙
