@@ -607,21 +607,21 @@
   ],
   "perBeat": [
     {
-      "beat": 24,
+      "beat": 33,
       "audioStart": 0,
       "audioEnd": 4240,
       "chars": 20,
       "wordsFound": 20
     },
     {
-      "beat": 25,
+      "beat": 34,
       "audioStart": 4240,
       "audioEnd": 12849,
       "chars": 40,
       "wordsFound": 40
     },
     {
-      "beat": 26,
+      "beat": 35,
       "audioStart": 12849,
       "audioEnd": 18651,
       "chars": 28,

@@ -131,6 +131,30 @@
       "audioEnd": 7549
     },
     {
+      "zh": "更让你寒心的是，漂亮的活你抢着干，露脸的时候却从来没你。",
+      "scene": "S1-14",
+      "en": "What stings more: you scramble for the hard jobs, yet never get the limelight.",
+      "audioFile": "audio/scene-S1-14.mp3",
+      "audioStart": 0,
+      "audioEnd": 6160
+    },
+    {
+      "zh": "项目成了，是领导指挥有方；项目砸了，是你执行不力。",
+      "scene": "S1-14",
+      "en": "Project succeeds, the boss led well; it fails, you executed poorly.",
+      "audioFile": "audio/scene-S1-14.mp3",
+      "audioStart": 6160,
+      "audioEnd": 11280
+    },
+    {
+      "zh": "好处一点没沾着，锅却结结实实替别人背了一个。",
+      "scene": "S1-14",
+      "en": "Not a shred of credit, yet you shouldered a blame that wasn't yours.",
+      "audioFile": "audio/scene-S1-14.mp3",
+      "audioStart": 11280,
+      "audioEnd": 16118
+    },
+    {
       "zh": "说点扎心的——你为什么会沦为一颗棋子？",
       "scene": "S1-04",
       "en": "Here's the hard truth — why did you end up a pawn in the first place?",
@@ -187,6 +211,30 @@
       "audioEnd": 11311
     },
     {
+      "zh": "但最可怕的，从来不是你被人当成棋子。",
+      "scene": "S1-15",
+      "en": "But the scariest part was never being used as a pawn.",
+      "audioFile": "audio/scene-S1-15.mp3",
+      "audioStart": 0,
+      "audioEnd": 4080
+    },
+    {
+      "zh": "而是当久了，你竟然也习惯了。",
+      "scene": "S1-15",
+      "en": "It's that, after long enough, you got used to it.",
+      "audioFile": "audio/scene-S1-15.mp3",
+      "audioStart": 4080,
+      "audioEnd": 8560
+    },
+    {
+      "zh": "把忍让当懂事，把妥协当格局，活成了一颗连自己都懒得反抗的棋子。",
+      "scene": "S1-15",
+      "en": "Calling submission maturity, compromise wisdom, until you become a pawn too numb to resist.",
+      "audioFile": "audio/scene-S1-15.mp3",
+      "audioStart": 8560,
+      "audioEnd": 16588
+    },
+    {
       "zh": "那怎么破？很简单——刚才那三条，反过来做就行。",
       "scene": "S1-07",
       "en": "So how do you break out? Simple — take those three and do the exact opposite.",
@@ -241,6 +289,30 @@
       "audioFile": "audio/scene-S1-10.mp3",
       "audioStart": 4160,
       "audioEnd": 9404
+    },
+    {
+      "zh": "还有最容易被忽略的一条：让你的功劳，被看见。",
+      "scene": "S1-16",
+      "en": "And the most overlooked move: make your work seen.",
+      "audioFile": "audio/scene-S1-16.mp3",
+      "audioStart": 0,
+      "audioEnd": 4400
+    },
+    {
+      "zh": "在职场，做了不说，等于没做；会做，还得会让对的人知道。",
+      "scene": "S1-16",
+      "en": "At work, doing without telling is not doing; you must let the right people know.",
+      "audioFile": "audio/scene-S1-16.mp3",
+      "audioStart": 4400,
+      "audioEnd": 10240
+    },
+    {
+      "zh": "把你的价值，主动摆到能决定你去留的人面前。",
+      "scene": "S1-16",
+      "en": "Put your value in front of those who decide whether you stay or go.",
+      "audioFile": "audio/scene-S1-16.mp3",
+      "audioStart": 10240,
+      "audioEnd": 14602
     },
     {
       "zh": "记住：棋子盯着脚下的格子，执棋人盯着整张棋盘。",
@@ -758,6 +830,104 @@
             "font": "XY Kaiti",
             "size": 52,
             "color": "#ce0909"
+          }
+        }
+      ]
+    },
+    "S1-14": {
+      "prompt": "扁平插画，纸本质感，暖灰与墨色。画面右下：一颗棋子埋头吃力地推着沉重的磨盘干活、满身尘土；左上方另一个光鲜的人形高高站在领奖台上、双手举起奖杯，一低一高反差强烈；一口黑锅正从上方扣向埋头的棋子。焦点在埋头棋子与高台奖杯的落差。画面右上方保持纯色留白，留给文字。强调「漂亮活你干、露脸没你份、还替人背锅」。",
+      "label": "功劳被抢",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "zoom-in"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "锅都你背",
+          "pos": {
+            "x": 70,
+            "y": 20
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 160,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "背了一个"
+          },
+          "style": {
+            "preset": "os-stamp",
+            "font": "XY Kaiti",
+            "size": 44,
+            "color": "#ce0909",
+            "rotation": -7
+          }
+        }
+      ]
+    },
+    "S1-15": {
+      "prompt": "扁平插画，纸本质感，暖灰与墨色，色调压抑。画面中央：一个人垂头坐着，身体的下半部正渐渐石化、长成一颗棋子的底座，人形与棋子在腰部交界、界线模糊，神情麻木认命。焦点在半人半棋的交界处。画面上方三分之一保持纯色留白，留给文字。强调「棋子当久了，你竟然也习惯了、活成了棋子」。",
+      "label": "麻木习惯",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "breathe"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "你习惯了",
+          "pos": {
+            "x": 50,
+            "y": 16
+          },
+          "motion": {
+            "duration": 820,
+            "delay": 160,
+            "enter": "fade"
+          },
+          "at": {
+            "match": "习惯"
+          },
+          "style": {
+            "preset": "os-callout-red",
+            "font": "XY Kaiti",
+            "size": 44
+          }
+        }
+      ]
+    },
+    "S1-16": {
+      "prompt": "扁平插画，纸本质感，整体暖灰与墨色单色调，只有聚光灯光束透出一点暖白，严禁彩色、严禁卡通风。画面中央偏右：一个人双手把一颗棋子主动推进右侧一束从上方打下的聚光灯里、让它被照亮；左侧是原本无人留意、缩在阴影里的几颗暗棋子。焦点在棋子进入光圈的瞬间。画面左上方保持大片纯色留白，留给文字。强调「主动让你的价值被看见」。",
+      "label": "被看见",
+      "motion": {
+        "enter": "fade",
+        "duration": 700,
+        "image": "pan-r"
+      },
+      "imageFit": "contain",
+      "overlays": [
+        {
+          "text": "被看见",
+          "pos": {
+            "x": 30,
+            "y": 20
+          },
+          "motion": {
+            "duration": 840,
+            "delay": 160,
+            "enter": "stamp"
+          },
+          "at": {
+            "match": "被看见"
+          },
+          "style": {
+            "preset": "os-brush-title",
+            "font": "XY Kaiti",
+            "size": 48
           }
         }
       ]

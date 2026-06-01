@@ -593,21 +593,21 @@
   ],
   "perBeat": [
     {
-      "beat": 10,
+      "beat": 13,
       "audioStart": 0,
       "audioEnd": 6480,
       "chars": 28,
       "wordsFound": 28
     },
     {
-      "beat": 11,
+      "beat": 14,
       "audioStart": 6480,
       "audioEnd": 12240,
       "chars": 31,
       "wordsFound": 31
     },
     {
-      "beat": 12,
+      "beat": 15,
       "audioStart": 12240,
       "audioEnd": 17946,
       "chars": 26,

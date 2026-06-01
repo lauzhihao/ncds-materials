@@ -236,14 +236,14 @@
   ],
   "perBeat": [
     {
-      "beat": 8,
+      "beat": 11,
       "audioStart": 0,
       "audioEnd": 3600,
       "chars": 18,
       "wordsFound": 18
     },
     {
-      "beat": 9,
+      "beat": 12,
       "audioStart": 3600,
       "audioEnd": 6583,
       "chars": 15,

@@ -383,14 +383,14 @@
   ],
   "perBeat": [
     {
-      "beat": 13,
+      "beat": 16,
       "audioStart": 0,
       "audioEnd": 6320,
       "chars": 30,
       "wordsFound": 30
     },
     {
-      "beat": 14,
+      "beat": 17,
       "audioStart": 6320,
       "audioEnd": 11311,
       "chars": 25,

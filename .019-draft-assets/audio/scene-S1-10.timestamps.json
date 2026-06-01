@@ -334,14 +334,14 @@
   ],
   "perBeat": [
     {
-      "beat": 20,
+      "beat": 26,
       "audioStart": 0,
       "audioEnd": 4160,
       "chars": 20,
       "wordsFound": 20
     },
     {
-      "beat": 21,
+      "beat": 27,
       "audioStart": 4160,
       "audioEnd": 9404,
       "chars": 27,

@@ -240,7 +240,7 @@ def group_by_scene(ep):
               .replace("<END>", "")
               .replace("——", "，").replace("—", "，")
               .replace("「", "").replace("」", "")
-              .replace("：", "，"))
+              .replace("：", "，").replace("；", "，"))
         if not sid or not zh:
             continue
         if sid not in seen:
