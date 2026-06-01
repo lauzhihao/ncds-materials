@@ -72,23 +72,23 @@
       "en": "Have you noticed? The one who does the most work is rarely the one who comes out on top.",
       "audioFile": "audio/scene-S1-01.mp3",
       "audioStart": 0,
-      "audioEnd": 6720
+      "audioEnd": 5600
     },
     {
       "zh": "不是你不够努力——",
       "scene": "S1-01",
       "en": "It's not that you don't work hard enough —",
       "audioFile": "audio/scene-S1-01.mp3",
-      "audioStart": 6720,
-      "audioEnd": 8080
+      "audioStart": 5600,
+      "audioEnd": 6960
     },
     {
-      "zh": "而是在别人眼里，你从来就不是玩家，你只是一颗好用的棋子。",
+      "zh": "而是在别人眼里，你压根不是玩家，你只是一颗好用的棋子。",
       "scene": "S1-01",
-      "en": "it's that in their eyes you were never a player — just a useful pawn.",
+      "en": "it's that in their eyes you're not a player at all — just a useful pawn.",
       "audioFile": "audio/scene-S1-01.mp3",
-      "audioStart": 8080,
-      "audioEnd": 15151
+      "audioStart": 6960,
+      "audioEnd": 11964
     },
     {
       "zh": "你回想一下，是不是脏活累活，第一个被想起的总是你？",
@@ -131,28 +131,28 @@
       "audioEnd": 7549
     },
     {
-      "zh": "更让你寒心的是，漂亮的活你抢着干，露脸的时候却从来没你。",
+      "zh": "更让你寒心的是，漂亮的活你抢着干，露脸的时候却没你的份。",
       "scene": "S1-14",
-      "en": "What stings more: you scramble for the hard jobs, yet never get the limelight.",
+      "en": "What stings more: you scramble for the hard jobs, yet the limelight skips right past you.",
       "audioFile": "audio/scene-S1-14.mp3",
       "audioStart": 0,
-      "audioEnd": 6160
+      "audioEnd": 5600
     },
     {
       "zh": "项目成了，是领导指挥有方；项目砸了，是你执行不力。",
       "scene": "S1-14",
       "en": "Project succeeds, the boss led well; it fails, you executed poorly.",
       "audioFile": "audio/scene-S1-14.mp3",
-      "audioStart": 6160,
-      "audioEnd": 11280
+      "audioStart": 5600,
+      "audioEnd": 11200
     },
     {
       "zh": "好处一点没沾着，锅却结结实实替别人背了一个。",
       "scene": "S1-14",
       "en": "Not a shred of credit, yet you shouldered a blame that wasn't yours.",
       "audioFile": "audio/scene-S1-14.mp3",
-      "audioStart": 11280,
-      "audioEnd": 16118
+      "audioStart": 11200,
+      "audioEnd": 15464
     },
     {
       "zh": "说点扎心的——你为什么会沦为一颗棋子？",
@@ -211,28 +211,28 @@
       "audioEnd": 11311
     },
     {
-      "zh": "但最可怕的，从来不是你被人当成棋子。",
+      "zh": "但最可怕的，不是你被人当成棋子。",
       "scene": "S1-15",
-      "en": "But the scariest part was never being used as a pawn.",
+      "en": "But the scariest part isn't being used as a pawn.",
       "audioFile": "audio/scene-S1-15.mp3",
       "audioStart": 0,
-      "audioEnd": 4080
+      "audioEnd": 3840
     },
     {
       "zh": "而是当久了，你竟然也习惯了。",
       "scene": "S1-15",
       "en": "It's that, after long enough, you got used to it.",
       "audioFile": "audio/scene-S1-15.mp3",
-      "audioStart": 4080,
-      "audioEnd": 8560
+      "audioStart": 3840,
+      "audioEnd": 7920
     },
     {
       "zh": "把忍让当懂事，把妥协当格局，活成了一颗连自己都懒得反抗的棋子。",
       "scene": "S1-15",
       "en": "Calling submission maturity, compromise wisdom, until you become a pawn too numb to resist.",
       "audioFile": "audio/scene-S1-15.mp3",
-      "audioStart": 8560,
-      "audioEnd": 16588
+      "audioStart": 7920,
+      "audioEnd": 16196
     },
     {
       "zh": "那怎么破？很简单——刚才那三条，反过来做就行。",
