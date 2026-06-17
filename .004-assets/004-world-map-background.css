@@ -127,6 +127,12 @@ html, body {
   transition: fill .4s ease, stroke .4s ease;
 }
 .city-label.dim { opacity: 0.4; }
+/* English line stacked under the Chinese name (when enabled) */
+.city-label .lbl-en {
+  font-size: 0.82em;
+  font-weight: 500;
+  fill-opacity: 0.82;
+}
 
 /* connection lines */
 .connection {
@@ -460,6 +466,8 @@ html, body {
 }
 .toggle.on { background: #4f86ff; }
 .toggle.on::after { transform: translateX(16px); }
+/* locked toggle: always-on, not user-dismissable (e.g. Chinese name) */
+.toggle.locked { cursor: not-allowed; opacity: 0.55; }
 
 .slider-row {
   display: flex;
@@ -609,6 +617,13 @@ html, body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/* Chinese name shown right after the English name in the city list */
+.city-name-zh {
+  margin-left: 6px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
 }
 .country-name {
   flex: 1;

@@ -3,6 +3,7 @@
     "https://unpkg.com/d3@7.9.0/dist/d3.min.js",
     "https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js",
     ".004-assets/capitals.js",
+    ".004-assets/city-zh.js",
     ".004-assets/cities.js",
     ".004-assets/themes.js",
     ".004-assets/map.js"

@@ -38,12 +38,14 @@
     lastTarget: null,                // { type, lng, lat } — for "focus on last selection"
 
     showLabels: true,
+    showLabelEn: false,              // overlay English under the Chinese label
     showAllDots: true,
     showGraticule: false,
     showMajor: false,                // show non-capital cities
 
     lineSpeed: 1.0,
     animate: true,
+    greatCircle: false,             // 连线走球面最短路径（大圆航线），far pairs bow polar
 
     // highlight animation
     highlightDuration: 1.5,          // total seconds (trace + fill)
@@ -320,16 +322,36 @@
     labSel.exit().remove();
     const labEnter = labSel.enter().append("text")
       .attr("class", "city-label")
-      .attr("dy", -7)
       .attr("text-anchor", "middle");
-    labEnter.merge(labSel)
+    const labMerged = labEnter.merge(labSel)
       .attr("x", d => { const p = projectSafe(d); return p ? p[0] : -9999; })
       .attr("y", d => { const p = projectSafe(d); return p ? p[1] : -9999; })
-      .text(d => d.name)
       .style("display", d => isPointVisible(d.lng, d.lat) ? null : "none");
+    renderLabelText(labMerged);
 
     updateSelectionVisuals();
     updateScaleCompensation();
+  }
+
+  // Build the label content: Chinese is always the primary line; when
+  // showLabelEn is on (and the names differ) the English name is stacked
+  // underneath it. Both lines sit above the city dot.
+  // tspan dy uses `em`, so the offsets scale automatically with font-size.
+  function renderLabelText(sel) {
+    sel.each(function(d) {
+      const t = d3.select(this);
+      const p = projectSafe(d);
+      const px = p ? p[0] : -9999;
+      const zh = d.zh || d.name;
+      const en = d.name;
+      t.selectAll("tspan").remove();
+      if (state.showLabelEn && en && en !== zh) {
+        t.append("tspan").attr("class", "lbl-zh").attr("x", px).attr("dy", "-1.75em").text(zh);
+        t.append("tspan").attr("class", "lbl-en").attr("x", px).attr("dy", "1.18em").text(en);
+      } else {
+        t.append("tspan").attr("class", "lbl-zh").attr("x", px).attr("dy", "-0.55em").text(zh);
+      }
+    });
   }
 
   function updateSelectionVisuals() {
@@ -459,27 +481,65 @@
     updateScaleCompensation();
   }
 
-  // arc — linear interpolation in lng/lat (follows parallels, avoids poles).
-  // Handles antimeridian split and back-of-globe hide.
-  function arcPath(a, b) {
-    // shortest longitude path
+  // Sample N+1 [lng,lat] points along the path between two cities.
+  //  • greatCircle off → linear interpolation in lng/lat (follows parallels,
+  //    stays mid-latitude — the original behaviour).
+  //  • greatCircle on  → spherical great-circle (slerp), the shortest path on
+  //    the globe; for far-apart cities it naturally bows toward the pole
+  //    (e.g. 大连→鹿特丹 peaks ≈64°N), i.e. an Arctic-leaning route.
+  function interpPoints(a, b, N) {
+    if (state.greatCircle) {
+      const toRad = Math.PI / 180, toDeg = 180 / Math.PI;
+      const la1 = a.lat * toRad, lo1 = a.lng * toRad;
+      const la2 = b.lat * toRad, lo2 = b.lng * toRad;
+      const v1 = [Math.cos(la1) * Math.cos(lo1), Math.cos(la1) * Math.sin(lo1), Math.sin(la1)];
+      const v2 = [Math.cos(la2) * Math.cos(lo2), Math.cos(la2) * Math.sin(lo2), Math.sin(la2)];
+      let dot = v1[0] * v2[0] + v1[1] * v2[1] + v1[2] * v2[2];
+      dot = Math.max(-1, Math.min(1, dot));
+      const omega = Math.acos(dot);
+      const out = [];
+      if (omega < 1e-6) {            // coincident points — nothing to arc
+        for (let i = 0; i <= N; i++) out.push([a.lng, a.lat]);
+        return out;
+      }
+      const sinO = Math.sin(omega);
+      for (let i = 0; i <= N; i++) {
+        const t = i / N;
+        const s1 = Math.sin((1 - t) * omega) / sinO;
+        const s2 = Math.sin(t * omega) / sinO;
+        const x = v1[0] * s1 + v2[0] * s2;
+        const y = v1[1] * s1 + v2[1] * s2;
+        const z = v1[2] * s1 + v2[2] * s2;
+        out.push([Math.atan2(y, x) * toDeg, Math.atan2(z, Math.hypot(x, y)) * toDeg]);
+      }
+      return out;
+    }
+    // shortest longitude path, linear in lng/lat
     let dlng = b.lng - a.lng;
     if (dlng > 180) dlng -= 360;
     else if (dlng < -180) dlng += 360;
-    const N = 64;
-    const segments = [[]];
-    let prev = null;
-    let prevVisible = true;
+    const out = [];
     for (let i = 0; i <= N; i++) {
       const t = i / N;
       let lng = a.lng + dlng * t;
-      // normalize back into [-180, 180]
-      lng = ((lng + 540) % 360) - 180;
-      const lat = a.lat + (b.lat - a.lat) * t;
-      const ll = [lng, lat];
-      const visible = isPointVisible(lng, lat);
+      lng = ((lng + 540) % 360) - 180;  // normalize back into [-180,180]
+      out.push([lng, a.lat + (b.lat - a.lat) * t]);
+    }
+    return out;
+  }
+
+  // arc — builds the SVG path. Handles antimeridian split and back-of-globe hide.
+  function arcPath(a, b) {
+    const N = 64;
+    const pts = interpPoints(a, b, N);
+    const segments = [[]];
+    let prev = null;
+    let prevVisible = true;
+    for (let i = 0; i < pts.length; i++) {
+      const ll = pts[i];
+      const visible = isPointVisible(ll[0], ll[1]);
       if (prev !== null) {
-        const wrap = Math.abs(lng - prev[0]) > 180;
+        const wrap = Math.abs(ll[0] - prev[0]) > 180;
         if (wrap || visible !== prevVisible) segments.push([]);
       }
       if (visible) segments[segments.length - 1].push(ll);
@@ -892,11 +952,13 @@
     renderConnections();
   }
   function setShowLabels(v)    { state.showLabels    = !!v; updateSelectionVisuals(); }
+  function setShowLabelEn(v)    { state.showLabelEn   = !!v; renderCities(); }
   function setShowAllDots(v)   { state.showAllDots   = !!v; updateSelectionVisuals(); }
   function setShowGraticule(v) { state.showGraticule = !!v; gGrat.style("display", v ? null : "none"); }
   function setShowMajor(v)     { state.showMajor     = !!v; renderCities(); renderConnections(); }
   function setLineSpeed(v)     { state.lineSpeed = +v; }
   function setAnimate(v)       { state.animate = !!v; }
+  function setGreatCircle(v)   { state.greatCircle = !!v; renderConnections(); }
   function setAutoRotate(v)    { state.autoRotate = !!v; }
   function setRotateSpeed(v)   { state.rotateSpeed = +v; }
   function clearHighlights()   { state.highlighted.clear(); updateCountryHighlight(); }
@@ -977,8 +1039,8 @@
   }
 
   window.WorldMap = {
-    init, setTheme, setSelected, setShowLabels, setShowAllDots, setShowGraticule,
-    setShowMajor, setLineSpeed, setAnimate, setAutoRotate, setRotateSpeed,
+    init, setTheme, setSelected, setShowLabels, setShowLabelEn, setShowAllDots, setShowGraticule,
+    setShowMajor, setLineSpeed, setAnimate, setGreatCircle, setAutoRotate, setRotateSpeed,
     setMode, clearHighlights,
     // animation
     setHighlightDuration, setHighlightLoop, setHighlightLoopInterval,

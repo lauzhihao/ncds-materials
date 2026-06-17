@@ -263,8 +263,19 @@ window.MAJOR_CITIES = [
 // dedupe defensively (last Istanbul was a guard, remove)
 window.MAJOR_CITIES = window.MAJOR_CITIES.filter(c => c.iso !== "TR_DUP");
 
-// All cities merged (capitals + major), each with `type`
+// All cities merged (capitals + major), each with `type` and a Chinese `zh`.
+// zh comes from window.CITY_ZH (city-zh.js, loaded before this file); a missing
+// entry falls back to the English name and warns so the gap is easy to find.
+const CITY_ZH = window.CITY_ZH || {};
+function attachZh(c) {
+  const zh = CITY_ZH[c.name];
+  if (!zh && typeof console !== "undefined") {
+    console.warn("[cities] missing Chinese name for:", c.name);
+  }
+  return { ...c, zh: zh || c.name };
+}
+
 window.ALL_CITIES = [
-  ...window.CAPITALS.map(c => ({ ...c, type: "capital" })),
-  ...window.MAJOR_CITIES.map(c => ({ ...c, type: "major" }))
+  ...window.CAPITALS.map(c => attachZh({ ...c, type: "capital" })),
+  ...window.MAJOR_CITIES.map(c => attachZh({ ...c, type: "major" }))
 ];

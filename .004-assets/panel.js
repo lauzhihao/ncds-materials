@@ -12,11 +12,13 @@
     theme: { ...window.THEMES["google-light"] },
     selected: [],
     showLabels: true,
+    showLabelEn: false,          // 城市名称：中文常驻，可选叠加英文
     showAllDots: true,
     showGraticule: false,
     showMajor: false,
     animate: true,
     lineSpeed: 1.0,
+    greatCircle: false,          // 大圆航线（球面最短路径）连线
     mode: "flat",
     autoRotate: false,
     rotateSpeed: 1.0,
@@ -42,9 +44,11 @@
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         themeId: state.themeId, theme: state.theme, selected: state.selected,
-        showLabels: state.showLabels, showAllDots: state.showAllDots,
+        showLabels: state.showLabels, showLabelEn: state.showLabelEn,
+        showAllDots: state.showAllDots,
         showGraticule: state.showGraticule, showMajor: state.showMajor,
         animate: state.animate, lineSpeed: state.lineSpeed,
+        greatCircle: state.greatCircle,
         mode: state.mode, autoRotate: state.autoRotate, rotateSpeed: state.rotateSpeed,
         highlightDuration: state.highlightDuration,
         highlightLoop: state.highlightLoop,
@@ -80,11 +84,13 @@
   }
   function applyVisibility() {
     window.WorldMap.setShowLabels(state.showLabels);
+    window.WorldMap.setShowLabelEn(state.showLabelEn);
     window.WorldMap.setShowAllDots(state.showAllDots);
     window.WorldMap.setShowGraticule(state.showGraticule);
     window.WorldMap.setShowMajor(state.showMajor);
     window.WorldMap.setAnimate(state.animate);
     window.WorldMap.setLineSpeed(state.lineSpeed);
+    window.WorldMap.setGreatCircle(state.greatCircle);
     window.WorldMap.setAutoRotate(state.autoRotate);
     window.WorldMap.setRotateSpeed(state.rotateSpeed);
     window.WorldMap.setMode(state.mode);
@@ -295,7 +301,7 @@
     wrap.className = "section";
     wrap.innerHTML = `
       <div class="section-title">选择首都 · ${state.selected.length} / ${window.CAPITALS.length}</div>
-      <input class="search" id="city-search" placeholder="搜索城市或国家…" value="${escapeAttr(state.cityFilter)}"/>
+      <input class="search" id="city-search" placeholder="搜索城市（中文 / 英文）或国家…" value="${escapeAttr(state.cityFilter)}"/>
       <div class="filter-row" id="region-filters"></div>
       <div class="filter-row" id="type-filters"></div>
       <div class="city-list" id="city-list"></div>
@@ -372,6 +378,7 @@
     if (region !== "All") list = list.filter(c => c.region === region);
     if (q) list = list.filter(c =>
       c.name.toLowerCase().includes(q) ||
+      (c.zh || "").toLowerCase().includes(q) ||
       c.country.toLowerCase().includes(q) ||
       c.iso.toLowerCase().includes(q)
     );
@@ -392,8 +399,8 @@
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"
                stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 7 12 13 4"/></svg>
         </div>
-        <div class="city-name">${c.name}${isMajor ? '' : ' <span class="city-tag">★</span>'}</div>
-        <div class="city-country">${c.country}</div>
+        <div class="city-name">${escapeHtml(c.name)}<span class="city-name-zh">${escapeHtml(c.zh || "")}</span>${isMajor ? '' : ' <span class="city-tag">★</span>'}</div>
+        <div class="city-country">${escapeHtml(c.country)}</div>
       `;
       row.addEventListener("click", () => {
         toggleSelect(c.name);
@@ -429,6 +436,13 @@
         <label>启用流动动画</label>
         <div class="toggle ${state.animate ? 'on' : ''}" id="animate-toggle"></div>
       </div>
+      <div class="row">
+        <label>大圆航线（球面最短路径）</label>
+        <div class="toggle ${state.greatCircle ? 'on' : ''}" id="gc-toggle"></div>
+      </div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.6">
+        打开后连线沿球面最短路径走，远距离城市会自然向极地拱起（如大连→鹿特丹拱到约 64°N）。地球仪模式下观感最佳。
+      </div>
     `;
     body.appendChild(wrap);
 
@@ -442,6 +456,12 @@
       state.animate = !state.animate;
       e.currentTarget.classList.toggle("on", state.animate);
       window.WorldMap.setAnimate(state.animate);
+      save();
+    });
+    document.getElementById("gc-toggle").addEventListener("click", (e) => {
+      state.greatCircle = !state.greatCircle;
+      e.currentTarget.classList.toggle("on", state.greatCircle);
+      window.WorldMap.setGreatCircle(state.greatCircle);
       save();
     });
     document.getElementById("reverse").addEventListener("click", () => {
@@ -476,15 +496,17 @@
       el.innerHTML = `<div class="empty-hint">还没有选择城市。<br>在「城市」标签中点击勾选，或直接点击地图上的圆点。</div>`;
       return;
     }
+    const cityIndex = window.ALL_CITIES || window.CAPITALS;
     state.selected.forEach((name, i) => {
-      const c = window.CAPITALS.find(x => x.name === name);
+      const c = cityIndex.find(x => x.name === name);
+      const label = c?.zh || name;
       const row = document.createElement("div");
       row.className = "order-item";
       row.draggable = true;
       row.dataset.idx = i;
       row.innerHTML = `
         <div class="order-num">${i+1}</div>
-        <div class="order-name">${name}<span style="color:rgba(255,255,255,0.4);font-weight:400"> · ${c?.country || ""}</span></div>
+        <div class="order-name">${escapeHtml(label)}<span style="color:rgba(255,255,255,0.4);font-weight:400"> · ${escapeHtml(c?.country || "")}</span></div>
         <div class="order-handle">≡</div>
         <button class="order-remove" title="移除">×</button>
       `;
@@ -540,6 +562,19 @@
       <div class="row">
         <label>显示主要城市（非首都）</label>
         <div class="toggle ${state.showMajor ? 'on' : ''}" id="t-major"></div>
+      </div>
+
+      <div class="section-title" style="margin-top:18px">城市名称</div>
+      <div class="row">
+        <label>显示中文名称</label>
+        <div class="toggle on locked" id="t-name-zh" title="中文名称常驻显示，不可关闭"></div>
+      </div>
+      <div class="row">
+        <label>叠加显示英文名称</label>
+        <div class="toggle ${state.showLabelEn ? 'on' : ''}" id="t-name-en"></div>
+      </div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:4px">
+        默认显示中文；打开后在中文下方叠加英文名称。仅作用于已选城市的标签。
       </div>
 
       ${state.mode === "globe" ? `
@@ -655,6 +690,11 @@
       state.showMajor = !state.showMajor;
       e.currentTarget.classList.toggle("on", state.showMajor);
       window.WorldMap.setShowMajor(state.showMajor); save();
+    });
+    wrap.querySelector("#t-name-en").addEventListener("click", (e) => {
+      state.showLabelEn = !state.showLabelEn;
+      e.currentTarget.classList.toggle("on", state.showLabelEn);
+      window.WorldMap.setShowLabelEn(state.showLabelEn); save();
     });
     if (state.mode === "globe") {
       wrap.querySelector("#t-autorot").addEventListener("click", (e) => {
