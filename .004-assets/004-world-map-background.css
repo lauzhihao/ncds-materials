@@ -158,6 +158,18 @@ html, body {
   opacity: 0;
 }
 
+/* draggable handle to hand-bend a connection */
+.bend-handle {
+  fill: #fff;
+  stroke: var(--c-line);
+  stroke-width: 2px;
+  cursor: grab;
+  filter: drop-shadow(0 0 4px var(--c-line-glow));
+  transition: fill .12s ease;
+}
+.bend-handle:hover { fill: var(--c-line); }
+.bend-handle.grabbing { fill: var(--c-line); cursor: grabbing; }
+
 .order-badge {
   fill: var(--c-line);
   stroke: var(--c-city-ring);
@@ -468,6 +480,9 @@ html, body {
 .toggle.on::after { transform: translateX(16px); }
 /* locked toggle: always-on, not user-dismissable (e.g. Chinese name) */
 .toggle.locked { cursor: not-allowed; opacity: 0.55; }
+/* sub-options greyed + non-interactive when their master switch is off */
+.route-opts { transition: opacity .15s ease; }
+.route-opts.sub-disabled { opacity: 0.4; pointer-events: none; }
 
 .slider-row {
   display: flex;

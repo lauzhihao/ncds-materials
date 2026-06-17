@@ -19,7 +19,7 @@
     "south china sea", "南海", "南海诸岛", "南海諸島"
   ];
 
-  let svg, gRoot, gSphere, gGrat, gLand, gHighlight, gSouthSea, gBorder, gConn, gConnFlow, gCity, gLabel, gBadge;
+  let svg, gRoot, gSphere, gGrat, gLand, gHighlight, gSouthSea, gBorder, gConn, gConnFlow, gCity, gLabel, gBadge, gHandle;
   let projectionFlat, projectionGlobe, projection, pathGen;
   let width = 0, height = 0;
   let zoomBehavior, rotateDrag;
@@ -45,7 +45,13 @@
 
     lineSpeed: 1.0,
     animate: true,
+    showRoute: true,                // master: draw connection lines at all
     greatCircle: false,             // 连线走球面最短路径（大圆航线），far pairs bow polar
+
+    // manual bend: per-segment hand-tuned curve. keyed by "A→B".
+    // value = { along: 0..1 (apex position), perp: signed ratio of segment len }
+    bends: {},
+    bendEdit: false,                // show draggable handles to bend connections
 
     // highlight animation
     highlightDuration: 1.5,          // total seconds (trace + fill)
@@ -103,6 +109,7 @@
     gCity     = gRoot.append("g").attr("class", "city-layer");
     gLabel    = gRoot.append("g").attr("class", "label-layer");
     gBadge    = gRoot.append("g").attr("class", "badge-layer");
+    gHandle   = gRoot.append("g").attr("class", "handle-layer");
 
     // sphere
     gSphere.append("path")
@@ -422,6 +429,10 @@
       .attr("stroke-width", badgeStroke);
     gBadge.selectAll("text.order-badge-text").style("font-size", badgeFs + "px");
 
+    gHandle.selectAll("circle.bend-handle")
+      .attr("r", 6.5 / k)
+      .attr("stroke-width", 2 / k);
+
     gLand.selectAll("path.land")
       .style("stroke-width", landStroke + "px");
     gHighlight.selectAll("path.country-highlight")
@@ -439,6 +450,14 @@
 
   // ---------- CONNECTIONS ----------
   function renderConnections() {
+    // master switch off → no lines / flow / badges / handles, cities only
+    if (!state.showRoute) {
+      gConn.selectAll("*").remove();
+      gConnFlow.selectAll("*").remove();
+      gBadge.selectAll("*").remove();
+      gHandle.selectAll("*").remove();
+      return;
+    }
     const sel = state.selected;
     const segs = [];
     for (let i = 0; i < sel.length - 1; i++) {
@@ -446,7 +465,7 @@
       const b = cityByName[sel[i+1]];
       if (a && b) segs.push({ a, b, idx: i });
     }
-    const paths = segs.map(s => arcPath(s.a, s.b));
+    const paths = segs.map(s => segmentPath(s.a, s.b));
 
     const base = gConn.selectAll("path.connection").data(paths);
     base.exit().remove();
@@ -478,7 +497,104 @@
     merged.attr("transform", d => `translate(${d.x + offset},${d.y - offset})`);
     merged.select("text.order-badge-text").text(d => d.idx);
 
+    renderBendHandles(segs);
     updateScaleCompensation();
+  }
+
+  // ---------- MANUAL BEND ----------
+  // Each connection can be hand-bent: grab the mid handle and pull it sideways.
+  // The bend is stored as { along, perp } ratios relative to the segment, so it
+  // stays put across zoom / globe rotation (we rebuild from the live endpoints).
+  function segKey(a, b) { return a.name + "→" + b.name; }
+
+  // segment geometry in gRoot-local coords (same space as projectSafe / handles)
+  function segGeom(a, b) {
+    const A = projectSafe(a), B = projectSafe(b);
+    if (!A || !B) return null;
+    const dx = B[0] - A[0], dy = B[1] - A[1];
+    const len = Math.hypot(dx, dy);
+    if (len < 1e-3) return null;
+    const ux = dx / len, uy = dy / len;   // along unit
+    const px = -uy, py = ux;              // left-perpendicular unit
+    return { A, B, len, ux, uy, px, py };
+  }
+
+  // apex point the handle sits on, for a given bend
+  function bendApex(g, bend) {
+    const along = bend ? bend.along : 0.5;
+    const perp  = bend ? bend.perp  : 0;
+    return [
+      g.A[0] + g.ux * (along * g.len) + g.px * (perp * g.len),
+      g.A[1] + g.uy * (along * g.len) + g.py * (perp * g.len)
+    ];
+  }
+
+  // path string for one segment: hand-bent quadratic when a bend exists and both
+  // ends are on-screen; otherwise the normal sampled arc (great-circle / linear).
+  function segmentPath(a, b) {
+    const bend = state.bends[segKey(a, b)];
+    if (bend && (bend.perp || (bend.along && bend.along !== 0.5)) &&
+        isPointVisible(a.lng, a.lat) && isPointVisible(b.lng, b.lat)) {
+      const g = segGeom(a, b);
+      // skip the quad for very long (likely antimeridian-wrapping) spans
+      if (g && g.len < width * 1.3) {
+        const apex = bendApex(g, bend);
+        const t = Math.min(0.85, Math.max(0.15, bend.along || 0.5));
+        // control point so the curve passes through apex at parameter t
+        const cx = (apex[0] - (1 - t) * (1 - t) * g.A[0] - t * t * g.B[0]) / (2 * (1 - t) * t);
+        const cy = (apex[1] - (1 - t) * (1 - t) * g.A[1] - t * t * g.B[1]) / (2 * (1 - t) * t);
+        return `M${g.A[0]},${g.A[1]} Q${cx},${cy} ${g.B[0]},${g.B[1]}`;
+      }
+    }
+    return arcPath(a, b);
+  }
+
+  const bendDrag = d3.drag()
+    .on("start", function(ev) {
+      if (ev.sourceEvent) ev.sourceEvent.stopPropagation();
+      d3.select(this).classed("grabbing", true);
+    })
+    .on("drag", function(ev, d) {
+      const g = segGeom(d.a, d.b);
+      if (!g) return;
+      const rx = ev.x - g.A[0], ry = ev.y - g.A[1];
+      const along = Math.min(0.85, Math.max(0.15, (rx * g.ux + ry * g.uy) / g.len));
+      let perp = (rx * g.px + ry * g.py) / g.len;
+      perp = Math.min(2.5, Math.max(-2.5, perp));
+      state.bends[segKey(d.a, d.b)] = { along, perp };
+      renderConnections();
+    })
+    .on("end", function() {
+      d3.select(this).classed("grabbing", false);
+      if (window.Panel && window.Panel.persist) window.Panel.persist();
+    });
+
+  function renderBendHandles(segs) {
+    if (!state.bendEdit) { gHandle.selectAll("*").remove(); return; }
+    const data = segs.filter(s =>
+      isPointVisible(s.a.lng, s.a.lat) && isPointVisible(s.b.lng, s.b.lat) && segGeom(s.a, s.b)
+    ).map(s => {
+      const g = segGeom(s.a, s.b);
+      const apex = bendApex(g, state.bends[segKey(s.a, s.b)]);
+      return { a: s.a, b: s.b, key: segKey(s.a, s.b), x: apex[0], y: apex[1] };
+    });
+
+    const sel = gHandle.selectAll("circle.bend-handle").data(data, d => d.key);
+    sel.exit().remove();
+    const enter = sel.enter().append("circle")
+      .attr("class", "bend-handle")
+      .attr("r", 6.5)
+      .call(bendDrag)
+      .on("dblclick", function(ev, d) {
+        if (ev.sourceEvent) ev.sourceEvent.stopPropagation();
+        ev.stopPropagation();
+        delete state.bends[d.key];
+        renderConnections();
+        if (window.Panel && window.Panel.persist) window.Panel.persist();
+      });
+    enter.merge(sel)
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y);
   }
 
   // Sample N+1 [lng,lat] points along the path between two cities.
@@ -958,7 +1074,12 @@
   function setShowMajor(v)     { state.showMajor     = !!v; renderCities(); renderConnections(); }
   function setLineSpeed(v)     { state.lineSpeed = +v; }
   function setAnimate(v)       { state.animate = !!v; }
+  function setShowRoute(v)     { state.showRoute = !!v; renderConnections(); }
   function setGreatCircle(v)   { state.greatCircle = !!v; renderConnections(); }
+  function setBendEdit(v)      { state.bendEdit = !!v; renderConnections(); }
+  function setBends(obj)       { state.bends = (obj && typeof obj === "object") ? obj : {}; renderConnections(); }
+  function getBends()          { return state.bends; }
+  function clearBends()        { state.bends = {}; renderConnections(); }
   function setAutoRotate(v)    { state.autoRotate = !!v; }
   function setRotateSpeed(v)   { state.rotateSpeed = +v; }
   function clearHighlights()   { state.highlighted.clear(); updateCountryHighlight(); }
@@ -1040,7 +1161,8 @@
 
   window.WorldMap = {
     init, setTheme, setSelected, setShowLabels, setShowLabelEn, setShowAllDots, setShowGraticule,
-    setShowMajor, setLineSpeed, setAnimate, setGreatCircle, setAutoRotate, setRotateSpeed,
+    setShowMajor, setLineSpeed, setAnimate, setShowRoute, setGreatCircle, setAutoRotate, setRotateSpeed,
+    setBendEdit, setBends, getBends, clearBends,
     setMode, clearHighlights,
     // animation
     setHighlightDuration, setHighlightLoop, setHighlightLoopInterval,

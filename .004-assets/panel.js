@@ -18,7 +18,10 @@
     showMajor: false,
     animate: true,
     lineSpeed: 1.0,
+    showRoute: true,             // 总开关：是否显示连线（航线）
     greatCircle: false,          // 大圆航线（球面最短路径）连线
+    bends: {},                   // 手动拖拽的连线弯曲 { "A→B": {along,perp} }
+    bendEdit: false,             // 是否显示连线拖拽手柄
     mode: "flat",
     autoRotate: false,
     rotateSpeed: 1.0,
@@ -48,7 +51,10 @@
         showAllDots: state.showAllDots,
         showGraticule: state.showGraticule, showMajor: state.showMajor,
         animate: state.animate, lineSpeed: state.lineSpeed,
+        showRoute: state.showRoute,
         greatCircle: state.greatCircle,
+        bends: (window.WorldMap && window.WorldMap.getBends) ? window.WorldMap.getBends() : state.bends,
+        bendEdit: state.bendEdit,
         mode: state.mode, autoRotate: state.autoRotate, rotateSpeed: state.rotateSpeed,
         highlightDuration: state.highlightDuration,
         highlightLoop: state.highlightLoop,
@@ -90,7 +96,10 @@
     window.WorldMap.setShowMajor(state.showMajor);
     window.WorldMap.setAnimate(state.animate);
     window.WorldMap.setLineSpeed(state.lineSpeed);
+    window.WorldMap.setShowRoute(state.showRoute);
     window.WorldMap.setGreatCircle(state.greatCircle);
+    window.WorldMap.setBends(state.bends);
+    window.WorldMap.setBendEdit(state.bendEdit);
     window.WorldMap.setAutoRotate(state.autoRotate);
     window.WorldMap.setRotateSpeed(state.rotateSpeed);
     window.WorldMap.setMode(state.mode);
@@ -121,7 +130,7 @@
     save();
   }
 
-  window.Panel = { toggleSelect };
+  window.Panel = { toggleSelect, persist: save };
 
   // ---------- BUILD UI ----------
   const panel = document.getElementById("panel");
@@ -425,27 +434,54 @@
         <button class="btn" id="sort-region">按区域</button>
         <button class="btn danger" id="clear">清空</button>
       </div>
-      <div class="row column" style="margin-top:14px">
-        <label>连线流动速度</label>
-        <div class="slider-row">
-          <input type="range" min="0" max="3" step="0.1" value="${state.lineSpeed}" id="speed"/>
-          <span class="slider-val" id="speed-val">${state.lineSpeed.toFixed(1)}×</span>
+      <div class="row" style="margin-top:14px">
+        <label>显示航线</label>
+        <div class="toggle ${state.showRoute ? 'on' : ''}" id="route-toggle"></div>
+      </div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:6px">
+        总开关。关闭后只显示选中的城市圆点，不画任何连线；下方选项随之置灰。
+      </div>
+
+      <div id="route-opts" class="route-opts ${state.showRoute ? '' : 'sub-disabled'}">
+        <div class="row column">
+          <label>连线流动速度</label>
+          <div class="slider-row">
+            <input type="range" min="0" max="3" step="0.1" value="${state.lineSpeed}" id="speed"/>
+            <span class="slider-val" id="speed-val">${state.lineSpeed.toFixed(1)}×</span>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <label>启用流动动画</label>
-        <div class="toggle ${state.animate ? 'on' : ''}" id="animate-toggle"></div>
-      </div>
-      <div class="row">
-        <label>大圆航线（球面最短路径）</label>
-        <div class="toggle ${state.greatCircle ? 'on' : ''}" id="gc-toggle"></div>
-      </div>
-      <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.6">
-        打开后连线沿球面最短路径走，远距离城市会自然向极地拱起（如大连→鹿特丹拱到约 64°N）。地球仪模式下观感最佳。
+        <div class="row">
+          <label>启用流动动画</label>
+          <div class="toggle ${state.animate ? 'on' : ''}" id="animate-toggle"></div>
+        </div>
+        <div class="row">
+          <label>大圆航线（球面最短路径）</label>
+          <div class="toggle ${state.greatCircle ? 'on' : ''}" id="gc-toggle"></div>
+        </div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:8px">
+          打开后连线沿球面最短路径走，远距离城市会自然向极地拱起（如大连→鹿特丹拱到约 64°N）。地球仪模式下观感最佳。
+        </div>
+        <div class="row">
+          <label>拖拽微调连线</label>
+          <div class="toggle ${state.bendEdit ? 'on' : ''}" id="bend-toggle"></div>
+        </div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:8px">
+          打开后每条连线中点出现一个圆点手柄，拖住它往左 / 右拉，即可让连线向两侧偏移弯曲；两端城市保持不动。双击手柄复位单条。
+        </div>
+        <div class="btn-row">
+          <button class="btn danger" id="reset-bends">重置连线弯曲</button>
+        </div>
       </div>
     `;
     body.appendChild(wrap);
 
+    document.getElementById("route-toggle").addEventListener("click", (e) => {
+      state.showRoute = !state.showRoute;
+      e.currentTarget.classList.toggle("on", state.showRoute);
+      document.getElementById("route-opts").classList.toggle("sub-disabled", !state.showRoute);
+      window.WorldMap.setShowRoute(state.showRoute);
+      save();
+    });
     document.getElementById("speed").addEventListener("input", (e) => {
       state.lineSpeed = +e.target.value;
       document.getElementById("speed-val").textContent = state.lineSpeed.toFixed(1) + "×";
@@ -462,6 +498,17 @@
       state.greatCircle = !state.greatCircle;
       e.currentTarget.classList.toggle("on", state.greatCircle);
       window.WorldMap.setGreatCircle(state.greatCircle);
+      save();
+    });
+    document.getElementById("bend-toggle").addEventListener("click", (e) => {
+      state.bendEdit = !state.bendEdit;
+      e.currentTarget.classList.toggle("on", state.bendEdit);
+      window.WorldMap.setBendEdit(state.bendEdit);
+      save();
+    });
+    document.getElementById("reset-bends").addEventListener("click", () => {
+      window.WorldMap.clearBends();
+      state.bends = window.WorldMap.getBends();
       save();
     });
     document.getElementById("reverse").addEventListener("click", () => {
