@@ -6,13 +6,14 @@
   "style": ".004-assets/004-world-map-background.css",
   "script": ".004-assets/004-world-map-background.js",
   "assets": ".004-assets/",
-  "description": "可切换平面地图与地球仪视图的世界地图视频背景素材，支持城市点选、航线连线、真实航空网络（OpenFlights）、按国家名称搜索高亮、主题配色、自动聚焦和干净录制模式。",
-  "version": "1.2.0",
+  "description": "可切换平面地图与地球仪视图的世界地图视频背景素材，支持城市点选、航线连线、真实航空网络（OpenFlights）、全球航海图航道（searoute）、按国家名称搜索高亮、主题配色、自动聚焦和干净录制模式。",
+  "version": "1.3.0",
   "features": [
     "平面地图与地球仪双模式",
     "全球首都与主要城市点选",
     "路线连线与流动动画",
     "真实航空网络：按选中城市最近机场扇出 OpenFlights 真实航线（大圆）",
+    "全球航海图：searoute 计算的主干集装箱航道（绕陆地、过苏伊士/巴拿马/马六甲）",
     "按国家名称搜索并高亮国家轮廓",
     "中国组合高亮联动台湾和南海诸岛标记",
     "国家轮廓高亮与循环播放",
@@ -25,6 +26,12 @@
       "file": ".004-assets/air-network.json",
       "build": ".004-assets/build-air-network.py",
       "source": "https://openflights.org/data （ODbL）"
+    },
+    {
+      "name": "searoute 全球航道（离线烘焙）",
+      "file": ".004-assets/sea-network.json",
+      "build": ".004-assets/build-sea-network.py",
+      "source": "searoute / Eurostat marine network"
     }
   ],
   "dependencies": [

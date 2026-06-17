@@ -22,6 +22,7 @@
     greatCircle: false,          // 大圆航线（球面最短路径）连线
     showAirRoutes: false,        // 真实航线：按选中城市最近机场扇出 OpenFlights 航线
     airMaxPerCity: 40,           // 每个城市最多画多少条真实航线（取最繁忙的前 N 条）
+    showSeaRoutes: false,        // 航海图：全球主干集装箱航道（searoute，与选中城市无关）
     bends: {},                   // 手动拖拽的连线弯曲 { "A→B": {along,perp} }
     bendEdit: false,             // 是否显示连线拖拽手柄
     mode: "flat",
@@ -57,6 +58,7 @@
         greatCircle: state.greatCircle,
         showAirRoutes: state.showAirRoutes,
         airMaxPerCity: state.airMaxPerCity,
+        showSeaRoutes: state.showSeaRoutes,
         bends: (window.WorldMap && window.WorldMap.getBends) ? window.WorldMap.getBends() : state.bends,
         bendEdit: state.bendEdit,
         mode: state.mode, autoRotate: state.autoRotate, rotateSpeed: state.rotateSpeed,
@@ -104,6 +106,7 @@
     window.WorldMap.setGreatCircle(state.greatCircle);
     window.WorldMap.setAirMaxPerCity(state.airMaxPerCity);
     window.WorldMap.setShowAirRoutes(state.showAirRoutes);
+    window.WorldMap.setShowSeaRoutes(state.showSeaRoutes);
     window.WorldMap.setBends(state.bends);
     window.WorldMap.setBendEdit(state.bendEdit);
     window.WorldMap.setAutoRotate(state.autoRotate);
@@ -499,8 +502,24 @@
           取最繁忙的前 N 条。城市选得多或 N 调大时航线会很密，地球仪自动旋转下可能略卡；录制静态画面不受影响。
         </div>
       </div>
+
+      <div class="section-title" style="margin-top:22px">航海图（航道）</div>
+      <div class="row">
+        <label>显示航海图</label>
+        <div class="toggle ${state.showSeaRoutes ? 'on' : ''}" id="sea-toggle"></div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:6px">
+        全球主干集装箱航道（searoute 离线计算，绕开陆地、经苏伊士 / 巴拿马 / 马六甲）。这是一张全局航海图，<b>与选中城市无关</b>，打开即显示。
+      </div>
     `;
     body.appendChild(wrap);
+
+    document.getElementById("sea-toggle").addEventListener("click", (e) => {
+      state.showSeaRoutes = !state.showSeaRoutes;
+      e.currentTarget.classList.toggle("on", state.showSeaRoutes);
+      window.WorldMap.setShowSeaRoutes(state.showSeaRoutes);
+      save();
+    });
 
     document.getElementById("air-toggle").addEventListener("click", (e) => {
       state.showAirRoutes = !state.showAirRoutes;

@@ -172,6 +172,26 @@ html, body {
   pointer-events: none;
 }
 
+/* real shipping lanes (searoute) — distinct cyan so they read separately from
+   the (theme-coloured) air mesh. Override --c-sea in a theme to recolour. */
+.sea-route {
+  fill: none;
+  stroke: var(--c-sea, #18b6c9);
+  stroke-width: 1.3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.7;
+  pointer-events: none;
+  filter: drop-shadow(0 0 3px var(--c-sea, #18b6c9));
+}
+.sea-dot {
+  fill: var(--c-sea, #18b6c9);
+  stroke: var(--c-water);
+  stroke-width: 1px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
 .pulse {
   fill: var(--c-pulse);
   opacity: 0;

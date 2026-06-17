@@ -8,6 +8,8 @@
   // 真实航线网络（OpenFlights，ODbL），离线烘焙好的出向邻接表。懒加载：
   // 只有真实航线开关打开时才 fetch，平时完全不影响现有功能与加载。
   const AIR_NET_URL = ".004-assets/air-network.json";
+  // 真实航海网络（searoute 离线算好的主干航道折线）。同样懒/预加载，不影响现有功能。
+  const SEA_NET_URL = ".004-assets/sea-network.json";
   const CHINA_TERRITORY_IDS = new Set(["156", "158"]);
   const SOUTH_CHINA_SEA_ISLANDS = [
     { id: "dongsha", name: "东沙群岛", lng: 116.7, lat: 20.7 },
@@ -22,7 +24,7 @@
     "south china sea", "南海", "南海诸岛", "南海諸島"
   ];
 
-  let svg, gRoot, gSphere, gGrat, gLand, gHighlight, gSouthSea, gBorder, gAir, gConn, gConnFlow, gCity, gLabel, gBadge, gHandle;
+  let svg, gRoot, gSphere, gGrat, gLand, gHighlight, gSouthSea, gBorder, gSea, gAir, gConn, gConnFlow, gCity, gLabel, gBadge, gHandle;
   let projectionFlat, projectionGlobe, projection, pathGen;
   let width = 0, height = 0;
   let zoomBehavior, rotateDrag;
@@ -55,6 +57,10 @@
     // 选中城市 → 匹配最近机场 → 扇出该机场最繁忙的前 N 条真实航线（恒定大圆）。
     showAirRoutes: false,
     airMaxPerCity: 40,
+
+    // real shipping lanes (searoute) — global backbone network, off by default.
+    // 与选中城市无关：打开即画一组真实主干集装箱航道（绕陆地、过运河海峡）。
+    showSeaRoutes: false,
 
     // manual bend: per-segment hand-tuned curve. keyed by "A→B".
     // value = { along: 0..1 (apex position), perp: signed ratio of segment len }
@@ -112,6 +118,7 @@
     gHighlight= gRoot.append("g").attr("class", "highlight-layer");
     gSouthSea = gRoot.append("g").attr("class", "south-sea-layer");
     gBorder   = gRoot.append("g").attr("class", "border-layer");
+    gSea      = gRoot.append("g").attr("class", "sea-layer");
     gAir      = gRoot.append("g").attr("class", "air-layer");
     gConn     = gRoot.append("g").attr("class", "conn-layer");
     gConnFlow = gRoot.append("g").attr("class", "conn-flow-layer");
@@ -219,6 +226,11 @@
     // animation loops
     startFlowAnimation();
     startAutoRotateLoop();
+
+    // eager-load the full real-route datasets in the background so航空/航海图
+    // 一打开就能立刻渲染（非阻塞，失败也不影响地图本身）。
+    loadAirNet();
+    loadSeaNet();
 
     return true;
   }
@@ -407,6 +419,8 @@
     const flowDash    = `${14/k} ${18/k}`;
     const airLineW    = 0.9 / k;
     const airDotR     = 1.9 / k;
+    const seaLineW    = 1.3 / k;
+    const seaDotR     = 2.2 / k;
     const badgeR      = 9   / k;
     const badgeFs     = 10  / k;
     const badgeStroke = 1.5 / k;
@@ -438,6 +452,10 @@
     gAir.selectAll("circle.air-dot")
       .attr("r", airDotR)
       .attr("stroke-width", (0.8 / k) + "px");
+    gSea.selectAll("path.sea-route").style("stroke-width", seaLineW + "px");
+    gSea.selectAll("circle.sea-dot")
+      .attr("r", seaDotR)
+      .attr("stroke-width", (1 / k) + "px");
 
     gBadge.selectAll("circle.order-badge")
       .attr("r", badgeR)
@@ -465,8 +483,9 @@
 
   // ---------- CONNECTIONS ----------
   function renderConnections() {
-    // real airline routes render independently of the manual-route master switch
+    // real airline routes + shipping lanes render independently of the manual-route switch
     renderAirRoutes();
+    renderSeaRoutes();
     // master switch off → no lines / flow / badges / handles, cities only
     if (!state.showRoute) {
       gConn.selectAll("*").remove();
@@ -662,10 +681,10 @@
     return out;
   }
 
-  // arc — builds the SVG path. Handles antimeridian split and back-of-globe hide.
-  function arcPath(a, b, forceGC) {
-    const N = 64;
-    const pts = interpPoints(a, b, N, forceGC);
+  // Build an SVG path from a list of [lng,lat] points, splitting at the
+  // antimeridian and hiding the back of the globe. Shared by great-circle arcs
+  // (interpolated) and pre-computed polylines (sea lanes).
+  function pathFromLngLat(pts) {
     const segments = [[]];
     let prev = null;
     let prevVisible = true;
@@ -683,11 +702,16 @@
     const line = d3.line().curve(d3.curveCatmullRom.alpha(0.5));
     return segments
       .map(seg => {
-        const pts = seg.map(ll => projection(ll)).filter(p => p && !isNaN(p[0]));
-        return pts.length > 1 ? line(pts) : null;
+        const ps = seg.map(ll => projection(ll)).filter(p => p && !isNaN(p[0]));
+        return ps.length > 1 ? line(ps) : null;
       })
       .filter(Boolean)
       .join(" ");
+  }
+
+  // arc — builds the SVG path. Handles antimeridian split and back-of-globe hide.
+  function arcPath(a, b, forceGC) {
+    return pathFromLngLat(interpPoints(a, b, 64, forceGC));
   }
 
   // ---------- REAL AIRLINE ROUTES (OpenFlights) ----------
@@ -779,6 +803,46 @@
     const dots = gAir.selectAll("circle.air-dot").data([...dests.entries()], d => d[0]);
     dots.exit().remove();
     dots.enter().append("circle").attr("class", "air-dot")
+      .merge(dots)
+      .attr("cx", d => { const p = projectSafe({ lng: d[1][0], lat: d[1][1] }); return p ? p[0] : -9999; })
+      .attr("cy", d => { const p = projectSafe({ lng: d[1][0], lat: d[1][1] }); return p ? p[1] : -9999; })
+      .style("display", d => isPointVisible(d[1][0], d[1][1]) ? null : "none");
+  }
+
+  // ---------- REAL SHIPPING LANES (searoute) ----------
+  // 全球主干航道网络，与城市选择无关：开关打开即画整张航海图。数据是离线烘焙好的
+  // 折线 { ports:{名:[lng,lat]}, lanes:[{from,to,pts:[[lng,lat]]}] }。
+  let seaNet = null;
+  let seaNetPromise = null;
+
+  function loadSeaNet() {
+    if (seaNetPromise) return seaNetPromise;
+    seaNetPromise = fetch(SEA_NET_URL)
+      .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(d => {
+        seaNet = d;
+        if (state.showSeaRoutes) { renderSeaRoutes(); updateScaleCompensation(); }
+        return d;
+      })
+      .catch(err => { console.warn("[sea] 航道数据加载失败:", err); seaNet = null; });
+    return seaNetPromise;
+  }
+
+  function renderSeaRoutes() {
+    if (!gSea) return;
+    if (!state.showSeaRoutes || !seaNet) { gSea.selectAll("*").remove(); return; }
+    const lanes = seaNet.lanes || [];
+    const lineData = lanes.map(l => pathFromLngLat(l.pts)).filter(Boolean);
+
+    const lines = gSea.selectAll("path.sea-route").data(lineData);
+    lines.exit().remove();
+    lines.enter().append("path").attr("class", "sea-route")
+      .merge(lines).attr("d", d => d);
+
+    const portData = Object.entries(seaNet.ports || {});
+    const dots = gSea.selectAll("circle.sea-dot").data(portData, d => d[0]);
+    dots.exit().remove();
+    dots.enter().append("circle").attr("class", "sea-dot")
       .merge(dots)
       .attr("cx", d => { const p = projectSafe({ lng: d[1][0], lat: d[1][1] }); return p ? p[0] : -9999; })
       .attr("cy", d => { const p = projectSafe({ lng: d[1][0], lat: d[1][1] }); return p ? p[1] : -9999; })
@@ -1200,6 +1264,12 @@
     renderAirRoutes();
     updateScaleCompensation();
   }
+  function setShowSeaRoutes(v) {
+    state.showSeaRoutes = !!v;
+    if (state.showSeaRoutes) loadSeaNet();
+    renderSeaRoutes();
+    updateScaleCompensation();
+  }
   function setBendEdit(v)      { state.bendEdit = !!v; renderConnections(); }
   function setBends(obj)       { state.bends = (obj && typeof obj === "object") ? obj : {}; renderConnections(); }
   function getBends()          { return state.bends; }
@@ -1286,7 +1356,7 @@
   window.WorldMap = {
     init, setTheme, setSelected, setShowLabels, setShowLabelEn, setShowAllDots, setShowGraticule,
     setShowMajor, setLineSpeed, setAnimate, setShowRoute, setGreatCircle, setShowAirRoutes, setAirMaxPerCity,
-    setAutoRotate, setRotateSpeed,
+    setShowSeaRoutes, setAutoRotate, setRotateSpeed,
     setBendEdit, setBends, getBends, clearBends,
     setMode, clearHighlights,
     // animation
