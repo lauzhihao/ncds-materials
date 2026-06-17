@@ -269,8 +269,9 @@
       ["cityHalo",         "城市点 · 光晕"],
       ["label",            "城市文字"],
       ["labelHalo",        "文字描边"],
-      ["line",             "连接线"],
+      ["line",             "连接线 / 航线"],
       ["lineGlow",         "连接线光晕"],
+      ["sea",              "航道（航海图）"],
       ["highlightFill",    "国家高亮 · 填充"],
       ["highlightStroke",  "国家高亮 · 描边"]
     ];
@@ -966,7 +967,7 @@
     const cs = getComputedStyle(document.documentElement);
     const tokens = ["--c-water","--c-land","--c-land-stroke","--c-border","--c-graticule",
       "--c-city-fill","--c-city-ring","--c-city-halo","--c-label","--c-label-halo",
-      "--c-line","--c-line-glow","--c-pulse","--c-highlight-fill","--c-highlight-stroke"];
+      "--c-line","--c-line-glow","--c-pulse","--c-highlight-fill","--c-highlight-stroke","--c-sea"];
     let styleTxt = `:root{${tokens.map(t => `${t}:${cs.getPropertyValue(t)};`).join("")}}`;
     const styleEl = document.createElement("style");
     styleEl.textContent = styleTxt + "\n" + Array.from(document.styleSheets).map(s => {

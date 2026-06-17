@@ -18,7 +18,8 @@ window.THEMES = {
     lineGlow:    "#74a9ff",
     pulse:       "#1a73e8",
     highlightFill:   "#ffe98a",
-    highlightStroke: "#f29d12"
+    highlightStroke: "#f29d12",
+    sea:             "#0e9488"
   },
   "google-dark": {
     name: "Google Dark",
@@ -37,7 +38,8 @@ window.THEMES = {
     lineGlow:    "#5a82e0",
     pulse:       "#7aa2ff",
     highlightFill:   "#3b4d6d",
-    highlightStroke: "#ffd166"
+    highlightStroke: "#ffd166",
+    sea:             "#2dd4bf"
   },
   "midnight": {
     name: "Midnight Cobalt",
@@ -56,7 +58,8 @@ window.THEMES = {
     lineGlow:    "#3fa5ff",
     pulse:       "#00e0ff",
     highlightFill:   "#1f3a66",
-    highlightStroke: "#00e0ff"
+    highlightStroke: "#00e0ff",
+    sea:             "#ff8a3d"
   },
   "paper": {
     name: "Paper",
@@ -75,7 +78,8 @@ window.THEMES = {
     lineGlow:    "#c98a4b",
     pulse:       "#c0392b",
     highlightFill:   "#fff2c4",
-    highlightStroke: "#c0392b"
+    highlightStroke: "#c0392b",
+    sea:             "#2a7fa8"
   },
   "mono": {
     name: "Mono",
@@ -94,7 +98,8 @@ window.THEMES = {
     lineGlow:    "#888888",
     pulse:       "#111111",
     highlightFill:   "#cfd8e3",
-    highlightStroke: "#111111"
+    highlightStroke: "#111111",
+    sea:             "#7a8791"
   },
   "noir": {
     name: "Noir",
@@ -113,7 +118,8 @@ window.THEMES = {
     lineGlow:    "#999999",
     pulse:       "#ffffff",
     highlightFill:   "#2a2a2a",
-    highlightStroke: "#ffffff"
+    highlightStroke: "#ffffff",
+    sea:             "#6f7e86"
   },
   "sunset": {
     name: "Sunset",
@@ -132,7 +138,8 @@ window.THEMES = {
     lineGlow:    "#ffb86b",
     pulse:       "#ff6f91",
     highlightFill:   "#5b2c66",
-    highlightStroke: "#ff6f91"
+    highlightStroke: "#ff6f91",
+    sea:             "#3fd0c8"
   },
   "ocean": {
     name: "Ocean",
@@ -151,7 +158,8 @@ window.THEMES = {
     lineGlow:    "#2bb39a",
     pulse:       "#7be4cc",
     highlightFill:   "#0e597a",
-    highlightStroke: "#7be4cc"
+    highlightStroke: "#7be4cc",
+    sea:             "#ffb05c"
   },
   "matrix": {
     name: "Matrix",
@@ -170,7 +178,8 @@ window.THEMES = {
     lineGlow:    "#a9ffb9",
     pulse:       "#00ff41",
     highlightFill:   "#003b1e",
-    highlightStroke: "#00ff41"
+    highlightStroke: "#00ff41",
+    sea:             "#00e5ff"
   }
 };
 

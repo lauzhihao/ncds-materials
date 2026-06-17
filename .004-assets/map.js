@@ -420,6 +420,8 @@
     const airLineW    = 0.9 / k;
     const airDotR     = 1.9 / k;
     const seaLineW    = 1.3 / k;
+    const seaFlowW    = 1.8 / k;
+    const seaFlowDash = `${10/k} ${16/k}`;
     const seaDotR     = 2.2 / k;
     const badgeR      = 9   / k;
     const badgeFs     = 10  / k;
@@ -453,6 +455,9 @@
       .attr("r", airDotR)
       .attr("stroke-width", (0.8 / k) + "px");
     gSea.selectAll("path.sea-route").style("stroke-width", seaLineW + "px");
+    gSea.selectAll("path.sea-flow")
+      .style("stroke-width", seaFlowW + "px")
+      .style("stroke-dasharray", seaFlowDash);
     gSea.selectAll("circle.sea-dot")
       .attr("r", seaDotR)
       .attr("stroke-width", (1 / k) + "px");
@@ -839,6 +844,13 @@
     lines.enter().append("path").attr("class", "sea-route")
       .merge(lines).attr("d", d => d);
 
+    // animated dashed overlay on top of the faint solid base (shares the global
+    // flow offset + the 连线流动 speed/animate controls).
+    const flow = gSea.selectAll("path.sea-flow").data(lineData);
+    flow.exit().remove();
+    flow.enter().append("path").attr("class", "sea-flow")
+      .merge(flow).attr("d", d => d);
+
     const portData = Object.entries(seaNet.ports || {});
     const dots = gSea.selectAll("circle.sea-dot").data(portData, d => d[0]);
     dots.exit().remove();
@@ -1194,6 +1206,8 @@
         flowOffset -= dt * 0.04 * state.lineSpeed;
         gConnFlow.selectAll("path.connection-flow")
           .style("stroke-dashoffset", flowOffset);
+        gSea.selectAll("path.sea-flow")
+          .style("stroke-dashoffset", flowOffset);
       }
       flowRaf = requestAnimationFrame(tick);
     }
@@ -1236,6 +1250,7 @@
     root.setProperty("--c-pulse",       t.pulse);
     root.setProperty("--c-highlight-fill",   t.highlightFill   || t.line);
     root.setProperty("--c-highlight-stroke", t.highlightStroke || t.line);
+    root.setProperty("--c-sea",              t.sea || "#18b6c9");
   }
 
   // ---------- API ----------

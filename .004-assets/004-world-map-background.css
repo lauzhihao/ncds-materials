@@ -180,9 +180,19 @@ html, body {
   stroke-width: 1.3px;
   stroke-linecap: round;
   stroke-linejoin: round;
-  opacity: 0.7;
+  opacity: 0.42;
   pointer-events: none;
-  filter: drop-shadow(0 0 3px var(--c-sea, #18b6c9));
+}
+/* animated dashed overlay — the "current" flowing along each lane */
+.sea-flow {
+  fill: none;
+  stroke: var(--c-sea, #18b6c9);
+  stroke-width: 1.8px;
+  stroke-linecap: round;
+  stroke-dasharray: 10 16;
+  opacity: 0.95;
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px var(--c-sea, #18b6c9));
 }
 .sea-dot {
   fill: var(--c-sea, #18b6c9);
