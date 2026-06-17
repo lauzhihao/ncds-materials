@@ -20,6 +20,8 @@
     lineSpeed: 1.0,
     showRoute: true,             // 总开关：是否显示连线（航线）
     greatCircle: false,          // 大圆航线（球面最短路径）连线
+    showAirRoutes: false,        // 真实航线：按选中城市最近机场扇出 OpenFlights 航线
+    airMaxPerCity: 40,           // 每个城市最多画多少条真实航线（取最繁忙的前 N 条）
     bends: {},                   // 手动拖拽的连线弯曲 { "A→B": {along,perp} }
     bendEdit: false,             // 是否显示连线拖拽手柄
     mode: "flat",
@@ -53,6 +55,8 @@
         animate: state.animate, lineSpeed: state.lineSpeed,
         showRoute: state.showRoute,
         greatCircle: state.greatCircle,
+        showAirRoutes: state.showAirRoutes,
+        airMaxPerCity: state.airMaxPerCity,
         bends: (window.WorldMap && window.WorldMap.getBends) ? window.WorldMap.getBends() : state.bends,
         bendEdit: state.bendEdit,
         mode: state.mode, autoRotate: state.autoRotate, rotateSpeed: state.rotateSpeed,
@@ -98,6 +102,8 @@
     window.WorldMap.setLineSpeed(state.lineSpeed);
     window.WorldMap.setShowRoute(state.showRoute);
     window.WorldMap.setGreatCircle(state.greatCircle);
+    window.WorldMap.setAirMaxPerCity(state.airMaxPerCity);
+    window.WorldMap.setShowAirRoutes(state.showAirRoutes);
     window.WorldMap.setBends(state.bends);
     window.WorldMap.setBendEdit(state.bendEdit);
     window.WorldMap.setAutoRotate(state.autoRotate);
@@ -472,8 +478,43 @@
           <button class="btn danger" id="reset-bends">重置连线弯曲</button>
         </div>
       </div>
+
+      <div class="section-title" style="margin-top:22px">真实航线（机场）</div>
+      <div class="row">
+        <label>显示真实航线</label>
+        <div class="toggle ${state.showAirRoutes ? 'on' : ''}" id="air-toggle"></div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:6px">
+        独立于上面的手动连线。打开后，按每个<b>已选城市</b>最近的机场，扇出该机场最繁忙的真实航线（数据来自 OpenFlights，全球 3257 机场 / 3.7 万航段，恒走大圆）。没选城市时不画任何航线。
+      </div>
+      <div id="air-opts" class="route-opts ${state.showAirRoutes ? '' : 'sub-disabled'}">
+        <div class="row column">
+          <label>每个城市最多航线数</label>
+          <div class="slider-row">
+            <input type="range" min="5" max="200" step="5" value="${state.airMaxPerCity}" id="air-max"/>
+            <span class="slider-val" id="air-max-val">${state.airMaxPerCity}</span>
+          </div>
+        </div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:4px">
+          取最繁忙的前 N 条。城市选得多或 N 调大时航线会很密，地球仪自动旋转下可能略卡；录制静态画面不受影响。
+        </div>
+      </div>
     `;
     body.appendChild(wrap);
+
+    document.getElementById("air-toggle").addEventListener("click", (e) => {
+      state.showAirRoutes = !state.showAirRoutes;
+      e.currentTarget.classList.toggle("on", state.showAirRoutes);
+      document.getElementById("air-opts").classList.toggle("sub-disabled", !state.showAirRoutes);
+      window.WorldMap.setShowAirRoutes(state.showAirRoutes);
+      save();
+    });
+    document.getElementById("air-max").addEventListener("input", (e) => {
+      state.airMaxPerCity = +e.target.value;
+      document.getElementById("air-max-val").textContent = state.airMaxPerCity;
+      window.WorldMap.setAirMaxPerCity(state.airMaxPerCity);
+      save();
+    });
 
     document.getElementById("route-toggle").addEventListener("click", (e) => {
       state.showRoute = !state.showRoute;

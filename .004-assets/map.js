@@ -5,6 +5,9 @@
 
 (function() {
   const WORLD_URL = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+  // 真实航线网络（OpenFlights，ODbL），离线烘焙好的出向邻接表。懒加载：
+  // 只有真实航线开关打开时才 fetch，平时完全不影响现有功能与加载。
+  const AIR_NET_URL = ".004-assets/air-network.json";
   const CHINA_TERRITORY_IDS = new Set(["156", "158"]);
   const SOUTH_CHINA_SEA_ISLANDS = [
     { id: "dongsha", name: "东沙群岛", lng: 116.7, lat: 20.7 },
@@ -19,7 +22,7 @@
     "south china sea", "南海", "南海诸岛", "南海諸島"
   ];
 
-  let svg, gRoot, gSphere, gGrat, gLand, gHighlight, gSouthSea, gBorder, gConn, gConnFlow, gCity, gLabel, gBadge, gHandle;
+  let svg, gRoot, gSphere, gGrat, gLand, gHighlight, gSouthSea, gBorder, gAir, gConn, gConnFlow, gCity, gLabel, gBadge, gHandle;
   let projectionFlat, projectionGlobe, projection, pathGen;
   let width = 0, height = 0;
   let zoomBehavior, rotateDrag;
@@ -47,6 +50,11 @@
     animate: true,
     showRoute: true,                // master: draw connection lines at all
     greatCircle: false,             // 连线走球面最短路径（大圆航线），far pairs bow polar
+
+    // real airline routes (OpenFlights) — independent additive layer, off by default.
+    // 选中城市 → 匹配最近机场 → 扇出该机场最繁忙的前 N 条真实航线（恒定大圆）。
+    showAirRoutes: false,
+    airMaxPerCity: 40,
 
     // manual bend: per-segment hand-tuned curve. keyed by "A→B".
     // value = { along: 0..1 (apex position), perp: signed ratio of segment len }
@@ -104,6 +112,7 @@
     gHighlight= gRoot.append("g").attr("class", "highlight-layer");
     gSouthSea = gRoot.append("g").attr("class", "south-sea-layer");
     gBorder   = gRoot.append("g").attr("class", "border-layer");
+    gAir      = gRoot.append("g").attr("class", "air-layer");
     gConn     = gRoot.append("g").attr("class", "conn-layer");
     gConnFlow = gRoot.append("g").attr("class", "conn-flow-layer");
     gCity     = gRoot.append("g").attr("class", "city-layer");
@@ -396,6 +405,8 @@
     const lineW       = 1.7 / k;
     const flowW       = 2.4 / k;
     const flowDash    = `${14/k} ${18/k}`;
+    const airLineW    = 0.9 / k;
+    const airDotR     = 1.9 / k;
     const badgeR      = 9   / k;
     const badgeFs     = 10  / k;
     const badgeStroke = 1.5 / k;
@@ -423,6 +434,10 @@
     gConnFlow.selectAll(".connection-flow")
       .style("stroke-width", flowW + "px")
       .style("stroke-dasharray", flowDash);
+    gAir.selectAll("path.air-route").style("stroke-width", airLineW + "px");
+    gAir.selectAll("circle.air-dot")
+      .attr("r", airDotR)
+      .attr("stroke-width", (0.8 / k) + "px");
 
     gBadge.selectAll("circle.order-badge")
       .attr("r", badgeR)
@@ -450,12 +465,15 @@
 
   // ---------- CONNECTIONS ----------
   function renderConnections() {
+    // real airline routes render independently of the manual-route master switch
+    renderAirRoutes();
     // master switch off → no lines / flow / badges / handles, cities only
     if (!state.showRoute) {
       gConn.selectAll("*").remove();
       gConnFlow.selectAll("*").remove();
       gBadge.selectAll("*").remove();
       gHandle.selectAll("*").remove();
+      updateScaleCompensation();
       return;
     }
     const sel = state.selected;
@@ -603,8 +621,8 @@
   //  • greatCircle on  → spherical great-circle (slerp), the shortest path on
   //    the globe; for far-apart cities it naturally bows toward the pole
   //    (e.g. 大连→鹿特丹 peaks ≈64°N), i.e. an Arctic-leaning route.
-  function interpPoints(a, b, N) {
-    if (state.greatCircle) {
+  function interpPoints(a, b, N, forceGC) {
+    if (forceGC || state.greatCircle) {
       const toRad = Math.PI / 180, toDeg = 180 / Math.PI;
       const la1 = a.lat * toRad, lo1 = a.lng * toRad;
       const la2 = b.lat * toRad, lo2 = b.lng * toRad;
@@ -645,9 +663,9 @@
   }
 
   // arc — builds the SVG path. Handles antimeridian split and back-of-globe hide.
-  function arcPath(a, b) {
+  function arcPath(a, b, forceGC) {
     const N = 64;
-    const pts = interpPoints(a, b, N);
+    const pts = interpPoints(a, b, N, forceGC);
     const segments = [[]];
     let prev = null;
     let prevVisible = true;
@@ -670,6 +688,101 @@
       })
       .filter(Boolean)
       .join(" ");
+  }
+
+  // ---------- REAL AIRLINE ROUTES (OpenFlights) ----------
+  // 纯增量层：默认关闭，开关打开时才懒加载 air-network.json。数据是离线烘焙好的
+  // 出向邻接表 { airports:{IATA:[lng,lat]}, routes:{IATA:[[dst,weight]]} }。
+  let airNet = null;          // 加载后的网络数据
+  let airNetPromise = null;   // 防重复 fetch
+  const cityAirport = {};     // 城市名 → 匹配到的机场 IATA（null 表示附近没机场）
+
+  function loadAirNet() {
+    if (airNetPromise) return airNetPromise;
+    airNetPromise = fetch(AIR_NET_URL)
+      .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(d => {
+        airNet = d;
+        matchCityAirports();
+        if (state.showAirRoutes) { renderAirRoutes(); updateScaleCompensation(); }
+        return d;
+      })
+      .catch(err => { console.warn("[air] 航线数据加载失败:", err); airNet = null; });
+    return airNetPromise;
+  }
+
+  function haversineKm(lng1, lat1, lng2, lat2) {
+    const R = 6371, toRad = Math.PI / 180;
+    const dLat = (lat2 - lat1) * toRad, dLng = (lng2 - lng1) * toRad;
+    const a = Math.sin(dLat / 2) ** 2 +
+              Math.cos(lat1 * toRad) * Math.cos(lat2 * toRad) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.min(1, Math.sqrt(a)));
+  }
+
+  // 把素材里每个城市匹配到一座机场：优先 100km 内最繁忙的枢纽，否则退而取
+  // 250km 内最近的一座。只在数据加载后跑一次，结果缓存在 cityAirport。
+  function matchCityAirports() {
+    if (!airNet) return;
+    Object.keys(cityAirport).forEach(k => delete cityAirport[k]);
+    const aps = airNet.airports, routes = airNet.routes;
+    const codes = Object.keys(aps);
+    const cities = window.ALL_CITIES || window.CAPITALS;
+    cities.forEach(c => {
+      let bestNear = null, bestScore = -Infinity;
+      let nearest = null, nearestDist = Infinity;
+      for (let i = 0; i < codes.length; i++) {
+        const code = codes[i], ap = aps[code];
+        const dist = haversineKm(c.lng, c.lat, ap[0], ap[1]);
+        if (dist < nearestDist) { nearestDist = dist; nearest = code; }
+        if (dist <= 100) {
+          const deg = (routes[code] || []).length;
+          const score = deg * 1000 - dist;   // 越繁忙越优先，同等距离更近优先
+          if (score > bestScore) { bestScore = score; bestNear = code; }
+        }
+      }
+      cityAirport[c.name] = bestNear || (nearestDist <= 250 ? nearest : null);
+    });
+  }
+
+  function renderAirRoutes() {
+    if (!gAir) return;
+    if (!state.showAirRoutes || !airNet) { gAir.selectAll("*").remove(); return; }
+    const aps = airNet.airports, routes = airNet.routes;
+    const cap = Math.max(1, state.airMaxPerCity | 0);
+
+    const lineData = [];
+    const dests = new Map();   // dst IATA → [lng,lat]
+    const seen = new Set();    // 同一 机场→目的地 只画一次
+    state.selected.forEach(name => {
+      const c = cityByName[name];
+      const code = cityAirport[name];
+      if (!c || !code) return;
+      const edges = routes[code] || [];
+      for (let i = 0; i < edges.length && i < cap; i++) {
+        const dst = edges[i][0];
+        const dp = aps[dst];
+        if (!dp) continue;
+        const key = code + ">" + dst;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        const d = arcPath(c, { lng: dp[0], lat: dp[1] }, true);  // 航线恒走大圆
+        if (d) lineData.push(d);
+        dests.set(dst, dp);
+      }
+    });
+
+    const lines = gAir.selectAll("path.air-route").data(lineData);
+    lines.exit().remove();
+    lines.enter().append("path").attr("class", "air-route")
+      .merge(lines).attr("d", d => d);
+
+    const dots = gAir.selectAll("circle.air-dot").data([...dests.entries()], d => d[0]);
+    dots.exit().remove();
+    dots.enter().append("circle").attr("class", "air-dot")
+      .merge(dots)
+      .attr("cx", d => { const p = projectSafe({ lng: d[1][0], lat: d[1][1] }); return p ? p[0] : -9999; })
+      .attr("cy", d => { const p = projectSafe({ lng: d[1][0], lat: d[1][1] }); return p ? p[1] : -9999; })
+      .style("display", d => isPointVisible(d[1][0], d[1][1]) ? null : "none");
   }
 
   // ---------- COUNTRY SEARCH + GROUPING ----------
@@ -1076,6 +1189,17 @@
   function setAnimate(v)       { state.animate = !!v; }
   function setShowRoute(v)     { state.showRoute = !!v; renderConnections(); }
   function setGreatCircle(v)   { state.greatCircle = !!v; renderConnections(); }
+  function setShowAirRoutes(v) {
+    state.showAirRoutes = !!v;
+    if (state.showAirRoutes) loadAirNet();   // 懒加载：第一次打开才拉全量数据
+    renderAirRoutes();
+    updateScaleCompensation();
+  }
+  function setAirMaxPerCity(v) {
+    state.airMaxPerCity = Math.max(1, +v | 0);
+    renderAirRoutes();
+    updateScaleCompensation();
+  }
   function setBendEdit(v)      { state.bendEdit = !!v; renderConnections(); }
   function setBends(obj)       { state.bends = (obj && typeof obj === "object") ? obj : {}; renderConnections(); }
   function getBends()          { return state.bends; }
@@ -1161,7 +1285,8 @@
 
   window.WorldMap = {
     init, setTheme, setSelected, setShowLabels, setShowLabelEn, setShowAllDots, setShowGraticule,
-    setShowMajor, setLineSpeed, setAnimate, setShowRoute, setGreatCircle, setAutoRotate, setRotateSpeed,
+    setShowMajor, setLineSpeed, setAnimate, setShowRoute, setGreatCircle, setShowAirRoutes, setAirMaxPerCity,
+    setAutoRotate, setRotateSpeed,
     setBendEdit, setBends, getBends, clearBends,
     setMode, clearHighlights,
     // animation
